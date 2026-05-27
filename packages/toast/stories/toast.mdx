@@ -1,0 +1,182 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as ToastStories from './toast.stories';
+
+<Meta of={ToastStories} />
+
+# Toast
+
+A transient overlay notification. Status-tinted, auto-dismissing, stacked outside the document flow — the right surface for "just-happened" feedback that should not block the user or persist after they've moved on.
+
+## Purpose
+
+To confirm that something happened — a save, a network event, a background job result — without interrupting what the user is doing. Toasts overlay the UI in a corner, fade in, and fade out on a timer. They are imperative because the firing condition is rarely tied to render: a successful API response, a websocket event, an autosave settling.
+
+## When to use it
+
+- Confirming an asynchronous action completed — "Invoice saved", "File uploaded".
+- Background events that the user should know about but doesn't have to act on — "New version available".
+- Recoverable errors with a retry — pair `status="error"` with an `action` and `duration={null}`.
+- System-initiated notices the user didn't trigger — autosave succeeded, sync settled.
+
+## When NOT to use it
+
+- For form validation. Inline errors next to the field — `@m-next/alert` — communicate which input is wrong; a toast cannot.
+- For destructive confirmations. A toast can't block; use `@m-next/dialog` for "are you sure".
+- For content that needs to persist (e.g. an unread notification list). Toasts are ephemeral by design.
+- For empty states or zero-result screens. Use `@m-next/empty-state`.
+- For messages that must apply to the whole page or session. Use a page-level banner.
+
+The distinction matters:
+
+- **Toast** — transient overlay, auto-dismisses, imperative API. For "just happened".
+- **Alert** — inline message inside a form or panel, persistent. For ongoing state.
+- **Banner** — page-level, full-bleed, persistent system message. For session-scoped warnings.
+- **Dialog** — blocks the page, demands a decision.
+
+## Anatomy
+
+The system has three parts:
+
+1. **`<ToastProvider>`** — mounted once near the app root. Renders the stack containers in a React portal attached to `document.body` and supplies the API via context.
+2. **`useToast()`** — the imperative API: `info`, `success`, `warning`, `error`, `dismiss`, `dismissAll`. Each fire-method returns a string id you can pass to `dismiss`.
+3. **`<Toast>`** — the individual toast. Consumers don't render it directly; the provider renders one per active id.
+
+Each toast renders:
+
+- A status icon (`ℹ`, `✓`, `⚠`, `✕`) in the accent color (`aria-hidden`).
+- An optional bold title.
+- The message body — any `ReactNode`.
+- An optional `action` element rendered beneath the body (typically a button or link).
+- A dismiss × button positioned top-right, always present, `aria-label="Dismiss"`.
+
+A 4px left-border carries the status color; the panel is tinted with the lighter shade. A drop shadow lifts the toast off the page. The stack lays out vertically with an 8px gap.
+
+## States
+
+The provider holds the toast list; each `<Toast>` has just two internal states:
+
+- **Entering** — slides + fades in over 180ms. Driven by a keyframes block injected once into `document.head`.
+- **Exiting** — slides + fades out over 140ms before the toast is removed from the list. Triggered by the user clicking ×, the auto-dismiss timer firing, or `useToast().dismiss(id)`.
+
+Auto-dismiss is paused on hover and resumed on mouse-leave with the time that was remaining at the moment of pause — a small UX courtesy so users who reach for a long toast aren't punished for reading.
+
+`maxToasts` (default `5`) caps the concurrent count. When a new toast would exceed it, the oldest currently-displayed toast is dismissed first.
+
+## Tokens consumed
+
+- `colors.{blue|green|yellow|red}.lighter` — toast backgrounds, per status.
+- `colors.{blue|green|red}.base`, `colors.yellow.dark` — accent border + icon, per status.
+- `colors.grey.darkest` — title text.
+- `colors.grey.dark` — body text.
+- `colors.grey.base` — dismiss button glyph.
+- `zIndex.toast` (1500) — stack layering. Sits above modals (1300) and popovers (1400) deliberately — a server error shouldn't be hidden under a dialog.
+
+Like the other Phase 2 components, Toast does not call `useTheme()` at the top level. Toasts often fire from code paths that may execute before a `ThemeProvider` is fully mounted (early auth events, websocket reconnects, hydration). Status colors are baked in.
+
+## API
+
+### `<ToastProvider>` props
+
+| Prop | Type | Default | Notes |
+|------|------|---------|-------|
+| `position` | `'top-right' \| 'top-left' \| 'top-center' \| 'bottom-right' \| 'bottom-left' \| 'bottom-center'` | `'top-right'` | Where the stack renders. Bottom positions render newest-on-top via `flex-direction: column-reverse`. |
+| `defaultDuration` | `number \| null` | `5000` | Milliseconds before a toast auto-dismisses. `null` makes toasts persistent by default. |
+| `maxToasts` | `number` | `5` | Cap on simultaneous toasts. The oldest is force-dismissed when exceeded. |
+| `children` | `ReactNode` | — | Your app. |
+
+### `useToast()` returns
+
+```ts
+{
+  info: (message: ReactNode, options?: ToastOptions) => string;
+  success: (message: ReactNode, options?: ToastOptions) => string;
+  warning: (message: ReactNode, options?: ToastOptions) => string;
+  error: (message: ReactNode, options?: ToastOptions) => string;
+  dismiss: (id: string) => void;
+  dismissAll: () => void;
+}
+```
+
+Each fire-method returns the new toast's id (a string). Hold onto it if you might need to dismiss the toast before its timer fires:
+
+```jsx
+const id = toast.info('Saving…', { duration: null });
+// ...later
+toast.dismiss(id);
+```
+
+If `useToast()` is called outside a `<ToastProvider>`, it returns a no-op shim and logs a `console.warn`. Components that conditionally fire toasts won't crash if the provider hasn't mounted yet.
+
+### `ToastOptions`
+
+| Field | Type | Notes |
+|-------|------|-------|
+| `title` | `string` | Optional bold heading rendered above the body. |
+| `duration` | `number \| null` | Per-toast override of `defaultDuration`. `null` makes it persistent. |
+| `action` | `ReactNode` | Optional element shown under the body — typically a button or link. |
+
+## Accessibility
+
+Toast uses **two stack containers** rather than one, so each container can carry a static `aria-live` value:
+
+- `aria-live="polite"` — info, success, warning. Announced after the current utterance finishes. Appropriate for background acknowledgement.
+- `aria-live="assertive"` — error. Announced immediately, interrupting in-progress speech. Appropriate for problems the user needs to act on now.
+
+Two static containers are cleaner than one dynamic one because screen reader announcers can be inconsistent about re-reading a live region after its `aria-live` value changes — splitting by politeness avoids that fragility.
+
+Per-toast roles match the live-region:
+
+- Errors render with `role="alert"`.
+- Everything else renders with `role="status"`.
+
+The dismiss button is a real `<button>` with `aria-label="Dismiss"` so screen reader users hear a meaningful name rather than the literal `×` glyph. The status icon carries `aria-hidden="true"` — it's decorative; the role plus the visible text carry the meaning.
+
+**Choose status accordingly** — don't escalate a confirmation to `error` just to pull the eye, because that decision changes whether the screen reader interrupts.
+
+## Examples
+
+### Default
+
+<Canvas of={ToastStories.Default} />
+
+### Positions
+
+<Canvas of={ToastStories.Positions} />
+
+### With title
+
+<Canvas of={ToastStories.WithTitle} />
+
+### With an action
+
+<Canvas of={ToastStories.WithAction} />
+
+### Persistent (`duration={null}`)
+
+<Canvas of={ToastStories.Persistent} />
+
+### Multiple stacked (`maxToasts` enforcement)
+
+<Canvas of={ToastStories.MultipleStacked} />
+
+### Long content
+
+<Canvas of={ToastStories.LongContent} />
+
+## Edge cases
+
+- **Outside a Provider** — `useToast()` returns a no-op shim and logs a warning. This is intentional so background hooks that *might* fire toasts don't crash code paths that don't render the provider.
+- **SSR / no `document`** — the provider guards `typeof document` and returns `null` for the portal on the server. The keyframes block also guards `document` before injecting.
+- **Provider position change** — the provider remounts the stack containers when `position` changes (use the `key` prop to force a clean remount if you want any in-flight toasts to disappear). Otherwise existing toasts simply slide back in from the new side on next render.
+- **Reduced motion** — entrance and exit animations still play. If you need to honor `prefers-reduced-motion`, consider a future enhancement that switches to instant fade.
+- **maxToasts spans both stacks** — the cap counts polite + assertive toasts together. Firing six in a row, even mixed, drops the oldest first.
+- **Hover-pause precision** — when a toast is paused mid-hover, the remaining duration on mouse-leave is computed against the original start; very long hovers (longer than `duration`) reset to "near zero" and dismiss almost immediately on leave. This is intentional: the toast has overstayed.
+- **`action` button styling** — Toast does not style your action. Pass a styled element. Bare `<button>` defaults will look out of place.
+- **Provider must wrap consumers** — `useToast()` only reads from the nearest `<ToastProvider>`. Multiple providers nest cleanly; each consumer reads from its closest ancestor. Most apps want exactly one near the root.
+
+## Related components
+
+- **`@m-next/alert`** — inline persistent message inside a panel or form. Same status semantics (`info | success | warning | error`) and the same color palette. Use Alert when the message belongs in the flow of the page; use Toast when it belongs *over* the page.
+- **`@m-next/banner`** — page-level, full-bleed system message. Use for screen-wide notices that should persist across user actions.
+- **`@m-next/dialog`** — when the user must decide before continuing. Toast cannot block.
+- **`@m-next/tooltip`** — uses the same keyframe-injection pattern. Read for the portal + animation conventions.

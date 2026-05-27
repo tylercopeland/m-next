@@ -1,0 +1,114 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as DrawerStories from './drawer.stories';
+
+<Meta of={DrawerStories} />
+
+# Drawer
+
+A panel that slides in from a viewport edge. Used to expose secondary surfaces — forms, details, settings — without taking the user away from their current context.
+
+## When to use it
+
+- Editing a single record (an invoice, a contact) where you want the user to keep their list in peripheral view.
+- Filters and faceted controls for a data grid.
+- Secondary navigation that needs more room than a dropdown.
+- A multi-step flow that's narrower than a full-page wizard but richer than a Dialog.
+
+## When NOT to use it
+
+- For brief, transient notifications. Use `@m-next/toast`.
+- For yes/no confirmations. Use `@m-next/dialog`.
+- For long content that warrants its own URL. Use a route instead.
+- On mobile viewports for important destructive actions — the backdrop dismissal is too easy to trigger by accident. Set `closeOnOverlayClick={false}` or reach for a Dialog.
+
+## Anatomy
+
+- **Backdrop** — semi-transparent dark overlay covering the viewport (`rgba(0,0,0,0.4)`). Click it to dismiss (unless `closeOnOverlayClick={false}`).
+- **Panel** — the surface itself. White background, edge-mounted shadow, full-bleed on its long axis.
+- **Header** — 56px tall, optional. Renders when `title` is provided or `showCloseButton` is true.
+- **Body** — flex 1, scrolls independently of the header.
+
+## States
+
+- **Open** — animates in (220ms slide, 200ms backdrop fade). Focus moves to the close button (or first focusable). Body scroll is locked.
+- **Opening** — the drawer is mounted but the slide-in animation is still running. The component is interactive, but in practice focus settles after the animation tick.
+- **Closing** — `open` flips to false but the panel stays mounted until the 220ms exit animation finishes. Focus is restored to the element that was focused before opening.
+- **Closed** — fully unmounted. Nothing in the DOM.
+
+## Tokens consumed
+
+- `colors.white` — panel background.
+- `colors.grey.light` — header bottom border.
+- `colors.grey.darkest` — title text.
+- `colors.grey.dark` — close button glyph.
+- Backdrop color and shadow are inlined (not in tokens yet — the spec calls for `rgba(0,0,0,0.4)` backdrop and an edge-relative `0/±8/24` shadow that depends on placement).
+
+## API
+
+| Prop | Type | Default | Notes |
+|------|------|---------|-------|
+| `open` | boolean | required | Controlled visibility. |
+| `onClose` | `() => void` | required | Fires on backdrop click, ESC, close button. |
+| `placement` | `'left' \| 'right' \| 'top' \| 'bottom'` | `'right'` | Edge it slides from. |
+| `size` | `'sm' \| 'md' \| 'lg' \| 'full' \| number \| string` | `'md'` | Horizontal: sm=320, md=480, lg=720. Vertical: sm=240, md=360, lg=480. `full` = 100% of relevant axis. Numbers → px. Strings pass through. |
+| `title` | string | — | Optional header text. |
+| `showCloseButton` | boolean | `true` | × in top-right of drawer header. |
+| `closeOnEsc` | boolean | `true` | ESC closes. |
+| `closeOnOverlayClick` | boolean | `true` | Backdrop click closes. |
+| `children` | ReactNode | — | Body content. |
+| `style`, `className` | — | — | Forwarded to the drawer panel. |
+
+## Accessibility
+
+- The panel has `role="dialog"` and `aria-modal="true"`.
+- `aria-labelledby` points at the title id when `title` is provided; otherwise the panel uses `aria-label="Drawer"`.
+- Close button has `aria-label="Close drawer"`.
+- Backdrop is `aria-hidden="true"`.
+- **Focus trap**: Tab from the last focusable wraps to the first; Shift+Tab from the first wraps to the last. The trap is implemented inline — no `focus-trap` or `focus-lock` dependency.
+- **Initial focus**: moves to the close button if rendered, otherwise the first focusable inside the drawer body, otherwise the panel itself.
+- **Focus restoration**: the element focused before the drawer opened is captured on open and re-focused on unmount.
+- **ESC** closes the drawer (suppress with `closeOnEsc={false}`).
+
+## Examples
+
+### Default
+
+<Canvas of={DrawerStories.Default} />
+
+### Placements
+
+<Canvas of={DrawerStories.Placements} />
+
+### Sizes
+
+<Canvas of={DrawerStories.Sizes} />
+
+### Without a title
+
+<Canvas of={DrawerStories.WithoutTitle} />
+
+### With long, scrolling content
+
+<Canvas of={DrawerStories.WithLongContent} />
+
+### With sticky footer actions
+
+<Canvas of={DrawerStories.WithFooterActions} />
+
+### Backdrop click disabled
+
+<Canvas of={DrawerStories.NoCloseOnOverlay} />
+
+## Edge cases
+
+- **Nested drawers** — supported defensively (the body-scroll-lock counter handles stacking), but don't. UX-wise, prefer a wizard step or an in-drawer Dialog. Each new drawer steals focus from the one underneath.
+- **Mobile considerations** — at narrow viewports a `right`-placed drawer of `md` (480px) will exceed the viewport. The panel has `maxWidth: 100vw` / `maxHeight: 100vh` so it won't overflow, but for serious mobile use, prefer `size="full"` or a route.
+- **Very long content** — the body region scrolls independently. The header (if rendered) stays pinned at the top.
+- **Reduced motion** — animations run regardless of `prefers-reduced-motion`. If a consumer needs to honor that preference, condition the drawer's animation via CSS at the app level.
+- **SSR** — `document` is guarded; the component returns `null` during server rendering.
+
+## Related components
+
+- `@m-next/dialog` — centered modal for confirmations and short forms. Use when the content is small and the action is decisive.
+- `@m-next/toast` — transient notifications, no dismissal needed. Use instead of a Drawer for "saved successfully" style feedback.
+- `@m-next/popover` — anchored to a specific UI element, dismissed by click-outside. Use when the surface should feel attached to a trigger rather than mounted edge-to-edge.

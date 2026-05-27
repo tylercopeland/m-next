@@ -1,0 +1,126 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as FormFieldStories from './form-field.stories';
+
+<Meta of={FormFieldStories} />
+
+# FormField
+
+A slot-based wrapper that gives a single form row Method's standard layout: label, optional description, the control, and an optional error message. Use it as the outside shell around controls that don't ship their own label/error scaffolding — third-party inputs, custom widgets, button groups, anything that isn't already a Method form control.
+
+## When to use it
+
+- A native `<input>`, `<select>`, or `<textarea>` that needs a label, help text, and error in Method's visual style.
+- A third-party widget (a date picker, an autocomplete, a Syncfusion control) that needs to be embedded in a Method form.
+- A custom composite control — a group of buttons, a custom combobox, a slider — that needs label/description/error semantics around it.
+
+## When NOT to use it
+
+- **Don't wrap `@m-next/input`.** Input renders its own label and error internally; wrapping it doubles those slots and breaks the visual rhythm. The same goes for any Method control that already provides label affordances.
+- **Don't use it as a layout primitive.** For groups of fields, stack FormFields directly. Don't nest them.
+- **Don't use it for read-only display rows.** If there's no control to label, it's a definition list, not a form field.
+
+## Anatomy
+
+A vertical flex column:
+
+1. **Label** — semantic `<label htmlFor>` pointing at the control. Optional required asterisk after the text.
+2. **Description** — optional help text below the label, above the control.
+3. **Control** — the consumer's child. A single React element is cloneable for id/aria wiring.
+4. **Error message** — optional, rendered below the control with a leading ✕ glyph. Wrapped in `role="alert"`.
+
+## States
+
+FormField has no internal state. Visual variation comes from which slots are filled and the values of `required`, `hideLabel`, and `errorMessage`.
+
+- **Default** — label + control, possibly description.
+- **Required** — asterisk after the label. The `required` attribute on the control itself is the consumer's responsibility.
+- **Error** — `errorMessage` set. The error region appears, and `aria-invalid="true"` is injected onto the control.
+- **Disabled / read-only** — driven by the child control. FormField doesn't reach in.
+- **Hidden label** — `hideLabel` collapses the label visually but keeps it in the DOM for screen readers.
+
+## Tokens consumed
+
+From `@m-next/tokens.colors`:
+
+- `colors.grey.dark` — label color.
+- `colors.grey.base` — description color.
+- `colors.red.base` — required asterisk.
+- `colors.red.dark` — error message color.
+
+No `useTheme()`. FormField may render before a `ThemeProvider` mounts (lazy routes, error boundaries) — same rationale as Spinner and EmptyState.
+
+## API
+
+| Prop | Type | Default | Notes |
+|------|------|---------|-------|
+| `label` | `string \| ReactNode` | — | Rendered above the control. |
+| `description` | `string \| ReactNode` | — | Help text below the label, above the control. |
+| `errorMessage` | `string \| ReactNode` | — | When set, renders below the control with error styling and sets `aria-invalid` on the child. |
+| `required` | `boolean` | `false` | Shows an asterisk after the label. Visual cue only. |
+| `htmlFor` | `string` | — | Forwarded to the `<label>`'s `htmlFor`. If absent, the id is taken from the child's existing id or auto-generated. |
+| `hideLabel` | `boolean` | `false` | Hides the label visually using the visually-hidden pattern; it stays in the DOM. |
+| `id` | `string` | auto | Wrapper id. Description gets `${id}-description`, error gets `${id}-error`. |
+| `children` | `ReactNode` | — | The control. A single React element is cloneable for id/aria wiring; anything else is rendered as-is. |
+| Any other prop | — | — | Spread onto the wrapper `<div>`. |
+
+## Accessibility
+
+- Real `<label>` element with `htmlFor` pointing at the control id. Clicking the label focuses the control.
+- `aria-describedby` on the control combines `${id}-description` (when description is present), `${id}-error` (when an error is present), and any pre-existing `aria-describedby` from the consumer. The values are space-joined.
+- `aria-invalid="true"` is injected onto the control when `errorMessage` is set, unless the consumer has already set it explicitly.
+- The error region has `role="alert"` so screen readers announce it when it appears.
+- The required asterisk is `aria-hidden="true"` — visual indication only. Semantic required state must be set on the control itself (the native `required` attribute, or `aria-required`).
+
+## Examples
+
+### Basic
+
+<Canvas of={FormFieldStories.Basic} />
+
+### With description
+
+<Canvas of={FormFieldStories.WithDescription} />
+
+### With error
+
+<Canvas of={FormFieldStories.WithError} />
+
+### Required
+
+<Canvas of={FormFieldStories.RequiredField} />
+
+### Visually-hidden label
+
+<Canvas of={FormFieldStories.HideLabel} />
+
+### Auto-id wiring — no child id
+
+<Canvas of={FormFieldStories.AutoIdWiring} />
+
+### Manual id and htmlFor
+
+<Canvas of={FormFieldStories.ManualIdControl} />
+
+### Custom (non-native) control
+
+<Canvas of={FormFieldStories.WithCustomControl} />
+
+### Real form
+
+<Canvas of={FormFieldStories.RealForm} />
+
+## Edge cases
+
+- **Multiple children** — if `children` is more than one React element (e.g. two inputs and a button), FormField can't safely clone all of them, so it skips the id/aria injection and renders them as-is. The consumer is responsible for wiring `htmlFor`, `aria-describedby`, and `aria-invalid` on the relevant child.
+- **Non-element children** — strings, numbers, fragments, arrays. Same behavior as multiple children: no cloning, consumer wires the aria props.
+- **Child already has an `id`** — that id wins. FormField uses it for `htmlFor` rather than generating a new one.
+- **Child already has `aria-describedby`** — values are space-joined. The consumer's id comes after FormField's description/error ids.
+- **Child already has `aria-invalid`** — the consumer's value wins. FormField only injects `aria-invalid` when the child hasn't set it.
+- **Error and description together** — both appear; both are referenced in `aria-describedby` (description first, then error).
+- **No label** — the `<label>` element is omitted entirely. Prefer setting `hideLabel` on a real label over passing nothing; screen-reader users benefit from the announcement.
+
+## Related components
+
+- `@m-next/input` — has its own label and error internals. Do not wrap in FormField.
+- `@m-next/caption` — the label primitive that Input uses internally. FormField uses a plain `<label>` because it's lighter weight and intended for non-Method controls.
+- `@m-next/validation` — for live validation rules with messages. FormField only renders a static `errorMessage` string passed by the consumer.
