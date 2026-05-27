@@ -1,0 +1,44 @@
+{
+  "name": "@m-next/alert",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Inline alert — semantic message box for forms, panels, and content sections",
+  "keywords": [
+    "alert",
+    "message",
+    "feedback",
+    "notification"
+  ],
+  "author": "Tyler Copeland",
+  "homepage": "",
+  "license": "ISC",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "src",
+    "index.d.ts"
+  ],
+  "dependencies": {},
+  "peerDependencies": {
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "build": "npm run prettify && npm run lint && npm run test && webpack --mode production",
+    "prettify": "npx prettier \"**/*.*(js|jsx)\" --ignore-path=.prettierignore --write --log-level=error",
+    "release": "npm build && npm publish build --tag next",
+    "test": "jest --passWithNoTests",
+    "test-snapshot-update": "npm run test -- -u",
+    "test-storybook": "jest --passWithNoTests --json --outputFile=.jest-test-results.json",
+    "lint-js": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --cache --report-unused-disable-directives --max-warnings=0",
+    "lint-ls": "npx ls-lint",
+    "lint": "npm run lint-js && npm run lint-ls",
+    "lint-fix": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix --cache --report-unused-disable-directives --max-warnings=0"
+  }
+}
