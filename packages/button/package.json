@@ -10,26 +10,22 @@
   "homepage": "",
   "license": "ISC",
   "main": "src/index.js",
-  "types": "src/button.d.ts",
+  "types": "src/index.d.ts",
   "directories": {
     "src": "src"
   },
   "files": [
-    "index",
-    "button.d.ts"
+    "src",
+    "index.d.ts"
   ],
   "dependencies": {
-    "@m-next/styles": "1.0.0",
-    "@m-next/svg-icon": "1.0.0",
-    "@m-next/utilities": "1.0.0"
+    "@m-next/svg-icon": "1.0.0"
   },
   "peerDependencies": {
     "@emotion/react": ">=11.10.5",
     "@emotion/styled": ">=11.10.5",
     "react": ">=17.0.2",
-    "react-dom": ">=17.0.2",
-    "prop-types": ">=15.8.1"
-
+    "react-dom": ">=17.0.2"
   },
   "scripts": {
     "dev": "webpack --mode development",
