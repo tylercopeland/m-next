@@ -1,13 +1,14 @@
 import React from 'react';
+import { colors } from '@m-next/tokens';
 
 // Base hues per colorScheme. `subtle` derives a pale tint (~12%) for bg
 // and uses the base hue for text. `outline` uses base hue for border + text.
 const PALETTE = {
-  neutral: { base: '#6b7280', subtleBg: '#f3f4f6', subtleText: '#374151' },
-  blue: { base: '#0D71C8', subtleBg: '#e3f0fa', subtleText: '#0D71C8' },
-  green: { base: '#137E58', subtleBg: '#dff1e9', subtleText: '#137E58' },
-  yellow: { base: '#D97706', subtleBg: '#fdeed5', subtleText: '#92400E' },
-  red: { base: '#8A1F1F', subtleBg: '#f5dede', subtleText: '#8A1F1F' },
+  neutral: { base: colors.grey.base, subtleBg: colors.grey.lighter, subtleText: colors.grey.dark },
+  blue: { base: colors.blue.base, subtleBg: colors.blue.lighter, subtleText: colors.blue.base },
+  green: { base: colors.green.dark, subtleBg: colors.green.lighter, subtleText: colors.green.dark },
+  yellow: { base: colors.yellow.dark, subtleBg: colors.yellow.lighter, subtleText: colors.yellow.dark },
+  red: { base: colors.red.dark, subtleBg: colors.red.lighter, subtleText: colors.red.dark },
 };
 
 const SIZE_STYLES = {
@@ -34,7 +35,7 @@ const getVariantStyles = (variant, scheme) => {
     default:
       return {
         backgroundColor: palette.base,
-        color: '#ffffff',
+        color: colors.white,
         border: '1px solid transparent',
       };
   }

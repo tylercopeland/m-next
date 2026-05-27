@@ -1,5 +1,6 @@
 import React from 'react';
 import { Stack } from '@m-next/layout';
+import { colors } from '@m-next/tokens';
 
 const fontFamily = "'Source Sans Pro', Helvetica, Arial, sans-serif";
 
@@ -12,13 +13,13 @@ const VARIANT_STYLES = {
   },
   bordered: {
     padding: 48,
-    background: '#f9fafb',
-    border: '1px dashed #d1d5db',
+    background: colors.grey.lightest,
+    border: `1px dashed ${colors.grey.light}`,
     borderRadius: 12,
   },
   banner: {
     padding: 32,
-    background: '#f3f4f6',
+    background: colors.grey.lighter,
     border: 'none',
     borderRadius: 8,
   },
@@ -29,7 +30,7 @@ const iconContainerStyle = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  color: '#9ca3af',
+  color: colors.grey.light,
   fontSize: 40,
   lineHeight: 1,
 };
@@ -39,7 +40,7 @@ const titleStyle = {
   fontFamily,
   fontSize: 18,
   fontWeight: 600,
-  color: '#111827',
+  color: colors.grey.darkest,
   lineHeight: 1.3,
 };
 
@@ -48,7 +49,7 @@ const descriptionStyle = {
   fontFamily,
   fontSize: 14,
   fontWeight: 400,
-  color: '#6b7280',
+  color: colors.grey.base,
   lineHeight: 1.5,
   maxWidth: 480,
 };

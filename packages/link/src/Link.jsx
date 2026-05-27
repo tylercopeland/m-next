@@ -1,42 +1,43 @@
 import React, { useEffect } from 'react';
+import { colors } from '@m-next/tokens';
 
 const STYLES_ID = 'm-next-link-styles';
 const STYLES_CSS = `
 .m-next-link:focus-visible {
-  outline: 2px solid #0D71C8;
+  outline: 2px solid ${colors.blue.base};
   outline-offset: 2px;
 }
 .m-next-link-primary {
-  color: #0D71C8;
+  color: ${colors.blue.base};
   text-decoration: underline;
 }
 .m-next-link-primary:visited {
-  color: #0D71C8;
+  color: ${colors.blue.base};
 }
 .m-next-link-primary:hover {
-  color: #0a5a9c;
+  color: ${colors.blue.dark};
 }
 .m-next-link-subtle {
   color: inherit;
   text-decoration: none;
 }
 .m-next-link-subtle:hover {
-  color: #0D71C8;
+  color: ${colors.blue.base};
   text-decoration: underline;
 }
 .m-next-link-button {
   display: inline-flex;
   align-items: center;
   padding: 6px 12px;
-  color: #374151;
+  color: ${colors.grey.dark};
   text-decoration: none;
   border-radius: 4px;
   border: 1px solid transparent;
   background: transparent;
 }
 .m-next-link-button:hover {
-  background: #f3f4f6;
-  border-color: #e5e7eb;
+  background: ${colors.grey.lighter};
+  border-color: ${colors.grey.light};
 }
 `;
 

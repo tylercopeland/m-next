@@ -21,7 +21,8 @@
     "index.d.ts"
   ],
   "dependencies": {
-    "@m-next/layout": "1.0.0"
+    "@m-next/layout": "1.0.0",
+    "@m-next/tokens": "1.0.0"
   },
   "peerDependencies": {
     "react": ">=17.0.2",

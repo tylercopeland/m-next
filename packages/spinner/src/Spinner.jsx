@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { colors } from '@m-next/tokens';
 
 const SIZE_PX = { sm: 16, md: 24, lg: 32 };
 const KEYFRAMES_ID = 'm-next-spinner-keyframes';
@@ -28,7 +29,7 @@ const visuallyHidden = {
 
 const Spinner = ({
   size = 'md',
-  color = '#0D71C8',
+  color = colors.blue.base,
   thickness = 2.5,
   label = 'Loading',
   style,

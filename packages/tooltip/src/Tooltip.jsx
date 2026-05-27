@@ -1,4 +1,5 @@
 import React, { cloneElement, useCallback, useEffect, useRef, useState } from 'react';
+import { colors } from '@m-next/tokens';
 
 const KEYFRAMES_ID = 'm-next-tooltip-keyframes';
 const KEYFRAMES_CSS = `
@@ -27,7 +28,7 @@ const chain = (...fns) => (event) => {
   });
 };
 
-const BUBBLE_BG = '#1f2937';
+const BUBBLE_BG = colors.grey.darkest;
 const ARROW_SIZE = 8;
 // Gap between trigger and bubble (room for the arrow + a hair of breathing room).
 const OFFSET = ARROW_SIZE + 2;
@@ -190,7 +191,7 @@ const Tooltip = ({ content, placement = 'top', delay = 300, children, style, ...
   const bubbleStyle = {
     position: 'relative',
     background: BUBBLE_BG,
-    color: '#ffffff',
+    color: colors.white,
     fontSize: 12,
     lineHeight: 1.4,
     padding: '6px 10px',

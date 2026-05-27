@@ -1,12 +1,29 @@
 import React from 'react';
+import { colors } from '@m-next/tokens';
 
 const FONT_FAMILY = "'Source Sans Pro', Helvetica, Arial, sans-serif";
 
 const STATUS_COLORS = {
-  info: { background: '#EAF3FB', accent: '#0D71C8', icon: 'ℹ' },
-  success: { background: '#ECFDF5', accent: '#10B981', icon: '✓' },
-  warning: { background: '#FEF3C7', accent: '#D97706', icon: '⚠' },
-  error: { background: '#FEE2E2', accent: '#DC2626', icon: '✕' },
+  info: {
+    background: colors.blue.lighter,
+    accent: colors.blue.base,
+    icon: 'ℹ',
+  },
+  success: {
+    background: colors.green.lighter,
+    accent: colors.green.base,
+    icon: '✓',
+  },
+  warning: {
+    background: colors.yellow.lighter,
+    accent: colors.yellow.dark,
+    icon: '⚠',
+  },
+  error: {
+    background: colors.red.lighter,
+    accent: colors.red.base,
+    icon: '✕',
+  },
 };
 
 const Alert = ({
@@ -18,7 +35,7 @@ const Alert = ({
   style,
   ...rest
 }) => {
-  const colors = STATUS_COLORS[status] || STATUS_COLORS.info;
+  const statusColors = STATUS_COLORS[status] || STATUS_COLORS.info;
   const role = status === 'error' ? 'alert' : 'status';
 
   return (
@@ -30,8 +47,8 @@ const Alert = ({
         alignItems: 'flex-start',
         gap: 12,
         padding: '12px 16px',
-        background: colors.background,
-        borderLeft: `4px solid ${colors.accent}`,
+        background: statusColors.background,
+        borderLeft: `4px solid ${statusColors.accent}`,
         borderRadius: 6,
         fontFamily: FONT_FAMILY,
         boxSizing: 'border-box',
@@ -45,11 +62,11 @@ const Alert = ({
           flex: '0 0 auto',
           fontSize: 16,
           lineHeight: 1.5,
-          color: colors.accent,
+          color: statusColors.accent,
           fontFamily: FONT_FAMILY,
         }}
       >
-        {colors.icon}
+        {statusColors.icon}
       </span>
 
       <div
@@ -64,7 +81,7 @@ const Alert = ({
             style={{
               fontSize: 14,
               fontWeight: 600,
-              color: '#111827',
+              color: colors.grey.darkest,
               marginBottom: 4,
               fontFamily: FONT_FAMILY,
               lineHeight: 1.4,
@@ -78,7 +95,7 @@ const Alert = ({
           style={{
             fontSize: 14,
             fontWeight: 400,
-            color: '#374151',
+            color: colors.grey.dark,
             lineHeight: 1.5,
             fontFamily: FONT_FAMILY,
           }}
@@ -103,7 +120,7 @@ const Alert = ({
             background: 'transparent',
             border: 'none',
             padding: 2,
-            color: '#6b7280',
+            color: colors.grey.base,
             borderRadius: 4,
             cursor: 'pointer',
             lineHeight: 1,

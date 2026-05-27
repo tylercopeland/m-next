@@ -19,7 +19,8 @@
     "index.d.ts"
   ],
   "dependencies": {
-    "@m-next/svg-icon": "1.0.0"
+    "@m-next/svg-icon": "1.0.0",
+    "@m-next/tokens": "1.0.0"
   },
   "peerDependencies": {
     "@emotion/react": ">=11.10.5",

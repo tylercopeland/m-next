@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
+import { colors } from '@m-next/tokens';
 
 const COLORS = {
-  blue: '#0D71C8',
-  blueDark: '#0a5a9c',
-  blueDarker: '#084680',
-  greyBorder: '#d1d5db',
-  greyHover: '#f3f4f6',
-  greyText: '#374151',
+  blue: colors.blue.base,
+  blueDark: colors.blue.dark,
+  blueDarker: colors.blue.darkest,
+  greyBorder: colors.grey.light,
+  greyHover: colors.grey.lighter,
+  greyText: colors.grey.dark,
 };
 
 const SIZE_STYLES = {
@@ -18,13 +19,13 @@ const SIZE_STYLES = {
 const VARIANT_STYLES = {
   primary: {
     background: COLORS.blue,
-    color: '#fff',
+    color: colors.white,
     border: `1px solid ${COLORS.blue}`,
     ':hover:not(:disabled)': { background: COLORS.blueDark, borderColor: COLORS.blueDark },
     ':active:not(:disabled)': { background: COLORS.blueDarker, borderColor: COLORS.blueDarker },
   },
   secondary: {
-    background: '#fff',
+    background: colors.white,
     color: COLORS.blue,
     border: `1px solid ${COLORS.greyBorder}`,
     ':hover:not(:disabled)': { background: COLORS.greyHover, borderColor: COLORS.blue },
@@ -34,7 +35,7 @@ const VARIANT_STYLES = {
     background: 'transparent',
     color: COLORS.greyText,
     border: '1px solid transparent',
-    ':hover:not(:disabled)': { background: COLORS.greyHover, color: '#111827' },
+    ':hover:not(:disabled)': { background: COLORS.greyHover, color: colors.grey.darkest },
     ':active:not(:disabled)': { background: COLORS.greyBorder },
   },
   link: {
