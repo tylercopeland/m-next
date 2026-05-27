@@ -1,0 +1,225 @@
+﻿@import "../designer/method-base";
+
+// #setting
+$runtime-context-panel-size: 385px;
+$runtime-context-panel-wide-size: 800px;
+
+
+.runtime-context-panel {
+    box-shadow: 0 0 20px #0000004d;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    right: -1px;
+    background-color: $right-panel;
+    overflow-x: hidden;
+    transition: 0.5s;
+    top: 60px;
+    z-index: 999;
+
+    &.full-size {
+        top: 0;
+    }
+
+    &.opened {
+        width: $runtime-context-panel-size;
+
+        @include mobile-devices {
+            width: 100%;
+        }
+
+        .panel-cover {
+            display: block;
+        }
+
+        &.wide {
+            width: $runtime-context-panel-wide-size;
+        }
+    }
+
+    .panel-cover {
+        @extend %panel-cover;
+    }
+}
+
+.mi-global-context-panel {
+    position: relative;
+
+    .panel-cover {
+        @extend %panel-cover;
+        display: block !important;
+        z-index: 11 !important;
+    }
+
+    &.full-size {
+        z-index: 3001;
+    }
+}
+
+.runtime-page-wrapper {
+    transition: margin-right .5s;
+    padding: 5px;
+    margin-right: 0;
+    min-width: 100%;
+
+    &.opened {
+        margin-right: $runtime-context-panel-size;
+
+        .panel-cover {
+            display: block;
+        }
+
+        &.wide {
+            margin-right: $runtime-context-panel-wide-size;
+        }
+    }
+
+    .panel-cover {
+        @extend %panel-cover;
+    }
+}
+
+.global-context-panel {
+    position: fixed;
+    width: $runtime-context-panel-size;
+    overflow-y: auto;
+    // height: 100%;
+    padding-bottom: 100px;
+    border-left: 1px solid #E4EAF0;
+    background-color: #EEF5F7;
+    bottom: 0;
+    top: 60px;
+    z-index: 4;
+
+    &.global-search {
+        overflow-y: hidden;
+    }
+
+    &.opened {
+        margin-right: $runtime-context-panel-size;
+
+        @include mobile-devices {
+            width: 100%;
+        }
+
+        &.wide {
+            width: $runtime-context-panel-wide-size;
+            margin-right: $runtime-context-panel-wide-size;
+        }
+    }
+
+    .closebtn {
+        position: relative;
+        float: right;
+        background-color: transparent;
+        margin: 12px !important;
+        color: #b9c6cd !important;
+        z-index: 2;
+        width: 24px;
+        height: 24px;
+    }
+
+    .global-context-panel-title {
+        padding: 0 1rem;
+        border-bottom: 1px solid #BACAD0;
+        height: 48px;
+        -webkit-transform: translate3d(0,0,0);
+
+        h2 {
+            padding: 10px 0 10px 0px;
+            font-size: 18px !important;
+            font-weight: 600;
+            text-align: center;
+            width: 100%;
+            margin: 0;
+        }
+    }
+}
+
+.runtime-context-panel-form {
+    margin-top: 20px;
+
+    .runtime-context-panel-invitebtn {
+        margin-top: 20px;
+        float: right;
+    }
+
+    .grid-row {
+        padding: 0 15px 0 15px;
+    }
+}
+
+.runtime-context-panel-warning {
+    margin: 20px;
+}
+
+.global-panel-content {
+    a {
+        display: block;
+        padding-top: 10px;
+        font-size: 16px !important;
+        color: $blue !important;
+        line-height: 20px;
+    }
+
+    .panel-content {
+        padding: 0 1rem;
+
+        &.search-content {
+            padding: 10px 1rem 0;
+        }
+    }
+
+    h3 {
+        font-size: 18px !important;
+        padding-top: 20px;
+    }
+
+    .panel-search {
+        display: flex;
+
+        input {
+            margin: 0;
+        }
+
+        .search-btn {
+            background-color: $blue;
+            position: relative;
+            display: block;
+
+            button {
+                padding: 8px;
+                color: $white;
+                width: 34px;
+            }
+        }
+    }
+
+    .panel-ask {
+        display: flex;
+        padding-top: 20px;
+        padding-left: 5px;
+
+        i {
+            font-size: 25px;
+            color: $blue;
+        }
+
+        a {
+            padding-top: 5px;
+            padding-left: 10px;
+        }
+    }
+}
+
+%panel-cover {
+    background-color: $h-color;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 201;
+    opacity: 0.4;
+    display: none;
+}

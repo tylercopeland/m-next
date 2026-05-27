@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "m-one",
+			"path": "../m-one"
+		},
+		{
+			"name": "MethodUI",
+			"path": "../MethodUI"
+		},
+		{
+			"path": "../.githooks"
+		}
+	],
+	"settings": {}
+}

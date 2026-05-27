@@ -1,0 +1,68 @@
+{
+  "jira-mappings": {
+    "PL-TR-40": {
+      "feature": "Accounts (QBO)",
+      "tests": ["tests/accounts/accounts-app-regression-qbo.spec.ts"]
+    },
+    "PL-TR-41": {
+      "feature": "Accounts (QBG)",
+      "tests": ["tests/accounts/accounts-app-regression-qbg.spec.ts"]
+    },
+    "PL-TR-45": {
+      "feature": "Accounts (QBDT)",
+      "tests": ["tests/accounts/accounts-app-regression-qbdt.spec.ts"]
+    },
+    "PL-TR-46": {
+      "feature": "Work Orders",
+      "tests": ["tests/001-work-orders/"]
+    },
+    "PL-TR-52": {
+      "feature": "Accounts (Xero)",
+      "tests": ["tests/accounts/accounts-app-regression-xero.spec.ts"]
+    },
+    "PL-TR-99": {
+      "feature": "Activities (QBDT)",
+      "tests": ["tests/activities/activities-app-regression-qbdt.spec.ts"]
+    },
+    "PL-TR-100": {
+      "feature": "Activities (QBDT)",
+      "tests": ["tests/activities/activities-app-regression-qbdt.spec.ts"]
+    },
+    "PL-TR-101": {
+      "feature": "Activities (Xero)",
+      "tests": ["tests/activities/activities-app-regression-xero.spec.ts"]
+    },
+    "PL-TR-117": {
+      "feature": "App Routines",
+      "tests": ["tests/app-routine/app-routine-regression.spec.ts"]
+    },
+    "PL-TR-119": {
+      "feature": "App Builder/Designer",
+      "tests": ["tests/app-builder/customization-regression.spec.ts"]
+    },
+    "PL-TR-139": {
+      "feature": "User Management",
+      "tests": ["tests/common/accont-settings/users/users.spec.ts"]
+    },
+    "PL-TR-205": {
+      "feature": "App Routines (QBO)",
+      "tests": ["tests/app-routine/qbo-app-routine-regression.spec.ts"]
+    },
+    "PL-TR-211": {
+      "feature": "User Invite",
+      "tests": ["tests/common/accont-settings/users/user-invite.spec.ts"]
+    },
+    "PL-TR-252": {
+      "feature": "User Management (QBDT)",
+      "tests": ["tests/common/accont-settings/users/user-management-qbdt.spec.ts"]
+    },
+    "PL-TR-335": {
+      "feature": "User Management (QBO)",
+      "tests": ["tests/common/accont-settings/users/user-management-qbo.spec.ts"]
+    },
+    "PL-TR-358": {
+      "feature": "Calendar",
+      "tests": ["tests/001-work-orders/Calendar-draft-screen-regression.spec.ts"]
+    }
+  }
+}

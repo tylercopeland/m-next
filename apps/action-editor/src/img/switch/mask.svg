@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="80.000000pt" height="29.000000pt" viewBox="0 0 80.000000 29.000000"
+ preserveAspectRatio="xMidYMid meet">
+<metadata>
+Created by potrace 1.11, written by Peter Selinger 2001-2013
+</metadata>
+<g>
+<defs>
+	<path id="mask1" d="M81 272 c-54 -27 -76 -65 -76 -127 0 -62 22 -100 76 -127 30 -16 67
+	-18 319 -18 314 0 330 3 374 63 29 39 29 125 0 164 -44 60 -60 63 -374 63
+	-252 0 -289 -2 -319 -18z"/>
+</defs>
+<clipPath id="mask2">
+	<use xlink:href="#mask1" overflow="hidden" />
+</clipPath>
+<path clip-path="#mask2" transform="translate(0.000000,29.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none" />
+</g>
+</svg>

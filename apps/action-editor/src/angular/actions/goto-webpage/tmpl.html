@@ -1,0 +1,26 @@
+<div data-ng-controller="GoToWebpageCtrl">
+    <mi-action-description info="action"></mi-action-description>
+    <!-- Main Content Area -->
+    <div class="mi-ae-main-content">
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+            <label class="mi-ae-label">Navigate to this web page</label>
+        </div>
+        <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'Url'">
+            <mi-complex-value action="action" model="action.Url" allow="allow" placeholder="'e.g. http://www.method.me / tel:(123) 456-7890'"  is-read-only ="action.isReadOnly"></mi-complex-value>
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-10 mi-ae-col-offset-4">
+          <label class="mi-radio-checkbox mi-checkbox">
+            <span>Open web page in a new tab</span>
+            <input type="checkbox" data-ng-model="action.NewTab" ng-disabled="action.isReadOnly"> 
+            <div class="mi-radio-checkbox-indicator"></div>
+          </label>
+        </div>
+      </div>
+    </div>
+    <!--/ Main Content Area -->
+     <mi-action-notes  is-read-only ="action.isReadOnly"></mi-action-notes>
+</div>

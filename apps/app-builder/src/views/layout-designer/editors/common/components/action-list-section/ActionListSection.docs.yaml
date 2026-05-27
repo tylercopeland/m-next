@@ -1,0 +1,211 @@
+componentName: ActionListSection
+description: A specialized section component for managing a list of actions within an accordion interface. Combines AddableAccordion with a Grid to display actions and provides functionality to add new actions from available options and edit existing actions using an external action editor.
+
+dependencies:
+  - React
+  - "@m-next/types" # FieldTypeIds
+  - "@m-next/loading-skeleton" # LoadingSkeleton component
+  - "@m-next/action-editor" # openActionEditor function
+  - "@m-next/grid" # Grid component
+
+props:
+  required:
+    onAddAction:
+      type: function
+      description: Callback function when adding a new action, receives (source, value)
+
+  optional:
+    caption:
+      type: string
+      description: Title text for the accordion section
+      default: null
+
+    emptyMessage:
+      type: string
+      description: Message displayed when no actions are present
+      default: null
+
+    addLabel:
+      type: string
+      description: Text for the add button
+      default: "Add"
+
+    canAdd:
+      type: boolean
+      description: Whether new actions can be added
+      default: false
+
+    values:
+      type: array
+      description: Array of current action objects
+      default: []
+      structure: |
+        [{
+          actionId: string,  # Unique identifier for the action
+          value: string,     # Action value/identifier
+          label?: string     # Display name for the action
+        }]
+
+    actions:
+      type: array
+      description: Array of available actions that can be added
+      default: []
+      structure: |
+        [{
+          value: string,   # Action identifier
+          label: string,   # Display name
+          source: string,  # Source/category of the action
+          id?: string      # Optional unique identifier
+        }]
+
+    control:
+      type: object
+      description: Control configuration object passed to action editor
+      default: null
+
+behavior:
+  - Displays actions in a grid within an accordion interface
+  - Allows adding new actions from a predefined list of available actions
+  - Opens action editor when clicking on existing actions for editing
+  - Shows empty state when no actions are configured
+  - Lazy loads the grid component with loading skeleton
+  - Manages action addition through callback to parent component
+
+sections:
+  accordion_header:
+    features:
+      - Collapsible section with caption
+      - Add button for new actions (when canAdd is true)
+      - Empty state message display
+      - Option selection from available actions
+
+  grid_content:
+    features:
+      - Compact grid display of current actions
+      - Click-to-edit functionality
+      - Label-based display (value column hidden)
+      - No pagination or search (simple list view)
+      - Lazy loading with suspense boundary
+
+styling:
+  layout: "Accordion wrapper with embedded grid"
+  grid_style: "Compact, header-less grid with minimal controls"
+  interaction: "Click-based editing with external editor integration"
+
+usage_scenarios:
+  - Form control action configuration
+  - Event handler management
+  - Workflow step configuration
+  - Button action assignment
+  - Trigger configuration in automation
+  - Custom action sequence building
+
+example_usage:
+  button_actions:
+    code: |
+      <ActionListSection
+        caption="Button Actions"
+        emptyMessage="No actions configured for this button"
+        canAdd={true}
+        addLabel="Add Action"
+        values={buttonActions}
+        actions={availableActions}
+        control={buttonControl}
+        onAddAction={handleAddButtonAction}
+      />
+
+  form_event_handlers:
+    code: |
+      <ActionListSection
+        caption="Form Events"
+        emptyMessage="No event handlers configured"
+        canAdd={userCanEditForm}
+        values={formEventHandlers}
+        actions={[
+          { value: "validate", label: "Validate Form", source: "form" },
+          { value: "submit", label: "Submit Form", source: "form" },
+          { value: "reset", label: "Reset Form", source: "form" }
+        ]}
+        control={formControl}
+        onAddAction={handleAddFormAction}
+      />
+
+  workflow_steps:
+    code: |
+      <ActionListSection
+        caption="Workflow Steps"
+        emptyMessage="Add workflow steps to define the process"
+        canAdd={true}
+        addLabel="Add Step"
+        values={workflowSteps}
+        actions={workflowActionTemplates}
+        control={workflowControl}
+        onAddAction={handleAddWorkflowStep}
+      />
+
+  readonly_action_list:
+    code: |
+      <ActionListSection
+        caption="Configured Actions"
+        emptyMessage="No actions have been configured"
+        canAdd={false}
+        values={readOnlyActions}
+        control={controlConfig}
+        onAddAction={() => {}}
+      />
+
+data_flow:
+  input:
+    values: "Current list of configured actions"
+    actions: "Available actions that can be added"
+    control: "Configuration passed to action editor"
+
+  interactions:
+    add_action: "User selects from available actions → onAddAction callback"
+    edit_action: "User clicks existing action → opens action editor"
+
+  output:
+    onAddAction: "Callback with selected action source and value"
+
+action_editor_integration:
+  trigger: "Row click on existing actions"
+  parameters: "Control options and action ID"
+  external_dependency: "Uses @m-next/action-editor openActionEditor function"
+
+grid_configuration:
+  columns:
+    value: "Hidden primary key column"
+    label: "Visible display column"
+  features:
+    compact: "Space-efficient display"
+    no_header: "Clean appearance without column headers"
+    no_pagination: "Simple list view"
+    click_to_edit: "Row click triggers action editor"
+
+accordion_integration:
+  component: "AddableAccordion wrapper"
+  features:
+    collapsible: "Can expand/collapse content"
+    add_functionality: "Built-in add button with option selection"
+    empty_state: "Shows message when no items present"
+    option_mapping: "Maps action objects to display options"
+
+performance_considerations:
+  - Lazy loading of Grid component with Suspense
+  - Loading skeleton during component initialization
+  - Compact grid rendering for performance
+  - Minimal grid features to reduce overhead
+
+accessibility:
+  - Grid provides keyboard navigation
+  - Accordion section is collapsible with proper ARIA
+  - Click handlers support keyboard interaction
+  - Screen reader compatible action lists
+
+implementation_details:
+  - Uses Suspense boundary for Grid lazy loading
+  - Integrates with external action editor system
+  - Maps between internal action format and display format
+  - Handles empty state through AddableAccordion
+  - Delegates action management to parent components
+  - Provides consistent interface for action list management

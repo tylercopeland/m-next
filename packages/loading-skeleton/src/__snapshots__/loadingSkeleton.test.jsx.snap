@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingSkeleton Snapshots 3 fat lines 1`] = `
+<div>
+  <span
+    aria-busy="true"
+    aria-live="polite"
+  >
+    <span
+      class="react-loading-skeleton"
+      style="height: 48px;"
+    >
+      ‌
+    </span>
+    <br />
+    <span
+      class="react-loading-skeleton"
+      style="height: 48px;"
+    >
+      ‌
+    </span>
+    <br />
+    <span
+      class="react-loading-skeleton"
+      style="height: 48px;"
+    >
+      ‌
+    </span>
+    <br />
+  </span>
+</div>
+`;
+
+exports[`LoadingSkeleton Snapshots Defaults 1`] = `
+<div>
+  <span
+    aria-busy="true"
+    aria-live="polite"
+  >
+    <span
+      class="react-loading-skeleton"
+    >
+      ‌
+    </span>
+    <br />
+  </span>
+</div>
+`;
+
+exports[`LoadingSkeleton Snapshots Multiple Loaders 1`] = `
+<div>
+  <div>
+    <span
+      aria-busy="true"
+      aria-live="polite"
+    >
+      <span
+        class="react-loading-skeleton"
+        style="border-radius: 50%;"
+      >
+        ‌
+      </span>
+      <br />
+    </span>
+     
+    <span
+      aria-busy="true"
+      aria-live="polite"
+    >
+      <span
+        class="react-loading-skeleton"
+        style="height: 48px;"
+      >
+        ‌
+      </span>
+      <br />
+      <span
+        class="react-loading-skeleton"
+        style="height: 48px;"
+      >
+        ‌
+      </span>
+      <br />
+      <span
+        class="react-loading-skeleton"
+        style="height: 48px;"
+      >
+        ‌
+      </span>
+      <br />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`LoadingSkeleton Snapshots Single Cirlce 1`] = `
+<div>
+  <span
+    aria-busy="true"
+    aria-live="polite"
+  >
+    <span
+      class="react-loading-skeleton"
+      style="border-radius: 50%;"
+    >
+      ‌
+    </span>
+    <br />
+  </span>
+</div>
+`;

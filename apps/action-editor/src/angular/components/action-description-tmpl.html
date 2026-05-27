@@ -1,0 +1,22 @@
+<div class="mi-ae-header-block">
+    <button 
+      class="mi-button blue mi-button-clear mi-button-icon back-btn" 
+      data-ng-click="backFunction()" 
+      data-ng-if="showBack">
+      <svg-icon
+        name="'chevron-left'"
+        size="16">
+      </svg-icon>
+    Back</button>
+    <h2 data-ng-class="{'text-center': showBack}">{{ (altTitle) ? altTitle : info.config.name }}</h2>
+    <button class="mi-button-icon" 
+      tooltip-placement="left" 
+      uib-tooltip="Learn more" 
+      data-ng-click="showHelper($event)" 
+      data-ng-hide="hideHelp">
+      <svg-icon
+        name="'question'"
+        size="16">
+      </svg-icon>
+    </button>
+</div>

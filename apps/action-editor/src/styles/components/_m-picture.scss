@@ -1,0 +1,49 @@
+//container
+.mi-picture-hidden {
+  display: none !important;
+}
+.mi-picture{
+  width:100%;
+}
+.mi-picture-click{
+  cursor:pointer;
+}
+
+.mi-picture-avatar {
+    width: 48px;
+    height: auto;
+    display: inline-block;
+    color: #0F1B31;
+    font-size: 32px;
+    line-height: 64px;
+    border-radius: 100px;
+    text-align: center;
+}
+
+.mi-picture-outer {
+    overflow: hidden;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+//background scaled
+.mi-picture-scaled {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+
+    img {
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        &.scaledAndZoomed {
+            background-size: cover;
+        }
+    }
+}

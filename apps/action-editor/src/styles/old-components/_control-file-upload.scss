@@ -1,0 +1,498 @@
+@import "../designer/method-base";
+
+%app-loader {
+	position: relative;
+	bottom:0;
+	left:0;
+	right:0;
+	margin-top:36px;
+	//height:40px;
+	background: $white;
+	padding: 2px 5px;
+	border-top: 1px solid $blue;
+	@include box-sizing;
+
+
+	p {
+		color:$grey;
+		width: 75%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		@extend %font-small;
+
+		&.file-done {
+			margin: 2px 0 2px 5px;
+		}
+
+		a {
+			color: $blue;
+			text-decoration: underline;
+		}
+	}
+
+	.cancel-app-loader {
+		position: absolute;
+		background: transparent !important;
+		top: 5px;
+		right: 0;
+		border:0 !important;
+		height: auto !important;
+		font-size:calc($font-small - 1px);
+		// @include opacity(0.2);
+	}
+
+	.cancel-app-loader {
+		&.file-done {
+			top: 7px !important;
+			width: 36px;
+		}
+	}
+
+	.progress {
+		height: 3px;
+		width: 100%;
+		display: inline-block;
+		background: $card-border;
+		vertical-align: top;
+		margin-bottom: 5px;
+		float: left;
+		@include box-sizing;
+
+		.progress-bar {
+			display: inline-block;
+			height: 3px;
+			background: $blue;
+			float: left;
+		}
+	}
+}
+
+.iphone.safari {
+	.cancel-app-loader {
+		&.file-done {
+			top: 10px !important;
+		}
+	}
+}
+
+.select-account {
+	.file-upload-container {
+		z-index: auto !important;
+	}
+}
+
+.designer-file-upload,
+.designer-pic-upload {
+	position: relative;
+
+	.file-upload-list.show {
+		z-index: 10 !important;
+	}
+}
+
+.file-upload-container {
+	width: 216px;
+	min-height: 38px;
+	position: relative;
+	display: inline-block;
+	border: 1px solid $blue;
+	background-color: transparent;
+	vertical-align: top;
+	// z-index:98;
+
+	button,
+	input,
+	ul {
+		position: absolute;
+		background-color: $white;
+		color: $blue;
+	}
+
+	ul {
+		z-index: 9999;
+	}
+
+	input {
+		width: 144px;
+		left: 0;
+		z-index: 1;
+		padding: 0.36em !important;
+		margin: 0 !important;
+		min-height: 36px !important;
+	}
+
+	button {
+
+		height: 36px;
+		margin:0 !important;
+		@include box-sizing;
+
+		&.add-file-button {
+
+			&.large {
+				width: 180px;
+				left:0;
+				top: 0;
+				z-index: 2;
+				line-height: 1;
+
+				&:before {
+					content: "Upload File";
+				}
+			}
+			&.small {
+				min-width: 36px !important;
+				max-width: 36px !important;
+				width: 36px !important;
+				right: 36px;
+				top:0;
+				padding: 0 !important;
+			}
+		}
+
+		&.file-drop-down {
+      		min-width: 1rem;
+			right: 0;
+			top: 0;
+			width: 36px;
+			padding: 0 !important;
+			border: none;
+			color: $blue;
+
+			&:after {
+				position: absolute;
+		    top: 8px;
+		    left: 0px;
+				display: block;
+				content: "";
+				width: 1px;
+				height: 20px;
+				background-color: $blue;
+				z-index: 10;
+			}
+		}
+	}
+
+	.app-loader {
+		@extend %app-loader;
+	}
+
+	&.image-upload {
+		width: auto;
+		display: inline-block;
+		position: relative;
+		border: 0;
+
+		img {
+			min-width: 100%;
+			width: 100%;
+			height:100%;
+		}
+
+		// .add-image {
+		// 	display: none;
+		// }
+
+		// &:hover {
+		// 	.add-image {
+		// 		display: block;
+		// 	}
+		// }
+
+		.inner-image-upload {
+			//height: 144px;
+
+			//background:$white;
+			border: 2px solid $silver-light-10percent;
+			@include box-sizing;
+
+			img[style="width: 75px;"] {
+				&~ ul{
+					left: 52%;
+				}
+
+				&~ div {
+					&.app-loader {
+						min-width: 150px;
+					}
+				}
+			}
+
+			&.mi-icon-user-male {
+				&:before {
+					@extend %font-gigantic;
+					line-height: 1.5;
+					color: $silver-light-10percent;
+				}
+			}
+
+			&.with-image {
+				border:none !important;
+			}
+
+			.overlay {
+				background:$white;
+
+				@include opacity(0.6);
+				
+				& {
+					z-index: 1;
+					position: absolute;
+					top: 0;
+					left:0;
+					right:0;
+					bottom:0;
+				}
+			}
+		}
+
+		button {
+			display: block;
+			height: 20px;
+			width: 20px;
+			min-width: 20px !important;
+			max-width: 20px !important;
+			position: absolute;
+			top: -6px;
+			right: -6px;
+			padding: 0 !important;
+			background: $blue;
+			color: $white;
+			border: 2px solid $white;
+			border-radius: 50%;
+			overflow: hidden;
+
+			&:before {
+				color: $white !important;
+				font-size: 10px;
+				display: block;
+    			height: 20px;
+    			line-height: 18px;
+			}
+		}
+
+		.app-loader {
+			width: 75%;
+			text-align: left;
+			display: inline-block;
+			vertical-align: middle;
+			z-index: 5;
+			position: absolute;
+			top: 50%;
+			left:50%;
+			margin-top: -18px;
+			margin-left: -37.5%;
+
+			button {
+				width: auto !important;
+			}
+		}
+
+		.file-upload-list {
+			@extend %font-small;
+		}
+	}
+
+	.loader {
+		svg {
+			width: 40px !important;
+			height: 40px !important;
+		}
+	}
+	//	wrapped in the designer container
+	.designer-file-upload &,
+	.designer-pic-upload & {
+		// @include boxSizing;
+		// @include flexbox;
+		// @include flexjustify(center);
+		// @include flexalignitems(center);
+		position: relative;
+		width: 100%;
+		min-height: 38px;
+		position: relative;
+		vertical-align: top;
+
+		.file-drop-down {
+			max-width: 36px;
+			min-width: 36px;
+		}
+
+		.add-file-button {
+			&.large {
+				width: 203px;
+				border: 0;
+			}
+			&.small {
+				width: 36px;
+				max-width: 36px;
+				min-width: 36px;
+			}
+		}
+
+		.from-web {
+			display: none;
+			width: 169px;
+			padding: 0.56em !important;
+		}
+	}
+
+	.designer-pic-upload & {
+		.add-file-button {
+			&.large {
+				width: 187px;
+				border-radius: 0px;
+			}
+		}
+		.from-web {
+			width: 156px;
+			border-radius: 0px;
+		}
+	}
+}
+
+@-moz-document url-prefix() {
+	.file-upload-list {
+		&:before, 
+		&:after {
+			top: -8px !important;
+		}
+
+		&:before {
+			top: -9px !important;
+		}
+	}
+}
+
+.file-upload-list {
+	position: absolute;
+	top: 26px;
+	min-width: 150px;
+	max-width: 200px;
+	right:0;
+	margin:0;
+	border: 1px solid $blue;
+	background: $white;
+	@include box-sizing;
+
+	&:before,
+	&:after {
+		border-left: 9px solid transparent;
+	    border-right: 9px solid transparent;
+	    border-bottom: 9px solid $white;
+	    top: -9px;
+	    content: '';
+	    left: 80%;
+	    margin-left: 2px;
+	    position: absolute;
+	}
+
+	&:before {
+		border-left: 10px solid transparent;
+	    border-right: 10px solid transparent;
+	    border-bottom: 10px solid;
+	    border-bottom-color: $blue;
+	    top: -10px;
+	    margin-left: 1px;		
+	}
+
+	&.list-from-left {
+		&:before, 
+		&:after {
+			left: 6px !important;
+		}
+	}
+
+	&.hide {
+		display: none;
+	}
+
+	&.show {
+		display: table;
+		z-index: 100 !important;
+	}
+
+	li {
+		height: 36px;
+		width: 100%;
+		display: table-row;
+		@include box-sizing;
+
+		a {
+			color: $blue;
+			display: table-cell;
+			vertical-align: middle;
+			width: 100%;
+			padding-left: 10px;
+			text-align: left;
+			@include box-sizing;
+
+			&:hover {
+				color: $white;
+				background: $blue;
+			}
+
+			// &.remove-image {
+			// 	background: $pink;
+			// 	color: $white;
+			// }
+		}
+	}
+}
+
+div[method_type="FIL"] {
+	.file-upload-wrapper {
+		position: relative;
+	}
+
+	.mi-file {
+		outline: none;
+	}
+}
+
+// Single file link
+.mi-file {
+	i {
+		color: $blue;
+	}
+	label {
+		color: $blue;
+		text-decoration: underline;
+	}
+}
+
+.image-outer {
+  position: relative;
+
+	.app-loader {
+		@extend %app-loader;
+		min-width: 200px;
+		width: 100%;
+		position: absolute !important;
+		z-index: 5001;
+		@include box-sizing;
+	}
+}
+
+.company-logo-upload {
+
+	.image-outer {
+		min-width: 200px;
+	    position: relative;
+	    width: 100%;
+
+		.app-loader {
+			@extend %app-loader;
+			min-width: auto !important;
+			width: auto !important;
+			position: absolute !important;
+			z-index: 5001;
+			max-width: 200px;
+    		margin: 0 auto;
+		}
+
+		.file-upload-list {
+			max-width: 216px;
+		}
+	}
+}

@@ -1,0 +1,337 @@
+componentName: CriteriaEditor
+description: A sophisticated filtering component that allows users to create complex filter expressions with multiple conditions, logical operators, and groupings. Features both quick edit (single filter) and advanced edit (multiple filters with groups) modes, drag-and-drop reordering, and comprehensive field type support.
+
+dependencies:
+  - React
+  - '@emotion/styled'
+  - '@m-next/container' # Container component
+  - '@m-next/button' # Button component
+  - '@m-next/styles' # colors
+  - '@m-next/typeography' # Text, TextLine components
+  - '@m-next/svg-icon' # SvgIcon, EmptyFilterIcon components
+  - '@m-next/utilities' # formatter, Guid utilities
+  - '@m-next/types' # ExpressionElement, FieldTypeNames, FieldTypeIds, basicOperationId
+  - '@m-next/loading-skeleton' # LoadingSkeleton component
+
+props:
+  required:
+    onChange:
+      type: function
+      description: Callback function that receives updated filter expression and editing state
+
+  optional:
+    id:
+      type: string
+      description: Unique identifier for the component
+      default: null
+    
+    fieldList:
+      type: array
+      description: List of available fields for filtering
+      default: []
+      structure: |
+        [{
+          name: string,
+          caption: string,
+          fieldType: string,
+          options?: array
+        }]
+    
+    controlList:
+      type: object
+      description: List of available controls for filter values
+      default: null
+    
+    dataModelId:
+      type: string
+      description: Identifier for the data model being filtered
+      default: null
+    
+    displayPreferences:
+      type: object
+      description: Display preferences for field formatting and presentation
+      default: null
+    
+    filterId:
+      type: string
+      description: Unique identifier for the filter instance
+      default: null
+    
+    expression:
+      type: array
+      description: Current filter expression as array of ExpressionElement objects
+      default: []
+      structure: |
+        [{
+          dateField: number,
+          dateWhere: string,
+          operation: number,
+          source: {
+            ChildProperty: string,
+            FontStyles: string,
+            Property: string,
+            ValidationMessage: string,
+            Value: string | number | boolean,
+            ValueType: number
+          }
+        }]
+    
+    onUpdateElementCount:
+      type: function
+      description: Callback when filter element count changes
+      default: null
+    
+    onSendAnalytics:
+      type: function
+      description: Callback for sending analytics events
+      default: null
+    
+    disabled:
+      type: boolean
+      description: Whether the component is disabled
+      default: false
+    
+    forcedTimeZone:
+      type: string
+      description: Timezone to use for date/time operations
+      default: null
+    
+    emptyMessage:
+      type: string
+      description: Message to display when no filters are applied
+      default: "Filters allow you to customize the data display on your charts."
+    
+    showEmptyState:
+      type: boolean
+      description: Whether to show empty state when no filters exist
+      default: true
+    
+    openQuickEdit:
+      type: boolean
+      description: Whether to automatically open quick edit mode
+      default: false
+    
+    includeControls:
+      type: boolean
+      description: Whether to include form controls in filter options
+      default: true
+    
+    includeSessionVariables:
+      type: boolean
+      description: Whether to include session variables in filter options
+      default: true
+    
+    onClose:
+      type: function
+      description: Callback when editor closes
+      default: null
+    
+    showEmptyFilterIcon:
+      type: boolean
+      description: Whether to show large filter icon in empty state
+      default: true
+
+behavior:
+  - Supports complex nested filter expressions with AND/OR logic
+  - Auto-filters field list to exclude unsupported field types
+  - Maintains dirty state tracking for unsaved changes
+  - Provides both quick edit (single filter) and advanced edit (multi-filter) modes
+  - Handles automatic cleanup of empty or invalid filter conditions
+  - Supports drag-and-drop reordering of filter conditions
+  - Manages focus and anchor positioning for modal editors
+  - Integrates with analytics for user interaction tracking
+
+modes:
+  quick_edit:
+    description: Single filter editing in a popup
+    features:
+      - Field selection dropdown
+      - Operation selection (equals, contains, etc.)
+      - Value input with type validation
+      - Quick apply/cancel actions
+  
+  advanced_edit:
+    description: Multi-filter editing with grouping
+    features:
+      - Multiple filter groups with logical connectors
+      - Drag-and-drop reordering
+      - Group management (add/remove)
+      - Complex expression building
+      - Batch apply/cancel operations
+
+field_types:
+  supported_types:
+    Text: 0 # Basic text input
+    Decimal: 1 # Decimal numbers with formatting
+    Integer: 2 # Whole numbers
+    DateTime: 3 # Date and time values
+    Money: 4 # Currency values with formatting
+    YesNo: 5 # Boolean true/false values
+    DropDown: 8 # Dropdown selection lists
+    Phone: 14 # Phone number with formatting
+    Email: 15 # Email address validation
+    Date: 19 # Date only (no time)
+    Time: 20 # Time only (no date)
+  
+  excluded_types:
+    FileAttachment: 6 # File upload fields
+    Picture: 7 # Image fields
+    Address: 12 # Complex address objects
+    CardColumn: 11 # UI layout columns
+
+styling:
+  layout: Flexible column layout with responsive design
+  empty_state: Large icon with descriptive text and action button
+  active_filters: Chip-based display with edit/delete controls
+  modals: Positioned relative to trigger elements
+
+usage_scenarios:
+  - Data grid filtering interfaces
+  - Report builder filter configuration
+  - Dashboard widget filtering
+  - Search interfaces with advanced criteria
+  - Admin panel data filtering
+  - Chart and visualization filters
+
+example_usage:
+  grid_view_filtering:
+    code: |
+      <CriteriaEditor
+        id='filter'
+        controlList={controlList}
+        dataModelId={viewFriendlyName}
+        disabled={disabled}
+        displayPreferences={displayPreferences}
+        onChange={handleCriteriaChange}
+        expression={internalView.filtering}
+        filterId={internalView.id}
+        fieldList={fieldList}
+        includeControls
+        includeSessionVariables
+        showEmptyFilterIcon={false}
+        openQuickEdit={openQuickEdit}
+        onClose={handleCloseCriteriaEditor}
+        emptyMessage='No filters applied'
+      />
+
+  basic_criteria_editor:
+    code: |
+      <CriteriaEditor
+        id="data-filter"
+        fieldList={tableFields}
+        expression={currentFilters}
+        onChange={handleFilterChange}
+        dataModelId="UserData"
+        includeControls={true}
+        includeSessionVariables={false}
+      />
+  
+  advanced_filtering:
+    code: |
+      <CriteriaEditor
+        id="report-filter"
+        fieldList={reportFields}
+        controlList={formControls}
+        expression={reportFilters}
+        onChange={handleReportFilterChange}
+        dataModelId="ReportData"
+        displayPreferences={userPreferences}
+        onUpdateElementCount={updateFilterCount}
+        onSendAnalytics={trackFilterUsage}
+        emptyMessage="Add filters to customize your report data"
+      />
+  
+  disabled_state:
+    code: |
+      <CriteriaEditor
+        id="readonly-filter"
+        fieldList={fields}
+        expression={existingFilters}
+        onChange={handleFilterChange}
+        disabled={true}
+        showEmptyState={false}
+        dataModelId="ReadOnlyData"
+      />
+  
+  auto_open_quick_edit:
+    code: |
+      <CriteriaEditor
+        id="quick-filter"
+        fieldList={searchFields}
+        expression={searchFilters}
+        onChange={handleSearchFilterChange}
+        openQuickEdit={showFilterEditor}
+        onClose={handleCloseFilterEditor}
+        dataModelId="SearchData"
+      />
+
+data_structure:
+  expression_format:
+    description: Array of expression groups with logical connectors
+    structure: |
+      [{
+        connector: "AND" | "OR",
+        key: string,
+        expression: [{
+          key: string,
+          first: { value: string, caption: string },
+          operation: string,
+          second: { value: any, caption: string },
+          dateField?: string,
+          ghost?: boolean
+        }]
+      }]
+
+performance_considerations:
+  - Field list filtering and memoization
+  - Expression parsing optimization
+  - Lazy loading of filter editors
+  - Efficient state updates with minimal re-renders
+  - Analytics throttling for user interactions
+
+accessibility:
+  - Keyboard navigation support
+  - Screen reader compatibility
+  - Focus management in modal editors
+  - ARIA labels and descriptions
+  - High contrast mode support
+
+filter_operations:
+  text_fields: ["equals", "contains", "starts with", "ends with", "is empty", "is not empty"]
+  numeric_fields: ["equals", "greater than", "less than", "between", "is empty", "is not empty"]
+  date_fields: ["equals", "before", "after", "between", "is empty", "is not empty"]
+  boolean_fields: ["is true", "is false"]
+
+integration_points:
+  field_formatting: Uses formatter utility for field display with comprehensive type support
+  expression_parsing: Custom parser for complex filter expressions
+  modal_positioning: Anchor-based positioning system
+  analytics_tracking: Integration with analytics system
+  timezone_handling: Consistent date/time processing
+  
+formatting_utilities:
+  field_formatting: 
+    description: "Comprehensive field value formatting based on type and display preferences"
+    capabilities:
+      - Date/time formatting with multiple format options (Short Date, Long Date, Time, etc.)
+      - Number formatting with decimal places and thousands separators
+      - Currency formatting with locale support and negative number handling
+      - Phone number formatting with standard US patterns
+      - Address formatting with multi-line concatenation
+      - Boolean display with custom true/false values
+      - Dropdown field labeling and grouping
+  
+  date_formats:
+    short_date: "MMM-dd-yyyy"
+    long_date: "EEEE, MMMM dd, yyyy" 
+    time: "hh:mm a"
+    date_time_combined: "MMM-dd-yyyy hh:mm a"
+    hour_only: "ha"
+    day_of_week: "ddd"
+    month_year: "MMM-yyyy"
+  
+  number_formats:
+    thousands_separator: "1,000.00"
+    negative_parenthesis: "(1,000.00)"
+    decimal_places: "Configurable precision (0-10)"
+    currency_symbols: "Locale-based currency formatting"

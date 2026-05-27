@@ -1,0 +1,1101 @@
+{
+   "projection": {
+      "id": "Contacts",
+      "fields": [{
+            "name": "CompanyName",
+            "caption": "Company name",
+            "type": "Text",
+            "isVisible": true,
+            "isRequired": false,
+            "isLinked": true,
+            "sourceModel": "Entity",
+            "sourceField": "CompanyName"
+         },
+         {
+            "name": "AltEmail",
+            "caption": "Alt email",
+            "type": "Text",
+            "isVisible": true,
+            "isRequired": false,
+            "maxLength": null
+         },
+         {
+            "name": "Email",
+            "caption": "Email",
+            "type": "Text",
+            "isVisible": true,
+            "isRequired": false,
+            "maxLength": null
+         },
+         {
+            "name": "Balance",
+            "caption": "Balance",
+            "type": "Money",
+            "isVisible": true,
+            "isRequired": false
+         },
+         {
+            "name": "CPEPerYear",
+            "caption": "Cpeper year",
+            "type": "Decimal",
+            "isVisible": true,
+            "isRequired": false
+         },
+         {
+            "name": "IsOptOutOfMarketing",
+            "caption": "Is opt out of marketing",
+            "type": "YesNo",
+            "isVisible": true,
+            "isRequired": false,
+            "displayOptions": {
+               "trueValue": "Cookie",
+               "falseValue": "Monster"
+            }
+         },
+         {
+            "name": "BirthDate",
+            "caption": "Birth date",
+            "type": "DateTime",
+            "isVisible": true,
+            "isRequired": false,
+            "displayOptions": {
+               "dateFormat": 2
+            }
+         }
+      ]
+   },
+   "fieldList": [{
+         "name": "AccountNumber",
+         "caption": "Account number",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "isLinked": true,
+         "sourceField": "AccountNumber"
+      },
+      {
+         "name": "AltEmail",
+         "caption": "Alt email",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "AltEmail"
+      },
+      {
+         "name": "AltPhone",
+         "caption": "Alt phone",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "AltPhone"
+      },
+      {
+         "name": "AssignedTo",
+         "caption": "Assigned to",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "UserName"
+      },
+      {
+         "name": "AssignedToRecordID",
+         "caption": "Assigned to record id",
+         "type": "Integer",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "AssignedToRef_RecordID"
+      },
+      {
+         "name": "Balance",
+         "caption": "Balance",
+         "type": "Money",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "Balance"
+      },
+      {
+         "name": "BillAddressAddr1",
+         "caption": "Bill address addr1",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "BillAddressAddr1"
+      },
+      {
+         "name": "BillAddressAddr2",
+         "caption": "Bill address addr2",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "BillAddressAddr2"
+      },
+      {
+         "name": "BillAddressAddr3",
+         "caption": "Bill address addr3",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "BillAddressAddr3"
+      },
+      {
+         "name": "BillAddressAddr4",
+         "caption": "Bill address addr4",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "BillAddressAddr4"
+      },
+      {
+         "name": "BillAddressAddr5",
+         "caption": "Bill address addr5",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "BillAddressAddr5"
+      },
+      {
+         "name": "BillAddressCity",
+         "caption": "Bill address city",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "BillAddressCity"
+      },
+      {
+         "name": "BillAddressCountry",
+         "caption": "Bill address country",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "BillAddressCountry"
+      },
+      {
+         "name": "BillAddressNote",
+         "caption": "Bill address note",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "BillAddressNote"
+      },
+      {
+         "name": "BillAddressPostalCode",
+         "caption": "Bill address postal code",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "BillAddressPostalCode"
+      },
+      {
+         "name": "BillAddressState",
+         "caption": "Bill address state",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "BillAddressState"
+      },
+      {
+         "name": "BirthDate",
+         "caption": "Birth date",
+         "type": "DateTime",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "BirthDate"
+      },
+      {
+         "name": "Campaign",
+         "caption": "Campaign",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "Name"
+      },
+      {
+         "name": "Class",
+         "caption": "Class",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "FullName"
+      },
+      {
+         "name": "CompanyName",
+         "caption": "Company name",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "CompanyName"
+      },
+      {
+         "name": "CPEPerYear",
+         "caption": "Cpeper year",
+         "type": "Decimal",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "CPEPerYear"
+      },
+      {
+         "name": "Currency",
+         "caption": "Currency",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "CurrencyCode"
+      },
+      {
+         "name": "CustomerType",
+         "caption": "Customer type",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "FullName"
+      },
+      {
+         "name": "DirectDial",
+         "caption": "Direct dial",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "DirectDial"
+      },
+      {
+         "name": "Email",
+         "caption": "Email",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "Email"
+      },
+      {
+         "name": "EmployeeType",
+         "caption": "Employee type",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "Name"
+      },
+      {
+         "name": "Entity",
+         "caption": "Entity",
+         "type": "DropDown",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "FullName"
+      },
+      {
+         "name": "EntityCreatedDate",
+         "caption": "Entity created date",
+         "type": "DateTime",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "CreatedDate"
+      },
+      {
+         "name": "EntityRecordID",
+         "caption": "Entity record id",
+         "type": "Integer",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "RecordID"
+      },
+      {
+         "name": "EntityType",
+         "caption": "Entity type",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "sEntityType"
+      },
+      {
+         "name": "Entity_RecordID",
+         "caption": "Entity_record id",
+         "type": "Integer",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "EntityRef"
+      },
+      {
+         "name": "FaceBookUserName",
+         "caption": "Face book user name",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "FaceBookUserName"
+      },
+      {
+         "name": "Fax",
+         "caption": "Fax",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "Fax"
+      },
+      {
+         "name": "FileB",
+         "caption": "File b",
+         "type": "FileAttachment",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "FileB"
+      },
+      {
+         "name": "FirstName",
+         "caption": "First name",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "FirstName"
+      },
+      {
+         "name": "FullName",
+         "caption": "Full name",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "FullName"
+      },
+      {
+         "name": "Gender",
+         "caption": "Gender",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "GenderName"
+      },
+      {
+         "name": "ImageB",
+         "caption": "Image b",
+         "type": "Picture",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "ImageB"
+      },
+      {
+         "name": "IMType",
+         "caption": "Imtype",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "IMType"
+      },
+      {
+         "name": "IMUserName",
+         "caption": "Imuser name",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "IMUserName"
+      },
+      {
+         "name": "InstagramUserName",
+         "caption": "Instagram user name",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "InstagramUserName"
+      },
+      {
+         "name": "IsActive",
+         "caption": "Is active",
+         "type": "YesNo",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "IsActive"
+      },
+      {
+         "name": "IsActiveResource",
+         "caption": "Is active resource",
+         "type": "YesNo",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "IsActiveResource"
+      },
+      {
+         "name": "IsContractor",
+         "caption": "Is contractor",
+         "type": "YesNo",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "IsContractor"
+      },
+      {
+         "name": "IsCPE",
+         "caption": "Is cpe",
+         "type": "YesNo",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "IsCPE"
+      },
+      {
+         "name": "IsEntityActive",
+         "caption": "Is entity active",
+         "type": "YesNo",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "IsActive"
+      },
+      {
+         "name": "IsGeneralBusiness",
+         "caption": "Is general business",
+         "type": "YesNo",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "IsGeneralBusiness"
+      },
+      {
+         "name": "IsLeadStatusOnly",
+         "caption": "Is lead status only",
+         "type": "YesNo",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "IsLeadStatusOnly"
+      },
+      {
+         "name": "IsManufacturing",
+         "caption": "Is manufacturing",
+         "type": "YesNo",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "IsManufacturing"
+      },
+      {
+         "name": "IsNonProfit",
+         "caption": "Is non profit",
+         "type": "YesNo",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "IsNonProfit"
+      },
+      {
+         "name": "IsOptOutOfBilling",
+         "caption": "Is opt out of billing",
+         "type": "YesNo",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "IsOptOutOfBilling"
+      },
+      {
+         "name": "IsOptOutOfMarketing",
+         "caption": "Is opt out of marketing",
+         "type": "YesNo",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "IsOptOutOfMarketing"
+      },
+      {
+         "name": "IsProfessionalServices",
+         "caption": "Is professional services",
+         "type": "YesNo",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "IsProfessionalServices"
+      },
+      {
+         "name": "IsResource",
+         "caption": "Is resource",
+         "type": "YesNo",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "IsResource"
+      },
+      {
+         "name": "IsRetail",
+         "caption": "Is retail",
+         "type": "YesNo",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "IsRetail"
+      },
+      {
+         "name": "LastActivityCompletedDate",
+         "caption": "Last activity completed date",
+         "type": "DateTime",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "ActualCompletedDate"
+      },
+      {
+         "name": "LastCompletedActivity",
+         "caption": "Last completed activity",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "RecordID"
+      },
+      {
+         "name": "LastModifiedDate",
+         "caption": "Last modified date",
+         "type": "DateTime",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "LastModifiedDate"
+      },
+      {
+         "name": "LastName",
+         "caption": "Last name",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "LastName"
+      },
+      {
+         "name": "LeadConvertedDate",
+         "caption": "Lead converted date",
+         "type": "DateTime",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "LeadConvertedDate"
+      },
+      {
+         "name": "LeadRating",
+         "caption": "Lead rating",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "LeadRating"
+      },
+      {
+         "name": "LeadSource",
+         "caption": "Lead source",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "LeadSource"
+      },
+      {
+         "name": "LeadStatus",
+         "caption": "Lead status",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "LeadStatus"
+      },
+      {
+         "name": "LinkedInPublicUserName",
+         "caption": "Linked in public user name",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "LinkedInPublicUserName"
+      },
+      {
+         "name": "Mobile",
+         "caption": "Mobile",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "Mobile"
+      },
+      {
+         "name": "Name",
+         "caption": "Name",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "Name"
+      },
+      {
+         "name": "NextActivityDueDate",
+         "caption": "Next activity due date",
+         "type": "DateTime",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "DueDateStart"
+      },
+      {
+         "name": "NextPendingActivity",
+         "caption": "Next pending activity",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "RecordID"
+      },
+      {
+         "name": "Note",
+         "caption": "Note",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "Note"
+      },
+      {
+         "name": "Pager",
+         "caption": "Pager",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "Pager"
+      },
+      {
+         "name": "ParentFullName",
+         "caption": "Parent full name",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "FullName"
+      },
+      {
+         "name": "Phone",
+         "caption": "Phone",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "Phone"
+      },
+      {
+         "name": "PortalPassword",
+         "caption": "Portal password",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "PortalPassword"
+      },
+      {
+         "name": "PortalUserName",
+         "caption": "Portal user name",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "PortalUserName"
+      },
+      {
+         "name": "PreferredPaymentMethod",
+         "caption": "Preferred payment method",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "Name"
+      },
+      {
+         "name": "PriceLevel",
+         "caption": "Price level",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "Name"
+      },
+      {
+         "name": "PrintAs",
+         "caption": "Print as",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "PrintAs"
+      },
+      {
+         "name": "ProAdvisorLink",
+         "caption": "Pro advisor link",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "ProAdvisorLink"
+      },
+      {
+         "name": "ProfileImage",
+         "caption": "Profile image",
+         "type": "Picture",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "ProfileImage"
+      },
+      {
+         "name": "RecordID",
+         "caption": "Record id",
+         "type": "Integer",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "RecordID"
+      },
+      {
+         "name": "ResaleNumber",
+         "caption": "Resale number",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "ResaleNumber"
+      },
+      {
+         "name": "SalesRep",
+         "caption": "Sales rep",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "Initial"
+      },
+      {
+         "name": "SalesRepRecordID",
+         "caption": "Sales rep record id",
+         "type": "Integer",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "RecordID"
+      },
+      {
+         "name": "SalesTaxCode",
+         "caption": "Sales tax code",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "Name"
+      },
+      {
+         "name": "SalesTaxItem",
+         "caption": "Sales tax item",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "FullName"
+      },
+      {
+         "name": "ShipAddressAddr1",
+         "caption": "Ship address addr1",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "ShipAddressAddr1"
+      },
+      {
+         "name": "ShipAddressAddr2",
+         "caption": "Ship address addr2",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "ShipAddressAddr2"
+      },
+      {
+         "name": "ShipAddressAddr3",
+         "caption": "Ship address addr3",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "ShipAddressAddr3"
+      },
+      {
+         "name": "ShipAddressAddr4",
+         "caption": "Ship address addr4",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "ShipAddressAddr4"
+      },
+      {
+         "name": "ShipAddressAddr5",
+         "caption": "Ship address addr5",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "ShipAddressAddr5"
+      },
+      {
+         "name": "ShipAddressCity",
+         "caption": "Ship address city",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "ShipAddressCity"
+      },
+      {
+         "name": "ShipAddressCountry",
+         "caption": "Ship address country",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "ShipAddressCountry"
+      },
+      {
+         "name": "ShipAddressNote",
+         "caption": "Ship address note",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "ShipAddressNote"
+      },
+      {
+         "name": "ShipAddressPostalCode",
+         "caption": "Ship address postal code",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "ShipAddressPostalCode"
+      },
+      {
+         "name": "ShipAddressState",
+         "caption": "Ship address state",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "ShipAddressState"
+      },
+      {
+         "name": "SkypeUserName",
+         "caption": "Skype user name",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "SkypeUserName"
+      },
+      {
+         "name": "SpecialType",
+         "caption": "Special type",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "SpecialType"
+      },
+      {
+         "name": "Sublevel",
+         "caption": "Sublevel",
+         "type": "Integer",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "Sublevel"
+      },
+      {
+         "name": "TagList",
+         "caption": "Tag list",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "TagList"
+      },
+      {
+         "name": "Terms",
+         "caption": "Terms",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "Name"
+      },
+      {
+         "name": "Title",
+         "caption": "Title",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "Title"
+      },
+      {
+         "name": "TotalBalance",
+         "caption": "Total balance",
+         "type": "Money",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "TotalBalance"
+      },
+      {
+         "name": "TwitterUserName",
+         "caption": "Twitter user name",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "TwitterUserName"
+      },
+      {
+         "name": "VendorType",
+         "caption": "Vendor type",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceModel": "Entity",
+         "sourceField": "FullName"
+      },
+      {
+         "name": "Website",
+         "caption": "Website",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "Website"
+      },
+      {
+         "name": "YoutubeChannel",
+         "caption": "Youtube channel",
+         "type": "Text",
+         "isVisible": true,
+         "isRequired": false,
+         "sourceField": "YoutubeChannel"
+      }
+   ],
+   "data": {
+      "AccountNumber": "",
+      "AltEmail": "",
+      "AltPhone": "",
+      "AssignedTo": "",
+      "AssignedToRecordID": "",
+      "Balance": "31415.9265",
+      "BillAddressAddr1": "",
+      "BillAddressAddr2": "",
+      "BillAddressAddr3": "",
+      "BillAddressAddr4": "",
+      "BillAddressAddr5": "",
+      "BillAddressCity": "",
+      "BillAddressCountry": "",
+      "BillAddressNote": "",
+      "BillAddressPostalCode": "",
+      "BillAddressState": "",
+      "BirthDate": "",
+      "Campaign": "",
+      "Class": "",
+      "CompanyName": "",
+      "CPEPerYear": "1234567.890123",
+      "Currency": "",
+      "CustomerType": "",
+      "DirectDial": "",
+      "Email": "notifications@github.com",
+      "EmployeeType": "",
+      "Entity": "mtran-method",
+      "Entity_RecordID": "323",
+      "EntityCreatedDate": "2021-04-12T08:56:39",
+      "EntityRecordID": "323",
+      "EntityType": "Customer Lead",
+      "FaceBookUserName": "",
+      "Fax": "",
+      "FileB": "",
+      "FileBFileName": "",
+      "FirstName": "mtran-method",
+      "FullName": "mtran-method",
+      "Gender": "",
+      "ImageB": "",
+      "ImageBFileName": "",
+      "IMType": "",
+      "IMUserName": "",
+      "InstagramUserName": "",
+      "IsActive": "True",
+      "IsActiveResource": "False",
+      "IsContractor": "False",
+      "IsCPE": "False",
+      "IsEntityActive": "True",
+      "IsGeneralBusiness": "False",
+      "IsLeadStatusOnly": "True",
+      "IsManufacturing": "False",
+      "IsNonProfit": "False",
+      "IsOptOutOfBilling": "False",
+      "IsOptOutOfMarketing": "False",
+      "IsProfessionalServices": "False",
+      "IsResource": "False",
+      "IsRetail": "False",
+      "LastActivityCompletedDate": "",
+      "LastCompletedActivity": "",
+      "LastModifiedDate": "2021-04-12T08:56:39",
+      "LastName": "",
+      "LeadConvertedDate": "",
+      "LeadRating": "",
+      "LeadSource": "",
+      "LeadStatus": "",
+      "LinkedInPublicUserName": "",
+      "Mobile": "",
+      "Name": "mtran-method",
+      "NextActivityDueDate": "",
+      "NextPendingActivity": "",
+      "Note": "",
+      "Pager": "",
+      "ParentFullName": "",
+      "Phone": "",
+      "PortalPassword": "",
+      "PortalUserName": "",
+      "PreferredPaymentMethod": "",
+      "PriceLevel": "",
+      "PrintAs": "",
+      "ProAdvisorLink": "",
+      "ProfileImage": "M-2.mci{{w=48}}",
+      "ProfileImageFileName": "M-2.mci",
+      "RecordID": "45",
+      "ResaleNumber": "",
+      "SalesRep": "",
+      "SalesRepRecordID": "323",
+      "SalesTaxCode": "",
+      "SalesTaxItem": "",
+      "ShipAddressAddr1": "",
+      "ShipAddressAddr2": "",
+      "ShipAddressAddr3": "",
+      "ShipAddressAddr4": "",
+      "ShipAddressAddr5": "",
+      "ShipAddressCity": "",
+      "ShipAddressCountry": "",
+      "ShipAddressNote": "",
+      "ShipAddressPostalCode": "",
+      "ShipAddressState": "",
+      "SkypeUserName": "",
+      "SpecialType": "Contact",
+      "Sublevel": "0",
+      "TagList": "",
+      "TenantID": "1",
+      "Terms": "",
+      "Title": "",
+      "TotalBalance": "0.0000",
+      "TwitterUserName": "",
+      "VendorType": "",
+      "Website": "",
+      "YoutubeChannel": ""
+   }
+}

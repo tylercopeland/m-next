@@ -1,0 +1,18 @@
+<button
+  class="mi-button {{customClass}}"
+  data-ng-style="{{customStyle}}"
+  data-ng-hide="hideButton"
+  data-ng-click="clickevent()"
+  data-ng-disabled="isDisabled || isLocalDisabled"
+  type="button"
+>
+  <span style="position: relative; top: 1px">
+    <svg-icon data-ng-if="hasIcon && !isRight" name="svgIconType" ng-attr-style="svgIconStyle" size="svgIconSize">
+    </svg-icon>
+  </span>
+  {{ name }}
+  <span style="position: relative; top: 1px">
+    <svg-icon data-ng-if="hasIcon && isRight" name="svgIconType" ng-attr-style="svgIconStyle" size="svgIconSize">
+    </svg-icon>
+  </span>
+</button>

@@ -1,0 +1,416 @@
+.mi-radio-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: normal;
+    line-height: 16px;
+    height: 16px;
+    // width: 100%;
+    &.is-centered {
+        display: inline-flex;
+    }
+
+    span {
+        display: block;
+        white-space: nowrap;
+        // overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 16px;
+        height: 16px;
+        order: 2;
+        // flex: 1;
+        //  width: 100%;
+    }
+
+    &.mi-checkbox-description {
+        flex-wrap: wrap;
+        height: initial;
+
+        &.margin-b-0 {
+          margin-bottom: 0px;
+        }
+
+        span {
+            flex-grow: 1;
+            flex: 1 1 60%;
+
+            &.checkbox-description {
+              margin-left: 22px;   
+              font-style: italic;
+            }
+        }
+    }
+
+    input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        margin: 0 !important;
+        width: 10px !important;
+        height: 10px !important;
+    }
+
+    &.has-alignment-right {
+        span {
+            order: 1;
+        }
+    }
+
+    &.is-disabled {
+        // border: 1px solid transparent;
+        span {
+            color: $grey;
+        }
+    }
+}
+
+.indeterminate {
+    border-width: 6px 3px !important;
+    background: transparent !important;
+}
+
+.indeterminate::after {
+    display: none !important;
+}
+
+.mi-radio-checkbox-indicator {
+    display: block;
+    width: 16px;
+    min-width: 16px;
+    max-width: 16px;
+    height: 16px;
+    min-height: 16px;
+    max-height: 16px;
+    //background: $card-border;
+    //border: 1px solid transparent;
+    border-radius: 3px;
+    margin-right: 6px;
+    order: 1;
+    background: transparent;
+    border: 1px solid $blue;
+
+    .has-alignment-right & {
+        order: 2;
+        margin-right: 0;
+        margin-left: 6px;
+    }
+
+   
+
+    .mi-radio & {
+        border-radius: 50%;
+    }
+    // Hover and focus
+    .mi-radio-checkbox:hover input ~ &,
+    .mi-radio-checkbox input:focus ~ & {
+        background: transparent;
+        border: 1px solid $blue;
+        box-shadow: 0px 0px 5px $blue;
+        -moz-box-shadow: 0 0 5px $blue;
+        -webkit-box-shadow: 0 0 5px $blue;
+        padding-left: 2px;
+    }
+    // Checked
+    .mi-radio-checkbox input:checked ~ & {
+        background: $blue;
+        padding-left: 0px;
+    }
+    // Hover when checked
+    .mi-radio-checkbox:hover input:not([disabled]):checked ~ &,
+    .mi-radio-checkbox input:checked:focus ~ & {
+        background: transparent !important;
+        border: 1px solid $blue;
+        box-shadow: 0px 0px 5px $blue;
+        -moz-box-shadow: 0 0 5px $blue;
+        -webkit-box-shadow: 0 0 5px $blue;
+        padding-left: 0px;
+
+        &:after {
+            border-color: $blue !important;
+        }
+    }
+    // Hide default browser input
+    .mi-radio-checkbox input:disabled ~ & {
+        background: $card-border;
+        opacity: 0.6;
+        pointer-events: none;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        display: none; // Hide check
+        .mi-radio-checkbox input:checked ~ & {
+            display: block; // Show check
+        }
+        // Partial Selection
+        .mi-checkbox.mi-half-check & {
+            position: relative;
+            left: 3px;
+            top: 6px;
+            width: 8px;
+            height: 2px;
+            border: solid $white;
+            border-width: 2px 0 0 0;
+            transform: rotate(0);
+        }
+        // Checkbox tick
+        .mi-checkbox & {
+            position: relative;
+            left: 5px;
+            top: 3px;
+            width: 4px;
+            height: 8px;
+            border: solid $white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        // Disabled tick colour
+        .mi-checkbox input:disabled ~ & {
+            border-color: $darkGrey;
+        }
+        // Radio button inner circle
+        .mi-radio & {
+            left: 5px;
+            top: 5px;
+            height: 6px;
+            width: 6px;
+            border-radius: 50%;
+            background: $white;
+        }
+        // Disabled circle colour
+        .mi-radio input:disabled ~ & {
+            background: $darkGrey;
+        }
+
+        .mi-radio input:checked:focus ~ &,
+        .mi-radio:hover input:checked ~ & {
+            background: $blue !important;
+        }
+    }
+}
+
+.mi-radiobutton-group {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-type: none;
+}
+
+.mi-radio-checkbox {
+  &.mi-checkbox,
+  &.mi-radio {
+    &.mi-text-bold, 
+    &.mi-text-bold span {
+      font-weight: 600 !important;
+    }
+
+    &.mi-text-bolder, 
+    &.mi-text-bolder span {
+      font-weight: 900 !important;
+    }
+  }
+}
+
+// Checkbox Colors
+.mi-checkbox {
+  // Checkbox Background Color
+  &.mi-checkbox-alert { 
+    input:checked ~ .mi-radio-checkbox-indicator { 
+      background: $red;
+    } 
+  }
+
+  &.mi-checkbox-primary { 
+    input:checked ~ .mi-radio-checkbox-indicator { 
+      background: $blue;
+    } 
+  }
+
+  &.mi-checkbox-navigation { 
+    input:checked ~ .mi-radio-checkbox-indicator { 
+      background: $dark-blue;
+    } 
+  }
+
+  &.mi-checkbox-caution { 
+    input:checked ~ .mi-radio-checkbox-indicator { 
+      background: $orange;
+    } 
+  }
+
+  &.mi-checkbox-success { 
+    input:checked ~ .mi-radio-checkbox-indicator { 
+      background: $green;
+    } 
+  }
+
+  &.mi-checkbox-grey { 
+    input:checked ~ .mi-radio-checkbox-indicator { 
+      background: $grey;
+    } 
+  }
+
+  &.mi-checkbox-dark-grey { 
+    input:checked ~ .mi-radio-checkbox-indicator { 
+      background: $darkGrey;
+    } 
+  }
+
+  &.mi-checkbox-silver { 
+    input:checked ~ .mi-radio-checkbox-indicator { 
+      background: $app-header;
+
+      &:after {
+        border-color: $black;
+      }
+    }
+
+    &:hover input:not([disabled]):checked ~ .mi-radio-checkbox-indicator,
+    input:checked:focus ~ .mi-radio-checkbox-indicator {
+      &:after {
+        border-color: $white;
+      }
+    }
+  }
+
+  // Checkbox label color
+  &.mi-checkbox-label-alert { 
+    span { 
+      color: $red;
+    } 
+  }
+
+  &.mi-checkbox-label-primary { 
+    span { 
+      color: $blue;
+    } 
+  }
+
+  &.mi-checkbox-label-navigation { 
+    span { 
+      color: $dark-blue;
+    } 
+  }
+
+  &.mi-checkbox-label-caution { 
+    span { 
+      color: $orange;
+    } 
+  }
+
+  &.mi-checkbox-label-success { 
+    span { 
+      color: $green;
+    } 
+  }
+
+  &.mi-checkbox-label-grey { 
+    span { 
+      color: $grey;
+    } 
+  }
+
+  &.mi-checkbox-label-gunmetal { // dark grey
+    span { 
+      color: $darkGrey;
+    } 
+  }
+
+  &.mi-checkbox-label-silver { 
+    span { 
+      color: $app-header;
+    } 
+  }
+
+  &.mi-checkbox-label-black { 
+    span { 
+      color: $black;
+    } 
+  }
+
+  &.mi-checkbox-label-white { 
+    span { 
+      color: $white;
+    } 
+  }
+
+}
+
+// Radio Colors
+.mi-radio-alert { 
+  .mi-radio {
+    input:checked ~ .mi-radio-checkbox-indicator { 
+      background: $red;
+    } 
+  }
+}
+
+.mi-radio-primary { 
+  .mi-radio {
+    input:checked ~ .mi-radio-checkbox-indicator { 
+      background: $blue;
+    } 
+  }
+}
+
+.mi-radio-navigation { 
+  .mi-radio {
+    input:checked ~ .mi-radio-checkbox-indicator { 
+      background: $dark-blue;
+    } 
+  }
+}
+
+.mi-radio-caution { 
+  .mi-radio {
+    input:checked ~ .mi-radio-checkbox-indicator { 
+      background: $orange;
+    } 
+  }
+}
+
+.mi-radio-success { 
+  .mi-radio {
+    input:checked ~ .mi-radio-checkbox-indicator { 
+      background: $green;
+    } 
+  }
+}
+
+.mi-radio-grey { 
+  .mi-radio {
+    input:checked ~ .mi-radio-checkbox-indicator { 
+      background: $grey;
+    } 
+  }
+}
+
+.mi-radio-dark-grey { 
+  .mi-radio {
+    input:checked ~ .mi-radio-checkbox-indicator { 
+      background: $darkGrey;
+    } 
+  }
+}
+
+.mi-radio-light-grey { 
+  .mi-radio {
+    input:checked ~ .mi-radio-checkbox-indicator { 
+      background: $app-header;
+
+      &:after {
+        background: $black;
+      }
+    }
+
+    &:hover input:not([disabled]):checked ~ .mi-radio-checkbox-indicator {
+      &:after {
+        background: $white;
+      }
+    }
+  }
+}

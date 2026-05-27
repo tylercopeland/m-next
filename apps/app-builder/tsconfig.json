@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2021", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "baseUrl": ".",
+    "types": ["jest", "node"],           // ✅ Let Jest provide global types, add Node types
+    "isolatedModules": true,            // ✅ Required for ts-jest in ESM mode
+    "typeRoots": ["../../node_modules/@types", "../../global.d.ts"]
+  },
+  "include": ["src/**/*", "../../global.d.ts", "stories/common/Toolbar.stories.tsx", "../../../MethodUI/public/react/pages/appBuilder/AppStudioCard.tsx"],
+  "exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,67 @@
+<div data-ng-controller="ValidateControlsCtrl">
+    <mi-action-description info="action"></mi-action-description>
+    <!-- Main Content Area -->
+    <div class="mi-ae-main-content">
+        <div class="mi-ae-row">
+          <div class="mi-ae-col-2" style="max-width: 100px">
+            <label class="mi-ae-label">Validate</label>
+          </div>
+          <div class="mi-ae-col-10">
+            <ul class="mi-radiobutton-group">
+              <li class="rad-horizontal">
+                <label for="radioAll" data-ng-click="toggleValidation(true)" class="mi-radio-checkbox mi-radio" ng-disabled="action.isReadOnly">
+                  <span>All controls</span>
+                  <input type="radio" id="radioAll" value="true" data-ng-checked="action.ValidateAllControls" ng-disabled="action.isReadOnly"> 
+                  <div class="mi-radio-checkbox-indicator"></div>
+                </label>
+              </li>
+              <li class="rad-horizontal">
+                <label for="radioSelected" data-ng-click="toggleValidation(false)" class="mi-radio-checkbox mi-radio" ng-disabled="action.isReadOnly">
+                  <span>Selected controls</span>
+                  <input type="radio" id="radioSelected" value="no" data-ng-checked="!action.ValidateAllControls" ng-disabled="action.isReadOnly">  
+                  <div class="mi-radio-checkbox-indicator"></div>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div data-ng-if="!action.ValidateAllControls">
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label mi-ae-margin-b-0">Select a control</label>
+                </div>
+            </div>
+
+            <div class="mi-ae-row table-row" data-ng-class="{'alt-row': $odd}" data-ng-repeat="item in action.ControlsToValidate">
+                <div class="mi-ae-col-6">
+                    <ui-select data-ng-model="item" theme="selectize" on-select="itemSelection($select.selected, item, $index)" ng-disabled="action.isReadOnly">
+                        <ui-select-match placeholder="Select...">{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="opt.id as opt in controlList | orderBy: 'name' | filter: controlFilter(item) | filter: $select.search">
+                            <span ng-bind-html="opt.name | highlight:$select.search"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+                <div class="mi-ae-col-8">
+                    <miae-button button-class="'ghost mi-button-clear mi-ae-margin-0'" name="validationCount(item)" clickevent="openValidation(item)"  is-read-only ="action.isReadOnly"></miae-button>
+                </div>
+                <div class="mi-ae-col-2">
+                    <miae-button 
+                      button-class="'ghost mi-button-clear mi-ae-margin-0'" 
+                      clickevent="removeControl($index)" 
+                      data-ng-if="!action.isReadOnly"
+                      svg-icon-type="'delete'" 
+                      svg-icon-size="14"></miae-button>
+                </div>
+            </div>
+            <miae-button name="' Add another control'" 
+                       data-ng-if="action.ControlsToValidate.length < controlTotal && !action.isReadOnly"
+                       button-class="'ghost mi-button-clear'"
+                       clickevent="addNewControl()"
+                       svg-icon-type="'circle-plus'" 
+                       svg-icon-size="14"></miae-button>
+        </div>
+    </div>
+    <!--/ Main Content Area -->
+     <mi-action-notes  is-read-only ="action.isReadOnly"></mi-action-notes>
+</div>

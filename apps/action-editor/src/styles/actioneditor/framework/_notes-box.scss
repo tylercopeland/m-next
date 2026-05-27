@@ -1,0 +1,17 @@
+.mi-ae-notes-box {
+  display: block;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 10px;
+
+  label {
+    height: 24px;
+    line-height: 24px;
+    margin-bottom: 0;
+  }
+
+  input {
+    margin-bottom: 0;
+  }
+}

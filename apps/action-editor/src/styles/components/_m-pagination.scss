@@ -1,0 +1,65 @@
+$pagination-size:      30px;
+
+.pagination {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    list-style-type: none;
+
+    li {
+        display: inline-block;
+        max-height: $pagination-size;
+        min-width: $pagination-size;
+        overflow: hidden;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2px;
+            line-height: $pagination-size - 5;
+            height: $pagination-size;
+            min-width: $pagination-size;
+            margin-right: 3px;
+            user-select: none;
+            apple-user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            color: $blue;
+            box-sizing: border-box;
+            border: 1px solid $white;
+
+            &.prev-next {
+                font-size: 12px;
+            }
+
+            &.is-bordered {
+                border: 1px solid $card-border;
+
+                &.is-active,
+                &:hover {
+                    background-color: $blue;
+                    border-color: $blue;
+                    color: $white;
+                }
+            }
+
+            &.is-disabled {
+                color: $m-dark-grey;
+                cursor: default;
+                border: 0;
+
+                &:hover {
+                    background-color: transparent;
+                    color: $m-dark-grey;
+                }
+            }
+        }
+
+        &:last-child a {
+            margin-right: 0;
+        }
+    }
+}

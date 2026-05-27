@@ -1,0 +1,241 @@
+<div class="mi-row">
+    <!-- Left Column -->
+    <div class="mi-ae-col-4">
+        <div class="mi-ae-header-block">
+            <h2 class="mi-ae-padding-r-0">Required Columns</h2>
+        </div>
+        <ul class="mi-ae-nosort-list">
+            <li data-ng-repeat="column in control.columns" data-ng-class="{'selected' : column.field === control.columns[layout.selectedColIdx].field }" data-ng-if="!column.canDelete">
+                <span data-ng-click="configureColumn($index)">{{ column.header }}</span>
+            </li>
+        </ul>
+        <div class="mi-ae-header-block">
+            <h2 class="mi-ae-padding-r-0">Your Columns</h2>
+        </div>
+        <ul class="mi-ae-nosort-list">
+            <li data-ng-repeat="column in control.columns" data-ng-class="{'selected' : column.field === control.columns[layout.selectedColIdx].field }" data-ng-if="column.canDelete">
+                <span data-ng-click="configureColumn($index)">{{ column.header }}</span>
+                <span><i class="mi-icon" data-ng-click="deleteColumn($event, $index)">
+                    <svg-icon name="'delete'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+                  </i></span>
+            </li>
+        </ul>
+        <div class="mi-ae-padding-t-15 mi-ae-padding-l-10">
+            <a data-ng-click="selectColumns()"><i class="mi-icon">
+                <svg-icon name="'circle-plus'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+              </i> Add another column</a>
+        </div>
+    </div>
+
+    <!-- Right Column Select -->
+    <div class="mi-ae-col-12" data-ng-if="layout.selectColumn">
+        <div class="mi-ae-header-block mi-ae-padding-l-0">
+            <h2>Add Another Column</h2>
+        </div>
+        <div class="search-box">
+            <i class="mi-icon">
+                <svg-icon name="'search'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+            </i>
+            <input type="search" placeholder="Search Fields" id="columnSearch" data-ng-model="layout.query">
+        </div>
+        <ul class="mi-ae-box-list">
+            <!-- Table Fields -->
+            <li data-ng-repeat="field in tableFields | filter:alreadyUsed | filter:layout.query | orderBy:'label'" data-ng-click="addColumn(field, false)">
+                <span><i class="mi-icon">
+                    <svg-icon name="{{ getIcon(field.value.fldTypeId) }}`" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+                </i></span>
+                <span>{{ field.label }}</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Right Column Configure -->
+    <div class="mi-ae-col-12" data-ng-if="!layout.selectColumn">
+        <div class="mi-ae-header-block mi-ae-padding-l-0">
+            <h2>Configure: {{ control.columns[layout.selectedColIdx].header }}</h2>
+        </div>
+        
+        <!-- Header Caption -->
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-4">
+                <label class="mi-ae-label">Header Caption</label>
+            </div>
+            <div class="mi-ae-col-8">
+                <input type="text" data-ng-model="control.columns[layout.selectedColIdx].header">
+            </div>
+        </div>
+
+        <!-- Mapping -->
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-4">
+                <label class="mi-ae-label">Mapping</label>
+            </div>
+            <div class="mi-ae-col-8">
+                <mi-complex-value 
+                    action="layout.action" 
+                    model="control.columns[layout.selectedColIdx].mapping" 
+                    allow="[5,6,9,10,11,12,14,15]" 
+                    disable-value="control.columns[layout.selectedColIdx].isLocked"></mi-complex-value>
+            </div>
+        </div>
+
+        <div class="mi-ae-header-block mi-ae-padding-l-0">
+            <h2>Format</h2>
+        </div>
+
+        <!-- Column Width -->
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-4">
+                <label class="mi-ae-label">Width (Tablet &amp; Desktop)</label>
+            </div>
+            <div class="mi-ae-col-3">
+                <ui-select data-ng-model="control.columns[layout.selectedColIdx].format.width" theme="selectize">
+                    <ui-select-match placeholder="Select a width">{{$select.selected.label}}</ui-select-match>
+                    <ui-select-choices repeat="opt.value as opt in options.colWidthSizes | filter: $select.search">
+                        <span ng-bind-html="opt.label | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+
+        <!-- Column Alignment -->
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-4">
+                <label class="mi-ae-label">Alignment (Tablet &amp; Desktop)</label>
+            </div>
+            <div class="mi-ae-col-3">
+                <ui-select data-ng-model="control.columns[layout.selectedColIdx].format.alignment" theme="selectize">
+                    <ui-select-match placeholder="Select an alignment">{{$select.selected.label}}</ui-select-match>
+                    <ui-select-choices repeat="opt.value as opt in options.colAlignment | filter: $select.search">
+                        <span ng-bind-html="opt.label | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+
+        <!-- Additional Field Formatting Options -->
+        <div data-ng-if="isNumericField(control.columns[layout.selectedColIdx].fieldType) && control.columns[layout.selectedColIdx].field !== 'RecordID'">
+            <!-- Format Type -->
+            <div class="mi-ae-row" data-ng-if="isNumericField(control.columns[layout.selectedColIdx].fieldType)">
+                <div class="mi-ae-col-4">
+                    <label class="mi-ae-label">Type</label>
+                </div>
+                <div class="mi-ae-col-3">
+                    <ui-select data-ng-model="control.columns[layout.selectedColIdx].format.type" theme="selectize">
+                        <ui-select-match placeholder="Select a format">{{$select.selected.label}}</ui-select-match>
+                        <ui-select-choices repeat="opt.value as opt in options.format | filter: $select.search">
+                            <span ng-bind-html="opt.label | highlight: $select.search"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+
+            <!-- Rounding Format -->
+            <div class="mi-ae-row" data-ng-if="control.columns[layout.selectedColIdx].format !== null && control.columns[layout.selectedColIdx].format !== ''">
+                <div class="mi-ae-col-4">
+                    <label class="mi-ae-label">Rounding</label>
+                </div>
+                <div class="mi-ae-col-3">
+                    <ui-select data-ng-model="control.columns[layout.selectedColIdx].format.rounding" theme="selectize">
+                        <ui-select-match placeholder="Select an rounding">{{$select.selected.label}}</ui-select-match>
+                        <ui-select-choices repeat="opt.value as opt in options.rounding | filter: $select.search">
+                            <span ng-bind-html="opt.label | highlight: $select.search"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+
+            <!-- Decimal and Number Separator Format -->
+            <div class="mi-ae-row" data-ng-if="control.columns[layout.selectedColIdx].format === 'Number'">
+                <div class="mi-ae-col-4">
+                    <label class="mi-ae-label">Separator</label>
+                </div>
+                <div class="mi-ae-col-3">
+                    <ui-select data-ng-model="control.columns[layout.selectedColIdx].format.separator" theme="selectize">
+                        <ui-select-match placeholder="Select an separator">{{$select.selected.label}}</ui-select-match>
+                        <ui-select-choices repeat="opt.value as opt in options.separator | filter: $select.search">
+                            <span ng-bind-html="opt.label | highlight: $select.search"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+
+            <!-- Money Formats -->
+            <div data-ng-if="control.columns[layout.selectedColIdx].format.type === 'Money'">
+                <!-- Decimal Point -->
+                <div class="mi-ae-row">
+                    <div class="mi-ae-col-4">
+                        <label class="mi-ae-label">Decimal Point</label>
+                    </div>
+                    <div class="mi-ae-col-3">
+                        <ui-select data-ng-model="control.columns[layout.selectedColIdx].format.decimalPoint" theme="selectize">
+                            <ui-select-match placeholder="Select decimal point">{{$select.selected.label}}</ui-select-match>
+                            <ui-select-choices repeat="opt.value as opt in options.moneySeparators | filter: $select.search">
+                                <span ng-bind-html="opt.label | highlight: $select.search"></span>
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+                </div>
+
+                <!-- Thousands Point -->
+                <div class="mi-ae-row">
+                    <div class="mi-ae-col-4">
+                        <label class="mi-ae-label">Thousands Separator</label>
+                    </div>
+                    <div class="mi-ae-col-3">
+                        <ui-select data-ng-model="control.columns[layout.selectedColIdx].format.thousands" theme="selectize">
+                            <ui-select-match placeholder="Select decimal point">{{$select.selected.label}}</ui-select-match>
+                            <ui-select-choices repeat="opt.value as opt in options.moneySeparators | filter: $select.search">
+                                <span ng-bind-html="opt.label | highlight: $select.search"></span>
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+                </div>
+
+                <!-- Symbol -->
+                <div class="mi-ae-row">
+                    <div class="mi-ae-col-4">
+                        <label class="mi-ae-label">Symbol</label>
+                    </div>
+                    <div class="mi-ae-col-3">
+                        <ui-select data-ng-model="control.columns[layout.selectedColIdx].format.money" theme="selectize">
+                            <ui-select-match placeholder="Select decimal point">{{$select.selected.label}}</ui-select-match>
+                            <ui-select-choices repeat="opt.value as opt in options.moneySymbols | filter: $select.search">
+                                <span ng-bind-html="opt.label | highlight: $select.search"></span>
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Read Only Column -->
+        <div class="mi-ae-row" data-ng-if="!control.columns[layout.selectedColIdx].isLocked">
+            <div class="mi-ae-col-8 mi-ae-col-offset-4">
+                <label class="mi-radio-checkbox mi-checkbox">
+                    <input type="checkbox" data-ng-model="control.columns[layout.selectedColIdx].readonly"> 
+                    <span class="mi-radio-checkbox-indicator"></span>
+                    <span style="font-weight: 600">This column is a read only column and can't be edited.</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="mi-ae-header-block mi-ae-padding-l-0">
+            <h2>Validation Options</h2>
+        </div>
+
+        <div class="mi-ae-header-block mi-ae-padding-l-0">
+            <h2>Actions</h2>
+        </div>
+
+        <!-- onChange Action -->
+        <div class="mi-ae-row" data-ng-if="!control.columns[layout.selectedColIdx].isLocked">
+            <div class="mi-ae-col-4">
+                <label class="mi-ae-label">Change Event</label>
+            </div>
+            <div class="mi-ae-col-6">
+                <mi-button button-class="'mi-button mi-button-clear ghost mi-ae-padding-l-0 mi-ae-padding-r-0 mi-ae-margin-0'" name="makeColumnButtonLabel()" clickevent="openColumnActionEditor()"></mi-button>
+            </div>
+        </div>
+    </div>
+</div>

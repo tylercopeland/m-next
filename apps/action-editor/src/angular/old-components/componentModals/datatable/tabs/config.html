@@ -1,0 +1,117 @@
+<!-- Base Table -->
+<div class="mi-ae-row">
+    <div class="mi-ae-col-3">
+        <label class="mi-ae-label">Select a base table</label>
+    </div>
+    <div class="mi-ae-col-6">
+        <ui-select data-ng-model="control.viewFriendlyName" theme="selectize" on-select="viewSelected($select.selected)">
+            <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+            <ui-select-choices repeat="opt.value as opt in tables | orderBy: 'label'| filter: $select.search">
+                <span ng-bind-html="opt.label"></span>
+            </ui-select-choices>
+        </ui-select>
+    </div>
+</div>
+
+<!-- Name -->
+<div class="mi-ae-row">
+    <div class="mi-ae-col-3">
+        <label class="mi-ae-label">Add Row Label</label>
+    </div>
+    <div class="mi-ae-col-6">
+        <input type="text" data-ng-model="control.addLabel">
+    </div>
+</div>
+
+<!-- Records Per Page -->
+<div class="mi-ae-row" data-ng-if="!control.hidePaging">
+    <div class="mi-ae-col-3">
+        <label class="mi-ae-label">Records Per Page</label>
+    </div>
+    <div class="mi-ae-col-3">
+        <ui-select data-ng-model="control.paging.pageSize" theme="selectize">
+            <ui-select-match placeholder="Select a value">{{$select.selected.label}}</ui-select-match>
+            <ui-select-choices repeat="opt.value as opt in options.pageSizeOptions | filter: $select.search">
+                <span ng-bind-html="opt.label | highlight: $select.search"></span>
+            </ui-select-choices>
+        </ui-select>
+    </div>
+</div>
+
+<!-- View Selector -->
+<div class="mi-ae-row">
+    <div class="mi-ae-col-3 mi-ae-col-offset-3">
+        <label class="mi-radio-checkbox mi-checkbox">
+            <input type="checkbox" data-ng-model="control.hideViewSelector"> 
+            <span class="mi-radio-checkbox-indicator"></span>
+            <span style="font-weight: 600">Hide View Selector</span>
+        </label>
+    </div>
+</div>
+
+<!-- Has Checkbox Selector -->
+<div class="mi-ae-row">
+    <div class="mi-ae-col-3 mi-ae-col-offset-3">
+        <label class="mi-radio-checkbox mi-checkbox">
+            <input type="checkbox" data-ng-model="control.isSelectable"> 
+            <span class="mi-radio-checkbox-indicator"></span>
+            <span style="font-weight: 600">Rows are selectable</span>
+        </label>
+    </div>
+</div>
+
+<!-- Show Divider Lines -->
+<div class="mi-ae-row">
+    <div class="mi-ae-col-3 mi-ae-col-offset-3">
+        <label class="mi-radio-checkbox mi-checkbox">
+            <input type="checkbox" data-ng-model="control.showDividers"> 
+            <span class="mi-radio-checkbox-indicator"></span>
+            <span style="font-weight: 600">Show column dividers</span>
+        </label>
+    </div>
+</div>
+
+<!-- Show Divider Lines -->
+<div class="mi-ae-row">
+    <div class="mi-ae-col-3 mi-ae-col-offset-3">
+        <label class="mi-radio-checkbox mi-checkbox">
+            <input type="checkbox" data-ng-model="control.hasZebraStripes"> 
+            <span class="mi-radio-checkbox-indicator"></span>
+            <span style="font-weight: 600">Use zebra stripes.</span>
+        </label>
+    </div>
+</div>
+
+<div class="mi-ae-header-block mi-ae-padding-l-0">
+    <h2>Actions</h2>
+</div>
+
+<!-- onSave Action -->
+<div class="mi-ae-row">
+    <div class="mi-ae-col-3">
+        <label class="mi-ae-label">Save Event</label>
+    </div>
+    <div class="mi-ae-col-6">
+        <mi-button button-class="'mi-button mi-button-clear ghost mi-ae-padding-l-0 mi-ae-padding-r-0 mi-ae-margin-0'" name="makeButtonLabel('onSave')" clickevent="openActionEditor('Row Save')"></mi-button>
+    </div>
+</div>
+
+<!-- onCancel Action -->
+<div class="mi-ae-row">
+    <div class="mi-ae-col-3">
+        <label class="mi-ae-label">Cancel Event</label>
+    </div>
+    <div class="mi-ae-col-6">
+        <mi-button button-class="'mi-button mi-button-clear ghost mi-ae-padding-l-0 mi-ae-padding-r-0 mi-ae-margin-0'" name="makeButtonLabel('onCancel')" clickevent="openActionEditor('Row Cancel')"></mi-button>
+    </div>
+</div>
+
+<!-- onDelete Action -->
+<div class="mi-ae-row">
+    <div class="mi-ae-col-3">
+        <label class="mi-ae-label">Delete Event</label>
+    </div>
+    <div class="mi-ae-col-6">
+        <mi-button button-class="'mi-button mi-button-clear ghost mi-ae-padding-l-0 mi-ae-padding-r-0 mi-ae-margin-0'" name="makeButtonLabel('onDelete')" clickevent="openActionEditor('Row Delete')"></mi-button>
+    </div>
+</div>

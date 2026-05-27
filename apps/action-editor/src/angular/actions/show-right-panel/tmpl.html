@@ -1,0 +1,21 @@
+<div data-ng-controller="ShowRightPanelCtrl">
+    <mi-action-description info="action"></mi-action-description>
+    <!-- Main Content Area -->
+    <div class="mi-ae-main-content">
+        <div class="mi-ae-row">
+          <div class="mi-ae-col-4">
+              <label class="mi-ae-label">Panel to display</label>
+          </div>
+          <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'Panel'">
+            <ui-select data-ng-model="action.Panel" theme="selectize" search-enabled="false" ng-disabled="action.isReadOnly">
+              <ui-select-match placeholder="Select a panel...">{{$select.selected.label}}</ui-select-match>
+              <ui-select-choices repeat="opt.value as opt in panels">
+                <span ng-bind-html="opt.label"></span>
+              </ui-select-choices>
+            </ui-select>
+          </div>
+        </div>
+    </div>
+    <!--/ Main Content Area -->
+     <mi-action-notes  is-read-only ="action.isReadOnly"></mi-action-notes>
+</div>

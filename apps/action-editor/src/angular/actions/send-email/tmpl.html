@@ -1,0 +1,311 @@
+<div data-ng-controller="SendEmailCtrl">
+  <mi-action-description info="action"></mi-action-description>
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content">
+    <h3>Sender & Recipient Details</h3>
+    <!-- From -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Sender's email address</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <mi-complex-value
+          action="action"
+          model="action.From"
+          allow="allow"
+          placeholder="'yourname@domain.com'"
+          allowed-session-values="['MethodIDEmail']"
+          is-read-only="action.isReadOnly"
+        ></mi-complex-value>
+      </div>
+      <div class="mi-ae-col-16 mi-ae-margin-b-20" ng-switch="isSenderManagementEnabled">
+        <div ng-switch-when="true">Please ensure that the email address you are using is verified and you have access. <a href="https://help.method.me/en/articles/8977177-communications-email-settings#h_216ac6c686" target="_blank">Learn more</a></div>
+        <div ng-switch-default>If the email address you are using is not authenticated, the email will be sent using the fallback address. <a href="https://help.method.me/en/articles/9085588-how-do-i-send-out-an-email-that-s-not-from-notifications-method-me" target="_blank">Learn more</a></div>
+      </div>
+    </div>
+    <!--/ From -->
+    <!-- From Name -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Sender's name</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <mi-complex-value action="action" model="action.FromName" allow="allow" placeholder="'Your Name'" is-read-only="action.isReadOnly"></mi-complex-value>
+      </div>
+    </div>
+    <!--/ From Name -->
+    <!-- Contact Record ID -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Contact Record ID</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <mi-complex-value
+          action="action"
+          model="action.ContactRecordId"
+          allow="allow"
+          placeholder="'Contact Record ID...'"
+          allowed-session-values="['MethodIDEmail']"
+          is-read-only="action.isReadOnly"
+        ></mi-complex-value>
+      </div>
+    </div>
+    <!-- Contact Record ID -->
+    <!-- To -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Recipient email address</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <mi-complex-value
+          action="action"
+          model="action.To"
+          allow="allow"
+          placeholder="'recipient@domain.com'"
+          allowed-session-values="['MethodIDEmail']"
+          is-read-only="action.isReadOnly"
+        ></mi-complex-value>
+      </div>
+    </div>
+    <!--/ To -->
+    <!-- Include Additional Options -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-10 mi-ae-col-push-4 text-right">
+        Include
+        <div class="mi-ae-inline-block">
+          <label class="mi-ae-margin-l-10 mi-radio-checkbox mi-checkbox">
+            <span>CC</span>
+            <input type="checkbox" data-ng-model="showCC" ng-disabled="action.isReadOnly" />
+            <div class="mi-radio-checkbox-indicator"></div>
+          </label>
+        </div>
+        <div class="mi-ae-inline-block">
+          <label class="mi-ae-margin-l-10 mi-radio-checkbox mi-checkbox">
+            <span>BCC</span>
+            <input type="checkbox" data-ng-model="showBCC" ng-disabled="action.isReadOnly" />
+            <div class="mi-radio-checkbox-indicator"></div>
+          </label>
+        </div>
+      </div>
+    </div>
+    <!--/ Include Additional Options -->
+    <!-- Yes CC -->
+    <div class="mi-ae-row" data-ng-if="showCC">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">CC's email address</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <mi-complex-value
+          action="action"
+          model="action.CC"
+          allow="allow"
+          placeholder="'recipient@domain.com'"
+          allowed-session-values="['MethodIDEmail']"
+          is-read-only="action.isReadOnly"
+        ></mi-complex-value>
+      </div>
+    </div>
+    <!--/ Yes CC -->
+    <!-- Yes BCC -->
+    <div class="mi-ae-row" data-ng-if="showBCC">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">BCC's email address</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <mi-complex-value
+          action="action"
+          model="action.BCC"
+          allow="allow"
+          placeholder="'recipient@domain.com'"
+          allowed-session-values="['MethodIDEmail']"
+          is-read-only="action.isReadOnly"
+        ></mi-complex-value>
+      </div>
+    </div>
+    <!--/ Yes BCC -->
+    <h3>Compose Email</h3>
+    <!-- Subject -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Subject</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <mi-complex-value action="action" model="action.Subject" allow="allow" is-read-only="action.isReadOnly"></mi-complex-value>
+      </div>
+    </div>
+    <!--/ Subject -->
+    <!-- Message -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Body</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <mi-complex-value action="action" model="action.Message" allow="allow" text-area="true" is-read-only="action.isReadOnly"></mi-complex-value>
+      </div>
+    </div>
+    <!--/ Message -->
+    <!-- Priority -->
+    <!--
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Priority</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <ui-select data-ng-model="action.Priority" theme="selectize" on-select="appSwitch()" enable-search="false">
+            <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+            <ui-select-choices repeat="opt.value as opt in priorityOptions | orderBy: 'label'">
+                <span ng-bind-html="opt.label"></span>
+            </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+    -->
+    <!--/ Priority -->
+    <!-- Email Type -->
+  <div style="padding-top:1em;">
+      <div class="mi-ae-row">
+          <div class="mi-ae-col-4">
+              <label class="mi-ae-label">Email Type</label>
+          </div>
+          <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'action.EmailType'">
+              <ul class="mi-radiobutton-group">
+                  <li class="rad-vertical mi-ae-padding-r-20">
+                      <!-- These values should map to the EmailType enum and the EmailTypeRef table in the database. -->
+                      <label class="mi-radio-checkbox mi-radio">
+                          <span>Marketing - This includes promotions, newsletters, discounts, etc.</span>
+                          <input type="radio" data-ng-model="action.EmailType" data-ng-value="1" ng-disabled="action.isReadOnly" />
+                          <div class="mi-radio-checkbox-indicator"></div>
+                      </label>
+                  </li>
+                  <li class="rad-vertical mi-ae-padding-r-20">
+                      <label class="mi-radio-checkbox mi-radio">
+                          <span>Transactional - This includes sales transactions, payment notifications, reminders, etc.</span>
+                          <input type="radio" data-ng-model="action.EmailType" data-ng-value="0" ng-disabled="action.isReadOnly" />
+                          <div class="mi-radio-checkbox-indicator"></div>
+                      </label>
+                  </li>
+              </ul>
+          </div>
+
+      </div>
+      <div class="mi-ae-row">
+          <div class="mi-ae-col-16">
+              <label> Note: An option to unsubscribe will be included on marketing emails</label>
+          </div>
+      </div>
+      <div class="mi-ae-row" data-ng-if="action.EmailType === 1">
+        <div class="mi-ae-col-16">
+            <label style="color:red;"> Email addresses added as CC or BCC will be split into individual emails and delivered separately</label>
+        </div>
+    </div>
+  </div>
+    <h3>Include Attachments</h3>
+    <div data-ng-repeat="item in action.Attachments">
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Attach from</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value
+            action="action"
+            model="item"
+            allow="allowAttach"
+            visible-controls="['DOC']"
+            placeholder="'http://domain.com/image.jpg'"
+            filter-controls="action.Attachments"
+            is-read-only="action.isReadOnly"
+          ></mi-complex-value>
+        </div>
+        <div class="mi-ae-col-2">
+          <miae-button 
+            button-class="'ghost mi-button-clear'" 
+            clickevent="removeItem($index)" 
+            data-ng-if="!action.isReadOnly"
+            svg-icon-type="'delete'" 
+            svg-icon-size="14"></miae-button>
+        </div>
+      </div>
+    </div>
+    <miae-button 
+      name="' Add an attachment'" 
+      button-class="'ghost mi-button-clear mi-ae-margin-0'" 
+      clickevent="addItem()" 
+      data-ng-if="!action.isReadOnly"
+      svg-icon-type="'circle-plus'" 
+      svg-icon-size="14"></miae-button>
+    <!--/ Email Type -->
+    <h3>Advanced</h3>
+    <!--/ Batch Name -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Batch Name</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <mi-complex-value
+          action="action"
+          model="action.BatchName"
+          allow="allow"
+          placeholder="'Batch Name...'"
+          allowed-session-values="['MethodIDEmail']"
+          is-read-only="action.isReadOnly"
+        ></mi-complex-value>
+      </div>
+    </div>
+    <!--/ Batch Name -->
+    <div data-ng-if="showAdvanced">
+    <div class="mi-ae-row" >
+      <div class="mi-ae-col-16">
+        <label class="mi-radio-checkbox mi-checkbox">
+          <span>Specify email server settings</span>
+          <input type="checkbox" data-ng-model="showAdvanced" ng-disabled="action.isReadOnly" />
+          <div class="mi-radio-checkbox-indicator"></div>
+        </label>
+      </div>
+    </div>
+    <div data-ng-if="showAdvanced">
+      <!-- Server -->
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Server</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value action="action" model="action.Server" allow="allow" placeholder="'smtp.domain.com'" is-read-only="action.isReadOnly"></mi-complex-value>
+        </div>
+      </div>
+      <!--/ Server -->
+      <!-- Username -->
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Username</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value action="action" model="action.Username" allow="allow" is-read-only="action.isReadOnly"> </mi-complex-value>
+        </div>
+      </div>
+      <!--/ Username -->
+      <!-- Password -->
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Password</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value action="action" model="action.Password" allow="allow" is-read-only="action.isReadOnly"></mi-complex-value>
+        </div>
+      </div>
+      <!--/ Password -->
+      <!-- Port -->
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Port</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value action="action" model="action.Port" allow="allow" is-read-only="action.isReadOnly"></mi-complex-value>
+        </div>
+      </div>
+      <!--/ Port -->
+    </div>
+  </div>
+</div>
+  <!--/ Main Content Area -->
+  <mi-action-notes is-read-only="action.isReadOnly"></mi-action-notes>
+</div>

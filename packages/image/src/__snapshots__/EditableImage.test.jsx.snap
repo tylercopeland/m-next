@@ -1,0 +1,5435 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image Corner Editing Mode renders with cornerEditing and caption 1`] = `
+.emotion-0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+}
+
+.emotion-4 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  border: none;
+  width: 100%;
+  height: 100%;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-4 focus {
+  outline: none;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border-radius: 3px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-6:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-8 {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: block; width: 100%; height: 100%;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        for=""
+        id="test-Caption"
+      >
+        Test Image
+      </div>
+      <div
+        class="emotion-4 emotion-5"
+        id="test-ImageWidget"
+        tabindex="-1"
+      >
+        <div
+          class="emotion-6 emotion-7"
+          tabindex="0"
+        >
+          <img
+            alt="image: Test Image"
+            class="emotion-8 emotion-9"
+            src="https://example.com/image.jpg"
+            tabindex="-1"
+            title=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Corner Editing Mode renders with cornerEditing and circle image 1`] = `
+.emotion-0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  border: none;
+  width: 100%;
+  height: 100%;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: undefinedpx;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-background-position: center;
+  background-position: center;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  background-image: url(https://example.com/image.jpg);
+}
+
+.emotion-2 body.user-is-tabbing:focus {
+  5: -;
+  6: -;
+  7: o;
+  8: u;
+  9: t;
+  10: l;
+  11: i;
+  12: n;
+  13: e;
+  14: -;
+  15: o;
+  16: f;
+  17: f;
+  18: s;
+  19: e;
+  20: t;
+  21: -;
+  22: b;
+  23: o;
+  24: x;
+  25: -;
+  26: s;
+  27: h;
+  28: a;
+  29: d;
+  30: o;
+  31: w;
+  32: -;
+  33: c;
+  34: o;
+  35: l;
+  36: o;
+  37: r;
+  40: w;
+  41: h;
+  42: i;
+  43: t;
+  44: e;
+  51: -;
+  52: -;
+  53: o;
+  54: u;
+  55: t;
+  56: l;
+  57: i;
+  58: n;
+  59: e;
+  60: -;
+  61: b;
+  62: o;
+  63: x;
+  64: -;
+  65: s;
+  66: h;
+  67: a;
+  68: d;
+  69: o;
+  70: w;
+  71: -;
+  72: c;
+  -webkit-73: o;
+  73: o;
+  74: l;
+  75: o;
+  76: r;
+  79: #;
+  80: 0;
+  81: D;
+  82: 7;
+  82: 7;
+  83: 1;
+  84: C;
+  85: 8;
+  92: b;
+  93: o;
+  94: x;
+  95: -;
+  96: s;
+  97: h;
+  98: a;
+  99: d;
+  100: o;
+  101: w;
+  104: 0;
+  106: 0;
+  108: 0;
+  110: 2;
+  111: p;
+  112: t;
+  114: v;
+  115: a;
+  116: r;
+  117: (;118:-;119:-;120:o;121:u;122:t;123:l;124:i;125:n;126:e;127:-;128:o;129:f;130:f;131:s;132:e;133:t;134:-;135:b;136:o;137:x;138:-;139:s;140:h;141:a;142:d;143:o;144:w;145:-;146:c;147:o;148:l;149:o;150:r;151:);
+  152: ,;
+  154: 0;
+  156: 0;
+  158: 0;
+  159: .;
+  160: 7;
+  161: 5;
+  162: p;
+  163: t;
+  165: 3;
+  166: .;
+  167: 5;
+  168: p;
+  169: t;
+  171: v;
+  172: a;
+  173: r;
+  174: (;175:-;176:-;177:o;178:u;179:t;180:l;181:i;182:n;183:e;184:-;185:b;186:o;187:x;188:-;189:s;190:h;191:a;192:d;193:o;194:w;195:-;196:c;197:o;198:l;199:o;200:r;201:);
+}
+
+<div>
+  <div
+    style="position: relative; display: block; width: 100%; height: 100%;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image: "
+        class="emotion-2 emotion-3"
+        height="undefinedpx"
+        role="img"
+        style="background-image: url(https://example.com/image.jpg);"
+        tabindex="0"
+        width="100%"
+      />
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Corner Editing Mode renders with cornerEditing and fitToContainer 1`] = `
+.emotion-0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  border: none;
+  width: 100%;
+  height: 100%;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border-radius: 3px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: block; width: 100%; height: 100%;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: "
+          class="emotion-4 emotion-5"
+          src="https://example.com/image.jpg"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Corner Editing Mode renders with cornerEditing without fitToContainer 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 200px;
+  height: 200px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: "
+          class="emotion-4 emotion-5"
+          src="https://example.com/image.jpg"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Avatar Image 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Test Image with initials, NR"
+        class="emotion-2 emotion-3"
+        color="#84F3FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NR
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Avatar Image 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image with initials, NR"
+        class="emotion-2 emotion-3"
+        color="#84F3FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NR
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Avatar Image Round 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Test Image with initials, NR"
+        class="emotion-2 emotion-3"
+        color="#84F3FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NR
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Avatar Image Round 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image with initials, NR"
+        class="emotion-2 emotion-3"
+        color="#84F3FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NR
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Avatar Image Round deafult 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Test Image with initials, NR"
+        class="emotion-2 emotion-3"
+        color="#84F3FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NR
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Avatar Image Round deafult 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image with initials, NR"
+        class="emotion-2 emotion-3"
+        color="#84F3FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NR
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Avatar Image Round is loading 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <span
+        aria-busy="true"
+        aria-live="polite"
+      >
+        <span
+          class="react-loading-skeleton"
+          style="width: 100%; height: 100%; border-radius: 50%;"
+        >
+          ‌
+        </span>
+        <br />
+      </span>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Avatar Image Round is loading 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <span
+        aria-busy="true"
+        aria-live="polite"
+      >
+        <span
+          class="react-loading-skeleton"
+          style="width: 100%; height: 100%; border-radius: 50%;"
+        >
+          ‌
+        </span>
+        <br />
+      </span>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Avatar Image is loading 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <span
+        aria-busy="true"
+        aria-live="polite"
+      >
+        <span
+          class="react-loading-skeleton"
+          style="width: 100%; height: 100%;"
+        >
+          ‌
+        </span>
+        <br />
+      </span>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Avatar Image is loading 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <span
+        aria-busy="true"
+        aria-live="polite"
+      >
+        <span
+          class="react-loading-skeleton"
+          style="width: 100%; height: 100%;"
+        >
+          ‌
+        </span>
+        <br />
+      </span>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Background 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  min-width: 0;
+  max-width: 100%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: Test Image"
+          class="emotion-4 emotion-5"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Background 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  min-width: 0;
+  max-width: 100%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: "
+          class="emotion-4 emotion-5"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Background Avatar 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  min-width: 0;
+  max-width: 100%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Test Image with initials, NR"
+        class="emotion-2 emotion-3"
+        color="#84F3FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NR
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Background Avatar 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  min-width: 0;
+  max-width: 100%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image with initials, NR"
+        class="emotion-2 emotion-3"
+        color="#84F3FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NR
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Default 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: "
+          class="emotion-4 emotion-5"
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDE3IDE3IiBmaWxsPSJub25lIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0JBQ0FEMCI+PHBhdGggZD0iTTE1LjE3ODggMTEuNDQxNEwxMS4wMzMzIDguNDcxNjhDMTEuMDIzNCA4LjQ2NDYzIDExLjAxMzMgOC40NTc5NCAxMS4wMDQgOC40NTAyQzEwLjk5MTEgOC40Mzk1IDEwLjk3NDggOC40MzM1OSAxMC45NTgxIDguNDMzNTlDMTAuOTQyMiA4LjQzMzY5IDEwLjkyNjYgOC40Mzg0NCAxMC45MTQxIDguNDQ4MjRMMy41MDg4NSAxNS40Mjg3SDE0LjUzNTJDMTQuNzA1NyAxNS40Mjg3IDE0Ljg2OTcgMTUuMzYwOCAxNC45OTAzIDE1LjI0MDJDMTUuMTEwOSAxNS4xMTk3IDE1LjE3ODggMTQuOTU1NyAxNS4xNzg4IDE0Ljc4NTJWMTEuNDQxNFpNNi42MDc0OCA1LjY0MjU4QzYuNjA3NDUgNS4zMjA1OCA2LjQ3ODczIDUuMDExODcgNi4yNTEwNCA0Ljc4NDE4QzYuMDIzMzMgNC41NTY1NCA1LjcxNDYyIDQuNDI4NzEgNS4zOTI2NCA0LjQyODcxQzUuMDcwNjQgNC40Mjg3NSA0Ljc2MTkzIDQuNTU2NDkgNC41MzQyNCA0Ljc4NDE4QzQuMzA2NTUgNS4wMTE4NyA0LjE3ODgxIDUuMzIwNTggNC4xNzg3NyA1LjY0MjU4QzQuMTc4NzcgNS45NjQ1NiA0LjMwNjYxIDYuMjczMjcgNC41MzQyNCA2LjUwMDk4QzQuNzYxOTMgNi43Mjg2NyA1LjA3MDY0IDYuODU3MzggNS4zOTI2NCA2Ljg1NzQyTDUuNTEyNzYgNi44NTA1OUM1Ljc5MDczIDYuODIyOTggNi4wNTE3OCA2LjcwMDIzIDYuMjUxMDQgNi41MDA5OEM2LjQ3ODc2IDYuMjczMjUgNi42MDc0OCA1Ljk2NDYzIDYuNjA3NDggNS42NDI1OFpNMTUuMTc4OCAyLjIxMzg3QzE1LjE3ODcgMi4wNDM1NCAxNS4xMTA3IDEuODgwMjUgMTQuOTkwMyAxLjc1OTc3QzE0Ljg2OTcgMS42MzkyMSAxNC43MDU3IDEuNTcxMjkgMTQuNTM1MiAxLjU3MTI5SDEuOTYzOTNDMS43OTM1MyAxLjU3MTM2IDEuNjMwMzIgMS42MzkyNyAxLjUwOTgzIDEuNzU5NzdDMS4zODkzMyAxLjg4MDI2IDEuMzIxNDIgMi4wNDM0NyAxLjMyMTM1IDIuMjEzODdWMTQuNzg1MkMxLjMyMTM1IDE0Ljk1NTcgMS4zODkyNyAxNS4xMTk3IDEuNTA5ODMgMTUuMjQwMkMxLjYzMDMxIDE1LjM2MDYgMS43OTM2IDE1LjQyODYgMS45NjM5MyAxNS40Mjg3SDIuMDUwODRMMTAuMjUwMSA3LjcwMjE1TDEwLjI3MjUgNy42ODE2NEwxMC4zNDc3IDcuNjI1QzEwLjUyNjQgNy41MDA5MiAxMC43MzkxIDcuNDMzNjggMTAuOTU4MSA3LjQzMzU5QzExLjE5NjIgNy40MzM1OSAxMS40MjY3IDcuNTEzNjUgMTEuNjE0MyA3LjY1OTE4SDExLjYxNTNMMTUuMTc4OCAxMC4yMTE5VjIuMjEzODdaTTcuNjA3NDggNS42NDI1OEM3LjYwNzQ4IDYuMjI5ODQgNy4zNzMzMyA2Ljc5Mjc1IDYuOTU4MDcgNy4yMDgwMUM2LjU5NDY3IDcuNTcxNDEgNi4xMTgzNiA3Ljc5NTQxIDUuNjExMzkgNy44NDU3TDUuMzkyNjQgNy44NTc0MkM0LjgwNTQyIDcuODU3MzggNC4yNDI0NCA3LjYyMzIzIDMuODI3MjEgNy4yMDgwMUMzLjQxMjA0IDYuNzkyNzYgMy4xNzg3NyA2LjIyOTc4IDMuMTc4NzcgNS42NDI1OEMzLjE3ODgxIDUuMDU1MzYgMy40MTE5OCA0LjQ5MjM3IDMuODI3MjEgNC4wNzcxNUM0LjI0MjQ0IDMuNjYxOTIgNC44MDU0MiAzLjQyODc1IDUuMzkyNjQgMy40Mjg3MUM1Ljk3OTg0IDMuNDI4NzEgNi41NDI4MiAzLjY2MTk4IDYuOTU4MDcgNC4wNzcxNUM3LjM3MzMgNC40OTIzNyA3LjYwNzQ1IDUuMDU1MzYgNy42MDc0OCA1LjY0MjU4Wk0xNi4xNzg4IDE0Ljc4NTJDMTYuMTc4OCAxNS4yMjA5IDE2LjAwNTQgMTUuNjM5MiAxNS42OTczIDE1Ljk0NzNDMTUuMzg5MiAxNi4yNTU0IDE0Ljk3MDkgMTYuNDI4NyAxNC41MzUyIDE2LjQyODdIMS45NjM5M0MxLjUyODM4IDE2LjQyODYgMS4xMTA4MSAxNi4yNTUyIDAuODAyNzk1IDE1Ljk0NzNDMC40OTQ3IDE1LjYzOTIgMC4zMjEzNSAxNS4yMjA5IDAuMzIxMzUgMTQuNzg1MlYyLjIxMzg3QzAuMzIxNDI0IDEuNzc4MjUgMC40OTQ3NjYgMS4zNjA3NiAwLjgwMjc5NSAxLjA1MjczQzEuMTEwODMgMC43NDQ3MDUgMS41MjgzMiAwLjU3MTM2MyAxLjk2MzkzIDAuNTcxMjg5SDE0LjUzNTJDMTQuOTcwOSAwLjU3MTI4OSAxNS4zODkyIDAuNzQ0NjM5IDE1LjY5NzMgMS4wNTI3M0MxNi4wMDUzIDEuMzYwNzUgMTYuMTc4NyAxLjc3ODMyIDE2LjE3ODggMi4yMTM4N1YxNC43ODUyWiIvPjwvZz48L3N2Zz4="
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Editable Image  uploading 1`] = `
+.emotion-0 {
+  height: 254px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.emotion-4 {
+  margin-right: 8px;
+  position: relative;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #BACAD0;
+}
+
+.emotion-6:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-6:focus {
+  outline: none;
+}
+
+.emotion-8 {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 8px;
+  line-height: 9px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #0D71C8;
+  padding: 0 1px;
+}
+
+.emotion-10 {
+  background-color: rgba(46, 198, 232, 0.1);
+  width: 100%;
+  height: 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(46, 198, 232, 0.1);
+}
+
+.emotion-12 {
+  height: 100%;
+  background: linear-gradient(89.99deg, #0e79d6 0%, #2ec7e8 99.99%);
+  border-radius: 8px;
+  width: 73%;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    style="width: 128px; height: 128px; cursor: pointer;"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <div
+        class="emotion-4 emotion-5"
+      >
+        <div
+          class=""
+        >
+          <span
+            class="emotion-6 emotion-7"
+            color="#BACAD0"
+            data-testid="svg-icon-wrapper-common-file-empty-alternate-v4"
+          >
+            <svg
+              aria-label="common-file-empty-alternate-v4 icon"
+              data-testid="svg-icon-svg-common-file-empty-alternate-v4"
+              fill="#BACAD0"
+              height="24px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="24px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M653.568 91.563l193.536 193.536c3.848 3.858 6.228 9.181 6.229 15.061l0 0v617.173c0 11.782-9.551 21.333-21.333 21.333v0h-640c-11.782 0-21.333-9.551-21.333-21.333v0-810.667c0-11.782 9.551-21.333 21.333-21.333v0h446.507c5.88 0.001 11.204 2.381 15.062 6.23l-0-0zM665.003 0h-494.336c-47.128 0-85.333 38.205-85.333 85.333v0 853.333c0 47.128 38.205 85.333 85.333 85.333v0h682.667c47.128 0 85.333-38.205 85.333-85.333v0-665.003c-0.003-11.781-4.78-22.446-12.501-30.165l-230.997-230.997c-7.719-7.722-18.384-12.499-30.165-12.501l-0.001-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+        <span
+          class="emotion-8 emotion-9"
+        >
+          jpg
+        </span>
+      </div>
+      <span
+        style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;"
+      >
+        Juvenile_Ragdoll.jpg
+      </span>
+    </div>
+    <div
+      class="emotion-10 emotion-11"
+    >
+      <div
+        class="emotion-12 emotion-13"
+      />
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Editable Image  with caption 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: Test"
+          class="emotion-4 emotion-5"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Editable Image expand uploading 1`] = `
+.emotion-0 {
+  height: 254px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.emotion-4 {
+  margin-right: 8px;
+  position: relative;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #BACAD0;
+}
+
+.emotion-6:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-6:focus {
+  outline: none;
+}
+
+.emotion-8 {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 8px;
+  line-height: 9px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #0D71C8;
+  padding: 0 1px;
+}
+
+.emotion-10 {
+  background-color: rgba(46, 198, 232, 0.1);
+  width: 100%;
+  height: 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(46, 198, 232, 0.1);
+}
+
+.emotion-12 {
+  height: 100%;
+  background: linear-gradient(89.99deg, #0e79d6 0%, #2ec7e8 99.99%);
+  border-radius: 8px;
+  width: 0%;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    style="width: 128px; height: 128px; cursor: pointer;"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <div
+        class="emotion-4 emotion-5"
+      >
+        <div
+          class=""
+        >
+          <span
+            class="emotion-6 emotion-7"
+            color="#BACAD0"
+            data-testid="svg-icon-wrapper-common-file-empty-alternate-v4"
+          >
+            <svg
+              aria-label="common-file-empty-alternate-v4 icon"
+              data-testid="svg-icon-svg-common-file-empty-alternate-v4"
+              fill="#BACAD0"
+              height="24px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="24px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M653.568 91.563l193.536 193.536c3.848 3.858 6.228 9.181 6.229 15.061l0 0v617.173c0 11.782-9.551 21.333-21.333 21.333v0h-640c-11.782 0-21.333-9.551-21.333-21.333v0-810.667c0-11.782 9.551-21.333 21.333-21.333v0h446.507c5.88 0.001 11.204 2.381 15.062 6.23l-0-0zM665.003 0h-494.336c-47.128 0-85.333 38.205-85.333 85.333v0 853.333c0 47.128 38.205 85.333 85.333 85.333v0h682.667c47.128 0 85.333-38.205 85.333-85.333v0-665.003c-0.003-11.781-4.78-22.446-12.501-30.165l-230.997-230.997c-7.719-7.722-18.384-12.499-30.165-12.501l-0.001-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+        <span
+          class="emotion-8 emotion-9"
+        >
+          jpg
+        </span>
+      </div>
+      <span
+        style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;"
+      >
+        Juvenile_Ragdoll.jpg
+      </span>
+    </div>
+    <div
+      class="emotion-10 emotion-11"
+    >
+      <div
+        class="emotion-12 emotion-13"
+      />
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Editable Image expand with caption 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: Test"
+          class="emotion-4 emotion-5"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Image  with caption 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: Test Image"
+          class="emotion-4 emotion-5"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Image 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: Test Image"
+          class="emotion-4 emotion-5"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Image 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: "
+          class="emotion-4 emotion-5"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Image round  with caption 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: undefinedpx;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-background-position: center;
+  background-position: center;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);
+}
+
+.emotion-2 body.user-is-tabbing:focus {
+  5: -;
+  6: -;
+  7: o;
+  8: u;
+  9: t;
+  10: l;
+  11: i;
+  12: n;
+  13: e;
+  14: -;
+  15: o;
+  16: f;
+  17: f;
+  18: s;
+  19: e;
+  20: t;
+  21: -;
+  22: b;
+  23: o;
+  24: x;
+  25: -;
+  26: s;
+  27: h;
+  28: a;
+  29: d;
+  30: o;
+  31: w;
+  32: -;
+  33: c;
+  34: o;
+  35: l;
+  36: o;
+  37: r;
+  40: w;
+  41: h;
+  42: i;
+  43: t;
+  44: e;
+  51: -;
+  52: -;
+  53: o;
+  54: u;
+  55: t;
+  56: l;
+  57: i;
+  58: n;
+  59: e;
+  60: -;
+  61: b;
+  62: o;
+  63: x;
+  64: -;
+  65: s;
+  66: h;
+  67: a;
+  68: d;
+  69: o;
+  70: w;
+  71: -;
+  72: c;
+  -webkit-73: o;
+  73: o;
+  74: l;
+  75: o;
+  76: r;
+  79: #;
+  80: 0;
+  81: D;
+  82: 7;
+  82: 7;
+  83: 1;
+  84: C;
+  85: 8;
+  92: b;
+  93: o;
+  94: x;
+  95: -;
+  96: s;
+  97: h;
+  98: a;
+  99: d;
+  100: o;
+  101: w;
+  104: 0;
+  106: 0;
+  108: 0;
+  110: 2;
+  111: p;
+  112: t;
+  114: v;
+  115: a;
+  116: r;
+  117: (;118:-;119:-;120:o;121:u;122:t;123:l;124:i;125:n;126:e;127:-;128:o;129:f;130:f;131:s;132:e;133:t;134:-;135:b;136:o;137:x;138:-;139:s;140:h;141:a;142:d;143:o;144:w;145:-;146:c;147:o;148:l;149:o;150:r;151:);
+  152: ,;
+  154: 0;
+  156: 0;
+  158: 0;
+  159: .;
+  160: 7;
+  161: 5;
+  162: p;
+  163: t;
+  165: 3;
+  166: .;
+  167: 5;
+  168: p;
+  169: t;
+  171: v;
+  172: a;
+  173: r;
+  174: (;175:-;176:-;177:o;178:u;179:t;180:l;181:i;182:n;183:e;184:-;185:b;186:o;187:x;188:-;189:s;190:h;191:a;192:d;193:o;194:w;195:-;196:c;197:o;198:l;199:o;200:r;201:);
+}
+
+<div>
+  <div
+    style="position: relative; display: block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image: Test Image"
+        class="emotion-2 emotion-3"
+        height="undefinedpx"
+        role="img"
+        style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);"
+        tabindex="0"
+        width="100%"
+      />
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Image round 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: undefinedpx;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-background-position: center;
+  background-position: center;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);
+}
+
+.emotion-2 body.user-is-tabbing:focus {
+  5: -;
+  6: -;
+  7: o;
+  8: u;
+  9: t;
+  10: l;
+  11: i;
+  12: n;
+  13: e;
+  14: -;
+  15: o;
+  16: f;
+  17: f;
+  18: s;
+  19: e;
+  20: t;
+  21: -;
+  22: b;
+  23: o;
+  24: x;
+  25: -;
+  26: s;
+  27: h;
+  28: a;
+  29: d;
+  30: o;
+  31: w;
+  32: -;
+  33: c;
+  34: o;
+  35: l;
+  36: o;
+  37: r;
+  40: w;
+  41: h;
+  42: i;
+  43: t;
+  44: e;
+  51: -;
+  52: -;
+  53: o;
+  54: u;
+  55: t;
+  56: l;
+  57: i;
+  58: n;
+  59: e;
+  60: -;
+  61: b;
+  62: o;
+  63: x;
+  64: -;
+  65: s;
+  66: h;
+  67: a;
+  68: d;
+  69: o;
+  70: w;
+  71: -;
+  72: c;
+  -webkit-73: o;
+  73: o;
+  74: l;
+  75: o;
+  76: r;
+  79: #;
+  80: 0;
+  81: D;
+  82: 7;
+  82: 7;
+  83: 1;
+  84: C;
+  85: 8;
+  92: b;
+  93: o;
+  94: x;
+  95: -;
+  96: s;
+  97: h;
+  98: a;
+  99: d;
+  100: o;
+  101: w;
+  104: 0;
+  106: 0;
+  108: 0;
+  110: 2;
+  111: p;
+  112: t;
+  114: v;
+  115: a;
+  116: r;
+  117: (;118:-;119:-;120:o;121:u;122:t;123:l;124:i;125:n;126:e;127:-;128:o;129:f;130:f;131:s;132:e;133:t;134:-;135:b;136:o;137:x;138:-;139:s;140:h;141:a;142:d;143:o;144:w;145:-;146:c;147:o;148:l;149:o;150:r;151:);
+  152: ,;
+  154: 0;
+  156: 0;
+  158: 0;
+  159: .;
+  160: 7;
+  161: 5;
+  162: p;
+  163: t;
+  165: 3;
+  166: .;
+  167: 5;
+  168: p;
+  169: t;
+  171: v;
+  172: a;
+  173: r;
+  174: (;175:-;176:-;177:o;178:u;179:t;180:l;181:i;182:n;183:e;184:-;185:b;186:o;187:x;188:-;189:s;190:h;191:a;192:d;193:o;194:w;195:-;196:c;197:o;198:l;199:o;200:r;201:);
+}
+
+<div>
+  <div
+    style="position: relative; display: block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image: Test Image"
+        class="emotion-2 emotion-3"
+        height="undefinedpx"
+        role="img"
+        style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);"
+        tabindex="0"
+        width="100%"
+      />
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Image round 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: undefinedpx;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-background-position: center;
+  background-position: center;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);
+}
+
+.emotion-2 body.user-is-tabbing:focus {
+  5: -;
+  6: -;
+  7: o;
+  8: u;
+  9: t;
+  10: l;
+  11: i;
+  12: n;
+  13: e;
+  14: -;
+  15: o;
+  16: f;
+  17: f;
+  18: s;
+  19: e;
+  20: t;
+  21: -;
+  22: b;
+  23: o;
+  24: x;
+  25: -;
+  26: s;
+  27: h;
+  28: a;
+  29: d;
+  30: o;
+  31: w;
+  32: -;
+  33: c;
+  34: o;
+  35: l;
+  36: o;
+  37: r;
+  40: w;
+  41: h;
+  42: i;
+  43: t;
+  44: e;
+  51: -;
+  52: -;
+  53: o;
+  54: u;
+  55: t;
+  56: l;
+  57: i;
+  58: n;
+  59: e;
+  60: -;
+  61: b;
+  62: o;
+  63: x;
+  64: -;
+  65: s;
+  66: h;
+  67: a;
+  68: d;
+  69: o;
+  70: w;
+  71: -;
+  72: c;
+  -webkit-73: o;
+  73: o;
+  74: l;
+  75: o;
+  76: r;
+  79: #;
+  80: 0;
+  81: D;
+  82: 7;
+  82: 7;
+  83: 1;
+  84: C;
+  85: 8;
+  92: b;
+  93: o;
+  94: x;
+  95: -;
+  96: s;
+  97: h;
+  98: a;
+  99: d;
+  100: o;
+  101: w;
+  104: 0;
+  106: 0;
+  108: 0;
+  110: 2;
+  111: p;
+  112: t;
+  114: v;
+  115: a;
+  116: r;
+  117: (;118:-;119:-;120:o;121:u;122:t;123:l;124:i;125:n;126:e;127:-;128:o;129:f;130:f;131:s;132:e;133:t;134:-;135:b;136:o;137:x;138:-;139:s;140:h;141:a;142:d;143:o;144:w;145:-;146:c;147:o;148:l;149:o;150:r;151:);
+  152: ,;
+  154: 0;
+  156: 0;
+  158: 0;
+  159: .;
+  160: 7;
+  161: 5;
+  162: p;
+  163: t;
+  165: 3;
+  166: .;
+  167: 5;
+  168: p;
+  169: t;
+  171: v;
+  172: a;
+  173: r;
+  174: (;175:-;176:-;177:o;178:u;179:t;180:l;181:i;182:n;183:e;184:-;185:b;186:o;187:x;188:-;189:s;190:h;191:a;192:d;193:o;194:w;195:-;196:c;197:o;198:l;199:o;200:r;201:);
+}
+
+<div>
+  <div
+    style="position: relative; display: block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image: "
+        class="emotion-2 emotion-3"
+        height="undefinedpx"
+        role="img"
+        style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);"
+        tabindex="0"
+        width="100%"
+      />
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Placeholder document 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: Test Image"
+          class="emotion-4 emotion-5"
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZyBzdHJva2U9IiNCQUNBRDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBmaWxsPSJub25lIj48cGF0aCBkPSJNMjEuNSAyMy41aC0xOXYtMjNoMTNsNiA2ek0xNS41LjV2Nmg2TTcuNSA3LjVoNC41TTcuNSAxMC41aDlNNy41IDEzLjVoM003LjUgMTYuNWgzTTcuNSAxOS41aDNNMTIuNSAxNC41di0xaDR2MU0xNC41IDEzLjV2Nk0xMyAxOS41aDMiLz48L2c+PC9zdmc+"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Placeholder document 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: "
+          class="emotion-4 emotion-5"
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZyBzdHJva2U9IiNCQUNBRDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBmaWxsPSJub25lIj48cGF0aCBkPSJNMjEuNSAyMy41aC0xOXYtMjNoMTNsNiA2ek0xNS41LjV2Nmg2TTcuNSA3LjVoNC41TTcuNSAxMC41aDlNNy41IDEzLjVoM003LjUgMTYuNWgzTTcuNSAxOS41aDNNMTIuNSAxNC41di0xaDR2MU0xNC41IDEzLjV2Nk0xMyAxOS41aDMiLz48L2c+PC9zdmc+"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Placeholder landscape circle 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: Test Image"
+          class="emotion-4 emotion-5"
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDE3IDE3IiBmaWxsPSJub25lIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0JBQ0FEMCI+PHBhdGggZD0iTTE1LjE3ODggMTEuNDQxNEwxMS4wMzMzIDguNDcxNjhDMTEuMDIzNCA4LjQ2NDYzIDExLjAxMzMgOC40NTc5NCAxMS4wMDQgOC40NTAyQzEwLjk5MTEgOC40Mzk1IDEwLjk3NDggOC40MzM1OSAxMC45NTgxIDguNDMzNTlDMTAuOTQyMiA4LjQzMzY5IDEwLjkyNjYgOC40Mzg0NCAxMC45MTQxIDguNDQ4MjRMMy41MDg4NSAxNS40Mjg3SDE0LjUzNTJDMTQuNzA1NyAxNS40Mjg3IDE0Ljg2OTcgMTUuMzYwOCAxNC45OTAzIDE1LjI0MDJDMTUuMTEwOSAxNS4xMTk3IDE1LjE3ODggMTQuOTU1NyAxNS4xNzg4IDE0Ljc4NTJWMTEuNDQxNFpNNi42MDc0OCA1LjY0MjU4QzYuNjA3NDUgNS4zMjA1OCA2LjQ3ODczIDUuMDExODcgNi4yNTEwNCA0Ljc4NDE4QzYuMDIzMzMgNC41NTY1NCA1LjcxNDYyIDQuNDI4NzEgNS4zOTI2NCA0LjQyODcxQzUuMDcwNjQgNC40Mjg3NSA0Ljc2MTkzIDQuNTU2NDkgNC41MzQyNCA0Ljc4NDE4QzQuMzA2NTUgNS4wMTE4NyA0LjE3ODgxIDUuMzIwNTggNC4xNzg3NyA1LjY0MjU4QzQuMTc4NzcgNS45NjQ1NiA0LjMwNjYxIDYuMjczMjcgNC41MzQyNCA2LjUwMDk4QzQuNzYxOTMgNi43Mjg2NyA1LjA3MDY0IDYuODU3MzggNS4zOTI2NCA2Ljg1NzQyTDUuNTEyNzYgNi44NTA1OUM1Ljc5MDczIDYuODIyOTggNi4wNTE3OCA2LjcwMDIzIDYuMjUxMDQgNi41MDA5OEM2LjQ3ODc2IDYuMjczMjUgNi42MDc0OCA1Ljk2NDYzIDYuNjA3NDggNS42NDI1OFpNMTUuMTc4OCAyLjIxMzg3QzE1LjE3ODcgMi4wNDM1NCAxNS4xMTA3IDEuODgwMjUgMTQuOTkwMyAxLjc1OTc3QzE0Ljg2OTcgMS42MzkyMSAxNC43MDU3IDEuNTcxMjkgMTQuNTM1MiAxLjU3MTI5SDEuOTYzOTNDMS43OTM1MyAxLjU3MTM2IDEuNjMwMzIgMS42MzkyNyAxLjUwOTgzIDEuNzU5NzdDMS4zODkzMyAxLjg4MDI2IDEuMzIxNDIgMi4wNDM0NyAxLjMyMTM1IDIuMjEzODdWMTQuNzg1MkMxLjMyMTM1IDE0Ljk1NTcgMS4zODkyNyAxNS4xMTk3IDEuNTA5ODMgMTUuMjQwMkMxLjYzMDMxIDE1LjM2MDYgMS43OTM2IDE1LjQyODYgMS45NjM5MyAxNS40Mjg3SDIuMDUwODRMMTAuMjUwMSA3LjcwMjE1TDEwLjI3MjUgNy42ODE2NEwxMC4zNDc3IDcuNjI1QzEwLjUyNjQgNy41MDA5MiAxMC43MzkxIDcuNDMzNjggMTAuOTU4MSA3LjQzMzU5QzExLjE5NjIgNy40MzM1OSAxMS40MjY3IDcuNTEzNjUgMTEuNjE0MyA3LjY1OTE4SDExLjYxNTNMMTUuMTc4OCAxMC4yMTE5VjIuMjEzODdaTTcuNjA3NDggNS42NDI1OEM3LjYwNzQ4IDYuMjI5ODQgNy4zNzMzMyA2Ljc5Mjc1IDYuOTU4MDcgNy4yMDgwMUM2LjU5NDY3IDcuNTcxNDEgNi4xMTgzNiA3Ljc5NTQxIDUuNjExMzkgNy44NDU3TDUuMzkyNjQgNy44NTc0MkM0LjgwNTQyIDcuODU3MzggNC4yNDI0NCA3LjYyMzIzIDMuODI3MjEgNy4yMDgwMUMzLjQxMjA0IDYuNzkyNzYgMy4xNzg3NyA2LjIyOTc4IDMuMTc4NzcgNS42NDI1OEMzLjE3ODgxIDUuMDU1MzYgMy40MTE5OCA0LjQ5MjM3IDMuODI3MjEgNC4wNzcxNUM0LjI0MjQ0IDMuNjYxOTIgNC44MDU0MiAzLjQyODc1IDUuMzkyNjQgMy40Mjg3MUM1Ljk3OTg0IDMuNDI4NzEgNi41NDI4MiAzLjY2MTk4IDYuOTU4MDcgNC4wNzcxNUM3LjM3MzMgNC40OTIzNyA3LjYwNzQ1IDUuMDU1MzYgNy42MDc0OCA1LjY0MjU4Wk0xNi4xNzg4IDE0Ljc4NTJDMTYuMTc4OCAxNS4yMjA5IDE2LjAwNTQgMTUuNjM5MiAxNS42OTczIDE1Ljk0NzNDMTUuMzg5MiAxNi4yNTU0IDE0Ljk3MDkgMTYuNDI4NyAxNC41MzUyIDE2LjQyODdIMS45NjM5M0MxLjUyODM4IDE2LjQyODYgMS4xMTA4MSAxNi4yNTUyIDAuODAyNzk1IDE1Ljk0NzNDMC40OTQ3IDE1LjYzOTIgMC4zMjEzNSAxNS4yMjA5IDAuMzIxMzUgMTQuNzg1MlYyLjIxMzg3QzAuMzIxNDI0IDEuNzc4MjUgMC40OTQ3NjYgMS4zNjA3NiAwLjgwMjc5NSAxLjA1MjczQzEuMTEwODMgMC43NDQ3MDUgMS41MjgzMiAwLjU3MTM2MyAxLjk2MzkzIDAuNTcxMjg5SDE0LjUzNTJDMTQuOTcwOSAwLjU3MTI4OSAxNS4zODkyIDAuNzQ0NjM5IDE1LjY5NzMgMS4wNTI3M0MxNi4wMDUzIDEuMzYwNzUgMTYuMTc4NyAxLjc3ODMyIDE2LjE3ODggMi4yMTM4N1YxNC43ODUyWiIvPjwvZz48L3N2Zz4="
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Placeholder landscape circle 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: "
+          class="emotion-4 emotion-5"
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDE3IDE3IiBmaWxsPSJub25lIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0JBQ0FEMCI+PHBhdGggZD0iTTE1LjE3ODggMTEuNDQxNEwxMS4wMzMzIDguNDcxNjhDMTEuMDIzNCA4LjQ2NDYzIDExLjAxMzMgOC40NTc5NCAxMS4wMDQgOC40NTAyQzEwLjk5MTEgOC40Mzk1IDEwLjk3NDggOC40MzM1OSAxMC45NTgxIDguNDMzNTlDMTAuOTQyMiA4LjQzMzY5IDEwLjkyNjYgOC40Mzg0NCAxMC45MTQxIDguNDQ4MjRMMy41MDg4NSAxNS40Mjg3SDE0LjUzNTJDMTQuNzA1NyAxNS40Mjg3IDE0Ljg2OTcgMTUuMzYwOCAxNC45OTAzIDE1LjI0MDJDMTUuMTEwOSAxNS4xMTk3IDE1LjE3ODggMTQuOTU1NyAxNS4xNzg4IDE0Ljc4NTJWMTEuNDQxNFpNNi42MDc0OCA1LjY0MjU4QzYuNjA3NDUgNS4zMjA1OCA2LjQ3ODczIDUuMDExODcgNi4yNTEwNCA0Ljc4NDE4QzYuMDIzMzMgNC41NTY1NCA1LjcxNDYyIDQuNDI4NzEgNS4zOTI2NCA0LjQyODcxQzUuMDcwNjQgNC40Mjg3NSA0Ljc2MTkzIDQuNTU2NDkgNC41MzQyNCA0Ljc4NDE4QzQuMzA2NTUgNS4wMTE4NyA0LjE3ODgxIDUuMzIwNTggNC4xNzg3NyA1LjY0MjU4QzQuMTc4NzcgNS45NjQ1NiA0LjMwNjYxIDYuMjczMjcgNC41MzQyNCA2LjUwMDk4QzQuNzYxOTMgNi43Mjg2NyA1LjA3MDY0IDYuODU3MzggNS4zOTI2NCA2Ljg1NzQyTDUuNTEyNzYgNi44NTA1OUM1Ljc5MDczIDYuODIyOTggNi4wNTE3OCA2LjcwMDIzIDYuMjUxMDQgNi41MDA5OEM2LjQ3ODc2IDYuMjczMjUgNi42MDc0OCA1Ljk2NDYzIDYuNjA3NDggNS42NDI1OFpNMTUuMTc4OCAyLjIxMzg3QzE1LjE3ODcgMi4wNDM1NCAxNS4xMTA3IDEuODgwMjUgMTQuOTkwMyAxLjc1OTc3QzE0Ljg2OTcgMS42MzkyMSAxNC43MDU3IDEuNTcxMjkgMTQuNTM1MiAxLjU3MTI5SDEuOTYzOTNDMS43OTM1MyAxLjU3MTM2IDEuNjMwMzIgMS42MzkyNyAxLjUwOTgzIDEuNzU5NzdDMS4zODkzMyAxLjg4MDI2IDEuMzIxNDIgMi4wNDM0NyAxLjMyMTM1IDIuMjEzODdWMTQuNzg1MkMxLjMyMTM1IDE0Ljk1NTcgMS4zODkyNyAxNS4xMTk3IDEuNTA5ODMgMTUuMjQwMkMxLjYzMDMxIDE1LjM2MDYgMS43OTM2IDE1LjQyODYgMS45NjM5MyAxNS40Mjg3SDIuMDUwODRMMTAuMjUwMSA3LjcwMjE1TDEwLjI3MjUgNy42ODE2NEwxMC4zNDc3IDcuNjI1QzEwLjUyNjQgNy41MDA5MiAxMC43MzkxIDcuNDMzNjggMTAuOTU4MSA3LjQzMzU5QzExLjE5NjIgNy40MzM1OSAxMS40MjY3IDcuNTEzNjUgMTEuNjE0MyA3LjY1OTE4SDExLjYxNTNMMTUuMTc4OCAxMC4yMTE5VjIuMjEzODdaTTcuNjA3NDggNS42NDI1OEM3LjYwNzQ4IDYuMjI5ODQgNy4zNzMzMyA2Ljc5Mjc1IDYuOTU4MDcgNy4yMDgwMUM2LjU5NDY3IDcuNTcxNDEgNi4xMTgzNiA3Ljc5NTQxIDUuNjExMzkgNy44NDU3TDUuMzkyNjQgNy44NTc0MkM0LjgwNTQyIDcuODU3MzggNC4yNDI0NCA3LjYyMzIzIDMuODI3MjEgNy4yMDgwMUMzLjQxMjA0IDYuNzkyNzYgMy4xNzg3NyA2LjIyOTc4IDMuMTc4NzcgNS42NDI1OEMzLjE3ODgxIDUuMDU1MzYgMy40MTE5OCA0LjQ5MjM3IDMuODI3MjEgNC4wNzcxNUM0LjI0MjQ0IDMuNjYxOTIgNC44MDU0MiAzLjQyODc1IDUuMzkyNjQgMy40Mjg3MUM1Ljk3OTg0IDMuNDI4NzEgNi41NDI4MiAzLjY2MTk4IDYuOTU4MDcgNC4wNzcxNUM3LjM3MzMgNC40OTIzNyA3LjYwNzQ1IDUuMDU1MzYgNy42MDc0OCA1LjY0MjU4Wk0xNi4xNzg4IDE0Ljc4NTJDMTYuMTc4OCAxNS4yMjA5IDE2LjAwNTQgMTUuNjM5MiAxNS42OTczIDE1Ljk0NzNDMTUuMzg5MiAxNi4yNTU0IDE0Ljk3MDkgMTYuNDI4NyAxNC41MzUyIDE2LjQyODdIMS45NjM5M0MxLjUyODM4IDE2LjQyODYgMS4xMTA4MSAxNi4yNTUyIDAuODAyNzk1IDE1Ljk0NzNDMC40OTQ3IDE1LjYzOTIgMC4zMjEzNSAxNS4yMjA5IDAuMzIxMzUgMTQuNzg1MlYyLjIxMzg3QzAuMzIxNDI0IDEuNzc4MjUgMC40OTQ3NjYgMS4zNjA3NiAwLjgwMjc5NSAxLjA1MjczQzEuMTEwODMgMC43NDQ3MDUgMS41MjgzMiAwLjU3MTM2MyAxLjk2MzkzIDAuNTcxMjg5SDE0LjUzNTJDMTQuOTcwOSAwLjU3MTI4OSAxNS4zODkyIDAuNzQ0NjM5IDE1LjY5NzMgMS4wNTI3M0MxNi4wMDUzIDEuMzYwNzUgMTYuMTc4NyAxLjc3ODMyIDE2LjE3ODggMi4yMTM4N1YxNC43ODUyWiIvPjwvZz48L3N2Zz4="
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Placeholder loader 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: Test Image"
+          class="emotion-4 emotion-5"
+          src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPScxLjEnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycgeG1sbnM6eGxpbms9J2h0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsnIHg9JzBweCcgeT0nMHB4JyB3aWR0aD0nMzBweCcgaGVpZ2h0PSczMHB4JyB2aWV3Qm94PScwIDAgNDAgNDAnIGVuYWJsZS1iYWNrZ3JvdW5kPSduZXcgMCAwIDQwIDQwJyB4bWw6c3BhY2U9J3ByZXNlcnZlJz4KPHBhdGggb3BhY2l0eT0nMC4yJyBmaWxsPScjOURBMUE1JyBkPSdNMjAuMjAxLDUuMTY5Yy04LjI1NCwwLTE0Ljk0Niw2LjY5Mi0xNC45NDYsMTQuOTQ2YzAsOC4yNTUsNi42OTIsMTQuOTQ2LDE0Ljk0NiwxNC45NDYgczE0Ljk0Ni02LjY5MSwxNC45NDYtMTQuOTQ2QzM1LjE0NiwxMS44NjEsMjguNDU1LDUuMTY5LDIwLjIwMSw1LjE2OXogTTIwLjIwMSwzMS43NDljLTYuNDI1LDAtMTEuNjM0LTUuMjA4LTExLjYzNC0xMS42MzQgYzAtNi40MjUsNS4yMDktMTEuNjM0LDExLjYzNC0xMS42MzRjNi40MjUsMCwxMS42MzMsNS4yMDksMTEuNjMzLDExLjYzNEMzMS44MzQsMjYuNTQxLDI2LjYyNiwzMS43NDksMjAuMjAxLDMxLjc0OXonLz4KPHBhdGggZmlsbD0nIzNFQTRFRicgZD0nTTI2LjAxMywxMC4wNDdsMS42NTQtMi44NjZjLTIuMTk4LTEuMjcyLTQuNzQzLTIuMDEyLTcuNDY2LTIuMDEyaDB2My4zMTJoMCBDMjIuMzIsOC40ODEsMjQuMzAxLDkuMDU3LDI2LjAxMywxMC4wNDd6Jz4KPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlVHlwZT0neG1sJyBhdHRyaWJ1dGVOYW1lPSd0cmFuc2Zvcm0nIHR5cGU9J3JvdGF0ZScgZnJvbT0nMCAyMCAyMCcgdG89JzM2MCAyMCAyMCcgZHVyPScxLjI1cycgcmVwZWF0Q291bnQ9J2luZGVmaW5pdGUnLz4KPC9wYXRoPjwvc3ZnPg=="
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Placeholder loader 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: "
+          class="emotion-4 emotion-5"
+          src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPScxLjEnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycgeG1sbnM6eGxpbms9J2h0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsnIHg9JzBweCcgeT0nMHB4JyB3aWR0aD0nMzBweCcgaGVpZ2h0PSczMHB4JyB2aWV3Qm94PScwIDAgNDAgNDAnIGVuYWJsZS1iYWNrZ3JvdW5kPSduZXcgMCAwIDQwIDQwJyB4bWw6c3BhY2U9J3ByZXNlcnZlJz4KPHBhdGggb3BhY2l0eT0nMC4yJyBmaWxsPScjOURBMUE1JyBkPSdNMjAuMjAxLDUuMTY5Yy04LjI1NCwwLTE0Ljk0Niw2LjY5Mi0xNC45NDYsMTQuOTQ2YzAsOC4yNTUsNi42OTIsMTQuOTQ2LDE0Ljk0NiwxNC45NDYgczE0Ljk0Ni02LjY5MSwxNC45NDYtMTQuOTQ2QzM1LjE0NiwxMS44NjEsMjguNDU1LDUuMTY5LDIwLjIwMSw1LjE2OXogTTIwLjIwMSwzMS43NDljLTYuNDI1LDAtMTEuNjM0LTUuMjA4LTExLjYzNC0xMS42MzQgYzAtNi40MjUsNS4yMDktMTEuNjM0LDExLjYzNC0xMS42MzRjNi40MjUsMCwxMS42MzMsNS4yMDksMTEuNjMzLDExLjYzNEMzMS44MzQsMjYuNTQxLDI2LjYyNiwzMS43NDksMjAuMjAxLDMxLjc0OXonLz4KPHBhdGggZmlsbD0nIzNFQTRFRicgZD0nTTI2LjAxMywxMC4wNDdsMS42NTQtMi44NjZjLTIuMTk4LTEuMjcyLTQuNzQzLTIuMDEyLTcuNDY2LTIuMDEyaDB2My4zMTJoMCBDMjIuMzIsOC40ODEsMjQuMzAxLDkuMDU3LDI2LjAxMywxMC4wNDd6Jz4KPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlVHlwZT0neG1sJyBhdHRyaWJ1dGVOYW1lPSd0cmFuc2Zvcm0nIHR5cGU9J3JvdGF0ZScgZnJvbT0nMCAyMCAyMCcgdG89JzM2MCAyMCAyMCcgZHVyPScxLjI1cycgcmVwZWF0Q291bnQ9J2luZGVmaW5pdGUnLz4KPC9wYXRoPjwvc3ZnPg=="
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Placeholder person 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: Test Image"
+          class="emotion-4 emotion-5"
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDE3IDE3IiBmaWxsPSJub25lIj48Y2lyY2xlIGN4PSI4LjUiIGN5PSI4LjUiIHI9IjcuNSIgc3Ryb2tlPSIjQkFDQUQwIiBzdHJva2Utd2lkdGg9IjAuOCIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjguNSIgY3k9IjYuMiIgcj0iMi4zIiBmaWxsPSIjQkFDQUQwIi8+PHBhdGggZD0iTTQuMiAxNS4yQzQuMiAxMi4wIDYuMSA5LjUgOC41IDkuNUMxMC45IDkuNSAxMi44IDEyLjAgMTIuOCAxNS4yIiBmaWxsPSIjQkFDQUQwIi8+PC9zdmc+"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Placeholder person 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: "
+          class="emotion-4 emotion-5"
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDE3IDE3IiBmaWxsPSJub25lIj48Y2lyY2xlIGN4PSI4LjUiIGN5PSI4LjUiIHI9IjcuNSIgc3Ryb2tlPSIjQkFDQUQwIiBzdHJva2Utd2lkdGg9IjAuOCIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjguNSIgY3k9IjYuMiIgcj0iMi4zIiBmaWxsPSIjQkFDQUQwIi8+PHBhdGggZD0iTTQuMiAxNS4yQzQuMiAxMi4wIDYuMSA5LjUgOC41IDkuNUMxMC45IDkuNSAxMi44IDEyLjAgMTIuOCAxNS4yIiBmaWxsPSIjQkFDQUQwIi8+PC9zdmc+"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: Test Image"
+          class="emotion-4 emotion-5"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: "
+          class="emotion-4 emotion-5"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile Avatar 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #91A2FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Test Image with initials, NL"
+        class="emotion-2 emotion-3"
+        color="#91A2FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NL
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile Avatar 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #91A2FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image with initials, NL"
+        class="emotion-2 emotion-3"
+        color="#91A2FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NL
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile Avatar default 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #91A2FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Test Image with initials, NL"
+        class="emotion-2 emotion-3"
+        color="#91A2FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NL
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile Avatar default 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #91A2FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image with initials, NL"
+        class="emotion-2 emotion-3"
+        color="#91A2FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NL
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile Avatar text size 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128;
+  height: 128;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #91A2FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Test Image with initials, NL"
+        class="emotion-2 emotion-3"
+        color="#91A2FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NL
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile Avatar text size 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128;
+  height: 128;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #91A2FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image with initials, NL"
+        class="emotion-2 emotion-3"
+        color="#91A2FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NL
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile Defaults 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: Test Image"
+          class="emotion-4 emotion-5"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile Defaults 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: "
+          class="emotion-4 emotion-5"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile with caption 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+}
+
+.emotion-4 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-4 focus {
+  outline: none;
+}
+
+.emotion-6 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-6:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-8 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        for=""
+        id="test-Caption"
+      >
+        Test Image
+      </div>
+      <div
+        class="emotion-4 emotion-5"
+        id="test-ImageWidget"
+        tabindex="-1"
+      >
+        <div
+          class="emotion-6 emotion-7"
+          tabindex="0"
+        >
+          <img
+            alt="image: Test Image"
+            class="emotion-8 emotion-9"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+            tabindex="-1"
+            title=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Tablet 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: Test Image"
+          class="emotion-4 emotion-5"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Tablet 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: "
+          class="emotion-4 emotion-5"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Tablet Defaults 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: Test Image"
+          class="emotion-4 emotion-5"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Tablet Defaults 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: "
+          class="emotion-4 emotion-5"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive size 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: Test Image"
+          class="emotion-4 emotion-5"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive size 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  overflow: visible;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        tabindex="0"
+      >
+        <img
+          alt="image: "
+          class="emotion-4 emotion-5"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive size Avatar 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Test Image with initials, NR"
+        class="emotion-2 emotion-3"
+        color="#84F3FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NR
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive size Avatar 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image with initials, NR"
+        class="emotion-2 emotion-3"
+        color="#84F3FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NR
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive size Avatar deafult 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Test Image with initials, NR"
+        class="emotion-2 emotion-3"
+        color="#84F3FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NR
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive size Avatar deafult 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image with initials, NR"
+        class="emotion-2 emotion-3"
+        color="#84F3FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NR
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive size Avatar text size 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128;
+  height: 128;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Test Image with initials, NR"
+        class="emotion-2 emotion-3"
+        color="#84F3FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NR
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive size Avatar text size 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128;
+  height: 128;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: inline-block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image with initials, NR"
+        class="emotion-2 emotion-3"
+        color="#84F3FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NR
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive size Avatar text size other 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Test Image with initials, NR"
+        class="emotion-2 emotion-3"
+        color="#84F3FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NR
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive size Avatar text size other 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+<div>
+  <div
+    style="position: relative; display: block;"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image with initials, NR"
+        class="emotion-2 emotion-3"
+        color="#84F3FF"
+        height="auto"
+        role="img"
+        tabindex="0"
+        width="100%"
+      >
+        NR
+      </div>
+    </div>
+  </div>
+  <div
+    class="dropzone"
+    role="button"
+    style="display: none;"
+    tabindex="0"
+  >
+    <input
+      autocomplete="off"
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+  </div>
+</div>
+`;

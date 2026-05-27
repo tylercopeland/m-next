@@ -1,0 +1,1059 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Body Snapshots default 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": .emotion-0 {
+  background-color: white;
+}
+
+.emotion-2 {
+  display: table-row;
+  opacity: 1;
+  background-color: transparent;
+  border: 1px solid #BACAD0;
+  box-sizing: border-box;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
+  min-height: 42px;
+  height: 42px;
+  outline: none;
+  border-width: 0 1px 1px 1px;
+}
+
+.emotion-2:hover {
+  background-color: transparent;
+  cursor: auto;
+}
+
+.emotion-2:hover td:not(.hideOutline) .hoverOutline {
+  border: 1px solid #BACAD0;
+  -webkit-transition: border-color 0.5s ease-in;
+  transition: border-color 0.5s ease-in;
+}
+
+.emotion-2 td:not(.hideOutline) .hoverOutline {
+  border: 1px solid transparent;
+  min-height: 42px;
+  height: 42px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-4 {
+  height: 40px;
+  text-align: left;
+  width: auto;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 4px 8px;
+  color: #2A394A;
+  pointer-events: auto;
+  vertical-align: middle;
+  border-right: 1px solid #BACAD0;
+  white-space: break-spaces;
+  padding-left: 8px;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
+  background-color: transparent;
+}
+
+.emotion-4:hover {
+  cursor: auto;
+}
+
+.emotion-4>div[method_type='DRP'] label {
+  display: none;
+  margin: 0;
+}
+
+.emotion-4>div[method_type='DRP'] .mi-autocomplete {
+  margin: 0;
+  position: unset!important;
+}
+
+body.user-is-tabbing .emotion-4:focus:not(.hideOutline) {
+  outline: 2px solid #0D71C8;
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+body.user-is-tabbing .emotion-4:focus.hideOutline {
+  outline: none;
+}
+
+.emotion-6 {
+  height: 40px;
+  text-align: right;
+  width: auto;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 4px 8px;
+  color: #2A394A;
+  pointer-events: auto;
+  vertical-align: middle;
+  border-right: 1px solid #BACAD0;
+  white-space: nowrap;
+  padding-left: 8px;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
+  background-color: transparent;
+}
+
+.emotion-6:hover {
+  cursor: auto;
+}
+
+.emotion-6>div[method_type='DRP'] label {
+  display: none;
+  margin: 0;
+}
+
+.emotion-6>div[method_type='DRP'] .mi-autocomplete {
+  margin: 0;
+  position: unset!important;
+}
+
+body.user-is-tabbing .emotion-6:focus:not(.hideOutline) {
+  outline: 2px solid #0D71C8;
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+body.user-is-tabbing .emotion-6:focus.hideOutline {
+  outline: none;
+}
+
+<body>
+    <div>
+      <table>
+        <tbody
+          class="emotion-0 emotion-1"
+        >
+          <tr
+            aria-rowindex="1"
+            class="emotion-2 emotion-3"
+            id="123-0"
+            tabindex="0"
+          >
+            <td
+              aria-colindex="1"
+              class="emotion-4 emotion-5"
+              id="123-0-0"
+            >
+              <span>
+                First
+              </span>
+            </td>
+            <td
+              aria-colindex="2"
+              class="emotion-6 emotion-5"
+              id="123-0-1"
+            >
+              <span>
+                1
+              </span>
+            </td>
+            <td
+              aria-colindex="3"
+              class="emotion-6 emotion-5"
+              id="123-0-2"
+            >
+              <span>
+                1
+              </span>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="2"
+            class="emotion-2 emotion-3"
+            id="123-1"
+            tabindex="0"
+          >
+            <td
+              aria-colindex="1"
+              class="emotion-4 emotion-5"
+              id="123-1-0"
+            >
+              <span />
+            </td>
+            <td
+              aria-colindex="2"
+              class="emotion-6 emotion-5"
+              id="123-1-1"
+            >
+              <span />
+            </td>
+            <td
+              aria-colindex="3"
+              class="emotion-6 emotion-5"
+              id="123-1-2"
+            >
+              <span />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>,
+  "container": .emotion-0 {
+  background-color: white;
+}
+
+.emotion-2 {
+  display: table-row;
+  opacity: 1;
+  background-color: transparent;
+  border: 1px solid #BACAD0;
+  box-sizing: border-box;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
+  min-height: 42px;
+  height: 42px;
+  outline: none;
+  border-width: 0 1px 1px 1px;
+}
+
+.emotion-2:hover {
+  background-color: transparent;
+  cursor: auto;
+}
+
+.emotion-2:hover td:not(.hideOutline) .hoverOutline {
+  border: 1px solid #BACAD0;
+  -webkit-transition: border-color 0.5s ease-in;
+  transition: border-color 0.5s ease-in;
+}
+
+.emotion-2 td:not(.hideOutline) .hoverOutline {
+  border: 1px solid transparent;
+  min-height: 42px;
+  height: 42px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-4 {
+  height: 40px;
+  text-align: left;
+  width: auto;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 4px 8px;
+  color: #2A394A;
+  pointer-events: auto;
+  vertical-align: middle;
+  border-right: 1px solid #BACAD0;
+  white-space: break-spaces;
+  padding-left: 8px;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
+  background-color: transparent;
+}
+
+.emotion-4:hover {
+  cursor: auto;
+}
+
+.emotion-4>div[method_type='DRP'] label {
+  display: none;
+  margin: 0;
+}
+
+.emotion-4>div[method_type='DRP'] .mi-autocomplete {
+  margin: 0;
+  position: unset!important;
+}
+
+body.user-is-tabbing .emotion-4:focus:not(.hideOutline) {
+  outline: 2px solid #0D71C8;
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+body.user-is-tabbing .emotion-4:focus.hideOutline {
+  outline: none;
+}
+
+.emotion-6 {
+  height: 40px;
+  text-align: right;
+  width: auto;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 4px 8px;
+  color: #2A394A;
+  pointer-events: auto;
+  vertical-align: middle;
+  border-right: 1px solid #BACAD0;
+  white-space: nowrap;
+  padding-left: 8px;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
+  background-color: transparent;
+}
+
+.emotion-6:hover {
+  cursor: auto;
+}
+
+.emotion-6>div[method_type='DRP'] label {
+  display: none;
+  margin: 0;
+}
+
+.emotion-6>div[method_type='DRP'] .mi-autocomplete {
+  margin: 0;
+  position: unset!important;
+}
+
+body.user-is-tabbing .emotion-6:focus:not(.hideOutline) {
+  outline: 2px solid #0D71C8;
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+body.user-is-tabbing .emotion-6:focus.hideOutline {
+  outline: none;
+}
+
+<div>
+    <table>
+      <tbody
+        class="emotion-0 emotion-1"
+      >
+        <tr
+          aria-rowindex="1"
+          class="emotion-2 emotion-3"
+          id="123-0"
+          tabindex="0"
+        >
+          <td
+            aria-colindex="1"
+            class="emotion-4 emotion-5"
+            id="123-0-0"
+          >
+            <span>
+              First
+            </span>
+          </td>
+          <td
+            aria-colindex="2"
+            class="emotion-6 emotion-5"
+            id="123-0-1"
+          >
+            <span>
+              1
+            </span>
+          </td>
+          <td
+            aria-colindex="3"
+            class="emotion-6 emotion-5"
+            id="123-0-2"
+          >
+            <span>
+              1
+            </span>
+          </td>
+        </tr>
+        <tr
+          aria-rowindex="2"
+          class="emotion-2 emotion-3"
+          id="123-1"
+          tabindex="0"
+        >
+          <td
+            aria-colindex="1"
+            class="emotion-4 emotion-5"
+            id="123-1-0"
+          >
+            <span />
+          </td>
+          <td
+            aria-colindex="2"
+            class="emotion-6 emotion-5"
+            id="123-1-1"
+          >
+            <span />
+          </td>
+          <td
+            aria-colindex="3"
+            class="emotion-6 emotion-5"
+            id="123-1-2"
+          >
+            <span />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Body Snapshots loading with data 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": .emotion-0 {
+  background-color: transparent;
+}
+
+.emotion-2 {
+  display: table-row;
+  opacity: 1;
+  background-color: transparent;
+  border: 1px solid #BACAD0;
+  box-sizing: border-box;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
+  min-height: 42px;
+  height: 42px;
+  outline: none;
+  border-width: 0 1px 1px 1px;
+}
+
+.emotion-2:hover {
+  background-color: transparent;
+  cursor: auto;
+}
+
+.emotion-2:hover td:not(.hideOutline) .hoverOutline {
+  border: 1px solid #BACAD0;
+  -webkit-transition: border-color 0.5s ease-in;
+  transition: border-color 0.5s ease-in;
+}
+
+.emotion-2 td:not(.hideOutline) .hoverOutline {
+  border: 1px solid transparent;
+  min-height: 42px;
+  height: 42px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-4 {
+  height: 40px;
+  text-align: left;
+  width: auto;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 4px 8px;
+  color: #2A394A;
+  pointer-events: auto;
+  vertical-align: middle;
+  border-right: 1px solid #BACAD0;
+  white-space: break-spaces;
+  padding-left: 8px;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
+  background-color: transparent;
+}
+
+.emotion-4:hover {
+  cursor: auto;
+}
+
+.emotion-4>div[method_type='DRP'] label {
+  display: none;
+  margin: 0;
+}
+
+.emotion-4>div[method_type='DRP'] .mi-autocomplete {
+  margin: 0;
+  position: unset!important;
+}
+
+body.user-is-tabbing .emotion-4:focus:not(.hideOutline) {
+  outline: 2px solid #0D71C8;
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+body.user-is-tabbing .emotion-4:focus.hideOutline {
+  outline: none;
+}
+
+.emotion-6 {
+  height: 40px;
+  text-align: right;
+  width: auto;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 4px 8px;
+  color: #2A394A;
+  pointer-events: auto;
+  vertical-align: middle;
+  border-right: 1px solid #BACAD0;
+  white-space: nowrap;
+  padding-left: 8px;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
+  background-color: transparent;
+}
+
+.emotion-6:hover {
+  cursor: auto;
+}
+
+.emotion-6>div[method_type='DRP'] label {
+  display: none;
+  margin: 0;
+}
+
+.emotion-6>div[method_type='DRP'] .mi-autocomplete {
+  margin: 0;
+  position: unset!important;
+}
+
+body.user-is-tabbing .emotion-6:focus:not(.hideOutline) {
+  outline: 2px solid #0D71C8;
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+body.user-is-tabbing .emotion-6:focus.hideOutline {
+  outline: none;
+}
+
+<body>
+    <div>
+      <table>
+        <tbody
+          class="emotion-0 emotion-1"
+        >
+          <tr
+            aria-rowindex="1"
+            class="emotion-2 emotion-3"
+            id="123-0"
+            tabindex="0"
+          >
+            <td
+              aria-colindex="1"
+              class="emotion-4 emotion-5"
+              id="123-0-0"
+            >
+              <span>
+                First
+              </span>
+            </td>
+            <td
+              aria-colindex="2"
+              class="emotion-6 emotion-5"
+              id="123-0-1"
+            >
+              <span>
+                1
+              </span>
+            </td>
+            <td
+              aria-colindex="3"
+              class="emotion-6 emotion-5"
+              id="123-0-2"
+            >
+              <span>
+                1
+              </span>
+            </td>
+          </tr>
+          <tr
+            aria-rowindex="2"
+            class="emotion-2 emotion-3"
+            id="123-1"
+            tabindex="0"
+          >
+            <td
+              aria-colindex="1"
+              class="emotion-4 emotion-5"
+              id="123-1-0"
+            >
+              <span />
+            </td>
+            <td
+              aria-colindex="2"
+              class="emotion-6 emotion-5"
+              id="123-1-1"
+            >
+              <span />
+            </td>
+            <td
+              aria-colindex="3"
+              class="emotion-6 emotion-5"
+              id="123-1-2"
+            >
+              <span />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>,
+  "container": .emotion-0 {
+  background-color: transparent;
+}
+
+.emotion-2 {
+  display: table-row;
+  opacity: 1;
+  background-color: transparent;
+  border: 1px solid #BACAD0;
+  box-sizing: border-box;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
+  min-height: 42px;
+  height: 42px;
+  outline: none;
+  border-width: 0 1px 1px 1px;
+}
+
+.emotion-2:hover {
+  background-color: transparent;
+  cursor: auto;
+}
+
+.emotion-2:hover td:not(.hideOutline) .hoverOutline {
+  border: 1px solid #BACAD0;
+  -webkit-transition: border-color 0.5s ease-in;
+  transition: border-color 0.5s ease-in;
+}
+
+.emotion-2 td:not(.hideOutline) .hoverOutline {
+  border: 1px solid transparent;
+  min-height: 42px;
+  height: 42px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-4 {
+  height: 40px;
+  text-align: left;
+  width: auto;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 4px 8px;
+  color: #2A394A;
+  pointer-events: auto;
+  vertical-align: middle;
+  border-right: 1px solid #BACAD0;
+  white-space: break-spaces;
+  padding-left: 8px;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
+  background-color: transparent;
+}
+
+.emotion-4:hover {
+  cursor: auto;
+}
+
+.emotion-4>div[method_type='DRP'] label {
+  display: none;
+  margin: 0;
+}
+
+.emotion-4>div[method_type='DRP'] .mi-autocomplete {
+  margin: 0;
+  position: unset!important;
+}
+
+body.user-is-tabbing .emotion-4:focus:not(.hideOutline) {
+  outline: 2px solid #0D71C8;
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+body.user-is-tabbing .emotion-4:focus.hideOutline {
+  outline: none;
+}
+
+.emotion-6 {
+  height: 40px;
+  text-align: right;
+  width: auto;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 4px 8px;
+  color: #2A394A;
+  pointer-events: auto;
+  vertical-align: middle;
+  border-right: 1px solid #BACAD0;
+  white-space: nowrap;
+  padding-left: 8px;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
+  background-color: transparent;
+}
+
+.emotion-6:hover {
+  cursor: auto;
+}
+
+.emotion-6>div[method_type='DRP'] label {
+  display: none;
+  margin: 0;
+}
+
+.emotion-6>div[method_type='DRP'] .mi-autocomplete {
+  margin: 0;
+  position: unset!important;
+}
+
+body.user-is-tabbing .emotion-6:focus:not(.hideOutline) {
+  outline: 2px solid #0D71C8;
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+body.user-is-tabbing .emotion-6:focus.hideOutline {
+  outline: none;
+}
+
+<div>
+    <table>
+      <tbody
+        class="emotion-0 emotion-1"
+      >
+        <tr
+          aria-rowindex="1"
+          class="emotion-2 emotion-3"
+          id="123-0"
+          tabindex="0"
+        >
+          <td
+            aria-colindex="1"
+            class="emotion-4 emotion-5"
+            id="123-0-0"
+          >
+            <span>
+              First
+            </span>
+          </td>
+          <td
+            aria-colindex="2"
+            class="emotion-6 emotion-5"
+            id="123-0-1"
+          >
+            <span>
+              1
+            </span>
+          </td>
+          <td
+            aria-colindex="3"
+            class="emotion-6 emotion-5"
+            id="123-0-2"
+          >
+            <span>
+              1
+            </span>
+          </td>
+        </tr>
+        <tr
+          aria-rowindex="2"
+          class="emotion-2 emotion-3"
+          id="123-1"
+          tabindex="0"
+        >
+          <td
+            aria-colindex="1"
+            class="emotion-4 emotion-5"
+            id="123-1-0"
+          >
+            <span />
+          </td>
+          <td
+            aria-colindex="2"
+            class="emotion-6 emotion-5"
+            id="123-1-1"
+          >
+            <span />
+          </td>
+          <td
+            aria-colindex="3"
+            class="emotion-6 emotion-5"
+            id="123-1-2"
+          >
+            <span />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Body Snapshots loading without data 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": .emotion-0 {
+  background-color: transparent;
+}
+
+<body>
+    <div>
+      <table>
+        <tbody
+          class="emotion-0 emotion-1"
+        />
+      </table>
+    </div>
+  </body>,
+  "container": .emotion-0 {
+  background-color: transparent;
+}
+
+<div>
+    <table>
+      <tbody
+        class="emotion-0 emotion-1"
+      />
+    </table>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Body Snapshots no results 1`] = `
+.emotion-0 {
+  background-color: white;
+}
+
+.emotion-2 {
+  text-align: center;
+  font-size: 16px;
+  color: #0F1B31;
+  font-weight: 600;
+  height: 60px;
+  letter-spacing: 1px;
+  border: 1px solid #BACAD0;
+}
+
+<div>
+  <table>
+    <tbody
+      class="emotion-0 emotion-1"
+    >
+      <tr
+        id="123-NO-RESULTS-FOUND"
+      >
+        <td
+          class="emotion-2 emotion-3"
+          colspan="1000"
+        >
+          No Results Found
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

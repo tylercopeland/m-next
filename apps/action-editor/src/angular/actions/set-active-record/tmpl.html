@@ -1,0 +1,22 @@
+<div data-ng-controller="SetActiveRecordCtl">
+    <mi-action-description info="action"></mi-action-description>
+
+    <!-- Main Content Area -->
+    <div class="mi-ae-main-content">
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-4">
+                <label class="mi-ae-label">Set this Active RecordID</label>
+            </div>
+            <div class="mi-ae-col-8">
+                <mi-complex-value action="action"
+                                  model="action.ActiveRecordId"
+                                  allow="allow"
+                                  included-types="[1]" 
+                                  force-allow="[0, 2]" 
+                                  allowed-control-types="[2, 'TXT', 'GRD']" is-read-only ="action.isReadOnly"></mi-complex-value>
+            </div>
+        </div>
+    </div>
+    <!--/ Main Content Area -->
+     <mi-action-notes  is-read-only ="action.isReadOnly"></mi-action-notes>
+</div>

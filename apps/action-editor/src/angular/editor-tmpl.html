@@ -1,0 +1,359 @@
+<div id="actionEditorModal" class="mi-ae-framework" data-ng-click="closePanels()">
+  <!-- Side Navigation Panel -->
+  <aside
+    class="mi-ae-framework-sidebar"
+    data-ng-class="{'opened': layout.panels.leftOpen}"
+    data-ng-click="$event.stopPropagation()"
+  >
+    <div class="logo-block">
+      <svg-icon name="'logo'" ng-attr-style="svgIconStyle" size="20"> </svg-icon>
+    </div>
+    <div class="search-box">
+      <i class="mi-icon">
+        <svg-icon name="'search'" ng-attr-style="svgIconStyle" size="14"> </svg-icon>
+      </i>
+      <input type="search" placeholder="Search" id="aeControlSearch" data-ng-model="layout.query.controls" />
+    </div>
+
+    <div class="control-wrapper">
+      <ul class="screen-controls">
+        <!-- Screen Control Loop -->
+        <li data-ng-repeat="menu in editor.menu" data-ng-class="{'closed': !menu.open}">
+          <span class="section-title" data-ng-click="menu.open = !menu.open">
+            <i class="mi-icon">
+              <svg-icon name="menu.open ? 'box-minus' : 'box-plus'" ng-attr-style="svgIconStyle" size="14"> </svg-icon>
+            </i>
+            {{ menu.name }}
+          </span>
+          <ul>
+            <li
+              data-ng-repeat="control in menu.controls | filter:layout.query.controls"
+              data-ng-class="{'closed': !control.open}"
+            >
+              <span class="control-name" data-ng-click="control.open = !control.open">
+                <i class="mi-icon">
+                  <svg-icon name="'dropdown'" ng-attr-style="svgIconStyle" size="14"> </svg-icon>
+                </i>
+                {{ control.name }}
+              </span>
+              <ul class="control-actions">
+                <li
+                  data-ng-repeat="event in control.events"
+                  data-ng-click="loadSelectedEvent(control.id, event.name, false, true)"
+                  data-ng-class="{'active':editor.selectedControl.id === control.id && editor.selectedControl.func === event.func}"
+                >
+                  {{ event.name }}
+                  <strong>({{ (event.actionSet === null) ? "0" : event.actionSet.Actions.length }})</strong>
+                </li>
+
+                <li data-ng-if="control.columns.length > 0"><strong>Columns</strong></li>
+
+                <li
+                  data-ng-repeat="event in control.columns"
+                  data-ng-click="loadSelectedEvent(control.id, $index, true, true)"
+                  data-ng-class="{'active':editor.selectedControl.id === control.id && editor.selectedControl.func === event.func}"
+                >
+                  &nbsp;&mdash;&nbsp;{{ event.name }}
+                  <strong>({{ (event.actionSet === null) ? "0" : event.actionSet.Actions.length }})</strong>
+                </li>
+
+                <li data-ng-if="control.buttons.length > 0"><strong>Buttons</strong></li>
+
+                <li
+                  data-ng-repeat="event in control.buttons"
+                  data-ng-click="loadSelectedEvent(control.id, $index, true, true)"
+                  data-ng-class="{'active':editor.selectedControl.id === control.id && editor.selectedControl.func === event.func}"
+                >
+                  &nbsp;&mdash;&nbsp;{{ event.name }}
+                  <strong>({{ (event.actionSet === null) ? "0" : event.actionSet.Actions.length }})</strong>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <!--/ Screen Control Loop -->
+
+        <!-- Screen Events -->
+        <li data-ng-class="{'closed': !layout.showScreenEvents}">
+          <span class="section-title" data-ng-click="layout.showScreenEvents = !layout.showScreenEvents">
+            <i class="mi-icon">
+              <svg-icon
+                name="layout.showScreenEvents ? 'box-minus' : 'box-plus'"
+                size="14"
+                ng-attr-style="svgIconStyle"
+              >
+              </svg-icon>
+            </i>
+            Screen Events
+          </span>
+          <ul>
+            <li>
+              <ul class="control-actions">
+                <li
+                  data-ng-repeat="event in editor.screenEvents"
+                  data-ng-click="loadSelectedEvent('Screen', event.name, null, true)"
+                  data-ng-class="{'active':editor.selectedControl.id === event.name && editor.selectedControl.func === event.func}"
+                >
+                  {{ event.name }}
+                  <strong>({{ (event.actionSet === null) ? "0" : event.actionSet.Actions.length }})</strong>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <!--/ Screen Events -->
+      </ul>
+    </div>
+  </aside>
+  <!--/ Side Navigation Panel -->
+
+  <!-- Side Helper Panel -->
+  <aside
+    class="mi-ae-framework-helper"
+    data-ng-class="{'opened': layout.panels.rightOpen}"
+    data-ng-click="$event.stopPropagation()"
+  >
+    <h2>Learn more</h2>
+
+    <p data-ng-bind-html="action.config.description.long"></p>
+
+    <ul class="mi-ae-framework-helper-links" data-ng-if="action.config.learnMore.length > 0">
+      <li data-ng-repeat="link in action.config.learnMore">
+        <a href="{{ link[1] }}" target="_blank">{{ link[0] }}</a>
+      </li>
+    </ul>
+  </aside>
+  <!--/ Side Helper Panel -->
+
+  <!-- Top Header -->
+  <header class="mi-ae-framework-header-v4" data-ng-class="{'app-routine': layout.isAppRoutineEditor}">
+    <div class="header-group" style="align-items: center">
+      <div class="button-group">
+        <button
+          data-ng-if="!layout.isAppRoutineEditor"
+          class="mi-button-icon"
+          tooltip-placement="right"
+          uib-tooltip="Open Navigation"
+          data-ng-click="openLeftPanel($event)"
+        >
+          <svg-icon name="'list-ul'" size="16"> </svg-icon>
+        </button>
+      </div>
+      <div class="header-title">
+        <miae-button
+          button-style="{'font-size' : '16px', padding:0,  overflow: 'hidden', 'white-space': 'nowrap',    'text-overflow': 'ellipsis',    'max-width': '300px'}"
+          data-ng-if="eventStack.length > 0"
+          clickevent="jumpToFirstEventInStack()"
+          name="firstEvent.caption"
+          button-class="'ghost mi-button-clear mi-ae-margin-0 mi-ae-padding-l-0'"
+        ></miae-button>
+        <span style="padding: 0px" data-ng-if="eventStack.length > 0">/</span>
+        <span style="padding: 0px" data-ng-if="eventStack.length > 2">...</span>
+        <span style="padding: 0px" data-ng-if="eventStack.length > 2">/</span>
+
+        <miae-button
+          style="
+            padding-right: 0px;
+            font-size: 16px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 300px;
+          "
+          data-ng-if="eventStack.length > 1"
+          clickevent="popEventStack()"
+          name="eventStack[eventStack.length-1].caption"
+          button-class="'ghost mi-button-clear mi-ae-margin-0 mi-ae-padding-l-0'"
+        ></miae-button>
+        <span style="padding: 0px" data-ng-if="eventStack.length > 1">/</span>
+        {{ editor.selectedControl.name }} ({{ editor.selectedControl.funcName }})
+      </div>
+
+      <div
+        class="pill-wrapper"
+        data-ng-class="{ 'pill-color-grey' : layout.archived,'pill-color-green' : !layout.archived && layout.readonly , 'pill-color-blue' : !layout.archived && !layout.readonly }"
+      >
+        <span
+          class="pill-lead-icon-dot"
+          data-ng-class="{ 'pill-dot-color-grey' : layout.archived,'pill-dot-color-green' : (!layout.archived && layout.readonly) , 'pill-dot-color-blue' : (!layout.archived && !layout.readonly )}"
+          role="presentation"
+          aria-labelledby="#pill-text"
+        >
+        </span>
+        <span id="pill-text" class="pill-text"> {{layout.pillMessage}} </span>
+      </div>
+      <div class="mi-ae-autosave" data-ng-if="!layout.readonly">
+        <div class="is-saving" data-ng-if="layout.saving && !layout.readonly">
+          Saving
+          <i class="mi-icon">
+            <svg-icon name="'cloud-refresh'" ng-attr-style="svgIconStyle" size="12"> </svg-icon>
+          </i>
+        </div>
+        <div data-ng-if="!layout.saving && !layout.readonly">
+          Saved
+          <i class="mi-icon">
+            <svg-icon name="'circle-checkmark'" ng-attr-style="svgIconStyle" size="12"> </svg-icon>
+          </i>
+        </div>
+      </div>
+    </div>
+    <div class="button-group">
+      <button data-ng-show="isCopilotEnabled" class="mi-button ghost" data-ng-click="toggleCopilot()">
+        AI&nbsp;Assistant
+      </button>
+      <button class="mi-button ghost" data-ng-disabled="layout.saving" data-ng-click="closeEditor()">
+        {{ layout.buttonLabel }}
+      </button>
+    </div>
+  </header>
+  <!--/ Top Header -->
+
+  <!-- Lower Content Area -->
+<div class="mi-ae-framework-exterior">
+  <div class="mi-ae-framework-wrapper">
+    <!-- Left Panel -->
+    <div class="mi-ae-framework-left-panel collapsed" data-ng-if="layout.collapsedList">
+      <button class="mi-button-icon" data-ng-click="layout.collapsedList = !layout.collapsedList">
+        <svg-icon name="'box-plus'" size="16"> </svg-icon>
+      </button>
+    </div>
+
+    <div class="mi-ae-framework-left-panel" data-ng-if="!layout.collapsedList">
+      <div class="mi-ae-header-block" data-ng-if="!layout.readonly">
+        <h2 data-ng-if="layout.isAppRoutineEditor">Action List</h2>
+        <h2 data-ng-if="!layout.isAppRoutineEditor">
+          Action Set / {{ editor.selectedControl.name }} / {{ editor.selectedControl.funcName }}
+        </h2>
+        <button
+          class="mi-button-icon"
+          tooltip-placement="left"
+          uib-tooltip="Collapse Action List"
+          data-ng-click="layout.collapsedList = !layout.collapsedList"
+        >
+          <svg-icon name="'box-minus'" size="16"> </svg-icon>
+        </button>
+        <button
+          class="mi-button-icon"
+          tooltip-placement="left"
+          uib-tooltip="Show/Hide comments"
+          data-ng-class="{'activated': layout.showComments}"
+          data-ng-click="layout.showComments = !layout.showComments"
+        >
+          <svg-icon name="'bubble-chat-typing-3'" size="16"> </svg-icon>
+        </button>
+        <button
+          class="mi-button-icon"
+          tooltip-placement="left"
+          uib-tooltip="Add new action"
+          data-ng-click="loadPage(templates.newActionTmpl)"
+        >
+          <svg-icon name="'circle-plus'" size="16"> </svg-icon>
+        </button>
+        <button
+          data-ng-if="!layout.isAppRoutineEditor"
+          class="mi-button-icon"
+          tooltip-placement="left"
+          uib-tooltip="Copy actions from another control"
+          data-ng-click="loadPage(templates.copyActionTmpl)"
+        >
+          <svg-icon name="'download-1'" size="16"> </svg-icon>
+        </button>
+        <button
+          data-ng-if="layout.isAppRoutineEditor && !layout.readonly"
+          class="mi-button-icon"
+          tooltip-placement="left"
+          uib-tooltip="Copy actions from another control"
+          data-ng-click="loadPage(templates.copyActionTmpl); getScreensForApp(appRoutineVersion.appId)"
+        >
+          <svg-icon name="'download-1'" size="16"> </svg-icon>
+        </button>
+      </div>
+
+      <div class="mi-ae-header-block" data-ng-if="layout.readonly">
+        <h2>Action Set</h2>
+      </div>
+
+      <div class="mi-ae-codeblock-wrapper">
+        <!-- Control Action List -->
+        <ul
+          class="mi-ae-codeblock can-move"
+          data-ng-class="{'mi-ae-codeblock-expanded': layout.showComments}"
+          ng-sortable="layout.sortableConfig"
+        >
+          <li
+            data-ng-repeat="actionItem in editor.selectedControl.actionSet.Actions"
+            data-ng-hide="actionItem.ActionId === 0 && actionItem.IsAppRoutineInputValue"
+            data-ng-class="{'disabled-action': actionItem.Disabled, 'has-error': actionItem.InValid, 'line-indent-new': actionItem.config.hasNested,'highlight-line' : actionItem.config.hasNested && isActionSelected(actionItem),  'active': isActionSelected(actionItem)}"
+          >
+            <mi-control-action-item
+              action="actionItem"
+              loop-index="$index"
+              action-set-id="editor.selectedControl.actionSetId"
+              editor="editor"
+              sortable-config="layout.sortableConfig"
+              selected-action="action"
+              current-position="currentPosition"
+              v4="layout.v4"
+              readonly="layout.readonly"
+              referenced-control="referencedControl"
+              referenced-control-id="referencedControlId"
+            ></mi-control-action-item>
+          </li>
+        </ul>
+        <!--/ Control Action List -->
+        <ul
+          data-ng-if="!layout.readonly"
+          class="mi-ae-codeblock mi-ae-add-new"
+          data-ng-class="{'mi-ae-add-has-many': editorData.actionSets[editor.selectedControl.actionSetId].Actions.length > 0}"
+        >
+          <li class="mi-ae-ignore">
+            <span class="action-name" data-ng-click="loadPage(templates.newActionTmpl)">
+              <a>
+                <i class="mi-icon" style="position: relative; top: 3px"
+                  ><svg-icon name="'circle-plus'" ng-attr-style="svgIconStyle" size="14"> </svg-icon
+                ></i>
+                Add new action
+              </a>
+            </span>
+          </li>
+        </ul>
+        <div data-ng-if="layout.readonly" style="border-bottom: 1px solid #e4eaf0; margin-left: 50px"></div>
+      </div>
+    </div>
+    <!--/ Left Panel -->
+    <!-- Right Panel -->
+    <div
+      class="mi-ae-framework-right-panel"
+      data-ng-class="{'expanded' : layout.collapsedList}"
+      id="actionEditorContent"
+      data-ng-show="!layout.showExpressionBuilder"
+    >
+      <!-- Main Content Area -->
+    </div>
+    <!--/ Right Panel -->
+
+    <div
+      class="mi-ae-framework-right-panel"
+      data-ng-class="{'expanded' : layout.collapsedList}"
+      id="actionEditorContent"
+      data-ng-show="layout.showExpressionBuilder "
+    >
+      <mi-expression-builder builder="actioneditor"></mi-expression-builder>
+    </div>
+  </div>
+  <div data-ng-show="isCopilotEnabled" class="mi-ae-copilot-container {{isCopilotOpen ? 'open' : ''}}">
+    <action-editor-copilot
+      open="isCopilotOpen"
+      auth-token="authToken"
+      auth-token-v2="authTokenV2"
+      screen-id="copilotScreenId"
+      version-id="copilotVersionId"
+      event-id="currentEvent.eventId"
+      account-name="copilotAccountName"
+      on-action-set-replace="onCopilotActionSetReplace"
+    ></action-editor-copilot>
+  </div>
+</div>
+  <!--/ Lower Content Area -->
+
+</div>

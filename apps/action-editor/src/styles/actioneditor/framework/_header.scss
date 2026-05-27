@@ -1,0 +1,259 @@
+.mi-ae-framework-header {
+  display: block;
+  width: 100%;
+  height: $header-height;
+  background-color: $white;
+  border-bottom: $header-border solid $header-border-color;
+
+    &.app-routine {
+      background-color: $white;
+    }
+
+    &.calendar-expression {
+      border-bottom: none;
+    }
+    
+  .button-group {
+    display: block;
+    height: $header-height;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    width: 50%;
+
+    &:last-child {
+      left: auto;
+      right: 0;
+      text-align: right;
+    }
+
+    .mi-button-icon {
+      &.mi-icon-undo, 
+      &.mi-icon-redo {
+        opacity: 0.25;
+      }
+      &.activated {
+        opacity: 1;
+        color: $blue;
+      }
+    }
+
+    .mi-button {
+      margin: 0;
+      height: 30px;
+      max-height: 30px;
+      min-width: 70px;
+      max-width: 70px;
+      padding: 6px;
+      line-height: 16px;
+    }
+  }
+
+  .header-title {
+    display: block;
+    text-align: center;
+    color: $dark-blue;
+    height: $header-height;
+    line-height: $header-height;
+    font-size: $header-font-size;
+
+  }
+}
+
+.mi-ae-header-block {
+  display: block;
+  padding: 10px;
+
+  h2, button {
+    display: inline-block;
+  }
+
+  h2 {
+    display: block;
+    text-align: left;
+    margin: 0;
+    font-size:  1.375rem;
+    font-weight: 100;
+    color: #0F1B31;
+    line-height: 1.4;
+    width: 100%;
+    padding-right: 130px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    &.text-center {
+      text-align: center;
+      padding-right: 0;
+    }
+  }
+
+  button.back-btn {
+    position: absolute;
+    z-index: 1;
+    float: left;
+    margin: 0;
+    color: $blue;
+    padding: 4px;
+    display: flex;
+  }
+
+  button {
+    float: right;
+    border: 1px solid $dark-grey;
+    color: $dark-grey;
+    padding: 5px;
+    margin-left: 4px;
+    margin-top: -26px;
+
+    &.blue.white-text {
+      color: $white;
+      border: 1px solid $blue;
+    }
+
+    &.ghost.blue {
+      border: 1px solid $white;
+      color: $blue;
+
+      &:hover {
+        border: 1px solid $blue;
+        background-color: $white;
+      }
+    }
+
+    &:hover,
+    &.activated {
+      color: $blue;
+      border-color: $blue;
+    }
+  }
+}
+
+
+.mi-ae-framework-header-v4 {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  height: $header-height;
+  background-color: $white;
+  border-bottom: $header-border solid $header-border-color;
+  justify-content: space-between;
+
+    &.app-routine {
+      background-color: $white;
+    }
+
+    &.calendar-expression {
+      border-bottom: none;
+    }
+
+  .header-group {
+    display: flex;
+    justify-content: flex-start;
+    flex: 1;
+    flex-direction: row;
+  }
+    
+  .button-group {
+    &:last-child {
+      left: auto;
+      right: 0;
+      text-align: right;
+    }
+
+    .mi-button-icon {
+      &.mi-icon-undo, 
+      &.mi-icon-redo {
+        opacity: 0.25;
+      }
+      &.activated {
+        opacity: 1;
+        color: $blue;
+      }
+    }
+
+    .mi-button {
+      margin: 0;
+      height: 30px;
+      max-height: 30px;
+      min-width: 70px;
+      max-width: 70px;
+      padding: 6px;
+      line-height: 16px;
+    }
+  }
+
+  .header-title {
+    text-align: center;
+    color: $dark-blue;
+    font-size: $header-font-size;
+    padding-left:16px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    line-height: 0;
+  }
+
+  .pill-wrapper {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(15, 27, 49);
+    max-width: 100%;
+    background-color: rgb(231, 245, 240);
+    padding: 0px 8px;
+    border-radius: 8px;
+    height: 16px;
+    margin-top: 4px;
+    margin-left: 16px;
+
+    .pill-color-blue {
+      background-color: #e5f7ff;
+    }
+
+    .pill-color-green {
+      background-color: #e7f5f0;
+    }
+
+    .pill-color-grey {
+      background-color: #0f1b31;
+    }
+
+    .pill-dot-color-blue {
+      background-color: #0d71c8;
+    }
+
+    .pill-dot-color-green {
+      background-color: #007b4a;
+    }
+
+    .pill-dot-color-grey {
+      background-color: #545f67;
+    }
+
+    .pill-lead-icon-dot {
+      display: inline-block;
+      flex-shrink: 0;
+      margin: 0px 4px 0px 0px;
+      width: 8px;
+      height: 8px;
+      border-radius: 100%;
+    }
+
+    .pill-text {
+      font-weight: 600;
+      flex-shrink: 1;
+      -webkit-box-flex: 1;
+      flex-grow: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 12px;
+      line-height: 16px;
+      padding: 0px 2px;
+    }
+  }
+}

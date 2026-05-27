@@ -1,0 +1,65 @@
+<div data-ng-controller="CurrencyConversionCtrl">
+  <mi-action-description info="action"></mi-action-description>
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content">
+    <div class="mi-ae-section mi-ae-borderbottom mi-ae-margin-b-10">
+      <!-- Field List -->
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Amount</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value action="action" model="action.Value" allow="allowVal" is-read-only="action.isReadOnly"> </mi-complex-value>
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Exchange rate</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value action="action" model="action.ExchangeRate" allow="allowRate" is-read-only="action.isReadOnly"> </mi-complex-value>
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Conversion direction</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <ul class="mi-radiobutton-group">
+            <li class="rad-horizontal mi-ae-padding-r-20">
+              <label class="mi-radio-checkbox mi-radio">
+                <span>To company's home currency</span>
+                <input type="radio" data-ng-model="action.ToHomeCurrency" data-ng-value="true" ng-disabled="action.isReadOnly"/>
+                <div class="mi-radio-checkbox-indicator"></div>
+              </label>
+            </li>
+            <li class="rad-horizontal mi-ae-padding-r-20">
+              <label class="mi-radio-checkbox mi-radio">
+                <span>From company's home currency</span>
+                <input type="radio" data-ng-model="action.ToHomeCurrency" data-ng-value="false" ng-disabled="action.isReadOnly"/>
+                <div class="mi-radio-checkbox-indicator"></div>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- / Field List -->
+      <!-- Result -->
+      <mi-result-to-set
+        label="'Place the value here'"
+        action="action"
+        include-controls="true"
+        control="action.ControlToUpdate"
+        control-model="action.ControlToUpdate"
+        controls-ignore="['SEC', 'DOC']"
+        item="action.ResultToSet"
+		is-read-only="action.isReadOnly"
+      ></mi-result-to-set>
+      <!-- / Result -->
+    </div>
+  </div>
+  <!--/ Main Content Area -->
+  <mi-action-notes is-read-only="action.isReadOnly"></mi-action-notes>
+</div>

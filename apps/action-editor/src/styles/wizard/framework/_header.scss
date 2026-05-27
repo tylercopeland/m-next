@@ -1,0 +1,136 @@
+@import "../../_variables.scss";
+
+.mi-wiz-framework-header {
+    display: block;
+    width: 100%;
+    height: $header-height;
+    background-color: $white;
+    border-bottom: $header-border solid $header-border-color;
+
+    .help-icon {
+        display: block;
+        position: absolute;
+        white-space: nowrap;
+        right: 92px;
+        top: 13px;
+        font-size: x-large;
+        z-index: 2;
+
+        a {
+            color: $blue;
+        }
+    }
+
+    .button-group {
+        display: block;
+        height: $header-height;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        width: 50%;
+
+        &:last-child {
+            left: auto;
+            right: 0;
+            text-align: right;
+        }
+
+        .mi-button-icon {
+            &.mi-icon-undo,
+            &.mi-icon-redo {
+                opacity: 0.25;
+            }
+
+            &.activated {
+                opacity: 1;
+                color: $blue;
+            }
+        }
+
+        .mi-button {
+            margin: 0;
+            height: 30px;
+            max-height: 30px;
+            min-width: 70px;
+            max-width: 70px;
+            padding: 6px;
+            line-height: 16px;
+        }
+    }
+
+    .header-title {
+        display: block;
+        text-align: center;
+        color: $dark-blue;
+        height: $header-height;
+        line-height: $header-height;
+        font-size: $header-font-size;
+    }
+}
+
+.mi-wiz-header-block {
+    display: block;
+    padding: 10px;
+
+    h2, button {
+        display: inline-block;
+    }
+
+    h2 {
+        display: block;
+        text-align: left;
+        margin: 0;
+        font-size: 14px;
+        width: 100%;
+        padding-right: 110px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        &.text-center {
+            text-align: center;
+            padding-right: 0;
+        }
+    }
+
+    button.back-btn {
+        position: absolute;
+        z-index: 1;
+        float: left;
+        margin: 0;
+        color: $blue;
+        padding: 4px;
+    }
+
+    button {
+        float: right;
+        border: 1px solid $light-grey;
+        color: $grey;
+        padding: 5px;
+        margin-left: 4px;
+        margin-top: -26px;
+
+        &.blue.white-text {
+            color: $white;
+            border: 1px solid $blue;
+        }
+
+        &.ghost.blue {
+            border: 1px solid $white;
+            color: $blue;
+
+            &:hover {
+                border: 1px solid $blue;
+                background-color: $white;
+            }
+        }
+
+        &:hover,
+        &.activated {
+            color: $blue;
+            border-color: $blue;
+        }
+    }
+}

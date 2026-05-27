@@ -1,0 +1,24 @@
+.mi-ae-row {
+  @include make-row;
+}
+
+.mi-ae-row {
+  &.table-row {
+    padding: 5px 0;
+
+    &:hover {
+      background-color: rgba($lightest-blue, 0.1);
+    }
+  }
+  &.alt-row {
+    // background-color: rgba($lightest-blue, 0.1);
+  }
+}
+
+@include make-grid-columns;
+
+@include make-grid();
+
+@media (max-width: $mi-screen-sm-min - 1) {
+  @include make-grid(sm);
+}

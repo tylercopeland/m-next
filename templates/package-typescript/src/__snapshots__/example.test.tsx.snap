@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExampleComponent Snapshots Default 1`] = `
+<div>
+  <div
+    id="-example"
+  >
+    <span
+      id="-example-message"
+      style="padding: 16px;"
+    />
+    
+  </div>
+</div>
+`;
+
+exports[`ExampleComponent Snapshots PrimaryAction is Displayed and click fires 1`] = `
+<div>
+  <div
+    id="test-example"
+  >
+    <span
+      id="test-example-message"
+      style="padding: 16px;"
+    >
+      hi
+    </span>
+    <button
+      id="test-example-button"
+      type="button"
+    >
+      Primary
+    </button>
+  </div>
+</div>
+`;

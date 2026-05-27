@@ -1,0 +1,177 @@
+<div data-ng-controller="SendMobilePushNotificationCtrl">
+  <mi-action-description info="action"></mi-action-description>
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content">
+
+
+
+    <!-- User -->
+    <div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">User</label>
+        </div>
+
+        <div class="mi-ae-col-8">
+          <mi-complex-value action="action" model="action.ToUser" allow="allow" number-min-value="0" is-read-only="action.isReadOnly"></mi-complex-value>
+        </div>
+
+      </div>
+
+      <p style="font-size: 11px; font-style: italic; color: #545F67; margin-bottom: 1rem;">
+        Define who will be receiving this notification.
+      </p>
+
+    </div>
+    <!-- User -->
+
+
+
+    <!-- Screen -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Open this screen</label>
+      </div>
+
+      <div data-ng-class="{'mi-ae-col-8': dropdowns.appSelection === 'dashboard', 'mi-ae-col-4': dropdowns.appSelection !== 'dashboard'}">
+        <ui-select data-ng-model="dropdowns.appSelection" theme="selectize" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices group-by="'category'" repeat="opt.value as opt in dropdowns.appList | filter: $select.search">
+            <span ng-bind-html="opt.label"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+      <div 
+        data-ng-class="{'mi-ae-col-4': dropdowns.appSelection !== 'back' && dropdowns.appSelection !== 'dashboard'}" 
+        data-ng-show="dropdowns.appSelection !== 'back' && dropdowns.appSelection !== 'dashboard'" mi-validation-class="action.ValidationMessages" error-property="'ScreenId'">
+        <ui-select data-ng-model="dropdowns.appScreenSelection" theme="selectize" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select A Screen...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices repeat="opt.value as opt in dropdowns.screenList | filter: $select.search">
+            <span ng-bind-html="opt.label"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+    <!-- Screen -->
+
+
+    <!-- Specify RecordID -->
+    <div class="mi-ae-row" data-ng-if="dropdowns.appSelection !== 'dashboard'">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Specify RecordID</label>
+      </div>
+      <div class="mi-ae-col-8">
+        <mi-complex-value action="action" model="action.RecordId" allow="allow" number-min-value="0" is-read-only="action.isReadOnly"></mi-complex-value>
+      </div>
+
+    </div>
+    <!-- Specify RecordID -->
+
+
+
+
+
+    <!-- Title  -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Title</label>
+      </div>
+
+      <div class="mi-ae-col-8">
+        <mi-complex-value action="action" model="action.Title" allow="allow" is-read-only="action.isReadOnly"></mi-complex-value>
+      </div>
+
+    </div>
+    <!-- Title -->
+
+
+    <!-- Message -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Message</label>
+      </div>
+
+      <div class="mi-ae-col-8">
+        <mi-complex-value action="action" model="action.Msg" allow="allow" is-read-only="action.isReadOnly"></mi-complex-value>
+      </div>
+
+    </div>
+    <!-- Message -->
+
+
+
+
+
+    <!-- Priority -->
+      <div>
+
+        <div class='mi-ae-row' style="margin-bottom: 1rm;">
+          <div class='mi-ae-col-4'>
+            <label class='mi-ae-label' style="margin-bottom: 0;">Priority</label>
+          </div>
+          <div class='mi-ae-col-8 mi-ae-padding-t-5 mi-ae-margin-b-10'>
+            <ul class='mi-radiobutton-group'>
+              <li class='rad-horizontal mi-ae-col-4'>
+                <label class='mi-radio-checkbox mi-radio'>
+                  <span>High</span>
+                  <input type="radio" data-ng-model='action.Priority' data-ng-value='1' ng-disabled="action.isReadOnly">
+                  <div class='mi-radio-checkbox-indicator'></div>
+                </label>
+              </li>
+              <li class='rad-horizontal mi-ae-col-4'>
+                <label class='mi-radio-checkbox mi-radio'>
+                  <span>Default</span>
+                  <input type="radio" data-ng-model='action.Priority' data-ng-value='0' ng-disabled="action.isReadOnly">
+                  <div class='mi-radio-checkbox-indicator'></div>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <p style="font-size: 11px; font-style: italic; color: #545F67; margin-bottom: 1rem;">
+          High priority will wake the mobile device from sleep mode.
+        </p>
+
+      </div>
+    <!-- Priority -->
+
+
+
+    <!-- Sound -->
+      <div class='mi-ae-row'>
+        <div class='mi-ae-col-4'>
+          <label class='mi-ae-label'>Sound</label>
+        </div>
+        <div class='mi-ae-col-8 mi-ae-padding-t-5 mi-ae-margin-b-10'>
+          <ul class='mi-radiobutton-group'>
+            <li class='rad-horizontal mi-ae-col-4'>
+              <label class='mi-radio-checkbox mi-radio'>
+                <span>Enabled</span>
+                <input type="radio" data-ng-model='action.Sound' data-ng-value='1' ng-disabled="action.isReadOnly">
+                <div class='mi-radio-checkbox-indicator'></div>
+              </label>
+            </li>
+            <li class='rad-horizontal mi-ae-col-4'>
+              <label class='mi-radio-checkbox mi-radio'>
+                <span>Disabled</span>
+                <input type="radio" data-ng-model='action.Sound' data-ng-value='0' ng-disabled="action.isReadOnly">
+                <div class='mi-radio-checkbox-indicator'></div>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <!-- Sound -->
+
+
+
+
+
+
+
+  </div>
+  <!--/ Main Content Area -->
+  <mi-action-notes is-read-only="action.isReadOnly"></mi-action-notes>
+</div>

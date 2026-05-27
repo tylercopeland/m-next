@@ -1,0 +1,211 @@
+.mi-designer-toolbar {
+  display: flex;
+  flex: 1;
+  height: $top-header-height;
+  max-height: $top-header-height;
+  padding: 9px;
+  background-color: $white;
+  border-bottom: 2px solid $m-grey;
+  justify-content: space-between;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  .mi-designer-toolbar-left,
+  .designer-top-buttons {
+    display: flex;
+    flex: 1;
+    width: 220px;
+    overflow: hidden;
+    justify-content: flex-start;
+  }
+
+  .mi-designer-toolbar-wrapper {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+
+  .mi-designer-toolbar-left {
+    padding-top: 1px;
+
+    #previewswitch,
+    .actionicons {
+      display: flex;
+    }
+
+    #previewswitch {
+      .previewtext {
+        line-height: 24px;
+        font-weight: 600;
+        padding-right: 3px;
+      }
+    }
+
+    .actionicons {
+      .toolbar-icon {
+        background: transparent;
+        border: 0;
+
+        &:disabled {
+          opacity: 0.1;
+          color: $black;
+        }
+      }
+
+      .mi-icon-laptop {
+        line-height: 24px;
+      }
+
+      .mi-icon-undo,
+      .mi-icon-redo {
+        font-size: 16px;
+        color: $blue;
+        line-height: 24px;
+      }
+    }
+
+    .res-wrapper {
+      .res-menu {
+        display: none;
+        position: absolute;
+        z-index: 20;
+        width: 40px;
+        background: $app-header;
+        top: 36px;
+        padding-top: 0;
+        border-radius: 3px;
+        margin-left: -3px;
+        border: 1px solid $border-color;
+
+        ul {
+          list-style: none;
+          width: 100%;
+          padding-left: 0;
+          margin: 0;
+
+          li {
+            display: block;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+              color: $white;
+              background: $blue;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  h2 {
+    text-align: center;
+    margin: 0;
+    font-size: 16px !important;
+    line-height: 26px;
+
+    i {
+      position: relative;
+      top: 2px;
+      margin-right: 3px;
+    }
+  }
+
+  .designer-top-buttons
+   {
+    justify-content: flex-end;
+
+    button {
+      min-width: 70px;
+      max-width: 70px;
+      width: 70px;
+      height: 30px;
+      max-height: 30px;
+      min-height: 30px;
+      padding: 0 15px;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .designer-top-buttons, 
+   {
+    justify-content: flex-end;
+
+    button {
+      min-width: 70px;
+      max-width: 70px;
+      width: 70px;
+      height: 30px;
+      max-height: 30px;
+      min-height: 30px;
+      padding: 0 15px;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .pill-wrapper {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(15, 27, 49);
+    max-width: 100%;
+    background-color: rgb(231, 245, 240);
+    padding: 0px 8px;
+    border-radius: 8px;
+    height: 16px;
+    margin-top: 6px;
+    margin-left: 16px;
+
+    .pill-color-blue {
+      background-color: #e5f7ff;
+    }
+
+    .pill-color-green {
+      background-color: #e7f5f0;
+    }
+
+    .pill-color-grey {
+      background-color: #0f1b31;
+    }
+
+    .pill-dot-color-blue {
+      background-color: #0d71c8;
+    }
+
+    .pill-dot-color-green {
+      background-color: #007b4a;
+    }
+
+    .pill-dot-color-grey {
+      background-color: #545f67;
+    }
+    .pill-lead-icon-dot {
+      display: inline-block;
+      flex-shrink: 0;
+      margin: 0px 4px 0px 0px;
+      width: 8px;
+      height: 8px;
+      border-radius: 100%;
+    }
+
+    .pill-text {
+      font-weight: 600;
+      flex-shrink: 1;
+      -webkit-box-flex: 1;
+      flex-grow: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 12px;
+      line-height: 16px;
+      padding: 0px 2px;
+    }
+  }
+}

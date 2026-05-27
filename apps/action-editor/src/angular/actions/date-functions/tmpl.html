@@ -1,0 +1,145 @@
+<div data-ng-controller="DateFunctionsCtrl">
+  <mi-action-description info="action"></mi-action-description>
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content">
+    <!-- Function -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-5">
+        <label class="mi-ae-label">Select a function</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <ui-select data-ng-model="action.DateFunctionType" theme="selectize" search-enabled="false" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices repeat="opt.value as opt in action.dateFunctionTypes">
+            <span ng-bind-html="opt.label"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+    <!--/ Function -->
+    <h3>Evaluate The Following</h3>
+
+    <!-- Of -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-5">
+        <label class="mi-ae-label">{{dateLabel}}</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <mi-complex-value action="action" model="action.Source" allow="allow" error-code="action.Source.ValidationMessage" is-read-only="action.isReadOnly"></mi-complex-value>
+      </div>
+    </div>
+    <!--/ Of -->
+    <!-- Functions for Month and Day -->
+    <div class="mi-ae-row" data-ng-if="showFormat">
+      <div class="mi-ae-col-5">
+        <label class="mi-ae-label">{{formatLabel}}</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <ui-select data-ng-model="action.Options.Format" theme="selectize" search-enabled="false" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices repeat="opt.value as opt in formatOptions">
+            <span ng-bind-html="opt.label"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+
+    <div class="mi-ae-row" data-ng-if="action.DateFunctionType === 3">
+      <div class="mi-ae-col-5">
+        <label class="mi-ae-label">{{formatLabel}}</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <ul class="mi-radiobutton-group">
+          <li class="rad-horizontal mi-ae-padding-r-20">
+            <label class="mi-radio-checkbox mi-radio">
+              <span>12 Hour</span>
+              <input type="radio" data-ng-model="action.Options.Format" data-ng-value="10" ng-disabled="action.isReadOnly" />
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </li>
+          <li class="rad-horizontal mi-ae-padding-r-20">
+            <label class="mi-radio-checkbox mi-radio">
+              <span>24 Hour</span>
+              <input type="radio" data-ng-model="action.Options.Format" data-ng-value="11" ng-disabled="action.isReadOnly" />
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--/ Functions for Month and Day -->
+    <!-- Functions for Add Year, Month, Days, Hours and Minutes -->
+    <div class="mi-ae-row" data-ng-if="showAmount">
+      <div class="mi-ae-col-5">
+        <label class="mi-ae-label">{{formatLabel}}</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <mi-complex-value action="action" model="action.Options.Amount" allow="allowAmount" error-code="action.Options.Amount.ValidationMessage" is-read-only="action.isReadOnly"></mi-complex-value>
+      </div>
+    </div>
+    <!--/ Functions for Add Year, Month, Days, Hours and Minutes -->
+    <!-- Functions for Other Date for Day -->
+    <div class="mi-ae-row" data-ng-if="action.DateFunctionType === 12">
+      <div class="mi-ae-col-5">
+        <label class="mi-ae-label">{{formatLabel}}</label>
+      </div>
+      <div class="mi-ae-col-5">
+        <ui-select data-ng-model="action.Options.WeekDay" theme="selectize" search-enabled="false" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices repeat="opt.value as opt in action.weekDayOptions">
+            <span ng-bind-html="opt.label"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+      <div class="mi-ae-col-5">
+        <ui-select data-ng-model="action.Options.DateFindType" theme="selectize" search-enabled="false" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices repeat="opt.value as opt in action.dateFindOptions">
+            <span ng-bind-html="opt.label"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+    <!--/ Functions for Other Date for Day -->
+    <!-- Functions for Date Difference -->
+    <div data-ng-if="action.DateFunctionType === 14">
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-5">
+          <label class="mi-ae-label">{{formatLabel}}</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value action="action" model="action.Options.OtherDate" allow="allow" error-code="action.Options.OtherDate.ValidationMessage" is-read-only="action.isReadOnly"></mi-complex-value>
+        </div>
+      </div>
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-5">
+          <label class="mi-ae-label">Calculate difference In</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <ui-select data-ng-model="action.Options.TimeSpan" theme="selectize" search-enabled="false" ng-disabled="action.isReadOnly">
+            <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+            <ui-select-choices repeat="opt.value as opt in action.timeOptions">
+              <span ng-bind-html="opt.label"></span>
+            </ui-select-choices>
+          </ui-select>
+        </div>
+      </div>
+    </div>
+    <!--/ Functions for Date Difference -->
+    <!-- Result To Set -->
+    <mi-result-to-set
+      label="'Store result in'"
+      action="action"
+      item="action.ResultToSet"
+      control="action.ControlToUpdate"
+      include-controls="true"
+      controls-ignore="['SEC', 'DOC']"
+      col-widths="[5,10]"
+      control-model="action.ControlToUpdate"
+      is-read-only="action.isReadOnly"
+    ></mi-result-to-set>
+    <!--/ Result To Set -->
+  </div>
+  <!--/ Main Content Area -->
+  <mi-action-notes is-read-only="action.isReadOnly"></mi-action-notes>
+</div>

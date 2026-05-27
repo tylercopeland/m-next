@@ -1,0 +1,4210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Snapshots 0 columns with avatar placeholder 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: none;
+  width: 88px;
+  height: 88px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-2 focus {
+  outline: none;
+}
+
+.emotion-4 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-6 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0;
+  padding: 8px 0px 4px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  overflow: hidden;
+}
+
+.emotion-10 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: default;
+  opacity: 1;
+}
+
+.emotion-12 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-12 focus {
+  outline: none;
+}
+
+.emotion-14 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+}
+
+.emotion-16 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: default;
+  opacity: 1;
+}
+
+.emotion-20 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #E5F7FF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-20:hover {
+  background-color: #E5F7FF;
+}
+
+.emotion-22 {
+  width: 8px;
+  height: 8px;
+  background-color: #0D71C8;
+  border-radius: 100%;
+}
+
+.emotion-24 {
+  font-weight: 600;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0 2px;
+  opacity: 1;
+  cursor: default;
+  padding-left: 8px;
+}
+
+.emotion-28 {
+  position: relative;
+}
+
+.emotion-30 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  gap: 4px;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.emotion-32 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #B3E5FF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-32:hover {
+  background-color: #B3E5FF;
+}
+
+.emotion-34 {
+  font-weight: 600;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0 2px;
+  opacity: 1;
+  cursor: default;
+}
+
+.emotion-36 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFCDAB;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-36:hover {
+  background-color: #FFCDAB;
+}
+
+.emotion-44 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #A9D9BF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-44:hover {
+  background-color: #A9D9BF;
+}
+
+.emotion-48 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #91A2FF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-48:hover {
+  background-color: #91A2FF;
+}
+
+.emotion-52 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFABB5;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-52:hover {
+  background-color: #FFABB5;
+}
+
+.emotion-56 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #84F3FF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-56:hover {
+  background-color: #84F3FF;
+}
+
+.emotion-60 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #BACAD0;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-60:hover {
+  background-color: #BACAD0;
+}
+
+.emotion-64 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFEA80;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-64:hover {
+  background-color: #FFEA80;
+}
+
+.emotion-68 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFACA1;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-68:hover {
+  background-color: #FFACA1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-card-container"
+    style="flex-direction: row; align-items: center; gap: 0px; padding: 0px;"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      id="test-card-avatar-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-4 emotion-5"
+      >
+        <img
+          alt="image: "
+          class="emotion-6 emotion-7"
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDE3IDE3IiBmaWxsPSJub25lIj48Y2lyY2xlIGN4PSI4LjUiIGN5PSI4LjUiIHI9IjcuNSIgc3Ryb2tlPSIjQkFDQUQwIiBzdHJva2Utd2lkdGg9IjAuOCIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjguNSIgY3k9IjYuMiIgcj0iMi4zIiBmaWxsPSIjQkFDQUQwIi8+PHBhdGggZD0iTTQuMiAxNS4yQzQuMiAxMi4wIDYuMSA5LjUgOC41IDkuNUMxMC45IDkuNSAxMi44IDEyLjAgMTIuOCAxNS4yIiBmaWxsPSIjQkFDQUQwIi8+PC9zdmc+"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+    <div
+      class="emotion-8 emotion-9"
+      id="test-card-col1"
+    >
+      <div
+        class="emotion-10 emotion-11"
+        data-tooltip-html="Jane Smith"
+        data-tooltip-position-strategy="fixed"
+        font-size="xlarge"
+        id="test-card-col1-line1-FullName"
+        opacity="1"
+        style="height: 28px; overflow: hidden; text-overflow: ellipsis; min-width: 0; text-align: start; white-space: nowrap;"
+      >
+         
+        Jane Smith
+      </div>
+      <div
+        class="emotion-12 emotion-3"
+        id="test-card-col1-line2-Image-ImageWidget"
+        tabindex="-1"
+      >
+        <div
+          aria-label="Image with initials, E"
+          class="emotion-14 emotion-15"
+          color="#84F3FF"
+          height="auto"
+          role="img"
+          width="100%"
+        >
+          E
+        </div>
+      </div>
+      <div
+        class="emotion-16 emotion-11"
+        data-tooltip-html="Jane.s@redbubble.co.uk"
+        data-tooltip-position-strategy="fixed"
+        font-size="medium"
+        id="test-card-col1-line3-Email"
+        opacity="1"
+        style="height: 24px; overflow: hidden; text-overflow: ellipsis; min-width: 0; text-align: start; white-space: nowrap;"
+      >
+         
+        Jane.s@redbubble.co.uk
+      </div>
+    </div>
+    <div
+      class="emotion-8 emotion-9"
+      id="test-card-col2"
+    >
+      <div
+        class="emotion-20 emotion-21"
+        id="test-card-col2-line1-Balance"
+      >
+        <span
+          class="pill-lead-icon--dot emotion-22 emotion-23"
+          id="pill-dot-test-card-col2-line1-Balance"
+          role="presentation"
+        />
+        <span
+          class="pill-text emotion-24 emotion-25"
+          data-testid="pill-text-test-card-col2-line1-Balance"
+          id="pill-text-test-card-col2-line1-Balance"
+        >
+          12,345.68
+        </span>
+      </div>
+      <div
+        class="emotion-16 emotion-11"
+        data-tooltip-html="Monday, April 12, 2021"
+        data-tooltip-position-strategy="fixed"
+        font-size="medium"
+        id="test-card-col2-line2-BirthDate"
+        opacity="1"
+        style="height: 24px; overflow: hidden; text-overflow: ellipsis; min-width: 0; text-align: end; white-space: nowrap;"
+      >
+         
+        Monday, April 12, 2021
+      </div>
+      <div
+        class="emotion-28 emotion-29"
+      >
+        <div
+          class="emotion-30 emotion-31"
+          id="test-card-col2-line3-TagList-tags-value"
+        >
+          <div
+            class="emotion-32 emotion-21"
+            id="test-card-col2-line3-TagList-tags-value-one"
+          >
+            <span
+              class="pill-text emotion-34 emotion-25"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-one"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-one"
+            >
+              one
+            </span>
+          </div>
+          <div
+            class="emotion-36 emotion-21"
+            id="test-card-col2-line3-TagList-tags-value-cake"
+          >
+            <span
+              class="pill-text emotion-34 emotion-25"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-cake"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-cake"
+            >
+              cake
+            </span>
+          </div>
+          <div
+            class="emotion-32 emotion-21"
+            id="test-card-col2-line3-TagList-tags-value-bunny"
+          >
+            <span
+              class="pill-text emotion-34 emotion-25"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-bunny"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-bunny"
+            >
+              bunny
+            </span>
+          </div>
+          <div
+            class="emotion-44 emotion-21"
+            id="test-card-col2-line3-TagList-tags-value-Add Tag 12"
+          >
+            <span
+              class="pill-text emotion-34 emotion-25"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-Add Tag 12"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-Add Tag 12"
+            >
+              Add Tag 12
+            </span>
+          </div>
+          <div
+            class="emotion-48 emotion-21"
+            id="test-card-col2-line3-TagList-tags-value-Contact Edit"
+          >
+            <span
+              class="pill-text emotion-34 emotion-25"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-Contact Edit"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-Contact Edit"
+            >
+              Contact Edit
+            </span>
+          </div>
+          <div
+            class="emotion-52 emotion-21"
+            id="test-card-col2-line3-TagList-tags-value-New 12 Tag"
+          >
+            <span
+              class="pill-text emotion-34 emotion-25"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-New 12 Tag"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-New 12 Tag"
+            >
+              New 12 Tag
+            </span>
+          </div>
+          <div
+            class="emotion-56 emotion-21"
+            id="test-card-col2-line3-TagList-tags-value-apr13"
+          >
+            <span
+              class="pill-text emotion-34 emotion-25"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-apr13"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-apr13"
+            >
+              apr13
+            </span>
+          </div>
+          <div
+            class="emotion-60 emotion-21"
+            id="test-card-col2-line3-TagList-tags-value-Bind"
+          >
+            <span
+              class="pill-text emotion-34 emotion-25"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-Bind"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-Bind"
+            >
+              Bind
+            </span>
+          </div>
+          <div
+            class="emotion-64 emotion-21"
+            id="test-card-col2-line3-TagList-tags-value-kkkkk"
+          >
+            <span
+              class="pill-text emotion-34 emotion-25"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-kkkkk"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-kkkkk"
+            >
+              kkkkk
+            </span>
+          </div>
+          <div
+            class="emotion-68 emotion-21"
+            id="test-card-col2-line3-TagList-tags-value-Nelson"
+          >
+            <span
+              class="pill-text emotion-34 emotion-25"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-Nelson"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-Nelson"
+            >
+              Nelson
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card Snapshots 1 columns with avatar placeholder 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: none;
+  width: 88px;
+  height: 88px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-2 focus {
+  outline: none;
+}
+
+.emotion-4 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-6 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0;
+  padding: 8px 0px 4px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  overflow: hidden;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFF3F0;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-10:hover {
+  background-color: #FFF3F0;
+}
+
+.emotion-12 {
+  width: 8px;
+  height: 8px;
+  background-color: #DA211E;
+  border-radius: 100%;
+}
+
+.emotion-14 {
+  font-weight: 600;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0 2px;
+  opacity: 1;
+  cursor: default;
+  padding-left: 8px;
+}
+
+.emotion-16 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: default;
+  opacity: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-card-container"
+    style="flex-direction: row; align-items: center; gap: 0px; padding: 0px;"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      id="test-card-avatar-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-4 emotion-5"
+      >
+        <img
+          alt="image: "
+          class="emotion-6 emotion-7"
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDE3IDE3IiBmaWxsPSJub25lIj48Y2lyY2xlIGN4PSI4LjUiIGN5PSI4LjUiIHI9IjcuNSIgc3Ryb2tlPSIjQkFDQUQwIiBzdHJva2Utd2lkdGg9IjAuOCIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjguNSIgY3k9IjYuMiIgcj0iMi4zIiBmaWxsPSIjQkFDQUQwIi8+PHBhdGggZD0iTTQuMiAxNS4yQzQuMiAxMi4wIDYuMSA5LjUgOC41IDkuNUMxMC45IDkuNSAxMi44IDEyLjAgMTIuOCAxNS4yIiBmaWxsPSIjQkFDQUQwIi8+PC9zdmc+"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+    <div
+      class="emotion-8 emotion-9"
+      id="test-card-col1"
+    >
+      <div
+        class="emotion-10 emotion-11"
+        id="test-card-col1-line1-Counter"
+      >
+        <span
+          class="pill-lead-icon--dot emotion-12 emotion-13"
+          id="pill-dot-test-card-col1-line1-Counter"
+          role="presentation"
+        />
+        <span
+          class="pill-text emotion-14 emotion-15"
+          data-testid="pill-text-test-card-col1-line1-Counter"
+          id="pill-text-test-card-col1-line1-Counter"
+        >
+          0.00
+        </span>
+      </div>
+      <div
+        class="emotion-16 emotion-17"
+        data-tooltip-html="True"
+        data-tooltip-position-strategy="fixed"
+        font-size="medium"
+        id="test-card-col1-line2-IsCool"
+        opacity="1"
+        style="height: 24px; overflow: hidden; text-overflow: ellipsis; min-width: 0; text-align: start; white-space: nowrap;"
+      >
+         
+        True
+      </div>
+      <div
+        class="emotion-16 emotion-17"
+        data-tooltip-html="not"
+        data-tooltip-position-strategy="fixed"
+        font-size="medium"
+        id="test-card-col1-line3-IsNotCool"
+        opacity="1"
+        style="height: 24px; overflow: hidden; text-overflow: ellipsis; min-width: 0; text-align: start; white-space: nowrap;"
+      >
+         
+        not
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card Snapshots 1 columns with blanks 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: none;
+  width: 88px;
+  height: 88px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-2 focus {
+  outline: none;
+}
+
+.emotion-4 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-6 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0;
+  padding: 8px 0px 4px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  overflow: hidden;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFF3F0;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-10:hover {
+  background-color: #FFF3F0;
+}
+
+.emotion-12 {
+  width: 8px;
+  height: 8px;
+  background-color: #DA211E;
+  border-radius: 100%;
+}
+
+.emotion-14 {
+  font-weight: 600;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0 2px;
+  opacity: 1;
+  cursor: default;
+  padding-left: 8px;
+}
+
+.emotion-16 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: default;
+  opacity: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-card-container"
+    style="flex-direction: row; align-items: center; gap: 0px; padding: 0px;"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      id="test-card-avatar-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-4 emotion-5"
+      >
+        <img
+          alt="image: "
+          class="emotion-6 emotion-7"
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDE3IDE3IiBmaWxsPSJub25lIj48Y2lyY2xlIGN4PSI4LjUiIGN5PSI4LjUiIHI9IjcuNSIgc3Ryb2tlPSIjQkFDQUQwIiBzdHJva2Utd2lkdGg9IjAuOCIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjguNSIgY3k9IjYuMiIgcj0iMi4zIiBmaWxsPSIjQkFDQUQwIi8+PHBhdGggZD0iTTQuMiAxNS4yQzQuMiAxMi4wIDYuMSA5LjUgOC41IDkuNUMxMC45IDkuNSAxMi44IDEyLjAgMTIuOCAxNS4yIiBmaWxsPSIjQkFDQUQwIi8+PC9zdmc+"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+    <div
+      class="emotion-8 emotion-9"
+      id="test-card-col1"
+    >
+      <div
+        class="emotion-10 emotion-11"
+        id="test-card-col1-line1-Counter"
+      >
+        <span
+          class="pill-lead-icon--dot emotion-12 emotion-13"
+          id="pill-dot-test-card-col1-line1-Counter"
+          role="presentation"
+        />
+        <span
+          class="pill-text emotion-14 emotion-15"
+          data-testid="pill-text-test-card-col1-line1-Counter"
+          id="pill-text-test-card-col1-line1-Counter"
+        >
+          0.00
+        </span>
+      </div>
+      <div
+        class="emotion-16 emotion-17"
+        id="test-card-col1-line2"
+        opacity="1"
+        style="height: 24px;"
+      />
+      <div
+        class="emotion-16 emotion-17"
+        data-tooltip-html="not"
+        data-tooltip-position-strategy="fixed"
+        font-size="medium"
+        id="test-card-col1-line3-IsNotCool"
+        opacity="1"
+        style="height: 24px; overflow: hidden; text-overflow: ellipsis; min-width: 0; text-align: start; white-space: nowrap;"
+      >
+         
+        not
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card Snapshots 2 columns no data 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: none;
+  width: 88px;
+  height: 88px;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-2 focus {
+  outline: none;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: undefinedpx;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-background-position: center;
+  background-position: center;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0;
+  padding: 8px 0px 4px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  overflow: hidden;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-card-container"
+    style="flex-direction: row; align-items: center; gap: 0px; padding: 0px;"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      id="test-card-avatar-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image: "
+        class="emotion-4 emotion-5"
+        height="undefinedpx"
+        role="img"
+        style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);"
+        width="100%"
+      />
+    </div>
+    <div
+      class="emotion-6 emotion-7"
+      id="test-card-col1"
+    />
+    <div
+      class="emotion-6 emotion-7"
+      id="test-card-col2"
+    />
+  </div>
+</div>
+`;
+
+exports[`Card Snapshots 2 columns with avatar 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: none;
+  width: 88px;
+  height: 88px;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-2 focus {
+  outline: none;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: undefinedpx;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-background-position: center;
+  background-position: center;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0;
+  padding: 8px 0px 4px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  overflow: hidden;
+}
+
+.emotion-8 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: default;
+  opacity: 1;
+}
+
+.emotion-10 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-10 focus {
+  outline: none;
+}
+
+.emotion-12 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+}
+
+.emotion-14 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: default;
+  opacity: 1;
+}
+
+.emotion-18 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #E5F7FF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-18:hover {
+  background-color: #E5F7FF;
+}
+
+.emotion-20 {
+  width: 8px;
+  height: 8px;
+  background-color: #0D71C8;
+  border-radius: 100%;
+}
+
+.emotion-22 {
+  font-weight: 600;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0 2px;
+  opacity: 1;
+  cursor: default;
+  padding-left: 8px;
+}
+
+.emotion-26 {
+  position: relative;
+}
+
+.emotion-28 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  gap: 4px;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.emotion-30 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #B3E5FF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-30:hover {
+  background-color: #B3E5FF;
+}
+
+.emotion-32 {
+  font-weight: 600;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0 2px;
+  opacity: 1;
+  cursor: default;
+}
+
+.emotion-34 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFCDAB;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-34:hover {
+  background-color: #FFCDAB;
+}
+
+.emotion-42 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #A9D9BF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-42:hover {
+  background-color: #A9D9BF;
+}
+
+.emotion-46 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #91A2FF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-46:hover {
+  background-color: #91A2FF;
+}
+
+.emotion-50 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFABB5;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-50:hover {
+  background-color: #FFABB5;
+}
+
+.emotion-54 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #84F3FF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-54:hover {
+  background-color: #84F3FF;
+}
+
+.emotion-58 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #BACAD0;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-58:hover {
+  background-color: #BACAD0;
+}
+
+.emotion-62 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFEA80;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-62:hover {
+  background-color: #FFEA80;
+}
+
+.emotion-66 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFACA1;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-66:hover {
+  background-color: #FFACA1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-card-container"
+    style="flex-direction: row; align-items: center; gap: 0px; padding: 0px;"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      id="test-card-avatar-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image: "
+        class="emotion-4 emotion-5"
+        height="undefinedpx"
+        role="img"
+        style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);"
+        width="100%"
+      />
+    </div>
+    <div
+      class="emotion-6 emotion-7"
+      id="test-card-col1"
+    >
+      <div
+        class="emotion-8 emotion-9"
+        data-tooltip-html="Jane Smith"
+        data-tooltip-position-strategy="fixed"
+        font-size="xlarge"
+        id="test-card-col1-line1-FullName"
+        opacity="1"
+        style="height: 28px; overflow: hidden; text-overflow: ellipsis; min-width: 0; text-align: start; white-space: nowrap;"
+      >
+         
+        Jane Smith
+      </div>
+      <div
+        class="emotion-10 emotion-3"
+        id="test-card-col1-line2-Image-ImageWidget"
+        tabindex="-1"
+      >
+        <div
+          aria-label="Image with initials, E"
+          class="emotion-12 emotion-13"
+          color="#84F3FF"
+          height="auto"
+          role="img"
+          width="100%"
+        >
+          E
+        </div>
+      </div>
+      <div
+        class="emotion-14 emotion-9"
+        data-tooltip-html="Jane.s@redbubble.co.uk"
+        data-tooltip-position-strategy="fixed"
+        font-size="medium"
+        id="test-card-col1-line3-Email"
+        opacity="1"
+        style="height: 24px; overflow: hidden; text-overflow: ellipsis; min-width: 0; text-align: start; white-space: nowrap;"
+      >
+         
+        Jane.s@redbubble.co.uk
+      </div>
+    </div>
+    <div
+      class="emotion-6 emotion-7"
+      id="test-card-col2"
+    >
+      <div
+        class="emotion-18 emotion-19"
+        id="test-card-col2-line1-Balance"
+      >
+        <span
+          class="pill-lead-icon--dot emotion-20 emotion-21"
+          id="pill-dot-test-card-col2-line1-Balance"
+          role="presentation"
+        />
+        <span
+          class="pill-text emotion-22 emotion-23"
+          data-testid="pill-text-test-card-col2-line1-Balance"
+          id="pill-text-test-card-col2-line1-Balance"
+        >
+          12,345.68
+        </span>
+      </div>
+      <div
+        class="emotion-14 emotion-9"
+        data-tooltip-html="Monday, April 12, 2021"
+        data-tooltip-position-strategy="fixed"
+        font-size="medium"
+        id="test-card-col2-line2-BirthDate"
+        opacity="1"
+        style="height: 24px; overflow: hidden; text-overflow: ellipsis; min-width: 0; text-align: end; white-space: nowrap;"
+      >
+         
+        Monday, April 12, 2021
+      </div>
+      <div
+        class="emotion-26 emotion-27"
+      >
+        <div
+          class="emotion-28 emotion-29"
+          id="test-card-col2-line3-TagList-tags-value"
+        >
+          <div
+            class="emotion-30 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-one"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-one"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-one"
+            >
+              one
+            </span>
+          </div>
+          <div
+            class="emotion-34 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-cake"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-cake"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-cake"
+            >
+              cake
+            </span>
+          </div>
+          <div
+            class="emotion-30 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-bunny"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-bunny"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-bunny"
+            >
+              bunny
+            </span>
+          </div>
+          <div
+            class="emotion-42 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-Add Tag 12"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-Add Tag 12"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-Add Tag 12"
+            >
+              Add Tag 12
+            </span>
+          </div>
+          <div
+            class="emotion-46 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-Contact Edit"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-Contact Edit"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-Contact Edit"
+            >
+              Contact Edit
+            </span>
+          </div>
+          <div
+            class="emotion-50 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-New 12 Tag"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-New 12 Tag"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-New 12 Tag"
+            >
+              New 12 Tag
+            </span>
+          </div>
+          <div
+            class="emotion-54 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-apr13"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-apr13"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-apr13"
+            >
+              apr13
+            </span>
+          </div>
+          <div
+            class="emotion-58 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-Bind"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-Bind"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-Bind"
+            >
+              Bind
+            </span>
+          </div>
+          <div
+            class="emotion-62 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-kkkkk"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-kkkkk"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-kkkkk"
+            >
+              kkkkk
+            </span>
+          </div>
+          <div
+            class="emotion-66 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-Nelson"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-Nelson"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-Nelson"
+            >
+              Nelson
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card Snapshots Default 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="undefined-card-container"
+    style="flex-direction: row; align-items: center; gap: 0px; padding: 0px;"
+    width="100%"
+  />
+</div>
+`;
+
+exports[`Card Snapshots hideEmptyFields false: original behavior preserved 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: none;
+  width: 88px;
+  height: 88px;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-2 focus {
+  outline: none;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: undefinedpx;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-background-position: center;
+  background-position: center;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0;
+  padding: 8px 0px 4px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  overflow: hidden;
+}
+
+.emotion-8 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: default;
+  opacity: 1;
+}
+
+.emotion-10 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-10 focus {
+  outline: none;
+}
+
+.emotion-12 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+}
+
+.emotion-14 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: default;
+  opacity: 1;
+}
+
+.emotion-18 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #E5F7FF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-18:hover {
+  background-color: #E5F7FF;
+}
+
+.emotion-20 {
+  width: 8px;
+  height: 8px;
+  background-color: #0D71C8;
+  border-radius: 100%;
+}
+
+.emotion-22 {
+  font-weight: 600;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0 2px;
+  opacity: 1;
+  cursor: default;
+  padding-left: 8px;
+}
+
+.emotion-26 {
+  position: relative;
+}
+
+.emotion-28 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  gap: 4px;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.emotion-30 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #B3E5FF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-30:hover {
+  background-color: #B3E5FF;
+}
+
+.emotion-32 {
+  font-weight: 600;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0 2px;
+  opacity: 1;
+  cursor: default;
+}
+
+.emotion-34 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFCDAB;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-34:hover {
+  background-color: #FFCDAB;
+}
+
+.emotion-42 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #A9D9BF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-42:hover {
+  background-color: #A9D9BF;
+}
+
+.emotion-46 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #91A2FF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-46:hover {
+  background-color: #91A2FF;
+}
+
+.emotion-50 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFABB5;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-50:hover {
+  background-color: #FFABB5;
+}
+
+.emotion-54 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #84F3FF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-54:hover {
+  background-color: #84F3FF;
+}
+
+.emotion-58 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #BACAD0;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-58:hover {
+  background-color: #BACAD0;
+}
+
+.emotion-62 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFEA80;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-62:hover {
+  background-color: #FFEA80;
+}
+
+.emotion-66 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFACA1;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-66:hover {
+  background-color: #FFACA1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-card-container"
+    style="flex-direction: row; align-items: center; gap: 0px; padding: 0px;"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      id="test-card-avatar-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image: "
+        class="emotion-4 emotion-5"
+        height="undefinedpx"
+        role="img"
+        style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);"
+        width="100%"
+      />
+    </div>
+    <div
+      class="emotion-6 emotion-7"
+      id="test-card-col1"
+    >
+      <div
+        class="emotion-8 emotion-9"
+        data-tooltip-html="Jane Smith"
+        data-tooltip-position-strategy="fixed"
+        font-size="xlarge"
+        id="test-card-col1-line1-FullName"
+        opacity="1"
+        style="height: 28px; overflow: hidden; text-overflow: ellipsis; min-width: 0; text-align: start; white-space: nowrap;"
+      >
+         
+        Jane Smith
+      </div>
+      <div
+        class="emotion-10 emotion-3"
+        id="test-card-col1-line2-Image-ImageWidget"
+        tabindex="-1"
+      >
+        <div
+          aria-label="Image with initials, E"
+          class="emotion-12 emotion-13"
+          color="#84F3FF"
+          height="auto"
+          role="img"
+          width="100%"
+        >
+          E
+        </div>
+      </div>
+      <div
+        class="emotion-14 emotion-9"
+        data-tooltip-html="Jane.s@redbubble.co.uk"
+        data-tooltip-position-strategy="fixed"
+        font-size="medium"
+        id="test-card-col1-line3-Email"
+        opacity="1"
+        style="height: 24px; overflow: hidden; text-overflow: ellipsis; min-width: 0; text-align: start; white-space: nowrap;"
+      >
+         
+        Jane.s@redbubble.co.uk
+      </div>
+    </div>
+    <div
+      class="emotion-6 emotion-7"
+      id="test-card-col2"
+    >
+      <div
+        class="emotion-18 emotion-19"
+        id="test-card-col2-line1-Balance"
+      >
+        <span
+          class="pill-lead-icon--dot emotion-20 emotion-21"
+          id="pill-dot-test-card-col2-line1-Balance"
+          role="presentation"
+        />
+        <span
+          class="pill-text emotion-22 emotion-23"
+          data-testid="pill-text-test-card-col2-line1-Balance"
+          id="pill-text-test-card-col2-line1-Balance"
+        >
+          12,345.68
+        </span>
+      </div>
+      <div
+        class="emotion-14 emotion-9"
+        data-tooltip-html="Monday, April 12, 2021"
+        data-tooltip-position-strategy="fixed"
+        font-size="medium"
+        id="test-card-col2-line2-BirthDate"
+        opacity="1"
+        style="height: 24px; overflow: hidden; text-overflow: ellipsis; min-width: 0; text-align: end; white-space: nowrap;"
+      >
+         
+        Monday, April 12, 2021
+      </div>
+      <div
+        class="emotion-26 emotion-27"
+      >
+        <div
+          class="emotion-28 emotion-29"
+          id="test-card-col2-line3-TagList-tags-value"
+        >
+          <div
+            class="emotion-30 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-one"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-one"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-one"
+            >
+              one
+            </span>
+          </div>
+          <div
+            class="emotion-34 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-cake"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-cake"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-cake"
+            >
+              cake
+            </span>
+          </div>
+          <div
+            class="emotion-30 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-bunny"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-bunny"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-bunny"
+            >
+              bunny
+            </span>
+          </div>
+          <div
+            class="emotion-42 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-Add Tag 12"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-Add Tag 12"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-Add Tag 12"
+            >
+              Add Tag 12
+            </span>
+          </div>
+          <div
+            class="emotion-46 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-Contact Edit"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-Contact Edit"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-Contact Edit"
+            >
+              Contact Edit
+            </span>
+          </div>
+          <div
+            class="emotion-50 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-New 12 Tag"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-New 12 Tag"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-New 12 Tag"
+            >
+              New 12 Tag
+            </span>
+          </div>
+          <div
+            class="emotion-54 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-apr13"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-apr13"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-apr13"
+            >
+              apr13
+            </span>
+          </div>
+          <div
+            class="emotion-58 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-Bind"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-Bind"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-Bind"
+            >
+              Bind
+            </span>
+          </div>
+          <div
+            class="emotion-62 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-kkkkk"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-kkkkk"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-kkkkk"
+            >
+              kkkkk
+            </span>
+          </div>
+          <div
+            class="emotion-66 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-Nelson"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-Nelson"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-Nelson"
+            >
+              Nelson
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card Snapshots hideEmptyFields: entirely unmapped column hidden 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: none;
+  width: 88px;
+  height: 88px;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-2 focus {
+  outline: none;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: undefinedpx;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-background-position: center;
+  background-position: center;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0;
+  padding: 8px 0px 4px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  overflow: hidden;
+}
+
+.emotion-8 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: default;
+  opacity: 1;
+}
+
+.emotion-10 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-10 focus {
+  outline: none;
+}
+
+.emotion-12 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+}
+
+.emotion-14 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 12px;
+  cursor: default;
+  opacity: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-card-container"
+    style="flex-direction: row; align-items: center; gap: 8px; padding: 0px;"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      id="test-card-avatar-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image: "
+        class="emotion-4 emotion-5"
+        height="undefinedpx"
+        role="img"
+        style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);"
+        width="100%"
+      />
+    </div>
+    <div
+      class="emotion-6 emotion-7"
+      id="test-card-col1"
+    >
+      <div
+        class="emotion-8 emotion-9"
+        data-tooltip-html="Jane Smith"
+        data-tooltip-position-strategy="fixed"
+        font-size="medium"
+        id="test-card-col1-line1-FullName"
+        opacity="1"
+        style="height: 20px; overflow: hidden; text-overflow: ellipsis; min-width: 0; text-align: start; white-space: nowrap;"
+      >
+         
+        Jane Smith
+      </div>
+      <div
+        class="emotion-10 emotion-3"
+        id="test-card-col1-line2-Image-ImageWidget"
+        tabindex="-1"
+      >
+        <div
+          aria-label="Image with initials, E"
+          class="emotion-12 emotion-13"
+          color="#84F3FF"
+          height="auto"
+          role="img"
+          width="100%"
+        >
+          E
+        </div>
+      </div>
+      <div
+        class="emotion-14 emotion-9"
+        data-tooltip-html="Jane.s@redbubble.co.uk"
+        data-tooltip-position-strategy="fixed"
+        font-size="small"
+        id="test-card-col1-line3-Email"
+        opacity="1"
+        style="height: 16px; overflow: hidden; text-overflow: ellipsis; min-width: 0; text-align: start; white-space: nowrap;"
+      >
+         
+        Jane.s@redbubble.co.uk
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card Snapshots hideEmptyFields: trailing row with no data hidden 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: none;
+  width: 88px;
+  height: 88px;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-2 focus {
+  outline: none;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: undefinedpx;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-background-position: center;
+  background-position: center;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0;
+  padding: 8px 0px 4px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  overflow: hidden;
+}
+
+.emotion-8 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: default;
+  opacity: 1;
+}
+
+.emotion-10 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-10 focus {
+  outline: none;
+}
+
+.emotion-12 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+}
+
+.emotion-14 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 12px;
+  cursor: default;
+  opacity: 1;
+}
+
+.emotion-18 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #E5F7FF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-18:hover {
+  background-color: #E5F7FF;
+}
+
+.emotion-20 {
+  width: 8px;
+  height: 8px;
+  background-color: #0D71C8;
+  border-radius: 100%;
+}
+
+.emotion-22 {
+  font-weight: 600;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0 2px;
+  opacity: 1;
+  cursor: default;
+  padding-left: 8px;
+}
+
+.emotion-24 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: default;
+  opacity: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-card-container"
+    style="flex-direction: row; align-items: center; gap: 8px; padding: 0px;"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      id="test-card-avatar-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image: "
+        class="emotion-4 emotion-5"
+        height="undefinedpx"
+        role="img"
+        style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);"
+        width="100%"
+      />
+    </div>
+    <div
+      class="emotion-6 emotion-7"
+      id="test-card-col1"
+    >
+      <div
+        class="emotion-8 emotion-9"
+        data-tooltip-html="Jane Smith"
+        data-tooltip-position-strategy="fixed"
+        font-size="medium"
+        id="test-card-col1-line1-FullName"
+        opacity="1"
+        style="height: 20px; overflow: hidden; text-overflow: ellipsis; min-width: 0; text-align: start; white-space: nowrap;"
+      >
+         
+        Jane Smith
+      </div>
+      <div
+        class="emotion-10 emotion-3"
+        id="test-card-col1-line2-Image-ImageWidget"
+        tabindex="-1"
+      >
+        <div
+          aria-label="Image with initials, E"
+          class="emotion-12 emotion-13"
+          color="#84F3FF"
+          height="auto"
+          role="img"
+          width="100%"
+        >
+          E
+        </div>
+      </div>
+      <div
+        class="emotion-14 emotion-9"
+        data-tooltip-html="Jane.s@redbubble.co.uk"
+        data-tooltip-position-strategy="fixed"
+        font-size="small"
+        id="test-card-col1-line3-Email"
+        opacity="1"
+        style="height: 16px; overflow: hidden; text-overflow: ellipsis; min-width: 0; text-align: start; white-space: nowrap;"
+      >
+         
+        Jane.s@redbubble.co.uk
+      </div>
+    </div>
+    <div
+      class="emotion-6 emotion-7"
+      id="test-card-col2"
+    >
+      <div
+        class="emotion-18 emotion-19"
+        id="test-card-col2-line1-Balance"
+      >
+        <span
+          class="pill-lead-icon--dot emotion-20 emotion-21"
+          id="pill-dot-test-card-col2-line1-Balance"
+          role="presentation"
+        />
+        <span
+          class="pill-text emotion-22 emotion-23"
+          data-testid="pill-text-test-card-col2-line1-Balance"
+          id="pill-text-test-card-col2-line1-Balance"
+        >
+          12,345.68
+        </span>
+      </div>
+      <div
+        class="emotion-24 emotion-9"
+        id="test-card-col2-line2-BirthDate"
+        opacity="1"
+        style="height: 16px; line-height: 16px; opacity: 0.3; text-align: end;"
+      >
+        —
+      </div>
+      <div
+        class="emotion-24 emotion-9"
+        id="test-card-col2-line3-TagList"
+        opacity="1"
+        style="height: 16px; line-height: 16px; opacity: 0.3; text-align: end;"
+      >
+        —
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card Snapshots hideEmptyFields: unmapped fields in visible rows show placeholder 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: none;
+  width: 88px;
+  height: 88px;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-2 focus {
+  outline: none;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: undefinedpx;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-background-position: center;
+  background-position: center;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0;
+  padding: 8px 0px 4px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  overflow: hidden;
+}
+
+.emotion-8 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: default;
+  opacity: 1;
+}
+
+.emotion-10 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 12px;
+  cursor: default;
+  opacity: 1;
+}
+
+.emotion-12 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-12 focus {
+  outline: none;
+}
+
+.emotion-14 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+}
+
+.emotion-18 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #E5F7FF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-18:hover {
+  background-color: #E5F7FF;
+}
+
+.emotion-20 {
+  width: 8px;
+  height: 8px;
+  background-color: #0D71C8;
+  border-radius: 100%;
+}
+
+.emotion-22 {
+  font-weight: 600;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0 2px;
+  opacity: 1;
+  cursor: default;
+  padding-left: 8px;
+}
+
+.emotion-26 {
+  position: relative;
+}
+
+.emotion-28 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  gap: 4px;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.emotion-30 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #B3E5FF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-30:hover {
+  background-color: #B3E5FF;
+}
+
+.emotion-32 {
+  font-weight: 600;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0 2px;
+  opacity: 1;
+  cursor: default;
+}
+
+.emotion-34 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFCDAB;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-34:hover {
+  background-color: #FFCDAB;
+}
+
+.emotion-42 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #A9D9BF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-42:hover {
+  background-color: #A9D9BF;
+}
+
+.emotion-46 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #91A2FF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-46:hover {
+  background-color: #91A2FF;
+}
+
+.emotion-50 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFABB5;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-50:hover {
+  background-color: #FFABB5;
+}
+
+.emotion-54 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #84F3FF;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-54:hover {
+  background-color: #84F3FF;
+}
+
+.emotion-58 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #BACAD0;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-58:hover {
+  background-color: #BACAD0;
+}
+
+.emotion-62 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFEA80;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-62:hover {
+  background-color: #FFEA80;
+}
+
+.emotion-66 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFACA1;
+  max-width: 100%;
+  padding: 0 8px;
+  border-radius: 8px;
+  height: 16px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-66:hover {
+  background-color: #FFACA1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-card-container"
+    style="flex-direction: row; align-items: center; gap: 8px; padding: 0px;"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      id="test-card-avatar-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        aria-label="Image: "
+        class="emotion-4 emotion-5"
+        height="undefinedpx"
+        role="img"
+        style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);"
+        width="100%"
+      />
+    </div>
+    <div
+      class="emotion-6 emotion-7"
+      id="test-card-col1"
+    >
+      <div
+        class="emotion-8 emotion-9"
+        id="test-card-col1-line1"
+        opacity="1"
+        style="height: 20px;"
+      />
+      <div
+        class="emotion-10 emotion-9"
+        data-tooltip-html="Jane Smith"
+        data-tooltip-position-strategy="fixed"
+        font-size="small"
+        id="test-card-col1-line2-FullName"
+        opacity="1"
+        style="height: 16px; overflow: hidden; text-overflow: ellipsis; min-width: 0; text-align: start; white-space: nowrap;"
+      >
+         
+        Jane Smith
+      </div>
+      <div
+        class="emotion-12 emotion-3"
+        id="test-card-col1-line3-Image-ImageWidget"
+        tabindex="-1"
+      >
+        <div
+          aria-label="Image with initials, E"
+          class="emotion-14 emotion-15"
+          color="#84F3FF"
+          height="auto"
+          role="img"
+          width="100%"
+        >
+          E
+        </div>
+      </div>
+    </div>
+    <div
+      class="emotion-6 emotion-7"
+      id="test-card-col2"
+    >
+      <div
+        class="emotion-18 emotion-19"
+        id="test-card-col2-line1-Balance"
+      >
+        <span
+          class="pill-lead-icon--dot emotion-20 emotion-21"
+          id="pill-dot-test-card-col2-line1-Balance"
+          role="presentation"
+        />
+        <span
+          class="pill-text emotion-22 emotion-23"
+          data-testid="pill-text-test-card-col2-line1-Balance"
+          id="pill-text-test-card-col2-line1-Balance"
+        >
+          12,345.68
+        </span>
+      </div>
+      <div
+        class="emotion-10 emotion-9"
+        data-tooltip-html="Monday, April 12, 2021"
+        data-tooltip-position-strategy="fixed"
+        font-size="small"
+        id="test-card-col2-line2-BirthDate"
+        opacity="1"
+        style="height: 16px; overflow: hidden; text-overflow: ellipsis; min-width: 0; text-align: end; white-space: nowrap;"
+      >
+         
+        Monday, April 12, 2021
+      </div>
+      <div
+        class="emotion-26 emotion-27"
+      >
+        <div
+          class="emotion-28 emotion-29"
+          id="test-card-col2-line3-TagList-tags-value"
+        >
+          <div
+            class="emotion-30 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-one"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-one"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-one"
+            >
+              one
+            </span>
+          </div>
+          <div
+            class="emotion-34 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-cake"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-cake"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-cake"
+            >
+              cake
+            </span>
+          </div>
+          <div
+            class="emotion-30 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-bunny"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-bunny"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-bunny"
+            >
+              bunny
+            </span>
+          </div>
+          <div
+            class="emotion-42 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-Add Tag 12"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-Add Tag 12"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-Add Tag 12"
+            >
+              Add Tag 12
+            </span>
+          </div>
+          <div
+            class="emotion-46 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-Contact Edit"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-Contact Edit"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-Contact Edit"
+            >
+              Contact Edit
+            </span>
+          </div>
+          <div
+            class="emotion-50 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-New 12 Tag"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-New 12 Tag"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-New 12 Tag"
+            >
+              New 12 Tag
+            </span>
+          </div>
+          <div
+            class="emotion-54 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-apr13"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-apr13"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-apr13"
+            >
+              apr13
+            </span>
+          </div>
+          <div
+            class="emotion-58 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-Bind"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-Bind"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-Bind"
+            >
+              Bind
+            </span>
+          </div>
+          <div
+            class="emotion-62 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-kkkkk"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-kkkkk"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-kkkkk"
+            >
+              kkkkk
+            </span>
+          </div>
+          <div
+            class="emotion-66 emotion-19"
+            id="test-card-col2-line3-TagList-tags-value-Nelson"
+          >
+            <span
+              class="pill-text emotion-32 emotion-23"
+              data-testid="pill-text-test-card-col2-line3-TagList-tags-value-Nelson"
+              id="pill-text-test-card-col2-line3-TagList-tags-value-Nelson"
+            >
+              Nelson
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card Snapshots is loading 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: none;
+  width: 88px;
+  height: 88px;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-2 focus {
+  outline: none;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0;
+  padding: 8px 0px 4px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  overflow: hidden;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-card-container"
+    style="flex-direction: row; align-items: center; gap: 0px; padding: 0px;"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      id="test-card-avatar-ImageWidget"
+      tabindex="-1"
+    >
+      <span
+        aria-busy="true"
+        aria-live="polite"
+      >
+        <span
+          class="react-loading-skeleton"
+          style="width: 100%; height: 100%; border-radius: 50%;"
+        >
+          ‌
+        </span>
+        <br />
+      </span>
+    </div>
+    <div
+      class="emotion-4 emotion-5"
+      id="test-card-col1"
+    >
+      <span
+        aria-busy="true"
+        aria-live="polite"
+      >
+        <span
+          class="react-loading-skeleton"
+          style="height: 16px;"
+        >
+          ‌
+        </span>
+        <br />
+        <span
+          class="react-loading-skeleton"
+          style="height: 16px;"
+        >
+          ‌
+        </span>
+        <br />
+        <span
+          class="react-loading-skeleton"
+          style="height: 16px;"
+        >
+          ‌
+        </span>
+        <br />
+      </span>
+    </div>
+    <div
+      class="emotion-4 emotion-5"
+      id="test-card-col2"
+    >
+      <span
+        aria-busy="true"
+        aria-live="polite"
+      >
+        <span
+          class="react-loading-skeleton"
+          style="height: 16px;"
+        >
+          ‌
+        </span>
+        <br />
+        <span
+          class="react-loading-skeleton"
+          style="height: 16px;"
+        >
+          ‌
+        </span>
+        <br />
+        <span
+          class="react-loading-skeleton"
+          style="height: 16px;"
+        >
+          ‌
+        </span>
+        <br />
+      </span>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,92 @@
+.mi-ae-whereblock-wrapper {
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 10px 10px;
+  margin: 0 0 20px 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.mi-ae-whereblock {
+  display: block;
+  margin: 0;
+  width: 100%;
+  list-style: none;
+  list-style-type: none;
+  counter-reset: line;
+
+  li {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+
+    &:before {
+      counter-increment: line;
+      content: counter(line);
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0 .5em;
+      margin-right: .5em;
+      width: 30px;
+      background-color: $light-grey;
+      border-bottom: 1px solid $light-grey;
+      text-align: center;
+      color: $dark-grey;
+      height: 100%;
+      line-height: 3;
+    }
+
+    &.line-indent {
+      &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        height: 100%;
+        border-top: 2px solid $lightest-blue;
+        border-left: 1px solid $lightest-blue;
+        border-bottom: 2px solid $lightest-blue;
+        margin-left: 31px;
+        width: 5px;
+      }
+
+      @include lineIndent(1, 31px);
+
+      ul {
+        min-height: 10px;
+
+        li {
+          .action-name { margin-left: 70px; }
+
+          @include actionIndent(1, 70px);
+        }
+      }
+    }
+
+    .where-row {
+      display: block;
+      max-width: 100%;
+      margin-left: 28px;
+      padding: 5px 0 5px 12px;
+      box-sizing: border-box;
+
+      &:hover {
+        background-color: rgba($lightest-blue, 0.1);
+      }
+
+      .mi-ae-row {
+        line-height: 0.9;
+      }
+    }
+
+    ul {
+      margin-left: 0;
+    }
+  }
+}

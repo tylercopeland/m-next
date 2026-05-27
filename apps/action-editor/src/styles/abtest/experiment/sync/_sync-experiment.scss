@@ -1,0 +1,487 @@
+﻿.mock-dashboard {
+    width: 100%;
+}
+
+.modal-grid-block-vertical {
+    margin: auto 0;
+    text-align: left;
+}
+
+.sync-modal-img-btn {
+    width: 210px;
+}
+
+.modal-grid-block-horizontal {
+    margin: 0 auto;
+    display: inherit;
+    text-align: center;
+
+    li {
+        padding-left: 10px;
+    }
+}
+
+.sync-experiment-connection {
+    margin: 0 auto;
+
+    img {
+        max-width: 320px;
+        margin: 20px;
+    }
+}
+
+.sync-experiment-animation {
+    margin: 0 auto;
+
+    img {
+        max-width: 220px;
+    }
+}
+
+.sync-grid-block {
+    h2 {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.modal-grid-row {
+    width: 100%;
+    height: 440px;
+    display: list-item;
+}
+
+.modal-grid-row-small {
+    width: 100%;
+    height: 380px;
+    display: list-item;
+}
+
+.grid-block-inner {
+    margin: 0 auto;
+
+    img {
+        margin: 20px;
+    }
+
+    .qbo-image-link {
+        position: relative;
+        display: inline-block;
+
+        img {
+            height: auto;
+            margin: auto;
+        }
+    }
+}
+
+.sync-experiment-proceed-btn {
+    height: 50px;
+    width: 360px;
+    font-weight: normal !important;
+    font-size: 20px !important;
+}
+
+.sync-modal {
+    width: 1000px !important;
+
+    @include breakpoint(medium) {
+        max-width: 600px !important;
+    }
+
+    @include breakpoint(large) {
+        max-width: 1000px !important;
+    }
+
+    @include breakpoint(small only) {
+        max-width: 100% !important;
+    }
+}
+
+.syc-modal-header {
+    margin-bottom: 14px;
+}
+
+.sync-modal-back {
+    height: 14px;
+}
+
+.sync-modal-radio {
+    word-spacing: -4px;
+}
+
+.sync-modal-body {
+    display: initial !important;
+    width: 100%;
+    padding-top: 15px !important;
+}
+
+.sync-modal-block {
+    margin-top: 20px !important;
+}
+
+.sync-modal-block_extra {
+    margin-top: 40px !important;
+}
+
+.sync-experiment-qb-location {
+    margin-top: 40px !important;
+
+    img {
+        margin: auto 20px;
+    }
+
+    a {
+        display: block;
+        position: absolute;
+        width: 60%;
+        height: 140px;
+    }
+
+    div {
+        margin: 0 auto;
+        width: 60%;
+        height: 150px;
+        border: 1px solid $card-border;
+
+        &:hover {
+            background-color: $glacier-blue;
+            cursor: pointer;
+        }
+    }
+
+    table {
+        height: 100%;
+        border: 0;
+        background-color: transparent;
+
+        tr, td, tbody {
+            background-color: transparent;
+        }
+    }
+}
+
+.sync-experiment-invite {
+    text-align: center;
+    overflow: visible;
+    >div {
+        display: flex;
+        width: 600px;
+        margin: auto;
+
+        @include breakpoint(small only) {
+            width: 100% !important;
+        }
+    }
+}
+
+
+.sync-experiment-invite-row {
+    flex: .45;
+    margin: auto;
+    text-align: left;
+    padding-right: 5px;
+    input {
+        margin: 0 10px 5px 0;
+    }
+
+    &.center {
+        text-align: center;
+    }
+
+    &.small {
+        flex: .3;
+    }
+
+    &.sync-experiment-tooltip {
+        &.tooltip-inner {
+            font-size: 14px !important;
+            font-weight:normal;
+        }
+    }
+
+    &.tooltip-arrow {
+        display:block;
+    }
+}
+
+.sync-modal-footer {
+    border: 0px !important;
+    height: 60px;
+}
+
+.modal-footer-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+#modal-footer-email-setup {
+    margin: 70px auto 0;
+}
+
+#modal-footer-btn-cancel {
+    margin-top: 50px;
+}
+
+.sync-experiment-instruction-title {
+    padding-top: 10px;
+    width: 450px;
+    margin: auto !important;
+}
+
+.sync-experiment-instruction-input {
+    width: 500px;
+    margin: auto !important;
+
+    textarea {
+        resize: none;
+    }
+}
+
+.sync-experiment-link {
+    margin: .2rem 0 .5rem 0 !important;
+    font-size: 1.125rem !important;
+}
+
+.sync-modal-code {
+    margin: auto;
+    text-align: center;
+
+    span {
+        font-size: 1.125rem !important;
+    }
+
+    div:nth-child(2) {
+        display: flex;
+        width: 350px;
+    }
+
+    label {
+        margin: auto;
+        width: 100px;
+        height: 100%;
+    }
+
+    input {
+        margin: 0;
+        cursor: text;
+    }
+
+    button {
+        margin: 0;
+    }
+}
+
+/* PL-30210 Skunk Css  */
+.card-v4{
+    background-color: $white;
+    padding:32px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+  
+  .sync-page-v4{
+    padding: 24px;
+    background-color: #F6FAFB;
+  }
+  
+  .inner-v4{
+    border: 1px solid #BACAD0;
+    text-align: center;
+    flex: 0 0 100%;
+    padding: 24px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  
+  .text-section-v4{
+    display: inline-block;
+    max-width: 90%;
+    padding-bottom: 8px;
+  
+  }
+  
+  .text-section-v4 p{
+    text-align:left;
+    margin-bottom: 8px;
+  }
+
+  #step1-header{
+    margin-top: 22px;
+    }
+  
+  .card-v4 .grid-block{
+    margin: 24px 0 0;
+  }
+  
+  .grid-content-v4{
+      
+    padding: 0 16px 16px !important;
+    display: flex;
+    width: 33.333%;
+    flex-direction: column;
+  }
+  
+  .icon-v4{
+    font-size: 25px;
+    color: rgb(53, 179, 125);
+    line-height: 67px;
+
+  }
+  
+  .sync-icon-v4{
+  color: #115B40;
+  }
+  
+  .download-icon-v4{
+  color: rgb(59, 74, 237);
+  }
+  
+  .sync-icon-background{ 
+      background-color: #E7F8F1;
+     
+  }
+  
+  .icon-background{
+    border-radius: 50%;
+    display: block;
+    width: 62px;
+    height: 62px;
+    text-align: center;  
+    margin: 0 auto 10px;
+  
+  }
+  
+  .download-icon-background{
+    background-color: #E5F7FF;
+  }
+  
+  .sync-page-v4 hr{
+   border: 1px solid rgb(186, 202, 208);
+   height: 1px;
+   margin-top: 40px;
+   border-width: 1px 0 0;
+  }
+  
+  .v4-section{
+    padding: 16px 24px 16px 16px;
+  }
+  
+  #code-box-container{
+    display: inline-flex;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  #code-box-container a {
+  
+    padding-top: 8px;
+    padding-left: 16px;
+  }
+  #code-box{
+    border: 1px solid #eee;
+    line-height: 2;
+    background-color: #eee;
+    word-break: break-all;
+    padding: 2px;
+  }
+  
+  .instructions-modal{
+    max-width : 600px !important;
+    border-radius: 20px;
+  }
+  
+  .sync-page-v4 a {
+    color: #0d78d5
+  }
+
+  .sync-page-v4 a:hover {
+    color: rgb(42, 106, 162);
+  }
+
+  #code-text{
+      margin-bottom: 8px;
+  }
+  
+  .v4-cta{
+    margin-bottom: 0 !important;
+  }
+  
+  .inner-v4 h2, .v4-section h2{
+  color: rgb(15, 27, 49);
+  font-size: 20px !important;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 16px;
+  }
+
+  .v4-section h2{
+      margin-bottom: 8px;
+  }
+
+ 
+  .text-section-v4  .blue {
+      background-color: #0D71C8 !important;
+  }
+
+  .text-section-v4  button.blue:hover {
+    background-color: #064499 !important;
+}
+
+.download-icon-background img
+{
+    transform: translate(0 , 83%)
+}
+
+.convincer {
+    margin-top: auto;
+  }
+
+  .convincer-grid{
+      flex: 1 !important;
+      text-align: center;
+      margin: 0 !important;
+      padding: 0 !important;
+  }
+
+  .convincer-grid div{
+    padding-bottom: 0;
+  }
+
+  .convincer-sm{
+    display: none;
+    margin-top: 8px;
+   
+  }
+
+  #code-box-container input{
+      background-color: transparent;
+      margin-bottom: 0;
+  }
+
+  
+  
+  @media only screen and (min-width: 0em) and (max-width: 45.7232142857rem) {
+    .sync-page-v4 {
+      padding: 24px 0;
+    }
+  
+    .grid-content-v4{
+     width: 100%; 
+     
+    }
+    
+    .convincer-grid{
+        display: none;
+    }
+
+    .convincer-sm{
+        display: block;
+        text-align: center;
+      }
+
+  }

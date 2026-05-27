@@ -1,0 +1,63 @@
+import { FieldTypeIds } from './fieldTypes';
+import widgets from './widgetTypes';
+
+export const allowedControlType = {
+  Text: [widgets.LABEL, widgets.TEXTBOX, widgets.TEXTAREA, widgets.RADIOBOX],
+  Decimal: [widgets.LABEL, widgets.TEXTBOX, widgets.TEXTAREA, widgets.RADIOBOX],
+  Integer: [widgets.LABEL, widgets.TEXTBOX, widgets.TEXTAREA, widgets.RADIOBOX],
+  Money: [widgets.LABEL, widgets.TEXTBOX, widgets.TEXTAREA, widgets.RADIOBOX],
+  DateTime: [widgets.DATETIMEPICKER],
+  YesNo: [widgets.CHECKBOX, widgets.TOGGLE],
+  Linked: [],
+  Address: [],
+  DropDown: [widgets.LABEL, widgets.TEXTBOX, widgets.TEXTAREA, widgets.RADIOBOX, widgets.DROPDOWN],
+};
+
+export const allowedFieldType = {
+  Text: [FieldTypeIds.Text, FieldTypeIds.Integer, FieldTypeIds.Decimal, FieldTypeIds.Money],
+  Decimal: [FieldTypeIds.Integer, FieldTypeIds.Decimal, FieldTypeIds.Money],
+  Integer: [FieldTypeIds.Integer, FieldTypeIds.Decimal, FieldTypeIds.Money],
+  Money: [FieldTypeIds.Integer, FieldTypeIds.Decimal, FieldTypeIds.Money],
+  DateTime: [FieldTypeIds.DateTime],
+  YesNo: [FieldTypeIds.YesNo],
+  Linked: [],
+  Address: [],
+  DropDown: [FieldTypeIds.Text, FieldTypeIds.Integer, FieldTypeIds.Decimal, FieldTypeIds.Money],
+};
+
+export const controlIcon = {
+  ADR: 'address-lookup',
+  APR: 'app-ribbon_v3',
+  BTN: 'button',
+  BGR: 'button-group',
+  BGI: 'button',
+  CAL: 'calendar',
+  CHT: 'bar-chart',
+  CHK: 'checkbox',
+  EDT: 'grid-add',
+  DTP: 'date-picker',
+  DOC: 'cloud-upload',
+  DRP: 'dropdown',
+  GRD: 'grid',
+  FIL: '',
+  HTM: 'code-html',
+  ICO: 'icon',
+  LBL: 'text',
+  MAP: 'location-pin',
+  MSD: 'dropdown',
+  PAY: '',
+  PIC: 'picture',
+  PNV: '',
+  RAD: 'radio-buttons',
+  REC: 'recurring-date',
+  SIG: 'pen-write-v4',
+  SEC: '',
+  TAG: 'tag',
+  TXT: 'text-input',
+  TMP: '',
+  TXA: 'text-input',
+  TGL: 'toggle',
+  WAL: '',
+  'F-BLOCK': 'dropdown',
+  GAL: 'gallery',
+};

@@ -1,0 +1,61 @@
+.new-action-list {
+  display: block;
+  margin: 10px 0;
+  padding: 0;
+  list-style: none;
+  list-style-type: none;
+
+  &.show-descriptions {
+    li p {
+      display: block !important;
+    }
+  }
+
+  li.action-group {
+    display: block;
+    margin-bottom: 10px;
+
+    span {
+      display: block;
+      padding: 0 4px 4px;
+      font-weight: 600;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: block;
+        border-color: $light-grey;
+        border-width: 1px 1px 0 1px;
+        border-style: solid;
+        padding: 6px;
+        cursor: pointer;
+
+        &:last-child {
+          border-bottom-width: 1px;
+        }
+
+        &:hover {
+          span {
+            color: $blue;
+          }
+        }
+
+        span {
+          display: block;
+          padding: 0;
+          font-weight: normal;
+        }
+
+        p {
+          display: none;
+          font-size: 11px;
+          font-style: italic;
+          color: $dark-grey;
+        }
+      }
+    }
+  }
+}

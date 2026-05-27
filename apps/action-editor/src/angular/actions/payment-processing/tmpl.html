@@ -1,0 +1,320 @@
+<div data-ng-controller="ProcessPaymentsCtrl">
+  <mi-action-description info="action"></mi-action-description>
+
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content">
+    <h3>Processing Details</h3>
+
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Action</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <ui-select data-ng-model="actionType.selected" theme="selectize" search-enabled="false" ng-disabled="action.isReadOnly"> 
+          <ui-select-match placeholder="Select an action...">
+            {{$select.selected.label}}
+          </ui-select-match>         
+          <ui-select-choices repeat="opt in action.txnTypes">
+            <span ng-bind-html="opt.label"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Amount</label>
+      </div>
+      <div ng-class="{ 'mi-ae-col-10': action.UsePaymentWidget, 'mi-ae-col-6': !action.UsePaymentWidget }" 
+           mi-validation-class="action.ValidationMessages" error-property="'PaymentTotal'">
+        <mi-complex-value action="action" model="action.PaymentTotal" allow="paymentTotalAllow" is-read-only ="action.isReadOnly"></mi-complex-value>
+      </div>
+      <div class="mi-ae-col-4" ng-if="!action.UsePaymentWidget">
+        <ui-select data-ng-model="action.Currency" theme="selectize" search-enabled="true" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select a currency...">
+            {{$select.selected.label}}
+          </ui-select-match>         
+          <ui-select-choices repeat="curr.code as curr in action.currencies">
+            <span ng-bind-html="curr.label"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+
+    <div class="mi-ae-row" ng-show="actionType.selected.label === 'Charge'">
+      <div class="mi-ae-col-16">
+        <label class="mi-radio-checkbox mi-checkbox">
+          <span>Use a payment widget to collect customer payment details</span>
+          <input type="checkbox" data-ng-model="action.UsePaymentWidget" ng-disabled="action.isReadOnly">       
+          <div class="mi-radio-checkbox-indicator"></div>
+        </label>
+      </div>
+    </div>
+    
+    <div class="mi-ae-row" ng-show="action.UsePaymentWidget">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Payment widget name</label>
+      </div>
+      <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'UsePaymentWidget'">
+        <ui-select data-ng-model="action.PaymentWidgetName" theme="selectize" search-enabled="false" ng-disabled="action.isReadOnly"> 
+          <ui-select-match placeholder="Select a payment widget...">
+            {{$select.selected.name}}
+          </ui-select-match>         
+          <ui-select-choices repeat="control.name as control in paymentWidgetList | orderBy: 'name'">
+            <span ng-bind-html="control.name"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+    
+    <h3>Payment Gateway</h3>
+
+   <div class="mi-ae-row" ng-show="action.UsePaymentWidget">
+    <div class="mi-ae-col-16">
+      <label class="mi-radio-checkbox mi-checkbox">
+        <span>Use my default payment gateway to process this transaction</span>
+        <input type="checkbox" data-ng-model="action.UseDefaultGateway" ng-disabled="action.isReadOnly"> 
+        <div class="mi-radio-checkbox-indicator"></div>
+      </label>
+    </div>
+   </div>
+
+    <div class="mi-ae-row" ng-hide="action.UseDefaultGateway">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Payment gateway name</label>
+      </div>
+      <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'PaymentGateway'">
+         <mi-complex-value action="action" model="action.PaymentGateway" allow="allowedTypesText" is-read-only ="action.isReadOnly"></mi-complex-value>
+      </div>
+    </div> 
+
+    <div ng-hide="action.UsePaymentWidget">
+      <h3>Payment Details</h3>       
+      
+      <div class="mi-ae-row">
+          <div class="mi-ae-col-4">
+            <label class="mi-ae-label">Payment type</label>
+          </div>
+          <div class="mi-ae-col-10">
+            <ui-select data-ng-model="paymentType.selected" theme="selectize" search-enabled="true" ng-disabled="action.isReadOnly">
+              <ui-select-match placeholder="Select a payment type...">
+                {{$select.selected.label}}
+              </ui-select-match>         
+              <ui-select-choices repeat="type in action.paymentTypes">
+                <span ng-bind-html="type.label"></span>
+              </ui-select-choices>
+            </ui-select>
+          </div>
+      </div>
+
+      <div ng-show="!action.UsePaymentWidget && paymentType.selected.label === 'Credit Card'">
+
+        <div ng-hide="actionType.selected.label === 'Void'">
+          <div class="mi-ae-row">
+            <div class="mi-ae-col-4">
+              <label class="mi-ae-label">Credit card number</label>
+            </div>
+            <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'CcNum'">
+              <mi-complex-value action="action" model="action.Card.CreditCardNumber" allow="allowedTypesText" is-read-only ="action.isReadOnly"></mi-complex-value>
+            </div>
+          </div>
+
+          <div class="mi-ae-row">
+            <div class="mi-ae-col-4">
+              <label class="mi-ae-label">Expiry month</label>
+            </div>
+            <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'ExpMonth'" >
+              <mi-complex-value action="action" model="action.Card.ExpiryMonth" allow="allowedTypesNumber"
+                                placeholder="'e.g.&quot;12&quot;'" is-read-only ="action.isReadOnly"></mi-complex-value>
+            </div>
+          </div> 
+
+          <div class="mi-ae-row">
+            <div class="mi-ae-col-4">
+              <label class="mi-ae-label">Expiry year</label>
+            </div>
+            <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'ExpYear'">
+              <mi-complex-value action="action" model="action.Card.ExpiryYear" allow="allowedTypesNumber" 
+                                placeholder="'e.g.&quot;' + currentYear  + '&quot;'" is-read-only ="action.isReadOnly"></mi-complex-value>
+            </div>
+          </div>
+
+        </div>
+        <div class="mi-ae-row">
+          <div class="mi-ae-col-4">
+            <label class="mi-ae-label" ng-if="actionType.selected.label === 'Charge'">
+              Card verification number
+            </label>
+            <label class="mi-ae-label" ng-if="actionType.selected.label !== 'Charge'">
+              Transaction ID
+            <label>
+          </div>
+          <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'Cvv'">
+            <mi-complex-value action="action" model="action.Card.CVVorTransactionID" allow="allowedTypesText" is-read-only ="action.isReadOnly"></mi-complex-value>
+          </div>
+        </div>
+      </div>
+
+      <div ng-show="!action.UsePaymentWidget && paymentType.selected.label === 'E Check'">
+        
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-4">
+              <label class="mi-ae-label">Account number</label>
+            </div>            
+            <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'Account'">
+              <mi-complex-value action="action" model="action.Cheque.AccountNumber" allow="allowedTypesNumber" is-read-only ="action.isReadOnly"></mi-complex-value>
+            </div>            
+        </div>
+
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-4">
+              <label class="mi-ae-label">Routing number</label>
+            </div>           
+            <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'Routing'">
+              <mi-complex-value action="action" model="action.Cheque.RoutingNumber" allow="allowedTypesNumber" is-read-only ="action.isReadOnly"></mi-complex-value>
+            </div>            
+        </div>
+
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-4">
+              <label class="mi-ae-label">Check type</label>
+            </div>           
+            <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'CheckType'">
+              <mi-complex-value action="action" model="action.Cheque.CheckType" allow="allowedTypesText" is-read-only ="action.isReadOnly"></mi-complex-value>
+            </div>            
+        </div>
+
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-4">
+              <label class="mi-ae-label">Product ID</label>
+            </div>            
+            <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'ProductID'">
+              <mi-complex-value action="action" model="action.Cheque.ProductID" allow="allowedTypesText" is-read-only ="action.isReadOnly"></mi-complex-value>
+            </div>            
+        </div>
+
+      </div>
+    </div> 
+   
+    <h3>Customer Details</h3>
+
+    <div class="mi-ae-row" ng-if="actionType.selected.label !== 'Charge'">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Order ID</label>
+      </div>
+      <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'OrderID'">
+        <mi-complex-value action="action" model="action.OrderID" allow="allowedTypesText" is-read-only ="action.isReadOnly"></mi-complex-value>
+      </div>
+    </div>
+
+    <div ng-if="actionType.selected.label === 'Charge'">
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Customer company</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value action="action" model="action.CustomerCompany" allow="allowedTypesText" is-read-only ="action.isReadOnly"></mi-complex-value>
+        </div>
+      </div>
+      
+      <div class="mi-ae-row" ng-hide="action.UsePaymentWidget">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Customer name</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value ng-if="!action.UsePaymentWidget && paymentType.selected.label === 'Credit Card'" action="action" model="action.Card.CustomerName" allow="allowedTypesText" is-read-only ="action.isReadOnly"></mi-complex-value>
+          <mi-complex-value ng-if="!action.UsePaymentWidget && paymentType.selected.label === 'E Check'" action="action" model="action.Cheque.CustomerName" allow="allowedTypesText" is-read-only ="action.isReadOnly"></mi-complex-value>
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Address</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value action="action" model="action.Address" allow="allowedTypesText" is-read-only ="action.isReadOnly"></mi-complex-value>
+        </div>
+      </div>
+      
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">City</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value action="action" model="action.City" allow="allowedTypesText" is-read-only ="action.isReadOnly"></mi-complex-value>
+        </div>
+      </div>
+      
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">State</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value action="action" model="action.State" allow="allowedTypesText" is-read-only ="action.isReadOnly"></mi-complex-value>
+        </div>
+      </div>
+      
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Postal / Zip Code</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value action="action" model="action.Zip" allow="allowedTypesText" is-read-only ="action.isReadOnly"></mi-complex-value>
+        </div>
+      </div>
+      
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Country</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value action="action" model="action.Country" allow="allowedTypesText" is-read-only ="action.isReadOnly"></mi-complex-value>
+        </div>
+      </div>
+      
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Email</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value action="action" model="action.Email" allow="allowedTypesText" is-read-only ="action.isReadOnly"></mi-complex-value>
+        </div>
+      </div>
+    </div>
+
+    <h3>Store Merchant Response in Action Results</h3>
+
+    <mi-result-to-set label="'Merchant response'"
+                              hide-store-in="true"
+                              action="action"
+                              item="action.ActionResultName" is-read-only ="action.isReadOnly">
+    </mi-result-to-set>
+    <mi-result-to-set label="'Success or fail'"
+                              hide-store-in="true"
+                              action="action"
+                              item="action.ActionResultSuccessOrFailName" is-read-only ="action.isReadOnly">
+    </mi-result-to-set>
+    <div ng-if="actionType.selected.label === 'Charge'">
+      <mi-result-to-set label="'Order ID'"
+                                hide-store-in="true"
+                                action="action"
+                                item="action.ActionResultOrderIdName" is-read-only ="action.isReadOnly">
+      </mi-result-to-set>
+      <mi-result-to-set label="'Transaction ref number'"
+                                hide-store-in="true"
+                                action="action"
+                                item="action.ActionResultTxnNumName" is-read-only ="action.isReadOnly">
+      </mi-result-to-set>
+      <mi-result-to-set ng-if="action.UsePaymentWidget" label="'Errors'"
+                                hide-store-in="true"
+                                action="action"
+                                item="action.ActionResultErrorsName" is-read-only ="action.isReadOnly">
+      </mi-result-to-set>
+    </div>
+    
+  </div>
+  <!--/ Main Content Area -->
+
+   <mi-action-notes  is-read-only ="action.isReadOnly"></mi-action-notes>
+</div>

@@ -1,0 +1,2925 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox Snapshots Align Left 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 14px!important;
+  font-weight: normal;
+}
+
+.emotion-2 input~div:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.emotion-2 input:checked~div,
+.emotion-2 input:indeterminate~div {
+  background-color: #0D71C8;
+  border: none;
+}
+
+.emotion-2 input:checked~div:after {
+  display: block;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.emotion-2 input:disabled~div {
+  opacity: 0.5;
+}
+
+.emotion-2 input:indeterminate~div:after {
+  display: block;
+  top: 7px;
+  left: 3px;
+  width: 10px;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+
+.emotion-2 input:checked~div:after {
+  width: 5px;
+  height: 9px;
+  left: 5px;
+  top: 3px;
+}
+
+.emotion-4 {
+  padding-left: 8px;
+  padding-right: 0;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  opacity: 1;
+  outline: none;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  font-weight: normal;
+}
+
+.emotion-6 {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.emotion-6:focus-visible~div {
+  outline: none!important;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  position: relative;
+  display: block;
+  border: 1px solid #BACAD0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: flex-start;
+  align-self: flex-start;
+  box-shadow: none;
+  outline: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  max-width: 16px;
+  max-height: 16px;
+}
+
+.emotion-8:hover {
+  outline: none;
+  box-shadow: 0 0 1px 2px #B3E5FF;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-wrapper"
+  >
+    <label
+      aria-labelledby="testLbl"
+      class="emotion-2 emotion-3"
+      for="test"
+      width="100%"
+    >
+      <div
+        aria-checked="true"
+        class="emotion-4 emotion-5"
+        id="testLbl"
+        tabindex="-1"
+      >
+        Test
+      </div>
+      <input
+        checked=""
+        class="emotion-6 emotion-7"
+        id="test"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="emotion-8 emotion-9"
+        tabindex="-1"
+      />
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox Snapshots Align center 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 14px!important;
+  font-weight: normal;
+}
+
+.emotion-2 input~div:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.emotion-2 input:checked~div,
+.emotion-2 input:indeterminate~div {
+  background-color: #0D71C8;
+  border: none;
+}
+
+.emotion-2 input:checked~div:after {
+  display: block;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.emotion-2 input:disabled~div {
+  opacity: 0.5;
+}
+
+.emotion-2 input:indeterminate~div:after {
+  display: block;
+  top: 7px;
+  left: 3px;
+  width: 10px;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+
+.emotion-2 input:checked~div:after {
+  width: 5px;
+  height: 9px;
+  left: 5px;
+  top: 3px;
+}
+
+.emotion-4 {
+  padding-left: 8px;
+  padding-right: 0;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  opacity: 1;
+  outline: none;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  font-weight: normal;
+}
+
+.emotion-6 {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.emotion-6:focus-visible~div {
+  outline: none!important;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  position: relative;
+  display: block;
+  border: 1px solid #BACAD0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: flex-start;
+  align-self: flex-start;
+  box-shadow: none;
+  outline: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  max-width: 16px;
+  max-height: 16px;
+}
+
+.emotion-8:hover {
+  outline: none;
+  box-shadow: 0 0 1px 2px #B3E5FF;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-wrapper"
+  >
+    <label
+      aria-labelledby="testLbl"
+      class="emotion-2 emotion-3"
+      for="test"
+      width="100%"
+    >
+      <div
+        aria-checked="true"
+        class="emotion-4 emotion-5"
+        id="testLbl"
+        tabindex="-1"
+      >
+        Test
+      </div>
+      <input
+        checked=""
+        class="emotion-6 emotion-7"
+        id="test"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="emotion-8 emotion-9"
+        tabindex="-1"
+      />
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox Snapshots Align right 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 14px!important;
+  font-weight: normal;
+}
+
+.emotion-2 input~div:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.emotion-2 input:checked~div,
+.emotion-2 input:indeterminate~div {
+  background-color: #0D71C8;
+  border: none;
+}
+
+.emotion-2 input:checked~div:after {
+  display: block;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.emotion-2 input:disabled~div {
+  opacity: 0.5;
+}
+
+.emotion-2 input:indeterminate~div:after {
+  display: block;
+  top: 7px;
+  left: 3px;
+  width: 10px;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+
+.emotion-2 input:checked~div:after {
+  width: 5px;
+  height: 9px;
+  left: 5px;
+  top: 3px;
+}
+
+.emotion-4 {
+  padding-left: 0;
+  padding-right: 8px;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  opacity: 1;
+  outline: none;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  font-weight: normal;
+}
+
+.emotion-6 {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.emotion-6:focus-visible~div {
+  outline: none!important;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  position: relative;
+  display: block;
+  border: 1px solid #BACAD0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: flex-start;
+  align-self: flex-start;
+  box-shadow: none;
+  outline: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  max-width: 16px;
+  max-height: 16px;
+}
+
+.emotion-8:hover {
+  outline: none;
+  box-shadow: 0 0 1px 2px #B3E5FF;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-wrapper"
+  >
+    <label
+      aria-labelledby="testLbl"
+      class="emotion-2 emotion-3"
+      for="test"
+      width="100%"
+    >
+      <div
+        aria-checked="true"
+        class="emotion-4 emotion-5"
+        id="testLbl"
+        tabindex="-1"
+      >
+        Test
+      </div>
+      <input
+        checked=""
+        class="emotion-6 emotion-7"
+        id="test"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="emotion-8 emotion-9"
+        tabindex="-1"
+      />
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox Snapshots Checkbox Group Default 1`] = `
+.emotion-0 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-0 label:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+  />
+</div>
+`;
+
+exports[`Checkbox Snapshots Checkbox Group Horizontal 1`] = `
+.emotion-0 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.emotion-0 label:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 14px!important;
+  font-weight: normal;
+}
+
+.emotion-4 input~div:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.emotion-4 input:checked~div,
+.emotion-4 input:indeterminate~div {
+  background-color: #0D71C8;
+  border: none;
+}
+
+.emotion-4 input:checked~div:after {
+  display: block;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.emotion-4 input:disabled~div {
+  opacity: 0.5;
+}
+
+.emotion-4 input:indeterminate~div:after {
+  display: block;
+  top: 7px;
+  left: 3px;
+  width: 10px;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+
+.emotion-4 input:checked~div:after {
+  width: 5px;
+  height: 9px;
+  left: 5px;
+  top: 3px;
+}
+
+.emotion-6 {
+  padding-left: 8px;
+  padding-right: 0;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  opacity: 1;
+  outline: none;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  font-weight: normal;
+}
+
+.emotion-8 {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.emotion-8:focus-visible~div {
+  outline: none!important;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-10 {
+  position: relative;
+  display: block;
+  border: 1px solid #BACAD0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: flex-start;
+  align-self: flex-start;
+  box-shadow: none;
+  outline: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  max-width: 16px;
+  max-height: 16px;
+}
+
+.emotion-10:hover {
+  outline: none;
+  box-shadow: 0 0 1px 2px #B3E5FF;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      id="one-wrapper"
+    >
+      <label
+        aria-labelledby="oneLbl"
+        class="emotion-4 emotion-5"
+        for="one"
+        width="100%"
+      >
+        <div
+          aria-checked="true"
+          class="emotion-6 emotion-7"
+          id="oneLbl"
+          style="color: rgb(218, 33, 30); font-size: 8.75px;"
+          tabindex="-1"
+        >
+          one
+        </div>
+        <input
+          checked=""
+          class="emotion-8 emotion-9"
+          id="one"
+          name="testgroup"
+          tabindex="0"
+          type="checkbox"
+        />
+        <div
+          class="emotion-10 emotion-11"
+          style="background-color: rgb(218, 33, 30); border-color: #da211e;"
+          tabindex="-1"
+        />
+      </label>
+    </div>
+    <div
+      class="emotion-2 emotion-3"
+      id="two-wrapper"
+    >
+      <label
+        aria-labelledby="twoLbl"
+        class="emotion-4 emotion-5"
+        for="two"
+        width="100%"
+      >
+        <div
+          aria-checked="true"
+          class="emotion-6 emotion-7"
+          id="twoLbl"
+          style="color: rgb(13, 113, 200); font-size: 10.5px;"
+          tabindex="-1"
+        >
+          two
+        </div>
+        <input
+          checked=""
+          class="emotion-8 emotion-9"
+          id="two"
+          name="testgroup"
+          tabindex="0"
+          type="checkbox"
+        />
+        <div
+          class="emotion-10 emotion-11"
+          style="background-color: rgb(13, 113, 200); border-color: #0d71c8;"
+          tabindex="-1"
+        />
+      </label>
+    </div>
+    <div
+      class="emotion-2 emotion-3"
+      id="three-wrapper"
+    >
+      <label
+        aria-labelledby="threeLbl"
+        class="emotion-4 emotion-5"
+        for="three"
+        width="100%"
+      >
+        <div
+          aria-checked="true"
+          class="emotion-6 emotion-7"
+          id="threeLbl"
+          style="color: rgb(2, 34, 102); font-size: 10.5px;"
+          tabindex="-1"
+        >
+          three
+        </div>
+        <input
+          checked=""
+          class="emotion-8 emotion-9"
+          id="three"
+          name="testgroup"
+          tabindex="0"
+          type="checkbox"
+        />
+        <div
+          class="emotion-10 emotion-11"
+          style="background-color: rgb(2, 34, 102); border-color: #022266;"
+          tabindex="-1"
+        />
+      </label>
+    </div>
+    <div
+      class="emotion-2 emotion-3"
+      id="four-wrapper"
+    >
+      <label
+        aria-labelledby="fourLbl"
+        class="emotion-4 emotion-5"
+        for="four"
+        width="100%"
+      >
+        <div
+          aria-checked="true"
+          class="emotion-6 emotion-7"
+          id="fourLbl"
+          style="color: rgb(224, 93, 42); font-size: 14px;"
+          tabindex="-1"
+        >
+          four
+        </div>
+        <input
+          checked=""
+          class="emotion-8 emotion-9"
+          id="four"
+          name="testgroup"
+          tabindex="0"
+          type="checkbox"
+        />
+        <div
+          class="emotion-10 emotion-11"
+          style="background-color: rgb(224, 93, 42); border-color: #e05d2a;"
+          tabindex="-1"
+        />
+      </label>
+    </div>
+    <div
+      class="emotion-2 emotion-3"
+      id="five-wrapper"
+    >
+      <label
+        aria-labelledby="fiveLbl"
+        class="emotion-4 emotion-5"
+        for="five"
+        width="100%"
+      >
+        <div
+          aria-checked="true"
+          class="emotion-6 emotion-7"
+          id="fiveLbl"
+          style="color: rgb(0, 123, 74); font-size: 15.75px;"
+          tabindex="-1"
+        >
+          five
+        </div>
+        <input
+          checked=""
+          class="emotion-8 emotion-9"
+          id="five"
+          name="testgroup"
+          tabindex="0"
+          type="checkbox"
+        />
+        <div
+          class="emotion-10 emotion-11"
+          style="background-color: rgb(0, 123, 74); border-color: #007b4a;"
+          tabindex="-1"
+        />
+      </label>
+    </div>
+    <div
+      class="emotion-2 emotion-3"
+      id="six-wrapper"
+    >
+      <label
+        aria-labelledby="sixLbl"
+        class="emotion-4 emotion-5"
+        for="six"
+        width="100%"
+      >
+        <div
+          aria-checked="true"
+          class="emotion-6 emotion-7"
+          id="sixLbl"
+          style="color: rgb(186, 202, 208); font-size: 19.25px;"
+          tabindex="-1"
+        >
+          six
+        </div>
+        <input
+          checked=""
+          class="emotion-8 emotion-9"
+          id="six"
+          name="testgroup"
+          tabindex="0"
+          type="checkbox"
+        />
+        <div
+          class="emotion-10 emotion-11"
+          style="background-color: rgb(186, 202, 208); border-color: #bacad0;"
+          tabindex="-1"
+        />
+      </label>
+    </div>
+    <div
+      class="emotion-2 emotion-3"
+      id="seven-wrapper"
+    >
+      <label
+        aria-labelledby="sevenLbl"
+        class="emotion-4 emotion-5"
+        for="seven"
+        width="100%"
+      >
+        <div
+          aria-checked="true"
+          class="emotion-6 emotion-7"
+          id="sevenLbl"
+          tabindex="-1"
+        >
+          seven
+        </div>
+        <input
+          checked=""
+          class="emotion-8 emotion-9"
+          id="seven"
+          name="testgroup"
+          tabindex="0"
+          type="checkbox"
+        />
+        <div
+          class="emotion-10 emotion-11"
+          style="background-color: rgb(84, 95, 103); border-color: #545f67;"
+          tabindex="-1"
+        />
+      </label>
+    </div>
+    <div
+      class="emotion-2 emotion-3"
+      id="eight-wrapper"
+    >
+      <label
+        aria-labelledby="eightLbl"
+        class="emotion-4 emotion-5"
+        for="eight"
+        width="100%"
+      >
+        <div
+          aria-checked="true"
+          class="emotion-6 emotion-7"
+          id="eightLbl"
+          style="color: rgb(238, 245, 247);"
+          tabindex="-1"
+        >
+          eight
+        </div>
+        <input
+          checked=""
+          class="emotion-8 emotion-9"
+          id="eight"
+          name="testgroup"
+          tabindex="0"
+          type="checkbox"
+        />
+        <div
+          class="emotion-10 emotion-11"
+          style="background-color: rgb(238, 245, 247); border-color: #eef5f7;"
+          tabindex="-1"
+        />
+      </label>
+    </div>
+    <div
+      class="emotion-2 emotion-3"
+      id="nine-wrapper"
+    >
+      <label
+        aria-labelledby="nineLbl"
+        class="emotion-4 emotion-5"
+        for="nine"
+        width="100%"
+      >
+        <div
+          aria-checked="true"
+          class="emotion-6 emotion-7"
+          id="nineLbl"
+          style="color: rgb(84, 95, 103);"
+          tabindex="-1"
+        >
+          nine
+        </div>
+        <input
+          checked=""
+          class="emotion-8 emotion-9"
+          id="nine"
+          name="testgroup"
+          tabindex="0"
+          type="checkbox"
+        />
+        <div
+          class="emotion-10 emotion-11"
+          tabindex="-1"
+        />
+      </label>
+    </div>
+    <div
+      class="emotion-2 emotion-3"
+      id="ten-wrapper"
+    >
+      <label
+        aria-labelledby="tenLbl"
+        class="emotion-4 emotion-5"
+        for="ten"
+        width="100%"
+      >
+        <div
+          aria-checked="true"
+          class="emotion-6 emotion-7"
+          id="tenLbl"
+          style="color: rgb(255, 255, 255); font-weight: 600;"
+          tabindex="-1"
+        >
+          ten
+        </div>
+        <input
+          checked=""
+          class="emotion-8 emotion-9"
+          id="ten"
+          name="testgroup"
+          tabindex="0"
+          type="checkbox"
+        />
+        <div
+          class="emotion-10 emotion-11"
+          tabindex="-1"
+        />
+      </label>
+    </div>
+    <div
+      class="emotion-2 emotion-3"
+      id="eleven-wrapper"
+    >
+      <label
+        aria-labelledby="elevenLbl"
+        class="emotion-4 emotion-5"
+        for="eleven"
+        width="100%"
+      >
+        <div
+          aria-checked="true"
+          class="emotion-6 emotion-7"
+          id="elevenLbl"
+          style="color: rgb(0, 0, 0); font-weight: 900;"
+          tabindex="-1"
+        >
+          eleven
+        </div>
+        <input
+          checked=""
+          class="emotion-8 emotion-9"
+          id="eleven"
+          name="testgroup"
+          tabindex="0"
+          type="checkbox"
+        />
+        <div
+          class="emotion-10 emotion-11"
+          tabindex="-1"
+        />
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Checkbox Snapshots Checkbox Group Vertical 1`] = `
+.emotion-0 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-0 label:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 14px!important;
+  font-weight: normal;
+}
+
+.emotion-4 input~div:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.emotion-4 input:checked~div,
+.emotion-4 input:indeterminate~div {
+  background-color: #0D71C8;
+  border: none;
+}
+
+.emotion-4 input:checked~div:after {
+  display: block;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.emotion-4 input:disabled~div {
+  opacity: 0.5;
+}
+
+.emotion-4 input:indeterminate~div:after {
+  display: block;
+  top: 7px;
+  left: 3px;
+  width: 10px;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+
+.emotion-4 input:checked~div:after {
+  width: 5px;
+  height: 9px;
+  left: 5px;
+  top: 3px;
+}
+
+.emotion-6 {
+  padding-left: 8px;
+  padding-right: 0;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  opacity: 1;
+  outline: none;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  font-weight: normal;
+}
+
+.emotion-8 {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.emotion-8:focus-visible~div {
+  outline: none!important;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-10 {
+  position: relative;
+  display: block;
+  border: 1px solid #BACAD0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: flex-start;
+  align-self: flex-start;
+  box-shadow: none;
+  outline: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  max-width: 16px;
+  max-height: 16px;
+}
+
+.emotion-10:hover {
+  outline: none;
+  box-shadow: 0 0 1px 2px #B3E5FF;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      id="one-wrapper"
+    >
+      <label
+        aria-labelledby="oneLbl"
+        class="emotion-4 emotion-5"
+        for="one"
+        width="100%"
+      >
+        <div
+          aria-checked="false"
+          class="emotion-6 emotion-7"
+          id="oneLbl"
+          tabindex="-1"
+        >
+          one
+        </div>
+        <input
+          class="emotion-8 emotion-9"
+          id="one"
+          name="testgroup"
+          tabindex="0"
+          type="checkbox"
+        />
+        <div
+          class="emotion-10 emotion-11"
+          tabindex="-1"
+        />
+      </label>
+    </div>
+    <div
+      class="emotion-2 emotion-3"
+      id="two-wrapper"
+    >
+      <label
+        aria-labelledby="twoLbl"
+        class="emotion-4 emotion-5"
+        for="two"
+        width="100%"
+      >
+        <div
+          aria-checked="false"
+          class="emotion-6 emotion-7"
+          id="twoLbl"
+          tabindex="-1"
+        >
+          two
+        </div>
+        <input
+          class="emotion-8 emotion-9"
+          id="two"
+          name="testgroup"
+          tabindex="0"
+          type="checkbox"
+        />
+        <div
+          class="emotion-10 emotion-11"
+          tabindex="-1"
+        />
+      </label>
+    </div>
+    <div
+      class="emotion-2 emotion-3"
+      id="three-wrapper"
+    >
+      <label
+        aria-labelledby="threeLbl"
+        class="emotion-4 emotion-5"
+        for="three"
+        width="100%"
+      >
+        <div
+          aria-checked="false"
+          class="emotion-6 emotion-7"
+          id="threeLbl"
+          tabindex="-1"
+        >
+          three
+        </div>
+        <input
+          class="emotion-8 emotion-9"
+          id="three"
+          name="testgroup"
+          tabindex="0"
+          type="checkbox"
+        />
+        <div
+          class="emotion-10 emotion-11"
+          tabindex="-1"
+        />
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Checkbox Snapshots Classes 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 128;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 14px!important;
+  font-weight: normal;
+}
+
+.emotion-2 input~div:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.emotion-2 input:checked~div,
+.emotion-2 input:indeterminate~div {
+  background-color: #0D71C8;
+  border: none;
+}
+
+.emotion-2 input:checked~div:after {
+  display: block;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.emotion-2 input:disabled~div {
+  opacity: 0.5;
+}
+
+.emotion-2 input:indeterminate~div:after {
+  display: block;
+  top: 7px;
+  left: 3px;
+  width: 10px;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+
+.emotion-2 input:checked~div:after {
+  width: 5px;
+  height: 9px;
+  left: 5px;
+  top: 3px;
+}
+
+.emotion-4 {
+  padding-left: 8px;
+  padding-right: 0;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  opacity: 1;
+  outline: none;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  font-weight: normal;
+}
+
+.emotion-6 {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.emotion-6:focus-visible~div {
+  outline: none!important;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  position: relative;
+  display: block;
+  border: 1px solid #BACAD0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: flex-start;
+  align-self: flex-start;
+  box-shadow: none;
+  outline: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  max-width: 16px;
+  max-height: 16px;
+}
+
+.emotion-8:hover {
+  outline: none;
+  box-shadow: 0 0 1px 2px #B3E5FF;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    class="button-purple button-border-2px white emotion-0 emotion-1"
+    id="test-wrapper"
+  >
+    <label
+      aria-labelledby="testLbl"
+      class="emotion-2 emotion-3"
+      for="test"
+      width="128"
+    >
+      <div
+        aria-checked="false"
+        class="emotion-4 emotion-5"
+        id="testLbl"
+        style="color: rgb(218, 33, 30); font-size: 8.75px;"
+        tabindex="-1"
+      >
+        Test
+      </div>
+      <input
+        class="emotion-6 emotion-7"
+        id="test"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="emotion-8 emotion-9"
+        tabindex="-1"
+      />
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox Snapshots Default 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 14px!important;
+  font-weight: normal;
+}
+
+.emotion-2 input~div:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.emotion-2 input:checked~div,
+.emotion-2 input:indeterminate~div {
+  background-color: #0D71C8;
+  border: none;
+}
+
+.emotion-2 input:checked~div:after {
+  display: block;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.emotion-2 input:disabled~div {
+  opacity: 0.5;
+}
+
+.emotion-2 input:indeterminate~div:after {
+  display: block;
+  top: 7px;
+  left: 3px;
+  width: 10px;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+
+.emotion-2 input:checked~div:after {
+  width: 5px;
+  height: 9px;
+  left: 5px;
+  top: 3px;
+}
+
+.emotion-4 {
+  padding-left: 8px;
+  padding-right: 0;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  opacity: 1;
+  outline: none;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  font-weight: normal;
+}
+
+.emotion-6 {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.emotion-6:focus-visible~div {
+  outline: none!important;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  position: relative;
+  display: block;
+  border: 1px solid #BACAD0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: flex-start;
+  align-self: flex-start;
+  box-shadow: none;
+  outline: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  max-width: 16px;
+  max-height: 16px;
+}
+
+.emotion-8:hover {
+  outline: none;
+  box-shadow: 0 0 1px 2px #B3E5FF;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-wrapper"
+  >
+    <label
+      aria-labelledby="testLbl"
+      class="emotion-2 emotion-3"
+      for="test"
+      width="100%"
+    >
+      <div
+        aria-checked="false"
+        class="emotion-4 emotion-5"
+        id="testLbl"
+        tabindex="-1"
+      >
+        Test
+      </div>
+      <input
+        class="emotion-6 emotion-7"
+        id="test"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="emotion-8 emotion-9"
+        tabindex="-1"
+      />
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox Snapshots IsMobile 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 16px;
+  line-height: 16px;
+  margin-bottom: 14px!important;
+  font-weight: normal;
+}
+
+.emotion-2 input~div:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.emotion-2 input:checked~div,
+.emotion-2 input:indeterminate~div {
+  background-color: #0D71C8;
+  border: none;
+}
+
+.emotion-2 input:checked~div:after {
+  display: block;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.emotion-2 input:disabled~div {
+  opacity: 0.5;
+}
+
+.emotion-2 input:indeterminate~div:after {
+  display: block;
+  top: 7px;
+  left: 3px;
+  width: 10px;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+
+.emotion-2 input:checked~div:after {
+  width: 7.5px;
+  height: 13.5px;
+  left: 8px;
+  top: 3px;
+}
+
+.emotion-4 {
+  padding-left: 8px;
+  padding-right: 0;
+  font-size: 16px;
+  line-height: 16px;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  opacity: 1;
+  outline: none;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  font-weight: normal;
+}
+
+.emotion-6 {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.emotion-6:focus-visible~div {
+  outline: none!important;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  position: relative;
+  display: block;
+  border: 1px solid #BACAD0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: flex-start;
+  align-self: flex-start;
+  box-shadow: none;
+  outline: none;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.emotion-8:hover {
+  outline: none;
+  box-shadow: 0 0 1px 2px #B3E5FF;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-wrapper"
+  >
+    <label
+      aria-labelledby="testLbl"
+      class="emotion-2 emotion-3"
+      for="test"
+      width="100%"
+    >
+      <div
+        aria-checked="false"
+        class="emotion-4 emotion-5"
+        id="testLbl"
+        tabindex="-1"
+      >
+        Test
+      </div>
+      <input
+        class="emotion-6 emotion-7"
+        id="test"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="emotion-8 emotion-9"
+        tabindex="-1"
+      />
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox Snapshots Round 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 14px!important;
+  font-weight: normal;
+}
+
+.emotion-2 input~div:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.emotion-2 input:checked~div,
+.emotion-2 input:indeterminate~div {
+  background-color: #0D71C8;
+  border: none;
+}
+
+.emotion-2 input:checked~div:after {
+  display: block;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.emotion-2 input:disabled~div {
+  opacity: 0.5;
+}
+
+.emotion-2 input:indeterminate~div:after {
+  display: block;
+  top: 7px;
+  left: 3px;
+  width: 10px;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+
+.emotion-2 input:checked~div:after {
+  width: 5px;
+  height: 6px;
+  left: 5px;
+  top: 3px;
+}
+
+.emotion-4 {
+  padding-left: 8px;
+  padding-right: 0;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  opacity: 1;
+  outline: none;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  font-weight: normal;
+}
+
+.emotion-6 {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.emotion-6:focus-visible~div {
+  outline: none!important;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  position: relative;
+  display: block;
+  border: 1px solid #BACAD0;
+  box-sizing: border-box;
+  border-radius: 8px;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: flex-start;
+  align-self: flex-start;
+  box-shadow: none;
+  outline: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  max-width: 16px;
+  max-height: 16px;
+}
+
+.emotion-8:hover {
+  outline: none;
+  box-shadow: 0 0 1px 2px #B3E5FF;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-wrapper"
+  >
+    <label
+      aria-labelledby="testLbl"
+      class="emotion-2 emotion-3"
+      for="test"
+      width="100%"
+    >
+      <div
+        aria-checked="false"
+        class="emotion-4 emotion-5"
+        id="testLbl"
+        tabindex="-1"
+      >
+        Test
+      </div>
+      <input
+        class="emotion-6 emotion-7"
+        id="test"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="emotion-8 emotion-9"
+        tabindex="-1"
+      />
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox Snapshots Round mobile 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 16px;
+  line-height: 16px;
+  margin-bottom: 14px!important;
+  font-weight: normal;
+}
+
+.emotion-2 input~div:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.emotion-2 input:checked~div,
+.emotion-2 input:indeterminate~div {
+  background-color: #0D71C8;
+  border: none;
+}
+
+.emotion-2 input:checked~div:after {
+  display: block;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.emotion-2 input:disabled~div {
+  opacity: 0.5;
+}
+
+.emotion-2 input:indeterminate~div:after {
+  display: block;
+  top: 7px;
+  left: 3px;
+  width: 10px;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+
+.emotion-2 input:checked~div:after {
+  width: 7.5px;
+  height: 9px;
+  left: 8px;
+  top: 3px;
+}
+
+.emotion-4 {
+  padding-left: 8px;
+  padding-right: 0;
+  font-size: 16px;
+  line-height: 16px;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  opacity: 1;
+  outline: none;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  font-weight: normal;
+}
+
+.emotion-6 {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.emotion-6:focus-visible~div {
+  outline: none!important;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  position: relative;
+  display: block;
+  border: 1px solid #BACAD0;
+  box-sizing: border-box;
+  border-radius: 8px;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: flex-start;
+  align-self: flex-start;
+  box-shadow: none;
+  outline: none;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.emotion-8:hover {
+  outline: none;
+  box-shadow: 0 0 1px 2px #B3E5FF;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-wrapper"
+  >
+    <label
+      aria-labelledby="testLbl"
+      class="emotion-2 emotion-3"
+      for="test"
+      width="100%"
+    >
+      <div
+        aria-checked="false"
+        class="emotion-4 emotion-5"
+        id="testLbl"
+        tabindex="-1"
+      >
+        Test
+      </div>
+      <input
+        class="emotion-6 emotion-7"
+        id="test"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="emotion-8 emotion-9"
+        tabindex="-1"
+      />
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox Snapshots Visible 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 14px!important;
+  font-weight: normal;
+}
+
+.emotion-2 input~div:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.emotion-2 input:checked~div,
+.emotion-2 input:indeterminate~div {
+  background-color: #0D71C8;
+  border: none;
+}
+
+.emotion-2 input:checked~div:after {
+  display: block;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.emotion-2 input:disabled~div {
+  opacity: 0.5;
+}
+
+.emotion-2 input:indeterminate~div:after {
+  display: block;
+  top: 7px;
+  left: 3px;
+  width: 10px;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+
+.emotion-2 input:checked~div:after {
+  width: 5px;
+  height: 9px;
+  left: 5px;
+  top: 3px;
+}
+
+.emotion-4 {
+  padding-left: 8px;
+  padding-right: 0;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  opacity: 1;
+  outline: none;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  font-weight: normal;
+}
+
+.emotion-6 {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.emotion-6:focus-visible~div {
+  outline: none!important;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  position: relative;
+  display: block;
+  border: 1px solid #BACAD0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: flex-start;
+  align-self: flex-start;
+  box-shadow: none;
+  outline: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  max-width: 16px;
+  max-height: 16px;
+}
+
+.emotion-8:hover {
+  outline: none;
+  box-shadow: 0 0 1px 2px #B3E5FF;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-wrapper"
+  >
+    <label
+      aria-labelledby="testLbl"
+      class="emotion-2 emotion-3"
+      for="test"
+      width="100%"
+    >
+      <div
+        aria-checked="false"
+        class="emotion-4 emotion-5"
+        id="testLbl"
+        tabindex="-1"
+      >
+        Test
+      </div>
+      <input
+        class="emotion-6 emotion-7"
+        id="test"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="emotion-8 emotion-9"
+        tabindex="-1"
+      />
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox Snapshots Width Fixed 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 64;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 14px!important;
+  font-weight: normal;
+}
+
+.emotion-2 input~div:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.emotion-2 input:checked~div,
+.emotion-2 input:indeterminate~div {
+  background-color: #0D71C8;
+  border: none;
+}
+
+.emotion-2 input:checked~div:after {
+  display: block;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.emotion-2 input:disabled~div {
+  opacity: 0.5;
+}
+
+.emotion-2 input:indeterminate~div:after {
+  display: block;
+  top: 7px;
+  left: 3px;
+  width: 10px;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+
+.emotion-2 input:checked~div:after {
+  width: 5px;
+  height: 9px;
+  left: 5px;
+  top: 3px;
+}
+
+.emotion-4 {
+  padding-left: 8px;
+  padding-right: 0;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  opacity: 1;
+  outline: none;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  font-weight: normal;
+}
+
+.emotion-6 {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.emotion-6:focus-visible~div {
+  outline: none!important;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  position: relative;
+  display: block;
+  border: 1px solid #BACAD0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: flex-start;
+  align-self: flex-start;
+  box-shadow: none;
+  outline: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  max-width: 16px;
+  max-height: 16px;
+}
+
+.emotion-8:hover {
+  outline: none;
+  box-shadow: 0 0 1px 2px #B3E5FF;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-wrapper"
+  >
+    <label
+      aria-labelledby="testLbl"
+      class="emotion-2 emotion-3"
+      for="test"
+      width="64"
+    >
+      <div
+        aria-checked="true"
+        class="emotion-4 emotion-5"
+        id="testLbl"
+        tabindex="-1"
+      >
+        Test
+      </div>
+      <input
+        checked=""
+        class="emotion-6 emotion-7"
+        id="test"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="emotion-8 emotion-9"
+        tabindex="-1"
+      />
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox Snapshots Width Full 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 64;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 14px!important;
+  font-weight: normal;
+}
+
+.emotion-2 input~div:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.emotion-2 input:checked~div,
+.emotion-2 input:indeterminate~div {
+  background-color: #0D71C8;
+  border: none;
+}
+
+.emotion-2 input:checked~div:after {
+  display: block;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.emotion-2 input:disabled~div {
+  opacity: 0.5;
+}
+
+.emotion-2 input:indeterminate~div:after {
+  display: block;
+  top: 7px;
+  left: 3px;
+  width: 10px;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+
+.emotion-2 input:checked~div:after {
+  width: 5px;
+  height: 9px;
+  left: 5px;
+  top: 3px;
+}
+
+.emotion-4 {
+  padding-left: 8px;
+  padding-right: 0;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  opacity: 1;
+  outline: none;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  font-weight: normal;
+}
+
+.emotion-6 {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.emotion-6:focus-visible~div {
+  outline: none!important;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  position: relative;
+  display: block;
+  border: 1px solid #BACAD0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: flex-start;
+  align-self: flex-start;
+  box-shadow: none;
+  outline: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  max-width: 16px;
+  max-height: 16px;
+}
+
+.emotion-8:hover {
+  outline: none;
+  box-shadow: 0 0 1px 2px #B3E5FF;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-wrapper"
+  >
+    <label
+      aria-labelledby="testLbl"
+      class="emotion-2 emotion-3"
+      for="test"
+      width="64"
+    >
+      <div
+        aria-checked="false"
+        class="emotion-4 emotion-5"
+        id="testLbl"
+        tabindex="-1"
+      >
+        Test
+      </div>
+      <input
+        class="emotion-6 emotion-7"
+        id="test"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="emotion-8 emotion-9"
+        tabindex="-1"
+      />
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox Snapshots hidden 1`] = `
+.emotion-0 {
+  display: none;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+.emotion-2 {
+  display: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 14px!important;
+  font-weight: normal;
+}
+
+.emotion-2 input~div:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.emotion-2 input:checked~div,
+.emotion-2 input:indeterminate~div {
+  background-color: #0D71C8;
+  border: none;
+}
+
+.emotion-2 input:checked~div:after {
+  display: block;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.emotion-2 input:disabled~div {
+  opacity: 0.5;
+}
+
+.emotion-2 input:indeterminate~div:after {
+  display: block;
+  top: 7px;
+  left: 3px;
+  width: 10px;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+
+.emotion-2 input:checked~div:after {
+  width: 5px;
+  height: 9px;
+  left: 5px;
+  top: 3px;
+}
+
+.emotion-4 {
+  padding-left: 8px;
+  padding-right: 0;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  opacity: 1;
+  outline: none;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  font-weight: normal;
+}
+
+.emotion-6 {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.emotion-6:focus-visible~div {
+  outline: none!important;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  position: relative;
+  display: block;
+  border: 1px solid #BACAD0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: flex-start;
+  align-self: flex-start;
+  box-shadow: none;
+  outline: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  max-width: 16px;
+  max-height: 16px;
+}
+
+.emotion-8:hover {
+  outline: none;
+  box-shadow: 0 0 1px 2px #B3E5FF;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-wrapper"
+  >
+    <label
+      aria-labelledby="testLbl"
+      class="emotion-2 emotion-3"
+      for="test"
+      width="100%"
+    >
+      <div
+        aria-checked="true"
+        class="emotion-4 emotion-5"
+        id="testLbl"
+        tabindex="-1"
+      >
+        Test
+      </div>
+      <input
+        checked=""
+        class="emotion-6 emotion-7"
+        id="test"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="emotion-8 emotion-9"
+        tabindex="-1"
+      />
+    </label>
+  </div>
+</div>
+`;

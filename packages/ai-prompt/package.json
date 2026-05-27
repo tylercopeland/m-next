@@ -1,0 +1,70 @@
+{
+  "name": "@m-next/ai-prompt",
+  "private": true,
+  "version": "1.0.0",
+  "description": "AI prompt component for interacting with AI assistants",
+  "keywords": [
+    "ai",
+    "prompt",
+    "assistant",
+    "input"
+  ],
+  "author": "Method CRM",
+  "homepage": "",
+  "license": "ISC",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "index"
+  ],
+  "dependencies": {
+    "@m-next/styles": "1.0.0",
+    "@m-next/utilities": "1.0.0",
+    "@m-next/button": "1.0.0",
+    "@m-next/input-area": "1.0.0",
+    "@m-next/svg-icon": "1.0.0",
+    "@m-next/api-interface": "1.0.0",
+    "@m-next/typeography": "1.0.0",
+    "@m-next/pill": "1.0.0",
+    "simplebar-react": "^3.3.0",
+    "react-markdown": "^8.0.7",
+    "remark-gfm": "^4.0.0",
+    "lucide-react": "^0.553.0",
+    "rehype-highlight": "^7.0.0",
+    "react-tooltip": "^5.14.0"
+  },
+  "peerDependencies": {
+    "@emotion/react": ">=11.10.5",
+    "@emotion/styled": ">=11.10.5",
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2",
+    "prop-types": ">=15.8.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
+    "@testing-library/react": "^12.1.5",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/user-event": "^14.5.2",
+    "typescript": "^4.9.5",
+    "ts-jest": "^29.1.1"
+  },
+  "scripts": {
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "build": "npm run prettify && npm run lint && npm run test && webpack --mode production",
+    "watch": "webpack --watch",
+    "prettify": "npx prettier \"**/*.*(js|jsx|ts|tsx)\" --ignore-path=.prettierignore --write --log-level=error",
+    "release": "npm build && npm publish build --tag next",
+    "test": "jest --passWithNoTests",
+    "test-snapshot-update": "npm run test -- -u",
+    "test-storybook": "jest --passWithNoTests --json --outputFile=.jest-test-results.json",
+    "lint-js": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --cache --report-unused-disable-directives --max-warnings=0",
+    "lint": "npm run lint-js",
+    "lint-fix": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix --cache --report-unused-disable-directives --max-warnings=0",
+    "check-types": "tsc --noemit"
+  }
+}

@@ -1,0 +1,27 @@
+action-editor-copilot {
+  .message {
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    word-wrap: break-word;
+    max-width: 100%; // ✅ grows up to full width if needed
+    align-self: flex-start; // ✅ default for assistant
+
+    &.user {
+      background-color: #EEF5F7;
+      margin-left: auto;
+    }
+
+    &.reply {
+      background-color: transparent;
+      margin-right: auto;
+    }
+
+    &.error {
+      color: red;
+    }
+  }
+}

@@ -1,0 +1,279 @@
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/no-extraneous-dependencies */
+import * as React from 'react';
+import { matchers } from '@emotion/jest';
+import '@testing-library/jest-dom/extend-expect';
+import fetchMock from 'jest-fetch-mock';
+import userEvent from '@testing-library/user-event';
+import matchMediaPolyfill from 'mq-polyfill';
+import { render, store } from '../../../../../testing/TestUtils';
+import FieldBlockEditor from './fieldBlockEditor';
+import { screenFieldsLoaded, screenLoaded } from '../../../../common/services/screenLayoutSlice';
+
+fetchMock.enableMocks();
+expect.extend(matchers);
+const { ResizeObserver } = window;
+const sampleControl = {
+
+  type: 'F-BLOCK',
+  dataModelId: 'Contacts',
+  inlineValidation: false,
+  collapseEmpty: false,
+  isReadOnly: false,
+  projection: {
+    id: '6a758291-8a39-d103-a47b-85f15c90e187',
+    fields: [
+      {
+        name: 'DirectDial',
+        caption: 'Direct dial',
+        type: 'Text',
+        isVisible: true,
+        isRequired: false,
+        maxLength: null,
+        displayOptions: null,
+      },
+      {
+        name: 'AltEmail',
+        caption: 'Alt email',
+        type: 'Text',
+        isVisible: true,
+        isRequired: false,
+        maxLength: null,
+        displayOptions: null,
+      },
+      {
+        name: 'Email',
+        caption: 'Email',
+        type: 'Text',
+        isVisible: true,
+        isRequired: false,
+        maxLength: null,
+        displayOptions: null,
+      },
+      {
+        name: 'InstagramUserName',
+        caption: 'Instagram user name',
+        type: 'Text',
+        isVisible: true,
+        isRequired: false,
+        maxLength: null,
+        displayOptions: null,
+      },
+      {
+        name: 'IMUserName',
+        caption: 'Imuser name',
+        type: 'Text',
+        isVisible: true,
+        isRequired: false,
+        maxLength: null,
+        displayOptions: null,
+      },
+      {
+        name: 'IsOptOutOfMarketing',
+        caption: 'Is opt out of marketing',
+        type: 'YesNo',
+        isVisible: true,
+        isRequired: false,
+        maxLength: null,
+        displayOptions: {
+          decimalRounding: null,
+          dateFormat: null,
+          trueValue: '✔',
+          falseValue: '❌',
+        },
+      },
+      {
+        name: 'LastModifiedDate',
+        caption: 'Last modified date',
+        type: 'DateTime',
+        isVisible: true,
+        isRequired: false,
+        maxLength: null,
+        displayOptions: {
+          decimalRounding: null,
+          dateFormat: 2,
+          trueValue: null,
+          falseValue: null,
+        },
+      },
+      {
+        name: 'Balance',
+        caption: 'Balance',
+        type: 'Money',
+        isVisible: true,
+        isRequired: false,
+        maxLength: null,
+        displayOptions: null,
+      },
+      {
+        name: 'CPEPerYear',
+        caption: 'Cpeper year',
+        type: 'Decimal',
+        isVisible: true,
+        isRequired: false,
+        maxLength: null,
+        displayOptions: null,
+      },
+    ],
+  },
+  id: '6a758291-8a39-d103-a47b-85f15c90e187',
+  name: 'FieldBlock',
+  typeOverride: 'F-BLOCK',
+  isBound: false,
+  isComplexType: false,
+  fieldType: 0,
+  value: null,
+  caption: 'FieldBlock',
+  classes: '',
+  hideCaption: false,
+  isOutputOnly: false,
+  regularCaption: false,
+  width: '',
+  widthType: 'full',
+  visible: true,
+  disabled: false,
+  defaultValue: '',
+  onBlur: null,
+  onChange: null,
+  onClick: null,
+  onFocus: null,
+  validationRules: null,
+  validationError: null,
+};
+
+const setup = async (control) => {
+  const mockOnChange = jest.fn();
+  const utils = render(<FieldBlockEditor control={control} onChange={mockOnChange} />);
+  //  await delay(1000);
+  return {
+    mockOnChange,
+    ...utils,
+  };
+};
+/*
+describe('Field Bock Editor', () => {
+  beforeEach(() => {
+    delete window.ResizeObserver;
+    window.ResizeObserver = jest.fn().mockImplementation(() => ({
+      observe: jest.fn(),
+      unobserve: jest.fn(),
+      disconnect: jest.fn(),
+    }));
+
+    matchMediaPolyfill(window);
+    window.resizeTo = function resizeTo(width, height) {
+      Object.assign(this, {
+        innerWidth: width,
+        innerHeight: height,
+        outerWidth: width,
+        outerHeight: height,
+      }).dispatchEvent(new this.Event('resize'));
+      window.resizeTo(1024, 1024);
+      window.screen.width = 1024;
+      window.screen.height = 1024;
+    };
+  });
+
+  afterEach(() => {
+    window.ResizeObserver = ResizeObserver;
+    jest.restoreAllMocks();
+  });
+  describe('Functional', () => {
+    it('Change Caption', async () => {
+      const { mockOnChange, getByText } = await setup({ ...sampleControl });
+      await userEvent.click(getByText('Display'));
+      const control = document.getElementById('settings-caption-Input');
+      await userEvent.type(control, 'Bang');
+      expect(mockOnChange).toHaveBeenCalled();
+    });
+    it('Change Collapse Setting', async () => {
+      const { mockOnChange, getByText } = await setup({ ...sampleControl });
+      await userEvent.click(getByText('Display'));
+      const control = document.getElementById('settings-collapse');
+      await userEvent.click(control);
+      expect(mockOnChange).toHaveBeenCalled();
+    });
+
+    it('Change Table', async () => {
+      store.dispatch(screenLoaded({ viewFriendlyName: 'Contacts' }));
+      store.dispatch(
+        screenFieldsLoaded([
+          { type: 'DropDown', sourceModel: 'Contacts', caption: 'testJoin' },
+          { type: 'DropDown', sourceModel: 'Entity', caption: 'duck' },
+        ])
+      );
+      const { mockOnChange, getByText } = await setup({ ...sampleControl });
+      await userEvent.click(getByText('Display'));
+      await userEvent.click(getByText('Contacts'));
+      await userEvent.click(getByText('Entity'));
+
+      expect(mockOnChange).toHaveBeenCalled();
+    });
+
+    it('Change Join', async () => {
+      store.dispatch(screenLoaded({ viewFriendlyName: 'Contacts' }));
+      store.dispatch(
+        screenFieldsLoaded([
+          { type: 'DropDown', sourceModel: 'Contacts', caption: 'testJoin' },
+          { type: 'DropDown', sourceModel: 'Entity', caption: 'duck' },
+          { type: 'DropDown', sourceModel: 'Entity', caption: 'shoe' },
+        ])
+      );
+      const control = { ...sampleControl };
+      control.dataModelId = 'Entity';
+      control.joinKey = 'duck';
+
+      const { mockOnChange, getByText } = await setup(control);
+      await userEvent.click(getByText('Object'));
+      await userEvent.click(getByText('duck'));
+      await userEvent.click(getByText('shoe'));
+
+      expect(mockOnChange).toHaveBeenCalled();
+    });
+
+    it('Change Field Caption', async () => {
+      store.dispatch(screenLoaded({ viewFriendlyName: 'Contacts' }));
+      store.dispatch(
+        screenFieldsLoaded([
+          { type: 'DropDown', sourceModel: 'Contacts', caption: 'testJoin' },
+          { type: 'DropDown', sourceModel: 'Entity', caption: 'duck' },
+        ])
+      );
+      const { mockOnChange, getAllByLabelText } = await setup({ ...sampleControl });
+      const captionInput = getAllByLabelText('Caption')[0];
+      await userEvent.type(captionInput, 'Old Email');
+
+      expect(mockOnChange).toHaveBeenCalled();
+    });
+  });
+  describe('Snapshots', () => {
+    it('Data Model View', async () => {
+      const utils = await setup({ ...sampleControl });
+      expect(utils.getByText('Field')).toBeDefined();
+      expect(utils.innerHTML).toMatchSnapshot();
+    });
+    it('Empty', async () => {
+      const data = { ...sampleControl };
+      data.projection.fields = [];
+      const utils = await setup(data);
+      expect(utils.getByText('Field')).toBeDefined();
+      expect(utils.innerHTML).toMatchSnapshot();
+    });
+    it('Object View', async () => {
+      store.dispatch(screenLoaded({ viewFriendlyName: 'Contacts' }));
+      store.dispatch(
+        screenFieldsLoaded([
+          { type: 'DropDown', sourceModel: 'Contacts', caption: 'testJoin' },
+          { type: 'DropDown', sourceModel: 'Test', caption: 'test2Join' },
+        ])
+      );
+
+      const data = { ...sampleControl };
+      const utils = await setup(data);
+      await userEvent.click(await utils.findByText('Object'));
+      expect(utils.innerHTML).toMatchSnapshot();
+    });
+  });
+});
+*/

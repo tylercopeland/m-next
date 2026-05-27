@@ -1,0 +1,48 @@
+<div>
+  <div class="mi-ae-header-block">
+    <button 
+      class="mi-button blue mi-button-clear mi-button-icon back-btn" 
+      data-ng-click="backFunction()">
+      <svg-icon
+        name="'chevron-left'"
+        size="16">
+      </svg-icon>
+    Back</button>
+    <h2 class="text-center">{{ title }} / Expression Editor</h2>
+  </div>
+
+  <div class="mi-ae-main-content">
+    <div class="mi-ae-row" data-ng-repeat="item in list">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">{{ ($index === 0) ? 'Starts with' : 'Then' }}</label>
+      </div>
+      <div class="mi-ae-col-2" data-ng-if="$index > 0">
+        <ui-select data-ng-model="item.Operation" theme="selectize" search-enabled="false" ng-disabled ='isReadOnly'>
+            <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+            <ui-select-choices repeat="opt.value as opt in joins">
+                <span ng-bind-html="opt.label"></span>
+            </ui-select-choices>
+        </ui-select>
+      </div>
+      <div class="mi-ae-col-8" data-ng-class="{'mi-ae-col-offset-2': ($index === 0)}">
+        <mi-complex-value action="action" model="item.Source" allow="allow" data-ng-trim="false" table-name="tableName"></mi-complex-value>
+      </div>
+      <div class="mi-ae-col-2" data-ng-if="$index > 0">
+        <miae-button 
+          button-class="'ghost mi-button-clear'" 
+          clickevent="removeItem($index, item)" 
+          isDisabled ='isReadOnly'
+          svg-icon-type="'delete'" 
+          svg-icon-size="14"></miae-button>
+      </div>
+    </div>
+    
+    <miae-button 
+      button-class="'ghost mi-button-clear mi-ae-margin-0'" 
+      clickevent="addItem()" 
+      name="'Add another item'"
+      isDisabled="isReadOnly"
+      svg-icon-type="'circle-plus'" 
+      svg-icon-size="14"></miae-button>
+  </div>
+</div>

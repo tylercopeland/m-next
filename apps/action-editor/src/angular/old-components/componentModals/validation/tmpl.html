@@ -1,0 +1,115 @@
+<div data-ng-controller="ComponentValidationCtrl" class="mi-ae-fullheight">
+  <!-- Left Panel -->
+  <div class="mi-ae-framework-left-panel">
+      <div class="mi-ae-header-block">
+          <h2>Validation List / {{ control.name }}</h2>
+      </div>
+
+      <div class="mi-ae-main-content mi-ae-main-content-full">
+        <ul class="mi-ae-simple-list" ng-sortable="layout.sortableConfig">
+          <li data-ng-repeat="item in controlValidations" data-ng-class="{'selected' : selectedValidation.rule === item.rule }">
+            <span><i class="mi-icon" data-ng-if=" !isReadOnly">
+              <svg-icon name="'move'" ng-attr-style="svgIconStyle" size="14"> </svg-icon>
+            </i></span>
+            <span data-ng-click="loadValidation(item, $index)" ng-disabled="isReadOnly">{{ getValidationName(item) }}</span>
+            <span data-ng-click="deleteValidation($event, $index)" data-ng-if="item.canDelete && !isReadOnly"><i class="mi-icon">
+              <svg-icon name="'delete'" ng-attr-style="svgIconStyle" size="14"> </svg-icon>
+            </i></span>
+            <span data-ng-if="!item.canDelete"></span>
+          </li>
+        </ul>
+        <div class="mi-ae-padding-t-15 mi-ae-padding-l-10" data-ng-if="controlValidations.length < controlValidationProperties.length && !isReadOnly">
+          <a data-ng-click="addValidation()"><i class="mi-icon">
+            <svg-icon name="'circle-plus'" ng-attr-style="svgIconStyle" size="14"> </svg-icon>
+          </i> Add a new validation</a>
+        </div>
+      </div>
+  </div>
+  <!--/ Left Panel -->
+
+  <!-- Right Panel For Adding -->
+  <div class="mi-ae-framework-right-panel" data-ng-if="!editMode && !isReadOnly">
+    <div class="mi-ae-header-block">
+      <h2>Add a validation rule</h2>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="mi-ae-main-content mi-ae-main-content-full">
+      <p data-ng-if="controlValidations.length === controlValidationProperties.length">There are no more validation rules to be applied.</p>
+      <ul class="mi-ae-box-list no-space">
+        <!-- Table Fields -->
+        <li class="is-flex-column" data-ng-repeat="validate in layout.validations" data-ng-click="addRule(validate)" data-ng-if="hasValidationOption(validate.rule) && !isReadOnly">
+          <label>{{ validate.name }}</label>
+          <p class="description">{{ validate.description }}</p>
+        </li>
+      </ul>
+    </div>
+    <!--/ Main Content Area -->
+  </div>
+  <!--/ Right Panel -->
+
+  <!-- Right Panel For Editing -->
+  <div class="mi-ae-framework-right-panel" data-ng-if="editMode">
+    <div class="mi-ae-header-block">
+      <h2>Properties for {{ getValidationName(selectedValidation) }}</h2>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="mi-ae-main-content mi-ae-main-content-full">
+      <div class="mi-ae-row" data-ng-if="selectedValidation.rule === 0 || selectedValidation.rule === 1">
+        <div class="mi-ae-col-12">
+          <p>There are no additional properties for this validation</p>
+        </div>
+      </div>
+
+      <div class="mi-ae-row" data-ng-if="selectedValidation.rule === 2">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Field maximum length</label>
+        </div>
+        <div class="mi-ae-col-4">
+          <input type="number" min="1" max="{{ validationMax }}" data-ng-model="selectedValidation.value" data-ng-blur="validateMax()" data-ng-keypress="validateCharacters($event)" ng-disabled="isReadOnly">
+        </div>
+      </div>
+
+      <div class="mi-ae-row" data-ng-if="selectedValidation.rule === 3">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Field minimum length</label>
+        </div>
+        <div class="mi-ae-col-4">
+          <input type="number" min="1" max="{{ validationMax }}" data-ng-model="selectedValidation.value" data-ng-blur="validateMin()" data-ng-keypress="validateCharacters($event)" ng-disabled="isReadOnly">
+        </div>
+      </div>
+
+      <div class="mi-ae-row" data-ng-if="selectedValidation.rule === 4">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Is less than</label>
+        </div>
+        <div class="mi-ae-col-4">
+          <input type="number" step="{{ stepCount }}" data-ng-model="selectedValidation.value" ng-disabled="isReadOnly">
+        </div>
+      </div>
+      
+      <div class="mi-ae-row" data-ng-if="selectedValidation.rule === 5">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Is greater than</label>
+        </div>
+        <div class="mi-ae-col-4">
+          <input type="number" step="{{ stepCount }}" data-ng-model="selectedValidation.value" ng-disabled="isReadOnly">
+        </div>
+      </div>
+      
+      <div class="mi-ae-row" data-ng-if="selectedValidation.rule === 6">
+        <div class="mi-ae-col-4">
+          <label class="mi-radio-checkbox mi-checkbox">
+            <span>Enable Validation</span>
+            <input type="checkbox" data-ng-model="selectedValidation.value" ng-disabled="isReadOnly">
+            <div class="mi-radio-checkbox-indicator"></div>
+          </label>
+        </div>
+      </div>
+
+    </div>
+    <!--/ Main Content Area -->
+  </div>
+  <!--/ Right Panel -->
+</div>

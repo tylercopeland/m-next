@@ -1,0 +1,679 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchInput Snapshots Default 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  border-color: #666666;
+  outline: none;
+}
+
+.emotion-0:hover .mi-textinput-prefix,
+.emotion-0:hover input:enabled {
+  border-color: #333333;
+}
+
+.emotion-0.emotion-0.emotion-0 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #333333;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.emotion-0.emotion-0.emotion-0 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-0 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: Arial,sans-serif;
+  padding-right: 0;
+}
+
+.emotion-0 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: Arial,sans-serif;
+}
+
+.emotion-0 input::-webkit-input-placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+.emotion-0 input::-moz-placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+.emotion-0 input:-ms-input-placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+.emotion-0 input::placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-search"
+    prefix=""
+  >
+    <div
+      class="mi-textinput-prefix"
+    >
+      <span
+        data-color="#888888"
+        data-size="16"
+        data-testid="svg-icon-search"
+      />
+    </div>
+    <input
+      aria-disabled="false"
+      autocomplete="off"
+      data-testid="test-search-input"
+      id="test-search-input"
+      tabindex="0"
+      type="search"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`SearchInput Snapshots Disabled 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  border-color: #666666;
+  outline: none;
+}
+
+.emotion-0:hover .mi-textinput-prefix,
+.emotion-0:hover input:enabled {
+  border-color: #333333;
+}
+
+.emotion-0.emotion-0.emotion-0 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #333333;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.emotion-0.emotion-0.emotion-0 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-0 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: Arial,sans-serif;
+  opacity: 0.5;
+  pointer-events: none;
+  padding-right: 0;
+}
+
+.emotion-0 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: Arial,sans-serif;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.emotion-0 input::-webkit-input-placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+.emotion-0 input::-moz-placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+.emotion-0 input:-ms-input-placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+.emotion-0 input::placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    disabled=""
+    id="test-search"
+    prefix=""
+  >
+    <div
+      class="mi-textinput-prefix"
+    >
+      <span
+        data-color="#888888"
+        data-size="16"
+        data-testid="svg-icon-search"
+      />
+    </div>
+    <input
+      aria-disabled="true"
+      autocomplete="off"
+      data-testid="test-search-input"
+      disabled=""
+      id="test-search-input"
+      tabindex="0"
+      type="search"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`SearchInput Snapshots Mobile 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  border-color: #666666;
+  outline: none;
+}
+
+.emotion-0:hover .mi-textinput-prefix,
+.emotion-0:hover input:enabled {
+  border-color: #333333;
+}
+
+.emotion-0.emotion-0.emotion-0 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #333333;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.emotion-0.emotion-0.emotion-0 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-0 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 16px;
+  padding: 15px 8px;
+  height: 48px;
+  font-family: Arial,sans-serif;
+  padding-right: 0;
+}
+
+.emotion-0 input {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 16px;
+  padding: 15px 8px;
+  height: 48px;
+  font-family: Arial,sans-serif;
+}
+
+.emotion-0 input::-webkit-input-placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+.emotion-0 input::-moz-placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+.emotion-0 input:-ms-input-placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+.emotion-0 input::placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-search"
+    prefix=""
+  >
+    <div
+      class="mi-textinput-prefix"
+    >
+      <span
+        data-color="#888888"
+        data-size="16"
+        data-testid="svg-icon-search"
+      />
+    </div>
+    <input
+      aria-disabled="false"
+      autocomplete="off"
+      data-testid="test-search-input"
+      id="test-search-input"
+      tabindex="0"
+      type="search"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`SearchInput Snapshots With clear button 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  border-color: #666666;
+  outline: none;
+}
+
+.emotion-0:hover .mi-textinput-prefix,
+.emotion-0:hover input:enabled {
+  border-color: #333333;
+}
+
+.emotion-0.emotion-0.emotion-0 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #333333;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.emotion-0.emotion-0.emotion-0 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-0 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: Arial,sans-serif;
+  padding-right: 0;
+}
+
+.emotion-0 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: Arial,sans-serif;
+  padding-right: 0;
+}
+
+.emotion-0 input::-webkit-input-placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+.emotion-0 input::-moz-placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+.emotion-0 input:-ms-input-placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+.emotion-0 input::placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+.emotion-2 {
+  padding: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-search"
+    prefix=""
+  >
+    <div
+      class="mi-textinput-prefix"
+    >
+      <span
+        data-color="#888888"
+        data-size="16"
+        data-testid="svg-icon-search"
+      />
+    </div>
+    <input
+      aria-disabled="false"
+      autocomplete="off"
+      data-testid="test-search-input"
+      id="test-search-input"
+      tabindex="0"
+      type="search"
+      value="test"
+    />
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <button
+        aria-label="Clear search"
+        data-testid="test-search-clear-button"
+        style="background: none; cursor: pointer; padding: 0px; display: flex; align-items: center; opacity: 0.6;"
+        type="button"
+      >
+        <span
+          data-color="#444444"
+          data-size="10"
+          data-testid="svg-icon-close-V4"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SearchInput Snapshots With placeholder 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  border-color: #666666;
+  outline: none;
+}
+
+.emotion-0:hover .mi-textinput-prefix,
+.emotion-0:hover input:enabled {
+  border-color: #333333;
+}
+
+.emotion-0.emotion-0.emotion-0 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #333333;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.emotion-0.emotion-0.emotion-0 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-0 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: Arial,sans-serif;
+  padding-right: 0;
+}
+
+.emotion-0 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: Arial,sans-serif;
+}
+
+.emotion-0 input::-webkit-input-placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+.emotion-0 input::-moz-placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+.emotion-0 input:-ms-input-placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+.emotion-0 input::placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-search"
+    prefix=""
+  >
+    <div
+      class="mi-textinput-prefix"
+    >
+      <span
+        data-color="#888888"
+        data-size="16"
+        data-testid="svg-icon-search"
+      />
+    </div>
+    <input
+      aria-disabled="false"
+      autocomplete="off"
+      data-testid="test-search-input"
+      id="test-search-input"
+      placeholder="Search..."
+      tabindex="0"
+      type="search"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`SearchInput Snapshots With value 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  border-color: #666666;
+  outline: none;
+}
+
+.emotion-0:hover .mi-textinput-prefix,
+.emotion-0:hover input:enabled {
+  border-color: #333333;
+}
+
+.emotion-0.emotion-0.emotion-0 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #333333;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.emotion-0.emotion-0.emotion-0 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-0 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: Arial,sans-serif;
+  padding-right: 0;
+}
+
+.emotion-0 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: Arial,sans-serif;
+}
+
+.emotion-0 input::-webkit-input-placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+.emotion-0 input::-moz-placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+.emotion-0 input:-ms-input-placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+.emotion-0 input::placeholder {
+  color: #333333;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-search"
+    prefix=""
+  >
+    <div
+      class="mi-textinput-prefix"
+    >
+      <span
+        data-color="#888888"
+        data-size="16"
+        data-testid="svg-icon-search"
+      />
+    </div>
+    <input
+      aria-disabled="false"
+      autocomplete="off"
+      data-testid="test-search-input"
+      id="test-search-input"
+      tabindex="0"
+      type="search"
+      value="test value"
+    />
+  </div>
+</div>
+`;

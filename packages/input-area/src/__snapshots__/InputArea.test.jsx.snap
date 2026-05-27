@@ -1,0 +1,1969 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputArea component Snapshots Defaults 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 14px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-2 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: both;
+}
+
+.emotion-2:hover {
+  border-color: #2A394A;
+}
+
+.emotion-2:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-2::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-2::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-2:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-2::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    width="100%"
+  >
+    <textarea
+      aria-label=""
+      class="emotion-2 emotion-3"
+      id="testId-Input"
+      rows="3"
+      tabindex="0"
+    >
+      Awsome text test
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`InputArea component Snapshots Invalid 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-2 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #DA211E;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-4 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #DA211E;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: both;
+}
+
+.emotion-4:hover {
+  border-color: #DA211E;
+}
+
+.emotion-4:focus {
+  border-color: #DA211E;
+  outline: none;
+}
+
+.emotion-4::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin: 6px 0 10px 0;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #DA211E;
+}
+
+.emotion-8:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-8:focus {
+  outline: none;
+}
+
+.emotion-10 {
+  display: block;
+  color: #DA211E;
+  width: 100%;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      color="#DA211E"
+      for="testId-Input"
+      id="testId-Caption"
+    >
+      Fun text
+    </div>
+    <textarea
+      aria-label=""
+      class="emotion-4 emotion-5"
+      id="testId-Input"
+      rows="3"
+      tabindex="0"
+    >
+      Awsome text test
+    </textarea>
+    <div
+      class="emotion-6 emotion-7"
+    >
+      <div
+        class=""
+        style="padding-right: 4px;"
+      >
+        <span
+          class="emotion-8 emotion-9"
+          color="#DA211E"
+          data-testid="svg-icon-wrapper-warning-sign"
+          id="testId-validation-icon"
+        >
+          <svg
+            aria-label="warning-sign icon"
+            data-testid="svg-icon-svg-warning-sign"
+            fill="#DA211E"
+            height="14px"
+            preserveAspectRatio="none"
+            role="img"
+            viewBox="0 0 1024 1024"
+            width="14px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M499.029 42.667l-8.747 0.085c-131.456 2.261-255.104 55.381-348.288 149.547-93.781 94.805-144.171 219.008-141.909 349.611 4.693 270.421 216.533 482.219 482.347 482.219l8.619-0.043c274.987-4.821 494.933-228.779 490.197-499.243-4.693-270.379-216.491-482.176-482.219-482.176zM490.283 981.419l-7.893 0.043c-242.261 0-435.371-193.408-439.68-440.32-2.091-119.040 43.947-232.277 129.579-318.848 85.291-86.229 198.443-134.827 318.72-136.917l8.021-0.043c242.219 0 435.243 193.365 439.552 440.235 4.309 246.955-196.821 451.456-448.299 455.851zM490.667 618.667c11.776 0 21.333-9.557 21.333-21.333v-298.667c0-11.776-9.557-21.333-21.333-21.333s-21.333 9.557-21.333 21.333v298.667c0 11.776 9.557 21.333 21.333 21.333z M533.333 746.667c0 23.564-19.103 42.667-42.667 42.667s-42.667-19.103-42.667-42.667c0-23.564 19.103-42.667 42.667-42.667s42.667 19.103 42.667 42.667z"
+              stroke="inherit"
+              stroke-width=""
+            />
+          </svg>
+        </span>
+      </div>
+      <div
+        class="emotion-10 emotion-11"
+        id="testId-validation2"
+      >
+         
+        spelling error
+         
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InputArea component Snapshots Invalid v4 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-2 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #DA211E;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-4 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #DA211E;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: both;
+}
+
+.emotion-4:hover {
+  border-color: #DA211E;
+}
+
+.emotion-4:focus {
+  border-color: #DA211E;
+  outline: none;
+}
+
+.emotion-4::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin: 6px 0 10px 0;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #DA211E;
+}
+
+.emotion-8:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-8:focus {
+  outline: none;
+}
+
+.emotion-10 {
+  display: block;
+  color: #DA211E;
+  width: 100%;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      color="#DA211E"
+      for="testId-Input"
+      id="testId-Caption"
+    >
+      Fun text
+    </div>
+    <textarea
+      aria-label=""
+      class="emotion-4 emotion-5"
+      id="testId-Input"
+      rows="3"
+      tabindex="0"
+    >
+      Awsome text test
+    </textarea>
+    <div
+      class="emotion-6 emotion-7"
+    >
+      <div
+        class=""
+        style="padding-right: 4px;"
+      >
+        <span
+          class="emotion-8 emotion-9"
+          color="#DA211E"
+          data-testid="svg-icon-wrapper-warning-sign"
+          id="testId-validation-icon"
+        >
+          <svg
+            aria-label="warning-sign icon"
+            data-testid="svg-icon-svg-warning-sign"
+            fill="#DA211E"
+            height="14px"
+            preserveAspectRatio="none"
+            role="img"
+            viewBox="0 0 1024 1024"
+            width="14px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M499.029 42.667l-8.747 0.085c-131.456 2.261-255.104 55.381-348.288 149.547-93.781 94.805-144.171 219.008-141.909 349.611 4.693 270.421 216.533 482.219 482.347 482.219l8.619-0.043c274.987-4.821 494.933-228.779 490.197-499.243-4.693-270.379-216.491-482.176-482.219-482.176zM490.283 981.419l-7.893 0.043c-242.261 0-435.371-193.408-439.68-440.32-2.091-119.040 43.947-232.277 129.579-318.848 85.291-86.229 198.443-134.827 318.72-136.917l8.021-0.043c242.219 0 435.243 193.365 439.552 440.235 4.309 246.955-196.821 451.456-448.299 455.851zM490.667 618.667c11.776 0 21.333-9.557 21.333-21.333v-298.667c0-11.776-9.557-21.333-21.333-21.333s-21.333 9.557-21.333 21.333v298.667c0 11.776 9.557 21.333 21.333 21.333z M533.333 746.667c0 23.564-19.103 42.667-42.667 42.667s-42.667-19.103-42.667-42.667c0-23.564 19.103-42.667 42.667-42.667s42.667 19.103 42.667 42.667z"
+              stroke="inherit"
+              stroke-width=""
+            />
+          </svg>
+        </span>
+      </div>
+      <div
+        class="emotion-10 emotion-11"
+        id="testId-validation2"
+      >
+         
+        spelling error
+         
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InputArea component Snapshots disable resize 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 14px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-2 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-4 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: none;
+}
+
+.emotion-4:hover {
+  border-color: #2A394A;
+}
+
+.emotion-4:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-4::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      for="testId-Input"
+      id="testId-Caption"
+    >
+      Fun text
+    </div>
+    <textarea
+      aria-label=""
+      class="emotion-4 emotion-5"
+      id="testId-Input"
+      rows="3"
+      tabindex="0"
+    >
+      Awsome text test
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`InputArea component Snapshots disable resize v4 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 14px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-2 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-4 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: none;
+}
+
+.emotion-4:hover {
+  border-color: #2A394A;
+}
+
+.emotion-4:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-4::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      for="testId-Input"
+      id="testId-Caption"
+    >
+      Fun text
+    </div>
+    <textarea
+      aria-label=""
+      class="emotion-4 emotion-5"
+      id="testId-Input"
+      rows="3"
+      tabindex="0"
+    >
+      Awsome text test
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`InputArea component Snapshots disabled  v4 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 14px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-2 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #2A394A;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-4 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: both;
+  background-color: #F6FAFB;
+}
+
+.emotion-4:hover {
+  border-color: #2A394A;
+  background-color: #F6FAFB;
+}
+
+.emotion-4:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-4::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      disabled=""
+      for="testId-Input"
+      id="testId-Caption"
+    >
+      Fun text
+    </div>
+    <textarea
+      aria-label=""
+      class="emotion-4 emotion-5"
+      disabled=""
+      id="testId-Input"
+      rows="3"
+      tabindex="0"
+    >
+      Awsome text test
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`InputArea component Snapshots disabled 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 14px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-2 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #2A394A;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-4 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: both;
+  background-color: #F6FAFB;
+}
+
+.emotion-4:hover {
+  border-color: #2A394A;
+  background-color: #F6FAFB;
+}
+
+.emotion-4:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-4::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      disabled=""
+      for="testId-Input"
+      id="testId-Caption"
+    >
+      Fun text
+    </div>
+    <textarea
+      aria-label=""
+      class="emotion-4 emotion-5"
+      disabled=""
+      id="testId-Input"
+      rows="3"
+      tabindex="0"
+    >
+      Awsome text test
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`InputArea component Snapshots displayAuto 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 14px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  display: inline-block;
+}
+
+.emotion-2 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-4 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: both;
+}
+
+.emotion-4:hover {
+  border-color: #2A394A;
+}
+
+.emotion-4:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-4::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      for="testId-Input"
+      id="testId-Caption"
+    >
+      Fun text
+    </div>
+    <textarea
+      aria-label=""
+      class="emotion-4 emotion-5"
+      id="testId-Input"
+      rows="3"
+      tabindex="0"
+    >
+      Awsome text test
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`InputArea component Snapshots displayAuto v4 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 14px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  display: inline-block;
+}
+
+.emotion-2 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-4 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: both;
+}
+
+.emotion-4:hover {
+  border-color: #2A394A;
+}
+
+.emotion-4:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-4::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      for="testId-Input"
+      id="testId-Caption"
+    >
+      Fun text
+    </div>
+    <textarea
+      aria-label=""
+      class="emotion-4 emotion-5"
+      id="testId-Input"
+      rows="3"
+      tabindex="0"
+    >
+      Awsome text test
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`InputArea component Snapshots readonly  v4 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 14px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-2 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-4 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: both;
+  background-color: #F6FAFB;
+}
+
+.emotion-4:hover {
+  border-color: #2A394A;
+  background-color: #F6FAFB;
+}
+
+.emotion-4:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-4::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      for="testId-Input"
+      id="testId-Caption"
+      readonly=""
+    >
+      Fun text
+    </div>
+    <textarea
+      aria-label=""
+      class="emotion-4 emotion-5"
+      id="testId-Input"
+      readonly=""
+      rows="3"
+      tabindex="0"
+    >
+      Awsome text test
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`InputArea component Snapshots readonly 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 14px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-2 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-4 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: both;
+  background-color: #F6FAFB;
+}
+
+.emotion-4:hover {
+  border-color: #2A394A;
+  background-color: #F6FAFB;
+}
+
+.emotion-4:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-4::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      for="testId-Input"
+      id="testId-Caption"
+      readonly=""
+    >
+      Fun text
+    </div>
+    <textarea
+      aria-label=""
+      class="emotion-4 emotion-5"
+      id="testId-Input"
+      readonly=""
+      rows="3"
+      tabindex="0"
+    >
+      Awsome text test
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`InputArea component Snapshots scrollable 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 14px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-2 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: both;
+  height: 250px;
+}
+
+.emotion-2:hover {
+  border-color: #2A394A;
+}
+
+.emotion-2:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-2::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-2::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-2:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-2::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4 {
+  display: none;
+  position: absolute;
+  visibility: hidden;
+  width: 100%;
+  font-weight: normal;
+  line-height: 16px;
+  min-height: 32px;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  resize: none;
+  overflow-y: auto;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    width="100%"
+  >
+    <textarea
+      aria-label=""
+      class="emotion-2 emotion-3"
+      height="250"
+      id="testId-Input"
+      rows="3"
+      tabindex="0"
+    >
+      Lorem ipsum dolor sit amet, 
+          consectetur adipiscing elit, 
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident,
+          sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </textarea>
+    <textarea
+      class="emotion-4 emotion-5"
+      readonly=""
+      rows="3"
+      style="height: 0px;"
+    />
+  </div>
+</div>
+`;
+
+exports[`InputArea component Snapshots scrollable v4 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 14px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-2 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: both;
+  height: 250px;
+}
+
+.emotion-2:hover {
+  border-color: #2A394A;
+}
+
+.emotion-2:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-2::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-2::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-2:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-2::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-4 {
+  display: none;
+  position: absolute;
+  visibility: hidden;
+  width: 100%;
+  font-weight: normal;
+  line-height: 16px;
+  min-height: 32px;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  resize: none;
+  overflow-y: auto;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    width="100%"
+  >
+    <textarea
+      aria-label=""
+      class="emotion-2 emotion-3"
+      height="250"
+      id="testId-Input"
+      rows="3"
+      tabindex="0"
+    >
+      Lorem ipsum dolor sit amet, 
+        consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </textarea>
+    <textarea
+      class="emotion-4 emotion-5"
+      readonly=""
+      rows="3"
+      style="height: 0px;"
+    />
+  </div>
+</div>
+`;
+
+exports[`InputArea component renders with compact style 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-2 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: both;
+}
+
+.emotion-2:hover {
+  border-color: #2A394A;
+}
+
+.emotion-2:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-2::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-2::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-2:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-2::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    width="100%"
+  >
+    <textarea
+      aria-label=""
+      class="emotion-2 emotion-3"
+      id="testId-Input"
+      rows="3"
+      tabindex="0"
+    />
+  </div>
+</div>
+`;
+
+exports[`InputArea component renders without crashing 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 14px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-2 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: both;
+}
+
+.emotion-2:hover {
+  border-color: #2A394A;
+}
+
+.emotion-2:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-2::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-2::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-2:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-2::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    width="100%"
+  >
+    <textarea
+      aria-label=""
+      class="emotion-2 emotion-3"
+      id="testId-Input"
+      rows="3"
+      tabindex="0"
+    />
+  </div>
+</div>
+`;

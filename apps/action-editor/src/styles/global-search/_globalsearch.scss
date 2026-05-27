@@ -1,0 +1,136 @@
+﻿@import "../designer/colors", "../../scss/partials/mixins";
+
+.mi-card {
+    display: flex;
+    padding: 10px 20px;
+    background-color: $white;
+    border: 1px solid $card-border;
+    margin-top: 10px;
+    position: relative;
+
+    .mi-card-link {
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+        position: absolute;
+        top: 0px;
+        left: 0;
+        padding: 0;
+    }
+
+    .mi-card-external-link {
+        display: block;
+        height: 100%;
+        width: 20%;
+        text-decoration: none;
+        position: absolute;
+        top: 0px;
+        right: 0;
+        padding: 0;
+    }
+
+    .mi-card-external-icon-positioning {
+        display: flex;
+        width: 100%;
+        height:100%;
+        vertical-align:middle;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mi-card-img {
+        max-height: 48px;
+        display: block;
+        align-self: center;
+    }
+
+    .mi-card-content {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+        overflow: hidden; /* prevent text from extending past the card. remove this line  */
+        /* 
+        uncomment this, and the block below to switch to ellipsis overflow
+        63px is the width of the image and the left margin
+        width: calc(100% - 63px); 
+        */
+        .card-fullname {
+            padding-bottom: 5px;
+            font-weight: bold;
+            /*
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            */
+        }
+
+        span {
+            width: 85%;
+            padding-bottom: 4px;
+        }
+    }
+    .external-link-visibility {
+        visibility:hidden;
+    }
+    &:hover .external-link-visibility{
+        visibility:visible;
+    }
+
+}
+
+.global-search {
+
+    .panel-search-block {
+        padding-top: 5px;
+        line-height: 18px;
+
+        .search-title {
+            display: block;
+            font-weight: bold;
+            padding: 10px 0;
+        }
+    }
+}
+
+.global-search-spinner {
+    position: relative;
+
+    .spinner-container {
+        margin: 40px auto;
+        position: relative;
+        height: auto;
+        width: 40px;
+    }
+
+    .search-spinner {
+        width: 40px;
+        height: 40px;
+
+        &:before,
+        &.after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            border: 5px solid transparent;
+            border-top-color: #0D71C8;
+        }
+
+        &:after {
+            border: 5px solid #BACAD0;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+.panel-search-result {
+    margin-bottom: 50px;
+}
+
+
+

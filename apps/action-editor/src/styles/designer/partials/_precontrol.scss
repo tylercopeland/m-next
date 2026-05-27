@@ -1,0 +1,29 @@
+.precontrol {
+    white-space:nowrap;
+    overflow: hidden;
+    /* margin-top: 5px;
+    margin-left: 5px;*/
+    width: 150px;
+    height: 36px;
+    font-size: 12px;
+    text-align: left;
+    padding: 5px 10px;
+    line-height: 26px;
+    vertical-align: middle;
+    position: absolute;
+    border: 1px solid $border-color;
+    box-shadow: 1px 1px 2px -1px rgba($black, 0.1);
+    background: $m-grey;
+    border-radius: 3px;
+    box-sizing: border-box;
+    z-index: 999999;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+    i {
+        margin-right: 4px;
+    }
+}
+

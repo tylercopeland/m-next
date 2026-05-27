@@ -1,0 +1,291 @@
+<div data-ng-controller="ComponentGridColumnCtrl" class="mi-ae-fullheight">
+  <!-- Left Panel -->
+  <div class="mi-ae-framework-left-panel">
+      <div class="mi-ae-header-block">
+          <h2>Columns</h2>
+          <button class="mi-button-icon mi-icon-circle-plus" tooltip-placement="left" uib-tooltip="Add another column" data-ng-click="addColumn()"></button>
+      </div>
+
+      <div class="mi-ae-main-content mi-ae-main-content-full">
+        <ul class="mi-ae-simple-list">
+          <li data-ng-class="{'selected' : recordColumn.name === properties.name, 'mi-ae-border-b-0': columns.length > 1 }">
+            <span class="mi-ae-border-r-0"></span>
+            <span data-ng-click="loadProperties(recordColumn, $index)">{{ recordColumn.name }}</span>
+            <span></span>
+          </li>
+        </ul>
+        <ul class="mi-ae-simple-list" ng-sortable="layout.sortableConfig">
+          <li data-ng-repeat="column in columns" data-ng-class="{'selected' : column.name === properties.name }" data-ng-if="!column.isKey">
+            <span><i class="mi-icon">
+              <svg-icon name="'move'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+            </i></span>
+            <span data-ng-click="loadProperties(column, $index)">{{ column.name }}</span>
+            <span data-ng-click="triggerDelete($event, $index)"><i class="mi-icon">
+              <svg-icon name="'delete'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+            </i></span>
+          </li>
+        </ul>
+        <div class="mi-ae-padding-t-15 mi-ae-padding-l-10">
+          <a data-ng-click="addColumn()"><i class="mi-icon">
+            <svg-icon name="'circle-plus'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+          </i> Add another column</a>
+        </div>
+      </div>
+  </div>
+  <!--/ Left Panel -->
+
+  <!-- Right Panel For Adding -->
+  <div class="mi-ae-framework-right-panel" data-ng-if="!editMode && !layout.showExpressionBuilder">
+    <div class="mi-ae-header-block">
+      <h2>Add New Column</h2>
+      <div class="button-group">
+          <button class="mi-button blue white-text" data-ng-click="bulkAdd()" data-ng-if="layout.bulk.adding">Done</button>
+          <button class="mi-button ghost blue" data-ng-click="toggleMultiple()">{{ bulkBtnLabel }}</button>
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="mi-ae-main-content mi-ae-main-content-full">
+      <div class="search-box">
+        <i class="mi-icon">
+          <svg-icon name="'search'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+        </i>
+        <input type="search" placeholder="Search Fields" id="columnSearch" data-ng-model="layout.query">
+      </div>
+
+      <h3 class="mi-ae-margin-t-10" data-ng-if="layout.query === ''">Specialty Columns</h3>
+      <ul class="mi-ae-box-list" data-ng-if="layout.query === ''">
+        <li data-ng-click="selectExpression()" data-ng-class="{'is-checkbox': layout.bulk.adding, 'is-checkbox-active': isInArray('Expression')}">
+          <span><i class="mi-icon">
+            <svg-icon name="'align-left'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+          </i></span>
+          <span>Expression<br><small class="mi-ae-note">Advanced - allows you to combinetext and multiple fields into the same column.</small></span>
+        </li>
+        <li data-ng-click="selectLink()" data-ng-class="{'is-checkbox': layout.bulk.adding, 'is-checkbox-active': isInArray('Link')}">
+          <span><i class="mi-icon">
+            <svg-icon name="'align-left'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+          </i></span>
+          <span>Link<br><small class="mi-ae-note">Used for creating clickable columns for running actions like 'Select', 'Delete', 'Go to' and more.</small></span>
+        </li>
+      </ul>
+      <h3 class="mi-ae-margin-t-10">Fields from '{{ control.model.viewName }}' Table</h3>
+      <ul class="mi-ae-box-list">
+        <!-- Table Fields -->
+        <li data-ng-repeat="field in fields | filter:alreadyUsed | filter: { key: layout.query } | orderBy:'key'" data-ng-click="selectField(field)" data-ng-class="{'is-checkbox': layout.bulk.adding, 'is-checkbox-active': isInArray(field)}">
+          <span><i class="mi-icon">
+            <svg-icon name="{{ getIcon(field.value.fldTypeId) }}" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+          </i></span>
+          <span>{{ field.key }}</span>
+        </li>
+
+      </ul>
+    </div>
+    <!--/ Main Content Area -->
+  </div>
+  <!--/ Right Panel -->
+
+  <!-- Right Panel For Editing -->
+  <div class="mi-ae-framework-right-panel" data-ng-if="editMode && !layout.showExpressionBuilder">
+    <div class="mi-ae-header-block">
+      <h2>Properties of {{ properties.name }}</h2>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="mi-ae-main-content mi-ae-main-content-full">
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Type</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <label class="mi-ae-label not-bold">{{ getFieldType(properties) }}</label>
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Field Name</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <label class="mi-ae-label not-bold">{{ properties.name }}</label>
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Caption</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <input type="text" data-ng-model="properties.caption">
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-10 mi-ae-col-offset-4">
+            <label class="mi-radio-checkbox mi-checkbox">
+                <span>Hide Caption</span>
+                <input type="checkbox" data-ng-model="properties.format.hidecaption" data-ng-value="true">
+                <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Width</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <div class="mi-ae-row">
+            <div class="mi-ae-col-10">
+              <input type="text" data-ng-model="properties.format.width.value">
+            </div>
+            <div class="mi-ae-col-6">
+              <ui-select data-ng-model="properties.format.width.type" theme="selectize" search-enabled="false">
+                  <ui-select-match placeholder="Select a width type...">{{$select.selected.label}}</ui-select-match>
+                  <ui-select-choices repeat="opt.value as opt in layout.width">
+                      <span ng-bind-html="opt.label | highlight: $select.search"></span>
+                  </ui-select-choices>
+              </ui-select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Phone Width</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <div class="mi-ae-row">
+            <div class="mi-ae-col-10">
+              <input type="text" data-ng-model="properties.format.width.mvalue">
+            </div>
+            <div class="mi-ae-col-6">
+              <ui-select data-ng-model="properties.format.width.mtype" theme="selectize" search-enabled="false">
+                  <ui-select-match placeholder="Select a width type...">{{$select.selected.label}}</ui-select-match>
+                  <ui-select-choices repeat="opt.value as opt in layout.width">
+                      <span ng-bind-html="opt.label | highlight: $select.search"></span>
+                  </ui-select-choices>
+              </ui-select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Align</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <ui-select data-ng-model="properties.format.alignment" theme="selectize" search-enabled="false">
+              <ui-select-match placeholder="Select an alignment...">{{$select.selected.label}}</ui-select-match>
+              <ui-select-choices repeat="opt.value as opt in layout.alignments">
+                  <span ng-bind-html="opt.label | highlight: $select.search"></span>
+              </ui-select-choices>
+          </ui-select>
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Show</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <ul class="mi-radiobutton-group">
+              <li class="rad-horizontal mi-ae-padding-r-20">
+                  <label class="mi-radio-checkbox mi-checkbox">
+                      <span>On Desktop</span>
+                      <input type="checkbox" data-ng-model="properties.format.visible" data-ng-value="true">
+                      <div class="mi-radio-checkbox-indicator"></div>
+                  </label>
+              </li>
+              <li class="rad-horizontal mi-ae-padding-r-20">
+                  <label class="mi-radio-checkbox mi-checkbox">
+                      <span>On Mobile</span>
+                      <input type="checkbox" data-ng-model="properties.format.visiblemobile" data-ng-value="true">
+                      <div class="mi-radio-checkbox-indicator"></div>
+                  </label>
+              </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Format</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <ui-select data-ng-if="!validateFieldFormat(properties)" data-ng-model="properties.format.formatType" theme="selectize" search-enabled="false" on-select="updateFormat($select.selected)">
+              <ui-select-match placeholder="Select a format...">{{$select.selected.label}}</ui-select-match>
+              <ui-select-choices repeat="opt.value as opt in layout.formats">
+                <span ng-bind-html="opt.label | highlight: $select.search"></span>
+            </ui-select-choices>
+          </ui-select>
+          <ui-select data-ng-if="validateFieldFormat(properties)" data-ng-model="properties.format.formatType" theme="selectize" search-enabled="false" on-select="updateFormat($select.selected)">
+            <ui-select-match placeholder="Select a format...">{{$select.selected.label}}</ui-select-match>
+            <ui-select-choices  repeat="opt.value as opt in layout.numberFormats">
+                <span ng-bind-html="opt.label | highlight: $select.search"></span>
+            </ui-select-choices>
+        </ui-select>
+        </div>
+      </div>
+
+      <div class="mi-ae-row" data-ng-if="properties.format.formatType === 'Number'">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Rounding</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <ui-select data-ng-model="properties.format.formatRounding" theme="selectize" search-enabled="false">
+              <ui-select-match placeholder="Select rounding preference...">{{$select.selected.label}}</ui-select-match>
+              <ui-select-choices repeat="opt.value as opt in layout.rounding">
+                  <span ng-bind-html="opt.label | highlight: $select.search"></span>
+              </ui-select-choices>
+          </ui-select>
+        </div>
+      </div>
+
+      <div class="mi-ae-row" data-ng-if="properties.format.formatType === 'Number'">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Separator</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <ui-select data-ng-model="properties.format.formatSeparator" theme="selectize" search-enabled="false">
+              <ui-select-match placeholder="Select a separation...">{{$select.selected.label}}</ui-select-match>
+              <ui-select-choices repeat="opt.value as opt in layout.separator">
+                  <span ng-bind-html="opt.label | highlight: $select.search"></span>
+              </ui-select-choices>
+          </ui-select>
+        </div>
+      </div>
+
+      <div class="mi-ae-row" data-ng-if="properties.columnType === 2">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Expression Builder</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-button 
+            name="'Create Expression'" 
+            button-class="'ghost mi-button-clear mi-ae-margin-0 mi-ae-padding-l-0'" 
+            clickevent="createExpression()"></mi-button>
+        </div>
+      </div>
+      
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Column Action</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-button 
+            name="buttonLabel" 
+            button-class="'ghost mi-button-clear mi-ae-margin-0 mi-ae-padding-l-0'" 
+            clickevent="openActionEditor()"></mi-button>
+        </div>
+      </div>
+    </div>
+    <!--/ Main Content Area -->
+  </div>
+  <!--/ Right Panel -->
+
+  <div class="mi-ae-framework-right-panel" data-ng-show="layout.showExpressionBuilder">
+    <mi-expression-builder builder="grid-column" table-name="{{ control.model.viewName }}"></mi-expression-builder>
+  </div>
+</div>

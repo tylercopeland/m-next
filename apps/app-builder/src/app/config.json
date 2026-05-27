@@ -1,0 +1,24 @@
+{
+   "datadog": {
+      "enabled": false,
+      "applicationId": "58c3ca44-c306-4533-bc5b-3cba451adb58",
+      "clientToken": "pub5c6496a977ae06c7d8816d80c314fc3b",
+      "site": "datadoghq.com",
+      "service": "app-builder",
+      "env": "local",
+      "version": "1.0.0",
+      "sampleRate": 100,
+      "trackInteractions": true,
+      "defaultPrivacyLevel": "mask-user-input"
+
+   },
+   "apis": {
+      "gateway": "https://api.methodlocal.com/v2/",
+      "runtime": "https://runtime.methodlocal.com/",
+      "designer": "https://designer.methodlocal.com/"
+   },
+   "featureFlags": {
+      "indigo": false,
+      "clicktoedit": false
+   }
+}

@@ -1,0 +1,2357 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toggle Snapshots (visual regression) bold variants 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0;
+  width: auto;
+}
+
+.emotion-2 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 16px;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+  color: #2A394A;
+}
+
+.emotion-4 {
+  touch-action: pan-x;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  margin-bottom: 0;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  opacity: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.emotion-4:hover .toggle-circle {
+  box-shadow: 0 0 0 8px rgba(93, 157, 213, 0.1);
+}
+
+.emotion-6 {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  outline: black;
+}
+
+.emotion-6:focus-visible+.toggle-track {
+  outline: none;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  width: 44px;
+  height: 24px;
+  padding: 0;
+  border-radius: 16px;
+  background-color: #BACAD0;
+  outline: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.emotion-10 {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background-color: #545F67;
+  box-shadow: none;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    data-testid="test-Toggle-wrapper"
+    width="auto"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      Passed
+    </div>
+    <label
+      class="emotion-4 emotion-5"
+      for="test"
+    >
+      <input
+        aria-checked="false"
+        class="emotion-6 emotion-7"
+        data-testid="test-Toggle-input"
+        id="test"
+        role="switch"
+        type="checkbox"
+      />
+      <div
+        class="toggle-track emotion-8 emotion-9"
+      >
+        <div
+          class="toggle-circle emotion-10 emotion-11"
+        />
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Toggle Snapshots (visual regression) bold variants 2`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0;
+  width: auto;
+}
+
+.emotion-2 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 16px;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+  color: #2A394A;
+}
+
+.emotion-4 {
+  touch-action: pan-x;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  margin-bottom: 0;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  opacity: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.emotion-4:hover .toggle-circle {
+  box-shadow: 0 0 0 8px rgba(93, 157, 213, 0.1);
+}
+
+.emotion-6 {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  outline: black;
+}
+
+.emotion-6:focus-visible+.toggle-track {
+  outline: none;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  width: 56px;
+  height: 32px;
+  padding: 0;
+  border-radius: 16px;
+  background-color: #BACAD0;
+  outline: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.emotion-10 {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: auto;
+  width: 24px;
+  height: 24px;
+  border-radius: 16px;
+  background-color: #545F67;
+  box-shadow: none;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    data-testid="test-Toggle-wrapper"
+    width="auto"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      Passed
+    </div>
+    <label
+      class="emotion-4 emotion-5"
+      for="test"
+    >
+      <input
+        aria-checked="false"
+        class="emotion-6 emotion-7"
+        data-testid="test-Toggle-input"
+        id="test"
+        role="switch"
+        type="checkbox"
+      />
+      <div
+        class="toggle-track emotion-8 emotion-9"
+      >
+        <div
+          class="toggle-circle emotion-10 emotion-11"
+        />
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Toggle Snapshots (visual regression) bold variants 3`] = `
+.emotion-0 {
+  display: inline-block;
+  -webkit-align-items: none;
+  -webkit-box-align: none;
+  -ms-flex-align: none;
+  align-items: none;
+  -webkit-box-pack: none;
+  -ms-flex-pack: none;
+  -webkit-justify-content: none;
+  justify-content: none;
+  padding: 0;
+  width: auto;
+}
+
+.emotion-2 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+}
+
+.emotion-4 {
+  touch-action: pan-x;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0 0 2px 0;
+  margin-bottom: 0;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  opacity: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.emotion-4:hover .toggle-circle {
+  box-shadow: 0 0 0 8px rgba(93, 157, 213, 0.1);
+}
+
+.emotion-6 {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  outline: black;
+}
+
+.emotion-6:focus-visible+.toggle-track {
+  outline: none;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  width: 56px;
+  height: 24px;
+  padding: 0;
+  border-radius: 16px;
+  background-color: #BACAD0;
+  outline: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.emotion-10 {
+  display: none;
+  padding-top: 4px;
+  text-indent: 10px;
+  text-align: left;
+}
+
+.emotion-12 {
+  display: block;
+  padding-top: 4px;
+  text-indent: 28px;
+  text-align: left;
+}
+
+.emotion-14 {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background-color: #545F67;
+  box-shadow: none;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test"
+    width="auto"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      for="test-Toggle"
+      id="test-toggle-caption-Caption"
+      style="display: inline-block; padding-left: 5px; padding-top: 5px; padding-right: 5px; float: left; font-weight: 600;"
+    >
+      Passed
+    </div>
+    <label
+      class="emotion-4 emotion-5"
+      for="test-Toggle"
+    >
+      <input
+        aria-checked="false"
+        class="emotion-6 emotion-7"
+        data-testid="test-Toggle-input"
+        id="test-Toggle"
+        role="switch"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="toggle-track emotion-8 emotion-9"
+      >
+        <span
+          class="emotion-10 emotion-11"
+        >
+          ​
+        </span>
+        <span
+          class="emotion-12 emotion-13"
+        >
+          ​
+        </span>
+        <div
+          class="toggle-circle emotion-14 emotion-15"
+        />
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Toggle Snapshots (visual regression) checked variants 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0;
+  width: auto;
+}
+
+.emotion-2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 16px;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+  color: #2A394A;
+}
+
+.emotion-4 {
+  touch-action: pan-x;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  margin-bottom: 0;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  opacity: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.emotion-4:hover .toggle-circle {
+  box-shadow: 0 0 0 8px rgba(93, 157, 213, 0.1);
+}
+
+.emotion-6 {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  outline: black;
+}
+
+.emotion-6:focus-visible+.toggle-track {
+  outline: none;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  width: 44px;
+  height: 24px;
+  padding: 0;
+  border-radius: 16px;
+  background-color: rgba(93, 157, 213, 0.3);
+  outline: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.emotion-10 {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background-color: #0D71C8;
+  box-shadow: none;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    data-testid="test-Toggle-wrapper"
+    width="auto"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      Passed
+    </div>
+    <label
+      class="emotion-4 emotion-5"
+      for="test"
+    >
+      <input
+        aria-checked="true"
+        checked=""
+        class="emotion-6 emotion-7"
+        data-testid="test-Toggle-input"
+        id="test"
+        role="switch"
+        type="checkbox"
+      />
+      <div
+        class="toggle-track emotion-8 emotion-9"
+      >
+        <div
+          class="toggle-circle emotion-10 emotion-11"
+        />
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Toggle Snapshots (visual regression) checked variants 2`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0;
+  width: auto;
+}
+
+.emotion-2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 16px;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+  color: #2A394A;
+}
+
+.emotion-4 {
+  touch-action: pan-x;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  margin-bottom: 0;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  opacity: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.emotion-4:hover .toggle-circle {
+  box-shadow: 0 0 0 8px rgba(93, 157, 213, 0.1);
+}
+
+.emotion-6 {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  outline: black;
+}
+
+.emotion-6:focus-visible+.toggle-track {
+  outline: none;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  width: 32px;
+  height: 16px;
+  padding: 0;
+  border-radius: 16px;
+  background-color: rgba(93, 157, 213, 0.3);
+  outline: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.emotion-10 {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 16px;
+  background-color: #0D71C8;
+  box-shadow: none;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transform: translateX(16px);
+  -moz-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    data-testid="test-Toggle-wrapper"
+    width="auto"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      Passed
+    </div>
+    <label
+      class="emotion-4 emotion-5"
+      for="test"
+    >
+      <input
+        aria-checked="true"
+        checked=""
+        class="emotion-6 emotion-7"
+        data-testid="test-Toggle-input"
+        id="test"
+        role="switch"
+        type="checkbox"
+      />
+      <div
+        class="toggle-track emotion-8 emotion-9"
+      >
+        <div
+          class="toggle-circle emotion-10 emotion-11"
+        />
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Toggle Snapshots (visual regression) checked variants 3`] = `
+.emotion-0 {
+  display: inline-block;
+  -webkit-align-items: none;
+  -webkit-box-align: none;
+  -ms-flex-align: none;
+  align-items: none;
+  -webkit-box-pack: none;
+  -ms-flex-pack: none;
+  -webkit-justify-content: none;
+  justify-content: none;
+  padding: 0;
+  width: auto;
+}
+
+.emotion-2 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+}
+
+.emotion-4 {
+  touch-action: pan-x;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0 0 2px 0;
+  margin-bottom: 0;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  opacity: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.emotion-4:hover .toggle-circle {
+  box-shadow: 0 0 0 8px rgba(93, 157, 213, 0.1);
+}
+
+.emotion-6 {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  outline: black;
+}
+
+.emotion-6:focus-visible+.toggle-track {
+  outline: none;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  width: 56px;
+  height: 24px;
+  padding: 0;
+  border-radius: 16px;
+  background-color: rgba(93, 157, 213, 0.3);
+  outline: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.emotion-10 {
+  display: block;
+  padding-top: 4px;
+  text-indent: 10px;
+  text-align: left;
+}
+
+.emotion-12 {
+  display: none;
+  padding-top: 4px;
+  text-indent: 28px;
+  text-align: left;
+}
+
+.emotion-14 {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background-color: #0D71C8;
+  box-shadow: none;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transform: translateX(32px);
+  -moz-transform: translateX(32px);
+  -ms-transform: translateX(32px);
+  transform: translateX(32px);
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test"
+    width="auto"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      for="test-Toggle"
+      id="test-toggle-caption-Caption"
+      style="display: inline-block; padding-left: 5px; padding-top: 5px; padding-right: 5px; float: left; font-weight: 400;"
+    >
+      Passed
+    </div>
+    <label
+      class="emotion-4 emotion-5"
+      for="test-Toggle"
+    >
+      <input
+        aria-checked="true"
+        checked=""
+        class="emotion-6 emotion-7"
+        data-testid="test-Toggle-input"
+        id="test-Toggle"
+        role="switch"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="toggle-track emotion-8 emotion-9"
+      >
+        <span
+          class="emotion-10 emotion-11"
+        >
+          ​
+        </span>
+        <span
+          class="emotion-12 emotion-13"
+        >
+          ​
+        </span>
+        <div
+          class="toggle-circle emotion-14 emotion-15"
+        />
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Toggle Snapshots (visual regression) default and small size 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0;
+  width: auto;
+}
+
+.emotion-2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 16px;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+  color: #2A394A;
+}
+
+.emotion-4 {
+  touch-action: pan-x;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  margin-bottom: 0;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  opacity: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.emotion-4:hover .toggle-circle {
+  box-shadow: 0 0 0 8px rgba(93, 157, 213, 0.1);
+}
+
+.emotion-6 {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  outline: black;
+}
+
+.emotion-6:focus-visible+.toggle-track {
+  outline: none;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  width: 44px;
+  height: 24px;
+  padding: 0;
+  border-radius: 16px;
+  background-color: #BACAD0;
+  outline: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.emotion-10 {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background-color: #545F67;
+  box-shadow: none;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    data-testid="test-Toggle-wrapper"
+    width="auto"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    />
+    <label
+      class="emotion-4 emotion-5"
+      for="test"
+    >
+      <input
+        aria-checked="false"
+        class="emotion-6 emotion-7"
+        data-testid="test-Toggle-input"
+        id="test"
+        role="switch"
+        type="checkbox"
+      />
+      <div
+        class="toggle-track emotion-8 emotion-9"
+      >
+        <div
+          class="toggle-circle emotion-10 emotion-11"
+        />
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Toggle Snapshots (visual regression) default and small size 2`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0;
+  width: auto;
+}
+
+.emotion-2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 16px;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+  color: #2A394A;
+}
+
+.emotion-4 {
+  touch-action: pan-x;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  margin-bottom: 0;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  opacity: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.emotion-4:hover .toggle-circle {
+  box-shadow: 0 0 0 8px rgba(93, 157, 213, 0.1);
+}
+
+.emotion-6 {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  outline: black;
+}
+
+.emotion-6:focus-visible+.toggle-track {
+  outline: none;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  width: 32px;
+  height: 16px;
+  padding: 0;
+  border-radius: 16px;
+  background-color: #BACAD0;
+  outline: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.emotion-10 {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 16px;
+  background-color: #545F67;
+  box-shadow: none;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    data-testid="test-Toggle-wrapper"
+    width="auto"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    />
+    <label
+      class="emotion-4 emotion-5"
+      for="test"
+    >
+      <input
+        aria-checked="false"
+        class="emotion-6 emotion-7"
+        data-testid="test-Toggle-input"
+        id="test"
+        role="switch"
+        type="checkbox"
+      />
+      <div
+        class="toggle-track emotion-8 emotion-9"
+      >
+        <div
+          class="toggle-circle emotion-10 emotion-11"
+        />
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Toggle Snapshots (visual regression) disabled variants 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0;
+  width: auto;
+}
+
+.emotion-2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 16px;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+  color: #2A394A;
+}
+
+.emotion-4 {
+  touch-action: pan-x;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  margin-bottom: 0;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  opacity: 0.5;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.emotion-4:hover .toggle-circle {
+  box-shadow: none;
+}
+
+.emotion-6 {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  outline: black;
+}
+
+.emotion-6:focus-visible+.toggle-track {
+  outline: none;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  width: 44px;
+  height: 24px;
+  padding: 0;
+  border-radius: 16px;
+  background-color: #BACAD0;
+  outline: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.emotion-10 {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background-color: #545F67;
+  box-shadow: none;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    data-testid="test-Toggle-wrapper"
+    width="auto"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      Passed
+    </div>
+    <label
+      class="emotion-4 emotion-5"
+      disabled=""
+      for="test"
+    >
+      <input
+        aria-checked="false"
+        class="emotion-6 emotion-7"
+        data-testid="test-Toggle-input"
+        disabled=""
+        id="test"
+        role="switch"
+        type="checkbox"
+      />
+      <div
+        class="toggle-track emotion-8 emotion-9"
+      >
+        <div
+          class="toggle-circle emotion-10 emotion-11"
+        />
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Toggle Snapshots (visual regression) disabled variants 2`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0;
+  width: auto;
+}
+
+.emotion-2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 16px;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+  color: #2A394A;
+}
+
+.emotion-4 {
+  touch-action: pan-x;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  margin-bottom: 0;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  opacity: 0.5;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.emotion-4:hover .toggle-circle {
+  box-shadow: none;
+}
+
+.emotion-6 {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  outline: black;
+}
+
+.emotion-6:focus-visible+.toggle-track {
+  outline: none;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  width: 32px;
+  height: 16px;
+  padding: 0;
+  border-radius: 16px;
+  background-color: #BACAD0;
+  outline: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.emotion-10 {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 16px;
+  background-color: #545F67;
+  box-shadow: none;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    data-testid="test-Toggle-wrapper"
+    width="auto"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      Passed
+    </div>
+    <label
+      class="emotion-4 emotion-5"
+      disabled=""
+      for="test"
+    >
+      <input
+        aria-checked="false"
+        class="emotion-6 emotion-7"
+        data-testid="test-Toggle-input"
+        disabled=""
+        id="test"
+        role="switch"
+        type="checkbox"
+      />
+      <div
+        class="toggle-track emotion-8 emotion-9"
+      >
+        <div
+          class="toggle-circle emotion-10 emotion-11"
+        />
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Toggle Snapshots (visual regression) disabled variants 3`] = `
+.emotion-0 {
+  display: inline-block;
+  -webkit-align-items: none;
+  -webkit-box-align: none;
+  -ms-flex-align: none;
+  align-items: none;
+  -webkit-box-pack: none;
+  -ms-flex-pack: none;
+  -webkit-justify-content: none;
+  justify-content: none;
+  padding: 0;
+  width: auto;
+}
+
+.emotion-2 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+}
+
+.emotion-4 {
+  touch-action: pan-x;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0 0 2px 0;
+  margin-bottom: 0;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  opacity: 0.5;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.emotion-4:hover .toggle-circle {
+  box-shadow: none;
+}
+
+.emotion-6 {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  outline: black;
+}
+
+.emotion-6:focus-visible+.toggle-track {
+  outline: none;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  width: 56px;
+  height: 24px;
+  padding: 0;
+  border-radius: 16px;
+  background-color: #BACAD0;
+  outline: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.emotion-10 {
+  display: none;
+  padding-top: 4px;
+  text-indent: 10px;
+  text-align: left;
+}
+
+.emotion-12 {
+  display: block;
+  padding-top: 4px;
+  text-indent: 28px;
+  text-align: left;
+}
+
+.emotion-14 {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background-color: #545F67;
+  box-shadow: none;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test"
+    width="auto"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      disabled=""
+      for="test-Toggle"
+      id="test-toggle-caption-Caption"
+      style="display: inline-block; padding-left: 5px; padding-top: 5px; padding-right: 5px; float: left; font-weight: 400;"
+    >
+      Passed
+    </div>
+    <label
+      class="emotion-4 emotion-5"
+      disabled=""
+      for="test-Toggle"
+    >
+      <input
+        aria-checked="false"
+        class="emotion-6 emotion-7"
+        data-testid="test-Toggle-input"
+        disabled=""
+        id="test-Toggle"
+        role="switch"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="toggle-track emotion-8 emotion-9"
+      >
+        <span
+          class="emotion-10 emotion-11"
+        >
+          ​
+        </span>
+        <span
+          class="emotion-12 emotion-13"
+        >
+          ​
+        </span>
+        <div
+          class="toggle-circle emotion-14 emotion-15"
+        />
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Toggle Snapshots (visual regression) textOpt runtime variants 1`] = `
+.emotion-0 {
+  display: inline-block;
+  -webkit-align-items: none;
+  -webkit-box-align: none;
+  -ms-flex-align: none;
+  align-items: none;
+  -webkit-box-pack: none;
+  -ms-flex-pack: none;
+  -webkit-justify-content: none;
+  justify-content: none;
+  padding: 0;
+  width: auto;
+}
+
+.emotion-2 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+}
+
+.emotion-4 {
+  touch-action: pan-x;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0 0 2px 0;
+  margin-bottom: 0;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  opacity: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.emotion-4:hover .toggle-circle {
+  box-shadow: 0 0 0 8px rgba(93, 157, 213, 0.1);
+}
+
+.emotion-6 {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  outline: black;
+}
+
+.emotion-6:focus-visible+.toggle-track {
+  outline: none;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  width: 56px;
+  height: 24px;
+  padding: 0;
+  border-radius: 16px;
+  background-color: rgba(93, 157, 213, 0.3);
+  outline: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.emotion-10 {
+  display: block;
+  padding-top: 4px;
+  text-indent: 10px;
+  text-align: left;
+}
+
+.emotion-12 {
+  display: none;
+  padding-top: 4px;
+  text-indent: 28px;
+  text-align: left;
+}
+
+.emotion-14 {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background-color: #0D71C8;
+  box-shadow: none;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transform: translateX(32px);
+  -moz-transform: translateX(32px);
+  -ms-transform: translateX(32px);
+  transform: translateX(32px);
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test"
+    width="auto"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      for="test-Toggle"
+      id="test-toggle-caption-Caption"
+      style="display: inline-block; padding-left: 5px; padding-top: 5px; padding-right: 5px; float: left; font-weight: 400;"
+    >
+      Passed
+    </div>
+    <label
+      class="emotion-4 emotion-5"
+      for="test-Toggle"
+    >
+      <input
+        aria-checked="true"
+        checked=""
+        class="emotion-6 emotion-7"
+        data-testid="test-Toggle-input"
+        id="test-Toggle"
+        role="switch"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="toggle-track emotion-8 emotion-9"
+      >
+        <span
+          class="emotion-10 emotion-11"
+        >
+          Yes
+        </span>
+        <span
+          class="emotion-12 emotion-13"
+        >
+          No
+        </span>
+        <div
+          class="toggle-circle emotion-14 emotion-15"
+        />
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Toggle Snapshots (visual regression) textOpt runtime variants 2`] = `
+.emotion-0 {
+  display: inline-block;
+  -webkit-align-items: none;
+  -webkit-box-align: none;
+  -ms-flex-align: none;
+  align-items: none;
+  -webkit-box-pack: none;
+  -ms-flex-pack: none;
+  -webkit-justify-content: none;
+  justify-content: none;
+  padding: 0;
+  width: auto;
+}
+
+.emotion-2 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+}
+
+.emotion-4 {
+  touch-action: pan-x;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0 0 2px 0;
+  margin-bottom: 0;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  opacity: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.emotion-4:hover .toggle-circle {
+  box-shadow: 0 0 0 8px rgba(93, 157, 213, 0.1);
+}
+
+.emotion-6 {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  outline: black;
+}
+
+.emotion-6:focus-visible+.toggle-track {
+  outline: none;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  width: 56px;
+  height: 24px;
+  padding: 0;
+  border-radius: 16px;
+  background-color: #BACAD0;
+  outline: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.emotion-10 {
+  display: none;
+  padding-top: 4px;
+  text-indent: 10px;
+  text-align: left;
+}
+
+.emotion-12 {
+  display: block;
+  padding-top: 4px;
+  text-indent: 28px;
+  text-align: left;
+}
+
+.emotion-14 {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background-color: #545F67;
+  box-shadow: none;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test"
+    width="auto"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      for="test-Toggle"
+      id="test-toggle-caption-Caption"
+      style="display: inline-block; padding-left: 5px; padding-top: 5px; padding-right: 5px; float: left; font-weight: 400;"
+    >
+      Passed
+    </div>
+    <label
+      class="emotion-4 emotion-5"
+      for="test-Toggle"
+    >
+      <input
+        aria-checked="false"
+        class="emotion-6 emotion-7"
+        data-testid="test-Toggle-input"
+        id="test-Toggle"
+        role="switch"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="toggle-track emotion-8 emotion-9"
+      >
+        <span
+          class="emotion-10 emotion-11"
+        >
+          Yes
+        </span>
+        <span
+          class="emotion-12 emotion-13"
+        >
+          No
+        </span>
+        <div
+          class="toggle-circle emotion-14 emotion-15"
+        />
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Toggle Snapshots (visual regression) textOpt runtime variants 3`] = `
+.emotion-0 {
+  display: inline-block;
+  -webkit-align-items: none;
+  -webkit-box-align: none;
+  -ms-flex-align: none;
+  align-items: none;
+  -webkit-box-pack: none;
+  -ms-flex-pack: none;
+  -webkit-justify-content: none;
+  justify-content: none;
+  padding: 0;
+  width: auto;
+}
+
+.emotion-2 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+}
+
+.emotion-4 {
+  touch-action: pan-x;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0 0 2px 0;
+  margin-bottom: 0;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  opacity: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.emotion-4:hover .toggle-circle {
+  box-shadow: 0 0 0 8px rgba(93, 157, 213, 0.1);
+}
+
+.emotion-6 {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  outline: black;
+}
+
+.emotion-6:focus-visible+.toggle-track {
+  outline: none;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  width: 56px;
+  height: 24px;
+  padding: 0;
+  border-radius: 16px;
+  background-color: rgba(93, 157, 213, 0.3);
+  outline: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.emotion-10 {
+  display: block;
+  padding-top: 4px;
+  text-indent: 10px;
+  text-align: left;
+}
+
+.emotion-12 {
+  display: none;
+  padding-top: 4px;
+  text-indent: 28px;
+  text-align: left;
+}
+
+.emotion-14 {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background-color: #0D71C8;
+  box-shadow: none;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transform: translateX(32px);
+  -moz-transform: translateX(32px);
+  -ms-transform: translateX(32px);
+  transform: translateX(32px);
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test"
+    width="auto"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      for="test-Toggle"
+      id="test-toggle-caption-Caption"
+      style="display: inline-block; padding-left: 5px; padding-top: 5px; padding-right: 5px; float: left; font-weight: 400;"
+    >
+      Passed
+    </div>
+    <label
+      class="emotion-4 emotion-5"
+      for="test-Toggle"
+    >
+      <input
+        aria-checked="true"
+        checked=""
+        class="emotion-6 emotion-7"
+        data-testid="test-Toggle-input"
+        id="test-Toggle"
+        role="switch"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="toggle-track emotion-8 emotion-9"
+      >
+        <span
+          class="emotion-10 emotion-11"
+        >
+          On
+        </span>
+        <span
+          class="emotion-12 emotion-13"
+        >
+          Off
+        </span>
+        <div
+          class="toggle-circle emotion-14 emotion-15"
+        />
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Toggle Snapshots (visual regression) textOpt runtime variants 4`] = `
+.emotion-0 {
+  display: inline-block;
+  -webkit-align-items: none;
+  -webkit-box-align: none;
+  -ms-flex-align: none;
+  align-items: none;
+  -webkit-box-pack: none;
+  -ms-flex-pack: none;
+  -webkit-justify-content: none;
+  justify-content: none;
+  padding: 0;
+  width: auto;
+}
+
+.emotion-2 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+}
+
+.emotion-4 {
+  touch-action: pan-x;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0 0 2px 0;
+  margin-bottom: 0;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  opacity: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.emotion-4:hover .toggle-circle {
+  box-shadow: 0 0 0 8px rgba(93, 157, 213, 0.1);
+}
+
+.emotion-6 {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  outline: black;
+}
+
+.emotion-6:focus-visible+.toggle-track {
+  outline: none;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-8 {
+  width: 56px;
+  height: 24px;
+  padding: 0;
+  border-radius: 16px;
+  background-color: #BACAD0;
+  outline: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.emotion-10 {
+  display: none;
+  padding-top: 4px;
+  text-indent: 10px;
+  text-align: left;
+}
+
+.emotion-12 {
+  display: block;
+  padding-top: 4px;
+  text-indent: 28px;
+  text-align: left;
+}
+
+.emotion-14 {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background-color: #545F67;
+  box-shadow: none;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test"
+    width="auto"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      for="test-Toggle"
+      id="test-toggle-caption-Caption"
+      style="display: inline-block; padding-left: 5px; padding-top: 5px; padding-right: 5px; float: left; font-weight: 400;"
+    >
+      Passed
+    </div>
+    <label
+      class="emotion-4 emotion-5"
+      for="test-Toggle"
+    >
+      <input
+        aria-checked="false"
+        class="emotion-6 emotion-7"
+        data-testid="test-Toggle-input"
+        id="test-Toggle"
+        role="switch"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="toggle-track emotion-8 emotion-9"
+      >
+        <span
+          class="emotion-10 emotion-11"
+        >
+          On
+        </span>
+        <span
+          class="emotion-12 emotion-13"
+        >
+          Off
+        </span>
+        <div
+          class="toggle-circle emotion-14 emotion-15"
+        />
+      </div>
+    </label>
+  </div>
+</div>
+`;

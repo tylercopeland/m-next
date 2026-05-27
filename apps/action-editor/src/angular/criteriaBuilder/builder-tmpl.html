@@ -1,0 +1,47 @@
+<div class="mi-ae-padding-l-10 mi-cb-condition-separator" data-ng-if="builder.Display.items.length > 0">
+  <span>If </span>
+  <span class="mi-ae-inline-block">
+    <ui-select data-ng-model="builder.Display.joiner" theme="selectize" search-enabled="false" ng-disabled="action.isReadOnly">
+      <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+      <ui-select-choices repeat="opt.value as opt in joiners | filter: $select.search">
+          <span ng-bind-html="opt.label | highlight: $select.search"></span>
+      </ui-select-choices>
+    </ui-select>
+  </span> 
+  <span>of the following are true:</span>
+</div>
+
+<div class="mi-cb-whereblock-wrapper">
+  <ul class="mi-cb-whereblock" ng-sortable="sortConfig">
+    <li data-ng-repeat="item in builder.Display.items" data-ng-class="{'line-indent': item.type === 'Group'}">
+      <miae-criteria-row item="item" 
+        action="action" 
+        builder="builder" 
+        parent-array="builder.Display.items" 
+        loop-index="$index" 
+        fields-only="fieldsOnly" 
+        additional-value-types="additionalValueTypes"
+        table-name="tableName" 
+        show-dynamic="showDynamic"
+        is-read-only="action.isReadOnly"
+        ></miae-criteria-row>
+    </li>
+  </ul>
+  <miae-button 
+    name = "conditionBtn"
+    button-class="'ghost mi-button-clear mi-ae-padding-l-0 mi-ae-margin-l-0'" 
+    clickevent="addCondition(builder.Display.items)" 
+    isDisabled="action.isReadOnly"
+    svg-icon-type="'circle-plus'" 
+    svg-icon-size="14">
+  </miae-button>
+  <miae-button 
+    name="' Add another group'" 
+    data-ng-if="builder.Display.items.length > 0"
+    isDisabled="!action.isReadOnly"
+    button-class="'ghost mi-button-clear'"
+    clickevent="addGroup(builder.Display.items)"
+    svg-icon-type="'circle-plus'" 
+    svg-icon-size="14"></miae-button>
+  </miae-button>
+</div>

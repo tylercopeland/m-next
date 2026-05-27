@@ -1,0 +1,98 @@
+<div data-ng-controller="UpdateRecordCtrl">
+    <mi-action-description info="action" show-back="criteriaBuilder" back-button="toggleCriteriaBuilder()"></mi-action-description>
+    
+    <!-- Main Content Area -->
+    <div class="mi-ae-main-content" data-ng-show="!criteriaBuilder">
+        <!-- Table Selection -->
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-4">
+                <label class="mi-ae-label">Select a table</label>
+            </div>
+            <div class="mi-ae-col-8" mi-validation-class="action.ValidationMessages" error-property="'ViewNameFriendly'">
+                <ui-select data-ng-model="action.ViewNameFriendly" theme="selectize" ng-disabled="action.isReadOnly">
+                    <ui-select-match placeholder="Select a table...">{{$select.selected.value}}</ui-select-match>
+                    <ui-select-choices repeat="table.value as table in tables | filter: $select.search">
+                        <span ng-bind-html="table.value | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+        <!--/ Table Selection -->
+        <!-- Loader -->
+        <div class="mi-ae-row" data-ng-if="isLoading">
+            <div class="mi-ae-col-8 mi-ae-col-push-4 mi-ae-padding-5">
+                <label class="mi-ae-label">Please wait loading...</label>
+            </div>
+        </div>
+        <!--/ Loader -->
+        <!-- Where Statement -->
+        <div data-ng-if="canContinue">
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-4">
+                    <label class="mi-ae-label">Update records where</label>
+                </div>
+                <div class="mi-ae-col-8" mi-validation-class="action.ValidationMessages" error-property="'WhereClause'">
+                    <mi-criteria-string where-clause="action.WhereClause"></mi-criteria-string>
+                    <miae-button button-class="'ghost mi-button-clear mi-ae-margin-0 mi-ae-padding-l-0'" clickevent="toggleCriteriaBuilder()" name="criteriaButton"></miae-button>
+                </div>
+            </div>
+        </div>
+        <!--/ Where Statement -->
+        <!-- Step 2 -->
+        <div data-ng-if="canContinue">
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label mi-ae-margin-b-0 ">Field(s) to update</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <label class="mi-ae-label mi-ae-margin-b-0 ">Update using this value</label>
+                </div>
+            </div>
+            <div class="mi-ae-row table-row " data-ng-class="{'alt-row': $odd}" data-ng-repeat="item in action.Fields">
+                <div class="mi-ae-col-6" mi-validation-class="item.ValidationMessages" error-property="'Field'">
+                    <mi-field-select
+                        value="item.Field"
+                        on-select="onSelect(item)"
+                        used-fields="usedFields" 
+                        table-name="action.ViewNameFriendly" 
+                        ignore-linked="true" 
+                        ignore-fields="['RecordID']" disable-select ="action.isReadOnly">                        
+                    </mi-field-select>
+                </div>
+                <div class="mi-ae-col-8" mi-validation-class="item.ValidationMessages" error-property="'Source'">
+                    <mi-complex-value action="action"
+                                      model="item.Source"
+                                      allow="allow2nd"
+                                      included-types="item.includedTypes" 
+                                      force-allow="[0,2]" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+                <div class="col-mi-ae-2">
+                    <miae-button 
+                        button-class="'ghost mi-button-clear mi-ae-margin-0'" 
+                            clickevent="removeItem($index)" 
+                            data-ng-if="!action.isReadOnly"
+                            svg-icon-type="'delete'" 
+                            svg-icon-size="14"></miae-button>
+                </div>
+            </div>
+            <miae-button name="' Add another field'"
+            q          data-ng-if="tableFields.length > action.Fields.length && !action.isReadOnly"
+                       button-class="'ghost mi-button-clear mi-ae-margin-l-0'"
+                       clickevent="addItem()"
+                       svg-icon-type="'circle-plus'" 
+                       svg-icon-size="14"></miae-button>
+        </div>
+        <!--/ Step 2 -->
+    </div>
+    <!--/ Main Content Area -->
+
+    <div class="mi-ae-main-content" data-ng-show="criteriaBuilder">
+        <miae-criteria-builder 
+            action="action" 
+            where-clause="action.WhereClause" 
+            fields-only="true" 
+            table-name="action.ViewNameFriendly" is-read-only ="action.isReadOnly"></miae-criteria-builder>
+    </div>
+
+     <mi-action-notes  is-read-only ="action.isReadOnly"></mi-action-notes>
+</div>

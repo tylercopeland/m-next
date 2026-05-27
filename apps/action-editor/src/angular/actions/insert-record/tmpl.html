@@ -1,0 +1,192 @@
+<div data-ng-controller="InsertRecordCtrl">
+    <mi-action-description info="action"></mi-action-description>
+    <!-- Main Content Area -->
+    <div class="mi-ae-main-content">
+        <h3>Choose a table</h3>
+        <!-- Table -->
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-4">
+                <label class="mi-ae-label">Select a table</label>
+            </div>
+            <div class="mi-ae-col-8" mi-validation-class="action.ValidationMessages" error-property="'ViewNameFriendly'">
+                <ui-select data-ng-model="action.ViewNameFriendly" theme="selectize" ng-disabled="action.isReadOnly">
+                    <ui-select-match placeholder="Select a table...">{{$select.selected.value}}</ui-select-match>
+                    <ui-select-choices repeat="table.value as table in tables | filter: $select.search">
+                        <span ng-bind-html="table.value | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+        <!--/ Table -->
+        <!-- Loading -->
+        <div class="mi-ae-row" data-ng-if="isLoading">
+            <div class="mi-ae-col-8 mi-ae-col-push-4 mi-ae-padding-5">
+                <label class="mi-ae-label">Please wait loading...</label>
+            </div>
+        </div>
+        <!--/ Loading -->
+        <!-- Step 2 -->
+        <!-- Insert Record Options  -->
+        <div class='mi-ae-row' data-ng-if='canContinue'>
+            <div class='mi-ae-col-4'>
+                <label class='mi-ae-label'>Insert As</label>
+            </div>
+            <div class='mi-ae-col-8 mi-ae-padding-t-5 mi-ae-margin-b-10'>
+                <ul class='mi-radiobutton-group'>
+                    <li class='rad-horizontal'>
+                        <label class='mi-radio-checkbox mi-radio'>
+                            <span>New record</span>
+                            <input type="radio" data-ng-model='action.InsertType' data-ng-value='0' ng-disabled="action.isReadOnly">
+                            <div class='mi-radio-checkbox-indicator'></div>
+                        </label>
+                    </li>
+                    <li class='rad-horizontal'>
+                        <label class='mi-radio-checkbox mi-radio'>
+                            <span>Duplicate record</span>
+                            <input type="radio" data-ng-model='action.InsertType' data-ng-value='1' ng-disabled="action.isReadOnly">
+                            <div class='mi-radio-checkbox-indicator'></div>
+                        </label>
+                    </li>
+                    <li class='rad-horizontal' data-ng-if="action.ViewNameFriendly == 'Activity'">
+                        <label class='mi-radio-checkbox mi-radio'>
+                            <span>New occurrence in series</span>
+                            <input type="radio" data-ng-model='action.InsertType' data-ng-value='2' ng-disabled="action.isReadOnly">
+                            <div class='mi-radio-checkbox-indicator'></div>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Source Record Id-->
+        <div class='mi-ae-row'>
+            <div class='mi-ae-col-4' data-ng-if="canContinue && action.InsertType == 1">
+                <label class='mi-ae-label'>Record to Duplicate</label>
+            </div>
+            <div class='mi-ae-col-4' data-ng-if="canContinue && action.InsertType == 2">
+                <label class='mi-ae-label'>Series RecordID</label>
+            </div>
+            <div class='mi-ae-col-8' data-ng-if="canContinue && (action.InsertType == 1 || action.InsertType == 2)">
+                <mi-complex-value action="action"
+                                  model="action.SourceRecordId"
+                                  allow="allowIds" is-read-only ="action.isReadOnly"></mi-complex-value>
+            </div>
+        </div>
+        <!--/ Source Record Id  -->
+        <!--/ Insert Record Options -->
+        <div data-ng-if="canContinue">
+            <h3 data-ng-if="action.InsertType == 0">Fields in Table to Populate</h3>
+            <h3 data-ng-if="action.InsertType == 1">Fields to Override</h3>
+            <h3 data-ng-if="action.InsertType == 2">Fields to Populate</h3>  
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-5">
+                    <label class="mi-ae-label mi-ae-margin-b-0">Field(s)</label>
+                </div>
+                <div class="mi-ae-col-9">
+                    <label class="mi-ae-label mi-ae-margin-b-0">Populate using this value</label>
+                </div>
+            </div>
+            <!-- Field List -->
+            <div class="mi-ae-row table-row" data-ng-class="{'alt-row': $odd}" data-ng-repeat="item in action.Fields">
+                <div class="mi-ae-col-5" mi-validation-class="item.ValidationMessages" error-property="'Field'">
+                    <mi-field-select value="item.Field"
+                                     hide-required="false"
+                                     enable-search="(item.Required) ? !item.Required : true"
+                                     required-only="item.Required"
+                                     on-select="onSelect(item)"
+                                     used-fields="usedFields" 
+                                     table-name="action.ViewNameFriendly" 
+                                     ignore-linked="true" 
+                                     ignore-fields="['RecordID','IsMarketplaceTemplate']" disable-select ="action.isReadOnly"></mi-field-select>
+                </div>
+                <div class="mi-ae-col-9">
+                    <mi-complex-value action="action"
+                                      model="item.Source"
+                                      allow="allow"
+                                      included-types="item.includedTypes" 
+                                      force-allow="[0,2]" 
+                                      allowed-control-types="[2]" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+                <div class="mi-ae-col-2" data-ng-if="!item.Required && action.InsertType !== 2 && !action.isReadOnly" >
+                    <miae-button 
+                        button-class="'ghost mi-button-clear mi-ae-margin-0'" 
+                        clickevent="removeItem($index)"
+                        svg-icon-type="'delete'" 
+                        svg-icon-size="14"></miae-button>
+                </div>
+            </div>
+            <!--/ Field List -->
+
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-5 mi-ae-margin-b-10" data-ng-if="action.InsertType === 2">
+                    <span style="font-size: 12px;"><i>If set to <b>True</b> occurrence will be created as an orphan</i></span>
+                </div>
+            </div>
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-12" data-ng-if="action.InsertType === 2">
+                    <label>Other field values will be inherited from the series</label>
+                </div>
+            </div>
+            <miae-button name="' Add another field'" data-ng-if="getAddFieldTotal() > action.Fields.length && action.InsertType !== 2 && !action.isReadOnly"
+                       button-class="'ghost mi-button-clear mi-ae-margin-l-0'"
+                       clickevent="addItem()"
+                       svg-icon-type="'circle-plus'" 
+                       svg-icon-size="14"></miae-button>
+        </div>
+        <!--/ Step 2 -->
+        <!-- Ommitted Fields -->
+        <div data-ng-if="canContinue && action.InsertType == 1">
+            <h3>Fields to Omit</h3>
+            <div class='mi-ae-row'>
+                <div class=mi-ae-col-4>
+                    <label class='mi-ae-label mi-ae-margin-b-0'>Field(s)</label>
+                </div>
+            </div>
+            <div class="mi-ae-row table-row" data-ng-class="{'alt-row': $odd}" data-ng-repeat="item in action.FieldsToOmit">
+                <div class=mi-ae-col-5 mi-validation-class="item.ValidationMessages" error-property="'Field'">
+                    <mi-field-select value="item.Field"
+                                     hide-required="true"
+                                     enable-search="(item.Required) ? !item.Required : true"
+                                     required-only="item.Required"
+                                     on-select="onSelect(item)"
+                                     used-fields="usedFields"
+                                     table-name="action.ViewNameFriendly"
+                                     ignore-linked="true",
+                                     ignore-fields="omittedFieldList" disable-select ="action.isReadOnly"></mi-field-select>
+                </div>
+                <div class="mi-ae-col-2" data-ng-if="!item.Required && !action.isReadOnly">
+                    <miae-button 
+                        button-class="'ghost mi-button-clear mi-ae-margin-0'" 
+                        clickevent="removeOmittedItem($index)"
+                        svg-icon-type="'delete'" 
+                        svg-icon-size="14"></miae-button>
+                </div>
+            </div>
+
+            <miae-button name="' Add another field'" data-ng-if="getAddFieldTotal() > action.Fields.length && action.InsertType === 1 && !action.isReadOnly"
+                button-class="'ghost mi-button-clear mi-ae-margin-l-0'"
+                clickevent="addOmittedItem()"
+                svg-icon-type="'circle-plus'" 
+                svg-icon-size="14"></miae-button>
+
+            <div class='mi-ae-row'>
+                <div class='mi-ae-col-12 mi-ae-padding-b-5' data-ng-if="action.InsertType == 1">
+                    <label class='mi-ae-label mi-ae-margin-b-0'>Some system fields will be automatically omitted such as:</label>
+                    <span>{{omittedFieldListFriendly.join(", ")}}</span>
+                </div>
+            </div>
+        </div>
+        <!-- / Omitted Fields -->
+        <!-- Step 3 -->
+        <div class="mi-ae-padding-t-10" data-ng-if="canContinue">
+            <h3>Store the recordID of the newly inserted record</h3>
+            <mi-result-to-set label="'Action result name'"
+                              hide-store-in="true"
+                              action="action"
+                              item="action.ResultToSet" is-read-only ="action.isReadOnly"></mi-result-to-set>
+        </div>
+        <!--/ Step 3 -->
+    </div>
+    <!--/ Main Content Area -->
+     <mi-action-notes  is-read-only ="action.isReadOnly"></mi-action-notes>
+</div>

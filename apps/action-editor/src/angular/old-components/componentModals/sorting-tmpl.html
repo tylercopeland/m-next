@@ -1,0 +1,44 @@
+<div>
+  <div class="mi-ae-row" data-ng-repeat="sort in filterDef.sorting">
+    <div class="mi-ae-col-2">
+      <label class="mi-ae-label">{{ ($index === 0) ? 'Sort by' : 'Then sort by' }}</label>
+    </div>
+    <div class="mi-ae-col-7">
+      <ui-select data-ng-model="sort.filterField" theme="selectize">
+          <ui-select-match placeholder="Select...">{{$select.selected.key}}</ui-select-match>
+          <ui-select-choices repeat="opt.key as opt in fields | filter: $select.search"">
+              <span ng-bind-html="opt.key | highlight: $select.search"></span>
+          </ui-select-choices>
+      </ui-select>
+    </div>
+    <div class="mi-ae-col-5">
+      <ul class="mi-radiobutton-group">
+          <li class="rad-horizontal">
+            <label for="radioOpt1{{$index}}" class="mi-radio-checkbox mi-radio">
+              <span>Ascending</span>
+              <input type="radio" id="radioOpt1{{$index}}" value="asc" data-ng-model="sort.filterOrder" data-ng-checked="sort.filterOrder === 'asc'"> 
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </li>
+          <li class="rad-horizontal">
+            <label for="radioOpt2{{$index}}" class="mi-radio-checkbox mi-radio">
+              <span>Descending</span>
+              <input type="radio" id="radioOpt2{{$index}}" value="desc" data-ng-model="sort.filterOrder" data-ng-checked="sort.filterOrder === 'desc'">  
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </li>
+        </ul>
+    </div>
+    <div class="mi-ae-col-1 text-center">
+      <mi-button button-class="'ghost mi-button-clear mi-icon-delete mi-ae-margin-0'" clickevent="deleteSorting($index)"></mi-button>
+    </div>
+  </div>
+
+  <div class="mi-ae-row">
+    <div class="mi-ae-col-16">
+       <mi-button name="sortButtonLabel" 
+          button-class="'ghost mi-button-clear mi-icon-circle-plus mi-ae-padding-l-0  mi-ae-margin-l-0'" 
+          clickevent="addSorting()"></mi-button>
+    </div>
+  </div>
+</div>

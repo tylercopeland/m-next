@@ -1,0 +1,505 @@
+/* background color for whole container and it's border*/
+.mi-cal-event
+  overflow: hidden
+  +borderRadius(4px)
+
+/* disabling default color for select menu */
+.dhx_cal_select_menu.mi-cal-event div
+  border: 0
+  background-color: transparent
+  color: black
+
+/* styles for event content */
+.dhx_cal_event.mi-cal-event .mi-cal-event_body
+  padding: 3px
+  white-space: nowrap
+  background-color: pink
+  height: 100%
+  cursor: pointer
+  +borderRadius(4px)
+
+.dhx_v_border
+  left: 186px !important
+
+.dhx_second_scale_bar
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+/* event's date information */
+.mi-cal-event .event_date
+  font-weight: bold
+  padding-right: 5px
+  white-space: nowrap
+
+/* event's resizing section */
+.mi-cal-event_resize
+  height: 5px
+  position: absolute
+  bottom: -1px
+
+/* event's move section */
+.mi-cal-event_move
+  position: absolute
+  top: 0
+  height: 10px
+  cursor: move
+
+.dhx_cal_tab_rounded
+  border-radius: 5px !important
+  
+.dhx_button
+  background-color: #F0EDE7
+  color:   #454544
+  border: 1px solid #CECECE
+  text-shadow: 0 1px 0 #fff
+  top: 14px
+  position: absolute
+  white-space: nowrap
+  border-radius: 5px
+  padding: 0 5px
+  font-size: 14px
+  height: 30px
+  line-height: 30px
+  background: 0 0
+  text-align: center
+  width: 24px
+  cursor: pointer
+
+.dhx_wa_ev_body.dhx_cal_event_selected
+  background-color: $green
+
+.dhx_multi_day_icon_small,
+.dhx_multi_day_icon
+  background-image: none !important
+
+  &:before
+    content: "All Day"
+    position: relative
+    top: 6px
+    padding-left: 6px
+    color: #767676
+
+.dhx_drag_marker
+  background-color: $green
+
+.dhx_cal_event .dhx_footer
+  border-radius: 3px !important
+  background-color: none !important
+
+.dhx_now_time
+  opacity: 1 !important
+  border-bottom: 1px solid #FF0000 !important
+
+.dhx_mini_calendar
+  box-shadow: none !important
+  border: none !important
+
+  .dhx_year_week
+    border-bottom: none !important
+    max-height: 17px !important
+
+    .dhx_scale_bar
+      max-height: 17px !important
+
+  table
+    border: none
+
+    td
+      padding: 0
+      border: none
+      background: $white
+
+      &:first-of-type,
+      &:last-of-type
+        padding: 0
+
+.dhx_now .dhx_month_body,
+.dhx_now .dhx_month_head
+  background-color: #F7F7F7 !important
+
+.dhx_cal_event
+  margin-left: -25px
+
+.dhx_event_move 
+  &.dhx_title
+    cursor: move !important
+
+.dhx_body
+  cursor: pointer
+
+.dhx_mini_calendar
+  .dhx_now .dhx_month_body,
+  .dhx_now .dhx_month_head
+    background-color: $green !important
+    color: $white !important
+    border-radius: 7px
+
+.dhx_wa_ev_body.dhx_cal_event_selected
+  background-color: $green
+  color: $white
+
+.dhx_month_head.dhx_year_event
+  background-color: $blue-light-darker !important
+
+// .dhx_cal_header,
+.dhx_cal_data
+  border-right: 1px solid #cecece
+  // box-sizing: border-box !important
+
+.dhx_loader
+  display: none
+  align-items: center
+  justify-content: center
+  position: absolute
+  left: 50%
+  top: 30%
+  background: $white
+  width: 120px
+  height: 120px
+  border-radius: 6px
+  z-index: 100
+  border: 0
+
+  &.is-loading
+    display: flex
+    
+  .mi-spinner-container
+    position: relative
+    margin: 0
+    top: 10px
+    left: 10px
+
+.dhx_agenda_line div
+  width: 225px !important
+
+.dhx_v_border
+  left: 223px !important
+
+.mi-cal-view-container
+  top: 38px !important
+  width: 100%
+
+.mi-cal-tab
+  width: 60px
+  height: 30px
+  background-color: none
+  text-align: center
+  text-decoration: none
+  text-transform: none
+  font-weight: 700
+  padding-top: 0
+  border-radius: 0
+  cursor: pointer
+  border: 1px solid #cecece
+  color: #747473
+  font-size: inherit
+  box-sizing: content-box
+  line-height: 30px
+  display: flex
+  align-items: center
+  justify-content: center
+
+  i 
+    font-size: 15px
+
+  &.is-active
+    background-color: #F0EDE7
+
+.mi-cal-add-new
+  margin: 10px 0
+
+  .mi-button
+    margin: 0
+    width: 100%
+    display: block
+
+.mi-cal-resource-list
+  list-style: none
+  margin: 0.25em 0 0.5em 0
+  padding: 0
+  display: inline-block
+  width: 100%
+
+  li
+    position: relative
+    margin-left: 5px
+    margin-bottom: 0.25em
+    padding: 0.25em 55px 0.25em 0.25em
+    padding-left: 0
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    +boxSizing
+
+    span
+      display: inline-block
+      max-width: 150px
+      overflow: hidden
+      text-overflow: ellipsis
+
+    a
+      position: absolute
+      text-decoration: none
+      float: right
+      right: 14px
+      display: inline-block
+      color: $blue
+      z-index: 1
+
+.mi-cal-mini
+  width: 200px
+
+  .row
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    flex-direction: row
+    margin-top: 6px
+    margin-bottom: 12px
+
+  .col
+    flex: 1
+
+  .mi-change
+    flex: 0 1 50px
+    text-align: right
+
+  .mi-title
+    font-size: 14px
+    font-weight: 300
+
+  .mi-cal-button
+    border: 0
+    font-size: 14px
+    color: $grey
+    font-weight: 300
+    outline: none
+
+  .mi-cal-table
+    font-size: 12px
+    width: 100%
+    +unselectable
+
+    td
+      text-align: center
+      padding: 2px 0
+      cursor: pointer
+      width: 14.3%
+
+    th
+      text-align: center
+      font-size: 9px
+      text-transform: uppercase
+      padding: 0 0 4px
+      color: $grey
+      width: 14.3%
+
+  .mi-cal-item 
+    width: 20px 
+    height: 20px 
+    text-align: center
+    line-height: 20px
+    margin: 0 auto
+    font-size: 12px
+
+    &::selection
+      background: transparent
+
+  .mi-cal-not-current
+    color: $grey
+
+  .mi-cal-today
+    color: $blue
+    font-weight: bold
+    
+  .mi-cal-selected 
+    .mi-cal-item
+      color: $white
+      background: $blue
+      border-radius: 50%
+      font-weight: bold
+
+    .mi-cal-not-current
+      color: $white
+
+.mi-cal-lg
+  position: relative
+  display: flex
+  align-items: flex-start
+  justify-content: flex-start
+  width: 100%
+  height: auto
+  max-height: 100%
+  border-top: 1px solid $grey-light
+
+  &.mi-cal-tablet
+    .cal-col-mini
+      position: fixed
+      z-index: 1000
+      left: -250px
+      top: 60px
+      bottom: 0
+      background-color: $white
+      padding: 10px
+      width: 250px
+      max-width: 250px
+      box-shadow: 1px 1px 2px rgba($black, 0.2)
+      transition: 0.3s
+
+      @media screen and (orientation:landscape)
+        &.is-open
+          left: 80px
+
+      @media screen and (orientation:portrait)
+        &.is-open
+          left: 0
+
+    .cal-col:last-child
+      border-left: 0
+      padding-left: 0
+
+  .mi-cal-disabled
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 10
+    background-color: rgba($white, 0.6)
+
+  .cal-col-mini
+    max-width: 200px
+
+  .cal-col
+    width: 100%
+    height: 100%
+
+    &:last-child
+      padding-left: 10px
+      border-left: 1px solid $grey-light
+
+    &:not(:last-child)
+      margin-right: 15px
+
+    .dhx_cal_container
+      width: 100%
+      height: 100%
+
+      .dhx_cal_event_clear
+        color: $white
+
+      .dhx_cal_navline
+        .dhx_cal_date
+          white-space: nowrap
+          padding: 0 280px 0 250px
+          box-sizing: border-box
+          text-overflow: ellipsis
+          overflow: hidden
+
+      .dhx_month_head,
+      .dhx_scale_bar
+        a
+          font-weight: 600
+          color: $blue
+
+.mi-cal-tooltip
+  background-color: $white
+  +borderRadius
+  cursor: default
+  padding: 10px 15px
+  font-size: 12px
+  line-height: 20px
+  position: fixed
+  z-index: 9
+  font-family: 'Helvetica', Arial, sans-serif
+  opacity: 1
+  border: 1px solid $grey-light
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.25)
+  max-width: 400px
+  max-height: 300px
+  overflow: auto
+
+  i
+    font-size: 12px
+    line-height: 18px
+
+.dhx_agenda_line
+  &.mi-cal-event
+    cursor: pointer
+    
+.dhx_agenda_area
+  .dhx_agenda_event_time
+    text-align: left
+    text-overflow: ellipsis
+    overflow: hidden
+    padding: 0 3px
+    display: block
+    box-sizing: border-box
+    white-space: nowrap
+
+  .dhx_event_icon
+    display: none
+
+  > div
+    background-color: transparent !important
+    color: #000000 !important
+
+.dhx_settings_menu
+  display: none
+  top: 50px !important
+  right: 51px
+  z-index: 200
+  background-color: $white
+  border: 1px solid #CECECE
+  padding: 5px 0
+  margin: 0
+  width: 220px
+  box-shadow: 1px 1px 2px rgba($black, 0.1)
+  +borderRadius(3px)
+
+  &.is-open
+    display: block
+
+  &:after, 
+  &:before
+    bottom: 100%
+    left: 15px
+    border: solid transparent
+    content: " "
+    height: 0
+    width: 0
+    position: absolute
+    pointer-events: none
+
+  &:after
+    border-color: transparent
+    border-bottom-color: $white
+    border-width: 7px
+    margin-left: -7px
+
+  &:before
+    border-color: transparent
+    border-bottom-color: #CECECE
+    border-width: 8px
+    margin-left: -8px
+
+  .dhx_settings_menu_wrapper
+    display: block
+    max-height: 350px
+    overflow-x: hidden
+    overflow-y: auto
+    margin: 0
+
+    li
+      display: block
+      padding: 4px 10px
+      font-size: 12px
+
+      .mi-radio-checkbox:hover input ~ .mi-radio-checkbox-indicator, 
+      .mi-radio-checkbox input:focus ~ .mi-radio-checkbox-indicator
+        padding-left: 0
+
+      &:last-child
+        .mi-radio-checkbox
+          margin-bottom: 0

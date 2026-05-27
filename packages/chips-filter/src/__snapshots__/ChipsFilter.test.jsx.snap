@@ -1,0 +1,6331 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChipsFilter Snapshot Clear 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFFFFF;
+  border: 1px solid #BACAD0;
+  max-width: 100px;
+  padding: 4px 8px;
+  border-radius: 16px;
+  height: 24px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2:hover {
+  background-color: #F6FAFB;
+}
+
+.emotion-2:active {
+  background-color: #BACAD0;
+}
+
+.emotion-4 {
+  font-weight: 400;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 0 4px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-6:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-6:focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    style="position: relative; flex-direction: row; gap: 8px; flex-wrap: nowrap; padding: 12px; border-radius: 8px;"
+    width="100%"
+  >
+    <div
+      style="display: flex; flex: 1; flex-wrap: wrap; align-items: center; gap: 8px; width: 100%;"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-button-add"
+        style="visibility: visible;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-button-add"
+          id="pill-text-test-id-button-add"
+        >
+          Add filter
+        </span>
+        <div
+          class=""
+          style="display: inline-block; flex-shrink: 0; margin-left: 4px;"
+        >
+          <span
+            class="emotion-6 emotion-7"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-plus"
+            id="pill-dot-test-id-button-add"
+            tabindex="0"
+          >
+            <svg
+              aria-label="plus icon"
+              data-testid="svg-icon-svg-plus"
+              fill="currentColor"
+              height="12px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="12px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M 980.52833,492.27645 H 532.52835 V 44.276394 c 0,-11.776 -9.557,-21.333 -21.333,-21.333 -11.776,0 -21.333,9.557 -21.333,21.333 V 492.27645 H 41.862305 c -11.776,0 -21.333,9.557 -21.333,21.333 0,11.776 9.557,21.333 21.333,21.333 H 489.86235 v 448.00003 c 0,11.776 9.557,21.33282 21.333,21.33282 11.776,0 21.333,-9.55682 21.333,-21.33282 V 534.94245 h 447.99998 c 11.776,0 21.33297,-9.557 21.33297,-21.333 0,-11.776 -9.55697,-21.333 -21.33297,-21.333 z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ChipsFilter Snapshot Complex Expression 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFFFFF;
+  border: 1px solid #BACAD0;
+  max-width: 100%;
+  padding: 4px 8px;
+  border-radius: 16px;
+  height: 24px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2:hover {
+  background-color: #F6FAFB;
+}
+
+.emotion-2:active {
+  background-color: #BACAD0;
+}
+
+.emotion-4 {
+  font-weight: 400;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 0 4px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-8 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-12:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-12:focus {
+  outline: none;
+}
+
+.emotion-18 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: default;
+  opacity: 1;
+}
+
+.emotion-74 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+  cursor: pointer;
+  cursor: pointer;
+  border: 1px solid #BACAD0;
+  border-radius: 8px;
+  padding: 7px;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.emotion-74:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-74:focus {
+  outline: none;
+}
+
+.emotion-76 {
+  background-color: rgba(0, 0, 0, 0);
+  color: #0D71C8;
+  min-height: 24px;
+  padding: 0px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-76:hover {
+  border: none;
+  color: #064499;
+  cursor: pointer;
+}
+
+.emotion-76:active {
+  background-color: #E5F7FF;
+  color: #000000;
+}
+
+.emotion-76:focus {
+  border: none;
+  color: #064499;
+}
+
+.emotion-76:disabled {
+  opacity: 0.5;
+}
+
+.emotion-76:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    style="position: relative; flex-direction: row; gap: 8px; flex-wrap: nowrap; padding: 12px; border-radius: 8px;"
+    width="100%"
+  >
+    <div
+      style="display: flex; flex: 1; flex-wrap: wrap; align-items: center; gap: 8px; width: 100%;"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-advanced"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-advanced"
+          id="pill-text-test-id-advanced"
+        >
+          <span
+            class="emotion-6 emotion-7"
+            opacity="1"
+            style="cursor: pointer;"
+          >
+            Advanced filter
+          </span>
+          <span
+            class="emotion-8 emotion-7"
+            opacity="1"
+            style="cursor: pointer;"
+          >
+             
+            is all of
+             
+          </span>
+          <span
+            class="emotion-6 emotion-7"
+            opacity="1"
+            style="cursor: pointer;"
+          >
+            2 Rules
+          </span>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-advanced"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-ActualCompletedDate"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-ActualCompletedDate"
+          id="pill-text-test-id-ActualCompletedDate"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-ActualCompletedDate-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Actual completed date
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is on or after
+            </span>
+             
+            Feb-01-2023 06:00 PM
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-ActualCompletedDate"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-ActualDuration"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-ActualDuration"
+          id="pill-text-test-id-ActualDuration"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-ActualDuration-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Actual duration
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is not
+            </span>
+             
+            60
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-ActualDuration"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-Comments"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-Comments"
+          id="pill-text-test-id-Comments"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-Comments-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Comments
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              contains
+            </span>
+             
+            gggg
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-Comments"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-FollowUpFromActivityNo"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-FollowUpFromActivityNo"
+          id="pill-text-test-id-FollowUpFromActivityNo"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-FollowUpFromActivityNo-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Follow up from activity no
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              greater than
+            </span>
+             
+            4
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-FollowUpFromActivityNo"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-IsAllDayAppointment"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-IsAllDayAppointment"
+          id="pill-text-test-id-IsAllDayAppointment"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-IsAllDayAppointment-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Is all day appointment
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is
+            </span>
+             
+            True
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-IsAllDayAppointment"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-IsChangedOccurrence"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-IsChangedOccurrence"
+          id="pill-text-test-id-IsChangedOccurrence"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-IsChangedOccurrence-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Is changed occurrence
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is
+            </span>
+             
+            Changed
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-IsChangedOccurrence"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class=""
+        data-tooltip-html="Add filter"
+        data-tooltip-id="test-id-button-add-chips-tooltip"
+        style="width: 22px; visibility: visible;"
+      >
+        <span
+          class="emotion-74 emotion-13"
+          color="currentColor"
+          data-testid="svg-icon-wrapper-plus"
+          id="test-id-button-add"
+          tabindex="0"
+        >
+          <svg
+            aria-label="plus icon"
+            data-testid="svg-icon-svg-plus"
+            fill="currentColor"
+            height="12px"
+            preserveAspectRatio="none"
+            role="img"
+            viewBox="0 0 1024 1024"
+            width="12px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M 980.52833,492.27645 H 532.52835 V 44.276394 c 0,-11.776 -9.557,-21.333 -21.333,-21.333 -11.776,0 -21.333,9.557 -21.333,21.333 V 492.27645 H 41.862305 c -11.776,0 -21.333,9.557 -21.333,21.333 0,11.776 9.557,21.333 21.333,21.333 H 489.86235 v 448.00003 c 0,11.776 9.557,21.33282 21.333,21.33282 11.776,0 21.333,-9.55682 21.333,-21.33282 V 534.94245 h 447.99998 c 11.776,0 21.33297,-9.557 21.33297,-21.333 0,-11.776 -9.55697,-21.333 -21.33297,-21.333 z"
+              stroke="inherit"
+              stroke-width=""
+            />
+          </svg>
+        </span>
+      </div>
+      <button
+        class="emotion-76 emotion-77"
+        data-testid="test-id-clear-all"
+        id="test-id-clear-all"
+        tabindex="0"
+        type="button"
+      >
+        Clear all
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ChipsFilter Snapshot Default 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFFFFF;
+  border: 1px solid #BACAD0;
+  max-width: 100px;
+  padding: 4px 8px;
+  border-radius: 16px;
+  height: 24px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2:hover {
+  background-color: #F6FAFB;
+}
+
+.emotion-2:active {
+  background-color: #BACAD0;
+}
+
+.emotion-4 {
+  font-weight: 400;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 0 4px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-6:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-6:focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    style="position: relative; flex-direction: row; gap: 8px; flex-wrap: nowrap; padding: 12px; border-radius: 8px;"
+    width="100%"
+  >
+    <div
+      style="display: flex; flex: 1; flex-wrap: wrap; align-items: center; gap: 8px; width: 100%;"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-button-add"
+        style="visibility: visible;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-button-add"
+          id="pill-text-test-id-button-add"
+        >
+          Add filter
+        </span>
+        <div
+          class=""
+          style="display: inline-block; flex-shrink: 0; margin-left: 4px;"
+        >
+          <span
+            class="emotion-6 emotion-7"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-plus"
+            id="pill-dot-test-id-button-add"
+            tabindex="0"
+          >
+            <svg
+              aria-label="plus icon"
+              data-testid="svg-icon-svg-plus"
+              fill="currentColor"
+              height="12px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="12px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M 980.52833,492.27645 H 532.52835 V 44.276394 c 0,-11.776 -9.557,-21.333 -21.333,-21.333 -11.776,0 -21.333,9.557 -21.333,21.333 V 492.27645 H 41.862305 c -11.776,0 -21.333,9.557 -21.333,21.333 0,11.776 9.557,21.333 21.333,21.333 H 489.86235 v 448.00003 c 0,11.776 9.557,21.33282 21.333,21.33282 11.776,0 21.333,-9.55682 21.333,-21.33282 V 534.94245 h 447.99998 c 11.776,0 21.33297,-9.557 21.33297,-21.333 0,-11.776 -9.55697,-21.333 -21.33297,-21.333 z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ChipsFilter Snapshot Open Bool 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFFFFF;
+  border: 1px solid #BACAD0;
+  max-width: 100%;
+  padding: 4px 8px;
+  border-radius: 16px;
+  height: 24px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2:hover {
+  background-color: #F6FAFB;
+}
+
+.emotion-2:active {
+  background-color: #BACAD0;
+}
+
+.emotion-4 {
+  font-weight: 400;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 0 4px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-8 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-12:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-12:focus {
+  outline: none;
+}
+
+.emotion-18 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: default;
+  opacity: 1;
+}
+
+.emotion-74 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+  cursor: pointer;
+  cursor: pointer;
+  border: 1px solid #BACAD0;
+  border-radius: 8px;
+  padding: 7px;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.emotion-74:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-74:focus {
+  outline: none;
+}
+
+.emotion-80 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-82 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-84 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #545F67;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-84:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-84:focus {
+  outline: none;
+}
+
+.emotion-86 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  gap: 8px;
+}
+
+.emotion-88 {
+  text-align: initial;
+  width: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-90 {
+  text-align: initial;
+}
+
+.emotion-92 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  margin-bottom: 16px;
+}
+
+.emotion-92 input:checked~div .radio-btn-indicator {
+  background-color: #0D71C8;
+  border-color: #0D71C8;
+  box-shadow: 0 0 0 #FFFFFF;
+}
+
+.emotion-92 input:checked~div .radio-btn-indicator::after {
+  position: absolute!important;
+  content: '';
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 4px;
+  background-color: #FFFFFF!important;
+  border-radius: 100%;
+}
+
+.emotion-92:hover input~div .radio-btn-indicator {
+  box-shadow: 0 0 0 1px #0D71C8;
+}
+
+.emotion-92 input:focus~div .radio-btn-indicator {
+  box-shadow: 0 0 0 1px #0D71C8;
+  border-color: #E5F7FF;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .emotion-92 input:checked~div .radio-btn-indicator {
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+    box-shadow: 0 0 0 #FFFFFF;
+  }
+
+  .emotion-92 input:focus~div .radio-btn-indicator {
+    box-shadow: 0 0 0 1px #FFFFFF;
+    border-color: #FFFFFF;
+  }
+}
+
+.emotion-94 {
+  position: absolute;
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+body.user-is-tabbing .emotion-94:focus~div .radio-btn-indicator {
+  outline: none!important;
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+  border: 1px solid #545F67!important;
+}
+
+.emotion-96 {
+  display: block;
+  border-radius: 100%;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #0D71C8;
+  background-color: #FFFFFF;
+  opacity: inherit;
+  border: 1px solid #545F67;
+}
+
+.emotion-96:hover {
+  box-shadow: 0 0 0 1px #0D71C8;
+  border-color: #E5F7FF;
+}
+
+.emotion-98 {
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 6px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  z-index: 1;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  margin-left: 8px;
+  white-space: unset;
+  -webkit-flex-basis: fit-content;
+  -ms-flex-preferred-size: fit-content;
+  flex-basis: fit-content;
+}
+
+.emotion-100 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  margin-bottom: 0px;
+}
+
+.emotion-100 input:checked~div .radio-btn-indicator {
+  background-color: #0D71C8;
+  border-color: #0D71C8;
+  box-shadow: 0 0 0 #FFFFFF;
+}
+
+.emotion-100 input:checked~div .radio-btn-indicator::after {
+  position: absolute!important;
+  content: '';
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 4px;
+  background-color: #FFFFFF!important;
+  border-radius: 100%;
+}
+
+.emotion-100:hover input~div .radio-btn-indicator {
+  box-shadow: 0 0 0 1px #0D71C8;
+}
+
+.emotion-100 input:focus~div .radio-btn-indicator {
+  box-shadow: 0 0 0 1px #0D71C8;
+  border-color: #E5F7FF;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .emotion-100 input:checked~div .radio-btn-indicator {
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+    box-shadow: 0 0 0 #FFFFFF;
+  }
+
+  .emotion-100 input:focus~div .radio-btn-indicator {
+    box-shadow: 0 0 0 1px #FFFFFF;
+    border-color: #FFFFFF;
+  }
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    style="position: relative; flex-direction: row; gap: 8px; flex-wrap: nowrap; padding: 12px; border-radius: 8px;"
+    width="100%"
+  >
+    <div
+      style="display: flex; flex: 1; flex-wrap: wrap; align-items: center; gap: 8px; width: 100%;"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-advanced"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-advanced"
+          id="pill-text-test-id-advanced"
+        >
+          <span
+            class="emotion-6 emotion-7"
+            opacity="1"
+            style="cursor: pointer;"
+          >
+            Advanced filter
+          </span>
+          <span
+            class="emotion-8 emotion-7"
+            opacity="1"
+            style="cursor: pointer;"
+          >
+             
+            is all of
+             
+          </span>
+          <span
+            class="emotion-6 emotion-7"
+            opacity="1"
+            style="cursor: pointer;"
+          >
+            2 Rules
+          </span>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-advanced"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-ActualCompletedDate"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-ActualCompletedDate"
+          id="pill-text-test-id-ActualCompletedDate"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-ActualCompletedDate-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Actual completed date
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is on or after
+            </span>
+             
+            Feb-01-2023 06:00 PM
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-ActualCompletedDate"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-ActualDuration"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-ActualDuration"
+          id="pill-text-test-id-ActualDuration"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-ActualDuration-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Actual duration
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is not
+            </span>
+             
+            60
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-ActualDuration"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-Comments"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-Comments"
+          id="pill-text-test-id-Comments"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-Comments-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Comments
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              contains
+            </span>
+             
+            gggg
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-Comments"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-FollowUpFromActivityNo"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-FollowUpFromActivityNo"
+          id="pill-text-test-id-FollowUpFromActivityNo"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-FollowUpFromActivityNo-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Follow up from activity no
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              greater than
+            </span>
+             
+            4
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-FollowUpFromActivityNo"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-active-editing"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-active-editing"
+          id="pill-text-test-id-active-editing"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-IsAllDayAppointment-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Is all day appointment
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is
+            </span>
+             
+            True
+          </div>
+        </span>
+        <div
+          class=""
+          style="display: inline-block; flex-shrink: 0; margin-left: 4px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-chevron-down-V4"
+            id="pill-dot-test-id-active-editing"
+            tabindex="0"
+          >
+            <svg
+              aria-label="chevron-down-V4 icon"
+              data-testid="svg-icon-svg-chevron-down-V4"
+              fill="currentColor"
+              height="12px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 20 20"
+              width="12px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-IsChangedOccurrence"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-IsChangedOccurrence"
+          id="pill-text-test-id-IsChangedOccurrence"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-IsChangedOccurrence-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Is changed occurrence
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is
+            </span>
+             
+            Changed
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-IsChangedOccurrence"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class=""
+        data-tooltip-html="Add filter"
+        data-tooltip-id="test-id-button-add-chips-tooltip"
+        style="width: 22px; visibility: visible;"
+      >
+        <span
+          class="emotion-74 emotion-13"
+          color="currentColor"
+          data-testid="svg-icon-wrapper-plus"
+          id="test-id-button-add"
+          tabindex="0"
+        >
+          <svg
+            aria-label="plus icon"
+            data-testid="svg-icon-svg-plus"
+            fill="currentColor"
+            height="12px"
+            preserveAspectRatio="none"
+            role="img"
+            viewBox="0 0 1024 1024"
+            width="12px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M 980.52833,492.27645 H 532.52835 V 44.276394 c 0,-11.776 -9.557,-21.333 -21.333,-21.333 -11.776,0 -21.333,9.557 -21.333,21.333 V 492.27645 H 41.862305 c -11.776,0 -21.333,9.557 -21.333,21.333 0,11.776 9.557,21.333 21.333,21.333 H 489.86235 v 448.00003 c 0,11.776 9.557,21.33282 21.333,21.33282 11.776,0 21.333,-9.55682 21.333,-21.33282 V 534.94245 h 447.99998 c 11.776,0 21.33297,-9.557 21.33297,-21.333 0,-11.776 -9.55697,-21.333 -21.33297,-21.333 z"
+              stroke="inherit"
+              stroke-width=""
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-id-popover-container"
+    style="position: absolute; z-index: 1000; padding: 0px; width: 280px; height: auto; max-height: 400px; visibility: hidden; transition: all 0.3s ease-in-out; top: 48px; left: 16px; transform-origin: -16px 0px;"
+    width="100%"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      height="unset"
+      style="border: 1px solid #bacad0; border-radius: 8px; gap: 8px; max-height: 400px; padding: 8px;"
+      width="100%"
+    >
+      <div
+        id="test-id-header"
+        style="display: flex; align-items: center;"
+      >
+        <span
+          class="emotion-80 emotion-7"
+          font-size="small"
+          opacity="1"
+          style="padding-right: 4px;"
+        >
+          Is all day appointment
+        </span>
+        <div>
+          <div
+            role="button"
+            style="display: flex; align-items: center; border: 1px solid #ffffff; border-radius: 2px; padding: 0px 4px; gap: 2px;"
+            tabindex="0"
+          >
+            <span
+              class="emotion-82 emotion-7"
+              font-size="small"
+              id="test-id-condition-label"
+              opacity="1"
+            >
+              is
+            </span>
+          </div>
+        </div>
+        <div
+          style="flex-grow: 1;"
+        />
+        <div
+          class=""
+        >
+          <span
+            class="emotion-84 emotion-13"
+            color="#545F67"
+            data-testid="svg-icon-wrapper-settings"
+            id="test-id-advanced-edit"
+            tabindex="0"
+          >
+            <svg
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                class="nc-icon-wrapper"
+                fill="none"
+                stroke="#545F67"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+              >
+                <path
+                  class="a"
+                  d="M1.501 0.5H14.501A1 1 0 0 1 15.501 1.5V14.5A1 1 0 0 1 14.501 15.5H1.501A1 1 0 0 1 0.501 14.5V1.5A1 1 0 0 1 1.501 0.5z"
+                  height="22.5"
+                  rx="1.5"
+                  ry="1.5"
+                  width="22.5"
+                  x="0.751"
+                  y="0.75"
+                />
+                <path
+                  class="a"
+                  d="M8.501 10.5h4m-9 0h2"
+                />
+                <path
+                  class="b"
+                  d="M8.501 10.5A1.5 1.5 0 1 1 7 9a1.5 1.5 0 0 1 1.501 1.5z"
+                />
+                <path
+                  class="a"
+                  d="M9.501 5.5h-6"
+                />
+                <path
+                  class="b"
+                  d="M12.501 5.5A1.5 1.5 0 1 0 11 7a1.501 1.501 0 0 0 1.501 -1.5z"
+                />
+              </g>
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-86 emotion-87"
+      >
+        <div
+          class="emotion-88 emotion-89"
+          direction="column"
+          id="test-id-value-selector-value-value-RadioGroup"
+          role="radiogroup"
+          style="padding-top: 0.5rem;"
+          width="auto"
+        >
+          
+          <div
+            class="emotion-90 emotion-91"
+            direction="column"
+          >
+            <label
+              aria-checked="true"
+              aria-labelledby="test-id-value-selector-value-valuetest-id-value-selector-value-value0-lbl"
+              class="emotion-92 emotion-93"
+              direction="column"
+              tabindex="-1"
+              width="inherit"
+            >
+              <input
+                aria-checked="true"
+                aria-labelledby="test-id-value-selector-value-valuetest-id-value-selector-value-value0-lbl"
+                checked=""
+                class="emotion-94 emotion-95"
+                id="test-id-value-selector-value-valuetest-id-value-selector-value-value0"
+                name="test-id-value-selector-value-value-test-id-value-selector-value-value"
+                tabindex="0"
+                type="radio"
+                value="true"
+              />
+              <div
+                class="radio-btn-indicator-container"
+                style="position: relative;"
+              >
+                <div
+                  class="radio-btn-indicator emotion-96 emotion-97"
+                />
+              </div>
+              <span
+                class="emotion-98 emotion-99"
+                direction="column"
+                id="test-id-value-selector-value-valuetest-id-value-selector-value-value0-lbl"
+              >
+                True
+              </span>
+            </label>
+            <label
+              aria-checked="false"
+              aria-labelledby="test-id-value-selector-value-valuetest-id-value-selector-value-value1-lbl"
+              class="emotion-100 emotion-93"
+              direction="column"
+              tabindex="-1"
+              width="inherit"
+            >
+              <input
+                aria-checked="false"
+                aria-labelledby="test-id-value-selector-value-valuetest-id-value-selector-value-value1-lbl"
+                class="emotion-94 emotion-95"
+                id="test-id-value-selector-value-valuetest-id-value-selector-value-value1"
+                name="test-id-value-selector-value-value-test-id-value-selector-value-value"
+                tabindex="-1"
+                type="radio"
+                value="false"
+              />
+              <div
+                class="radio-btn-indicator-container"
+                style="position: relative;"
+              >
+                <div
+                  class="radio-btn-indicator emotion-96 emotion-97"
+                />
+              </div>
+              <span
+                class="emotion-98 emotion-99"
+                direction="column"
+                id="test-id-value-selector-value-valuetest-id-value-selector-value-value1-lbl"
+              >
+                False
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ChipsFilter Snapshot Open Date 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFFFFF;
+  border: 1px solid #BACAD0;
+  max-width: 100%;
+  padding: 4px 8px;
+  border-radius: 16px;
+  height: 24px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2:hover {
+  background-color: #F6FAFB;
+}
+
+.emotion-2:active {
+  background-color: #BACAD0;
+}
+
+.emotion-4 {
+  font-weight: 400;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 0 4px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-8 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-12:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-12:focus {
+  outline: none;
+}
+
+.emotion-18 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: default;
+  opacity: 1;
+}
+
+.emotion-74 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+  cursor: pointer;
+  cursor: pointer;
+  border: 1px solid #BACAD0;
+  border-radius: 8px;
+  padding: 7px;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.emotion-74:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-74:focus {
+  outline: none;
+}
+
+.emotion-80 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-82 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-84 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #545F67;
+}
+
+.emotion-84:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-84:focus {
+  outline: none;
+}
+
+.emotion-86 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #545F67;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-86:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-86:focus {
+  outline: none;
+}
+
+.emotion-88 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.emotion-90 {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: top;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.emotion-92 {
+  position: relative;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  height: auto;
+}
+
+.emotion-93 {
+  z-index: 9999;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.emotion-95 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 100ms;
+  transition: all 100ms;
+  background-color: #FFFFFF;
+  border-color: hsl(0, 0%, 80%);
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  box-sizing: border-box;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  height: 32px;
+}
+
+.emotion-95:hover {
+  border-color: hsl(0, 0%, 70%);
+}
+
+.emotion-95:hover {
+  border-color: #2A394A;
+  cursor: pointer;
+}
+
+.emotion-96 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: grid;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  overflow: hidden;
+  padding: 0px 8px;
+  box-sizing: border-box;
+}
+
+.emotion-97 {
+  grid-area: 1/1/2/3;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #2A394AFF;
+  margin-left: 0;
+  margin-right: 2px;
+  box-sizing: border-box;
+  line-height: 18px;
+}
+
+.emotion-98 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.emotion-100 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.emotion-102 {
+  visibility: visible;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  display: inline-grid;
+  grid-area: 1/1/2/3;
+  grid-template-columns: 0 min-content;
+  margin: 0;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  color: hsl(0, 0%, 20%);
+  box-sizing: border-box;
+  height: 32px;
+  padding: 0;
+}
+
+.emotion-102:after {
+  content: attr(data-value) " ";
+  visibility: hidden;
+  white-space: pre;
+  grid-area: 1/2;
+  font: inherit;
+  min-width: 2px;
+  border: 0;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+}
+
+.emotion-103 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.emotion-104 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: color 150ms;
+  transition: color 150ms;
+  color: hsl(0, 0%, 80%);
+  padding: 0;
+  box-sizing: border-box;
+  padding-right: 8px;
+}
+
+.emotion-104:hover {
+  color: hsl(0, 0%, 60%);
+}
+
+.emotion-105 {
+  display: inline-block;
+  fill: currentColor;
+  line-height: 1;
+  stroke: currentColor;
+  stroke-width: 0;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    style="position: relative; flex-direction: row; gap: 8px; flex-wrap: nowrap; padding: 12px; border-radius: 8px;"
+    width="100%"
+  >
+    <div
+      style="display: flex; flex: 1; flex-wrap: wrap; align-items: center; gap: 8px; width: 100%;"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-advanced"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-advanced"
+          id="pill-text-test-id-advanced"
+        >
+          <span
+            class="emotion-6 emotion-7"
+            opacity="1"
+            style="cursor: pointer;"
+          >
+            Advanced filter
+          </span>
+          <span
+            class="emotion-8 emotion-7"
+            opacity="1"
+            style="cursor: pointer;"
+          >
+             
+            is all of
+             
+          </span>
+          <span
+            class="emotion-6 emotion-7"
+            opacity="1"
+            style="cursor: pointer;"
+          >
+            2 Rules
+          </span>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-advanced"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-active-editing"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-active-editing"
+          id="pill-text-test-id-active-editing"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-ActualCompletedDate-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Actual completed date
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is on or after
+            </span>
+             
+            Feb-01-2023 06:00 PM
+          </div>
+        </span>
+        <div
+          class=""
+          style="display: inline-block; flex-shrink: 0; margin-left: 4px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-chevron-down-V4"
+            id="pill-dot-test-id-active-editing"
+            tabindex="0"
+          >
+            <svg
+              aria-label="chevron-down-V4 icon"
+              data-testid="svg-icon-svg-chevron-down-V4"
+              fill="currentColor"
+              height="12px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 20 20"
+              width="12px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-ActualDuration"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-ActualDuration"
+          id="pill-text-test-id-ActualDuration"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-ActualDuration-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Actual duration
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is not
+            </span>
+             
+            60
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-ActualDuration"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-Comments"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-Comments"
+          id="pill-text-test-id-Comments"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-Comments-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Comments
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              contains
+            </span>
+             
+            gggg
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-Comments"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-FollowUpFromActivityNo"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-FollowUpFromActivityNo"
+          id="pill-text-test-id-FollowUpFromActivityNo"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-FollowUpFromActivityNo-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Follow up from activity no
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              greater than
+            </span>
+             
+            4
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-FollowUpFromActivityNo"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-IsAllDayAppointment"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-IsAllDayAppointment"
+          id="pill-text-test-id-IsAllDayAppointment"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-IsAllDayAppointment-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Is all day appointment
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is
+            </span>
+             
+            True
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-IsAllDayAppointment"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-IsChangedOccurrence"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-IsChangedOccurrence"
+          id="pill-text-test-id-IsChangedOccurrence"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-IsChangedOccurrence-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Is changed occurrence
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is
+            </span>
+             
+            Changed
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-IsChangedOccurrence"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class=""
+        data-tooltip-html="Add filter"
+        data-tooltip-id="test-id-button-add-chips-tooltip"
+        style="width: 22px; visibility: visible;"
+      >
+        <span
+          class="emotion-74 emotion-13"
+          color="currentColor"
+          data-testid="svg-icon-wrapper-plus"
+          id="test-id-button-add"
+          tabindex="0"
+        >
+          <svg
+            aria-label="plus icon"
+            data-testid="svg-icon-svg-plus"
+            fill="currentColor"
+            height="12px"
+            preserveAspectRatio="none"
+            role="img"
+            viewBox="0 0 1024 1024"
+            width="12px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M 980.52833,492.27645 H 532.52835 V 44.276394 c 0,-11.776 -9.557,-21.333 -21.333,-21.333 -11.776,0 -21.333,9.557 -21.333,21.333 V 492.27645 H 41.862305 c -11.776,0 -21.333,9.557 -21.333,21.333 0,11.776 9.557,21.333 21.333,21.333 H 489.86235 v 448.00003 c 0,11.776 9.557,21.33282 21.333,21.33282 11.776,0 21.333,-9.55682 21.333,-21.33282 V 534.94245 h 447.99998 c 11.776,0 21.33297,-9.557 21.33297,-21.333 0,-11.776 -9.55697,-21.333 -21.33297,-21.333 z"
+              stroke="inherit"
+              stroke-width=""
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-id-popover-container"
+    style="position: absolute; z-index: 1000; padding: 0px; width: 280px; height: auto; max-height: 400px; visibility: hidden; transition: all 0.3s ease-in-out; top: 48px; left: 16px; transform-origin: -16px 0px;"
+    width="100%"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      height="unset"
+      style="border: 1px solid #bacad0; border-radius: 8px; gap: 8px; max-height: 400px; padding: 8px;"
+      width="100%"
+    >
+      <div
+        id="test-id-header"
+        style="display: flex; align-items: center;"
+      >
+        <span
+          class="emotion-80 emotion-7"
+          font-size="small"
+          opacity="1"
+          style="padding-right: 4px;"
+        >
+          Actual completed date
+        </span>
+        <div>
+          <div
+            role="button"
+            style="display: flex; align-items: center; border: 1px solid #ffffff; border-radius: 2px; padding: 0px 4px; gap: 2px;"
+            tabindex="0"
+          >
+            <span
+              class="emotion-82 emotion-7"
+              font-size="small"
+              id="test-id-condition-label"
+              opacity="1"
+            >
+              is on or after
+            </span>
+            <div
+              class=""
+            >
+              <span
+                class="emotion-84 emotion-13"
+                color="#545F67"
+                data-testid="svg-icon-wrapper-chevron-down-V4"
+              >
+                <svg
+                  aria-label="chevron-down-V4 icon"
+                  data-testid="svg-icon-svg-chevron-down-V4"
+                  fill="#545F67"
+                  height="16px"
+                  preserveAspectRatio="none"
+                  role="img"
+                  viewBox="0 0 20 20"
+                  width="16px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                    stroke="inherit"
+                    stroke-width=""
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          style="flex-grow: 1;"
+        />
+        <div
+          class=""
+        >
+          <span
+            class="emotion-86 emotion-13"
+            color="#545F67"
+            data-testid="svg-icon-wrapper-settings"
+            id="test-id-advanced-edit"
+            tabindex="0"
+          >
+            <svg
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                class="nc-icon-wrapper"
+                fill="none"
+                stroke="#545F67"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+              >
+                <path
+                  class="a"
+                  d="M1.501 0.5H14.501A1 1 0 0 1 15.501 1.5V14.5A1 1 0 0 1 14.501 15.5H1.501A1 1 0 0 1 0.501 14.5V1.5A1 1 0 0 1 1.501 0.5z"
+                  height="22.5"
+                  rx="1.5"
+                  ry="1.5"
+                  width="22.5"
+                  x="0.751"
+                  y="0.75"
+                />
+                <path
+                  class="a"
+                  d="M8.501 10.5h4m-9 0h2"
+                />
+                <path
+                  class="b"
+                  d="M8.501 10.5A1.5 1.5 0 1 1 7 9a1.5 1.5 0 0 1 1.501 1.5z"
+                />
+                <path
+                  class="a"
+                  d="M9.501 5.5h-6"
+                />
+                <path
+                  class="b"
+                  d="M12.501 5.5A1.5 1.5 0 1 0 11 7a1.501 1.501 0 0 0 1.501 -1.5z"
+                />
+              </g>
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-88 emotion-89"
+      >
+        <div
+          aria-labelledby=""
+          class="emotion-90 emotion-91"
+          data-testid="test-id-value-selector-date-range-dropdown-list"
+          style="opacity: 1;"
+        >
+          <div
+            class="emotion-92"
+            id="test-id-value-selector-date-range-dropdown-list"
+          >
+            <span
+              class="emotion-93"
+              id="react-select-test-id-value-selector-date-range-dropdown-list-live-region"
+            />
+            <span
+              aria-atomic="false"
+              aria-live="polite"
+              aria-relevant="additions text"
+              class="emotion-93"
+              role="log"
+            />
+            <div
+              class="emotion-95"
+            >
+              <div
+                class="emotion-96"
+              >
+                <div
+                  class="emotion-97"
+                >
+                  <div
+                    class="emotion-98 emotion-99"
+                  >
+                    <div
+                      class="emotion-100 emotion-101"
+                    >
+                      <span
+                        id="test-id-value-selector-date-range-option-label--1"
+                      >
+                        Exact date and time
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="emotion-102"
+                  data-value=""
+                >
+                  <input
+                    aria-activedescendant=""
+                    aria-autocomplete="list"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    autocapitalize="none"
+                    autocomplete="off"
+                    autocorrect="off"
+                    class=""
+                    id="test-id-value-selector-date-range-dropdown-list-input"
+                    role="combobox"
+                    spellcheck="false"
+                    style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                    tabindex="0"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="emotion-103"
+              >
+                <div
+                  aria-hidden="true"
+                  class="emotion-104"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="emotion-105"
+                    focusable="false"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                  >
+                    <path
+                      d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <input
+              name="test-id-value-selector-date-range-dropdown-list"
+              type="hidden"
+              value="-1"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ChipsFilter Snapshot Open Dropdown 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFFFFF;
+  border: 1px solid #BACAD0;
+  max-width: 100%;
+  padding: 4px 8px;
+  border-radius: 16px;
+  height: 24px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2:hover {
+  background-color: #F6FAFB;
+}
+
+.emotion-2:active {
+  background-color: #BACAD0;
+}
+
+.emotion-4 {
+  font-weight: 400;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 0 4px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-8 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-12:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-12:focus {
+  outline: none;
+}
+
+.emotion-18 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: default;
+  opacity: 1;
+}
+
+.emotion-74 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+  cursor: pointer;
+  cursor: pointer;
+  border: 1px solid #BACAD0;
+  border-radius: 8px;
+  padding: 7px;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.emotion-74:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-74:focus {
+  outline: none;
+}
+
+.emotion-80 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-82 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-84 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #545F67;
+}
+
+.emotion-84:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-84:focus {
+  outline: none;
+}
+
+.emotion-86 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #545F67;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-86:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-86:focus {
+  outline: none;
+}
+
+.emotion-88 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 248px;
+  gap: 8px;
+  overflow: hidden;
+  max-height: 320px;
+}
+
+.emotion-90 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #BACAD0;
+  border-radius: 8px;
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-90:hover .mi-textinput-prefix,
+.emotion-90:hover input:enabled {
+  border-color: #2A394A;
+}
+
+.emotion-90.emotion-90.emotion-90 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #2A394A;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.emotion-90.emotion-90.emotion-90 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-90 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  padding-right: 0;
+}
+
+.emotion-90 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-90 input::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-90 input::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-90 input:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-90 input::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    style="position: relative; flex-direction: row; gap: 8px; flex-wrap: nowrap; padding: 12px; border-radius: 8px;"
+    width="100%"
+  >
+    <div
+      style="display: flex; flex: 1; flex-wrap: wrap; align-items: center; gap: 8px; width: 100%;"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-advanced"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-advanced"
+          id="pill-text-test-id-advanced"
+        >
+          <span
+            class="emotion-6 emotion-7"
+            opacity="1"
+            style="cursor: pointer;"
+          >
+            Advanced filter
+          </span>
+          <span
+            class="emotion-8 emotion-7"
+            opacity="1"
+            style="cursor: pointer;"
+          >
+             
+            is all of
+             
+          </span>
+          <span
+            class="emotion-6 emotion-7"
+            opacity="1"
+            style="cursor: pointer;"
+          >
+            2 Rules
+          </span>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-advanced"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-ActualCompletedDate"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-ActualCompletedDate"
+          id="pill-text-test-id-ActualCompletedDate"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-ActualCompletedDate-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Actual completed date
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is on or after
+            </span>
+             
+            Feb-01-2023 06:00 PM
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-ActualCompletedDate"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-ActualDuration"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-ActualDuration"
+          id="pill-text-test-id-ActualDuration"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-ActualDuration-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Actual duration
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is not
+            </span>
+             
+            60
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-ActualDuration"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-Comments"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-Comments"
+          id="pill-text-test-id-Comments"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-Comments-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Comments
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              contains
+            </span>
+             
+            gggg
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-Comments"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-active-editing"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-active-editing"
+          id="pill-text-test-id-active-editing"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-FollowUpFromActivityNo-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Follow up from activity no
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              greater than
+            </span>
+             
+            4
+          </div>
+        </span>
+        <div
+          class=""
+          style="display: inline-block; flex-shrink: 0; margin-left: 4px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-chevron-down-V4"
+            id="pill-dot-test-id-active-editing"
+            tabindex="0"
+          >
+            <svg
+              aria-label="chevron-down-V4 icon"
+              data-testid="svg-icon-svg-chevron-down-V4"
+              fill="currentColor"
+              height="12px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 20 20"
+              width="12px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-IsAllDayAppointment"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-IsAllDayAppointment"
+          id="pill-text-test-id-IsAllDayAppointment"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-IsAllDayAppointment-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Is all day appointment
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is
+            </span>
+             
+            True
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-IsAllDayAppointment"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-IsChangedOccurrence"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-IsChangedOccurrence"
+          id="pill-text-test-id-IsChangedOccurrence"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-IsChangedOccurrence-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Is changed occurrence
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is
+            </span>
+             
+            Changed
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-IsChangedOccurrence"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class=""
+        data-tooltip-html="Add filter"
+        data-tooltip-id="test-id-button-add-chips-tooltip"
+        style="width: 22px; visibility: visible;"
+      >
+        <span
+          class="emotion-74 emotion-13"
+          color="currentColor"
+          data-testid="svg-icon-wrapper-plus"
+          id="test-id-button-add"
+          tabindex="0"
+        >
+          <svg
+            aria-label="plus icon"
+            data-testid="svg-icon-svg-plus"
+            fill="currentColor"
+            height="12px"
+            preserveAspectRatio="none"
+            role="img"
+            viewBox="0 0 1024 1024"
+            width="12px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M 980.52833,492.27645 H 532.52835 V 44.276394 c 0,-11.776 -9.557,-21.333 -21.333,-21.333 -11.776,0 -21.333,9.557 -21.333,21.333 V 492.27645 H 41.862305 c -11.776,0 -21.333,9.557 -21.333,21.333 0,11.776 9.557,21.333 21.333,21.333 H 489.86235 v 448.00003 c 0,11.776 9.557,21.33282 21.333,21.33282 11.776,0 21.333,-9.55682 21.333,-21.33282 V 534.94245 h 447.99998 c 11.776,0 21.33297,-9.557 21.33297,-21.333 0,-11.776 -9.55697,-21.333 -21.33297,-21.333 z"
+              stroke="inherit"
+              stroke-width=""
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-id-popover-container"
+    style="position: absolute; z-index: 1000; padding: 0px; width: 280px; height: auto; max-height: 400px; visibility: hidden; transition: all 0.3s ease-in-out; top: 48px; left: 16px; transform-origin: -16px 0px;"
+    width="100%"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      height="unset"
+      style="border: 1px solid #bacad0; border-radius: 8px; gap: 8px; max-height: 400px; padding: 8px;"
+      width="100%"
+    >
+      <div
+        id="test-id-header"
+        style="display: flex; align-items: center;"
+      >
+        <span
+          class="emotion-80 emotion-7"
+          font-size="small"
+          opacity="1"
+          style="padding-right: 4px;"
+        >
+          Follow up from activity no
+        </span>
+        <div>
+          <div
+            role="button"
+            style="display: flex; align-items: center; border: 1px solid #ffffff; border-radius: 2px; padding: 0px 4px; gap: 2px;"
+            tabindex="0"
+          >
+            <span
+              class="emotion-82 emotion-7"
+              font-size="small"
+              id="test-id-condition-label"
+              opacity="1"
+            >
+              greater than
+            </span>
+            <div
+              class=""
+            >
+              <span
+                class="emotion-84 emotion-13"
+                color="#545F67"
+                data-testid="svg-icon-wrapper-chevron-down-V4"
+              >
+                <svg
+                  aria-label="chevron-down-V4 icon"
+                  data-testid="svg-icon-svg-chevron-down-V4"
+                  fill="#545F67"
+                  height="16px"
+                  preserveAspectRatio="none"
+                  role="img"
+                  viewBox="0 0 20 20"
+                  width="16px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                    stroke="inherit"
+                    stroke-width=""
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          style="flex-grow: 1;"
+        />
+        <div
+          class=""
+        >
+          <span
+            class="emotion-86 emotion-13"
+            color="#545F67"
+            data-testid="svg-icon-wrapper-settings"
+            id="test-id-advanced-edit"
+            tabindex="0"
+          >
+            <svg
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                class="nc-icon-wrapper"
+                fill="none"
+                stroke="#545F67"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+              >
+                <path
+                  class="a"
+                  d="M1.501 0.5H14.501A1 1 0 0 1 15.501 1.5V14.5A1 1 0 0 1 14.501 15.5H1.501A1 1 0 0 1 0.501 14.5V1.5A1 1 0 0 1 1.501 0.5z"
+                  height="22.5"
+                  rx="1.5"
+                  ry="1.5"
+                  width="22.5"
+                  x="0.751"
+                  y="0.75"
+                />
+                <path
+                  class="a"
+                  d="M8.501 10.5h4m-9 0h2"
+                />
+                <path
+                  class="b"
+                  d="M8.501 10.5A1.5 1.5 0 1 1 7 9a1.5 1.5 0 0 1 1.501 1.5z"
+                />
+                <path
+                  class="a"
+                  d="M9.501 5.5h-6"
+                />
+                <path
+                  class="b"
+                  d="M12.501 5.5A1.5 1.5 0 1 0 11 7a1.501 1.501 0 0 0 1.501 -1.5z"
+                />
+              </g>
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-88 emotion-89"
+        tabindex="-1"
+      >
+        <div
+          class="emotion-90 emotion-91"
+          id="test-id-value-selector-popover-search-search"
+          prefix=""
+        >
+          <div
+            class="mi-textinput-prefix"
+          >
+            <div
+              class=""
+            >
+              <span
+                class="emotion-84 emotion-13"
+                color="#545F67"
+                data-testid="svg-icon-wrapper-search"
+              >
+                <svg
+                  aria-label="search icon"
+                  data-testid="svg-icon-svg-search"
+                  fill="#545F67"
+                  height="16px"
+                  preserveAspectRatio="none"
+                  role="img"
+                  viewBox="0 0 1024 1024"
+                  width="16px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1017.771 987.563l-384.384-384.384c57.003-64.085 91.947-148.181 91.947-240.512 0-199.979-162.688-362.667-362.667-362.667s-362.667 162.688-362.667 362.667 162.688 362.667 362.667 362.667c92.331 0 176.427-34.944 240.512-91.989l384.384 384.384c4.181 4.181 9.643 6.272 15.104 6.272s10.923-2.091 15.104-6.229c8.32-8.363 8.32-21.845 0-30.208zM42.667 362.667c0-176.469 143.531-320 320-320s320 143.531 320 320-143.531 320-320 320-320-143.531-320-320z"
+                    stroke="inherit"
+                    stroke-width=""
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <input
+            aria-disabled="false"
+            autocomplete="off"
+            data-testid="test-id-value-selector-popover-search-search-input"
+            id="test-id-value-selector-popover-search-search-input"
+            placeholder="Search"
+            tabindex="0"
+            type="search"
+            value="Chicken"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ChipsFilter Snapshot Open Number 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFFFFF;
+  border: 1px solid #BACAD0;
+  max-width: 100%;
+  padding: 4px 8px;
+  border-radius: 16px;
+  height: 24px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2:hover {
+  background-color: #F6FAFB;
+}
+
+.emotion-2:active {
+  background-color: #BACAD0;
+}
+
+.emotion-4 {
+  font-weight: 400;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 0 4px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-8 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-12:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-12:focus {
+  outline: none;
+}
+
+.emotion-18 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: default;
+  opacity: 1;
+}
+
+.emotion-74 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+  cursor: pointer;
+  cursor: pointer;
+  border: 1px solid #BACAD0;
+  border-radius: 8px;
+  padding: 7px;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.emotion-74:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-74:focus {
+  outline: none;
+}
+
+.emotion-80 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-82 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-84 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #545F67;
+}
+
+.emotion-84:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-84:focus {
+  outline: none;
+}
+
+.emotion-86 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #545F67;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-86:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-86:focus {
+  outline: none;
+}
+
+.emotion-88 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.emotion-90 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-92 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  border: 1px solid #0D71C8;
+  border-radius: 4px;
+}
+
+.emotion-92:hover {
+  border-color: #2A394A;
+}
+
+.emotion-92:focus {
+  outline: none;
+}
+
+.emotion-92.emotion-92.emotion-92 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #2A394A;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-92.emotion-92.emotion-92 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-92.emotion-92.emotion-92 input:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-92.emotion-92.emotion-92 input:hover {
+  border-color: #2A394A;
+}
+
+.emotion-92 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-92 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-92 input::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-92 input::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-92 input:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-92 input::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    style="position: relative; flex-direction: row; gap: 8px; flex-wrap: nowrap; padding: 12px; border-radius: 8px;"
+    width="100%"
+  >
+    <div
+      style="display: flex; flex: 1; flex-wrap: wrap; align-items: center; gap: 8px; width: 100%;"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-advanced"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-advanced"
+          id="pill-text-test-id-advanced"
+        >
+          <span
+            class="emotion-6 emotion-7"
+            opacity="1"
+            style="cursor: pointer;"
+          >
+            Advanced filter
+          </span>
+          <span
+            class="emotion-8 emotion-7"
+            opacity="1"
+            style="cursor: pointer;"
+          >
+             
+            is all of
+             
+          </span>
+          <span
+            class="emotion-6 emotion-7"
+            opacity="1"
+            style="cursor: pointer;"
+          >
+            2 Rules
+          </span>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-advanced"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-ActualCompletedDate"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-ActualCompletedDate"
+          id="pill-text-test-id-ActualCompletedDate"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-ActualCompletedDate-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Actual completed date
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is on or after
+            </span>
+             
+            Feb-01-2023 06:00 PM
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-ActualCompletedDate"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-active-editing"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-active-editing"
+          id="pill-text-test-id-active-editing"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-ActualDuration-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Actual duration
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is not
+            </span>
+             
+            60
+          </div>
+        </span>
+        <div
+          class=""
+          style="display: inline-block; flex-shrink: 0; margin-left: 4px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-chevron-down-V4"
+            id="pill-dot-test-id-active-editing"
+            tabindex="0"
+          >
+            <svg
+              aria-label="chevron-down-V4 icon"
+              data-testid="svg-icon-svg-chevron-down-V4"
+              fill="currentColor"
+              height="12px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 20 20"
+              width="12px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-Comments"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-Comments"
+          id="pill-text-test-id-Comments"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-Comments-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Comments
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              contains
+            </span>
+             
+            gggg
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-Comments"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-FollowUpFromActivityNo"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-FollowUpFromActivityNo"
+          id="pill-text-test-id-FollowUpFromActivityNo"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-FollowUpFromActivityNo-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Follow up from activity no
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              greater than
+            </span>
+             
+            4
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-FollowUpFromActivityNo"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-IsAllDayAppointment"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-IsAllDayAppointment"
+          id="pill-text-test-id-IsAllDayAppointment"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-IsAllDayAppointment-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Is all day appointment
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is
+            </span>
+             
+            True
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-IsAllDayAppointment"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-IsChangedOccurrence"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-IsChangedOccurrence"
+          id="pill-text-test-id-IsChangedOccurrence"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-IsChangedOccurrence-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Is changed occurrence
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is
+            </span>
+             
+            Changed
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-IsChangedOccurrence"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class=""
+        data-tooltip-html="Add filter"
+        data-tooltip-id="test-id-button-add-chips-tooltip"
+        style="width: 22px; visibility: visible;"
+      >
+        <span
+          class="emotion-74 emotion-13"
+          color="currentColor"
+          data-testid="svg-icon-wrapper-plus"
+          id="test-id-button-add"
+          tabindex="0"
+        >
+          <svg
+            aria-label="plus icon"
+            data-testid="svg-icon-svg-plus"
+            fill="currentColor"
+            height="12px"
+            preserveAspectRatio="none"
+            role="img"
+            viewBox="0 0 1024 1024"
+            width="12px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M 980.52833,492.27645 H 532.52835 V 44.276394 c 0,-11.776 -9.557,-21.333 -21.333,-21.333 -11.776,0 -21.333,9.557 -21.333,21.333 V 492.27645 H 41.862305 c -11.776,0 -21.333,9.557 -21.333,21.333 0,11.776 9.557,21.333 21.333,21.333 H 489.86235 v 448.00003 c 0,11.776 9.557,21.33282 21.333,21.33282 11.776,0 21.333,-9.55682 21.333,-21.33282 V 534.94245 h 447.99998 c 11.776,0 21.33297,-9.557 21.33297,-21.333 0,-11.776 -9.55697,-21.333 -21.33297,-21.333 z"
+              stroke="inherit"
+              stroke-width=""
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-id-popover-container"
+    style="position: absolute; z-index: 1000; padding: 0px; width: 280px; height: auto; max-height: 400px; visibility: hidden; transition: all 0.3s ease-in-out; top: 48px; left: 16px; transform-origin: -16px 0px;"
+    width="100%"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      height="unset"
+      style="border: 1px solid #bacad0; border-radius: 8px; gap: 8px; max-height: 400px; padding: 8px;"
+      width="100%"
+    >
+      <div
+        id="test-id-header"
+        style="display: flex; align-items: center;"
+      >
+        <span
+          class="emotion-80 emotion-7"
+          font-size="small"
+          opacity="1"
+          style="padding-right: 4px;"
+        >
+          Actual duration
+        </span>
+        <div>
+          <div
+            role="button"
+            style="display: flex; align-items: center; border: 1px solid #ffffff; border-radius: 2px; padding: 0px 4px; gap: 2px;"
+            tabindex="0"
+          >
+            <span
+              class="emotion-82 emotion-7"
+              font-size="small"
+              id="test-id-condition-label"
+              opacity="1"
+            >
+              is not
+            </span>
+            <div
+              class=""
+            >
+              <span
+                class="emotion-84 emotion-13"
+                color="#545F67"
+                data-testid="svg-icon-wrapper-chevron-down-V4"
+              >
+                <svg
+                  aria-label="chevron-down-V4 icon"
+                  data-testid="svg-icon-svg-chevron-down-V4"
+                  fill="#545F67"
+                  height="16px"
+                  preserveAspectRatio="none"
+                  role="img"
+                  viewBox="0 0 20 20"
+                  width="16px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                    stroke="inherit"
+                    stroke-width=""
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          style="flex-grow: 1;"
+        />
+        <div
+          class=""
+        >
+          <span
+            class="emotion-86 emotion-13"
+            color="#545F67"
+            data-testid="svg-icon-wrapper-settings"
+            id="test-id-advanced-edit"
+            tabindex="0"
+          >
+            <svg
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                class="nc-icon-wrapper"
+                fill="none"
+                stroke="#545F67"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+              >
+                <path
+                  class="a"
+                  d="M1.501 0.5H14.501A1 1 0 0 1 15.501 1.5V14.5A1 1 0 0 1 14.501 15.5H1.501A1 1 0 0 1 0.501 14.5V1.5A1 1 0 0 1 1.501 0.5z"
+                  height="22.5"
+                  rx="1.5"
+                  ry="1.5"
+                  width="22.5"
+                  x="0.751"
+                  y="0.75"
+                />
+                <path
+                  class="a"
+                  d="M8.501 10.5h4m-9 0h2"
+                />
+                <path
+                  class="b"
+                  d="M8.501 10.5A1.5 1.5 0 1 1 7 9a1.5 1.5 0 0 1 1.501 1.5z"
+                />
+                <path
+                  class="a"
+                  d="M9.501 5.5h-6"
+                />
+                <path
+                  class="b"
+                  d="M12.501 5.5A1.5 1.5 0 1 0 11 7a1.501 1.501 0 0 0 1.501 -1.5z"
+                />
+              </g>
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-88 emotion-89"
+        id="test-id-value-selector-value-TextInput"
+        role="none"
+        style="background-color: rgb(255, 255, 255);"
+        width="100%"
+      >
+        <div
+          class="emotion-90 emotion-91"
+          for="test-id-value-selector-value-Input"
+          id="test-id-value-selector-value-input-caption-Caption"
+        >
+          Value
+        </div>
+        <div
+          class="emotion-92 emotion-93"
+          prefix=""
+        >
+          <input
+            aria-disabled="false"
+            aria-label="Value"
+            autocomplete="chrome-off"
+            data-testid="test-id-value-selector-value-Input"
+            id="test-id-value-selector-value-Input"
+            style="font-size: 13px;"
+            tabindex="0"
+            type="text"
+            value="60"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ChipsFilter Snapshot Open Text 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #FFFFFF;
+  border: 1px solid #BACAD0;
+  max-width: 100%;
+  padding: 4px 8px;
+  border-radius: 16px;
+  height: 24px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2:hover {
+  background-color: #F6FAFB;
+}
+
+.emotion-2:active {
+  background-color: #BACAD0;
+}
+
+.emotion-4 {
+  font-weight: 400;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 0 4px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-8 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-12:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-12:focus {
+  outline: none;
+}
+
+.emotion-18 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: default;
+  opacity: 1;
+}
+
+.emotion-74 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+  cursor: pointer;
+  cursor: pointer;
+  border: 1px solid #BACAD0;
+  border-radius: 8px;
+  padding: 7px;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.emotion-74:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-74:focus {
+  outline: none;
+}
+
+.emotion-80 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-82 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-84 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #545F67;
+}
+
+.emotion-84:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-84:focus {
+  outline: none;
+}
+
+.emotion-86 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #545F67;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-86:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-86:focus {
+  outline: none;
+}
+
+.emotion-88 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  gap: 8px;
+}
+
+.emotion-90 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.emotion-92 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-94 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  border: 1px solid #0D71C8;
+  border-radius: 4px;
+}
+
+.emotion-94:hover {
+  border-color: #2A394A;
+}
+
+.emotion-94:focus {
+  outline: none;
+}
+
+.emotion-94.emotion-94.emotion-94 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #2A394A;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-94.emotion-94.emotion-94 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-94.emotion-94.emotion-94 input:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-94.emotion-94.emotion-94 input:hover {
+  border-color: #2A394A;
+}
+
+.emotion-94 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-94 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-94 input::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-94 input::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-94 input:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-94 input::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    style="position: relative; flex-direction: row; gap: 8px; flex-wrap: nowrap; padding: 12px; border-radius: 8px;"
+    width="100%"
+  >
+    <div
+      style="display: flex; flex: 1; flex-wrap: wrap; align-items: center; gap: 8px; width: 100%;"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-advanced"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-advanced"
+          id="pill-text-test-id-advanced"
+        >
+          <span
+            class="emotion-6 emotion-7"
+            opacity="1"
+            style="cursor: pointer;"
+          >
+            Advanced filter
+          </span>
+          <span
+            class="emotion-8 emotion-7"
+            opacity="1"
+            style="cursor: pointer;"
+          >
+             
+            is all of
+             
+          </span>
+          <span
+            class="emotion-6 emotion-7"
+            opacity="1"
+            style="cursor: pointer;"
+          >
+            2 Rules
+          </span>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-advanced"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-ActualCompletedDate"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-ActualCompletedDate"
+          id="pill-text-test-id-ActualCompletedDate"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-ActualCompletedDate-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Actual completed date
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is on or after
+            </span>
+             
+            Feb-01-2023 06:00 PM
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-ActualCompletedDate"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-ActualDuration"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-ActualDuration"
+          id="pill-text-test-id-ActualDuration"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-ActualDuration-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Actual duration
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is not
+            </span>
+             
+            60
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-ActualDuration"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-active-editing"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-active-editing"
+          id="pill-text-test-id-active-editing"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-Comments-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Comments
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              contains
+            </span>
+             
+            gggg
+          </div>
+        </span>
+        <div
+          class=""
+          style="display: inline-block; flex-shrink: 0; margin-left: 4px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-chevron-down-V4"
+            id="pill-dot-test-id-active-editing"
+            tabindex="0"
+          >
+            <svg
+              aria-label="chevron-down-V4 icon"
+              data-testid="svg-icon-svg-chevron-down-V4"
+              fill="currentColor"
+              height="12px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 20 20"
+              width="12px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-FollowUpFromActivityNo"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-FollowUpFromActivityNo"
+          id="pill-text-test-id-FollowUpFromActivityNo"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-FollowUpFromActivityNo-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Follow up from activity no
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              greater than
+            </span>
+             
+            4
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-FollowUpFromActivityNo"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-IsAllDayAppointment"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-IsAllDayAppointment"
+          id="pill-text-test-id-IsAllDayAppointment"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-IsAllDayAppointment-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Is all day appointment
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is
+            </span>
+             
+            True
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-IsAllDayAppointment"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-2 emotion-3"
+        id="test-id-IsChangedOccurrence"
+        style="max-width: 280px;"
+      >
+        <span
+          class="pill-text emotion-4 emotion-5"
+          data-testid="pill-text-test-id-IsChangedOccurrence"
+          id="pill-text-test-id-IsChangedOccurrence"
+        >
+          <div
+            class="emotion-18 emotion-19"
+            data-tooltip-id="test-id-chips-tooltip"
+            id="test-id-IsChangedOccurrence-label"
+            opacity="1"
+            style="cursor: pointer; overflow: hidden; text-overflow: ellipsis;"
+          >
+            Is changed occurrence
+             
+            <span
+              class="emotion-8 emotion-7"
+              opacity="1"
+              style="cursor: pointer;"
+            >
+              is
+            </span>
+             
+            Changed
+          </div>
+        </span>
+        <div
+          class=""
+          style="margin-left: 8px;"
+        >
+          <span
+            class="emotion-12 emotion-13"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-close-V4"
+            id="pill-remove-test-id-IsChangedOccurrence"
+            tabindex="0"
+          >
+            <svg
+              aria-label="close-V4 icon"
+              data-testid="svg-icon-svg-close-V4"
+              fill="currentColor"
+              height="8px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="8px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class=""
+        data-tooltip-html="Add filter"
+        data-tooltip-id="test-id-button-add-chips-tooltip"
+        style="width: 22px; visibility: visible;"
+      >
+        <span
+          class="emotion-74 emotion-13"
+          color="currentColor"
+          data-testid="svg-icon-wrapper-plus"
+          id="test-id-button-add"
+          tabindex="0"
+        >
+          <svg
+            aria-label="plus icon"
+            data-testid="svg-icon-svg-plus"
+            fill="currentColor"
+            height="12px"
+            preserveAspectRatio="none"
+            role="img"
+            viewBox="0 0 1024 1024"
+            width="12px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M 980.52833,492.27645 H 532.52835 V 44.276394 c 0,-11.776 -9.557,-21.333 -21.333,-21.333 -11.776,0 -21.333,9.557 -21.333,21.333 V 492.27645 H 41.862305 c -11.776,0 -21.333,9.557 -21.333,21.333 0,11.776 9.557,21.333 21.333,21.333 H 489.86235 v 448.00003 c 0,11.776 9.557,21.33282 21.333,21.33282 11.776,0 21.333,-9.55682 21.333,-21.33282 V 534.94245 h 447.99998 c 11.776,0 21.33297,-9.557 21.33297,-21.333 0,-11.776 -9.55697,-21.333 -21.33297,-21.333 z"
+              stroke="inherit"
+              stroke-width=""
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-id-popover-container"
+    style="position: absolute; z-index: 1000; padding: 0px; width: 280px; height: auto; max-height: 400px; visibility: hidden; transition: all 0.3s ease-in-out; top: 48px; left: 16px; transform-origin: -16px 0px;"
+    width="100%"
+  >
+    <div
+      class="emotion-0 emotion-1"
+      height="unset"
+      style="border: 1px solid #bacad0; border-radius: 8px; gap: 8px; max-height: 400px; padding: 8px;"
+      width="100%"
+    >
+      <div
+        id="test-id-header"
+        style="display: flex; align-items: center;"
+      >
+        <span
+          class="emotion-80 emotion-7"
+          font-size="small"
+          opacity="1"
+          style="padding-right: 4px;"
+        >
+          Comments
+        </span>
+        <div>
+          <div
+            role="button"
+            style="display: flex; align-items: center; border: 1px solid #ffffff; border-radius: 2px; padding: 0px 4px; gap: 2px;"
+            tabindex="0"
+          >
+            <span
+              class="emotion-82 emotion-7"
+              font-size="small"
+              id="test-id-condition-label"
+              opacity="1"
+            >
+              contains
+            </span>
+            <div
+              class=""
+            >
+              <span
+                class="emotion-84 emotion-13"
+                color="#545F67"
+                data-testid="svg-icon-wrapper-chevron-down-V4"
+              >
+                <svg
+                  aria-label="chevron-down-V4 icon"
+                  data-testid="svg-icon-svg-chevron-down-V4"
+                  fill="#545F67"
+                  height="16px"
+                  preserveAspectRatio="none"
+                  role="img"
+                  viewBox="0 0 20 20"
+                  width="16px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                    stroke="inherit"
+                    stroke-width=""
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          style="flex-grow: 1;"
+        />
+        <div
+          class=""
+        >
+          <span
+            class="emotion-86 emotion-13"
+            color="#545F67"
+            data-testid="svg-icon-wrapper-settings"
+            id="test-id-advanced-edit"
+            tabindex="0"
+          >
+            <svg
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                class="nc-icon-wrapper"
+                fill="none"
+                stroke="#545F67"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+              >
+                <path
+                  class="a"
+                  d="M1.501 0.5H14.501A1 1 0 0 1 15.501 1.5V14.5A1 1 0 0 1 14.501 15.5H1.501A1 1 0 0 1 0.501 14.5V1.5A1 1 0 0 1 1.501 0.5z"
+                  height="22.5"
+                  rx="1.5"
+                  ry="1.5"
+                  width="22.5"
+                  x="0.751"
+                  y="0.75"
+                />
+                <path
+                  class="a"
+                  d="M8.501 10.5h4m-9 0h2"
+                />
+                <path
+                  class="b"
+                  d="M8.501 10.5A1.5 1.5 0 1 1 7 9a1.5 1.5 0 0 1 1.501 1.5z"
+                />
+                <path
+                  class="a"
+                  d="M9.501 5.5h-6"
+                />
+                <path
+                  class="b"
+                  d="M12.501 5.5A1.5 1.5 0 1 0 11 7a1.501 1.501 0 0 0 1.501 -1.5z"
+                />
+              </g>
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-88 emotion-89"
+      >
+        <div
+          class="emotion-90 emotion-91"
+          id="test-id-value-selector-value-TextInput"
+          role="none"
+          style="background-color: rgb(255, 255, 255);"
+          width="100%"
+        >
+          <div
+            class="emotion-92 emotion-93"
+            for="test-id-value-selector-value-Input"
+            id="test-id-value-selector-value-input-caption-Caption"
+          >
+            Value
+          </div>
+          <div
+            class="emotion-94 emotion-95"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Value"
+              autocomplete="chrome-off"
+              data-testid="test-id-value-selector-value-Input"
+              id="test-id-value-selector-value-Input"
+              style="font-size: 13px;"
+              tabindex="0"
+              type="text"
+              value="gggg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

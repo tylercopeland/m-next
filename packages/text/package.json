@@ -1,0 +1,37 @@
+{
+  "name": "@m-next/text",
+  "private": true,
+  "version": "1.0.0",
+  "description": "M-One Text Component",
+  "main": "src/index.ts",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "index"
+  ],
+  "scripts": {
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "build": "npm run prettify && npm run lint && npm run test && npm run check-types && webpack --mode production",
+    "check-types": "tsc --noemit",
+    "prettify": "npx prettier \"**/*.*(js|jsx|ts|tsx)\" --ignore-path=.prettierignore --write --log-level=error",
+    "release": "npm build && npm publish build --tag next",
+    "test": "jest",
+    "test-snapshot-update": "npm run test -- -u",
+    "test-storybook": "jest --json --outputFile=.jest-test-results.json",
+    "lint-js": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --cache --report-unused-disable-directives --max-warnings=0",
+    "lint-ls": "npx ls-lint",
+    "lint": "npm run lint-js && npm run lint-ls",
+    "lint-fix": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix --cache --report-unused-disable-directives --max-warnings=0",
+    "type-check": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}

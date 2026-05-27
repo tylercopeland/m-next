@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuickEdit Snapshots Edit Text expression 1`] = `<div />`;
+
+exports[`QuickEdit Snapshots Empty 1`] = `<div />`;
+
+exports[`QuickEdit Snapshots No controls 1`] = `<div />`;
+
+exports[`QuickEdit Snapshots No fields 1`] = `<div />`;
+
+exports[`QuickEdit Snapshots Unmatched control 1`] = `<div />`;

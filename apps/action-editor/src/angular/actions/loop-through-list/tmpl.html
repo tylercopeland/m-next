@@ -1,0 +1,26 @@
+<div data-ng-controller="LoopThroughListCtrl">
+  <mi-action-description info="action"></mi-action-description>
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content">
+    <!-- Control Selection -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Select a control</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <mi-complex-value
+          action="action"
+          model="action.Source"
+          allow="allow"
+          error-code="action.Source.ValidationMessage"
+          is-read-only="action.isReadOnly"
+        >
+        </mi-complex-value>
+      </div>
+    </div>
+    <!--/ Control Selection -->
+  </div>
+  <!--/ Main Content Area -->
+
+  <mi-action-notes is-read-only="action.isReadOnly"></mi-action-notes>
+</div>

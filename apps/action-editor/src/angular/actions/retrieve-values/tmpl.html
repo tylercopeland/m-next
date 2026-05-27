@@ -1,0 +1,117 @@
+<div data-ng-controller="RetrieveValuesCtrl">
+    <mi-action-description info="action" show-back="criteriaBuilder" back-button="toggleCriteriaBuilder()"></mi-action-description>
+
+    <!-- Main Content Area -->
+    <div class="mi-ae-main-content" data-ng-show="!criteriaBuilder">
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-4">
+                <label class="mi-ae-label">Select a table</label>
+            </div>
+            <div class="mi-ae-col-8" mi-validation-class="action.ValidationMessages" error-property="'ViewNameFriendly'">
+                <ui-select data-ng-model="action.ViewNameFriendly" theme="selectize" ng-disabled="action.isReadOnly">
+                    <ui-select-match placeholder="Select a table...">{{$select.selected.value}}</ui-select-match>
+                    <ui-select-choices repeat="table.value as table in tables | filter: $select.search">
+                        <span ng-bind-html="table.value | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+        <!--/ Table -->
+        <!-- Loading -->
+        <div class="mi-ae-row" data-ng-if="isLoading">
+            <div class="mi-ae-col-8 mi-ae-col-push-4 mi-ae-padding-5">
+                <label class="mi-ae-label">Please wait loading...</label>
+            </div>
+        </div>
+        <!--/ Loader -->
+        <!-- Where Statement -->
+        <div data-ng-show="canContinue">
+            <h3>Define Record Selection Criteria</h3>
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-4">
+                    <label class="mi-ae-label">Where</label>
+                </div>
+                <div class="mi-ae-col-8" mi-validation-class="action.ValidationMessages" error-property="'WhereClause'">
+                    <mi-criteria-string where-clause="action.WhereClause"></mi-criteria-string>
+                    <miae-button button-class="'ghost mi-button-clear mi-ae-margin-0 mi-ae-padding-l-0'" clickevent="toggleCriteriaBuilder()" name="criteriaButton"></miae-button>
+                </div>
+            </div>
+            <!--/ Where Statement -->
+            <!-- If Multiple Results -->
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-4">
+                    <label class="mi-ae-label">If multiple results retrieve</label>
+                </div>
+                <div class="mi-ae-col-10">
+                    <ui-select data-ng-model="action.AggregationType" theme="selectize" search-enabled="false" ng-disabled="action.isReadOnly">
+                        <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+                        <ui-select-choices repeat="opt.value as opt in action.aggregateTypes">
+                            <span ng-bind-html="opt.label | highlight: $select.search"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+            <!--/ If Multiple Results -->
+        </div>
+        <!-- Step 2 -->
+        <div data-ng-if="canContinue">
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-5">
+                    <label class="mi-ae-label mi-ae-margin-b-0">Field(s) to retrieve</label>
+                </div>
+                <div class="mi-ae-col-9">
+                    <label class="mi-ae-label mi-ae-margin-b-0 ">Place the value here</label>
+                </div>
+            </div>
+            <!-- Field List -->
+            <div class="mi-ae-row table-row" data-ng-class="{'alt-row': $odd}" data-ng-repeat="item in action.Bindings">
+                <div class="mi-ae-col-5" mi-validation-class="item.ValidationMessages" error-property="'FieldName'">
+                    <mi-field-select value="item.FieldName"
+                                     hide-required="false"
+                                     enable-search="(item.Required) ? !item.Required : true"
+                                     required-only="item.Required"
+                                     on-select="setUsedFields()"
+                                     used-fields="usedFields" 
+                                     table-name="action.ViewNameFriendly" disable-select="action.isReadOnly"></mi-field-select>
+                </div>
+                <div class="mi-ae-col-9">
+                    <mi-result-to-set action="action"
+                                      include-controls="true"
+                                      control-model="item.ControlToUpdate"
+                                      controls-ignore="['SEC', 'DOC']"
+                                      col-widths="[4,16]"
+                                      hide-label="true"
+                                      hide-store-in="false"
+                                      item="item.ResultToSet" is-read-only ="action.isReadOnly"></mi-result-to-set>
+                </div>
+
+                <div class="mi-ae-col-2" data-ng-if="!item.Required && !action.isReadOnly">
+                    <miae-button 
+                        button-class="'ghost mi-button-clear mi-ae-margin-0'" 
+                        clickevent="removeItem($index)"
+                        svg-icon-type="'delete'" 
+                        svg-icon-size="14"></miae-button>
+                </div>
+            </div>
+            <!--/ Field List -->
+            <miae-button name="' Add another field'" 
+                       data-ng-if="tableFields.length > action.Bindings.length && !action.isReadOnly"
+                       button-class="'ghost mi-button-clear mi-ae-margin-l-0'"
+                       clickevent="addItem()"
+                       svg-icon-type="'circle-plus'" 
+                       svg-icon-size="14"></miae-button>
+        </div>
+        <!--/ Step 2 -->
+    </div>
+    <!--/ Main Content Area -->
+
+    <div class="mi-ae-main-content" data-ng-if="criteriaBuilder">
+        <miae-criteria-builder 
+            action="action" 
+            where-clause="action.WhereClause" 
+            fields-only="true" 
+            table-name="action.ViewNameFriendly" is-read-only ="action.isReadOnly"></miae-criteria-builder>
+    </div>
+
+     <mi-action-notes  is-read-only ="action.isReadOnly"></mi-action-notes>
+</div>

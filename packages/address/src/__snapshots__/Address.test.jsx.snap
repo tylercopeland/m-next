@@ -1,0 +1,7323 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Address Block Snapshots All Fields 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      123 Fake St
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      APRT 2222
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Box 4
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Whatever goes here
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Left over
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Toronto, Ontario, 90210
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Canada
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots All Fields editable 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-6 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: none;
+}
+
+.emotion-6:hover {
+  border-color: #2A394A;
+}
+
+.emotion-6:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-6::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.emotion-12 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  border: 1px solid #BACAD0;
+  border-radius: 4px;
+}
+
+.emotion-14:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14:focus {
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #2A394A;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-14.emotion-14.emotion-14 input:focus {
+  border-color: #BACAD0;
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-1"
+      height="unset"
+      style="gap: 12px; padding: 0px;"
+      width="100%"
+    >
+      <div
+        class="emotion-4 emotion-5"
+        width="100%"
+      >
+        <textarea
+          aria-label=""
+          class="emotion-6 emotion-7"
+          id="test-address-lines-Input"
+          rows="5"
+          tabindex="0"
+        >
+          123 Fake St
+APRT 2222
+Box 4
+Whatever goes here
+Left over
+        </textarea>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-city-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-city-Input"
+            id="test-address-city-input-caption-Caption"
+          >
+            City
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="City"
+              autocomplete="chrome-off"
+              data-testid="test-address-city-Input"
+              id="test-address-city-Input"
+              tabindex="0"
+              type="text"
+              value="Toronto"
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-state-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-state-Input"
+            id="test-address-state-input-caption-Caption"
+          >
+            State/Province
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="State/Province"
+              autocomplete="chrome-off"
+              data-testid="test-address-state-Input"
+              id="test-address-state-Input"
+              tabindex="0"
+              type="text"
+              value="Ontario"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-postalcode-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-postalcode-Input"
+            id="test-address-postalcode-input-caption-Caption"
+          >
+            Zip/Postal Code
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Zip/Postal Code"
+              autocomplete="chrome-off"
+              data-testid="test-address-postalcode-Input"
+              id="test-address-postalcode-Input"
+              tabindex="0"
+              type="text"
+              value="90210"
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-country-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-country-Input"
+            id="test-address-country-input-caption-Caption"
+          >
+            Country
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Country"
+              autocomplete="chrome-off"
+              data-testid="test-address-country-Input"
+              id="test-address-country-Input"
+              tabindex="0"
+              type="text"
+              value="Canada"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots City 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      123 Fake St
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      APRT 2222
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Box 4
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Whatever goes here
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Left over
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Ontario, 90210
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Canada
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots City editable 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-6 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: none;
+}
+
+.emotion-6:hover {
+  border-color: #2A394A;
+}
+
+.emotion-6:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-6::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.emotion-12 {
+  display: inline-block;
+  width: auto;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 2;
+  -webkit-transform: translateY(9px);
+  -moz-transform: translateY(9px);
+  -ms-transform: translateY(9px);
+  transform: translateY(9px);
+  line-height: 14px;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  border: 1px solid #BACAD0;
+  border-radius: 4px;
+}
+
+.emotion-14:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14:focus {
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #2A394A;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-14.emotion-14.emotion-14 input:focus {
+  border-color: #BACAD0;
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-18 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-1"
+      height="unset"
+      style="gap: 12px; padding: 0px;"
+      width="100%"
+    >
+      <div
+        class="emotion-4 emotion-5"
+        width="100%"
+      >
+        <textarea
+          aria-label=""
+          class="emotion-6 emotion-7"
+          id="test-address-lines-Input"
+          rows="5"
+          tabindex="0"
+        >
+          123 Fake St
+APRT 2222
+Box 4
+Whatever goes here
+Left over
+        </textarea>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-city-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-city-Input"
+            id="test-address-city-input-caption-Caption"
+          >
+            City
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="City"
+              autocomplete="chrome-off"
+              data-testid="test-address-city-Input"
+              id="test-address-city-Input"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-state-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-18 emotion-13"
+            for="test-address-state-Input"
+            id="test-address-state-input-caption-Caption"
+          >
+            State/Province
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="State/Province"
+              autocomplete="chrome-off"
+              data-testid="test-address-state-Input"
+              id="test-address-state-Input"
+              tabindex="0"
+              type="text"
+              value="Ontario"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-postalcode-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-18 emotion-13"
+            for="test-address-postalcode-Input"
+            id="test-address-postalcode-input-caption-Caption"
+          >
+            Zip/Postal Code
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Zip/Postal Code"
+              autocomplete="chrome-off"
+              data-testid="test-address-postalcode-Input"
+              id="test-address-postalcode-Input"
+              tabindex="0"
+              type="text"
+              value="90210"
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-country-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-18 emotion-13"
+            for="test-address-country-Input"
+            id="test-address-country-input-caption-Caption"
+          >
+            Country
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Country"
+              autocomplete="chrome-off"
+              data-testid="test-address-country-Input"
+              id="test-address-country-Input"
+              tabindex="0"
+              type="text"
+              value="Canada"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Loading 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <span
+      aria-busy="true"
+      aria-live="polite"
+    >
+      <span
+        class="react-loading-skeleton"
+        style="margin-bottom: 2px; height: 14px;"
+      >
+        ‌
+      </span>
+      <br />
+      <span
+        class="react-loading-skeleton"
+        style="margin-bottom: 2px; height: 14px;"
+      >
+        ‌
+      </span>
+      <br />
+      <span
+        class="react-loading-skeleton"
+        style="margin-bottom: 2px; height: 14px;"
+      >
+        ‌
+      </span>
+      <br />
+      <span
+        class="react-loading-skeleton"
+        style="margin-bottom: 2px; height: 14px;"
+      >
+        ‌
+      </span>
+      <br />
+      <span
+        class="react-loading-skeleton"
+        style="margin-bottom: 2px; height: 14px;"
+      >
+        ‌
+      </span>
+      <br />
+      <span
+        class="react-loading-skeleton"
+        style="margin-bottom: 2px; height: 14px;"
+      >
+        ‌
+      </span>
+      <br />
+      <span
+        class="react-loading-skeleton"
+        style="margin-bottom: 2px; height: 14px;"
+      >
+        ‌
+      </span>
+      <br />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Loading editable 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <span
+      aria-busy="true"
+      aria-live="polite"
+    >
+      <span
+        class="react-loading-skeleton"
+        style="margin-bottom: 2px; height: 14px;"
+      >
+        ‌
+      </span>
+      <br />
+      <span
+        class="react-loading-skeleton"
+        style="margin-bottom: 2px; height: 14px;"
+      >
+        ‌
+      </span>
+      <br />
+      <span
+        class="react-loading-skeleton"
+        style="margin-bottom: 2px; height: 14px;"
+      >
+        ‌
+      </span>
+      <br />
+      <span
+        class="react-loading-skeleton"
+        style="margin-bottom: 2px; height: 14px;"
+      >
+        ‌
+      </span>
+      <br />
+      <span
+        class="react-loading-skeleton"
+        style="margin-bottom: 2px; height: 14px;"
+      >
+        ‌
+      </span>
+      <br />
+      <span
+        class="react-loading-skeleton"
+        style="margin-bottom: 2px; height: 14px;"
+      >
+        ‌
+      </span>
+      <br />
+      <span
+        class="react-loading-skeleton"
+        style="margin-bottom: 2px; height: 14px;"
+      >
+        ‌
+      </span>
+      <br />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing City and Postcode  editable 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-6 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: none;
+}
+
+.emotion-6:hover {
+  border-color: #2A394A;
+}
+
+.emotion-6:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-6::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.emotion-12 {
+  display: inline-block;
+  width: auto;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 2;
+  -webkit-transform: translateY(9px);
+  -moz-transform: translateY(9px);
+  -ms-transform: translateY(9px);
+  transform: translateY(9px);
+  line-height: 14px;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  border: 1px solid #BACAD0;
+  border-radius: 4px;
+}
+
+.emotion-14:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14:focus {
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #2A394A;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-14.emotion-14.emotion-14 input:focus {
+  border-color: #BACAD0;
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-18 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-1"
+      height="unset"
+      style="gap: 12px; padding: 0px;"
+      width="100%"
+    >
+      <div
+        class="emotion-4 emotion-5"
+        width="100%"
+      >
+        <textarea
+          aria-label=""
+          class="emotion-6 emotion-7"
+          id="test-address-lines-Input"
+          rows="5"
+          tabindex="0"
+        >
+          123 Fake St
+APRT 2222
+Box 4
+Whatever goes here
+Left over
+        </textarea>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-city-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-city-Input"
+            id="test-address-city-input-caption-Caption"
+          >
+            City
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="City"
+              autocomplete="chrome-off"
+              data-testid="test-address-city-Input"
+              id="test-address-city-Input"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-state-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-18 emotion-13"
+            for="test-address-state-Input"
+            id="test-address-state-input-caption-Caption"
+          >
+            State/Province
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="State/Province"
+              autocomplete="chrome-off"
+              data-testid="test-address-state-Input"
+              id="test-address-state-Input"
+              tabindex="0"
+              type="text"
+              value="Ontario"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-postalcode-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-postalcode-Input"
+            id="test-address-postalcode-input-caption-Caption"
+          >
+            Zip/Postal Code
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Zip/Postal Code"
+              autocomplete="chrome-off"
+              data-testid="test-address-postalcode-Input"
+              id="test-address-postalcode-Input"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-country-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-18 emotion-13"
+            for="test-address-country-Input"
+            id="test-address-country-input-caption-Caption"
+          >
+            Country
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Country"
+              autocomplete="chrome-off"
+              data-testid="test-address-country-Input"
+              id="test-address-country-Input"
+              tabindex="0"
+              type="text"
+              value="Canada"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing City and Postcode 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      123 Fake St
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      APRT 2222
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Box 4
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Whatever goes here
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Left over
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Ontario
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Canada
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing City and State  editable 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-6 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: none;
+}
+
+.emotion-6:hover {
+  border-color: #2A394A;
+}
+
+.emotion-6:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-6::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.emotion-12 {
+  display: inline-block;
+  width: auto;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 2;
+  -webkit-transform: translateY(9px);
+  -moz-transform: translateY(9px);
+  -ms-transform: translateY(9px);
+  transform: translateY(9px);
+  line-height: 14px;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  border: 1px solid #BACAD0;
+  border-radius: 4px;
+}
+
+.emotion-14:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14:focus {
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #2A394A;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-14.emotion-14.emotion-14 input:focus {
+  border-color: #BACAD0;
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-26 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-1"
+      height="unset"
+      style="gap: 12px; padding: 0px;"
+      width="100%"
+    >
+      <div
+        class="emotion-4 emotion-5"
+        width="100%"
+      >
+        <textarea
+          aria-label=""
+          class="emotion-6 emotion-7"
+          id="test-address-lines-Input"
+          rows="5"
+          tabindex="0"
+        >
+          123 Fake St
+APRT 2222
+Box 4
+Whatever goes here
+Left over
+        </textarea>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-city-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-city-Input"
+            id="test-address-city-input-caption-Caption"
+          >
+            City
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="City"
+              autocomplete="chrome-off"
+              data-testid="test-address-city-Input"
+              id="test-address-city-Input"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-state-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-state-Input"
+            id="test-address-state-input-caption-Caption"
+          >
+            State/Province
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="State/Province"
+              autocomplete="chrome-off"
+              data-testid="test-address-state-Input"
+              id="test-address-state-Input"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-postalcode-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-26 emotion-13"
+            for="test-address-postalcode-Input"
+            id="test-address-postalcode-input-caption-Caption"
+          >
+            Zip/Postal Code
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Zip/Postal Code"
+              autocomplete="chrome-off"
+              data-testid="test-address-postalcode-Input"
+              id="test-address-postalcode-Input"
+              tabindex="0"
+              type="text"
+              value="90210"
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-country-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-26 emotion-13"
+            for="test-address-country-Input"
+            id="test-address-country-input-caption-Caption"
+          >
+            Country
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Country"
+              autocomplete="chrome-off"
+              data-testid="test-address-country-Input"
+              id="test-address-country-Input"
+              tabindex="0"
+              type="text"
+              value="Canada"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing City and State 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      123 Fake St
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      APRT 2222
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Box 4
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Whatever goes here
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Left over
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      90210
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Canada
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing City, State and Postcode  editable 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-6 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: none;
+}
+
+.emotion-6:hover {
+  border-color: #2A394A;
+}
+
+.emotion-6:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-6::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.emotion-12 {
+  display: inline-block;
+  width: auto;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 2;
+  -webkit-transform: translateY(9px);
+  -moz-transform: translateY(9px);
+  -ms-transform: translateY(9px);
+  transform: translateY(9px);
+  line-height: 14px;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  border: 1px solid #BACAD0;
+  border-radius: 4px;
+}
+
+.emotion-14:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14:focus {
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #2A394A;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-14.emotion-14.emotion-14 input:focus {
+  border-color: #BACAD0;
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-32 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-1"
+      height="unset"
+      style="gap: 12px; padding: 0px;"
+      width="100%"
+    >
+      <div
+        class="emotion-4 emotion-5"
+        width="100%"
+      >
+        <textarea
+          aria-label=""
+          class="emotion-6 emotion-7"
+          id="test-address-lines-Input"
+          rows="5"
+          tabindex="0"
+        >
+          123 Fake St
+APRT 2222
+Box 4
+Whatever goes here
+Left over
+        </textarea>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-city-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-city-Input"
+            id="test-address-city-input-caption-Caption"
+          >
+            City
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="City"
+              autocomplete="chrome-off"
+              data-testid="test-address-city-Input"
+              id="test-address-city-Input"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-state-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-state-Input"
+            id="test-address-state-input-caption-Caption"
+          >
+            State/Province
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="State/Province"
+              autocomplete="chrome-off"
+              data-testid="test-address-state-Input"
+              id="test-address-state-Input"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-postalcode-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-postalcode-Input"
+            id="test-address-postalcode-input-caption-Caption"
+          >
+            Zip/Postal Code
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Zip/Postal Code"
+              autocomplete="chrome-off"
+              data-testid="test-address-postalcode-Input"
+              id="test-address-postalcode-Input"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-country-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-32 emotion-13"
+            for="test-address-country-Input"
+            id="test-address-country-input-caption-Caption"
+          >
+            Country
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Country"
+              autocomplete="chrome-off"
+              data-testid="test-address-country-Input"
+              id="test-address-country-Input"
+              tabindex="0"
+              type="text"
+              value="Canada"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing City, State and Postcode 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      123 Fake St
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      APRT 2222
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Box 4
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Whatever goes here
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Left over
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Canada
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing Line1 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      APRT 2222
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Box 4
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Whatever goes here
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Left over
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Toronto, Ontario, 90210
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Canada
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing Line1 editable 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-6 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: none;
+}
+
+.emotion-6:hover {
+  border-color: #2A394A;
+}
+
+.emotion-6:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-6::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.emotion-12 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  border: 1px solid #BACAD0;
+  border-radius: 4px;
+}
+
+.emotion-14:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14:focus {
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #2A394A;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-14.emotion-14.emotion-14 input:focus {
+  border-color: #BACAD0;
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-1"
+      height="unset"
+      style="gap: 12px; padding: 0px;"
+      width="100%"
+    >
+      <div
+        class="emotion-4 emotion-5"
+        width="100%"
+      >
+        <textarea
+          aria-label=""
+          class="emotion-6 emotion-7"
+          id="test-address-lines-Input"
+          rows="5"
+          tabindex="0"
+        >
+          APRT 2222
+Box 4
+Whatever goes here
+Left over
+        </textarea>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-city-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-city-Input"
+            id="test-address-city-input-caption-Caption"
+          >
+            City
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="City"
+              autocomplete="chrome-off"
+              data-testid="test-address-city-Input"
+              id="test-address-city-Input"
+              tabindex="0"
+              type="text"
+              value="Toronto"
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-state-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-state-Input"
+            id="test-address-state-input-caption-Caption"
+          >
+            State/Province
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="State/Province"
+              autocomplete="chrome-off"
+              data-testid="test-address-state-Input"
+              id="test-address-state-Input"
+              tabindex="0"
+              type="text"
+              value="Ontario"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-postalcode-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-postalcode-Input"
+            id="test-address-postalcode-input-caption-Caption"
+          >
+            Zip/Postal Code
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Zip/Postal Code"
+              autocomplete="chrome-off"
+              data-testid="test-address-postalcode-Input"
+              id="test-address-postalcode-Input"
+              tabindex="0"
+              type="text"
+              value="90210"
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-country-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-country-Input"
+            id="test-address-country-input-caption-Caption"
+          >
+            Country
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Country"
+              autocomplete="chrome-off"
+              data-testid="test-address-country-Input"
+              id="test-address-country-Input"
+              tabindex="0"
+              type="text"
+              value="Canada"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing Line2 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      123 Fake St
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Box 4
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Whatever goes here
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Left over
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Toronto, Ontario, 90210
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Canada
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing Line2 editable 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-6 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: none;
+}
+
+.emotion-6:hover {
+  border-color: #2A394A;
+}
+
+.emotion-6:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-6::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.emotion-12 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  border: 1px solid #BACAD0;
+  border-radius: 4px;
+}
+
+.emotion-14:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14:focus {
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #2A394A;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-14.emotion-14.emotion-14 input:focus {
+  border-color: #BACAD0;
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-1"
+      height="unset"
+      style="gap: 12px; padding: 0px;"
+      width="100%"
+    >
+      <div
+        class="emotion-4 emotion-5"
+        width="100%"
+      >
+        <textarea
+          aria-label=""
+          class="emotion-6 emotion-7"
+          id="test-address-lines-Input"
+          rows="5"
+          tabindex="0"
+        >
+          123 Fake St
+Box 4
+Whatever goes here
+Left over
+        </textarea>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-city-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-city-Input"
+            id="test-address-city-input-caption-Caption"
+          >
+            City
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="City"
+              autocomplete="chrome-off"
+              data-testid="test-address-city-Input"
+              id="test-address-city-Input"
+              tabindex="0"
+              type="text"
+              value="Toronto"
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-state-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-state-Input"
+            id="test-address-state-input-caption-Caption"
+          >
+            State/Province
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="State/Province"
+              autocomplete="chrome-off"
+              data-testid="test-address-state-Input"
+              id="test-address-state-Input"
+              tabindex="0"
+              type="text"
+              value="Ontario"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-postalcode-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-postalcode-Input"
+            id="test-address-postalcode-input-caption-Caption"
+          >
+            Zip/Postal Code
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Zip/Postal Code"
+              autocomplete="chrome-off"
+              data-testid="test-address-postalcode-Input"
+              id="test-address-postalcode-Input"
+              tabindex="0"
+              type="text"
+              value="90210"
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-country-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-country-Input"
+            id="test-address-country-input-caption-Caption"
+          >
+            Country
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Country"
+              autocomplete="chrome-off"
+              data-testid="test-address-country-Input"
+              id="test-address-country-Input"
+              tabindex="0"
+              type="text"
+              value="Canada"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing Line3 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      123 Fake St
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      APRT 2222
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Whatever goes here
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Left over
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Toronto, Ontario, 90210
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Canada
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing Line3 editable 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-6 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: none;
+}
+
+.emotion-6:hover {
+  border-color: #2A394A;
+}
+
+.emotion-6:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-6::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.emotion-12 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  border: 1px solid #BACAD0;
+  border-radius: 4px;
+}
+
+.emotion-14:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14:focus {
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #2A394A;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-14.emotion-14.emotion-14 input:focus {
+  border-color: #BACAD0;
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-1"
+      height="unset"
+      style="gap: 12px; padding: 0px;"
+      width="100%"
+    >
+      <div
+        class="emotion-4 emotion-5"
+        width="100%"
+      >
+        <textarea
+          aria-label=""
+          class="emotion-6 emotion-7"
+          id="test-address-lines-Input"
+          rows="5"
+          tabindex="0"
+        >
+          123 Fake St
+APRT 2222
+Whatever goes here
+Left over
+        </textarea>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-city-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-city-Input"
+            id="test-address-city-input-caption-Caption"
+          >
+            City
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="City"
+              autocomplete="chrome-off"
+              data-testid="test-address-city-Input"
+              id="test-address-city-Input"
+              tabindex="0"
+              type="text"
+              value="Toronto"
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-state-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-state-Input"
+            id="test-address-state-input-caption-Caption"
+          >
+            State/Province
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="State/Province"
+              autocomplete="chrome-off"
+              data-testid="test-address-state-Input"
+              id="test-address-state-Input"
+              tabindex="0"
+              type="text"
+              value="Ontario"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-postalcode-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-postalcode-Input"
+            id="test-address-postalcode-input-caption-Caption"
+          >
+            Zip/Postal Code
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Zip/Postal Code"
+              autocomplete="chrome-off"
+              data-testid="test-address-postalcode-Input"
+              id="test-address-postalcode-Input"
+              tabindex="0"
+              type="text"
+              value="90210"
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-country-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-country-Input"
+            id="test-address-country-input-caption-Caption"
+          >
+            Country
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Country"
+              autocomplete="chrome-off"
+              data-testid="test-address-country-Input"
+              id="test-address-country-Input"
+              tabindex="0"
+              type="text"
+              value="Canada"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing Line4 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      123 Fake St
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      APRT 2222
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Box 4
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Left over
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Toronto, Ontario, 90210
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Canada
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing Line4 editable 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-6 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: none;
+}
+
+.emotion-6:hover {
+  border-color: #2A394A;
+}
+
+.emotion-6:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-6::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.emotion-12 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  border: 1px solid #BACAD0;
+  border-radius: 4px;
+}
+
+.emotion-14:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14:focus {
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #2A394A;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-14.emotion-14.emotion-14 input:focus {
+  border-color: #BACAD0;
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-1"
+      height="unset"
+      style="gap: 12px; padding: 0px;"
+      width="100%"
+    >
+      <div
+        class="emotion-4 emotion-5"
+        width="100%"
+      >
+        <textarea
+          aria-label=""
+          class="emotion-6 emotion-7"
+          id="test-address-lines-Input"
+          rows="5"
+          tabindex="0"
+        >
+          123 Fake St
+APRT 2222
+Box 4
+Left over
+        </textarea>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-city-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-city-Input"
+            id="test-address-city-input-caption-Caption"
+          >
+            City
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="City"
+              autocomplete="chrome-off"
+              data-testid="test-address-city-Input"
+              id="test-address-city-Input"
+              tabindex="0"
+              type="text"
+              value="Toronto"
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-state-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-state-Input"
+            id="test-address-state-input-caption-Caption"
+          >
+            State/Province
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="State/Province"
+              autocomplete="chrome-off"
+              data-testid="test-address-state-Input"
+              id="test-address-state-Input"
+              tabindex="0"
+              type="text"
+              value="Ontario"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-postalcode-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-postalcode-Input"
+            id="test-address-postalcode-input-caption-Caption"
+          >
+            Zip/Postal Code
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Zip/Postal Code"
+              autocomplete="chrome-off"
+              data-testid="test-address-postalcode-Input"
+              id="test-address-postalcode-Input"
+              tabindex="0"
+              type="text"
+              value="90210"
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-country-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-country-Input"
+            id="test-address-country-input-caption-Caption"
+          >
+            Country
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Country"
+              autocomplete="chrome-off"
+              data-testid="test-address-country-Input"
+              id="test-address-country-Input"
+              tabindex="0"
+              type="text"
+              value="Canada"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing Line5 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      123 Fake St
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      APRT 2222
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Box 4
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Whatever goes here
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Left over
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Toronto, Ontario, 90210
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Canada
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing Line5 editable 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-6 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: none;
+}
+
+.emotion-6:hover {
+  border-color: #2A394A;
+}
+
+.emotion-6:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-6::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.emotion-12 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  border: 1px solid #BACAD0;
+  border-radius: 4px;
+}
+
+.emotion-14:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14:focus {
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #2A394A;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-14.emotion-14.emotion-14 input:focus {
+  border-color: #BACAD0;
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-1"
+      height="unset"
+      style="gap: 12px; padding: 0px;"
+      width="100%"
+    >
+      <div
+        class="emotion-4 emotion-5"
+        width="100%"
+      >
+        <textarea
+          aria-label=""
+          class="emotion-6 emotion-7"
+          id="test-address-lines-Input"
+          rows="5"
+          tabindex="0"
+        >
+          123 Fake St
+APRT 2222
+Box 4
+Whatever goes here
+Left over
+        </textarea>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-city-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-city-Input"
+            id="test-address-city-input-caption-Caption"
+          >
+            City
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="City"
+              autocomplete="chrome-off"
+              data-testid="test-address-city-Input"
+              id="test-address-city-Input"
+              tabindex="0"
+              type="text"
+              value="Toronto"
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-state-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-state-Input"
+            id="test-address-state-input-caption-Caption"
+          >
+            State/Province
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="State/Province"
+              autocomplete="chrome-off"
+              data-testid="test-address-state-Input"
+              id="test-address-state-Input"
+              tabindex="0"
+              type="text"
+              value="Ontario"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-postalcode-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-postalcode-Input"
+            id="test-address-postalcode-input-caption-Caption"
+          >
+            Zip/Postal Code
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Zip/Postal Code"
+              autocomplete="chrome-off"
+              data-testid="test-address-postalcode-Input"
+              id="test-address-postalcode-Input"
+              tabindex="0"
+              type="text"
+              value="90210"
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-country-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-country-Input"
+            id="test-address-country-input-caption-Caption"
+          >
+            Country
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Country"
+              autocomplete="chrome-off"
+              data-testid="test-address-country-Input"
+              id="test-address-country-Input"
+              tabindex="0"
+              type="text"
+              value="Canada"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing PostCode  editable 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-6 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: none;
+}
+
+.emotion-6:hover {
+  border-color: #2A394A;
+}
+
+.emotion-6:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-6::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.emotion-12 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  border: 1px solid #BACAD0;
+  border-radius: 4px;
+}
+
+.emotion-14:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14:focus {
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #2A394A;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-14.emotion-14.emotion-14 input:focus {
+  border-color: #BACAD0;
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-26 {
+  display: inline-block;
+  width: auto;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 2;
+  -webkit-transform: translateY(9px);
+  -moz-transform: translateY(9px);
+  -ms-transform: translateY(9px);
+  transform: translateY(9px);
+  line-height: 14px;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-1"
+      height="unset"
+      style="gap: 12px; padding: 0px;"
+      width="100%"
+    >
+      <div
+        class="emotion-4 emotion-5"
+        width="100%"
+      >
+        <textarea
+          aria-label=""
+          class="emotion-6 emotion-7"
+          id="test-address-lines-Input"
+          rows="5"
+          tabindex="0"
+        >
+          123 Fake St
+APRT 2222
+Box 4
+Whatever goes here
+Left over
+        </textarea>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-city-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-city-Input"
+            id="test-address-city-input-caption-Caption"
+          >
+            City
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="City"
+              autocomplete="chrome-off"
+              data-testid="test-address-city-Input"
+              id="test-address-city-Input"
+              tabindex="0"
+              type="text"
+              value="Toronto"
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-state-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-state-Input"
+            id="test-address-state-input-caption-Caption"
+          >
+            State/Province
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="State/Province"
+              autocomplete="chrome-off"
+              data-testid="test-address-state-Input"
+              id="test-address-state-Input"
+              tabindex="0"
+              type="text"
+              value="Ontario"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-postalcode-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-26 emotion-13"
+            for="test-address-postalcode-Input"
+            id="test-address-postalcode-input-caption-Caption"
+          >
+            Zip/Postal Code
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Zip/Postal Code"
+              autocomplete="chrome-off"
+              data-testid="test-address-postalcode-Input"
+              id="test-address-postalcode-Input"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-country-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-country-Input"
+            id="test-address-country-input-caption-Caption"
+          >
+            Country
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Country"
+              autocomplete="chrome-off"
+              data-testid="test-address-country-Input"
+              id="test-address-country-Input"
+              tabindex="0"
+              type="text"
+              value="Canada"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing PostCode 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      123 Fake St
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      APRT 2222
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Box 4
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Whatever goes here
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Left over
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Toronto, Ontario
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Canada
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing State and Postcode  editable 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-6 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: none;
+}
+
+.emotion-6:hover {
+  border-color: #2A394A;
+}
+
+.emotion-6:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-6::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.emotion-12 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  border: 1px solid #BACAD0;
+  border-radius: 4px;
+}
+
+.emotion-14:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14:focus {
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #2A394A;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-14.emotion-14.emotion-14 input:focus {
+  border-color: #BACAD0;
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-18 {
+  display: inline-block;
+  width: auto;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 2;
+  -webkit-transform: translateY(9px);
+  -moz-transform: translateY(9px);
+  -ms-transform: translateY(9px);
+  transform: translateY(9px);
+  line-height: 14px;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-1"
+      height="unset"
+      style="gap: 12px; padding: 0px;"
+      width="100%"
+    >
+      <div
+        class="emotion-4 emotion-5"
+        width="100%"
+      >
+        <textarea
+          aria-label=""
+          class="emotion-6 emotion-7"
+          id="test-address-lines-Input"
+          rows="5"
+          tabindex="0"
+        >
+          123 Fake St
+APRT 2222
+Box 4
+Whatever goes here
+Left over
+        </textarea>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-city-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-city-Input"
+            id="test-address-city-input-caption-Caption"
+          >
+            City
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="City"
+              autocomplete="chrome-off"
+              data-testid="test-address-city-Input"
+              id="test-address-city-Input"
+              tabindex="0"
+              type="text"
+              value="Toronto"
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-state-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-18 emotion-13"
+            for="test-address-state-Input"
+            id="test-address-state-input-caption-Caption"
+          >
+            State/Province
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="State/Province"
+              autocomplete="chrome-off"
+              data-testid="test-address-state-Input"
+              id="test-address-state-Input"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-postalcode-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-18 emotion-13"
+            for="test-address-postalcode-Input"
+            id="test-address-postalcode-input-caption-Caption"
+          >
+            Zip/Postal Code
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Zip/Postal Code"
+              autocomplete="chrome-off"
+              data-testid="test-address-postalcode-Input"
+              id="test-address-postalcode-Input"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-country-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-country-Input"
+            id="test-address-country-input-caption-Caption"
+          >
+            Country
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Country"
+              autocomplete="chrome-off"
+              data-testid="test-address-country-Input"
+              id="test-address-country-Input"
+              tabindex="0"
+              type="text"
+              value="Canada"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing State and Postcode 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      123 Fake St
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      APRT 2222
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Box 4
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Whatever goes here
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Left over
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Toronto
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Canada
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing country  editable 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-6 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: none;
+}
+
+.emotion-6:hover {
+  border-color: #2A394A;
+}
+
+.emotion-6:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-6::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.emotion-12 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  border: 1px solid #BACAD0;
+  border-radius: 4px;
+}
+
+.emotion-14:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14:focus {
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #2A394A;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-14.emotion-14.emotion-14 input:focus {
+  border-color: #BACAD0;
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-32 {
+  display: inline-block;
+  width: auto;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 2;
+  -webkit-transform: translateY(9px);
+  -moz-transform: translateY(9px);
+  -ms-transform: translateY(9px);
+  transform: translateY(9px);
+  line-height: 14px;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-1"
+      height="unset"
+      style="gap: 12px; padding: 0px;"
+      width="100%"
+    >
+      <div
+        class="emotion-4 emotion-5"
+        width="100%"
+      >
+        <textarea
+          aria-label=""
+          class="emotion-6 emotion-7"
+          id="test-address-lines-Input"
+          rows="5"
+          tabindex="0"
+        >
+          123 Fake St
+APRT 2222
+Box 4
+Whatever goes here
+Left over
+        </textarea>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-city-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-city-Input"
+            id="test-address-city-input-caption-Caption"
+          >
+            City
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="City"
+              autocomplete="chrome-off"
+              data-testid="test-address-city-Input"
+              id="test-address-city-Input"
+              tabindex="0"
+              type="text"
+              value="Toronto"
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-state-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-state-Input"
+            id="test-address-state-input-caption-Caption"
+          >
+            State/Province
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="State/Province"
+              autocomplete="chrome-off"
+              data-testid="test-address-state-Input"
+              id="test-address-state-Input"
+              tabindex="0"
+              type="text"
+              value="Ontario"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-postalcode-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-postalcode-Input"
+            id="test-address-postalcode-input-caption-Caption"
+          >
+            Zip/Postal Code
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Zip/Postal Code"
+              autocomplete="chrome-off"
+              data-testid="test-address-postalcode-Input"
+              id="test-address-postalcode-Input"
+              tabindex="0"
+              type="text"
+              value="90210"
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-country-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-32 emotion-13"
+            for="test-address-country-Input"
+            id="test-address-country-input-caption-Caption"
+          >
+            Country
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Country"
+              autocomplete="chrome-off"
+              data-testid="test-address-country-Input"
+              id="test-address-country-Input"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing country 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      123 Fake St
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      APRT 2222
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Box 4
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Whatever goes here
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Left over
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Toronto, Ontario, 90210
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing state 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      123 Fake St
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      APRT 2222
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Box 4
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Whatever goes here
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Left over
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Toronto, 90210
+    </p>
+    <p
+      class="emotion-2 emotion-3"
+      opacity="1"
+    >
+      Canada
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Address Block Snapshots Missing state editable 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-6 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  line-height: 16px;
+  color: #2A394A;
+  border: 1px solid #BACAD0;
+  min-height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  overflow-y: auto;
+  resize: none;
+}
+
+.emotion-6:hover {
+  border-color: #2A394A;
+}
+
+.emotion-6:focus {
+  border-color: #0D71C8;
+  outline: none;
+}
+
+.emotion-6::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-6::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  vertical-align: top;
+  margin-bottom: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.emotion-12 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  border: 1px solid #BACAD0;
+  border-radius: 4px;
+}
+
+.emotion-14:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14:focus {
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input {
+  position: relative;
+  z-index: 3;
+  display: block;
+  color: #2A394A;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.emotion-14.emotion-14.emotion-14 input:focus {
+  border-color: #BACAD0;
+  outline: none;
+}
+
+.emotion-14.emotion-14.emotion-14 input:hover {
+  border-color: #2A394A;
+}
+
+.emotion-14 .mi-textinput-prefix {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px;
+  height: 32px;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+.emotion-14 input::-webkit-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::-moz-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input:-ms-input-placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-14 input::placeholder {
+  color: #2A394A;
+  opacity: 0.6;
+}
+
+.emotion-18 {
+  display: inline-block;
+  width: auto;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 2;
+  -webkit-transform: translateY(9px);
+  -moz-transform: translateY(9px);
+  -ms-transform: translateY(9px);
+  transform: translateY(9px);
+  line-height: 14px;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-address-block-container"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-1"
+      height="unset"
+      style="gap: 12px; padding: 0px;"
+      width="100%"
+    >
+      <div
+        class="emotion-4 emotion-5"
+        width="100%"
+      >
+        <textarea
+          aria-label=""
+          class="emotion-6 emotion-7"
+          id="test-address-lines-Input"
+          rows="5"
+          tabindex="0"
+        >
+          123 Fake St
+APRT 2222
+Box 4
+Whatever goes here
+Left over
+        </textarea>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-city-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-city-Input"
+            id="test-address-city-input-caption-Caption"
+          >
+            City
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="City"
+              autocomplete="chrome-off"
+              data-testid="test-address-city-Input"
+              id="test-address-city-Input"
+              tabindex="0"
+              type="text"
+              value="Toronto"
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-state-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-18 emotion-13"
+            for="test-address-state-Input"
+            id="test-address-state-input-caption-Caption"
+          >
+            State/Province
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="State/Province"
+              autocomplete="chrome-off"
+              data-testid="test-address-state-Input"
+              id="test-address-state-Input"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-postalcode-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-postalcode-Input"
+            id="test-address-postalcode-input-caption-Caption"
+          >
+            Zip/Postal Code
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Zip/Postal Code"
+              autocomplete="chrome-off"
+              data-testid="test-address-postalcode-Input"
+              id="test-address-postalcode-Input"
+              tabindex="0"
+              type="text"
+              value="90210"
+            />
+          </div>
+        </div>
+        <div
+          class="emotion-10 emotion-11"
+          id="test-address-country-TextInput"
+          role="none"
+          width="100%"
+        >
+          <div
+            class="emotion-12 emotion-13"
+            for="test-address-country-Input"
+            id="test-address-country-input-caption-Caption"
+          >
+            Country
+          </div>
+          <div
+            class="emotion-14 emotion-15"
+            prefix=""
+          >
+            <input
+              aria-disabled="false"
+              aria-label="Country"
+              autocomplete="chrome-off"
+              data-testid="test-address-country-Input"
+              id="test-address-country-Input"
+              tabindex="0"
+              type="text"
+              value="Canada"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

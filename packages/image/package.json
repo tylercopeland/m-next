@@ -1,0 +1,61 @@
+{
+  "name": "@m-next/image",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Image widget",
+  "keywords": [
+    "informational"
+  ],
+  "author": "Alexander Ballard <a.ballard@method.me>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "src/index.js",
+  "types": "src/image.d.ts",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "index",
+    "image.d.ts"
+  ],
+  "dependencies": {
+    "@m-next/caption": "1.0.0",
+    "@m-next/dialog": "1.0.0",
+    "@m-next/loading-skeleton": "1.0.0",
+    "@m-next/menu": "1.0.0",
+    "@m-next/popover": "^1.0.0",
+    "@m-next/styles": "1.0.0",
+    "@m-next/svg-icon": "1.0.0",
+    "@m-next/utilities": "1.0.0",
+    "@m-next/input": "1.0.0",
+    "react-dropzone": "12.0.4",
+    "react-resize-detector": "^9.1.0",
+    "react-tiff": "^0.0.11",
+    "react-tooltip": "^5.28.0",
+    "framer-motion": "^6.2.8"
+  },
+  "peerDependencies": {
+    "@emotion/react": ">=11.10.5",
+    "@emotion/styled": ">=11.10.5",
+    "prop-types": ">=15.8.1",
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2"
+  },
+  "scripts": {
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "build": "npm run prettify && npm run lint && npm run test &&  webpack --mode production",
+    "prettify": "npx prettier \"**/*.*(js|jsx)\" --ignore-path=.prettierignore --write --log-level=error",
+    "release": "npm build && npm publish build --tag next",
+    "test": "jest",
+    "test-storybook": "jest --json --outputFile=.jest-test-results.json",
+    "test-snapshot-update": "npm run test -- -u",
+    "lint-js": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --cache --report-unused-disable-directives --max-warnings=0",
+    "lint-ls": "npx ls-lint",
+    "lint": "npm run lint-js && npm run lint-ls",
+    "lint-fix": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix --cache --report-unused-disable-directives --max-warnings=0"
+  },
+  "devDependencies": {
+    "jest-canvas-mock": "^2.5.2"
+  }
+}

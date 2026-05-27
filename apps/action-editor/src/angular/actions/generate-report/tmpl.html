@@ -1,0 +1,159 @@
+<div data-ng-controller="GenerateReportCtrl">
+    <mi-action-description info="action" show-back="criteriaBuilder" back-button="toggleCriteriaBuilder()"></mi-action-description>
+    <!-- Main Content Area -->
+    <div class="mi-ae-main-content" data-ng-show="!criteriaBuilder">
+        <!-- Select Report Name -->
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-5">
+                <label class="mi-ae-label">Report</label>
+            </div>
+            <div class="mi-ae-col-5" mi-validation-class="action.ValidationMessages" error-property="'ReportName'">
+                <ui-select data-ng-model="action.ReportName" theme="selectize" ng-disabled="action.isReadOnly">
+                    <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+                    <ui-select-choices repeat="opt.value as opt in reportNames | filter: $select.search">
+                        <span ng-bind-html="opt.label | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="mi-ae-col-5" data-ng-show="canContinue">
+                <miae-button button-class="'ghost mi-button-clear mi-ae-margin-l-0'"
+                           clickevent="reportDesigner()"
+                           name="'Open report designer'"></miae-button>
+            </div>
+        </div>
+        <!--/ Select Report Name -->
+        <!-- Loading -->
+        <div class="mi-ae-row" data-ng-show="isLoading">
+            <div class="mi-ae-col-8 mi-ae-col-push-4 mi-ae-padding-5">
+                <label class="mi-ae-label">Please wait loading...</label>
+            </div>
+        </div>
+        <!--/ Loading -->
+        <!-- Override with Report -->
+        <div class="mi-ae-row" data-ng-show="canContinue">
+            <div class="mi-ae-col-5">
+                <label class="mi-ae-label">Override with report (optional)</label>
+            </div>
+            <div class="mi-ae-col-10">
+                <mi-complex-value action="action" model="action.ReportNameOverride" allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+            </div>
+        </div>
+        <!--/ Override with Report -->
+        <!-- Step 2 -->
+        <div data-ng-show="canContinue">
+            <h3>Filter Report</h3>
+            <!-- Select Table -->
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-5">
+                    <label class="mi-ae-label">Report table</label>
+                </div>
+                <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'ViewFriendlyName'">
+                    <ui-select data-ng-model="action.ViewFriendlyName" theme="selectize" ng-disabled="action.isReadOnly">
+                        <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+                        <ui-select-choices repeat="opt.value as opt in tableNames">
+                            <span ng-bind-html="opt.label"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+            <!--/ Select Table -->
+            <!-- Where -->
+            <div class="mi-ae-row" data-ng-show="canUseCriteriaBuilder">
+                <div class="mi-ae-col-5">
+                    <label class="mi-ae-label">Display records where</label>
+                </div>
+                <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'WhereClause'">
+                    <mi-criteria-string where-clause="action.WhereClause" is-read-only ="action.isReadOnly"></mi-criteria-string>
+                    <miae-button button-class="'ghost mi-button-clear mi-ae-margin-l-0 mi-ae-padding-0 mi-ae-margin-b-0'"
+                               clickevent="toggleCriteriaBuilder()"
+                               name="criteriaButton"></miae-button>
+                </div>
+            </div>
+            <!--/ Where -->
+        </div>
+        <!--/ Step 2 -->
+        <div data-ng-show="canContinue">
+            <h3>Report Options</h3>
+            <!-- Filter Safeguard -->
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-5">
+                    <label class="mi-ae-label">Filter safeguard</label>
+                </div>
+                <div class="mi-ae-col-10">
+                    <ui-select data-ng-model="action.SafeGuard" theme="selectize" search-enabled="false" ng-disabled="action.isReadOnly">
+                        <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+                        <ui-select-choices repeat="opt.value as opt in safeGuards">
+                            <span ng-bind-html="opt.label"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+            <!--/ Filter Safeguard -->
+            <!-- Report Type -->
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-5">
+                    <label class="mi-ae-label">Report type</label>
+                </div>
+                <div class="mi-ae-col-10">
+                    <ui-select data-ng-model="action.ReportType" theme="selectize" search-enabled="false" ng-disabled="action.isReadOnly">
+                        <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+                        <ui-select-choices repeat="opt.value as opt in reportTypes">
+                            <span ng-bind-html="opt.label"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+            <!--/ Report Type -->
+            <!-- Display Report -->
+            <div class="mi-ae-row" data-ng-show="isDisplayReportOptionVisible">
+                <div class="mi-ae-col-5"></div>
+                <div class="mi-ae-col-8">
+                    <label class="mi-radio-checkbox mi-checkbox">
+                        <span>Display report on generation</span>
+                        <input type="checkbox" data-ng-model="action.DisplayReport" ng-disabled="action.isReadOnly">
+                        <div class="mi-radio-checkbox-indicator"></div>
+                    </label>
+                </div>
+            </div>
+            <!--/ Display Report -->
+            <!-- Display Report -->
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-5"></div>
+                <div class="mi-ae-col-8">
+                    <label class="mi-radio-checkbox mi-checkbox">
+                        <span>Optimize fields</span>
+                        <input type="checkbox" data-ng-model="action.OptimizeFields" ng-disabled="action.isReadOnly">
+                        <div class="mi-radio-checkbox-indicator"></div>
+                    </label>
+                </div>
+            </div>
+            <!--/ Display Report -->
+
+            <!--Report Name Optional-->
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-5">
+                    <label class="mi-ae-label">Report Name (optional)</label>
+                </div>
+                <div class="mi-ae-col-10">
+                    <mi-complex-value action="action" model="action.ReportDisplayName" allow="allowOptions" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+            </div>
+            <!--/ Report Name Optional-->
+
+            <!-- Action Result -->
+            <mi-result-to-set label="'Store report in'"
+                              action="action"
+                              item="action.ResultToSet"
+                              col-widths="[5,10]" is-read-only ="action.isReadOnly"></mi-result-to-set>
+            <!--/ Action Result -->
+        </div>
+    </div>
+    <!--/ Main Content Area -->
+    <div class="mi-ae-main-content" data-ng-show="criteriaBuilder">
+        <miae-criteria-builder action="action"
+                             fields-only="true"
+                             where-clause="action.WhereClause" 
+                             table-name="action.ViewFriendlyName" is-read-only ="action.isReadOnly"></miae-criteria-builder>
+    </div>
+     <mi-action-notes  is-read-only ="action.isReadOnly"></mi-action-notes>
+</div>

@@ -1,0 +1,147 @@
+<div data-ng-controller="CallActionSetCtrl">
+  <mi-action-description info="action"></mi-action-description>
+
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content">
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-5">
+        <label class="mi-ae-label">Select a Routine</label>
+      </div>
+      <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'routineId'">
+        <ui-select data-ng-model="routineId" theme="selectize" on-select="selectRoutine($item)"
+          ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices group-by="'category'"
+            repeat="opt.value as opt in availableRoutines | orderBy: ['-category', 'label'] | filter: $select.search">
+            <span ng-bind-html="opt.label"></span>
+          </ui-select-choices>
+        </ui-select>
+
+        <miae-button hide-button="hideJumpButton" clickevent="jumpToAction()" name="'Jump to this action set'"
+          button-class="'ghost mi-button-clear mi-ae-margin-0 mipadding-l-0'"></miae-button>
+      </div>
+    </div>
+
+    <div data-ng-if="isAppRoutine && action.InputValues.length > 0">
+      <h3>Action Result Inputs</h3>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-5">
+          <label class="mi-ae-label mi-ae-margin-b-0"><strong>Action Result</strong></label>
+        </div>
+        <div class="mi-ae-col-10">
+          <label class="mi-ae-label mi-ae-margin-b-0"><strong>Populate using this value</strong></label>
+        </div>
+      </div>
+
+      <div class="mi-ae-row" data-ng-repeat="inputValue in action.InputValues">
+        <div class="mi-ae-col-5" mi-validation-class="inputValue.ValidationMessage" error-property="'108'">
+          <label class="mi-ae-label not-bold">{{getInputValue(inputValue)}}</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value action="action" model="inputValue.Value" allow="allow" is-read-only="action.isReadOnly">
+          </mi-complex-value>
+        </div>
+      </div>
+    </div>
+
+    <div class="mi-ae-row" style="margin-top: 10px; margin-bottom: 14px" data-ng-if="isAppRoutine">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label mi-ae-margin-b-0"><strong>Wait for routine to complete</strong></label>
+      </div>
+      <div class="mi-ae-col-12" style="padding-top: 6px;">
+        <ul class="mi-radiobutton-group" >
+          <li class="rad-horizontal" style=" margin-bottom: 16px;float:none;">
+            <label class="mi-radio-checkbox mi-radio" data-ng-click="changeExecutionMode()">
+              <span style="white-space:normal; height:auto;">Wait for this routine to finish before continuing with
+                remaining actions. (slower)</span>
+              <input type="radio" name="ExecutionModeOptions" data-ng-model="action.IsSync" data-ng-value="true"
+                ng-disabled="action.isReadOnly" />
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </li>
+          <li class="rad-horizontal" style=" margin-bottom: 8px;float:none;">
+            <label class="mi-radio-checkbox mi-radio" data-ng-click="changeExecutionMode()">
+              <span style="white-space:normal; height:auto;">Don't wait for routine to finish and continue with
+                remaining actions. (faster)</span>
+              <input type="radio" name="ExecutionModeOptions" data-ng-model="action.IsSync" data-ng-value="false"
+                ng-disabled="action.isReadOnly" />
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="mi-ae-row mi-ae-margin-b-20" data-ng-if="isAppRoutine">
+      <div class="mi-ae-col-16"><a href="https://help.method.me/en/articles/3107332-app-routines-beta"
+          target="_blank">Learn More</a></div>
+    </div>
+    <div class="mi-ae-row" style="margin-top: 10px; margin-bottom: 14px" data-ng-if="isAppRoutine && !action.IsSync">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label"><strong>Show user background processing message</strong></label>
+      </div>
+
+      <div class="mi-ae-col-12" style="padding-top: 6px;">
+        <ul class="mi-radiobutton-group">
+          <li class="rad-horizontal" style=" margin-bottom: 8px;float:none;">
+            <label class="mi-radio-checkbox mi-radio" data-ng-click="changeMessageMode(0)">
+              <span style="white-space:normal; height:auto;">Do not show a message to the user</span>
+              <input type="radio" name="messageOptions" data-ng-model="messageType" data-ng-value="0"
+                ng-disabled="action.isReadOnly" />
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </li>
+          <li class="rad-horizontal" style=" margin-bottom: 8px; float:none;">
+            <label class="mi-radio-checkbox mi-radio" data-ng-click="changeMessageMode(1)">
+              <span style="white-space:normal; height:auto;">Show default message "One or more actions have been sent to
+                be processed in the background."</span>
+              <input type="radio" name="messageOptions" data-ng-model="messageType" data-ng-value="1"
+                ng-disabled="action.isReadOnly" />
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </li>
+          <li class="rad-horizontal" style=" margin-bottom: 8px;float:none;">
+            <label class="mi-radio-checkbox mi-radio" data-ng-click="changeMessageMode(2)">
+              <span style="white-space:normal; height:auto;">Show custom message</span>
+              <input type="radio" name="messageOptions" data-ng-model="messageType" data-ng-value="2"
+                ng-disabled="action.isReadOnly" />
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mi-ae-row" data-ng-if="isAppRoutine && messageType == 2">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Custom message</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <mi-complex-value action="action" model="action.CustomMessage" allow="allow" is-read-only="action.isReadOnly" text-area="true">
+        </mi-complex-value>
+      </div>
+    </div>
+
+    <div data-ng-if="isAppRoutine && action.IsSync && action.OutputValues.length > 0">
+      <h3>Action Result Outputs</h3>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-5">
+          <label class="mi-ae-label mi-ae-margin-b-0"><strong>Action Result From App Routine</strong></label>
+        </div>
+        <div class="mi-ae-col-10">
+          <label class="mi-ae-label mi-ae-margin-b-0"><strong>To Action Result</strong></label>
+        </div>
+      </div>
+
+      <div data-ng-repeat="outputValue in action.OutputValues">
+        <mi-result-to-set label="outputValue.Key" thin-label="true" include-controls="true"
+          control-model="outputValue.Value.ControlToUpdate" controls-ignore="['SEC', 'DOC']" action="action"
+          item="outputValue.Value.ResultToSet" col-widths="[5,10]" is-read-only="action.isReadOnly"></mi-result-to-set>
+      </div>
+    </div>
+  </div>
+  <!--/ Main Content Area -->
+
+  <mi-action-notes is-read-only="action.isReadOnly"></mi-action-notes>
+</div>

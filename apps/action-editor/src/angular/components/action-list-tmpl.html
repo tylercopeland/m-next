@@ -1,0 +1,43 @@
+<!-- Content Header Block -->
+<div class="mi-ae-header-block">
+    <h2>Add a new action</h2>
+    <button class="mi-button-icon" 
+      tooltip-placement="left" 
+      uib-tooltip="Show/Hide descriptions" 
+      data-ng-click="showDescription = !showDescription" 
+      data-ng-class="{'activated': showDescription}">
+      <svg-icon
+        name="'bubble-chat-typing-3'"
+        size="16">
+      </svg-icon>
+    </button>
+</div>
+<!--/ Content Header Block -->
+
+<!-- Main Content Area -->
+<div class="mi-ae-main-content mi-ae-main-content-full">
+    <div class="search-box">
+        <i class="mi-icon">
+            <svg-icon
+              name="'search'"
+              ng-attr-style="svgIconStyle"
+              size="14">
+            </svg-icon>
+        </i>
+        <input type="search" placeholder="I want to ..." id="actionSearch" data-ng-model="query">
+    </div>
+
+    <ul class="new-action-list" data-ng-class="{'show-descriptions': showDescription}">
+        <li class="action-group" data-ng-repeat="category in categories | filter:query | orderBy:'name'">
+            <span>{{ category.name }}</span>
+            <ul>
+                <li data-ng-repeat="action in category.actions | filter:query | orderBy:'name'" 
+                  data-ng-click="switchPage({template: action.template, idx: actionidx, parent: parentId})">
+                    <span>{{ action.name }}</span>
+                    <p>{{ action.description }}</p>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<!--/ Main Content Area -->

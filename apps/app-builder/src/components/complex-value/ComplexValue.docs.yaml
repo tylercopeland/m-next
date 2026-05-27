@@ -1,0 +1,245 @@
+componentName: ComplexValue
+description: A sophisticated form component for editing complex value objects that can contain different value types (text, number, control references, session variables, dates, etc.). Provides a two-stage interface where users first select the value type, then edit the actual value using the appropriate input component.
+
+dependencies:
+  - React
+  - '@m-next/types' # complexValueTypes, fieldTypeNameLookup
+  - '@emotion/styled'
+  - '@m-next/utilities' # toCamelCase
+
+props:
+  required:
+    onChange:
+      type: function
+      description: Callback function that receives the updated complex value object
+
+  optional:
+    id:
+      type: string | number
+      description: Unique identifier for the component
+      default: null
+    
+    fieldListOptions:
+      type: array
+      description: Array of field options for field type value selection
+      default: []
+    
+    controlList:
+      type: object
+      description: Object containing available controls for control type value selection
+      default: null
+    
+    fieldType:
+      type: number
+      description: Field type ID that determines available value type options
+      default: null
+    
+    includeControls:
+      type: boolean
+      description: Whether to include control references as value type option
+      default: false
+    
+    includeSessionVariables:
+      type: boolean
+      description: Whether to include session variables as value type option
+      default: false
+    
+    includeNone:
+      type: boolean
+      description: Whether to include "None" as a value type option
+      default: false
+    
+    complexValue:
+      type: object
+      description: Current complex value object
+      structure: |
+        {
+          value: string | number | boolean | object,
+          valueType: number,
+          property: string | number | boolean,
+          childProperty: string | number | boolean
+        }
+    
+    width:
+      type: string | number
+      description: Width of the component
+      default: null
+    
+    controlId:
+      type: string
+      description: ID of the current control (used to exclude self-references)
+      default: null
+
+value_types:
+  text: 
+    id: 9
+    description: "Plain text input"
+    input_component: "DebouncedInput"
+  
+  number:
+    id: 10
+    description: "Numeric input with validation"
+    input_component: "DebouncedInput with number type"
+  
+  date:
+    id: 16
+    description: "Date picker for date-only values"
+    input_component: "DatePicker"
+  
+  datetime:
+    id: 11
+    description: "Date and time picker"
+    input_component: "DatePicker with time"
+  
+  time:
+    id: 17
+    description: "Time-only picker"
+    input_component: "TimePicker"
+  
+  yesno:
+    id: 12
+    description: "Boolean true/false selection"
+    input_component: "RadioGroup"
+  
+  control:
+    id: 5
+    description: "Reference to form controls and their properties"
+    input_component: "Dropdown with control hierarchy"
+  
+  session:
+    id: 6
+    description: "Session variables and system values"
+    input_component: "Dropdown with session options"
+  
+  field:
+    id: 3
+    description: "Reference to data model fields"
+    input_component: "Dropdown with field list"
+
+behavior:
+  - Two-stage editing: first select value type, then edit value
+  - Automatically clears value when changing value type
+  - Converts values to appropriate types based on value type
+  - Handles complex control references with parent/child relationships
+  - Manages camelCase conversion for internal consistency
+  - Provides null value handling for empty/undefined states
+
+control_references:
+  simple_controls: "Direct reference to control by ID"
+  complex_controls: "References to properties of complex controls (Editable Grid, Chart, etc.)"
+  child_controls: "References to controls within editable grids"
+  property_access: "Access to specific properties of controls (Text, Value, etc.)"
+
+styling:
+  layout: "Vertical flex layout with 16px gap"
+  width: "Configurable component width"
+  sections: "Type selector above value editor"
+
+usage_scenarios:
+  - Filter value configuration in criteria builders
+  - Form field default value settings
+  - Conditional logic value sources
+  - Report parameter configuration
+  - Dashboard widget value binding
+  - Automation rule value specification
+
+example_usage:
+  basic_text_value:
+    code: |
+      <ComplexValue
+        id="default-value"
+        fieldType={FieldTypeIds.Text}
+        complexValue={defaultValue}
+        onChange={handleDefaultValueChange}
+        includeControls={true}
+        width="300px"
+      />
+  
+  filter_value_with_session:
+    code: |
+      <ComplexValue
+        id="filter-value"
+        fieldType={FieldTypeIds.DateTime}
+        complexValue={filterValue}
+        onChange={handleFilterValueChange}
+        includeControls={true}
+        includeSessionVariables={true}
+        controlList={availableControls}
+        controlId={currentControlId}
+      />
+  
+  field_reference_selector:
+    code: |
+      <ComplexValue
+        id="field-ref"
+        fieldType={FieldTypeIds.Integer}
+        complexValue={fieldReference}
+        onChange={handleFieldRefChange}
+        fieldListOptions={fieldOptions}
+        includeNone={true}
+        width="250px"
+      />
+  
+  control_property_binding:
+    code: |
+      <ComplexValue
+        id="binding-value"
+        fieldType={FieldTypeIds.Text}
+        complexValue={bindingValue}
+        onChange={handleBindingChange}
+        controlList={formControls}
+        includeControls={true}
+        includeSessionVariables={false}
+      />
+
+data_flow:
+  input: "complexValue object with value, valueType, property, childProperty"
+  processing: "Type conversion, validation, control relationship resolution"
+  output: "Updated complexValue object through onChange callback"
+
+value_conversion:
+  control_type: "Extracts parentId, property, childProperty for complex control references"
+  session_type: "Direct value assignment for session variables"
+  yesno_type: "Direct boolean value assignment"
+  number_type: "Converts to Number() with null/empty handling"
+  datetime_type: "Converts to ISO string with special value handling (-1, -2)"
+  text_type: "Direct string value assignment"
+
+control_hierarchy:
+  simple_controls: "Direct control ID reference"
+  grid_controls: "Grid ID + column name property"
+  datatable_controls: "Table ID + field property"
+  complex_controls: "Control ID + predefined property options"
+  nested_controls: "Parent control + child control relationships"
+
+session_variables:
+  description: "Access to system session values and variables"
+  field_type_dependent: "Available options depend on target field type"
+  examples: "Current user, current date, session parameters"
+
+field_references:
+  description: "References to data model fields for dynamic value binding"
+  grouped_display: "Organized by data source/model"
+  icon_support: "Field type icons for visual identification"
+
+implementation_details:
+  - Uses styled-components for layout structure
+  - Manages internal state synchronized with external prop
+  - Handles null/undefined value normalization
+  - Provides type-specific value conversion logic
+  - Supports complex control property resolution
+  - Implements camelCase conversion for consistency
+  - Delegates specific input rendering to ValueEditor component
+
+accessibility:
+  - Proper labeling for screen readers
+  - Keyboard navigation support
+  - Focus management between type and value editors
+  - ARIA attributes for complex dropdown options
+
+integration_points:
+  value_type_editor: "Dropdown for selecting value type based on field type"
+  value_editor: "Dynamic input component based on selected value type"
+  control_system: "Integration with form control hierarchy"
+  session_system: "Access to session variables and system values"
+  field_system: "Integration with data model field definitions"

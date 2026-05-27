@@ -1,0 +1,1028 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner Snapshots Clear 1`] = `
+.emotion-0 {
+  padding: 16px;
+  background: transparent;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
+  min-height: 48px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background-color: transparent;
+  margin-right: 16px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 32px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #064499;
+}
+
+.emotion-6:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-6:focus {
+  outline: none;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 14px;
+  line-height: 16px;
+  color: #2A394A;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="banner-"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <div
+        class="emotion-4 emotion-5"
+      >
+        <div
+          class=""
+        >
+          <span
+            class="emotion-6 emotion-7"
+            color="#064499"
+            data-testid="svg-icon-wrapper-warning-sign"
+            id="banner-content-icon-"
+          >
+            <svg
+              aria-label="warning-sign icon"
+              data-testid="svg-icon-svg-warning-sign"
+              fill="#064499"
+              height="16px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="16px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M499.029 42.667l-8.747 0.085c-131.456 2.261-255.104 55.381-348.288 149.547-93.781 94.805-144.171 219.008-141.909 349.611 4.693 270.421 216.533 482.219 482.347 482.219l8.619-0.043c274.987-4.821 494.933-228.779 490.197-499.243-4.693-270.379-216.491-482.176-482.219-482.176zM490.283 981.419l-7.893 0.043c-242.261 0-435.371-193.408-439.68-440.32-2.091-119.040 43.947-232.277 129.579-318.848 85.291-86.229 198.443-134.827 318.72-136.917l8.021-0.043c242.219 0 435.243 193.365 439.552 440.235 4.309 246.955-196.821 451.456-448.299 455.851zM490.667 618.667c11.776 0 21.333-9.557 21.333-21.333v-298.667c0-11.776-9.557-21.333-21.333-21.333s-21.333 9.557-21.333 21.333v298.667c0 11.776 9.557 21.333 21.333 21.333z M533.333 746.667c0 23.564-19.103 42.667-42.667 42.667s-42.667-19.103-42.667-42.667c0-23.564 19.103-42.667 42.667-42.667s42.667 19.103 42.667 42.667z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+        id="banner-content-"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="banner-content-message-"
+        >
+          hi
+        </div>
+        <div
+          class="emotion-12 emotion-13"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Banner Snapshots Defaults 1`] = `
+.emotion-0 {
+  padding: 16px;
+  background: #E5F7FF;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
+  min-height: 48px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.emotion-6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 14px;
+  line-height: 16px;
+  color: #2A394A;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="banner-"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <div
+        class="emotion-4 emotion-5"
+        id="banner-content-"
+      >
+        <div
+          class="emotion-6 emotion-7"
+          id="banner-content-message-"
+        >
+          hi
+        </div>
+        <div
+          class="emotion-8 emotion-9"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Banner Snapshots Error 1`] = `
+.emotion-0 {
+  padding: 16px;
+  background: #FFF3F0;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
+  min-height: 48px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background-color: #DA211E;
+  margin-right: 16px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 32px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #FFFFFF;
+}
+
+.emotion-6:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-6:focus {
+  outline: none;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 14px;
+  line-height: 16px;
+  color: #540009;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.emotion-14 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+}
+
+.emotion-16 {
+  font-size: 14px;
+  line-height: 16px;
+  color: #DA211E;
+  text-align: right;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  order-style: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="banner-"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <div
+        class="emotion-4 emotion-5"
+      >
+        <div
+          class=""
+        >
+          <span
+            class="emotion-6 emotion-7"
+            color="#FFFFFF"
+            data-testid="svg-icon-wrapper-warning-sign"
+            id="banner-content-icon-"
+          >
+            <svg
+              aria-label="warning-sign icon"
+              data-testid="svg-icon-svg-warning-sign"
+              fill="#FFFFFF"
+              height="16px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="16px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M499.029 42.667l-8.747 0.085c-131.456 2.261-255.104 55.381-348.288 149.547-93.781 94.805-144.171 219.008-141.909 349.611 4.693 270.421 216.533 482.219 482.347 482.219l8.619-0.043c274.987-4.821 494.933-228.779 490.197-499.243-4.693-270.379-216.491-482.176-482.219-482.176zM490.283 981.419l-7.893 0.043c-242.261 0-435.371-193.408-439.68-440.32-2.091-119.040 43.947-232.277 129.579-318.848 85.291-86.229 198.443-134.827 318.72-136.917l8.021-0.043c242.219 0 435.243 193.365 439.552 440.235 4.309 246.955-196.821 451.456-448.299 455.851zM490.667 618.667c11.776 0 21.333-9.557 21.333-21.333v-298.667c0-11.776-9.557-21.333-21.333-21.333s-21.333 9.557-21.333 21.333v298.667c0 11.776 9.557 21.333 21.333 21.333z M533.333 746.667c0 23.564-19.103 42.667-42.667 42.667s-42.667-19.103-42.667-42.667c0-23.564 19.103-42.667 42.667-42.667s42.667 19.103 42.667 42.667z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+        id="banner-content-"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="banner-content-message-"
+        >
+          hi
+        </div>
+        <div
+          class="emotion-12 emotion-13"
+        >
+          <div
+            class="emotion-14 emotion-15"
+            id="banner-content-primary-"
+          >
+            <button
+              class="emotion-16 emotion-17"
+              id="banner-content-primary-button-"
+              type="button"
+            >
+              Primary
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Banner Snapshots Success 1`] = `
+.emotion-0 {
+  padding: 16px;
+  background: #E7F5F0;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
+  min-height: 48px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background-color: #007B4A;
+  margin-right: 16px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 32px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #FFFFFF;
+}
+
+.emotion-6:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-6:focus {
+  outline: none;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 14px;
+  line-height: 16px;
+  color: #053023;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.emotion-14 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  padding-right: 16px;
+}
+
+.emotion-16 {
+  font-size: 14px;
+  line-height: 16px;
+  color: #007B4A;
+  text-align: right;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  order-style: none;
+}
+
+.emotion-18 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="banner-"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <div
+        class="emotion-4 emotion-5"
+      >
+        <div
+          class=""
+        >
+          <span
+            class="emotion-6 emotion-7"
+            color="#FFFFFF"
+            data-testid="svg-icon-wrapper-warning-sign"
+            id="banner-content-icon-"
+          >
+            <svg
+              aria-label="warning-sign icon"
+              data-testid="svg-icon-svg-warning-sign"
+              fill="#FFFFFF"
+              height="16px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="16px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M499.029 42.667l-8.747 0.085c-131.456 2.261-255.104 55.381-348.288 149.547-93.781 94.805-144.171 219.008-141.909 349.611 4.693 270.421 216.533 482.219 482.347 482.219l8.619-0.043c274.987-4.821 494.933-228.779 490.197-499.243-4.693-270.379-216.491-482.176-482.219-482.176zM490.283 981.419l-7.893 0.043c-242.261 0-435.371-193.408-439.68-440.32-2.091-119.040 43.947-232.277 129.579-318.848 85.291-86.229 198.443-134.827 318.72-136.917l8.021-0.043c242.219 0 435.243 193.365 439.552 440.235 4.309 246.955-196.821 451.456-448.299 455.851zM490.667 618.667c11.776 0 21.333-9.557 21.333-21.333v-298.667c0-11.776-9.557-21.333-21.333-21.333s-21.333 9.557-21.333 21.333v298.667c0 11.776 9.557 21.333 21.333 21.333z M533.333 746.667c0 23.564-19.103 42.667-42.667 42.667s-42.667-19.103-42.667-42.667c0-23.564 19.103-42.667 42.667-42.667s42.667 19.103 42.667 42.667z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+        id="banner-content-"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="banner-content-message-"
+        >
+          hi
+        </div>
+        <div
+          class="emotion-12 emotion-13"
+        >
+          <div
+            class="emotion-14 emotion-15"
+            id="banner-content-secondary-"
+          >
+            <button
+              class="emotion-16 emotion-17"
+              id="banner-content-secondary-button-"
+              type="button"
+            >
+              Secondary
+            </button>
+          </div>
+          <div
+            class="emotion-18 emotion-19"
+            id="banner-content-primary-"
+          >
+            <button
+              class="emotion-16 emotion-17"
+              id="banner-content-primary-button-"
+              type="button"
+            >
+              Primary
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Banner Snapshots Warning 1`] = `
+.emotion-0 {
+  padding: 16px;
+  background: #FFFAD1;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
+  min-height: 48px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background-color: #634002;
+  margin-right: 16px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 32px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #FFFAD1;
+}
+
+.emotion-6:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-6:focus {
+  outline: none;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.emotion-10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 14px;
+  line-height: 16px;
+  color: #634002;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.emotion-14 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  padding-right: 16px;
+}
+
+.emotion-16 {
+  font-size: 14px;
+  line-height: 16px;
+  color: #FDCB2E;
+  text-align: right;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  order-style: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="banner-"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <div
+        class="emotion-4 emotion-5"
+      >
+        <div
+          class=""
+        >
+          <span
+            class="emotion-6 emotion-7"
+            color="#FFFAD1"
+            data-testid="svg-icon-wrapper-warning-sign"
+            id="banner-content-icon-"
+          >
+            <svg
+              aria-label="warning-sign icon"
+              data-testid="svg-icon-svg-warning-sign"
+              fill="#FFFAD1"
+              height="16px"
+              preserveAspectRatio="none"
+              role="img"
+              viewBox="0 0 1024 1024"
+              width="16px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M499.029 42.667l-8.747 0.085c-131.456 2.261-255.104 55.381-348.288 149.547-93.781 94.805-144.171 219.008-141.909 349.611 4.693 270.421 216.533 482.219 482.347 482.219l8.619-0.043c274.987-4.821 494.933-228.779 490.197-499.243-4.693-270.379-216.491-482.176-482.219-482.176zM490.283 981.419l-7.893 0.043c-242.261 0-435.371-193.408-439.68-440.32-2.091-119.040 43.947-232.277 129.579-318.848 85.291-86.229 198.443-134.827 318.72-136.917l8.021-0.043c242.219 0 435.243 193.365 439.552 440.235 4.309 246.955-196.821 451.456-448.299 455.851zM490.667 618.667c11.776 0 21.333-9.557 21.333-21.333v-298.667c0-11.776-9.557-21.333-21.333-21.333s-21.333 9.557-21.333 21.333v298.667c0 11.776 9.557 21.333 21.333 21.333z M533.333 746.667c0 23.564-19.103 42.667-42.667 42.667s-42.667-19.103-42.667-42.667c0-23.564 19.103-42.667 42.667-42.667s42.667 19.103 42.667 42.667z"
+                stroke="inherit"
+                stroke-width=""
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="emotion-8 emotion-9"
+        id="banner-content-"
+      >
+        <div
+          class="emotion-10 emotion-11"
+          id="banner-content-message-"
+        >
+          hi
+        </div>
+        <div
+          class="emotion-12 emotion-13"
+        >
+          <div
+            class="emotion-14 emotion-15"
+            id="banner-content-secondary-"
+          >
+            <button
+              class="emotion-16 emotion-17"
+              id="banner-content-secondary-button-"
+              type="button"
+            >
+              Secondary
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

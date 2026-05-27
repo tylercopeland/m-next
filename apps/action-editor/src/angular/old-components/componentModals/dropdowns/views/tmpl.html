@@ -1,0 +1,47 @@
+<div data-ng-controller="ComponentDropdownViewsCtrl" class="mi-ae-fullheight">
+  <!-- Left Panel -->
+  <div class="mi-ae-framework-left-panel collapsed" data-ng-if="layout.collapsedList">
+    <button class="mi-button-icon mi-icon-box-plus" data-ng-click="layout.collapsedList = !layout.collapsedList"></button>
+  </div>
+
+  <div class="mi-ae-framework-left-panel" data-ng-if="!layout.collapsedList">
+      <div class="mi-ae-header-block">
+          <h2>View Options</h2>
+          <button class="mi-button-icon mi-icon-box-minus" tooltip-placement="left" uib-tooltip="Collapse Action List" data-ng-click="layout.collapsedList = !layout.collapsedList"></button>
+      </div>
+
+      <div class="mi-ae-main-content mi-ae-main-content-full">
+        <ul class="mi-ae-simple-list">
+          <li class="selected">
+            Default
+          </li>
+        </ul>
+      </div>
+  </div>
+  <!--/ Left Panel -->
+
+  <!-- Right Panel For Sorting -->
+  <div class="mi-ae-framework-right-panel" data-ng-class="{'expanded' : layout.collapsedList}">
+    <div class="mi-ae-header-block">
+      <h2>View Properties</h2>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="mi-ae-main-content mi-ae-main-content-full">
+      
+      <h3>Sorting</h3>
+
+      <mi-sorting filter-def="filterDef[0]" view-name="control.model.viewName"></mi-sorting>
+
+      <h3>Selection Criteria</h3>
+
+      <mi-criteria-builder 
+        action="layout.action" 
+        fields-only="true"
+        where-clause="filterDef[0].expression" 
+        table-name="control.model.viewName"></mi-criteria-builder>
+    </div>
+    <!--/ Main Content Area -->
+  </div>
+  <!--/ Right Panel -->
+</div>

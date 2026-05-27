@@ -1,0 +1,2666 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Snapshots Classes 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  margin: 0 5px 10px;
+  position: relative!important;
+}
+
+.emotion-0:hover {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #064499;
+}
+
+.emotion-0:focus {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+}
+
+.emotion-0:disabled {
+  box-shadow: none;
+  cursor: default;
+  border: 1px solid transparent;
+  opacity: 0.5;
+}
+
+.emotion-0:before {
+  margin-top: 1px;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+    width="128"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots Custom style 1`] = `
+.emotion-0 {
+  background-color: #007B4A;
+  color: #DA211E;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: 64px;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  border-color: #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  background-color: #00482b;
+  border: 1px solid #064499;
+  border-color: #0D71C8;
+  color: #DA211E;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #007B4A;
+  color: #DA211E;
+}
+
+.emotion-0:focus {
+  background-color: #00482b;
+  border: 1px solid #064499;
+  border-color: #0D71C8;
+  color: #DA211E;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+  background-color: #007B4A;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+    width="64"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots Default 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #064499;
+}
+
+.emotion-0:focus {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots Icon Left 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.emotion-0:hover {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #064499;
+}
+
+.emotion-0:focus {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+.emotion-0>svg {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-2:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-2:focus {
+  outline: none;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    <div
+      class=""
+    >
+      <span
+        class="emotion-2 emotion-3"
+        color="currentColor"
+        data-testid="svg-icon-wrapper-caret-down"
+      >
+        <svg
+          aria-label="caret-down icon"
+          data-testid="svg-icon-svg-caret-down"
+          fill="currentColor"
+          height="24px"
+          preserveAspectRatio="none"
+          role="img"
+          viewBox="0 0 1024 1024"
+          width="24px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1021.269 96.085c-3.755-6.699-10.837-10.837-18.517-10.837h-981.333c-7.765 0-14.848 4.139-18.603 10.837-3.84 6.699-3.669 14.891 0.256 21.504l490.667 817.749c3.84 6.4 10.837 10.325 18.347 10.325s14.421-3.925 18.261-10.325l490.667-817.749c3.968-6.613 4.053-14.805 0.256-21.504z"
+            stroke="inherit"
+            stroke-width=""
+          />
+        </svg>
+      </span>
+    </div>
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots Icon Left not isV4Design 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  margin: 0 5px 10px;
+  position: relative!important;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  gap: 8px;
+}
+
+.emotion-0:hover {
+  border: 1px solid #0F1B31;
+  color: #0F1B31;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  color: #000000;
+}
+
+.emotion-0:focus {
+  border: 1px solid #0F1B31;
+  color: #0F1B31;
+}
+
+.emotion-0:disabled {
+  box-shadow: none;
+  cursor: default;
+  border: 1px solid transparent;
+  opacity: 0.5;
+}
+
+.emotion-0:before {
+  margin-top: 1px;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-2:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-2:focus {
+  outline: none;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    <div
+      class=""
+    >
+      <span
+        class="emotion-2 emotion-3"
+        color="currentColor"
+        data-testid="svg-icon-wrapper-caret-down"
+      >
+        <svg
+          aria-label="caret-down icon"
+          data-testid="svg-icon-svg-caret-down"
+          fill="currentColor"
+          height="24px"
+          preserveAspectRatio="none"
+          role="img"
+          viewBox="0 0 1024 1024"
+          width="24px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1021.269 96.085c-3.755-6.699-10.837-10.837-18.517-10.837h-981.333c-7.765 0-14.848 4.139-18.603 10.837-3.84 6.699-3.669 14.891 0.256 21.504l490.667 817.749c3.84 6.4 10.837 10.325 18.347 10.325s14.421-3.925 18.261-10.325l490.667-817.749c3.968-6.613 4.053-14.805 0.256-21.504z"
+            stroke="inherit"
+            stroke-width=""
+          />
+        </svg>
+      </span>
+    </div>
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots Icon Right 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.emotion-0:hover {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #064499;
+}
+
+.emotion-0:focus {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+.emotion-0>svg {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-2:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-2:focus {
+  outline: none;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+    <div
+      class=""
+    >
+      <span
+        class="emotion-2 emotion-3"
+        color="currentColor"
+        data-testid="svg-icon-wrapper-caret-down"
+      >
+        <svg
+          aria-label="caret-down icon"
+          data-testid="svg-icon-svg-caret-down"
+          fill="currentColor"
+          height="24px"
+          preserveAspectRatio="none"
+          role="img"
+          viewBox="0 0 1024 1024"
+          width="24px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1021.269 96.085c-3.755-6.699-10.837-10.837-18.517-10.837h-981.333c-7.765 0-14.848 4.139-18.603 10.837-3.84 6.699-3.669 14.891 0.256 21.504l490.667 817.749c3.84 6.4 10.837 10.325 18.347 10.325s14.421-3.925 18.261-10.325l490.667-817.749c3.968-6.613 4.053-14.805 0.256-21.504z"
+            stroke="inherit"
+            stroke-width=""
+          />
+        </svg>
+      </span>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots Icon Right not isV4Design 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  margin: 0 5px 10px;
+  position: relative!important;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  gap: 8px;
+}
+
+.emotion-0:hover {
+  border: 1px solid #0F1B31;
+  color: #0F1B31;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  color: #000000;
+}
+
+.emotion-0:focus {
+  border: 1px solid #0F1B31;
+  color: #0F1B31;
+}
+
+.emotion-0:disabled {
+  box-shadow: none;
+  cursor: default;
+  border: 1px solid transparent;
+  opacity: 0.5;
+}
+
+.emotion-0:before {
+  margin-top: 1px;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-2:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-2:focus {
+  outline: none;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+    <div
+      class=""
+    >
+      <span
+        class="emotion-2 emotion-3"
+        color="currentColor"
+        data-testid="svg-icon-wrapper-caret-down"
+      >
+        <svg
+          aria-label="caret-down icon"
+          data-testid="svg-icon-svg-caret-down"
+          fill="currentColor"
+          height="24px"
+          preserveAspectRatio="none"
+          role="img"
+          viewBox="0 0 1024 1024"
+          width="24px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1021.269 96.085c-3.755-6.699-10.837-10.837-18.517-10.837h-981.333c-7.765 0-14.848 4.139-18.603 10.837-3.84 6.699-3.669 14.891 0.256 21.504l490.667 817.749c3.84 6.4 10.837 10.325 18.347 10.325s14.421-3.925 18.261-10.325l490.667-817.749c3.968-6.613 4.053-14.805 0.256-21.504z"
+            stroke="inherit"
+            stroke-width=""
+          />
+        </svg>
+      </span>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots Icon only 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  padding: 4.8px 9.6px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: 24px;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  gap: 8px;
+  overflow: hidden;
+  height: 24px;
+}
+
+.emotion-0:hover {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #064499;
+}
+
+.emotion-0:focus {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+.emotion-0>svg {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-2:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-2:focus {
+  outline: none;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    <div
+      class=""
+    >
+      <span
+        class="emotion-2 emotion-3"
+        color="currentColor"
+        data-testid="svg-icon-wrapper-caret-down"
+      >
+        <svg
+          aria-label="caret-down icon"
+          data-testid="svg-icon-svg-caret-down"
+          fill="currentColor"
+          height="24px"
+          preserveAspectRatio="none"
+          role="img"
+          viewBox="0 0 1024 1024"
+          width="24px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1021.269 96.085c-3.755-6.699-10.837-10.837-18.517-10.837h-981.333c-7.765 0-14.848 4.139-18.603 10.837-3.84 6.699-3.669 14.891 0.256 21.504l490.667 817.749c3.84 6.4 10.837 10.325 18.347 10.325s14.421-3.925 18.261-10.325l490.667-817.749c3.968-6.613 4.053-14.805 0.256-21.504z"
+            stroke="inherit"
+            stroke-width=""
+          />
+        </svg>
+      </span>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots IsMobile 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 48px;
+  padding: 14px 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 28px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #064499;
+}
+
+.emotion-0:focus {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots IsMobile not isV4Design 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #064499;
+}
+
+.emotion-0:focus {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots Small 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 24px;
+  padding: 0px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #064499;
+}
+
+.emotion-0:focus {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots Style Ghost 1`] = `
+.emotion-0 {
+  background-color: rgba(0, 0, 0, 0);
+  color: #0D71C8;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  border: 1px solid #064499;
+  color: #064499;
+  cursor: pointer;
+}
+
+.emotion-0:focus {
+  border: 1px solid #064499;
+  color: #064499;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots Style link 1`] = `
+.emotion-0 {
+  background-color: rgba(0, 0, 0, 0);
+  color: #0D71C8;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  border: none;
+  color: #064499;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #E5F7FF;
+  color: #000000;
+}
+
+.emotion-0:focus {
+  border: none;
+  color: #064499;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots Style link V3 1`] = `
+.emotion-0 {
+  background-color: rgba(0, 0, 0, 0);
+  color: #0D71C8;
+  min-height: auto;
+  padding: 2px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  margin: 0 5px 10px;
+  position: relative!important;
+}
+
+.emotion-0:hover {
+  border: 1px solid #0F1B31;
+  color: #0F1B31;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  color: #000000;
+}
+
+.emotion-0:focus {
+  border: 1px solid #0F1B31;
+  color: #0F1B31;
+}
+
+.emotion-0:disabled {
+  box-shadow: none;
+  cursor: default;
+  border: 1px solid transparent;
+  opacity: 0.5;
+}
+
+.emotion-0:before {
+  margin-top: 1px;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots Style plain 1`] = `
+.emotion-0 {
+  background-color: rgba(0, 0, 0, 0);
+  color: #2A394A;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  border: none;
+  color: #0F1B31;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  color: #000000;
+}
+
+.emotion-0:focus {
+  border: none;
+  color: #0F1B31;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots Style radio 1`] = `
+.emotion-0 {
+  background-color: rgba(0, 0, 0, 0);
+  color: #2A394A;
+  min-height: 32px;
+  padding: 4px 8px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #BACAD0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  border: 1px solid #064499;
+  color: #064499;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  color: #0D71C8;
+}
+
+.emotion-0:focus {
+  border: 1px solid #064499;
+  color: #064499;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots Style radio-selected 1`] = `
+.emotion-0 {
+  background-color: #E5F7FF;
+  color: #0D71C8;
+  min-height: 32px;
+  padding: 4px 8px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  border: 1px solid #064499;
+  color: #064499;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  color: #0D71C8;
+}
+
+.emotion-0:focus {
+  border: 1px solid #064499;
+  color: #064499;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots Style v4-primary 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #064499;
+}
+
+.emotion-0:focus {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots Visible 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  display: none!important;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #064499;
+}
+
+.emotion-0:focus {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots Visible not isV4Design 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  margin: 0 5px 10px;
+  position: relative!important;
+  display: none!important;
+}
+
+.emotion-0:hover {
+  border: 1px solid #0F1B31;
+  color: #0F1B31;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  color: #000000;
+}
+
+.emotion-0:focus {
+  border: 1px solid #0F1B31;
+  color: #0F1B31;
+}
+
+.emotion-0:disabled {
+  box-shadow: none;
+  cursor: default;
+  border: 1px solid transparent;
+  opacity: 0.5;
+}
+
+.emotion-0:before {
+  margin-top: 1px;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots Width Fixed 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  margin: 0 5px 10px;
+  position: relative!important;
+  width: 64px;
+}
+
+.emotion-0:hover {
+  border: 1px solid #0F1B31;
+  color: #0F1B31;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  color: #000000;
+}
+
+.emotion-0:focus {
+  border: 1px solid #0F1B31;
+  color: #0F1B31;
+}
+
+.emotion-0:disabled {
+  box-shadow: none;
+  cursor: default;
+  border: 1px solid transparent;
+  opacity: 0.5;
+}
+
+.emotion-0:before {
+  margin-top: 1px;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+    width="64"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots Width Full 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  margin: 10px 0!important;
+  position: relative!important;
+  width: 100%;
+}
+
+.emotion-0:hover {
+  border: 1px solid #0F1B31;
+  color: #0F1B31;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  color: #000000;
+}
+
+.emotion-0:focus {
+  border: 1px solid #0F1B31;
+  color: #0F1B31;
+}
+
+.emotion-0:disabled {
+  box-shadow: none;
+  cursor: default;
+  border: 1px solid transparent;
+  opacity: 0.5;
+}
+
+.emotion-0:before {
+  margin-top: 1px;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+    width="64"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots Width Full v4 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: 100%;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #064499;
+}
+
+.emotion-0:focus {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+    width="64"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots isDangerous with isV4Design 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #064499;
+}
+
+.emotion-0:focus {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots isDangerous without isV4Design 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  margin: 0 5px 10px;
+  position: relative!important;
+}
+
+.emotion-0:hover {
+  border: 1px solid #0F1B31;
+  color: #0F1B31;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  color: #000000;
+}
+
+.emotion-0:focus {
+  border: 1px solid #0F1B31;
+  color: #0F1B31;
+}
+
+.emotion-0:disabled {
+  box-shadow: none;
+  cursor: default;
+  border: 1px solid transparent;
+  opacity: 0.5;
+}
+
+.emotion-0:before {
+  margin-top: 1px;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots not isV4Design 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  margin: 0 5px 10px;
+  position: relative!important;
+}
+
+.emotion-0:hover {
+  border: 1px solid #0F1B31;
+  color: #0F1B31;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  color: #000000;
+}
+
+.emotion-0:focus {
+  border: 1px solid #0F1B31;
+  color: #0F1B31;
+}
+
+.emotion-0:disabled {
+  box-shadow: none;
+  cursor: default;
+  border: 1px solid transparent;
+  opacity: 0.5;
+}
+
+.emotion-0:before {
+  margin-top: 1px;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+    width="128"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots with backgroundColor as direct color value 1`] = `
+.emotion-0 {
+  background-color: #ff0000;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  background-color: #cc0000;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #ff0000;
+}
+
+.emotion-0:focus {
+  background-color: #cc0000;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+  background-color: #ff0000;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots with color name from colors object 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #007B4A;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #007B4A;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #064499;
+  color: #007B4A;
+}
+
+.emotion-0:focus {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #007B4A;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots with custom style prop 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #064499;
+}
+
+.emotion-0:focus {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    style="margin: 10px; padding: 5px;"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots with font size 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #064499;
+}
+
+.emotion-0:focus {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots with forwardRef 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #064499;
+}
+
+.emotion-0:focus {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots with hover background color excluded for non-primary button style 1`] = `
+.emotion-0 {
+  background-color: rgba(0, 0, 0, 0);
+  color: #0D71C8;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  border: 1px solid #064499;
+  color: #064499;
+  cursor: pointer;
+}
+
+.emotion-0:focus {
+  border: 1px solid #064499;
+  color: #064499;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+  background-color: #DA211E;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots with hover background color excluded for white background 1`] = `
+.emotion-0 {
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  background-color: #FFFFFF;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #FFFFFF;
+}
+
+.emotion-0:focus {
+  background-color: #FFFFFF;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+  background-color: #FFFFFF;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots with hover background color when backgroundColor is set and buttonStyle is primary 1`] = `
+.emotion-0 {
+  background-color: #007B4A;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  background-color: #00482b;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #007B4A;
+}
+
+.emotion-0:focus {
+  background-color: #00482b;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+  background-color: #007B4A;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots with hover color when color is set 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #0D71C8;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #0D71C8;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #064499;
+  color: #0D71C8;
+}
+
+.emotion-0:focus {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #0D71C8;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots with hover colors for custom color values 1`] = `
+.emotion-0 {
+  background-color: #33ff57;
+  color: #ff5733;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  background-color: #00ff2d;
+  border: 1px solid #064499;
+  color: #ff5733;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #33ff57;
+  color: #ff5733;
+}
+
+.emotion-0:focus {
+  background-color: #00ff2d;
+  border: 1px solid #064499;
+  color: #ff5733;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+  background-color: #33ff57;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button Snapshots with tooltip 1`] = `
+.emotion-0 {
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: 1px solid #0D71C8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emotion-0:hover {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.emotion-0:active {
+  background-color: #064499;
+}
+
+.emotion-0:focus {
+  background-color: #064499;
+  border: 1px solid #064499;
+  color: #FFFFFF;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+<div>
+  <button
+    class="emotion-0 emotion-1"
+    data-testid="test"
+    data-tooltip-html="Tooltip text"
+    data-tooltip-id="tooltip-id"
+    id="test"
+    tabindex="0"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;

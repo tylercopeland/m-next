@@ -1,0 +1,107 @@
+<!-- Content Header Block -->
+<div class="mi-ae-header-block">
+    <h2>Copy actions from another control</h2>
+</div>
+<!--/ Content Header Block -->
+
+<!-- Main Content Area -->
+<div data-ng-if="layout.isAppRoutineEditor" class="mi-ae-main-content mi-ae-main-content-full">
+    
+    <div data-ng-if="copyActions.menu.length > 0">
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Select a screen</label>
+        </div>
+        <div class="mi-ae-col-8">
+          <ui-select data-ng-model="copyActions.screens.selected" theme="selectize" on-select="getControlsFroScreen(copyActions.screens.selected.id)">
+            <ui-select-match placeholder="Select...">{{$select.selected.name}}</ui-select-match>
+            <ui-select-choices repeat="item in copyActions.screens.all | filter: { name: $select.search }">
+              <span ng-bind-html="item.name | highlight: $select.search"></span>
+            </ui-select-choices>
+          </ui-select>
+        </div>
+      </div>
+
+      <div class="mi-ae-row" data-ng-if="copyActions.controls.all.length > 0">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Select a control</label>
+        </div>
+        <div class="mi-ae-col-8">
+          <ui-select data-ng-model="copyActions.controls.selected" theme="selectize" on-select="getEventsForControl(copyActions.controls.selected)">
+            <ui-select-match placeholder="Select...">{{$select.selected.caption}}</ui-select-match>
+            <ui-select-choices repeat="item in copyActions.controls.all | orderBy: 'caption' | filter: { caption: $select.search }">
+              <span ng-bind-html="item.caption | highlight: $select.search"></span>
+            </ui-select-choices>
+          </ui-select>
+        </div>
+      </div>
+  
+      <div class="mi-ae-row" data-ng-if="copyActions.events.all.length > 0">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Select an event</label>
+        </div>
+        <div class="mi-ae-col-8">
+          <ui-select data-ng-model="copyActions.events.selected" theme="selectize" on-select="getActionSet(copyActions.screens.selected, copyActions.events.selected.id)">
+            <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+            <ui-select-choices repeat="item in copyActions.events.all | orderBy: 'label' | filter: { label: $select.search }">
+              <span ng-bind-html="item.label | highlight: $select.search"></span>
+            </ui-select-choices>
+          </ui-select>
+        </div>
+      </div>
+  
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-16 text-right">
+          <miae-button button-class="'mi-button blue'" is-disabled="!copyActions.events.selected" clickevent="processCopyAction()" name="'Copy Actions'"></miae-button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div data-ng-if="!layout.isAppRoutineEditor" class="mi-ae-main-content mi-ae-main-content-full">
+  <div data-ng-if="copyActions.menu.length === 0">
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-16">
+        <p class="mi-ae-margin-b-10">There are no actions to copy.</p>
+        <p>The Copy Actions feature allows you to copy existing actions from another control on screen into your current action list.  In order to use this feature, you first need to add actions to another control on screen.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div data-ng-if="copyActions.menu.length > 0">
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Select a control</label>
+      </div>
+      <div class="mi-ae-col-8">
+        <ui-select data-ng-model="copyActions.control" theme="selectize">
+          <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices group-by="'category'" repeat="item in copyActions.menu | orderBy: 'label' | filter: { label: $select.search }">
+            <span ng-bind-html="item.label | highlight: $select.search"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+
+    <div class="mi-ae-row" data-ng-if="copyActions.actionList.length > 0">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Select an event</label>
+      </div>
+      <div class="mi-ae-col-8">
+        <ui-select data-ng-model="copyActions.action" theme="selectize">
+          <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices group-by="'category'" group-filter="copyActions.groupByFilter" repeat="item in copyActions.actionList | orderBy: 'label' | filter: { label: $select.search }">
+            <span ng-bind-html="item.label | highlight: $select.search"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-16 text-right">
+        <miae-button button-class="'mi-button blue'" clickevent="processCopyAction()" name="'Copy Actions'"></miae-button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Main Content Area -->

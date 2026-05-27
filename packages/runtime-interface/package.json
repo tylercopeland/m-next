@@ -1,0 +1,51 @@
+{
+  "name": "@m-next/runtime-interface",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Runtime interface for converting backend runtime models to frontend widgets",
+  "keywords": [
+    "runtime",
+    "interface",
+    "conversion",
+    "backend",
+    "frontend"
+  ],
+  "author": "Method CRM",
+  "homepage": "",
+  "license": "ISC",
+  "main": "src/index.ts",
+  
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "index"
+  ],
+  "peerDependencies": {
+    "@emotion/react": ">=11.10.4",
+    "@emotion/styled": ">=11.10.4",
+    "prop-types": ">=15.8.1",
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "ts-jest": "^29.1.1",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@testing-library/jest-dom": "^5.16.5"
+  },
+  "scripts": {
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "build": " npm run prettify && npm run lint && npm test && npm run check-types && webpack --mode production",
+    "prettify": "npx prettier \"**/*.*(js|jsx|ts|tsx)\" --ignore-path=.prettierignore --write --log-level=error",
+    "release": "npm build && npm publish build --tag next",
+    "test": "jest",
+    "test-storybook": "jest --json --outputFile=.jest-test-results.json",
+    "lint-js": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --cache --report-unused-disable-directives --max-warnings=0",
+    "lint": "npm run lint-js",
+    "lint-fix": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix --cache --report-unused-disable-directives --max-warnings=0",
+    "check-types": "tsc --noemit",
+    "test-snapshot-update": "npm run test -- -u"
+  }
+}

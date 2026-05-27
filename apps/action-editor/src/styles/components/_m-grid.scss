@@ -1,0 +1,1125 @@
+@mixin gridColumns($justify: flex-start) {
+    // flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+    // max-width: 50%;
+    width: 100%;
+
+    .mi-autocomplete {
+        margin-bottom: 0;
+    }
+
+    button {
+        margin: 0 10px;
+    }
+}
+
+.mi-grid-mobile-modal-open {
+
+    .content-inner {
+        top: 0;
+    }
+}
+
+.mi-grid-tbl-wrapper {
+
+    &.mi-grid-tbl-mobile {
+        .mi-grid-tbl-header, 
+        .mi-grid-tbl-footer {
+            flex-direction: column;
+            flex-wrap: wrap;
+
+            .mi-grid-tbl-left-col, 
+            .mi-grid-tbl-center-col,
+            .mi-grid-tbl-right-col {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .mi-grid-tbl-right-col {
+                justify-content: flex-start;
+            }
+        }
+
+        .mi-grid-tbl-footer {
+            .mi-grid-tbl-left-col {
+                flex-direction: column;
+            }
+            .mi-grid-tbl-center-col {
+                flex-direction: column;
+            }
+        }
+
+        .mi-grid-tbl-filter {
+            margin-bottom: 10px;
+            width: 100% !important;
+        }
+
+        .mi-grid-tbl-option {
+            &.is-disabled {
+                opacity: 0.5;
+                cursor: normal;
+            }
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+
+        .mi-grid-tbl-sub-menu {
+            left: 0;
+            right: auto;
+
+            &:before, 
+            &:after {
+                left: 8px;
+                right: auto;
+            }
+
+            &:before {
+                left: 8px;
+                right: auto;
+                margin-right: 0;
+                margin-left: -1px;
+            }
+
+            .sub-menu-wrapper {
+                max-height: 250px;
+            }
+        }
+    }
+
+    .mi-grid-tbl-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+
+        .mi-grid-tbl-left-col {
+            @include gridColumns();
+        }
+
+        .mi-grid-tbl-right-col {
+            @include gridColumns(flex-end);
+        }
+    }
+
+    .mi-grid-tbl-footer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+
+        .mi-grid-tbl-left-col {
+            @include gridColumns();
+        }
+
+        .mi-grid-tbl-center-col {
+            @include gridColumns(center);
+        }
+
+        .mi-grid-tbl-right-col {
+            @include gridColumns(flex-end);
+        }
+    }
+
+    .mi-grid-tbl {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        // overflow: auto;
+
+        .mi-grid-tbl-table {
+            width: 100%;
+            min-width: 100%;
+            border: 1px solid $card-border;
+            border-width: 1px 1px 0 1px;
+            margin-bottom: 10px;
+            table-layout: fixed;
+
+            &.is-loading {
+                opacity: 0.6;
+            }
+
+            &.has-dividers {
+                thead, tbody {
+                    tr {
+                        th, td {
+                            border-right: 1px solid $card-border;
+                            background-clip: padding-box;
+
+                            &:last-child {
+                                border-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.has-no-records {
+                thead,
+                tbody {
+                    tr {
+                        th, 
+                        td {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            &.has-zebra-stripes {
+                tbody {
+                    tr:nth-child(even) {
+                        td {
+                            background-color: rgba($card-border, 0.15);
+                        }
+                    }
+                    tr:last-child {
+                        td {
+                            background-color: $white;
+                        }
+                    }
+                }
+            }
+            
+            thead,
+            tbody,
+            tfoot {
+                padding: 0;
+            }
+
+            thead,
+            tbody {
+                tr {
+                    &.has-chevron {
+                        td:last-child:after {
+                            font-family: 'method-font','method-icon','method-icon-solid','Source Sans Pro';
+                            content: "\e718";
+                            position: absolute;
+                            top: 50%;
+                            right: 5px;
+                            margin-top: -6px;
+                        }
+                    }
+
+                    th,
+                    td {
+                        position: relative;
+                        text-align: left;
+                        padding: 10px;
+                        border-bottom: 1px solid $card-border;
+                        background-clip: padding-box;
+                        // white-space: nowrap;
+                        overflow: hidden;
+                        // width: auto;
+
+                        &.is-left { 
+                            text-align: left;
+
+                            .mi-grid-tbl-header-title { 
+                                justify-content: flex-start; 
+                            }
+
+                            .tag-box {
+                                justify-content: flex-start;
+                            }
+                        }
+
+                        &.is-center {
+                            text-align: center;
+
+                            .mi-grid-tbl-header-title { 
+                                justify-content: center; 
+                                padding-left: 17px; 
+                            }
+
+                            .tag-box {
+                                justify-content: center;
+                            }
+                        }
+
+                        &.is-right {
+                            text-align: right;
+
+                            .mi-grid-tbl-header-title { 
+                                justify-content: flex-end; 
+                            }
+
+                            .tag-box {
+                                justify-content: flex-end;
+                            }
+                        }
+
+                        &.has-border-right {
+                            border-right: 1px solid $card-border;
+                        }
+
+                        &.selectable-column {
+                            label {
+                                margin: 0 auto;
+                                width: 16px;
+
+                                .mi-radio-checkbox-indicator {
+                                    margin: 0;
+                                }
+                            }
+                        }
+
+                        .child-field {
+                            display: inline-block;
+                            margin-left: 14px;
+                        }
+                    }
+                }
+            }
+
+            thead {
+                tr {
+                    th {
+                        color: $blue;
+                        background: $app-header;                        
+                        padding: 15px 10px;
+                        font-size: 14px;
+                        font-weight: 600;
+                        background-clip: padding-box;
+
+                        .mi-grid-tbl-header-title {
+                            display: flex;
+                            align-items: center;
+
+                            i {
+                                display: inline-block;
+                                width: 7px;
+                                height: 7px;
+                                font-size: 7px;
+                                margin: 0 5px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            tbody {
+                tr:last-child {
+                    td {
+                        // border-bottom: 0;
+                    }
+                }
+            }
+
+            .tag-box {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+
+                .is-tag {
+                    display: block;
+                    background-color: $blue;
+                    border-radius: 16px;
+                    padding: 3px 6px;
+                    color: #0F1B31;
+                    font-size: 13px;
+                    line-height: 14px;
+                    margin: 1px;
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+            }
+
+            .showLessText p, 
+            .showMoreText p {
+                font-size: 14px;
+                line-height: 18px;
+            }
+
+            .showMoreText p {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .mi-grid-tbl-filter {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border: 1px solid $card-border;
+        border-radius: 3px;
+        width: 300px;
+        height: 32px;
+        margin-right: 5px;
+
+        .mi-grid-tbl-filter-name {
+            font-size: 14px;
+            height: 32px;
+            line-height: 22px;
+            padding: 6px 8px;
+            cursor: pointer;
+            width: 100%;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .mi-grid-tbl-filter-caret {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 32px;
+            font-size: 8px;
+            margin: 0;
+            opacity: 0.6;
+            padding: 6px 8px;
+            cursor: pointer;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        + .mi-grid-tbl-option {
+            margin-left: 0;
+        }
+    }
+
+    .mi-grid-tbl-filter-dropdown {
+        display: none;
+        position: absolute;
+        top: 34px;
+        left: 5px;
+        z-index: 200;
+        background-color: $white;
+        border: 1px solid $card-border;
+        padding: 5px 0;
+        margin: 0;
+        width: 290px;
+        box-shadow: 1px 1px 2px rgba($black, 0.1);
+        @include borderRadius(3px);
+
+        &:after, 
+        &:before {
+            bottom: 100%;
+            left: 15px;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+        }
+
+        &:after {
+            border-color: transparent;
+            border-bottom-color: $white;
+            border-width: 7px;
+            margin-left: -7px;
+        }
+
+        &:before {
+            border-color: transparent;
+            border-bottom-color: $card-border;
+            border-width: 8px;
+            margin-left: -8px;
+        }
+
+        .mi-grid-tbl-filter-dropdown-wrapper {
+            display: block;
+            max-height: 350px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            margin: 0;
+        }
+
+        @supports (-ms-ime-align:auto) {
+            li {
+                padding: 0 20px !important;
+            }
+        }
+        @media all and (-ms-high-contrast:none) {
+            li {
+                padding: 0 20px !important;
+            }
+        }
+
+        li {
+            display: block;
+            cursor: pointer;
+            padding: 0 10px;
+            user-select: none;
+
+            &:last-child {
+                a {
+                    border-bottom: none;
+                }
+            }
+
+            &:hover, &.is-active {
+                color: $white;
+                background-color: $blue;
+
+                a {
+                    color: $white;
+                    border-bottom-color: $blue;
+                }
+
+                &.header {
+                    color: $black;
+                    background-color: $white;
+                }
+            }
+
+            &.manageViews {
+                &:hover {
+                    color: $dark-blue;
+                    background-color: $white;
+
+                    a {
+                        color: $dark-blue;
+                        border-bottom-color: $card-border;
+                    }
+                }
+            }
+        }
+
+        a {
+            display: block;
+            padding: 5px 0;
+            border-bottom: 1px solid $card-border;
+            font-size: 14px;
+            color: $dark-blue;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            cursor: pointer;
+            padding-left: 20px; 
+        }
+
+        .manageViews a {
+            color: $blue;
+            padding-left: 0;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        span {
+            display: block;
+            padding: 5px 0;
+            border-bottom: 1px solid $card-border;
+            font-weight: bold;
+        }
+    }
+
+    .mi-grid-tbl-left-col {
+        .mi-grid-tbl-option {
+            margin-left: 0 !important;
+            margin-right: 5px;
+        }
+    }
+
+    .mi-grid-tbl-option {
+        display: block;
+        position: relative;
+        margin-right: 5px;
+
+        &.is-disabled {
+            opacity: 0.5;
+            pointer-events: none;
+            cursor: default;
+        }
+
+        &:first-child {
+            margin-left: 10px;
+        }
+    }
+
+    .mi-grid-tbl-icon-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border: 1px solid $card-border;
+        cursor: pointer;
+        @include borderRadius(3px);
+
+        i {
+            color: $darkGrey;
+        }
+    }
+
+    .mi-grid-tbl-sub-menu {
+        position: absolute;
+        display: none;
+        top: 43px;
+        right: 0;
+        background-color: $white;
+        border: 1px solid $card-border;
+        padding: 10px;
+        width: auto;
+        min-width: 150px;
+        max-width: 200px;
+        box-shadow: -1px 1px 2px rgba($black, 0.1);
+
+        @include borderRadius(3px);
+        
+        & {
+            z-index: 200;
+        }
+
+        &:after, 
+        &:before {
+            bottom: 100%;
+            right: 8px;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+        }
+
+        &:after {
+            border-color: transparent;
+            border-bottom-color: $white;
+            border-width: 7px;
+            margin-right: 0;
+        }
+
+        &:before {
+            border-color: transparent;
+            border-bottom-color: $card-border;
+            border-width: 8px;
+            margin-right: -1px;
+        }
+
+        &.sub-menu-left {
+            left: -0.3px;
+            box-shadow: 1px 1px 2px rgba($black, 0.1);
+            &:after {
+                margin-right: unset;
+                margin-left: 1px;
+                right: unset;
+            }
+
+            &:before {
+                right: unset;
+            }
+        }
+
+        &.sub-menu-modal {
+            width: max-content;
+            max-width: 400px;
+
+            .mi-radiobutton-group ul {
+                padding-top: 10px;
+                padding-bottom: 7px;
+                text-align: center;
+
+                li.rad-horizontal {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+            }
+
+            .mi-textbox {
+                border-radius: 1px;
+                border: 1px solid $card-border;
+                color: $black;
+                margin-top: 10px;
+                padding: 0.3em;
+                width: 100%;
+
+                &:hover {
+                    border: 1px solid $grey;
+                    background-color: $white;
+                    color: $black;
+                }
+
+                &:focus {
+                    border: 1px solid $blue;
+                    outline: 0;
+                }
+            }
+        }
+
+        .sub-menu-title {
+            padding: 0 0 10px;
+            font-weight: 600;
+        }
+
+        .sub-menu-wrapper {
+            display: block;
+            max-height: 400px;
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            &.no-overflow {
+                overflow: hidden;
+            }
+
+            .has-validation-error {
+                padding-top: 10px;
+                padding-bottom: 0px;
+            }
+            .sub-menu-row {
+                display: block;
+                white-space: nowrap;
+
+                &:last-child {
+                    .sub-menu-option {
+                        padding-bottom: 0;
+                    }
+                }
+
+                .mi-radio-checkbox {
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+
+                .sub-menu-option {
+                    display: block;
+                    padding-bottom: 10px;
+                    color: $dark-blue;
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+
+                    &.is-disabled {
+                        color: $card-border;
+
+                        &:hover {
+                            color: $card-border;
+                        }
+                    }
+
+                    &:hover {
+                        color: $blue;
+                    }
+                }
+
+                .mi-checkbox-left {
+                    padding-left: 2px;
+                }
+            }
+
+            &.mi-grid-tbl-settings-menu {
+                .sub-menu-row {
+                    padding-right: 15px;
+
+                    .mi-checkbox-left {
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+
+        .sub-menu-footer {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            // border-top: 1px solid $card-border;
+            padding: 10px 0 0;
+
+            &.center-items {
+                text-align: center;
+                display: block;
+            }
+
+            .mi-button {
+                margin: 0 0 0 10px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    .mi-grid-tbl-sub-menu-mobile {
+        position: fixed;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        background: $white;
+        z-index: 1000;
+
+        .sub-menu-title {
+            display: block;
+            padding: 10px;
+            width: 100%;
+            font-weight: 600;
+            border-bottom: 1px solid $card-border;
+        }
+
+        .sub-menu-wrapper {
+            display: block;
+            flex: 1;
+            width: 100%;
+            padding: 10px;
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            .sub-menu-row {
+                display: block;
+                width: 100%;
+                padding: 8px 0;
+                // border-bottom: 1px solid $card-border;
+
+                &:first-child { padding-top: 0; }
+                &:last-child { padding-bottom: 0; }
+
+                .sub-menu-checkbox {
+                    display: flex;
+                    align-items: center;
+
+                    input {
+                        opacity: 1;
+                        position: relative;
+                        margin: 0 0.25rem 0 0;
+                    }
+                }
+
+                label {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .sub-menu-footer {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border-top: 1px solid $card-border;
+            display: block;
+            text-align: right;
+        }
+    }
+
+    .mi-grid-tbl-record-count {
+        padding: 5px 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: $darkGrey;
+        white-space: nowrap;
+
+        .tooltip {
+            position: absolute;
+            z-index: 1070;
+            display: block;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 1.42857143;
+            text-align: left;
+            text-align: start;
+            text-decoration: none;
+            text-shadow: none;
+            text-transform: none;
+            letter-spacing: normal;
+            word-break: normal;
+            word-spacing: normal;
+            word-wrap: normal;
+            white-space: normal;
+            filter: alpha(opacity=0);
+            opacity: 1;
+            line-break: auto;
+            margin-left: -12px;
+        }
+        .tooltip.bottom {
+            padding: 5px 0;
+            margin-top: 3px;
+        }
+        .tooltip-inner {
+            max-width: 200px;
+            padding: 3px 8px;
+            color: #fff;
+            text-align: center;
+            background-color: #000;
+            border-radius: 4px;
+            border-color: #000;
+        }
+        .tooltip-arrow {
+            display: block !important;
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-style: solid;
+        }
+        .tooltip.bottom .tooltip-arrow {
+            top: 0;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 0 5px 5px;
+            border-bottom-color: #000;
+        }
+    }
+
+    .mi-grid-tbl-advanced-search-container {
+        position: relative;
+    }
+
+    .mi-grid-tbl-search-box-container {
+        display: block;
+        width: 100%;
+    }
+
+    .mi-grid-tbl-search-box {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 32px;
+
+        .mi-grid-tbl-search-area {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            border-width: 1px 0 1px 1px;
+            border-style: solid;
+            border-color: $card-border;
+
+            @include borderRadius(3px 0 0 3px);
+            
+            & {
+                overflow: hidden;
+                height: 32px;
+            }
+        }
+
+        .mi-button {
+            flex: 0 1 auto;
+            margin: 0 !important;
+            @include borderRadius(0 3px 3px 0);
+        }
+
+        .mi-grid-tbl-search-input {
+            display: block;
+            margin: 0;
+            width: 100%;
+            border: 0;
+        }
+
+        .mi-grid-tbl-clear-search {
+            display: none;
+            font-size: 12px;
+            padding: 0 5px 0 0;
+            cursor: pointer;
+        }
+
+        .advanced-search-button {
+            color: $blue;
+            cursor: pointer;
+            white-space: nowrap;
+            padding: 0 7px 0 5px;
+            height: 32px;
+
+            .adv-inner,
+            .adv-string {
+                line-height: 32px;
+                font-size: 12px;
+                margin: 0;
+            }
+
+            i {
+                font-size: 8px;
+            }
+        }
+    }
+
+    .pagination {
+        margin-right: 10px;
+    }
+}
+
+.mi-grid-tbl-filter-dropdown-mobile {
+    position: fixed;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    background: $white;
+    z-index: 20000;
+
+    .mi-grid-tbl-filter-dropdown-title {
+        display: block;
+        padding: 10px;
+        width: 100%;
+        font-weight: 600;
+        border-bottom: 1px solid $card-border;
+    }
+
+    .mi-grid-tbl-filter-dropdown-wrapper {
+        display: block;
+        flex: 1;
+        width: 100%;
+        padding: 10px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin: 0;
+
+        li {
+            display: block;
+            cursor: pointer;
+            padding: 0 10px;
+
+            &:last-child {
+                a {
+                    border-bottom: none;
+                }
+            }
+
+            &:hover, &.is-active {
+                color: $white;
+                background-color: $blue;
+
+                a {
+                    color: $white;
+                    border-bottom-color: $blue;
+                }
+            }
+
+            &.header {
+                padding-left: 0;
+                
+                span {
+                    display: block;
+                    font-weight: bold;
+                    border-bottom: 1px solid $card-border;
+                    padding-bottom: 5px;
+                }
+            }
+        }
+
+        a {
+            display: block;
+            font-size: 15px;
+            padding: 10px 0;
+            color: $dark-blue;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            border-bottom: 1px solid $card-border;
+            height: 35px;
+            line-height: 35px;
+
+            &:first-child {
+                padding-top: 0;
+            }
+
+            &:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+
+            &:hover, &.is-active {
+                color: $white;
+                background-color: $blue;
+            }
+        }
+    }
+
+    .mi-grid-tbl-filter-dropdown-footer {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border-top: 1px solid $card-border;
+        display: block;
+        text-align: right;
+    }
+}
+
+.mi-grid-disabled {
+    // pointer-events: none;
+
+    .mi-grid-tbl-table {
+        tbody {
+            tr, td {
+                cursor: default;
+            }
+        }
+    }
+}
+
+.mi-grid-tbl-multi-checkbox {
+    position: relative;
+    display: flex;
+    padding-left: 4px;
+
+    .mi-grid-tbl-checkbox-more {
+        &.is-open {
+            ~ .mi-grid-tbl-filter-dropdown {
+                display: block;
+            }
+        }
+
+        i {
+            font-size: 8px;
+            margin-left: 5px;
+            color: #2A394A;
+            opacity: 0.6;
+            cursor: pointer;
+        }
+    }
+
+    .mi-grid-tbl-filter-dropdown {
+        left: 12px;
+        width: 170px;
+
+        a {
+            font-weight: normal;
+            padding-left: 0;
+        }
+    }
+
+    // IE 11 styles
+    @media all and (-ms-high-contrast:none) {
+        width: 40px;
+
+        .mi-grid-tbl-checkbox-more {
+            width: 22px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 3px;
+        }
+        
+        i {
+            margin-left: 0 !important;
+        }
+    }
+
+}

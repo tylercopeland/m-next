@@ -1,0 +1,146 @@
+<div data-ng-controller="ShowToastCtrl">
+  <mi-action-description info="action"></mi-action-description>
+
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content">
+    <p class="mi-ae-margin-b-20">Shows a toast notification after an action is completed.</p>
+
+    <!-- Toast Type -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Notification Type</label>
+      </div>
+      <div class="mi-ae-col-12">
+        <ul class="mi-radiobutton-group mi-ae-margin-t-10">
+          <li class="rad-horizontal mi-ae-padding-r-20" data-ng-repeat="type in toastTypes">
+            <label class="mi-radio-checkbox mi-radio">
+              <span>{{type.label}}</span>
+              <input type="radio" data-ng-model="action.ToastType" data-ng-value="type.value"
+                ng-disabled="action.isReadOnly">
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Message Text -->
+    <div class="mi-ae-row mi-ae-margin-t-20">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Message text</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <mi-complex-value action="action" model="action.Message" allow="messageAllow"
+          error-code="action.Message.ValidationMessage" is-read-only="action.isReadOnly" max-length="120"
+          text-area="true"></mi-complex-value>
+      </div>
+    </div>
+
+    <!-- Include Navigation Button -->
+    <div class="mi-ae-row mi-ae-margin-t-20">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Include navigation button</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <ul class="mi-radiobutton-group">
+          <li class="rad-horizontal mi-ae-padding-r-20">
+            <label class="mi-radio-checkbox mi-radio">
+              <span>Yes</span>
+              <input type="radio" data-ng-model="action.IncludeNavigationButton" data-ng-value="true"
+                ng-disabled="action.isReadOnly">
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </li>
+          <li class="rad-horizontal mi-ae-padding-r-20">
+            <label class="mi-radio-checkbox mi-radio">
+              <span>No</span>
+              <input type="radio" data-ng-model="action.IncludeNavigationButton" data-ng-value="false"
+                ng-disabled="action.isReadOnly">
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Navigation Options (shown when IncludeNavigationButton is true) -->
+    <div data-ng-if="action.IncludeNavigationButton">
+      <!-- Button Text -->
+      <div class="mi-ae-row mi-ae-margin-t-20">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Button text</label>
+        </div>
+        <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'ButtonText'">
+          <input type="text" class="mi-input" data-ng-model="action.ButtonText" maxlength="40"
+            ng-disabled="action.isReadOnly" ng-blur="onButtonTextBlur()">
+        </div>
+      </div>
+
+      <!-- Navigate To -->
+      <div class="mi-ae-row mi-ae-margin-t-20">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Navigate to</label>
+        </div>
+        <div class="mi-ae-col-5">
+          <ui-select data-ng-model="dropdowns.appSelection" theme="selectize" ng-disabled="action.isReadOnly">
+            <ui-select-match placeholder="Select an app...">{{$select.selected.label}}</ui-select-match>
+            <ui-select-choices group-by="'category'"
+              repeat="opt.value as opt in dropdowns.appList | filter: $select.search">
+              <span ng-bind-html="opt.label"></span>
+            </ui-select-choices>
+          </ui-select>
+        </div>
+        <div class="mi-ae-col-5" mi-validation-class="action.ValidationMessages" error-property="'ScreenId'">
+          <ui-select data-ng-model="dropdowns.appScreenSelection" theme="selectize" ng-disabled="action.isReadOnly">
+            <ui-select-match placeholder="Select a screen...">{{$select.selected.label}}</ui-select-match>
+            <ui-select-choices repeat="opt.value as opt in dropdowns.screenList | filter: $select.search">
+              <span ng-bind-html="opt.label"></span>
+            </ui-select-choices>
+          </ui-select>
+        </div>
+      </div>
+
+      <!-- Set Active RecordID -->
+      <div class="mi-ae-row mi-ae-margin-t-20" data-ng-if="dropdowns.appScreenSelection">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Set a screen Active RecordID</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <ul class="mi-radiobutton-group">
+            <li class="rad-horizontal mi-ae-padding-r-20">
+              <label class="mi-radio-checkbox mi-radio">
+                <span>Set Active RecordID</span>
+                <input type="radio" data-ng-model="dropdowns.activeRecordType" data-ng-value="0"
+                  ng-disabled="action.isReadOnly">
+                <div class="mi-radio-checkbox-indicator"></div>
+              </label>
+            </li>
+            <li class="rad-horizontal mi-ae-padding-r-20">
+              <label class="mi-radio-checkbox mi-radio">
+                <span>Clear screen</span>
+                <input type="radio" data-ng-model="dropdowns.activeRecordType" data-ng-value="1"
+                  ng-disabled="action.isReadOnly">
+                <div class="mi-radio-checkbox-indicator"></div>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Use This Active RecordID -->
+      <div class="mi-ae-row mi-ae-margin-t-20"
+        data-ng-if="dropdowns.appScreenSelection && dropdowns.activeRecordType === 0">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Use this Active RecordID</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value action="action" model="action.ActiveRecordId" allow="activeRecordAllow"
+            is-read-only="action.isReadOnly"></mi-complex-value>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Main Content Area -->
+
+  <mi-action-notes is-read-only="action.isReadOnly"></mi-action-notes>
+</div>

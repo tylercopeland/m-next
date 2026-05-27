@@ -1,0 +1,31 @@
+.table-row {
+  .mi-ae-has-error {
+    .mi-ae-error-label {
+      padding-bottom: 0 !important;
+    }
+  }
+}
+
+.mi-ae-has-error {
+  .mi-ae-error-label {
+    display: block;
+    padding: 5px 0;
+    color: $red;
+    font-size: 12px;
+  }
+  .ui-select-container {
+    .selectize-input {
+      border-color: $red;
+    }
+  }
+  input[type=text],
+  textarea {
+    margin: 0;
+    border-color: $red;
+  }
+  .angucomplete-holder {
+    input[type=text] {
+      border-color: $red;
+    }
+  }
+}

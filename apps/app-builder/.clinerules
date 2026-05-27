@@ -1,0 +1,408 @@
+# Cline Project Rules
+
+## Documentation Hierarchy Requirements
+
+### Primary Context Sources (Always Read Before Any Task)
+- **Memory Bank files** (6 files): `projectbrief.md`, `productContext.md`, `techContext.md`, `systemPatterns.md`, `activeContext.md`, `progress.md` - Current project state and decisions
+- **Product Requirements Document**: `PRODUCT_REQUIREMENTS_DOCUMENT.md` - Comprehensive functional requirements and success criteria  
+- **System Design Proposal**: `SYSTEM_DESIGN_PROPOSAL.md` - Technical architecture and implementation strategy
+- **Implementation Task Breakdown**: `IMPLEMENTATION_TASK_BREAKDOWN.md` - Sprint planning and completion criteria
+
+### Secondary Context Sources (Reference as needed)
+- **Library Comparison Analysis**: `LIBRARY_COMPARISON_ANALYSIS.md` - Technology choice rationale and constraints
+- **Other project documentation**: As relevant to specific tasks
+
+### Cross-Reference Validation Requirements
+- Verify Memory Bank claims against PRD requirements
+- Confirm technical implementations follow System Design architecture
+- Check task completion against Implementation Task Breakdown criteria  
+- Ensure technology choices align with Library Analysis decisions
+- Validate that documented functionality exists in actual code
+
+## Documentation Requirements
+
+- Validate that each file is complete and update any stale or missing documentation
+- Document new patterns, decisions, partial insights, or architectural notes after completing tasks or reaching milestones
+- Track partial progress and next steps in `activeContext.md` and `progress.md`, even if the task is not fully completed
+- **Documentation Consistency**: When updating Memory Bank, check for conflicts with PRD or System Design
+
+## Requirements Verification
+
+- Confirm project goals and constraints are fully defined in `projectbrief.md` and `productContext.md`
+- Review technical constraints in `techContext.md` and architectural choices in `systemPatterns.md`
+- Identify and explicitly list:
+  - Missing requirements
+  - Ambiguities or unknowns
+  - Unstated assumptions
+- **If any of these exist, proceed with a partial plan or stubbed output where feasible** — and document the gap
+- Document all unknowns clearly in `activeContext.md` under an "Open Questions" section
+
+## Unknown Resolution Workflow
+
+- For each unknown:
+  1. **Document** it in `activeContext.md` with a clear question and all known context
+  2. **Research** internally (Memory Bank, codebase, known patterns)
+  3. If still unresolved, **ask the user for clarification** and proceed with an annotated placeholder or best-guess implementation
+- Do not stall execution indefinitely while waiting for answers — use scaffolding or stubbed designs where possible
+- Once resolved:
+  - Update `activeContext.md` to reflect the answer and resulting decisions
+  - If relevant, update `projectbrief.md`, `productContext.md`, or `systemPatterns.md`
+
+## Solution Design
+
+- Ensure all solutions align with verified project requirements and constraints
+- Where uncertainty exists, **label speculative sections** and include clear TODOs or assumptions
+- Favor modular and incremental implementations over complete solutions when blocked or uncertain
+- Map design choices directly back to project goals and technical boundaries
+- Call out and justify any tradeoffs, deviations, or risks introduced
+- Use consistent patterns defined in `systemPatterns.md`
+
+## Implementation Validation Requirements
+
+### Code-Documentation Cross-Reference
+- Before marking any task as "complete", verify that documented functionality actually exists in code
+- Cross-reference all Memory Bank claims against actual implementation
+- Document the specific files and functions that implement each documented feature
+- If implementation is placeholder/stub, explicitly mark it as such in both code and documentation
+
+### Placeholder/Stub Code Requirements  
+- All placeholder or stub code must be clearly marked with:
+  - `// PLACEHOLDER: [description of what this should actually do]`
+  - `// TODO: Replace with actual [component/feature] implementation`
+- Documentation must explicitly state when features are placeholders vs implemented
+- Progress tracking must distinguish between "Infrastructure Complete" and "Feature Complete"
+
+### Component Rendering Validation
+- When documenting component rendering capabilities, verify that:
+  - Actual @m-one components are imported (not just referenced)
+  - renderComponent function actually instantiates real components
+  - Component configuration maps to working component instances
+- Mark as "Infrastructure Complete" if only placeholder rendering exists
+- Mark as "Feature Complete" only when actual components render correctly
+
+## Task Execution
+
+- Maintain up-to-date status in `progress.md`
+- If a task cannot be completed, **submit what is possible** (partial implementation, plan outline, blocked note)
+- Always log:
+  - What was built
+  - What remains  
+  - Why certain paths were chosen
+  - Any stuck points or uncertain areas (with fallback reasoning)
+- **Reality Check**: Before updating progress.md, verify that documented capabilities match actual code
+- **Task Completion**: Reference specific Task Breakdown criteria when marking tasks complete
+- Avoid over-documenting speculative ideas unless they directly affect decision-making
+
+## Update Triggers
+
+Update Memory Bank documentation whenever:
+
+- Requirements evolve or become clearer
+- New features or patterns are introduced
+- Major architectural or technical changes are made
+- Unknowns are clarified or resolved
+- Blockers are encountered and workaround strategies are proposed
+- User explicitly requests an update (must review all files)
+
+## Behavioral Constraints
+
+- Never begin a task without reviewing all relevant context files
+- **Do not stall waiting for perfect clarity** — act on current understanding and document uncertainty
+- Treat Memory Bank as the single source of truth — memory is reset between sessions
+- Default to forward motion: if unsure, state assumptions and proceed
+- Prefer incomplete but well-structured output over no output
+- Always ask the user for clarification when blocked, but continue scaffolding where applicable
+
+## User Feedback Triggers
+
+Ask the user for feedback when:
+
+- An unknown remains unresolved after internal research
+- Multiple valid approaches exist with no clear preference
+- Required documentation is missing or conflicting
+- A decision affects external teams or user experience
+- Task is blocked by missing access, data, or dependencies
+- A strategic deviation from documented goals or architecture is being considered
+
+When asking, include:
+- A short summary of the issue
+- What has already been tried or considered
+- A request for input, clarification, or approval
+
+## Troubleshooting & Analysis Workflows
+
+### 🔧 Code Analysis & Problem-Solving Protocol
+**Primary Approach**: Analysis-first troubleshooting focused on understanding rather than execution
+
+#### Core Principles:
+- **Analysis Over Execution**: Focus on code review, data flow analysis, and logical reasoning before running projects
+- **Targeted Diagnostics**: When requesting logs or output, explicitly explain the diagnostic purpose and what specific information is needed
+- **Clean Code Standards**: Always remove debugging artifacts (console.log statements, temporary code, test outputs) upon task completion
+- **Systematic Investigation**: Follow logical problem-solving steps from symptoms to root cause
+
+#### Troubleshooting Workflow:
+1. **Problem Definition**: Clearly state the suspected issue and expected vs. actual behavior
+2. **Code Analysis**: Review relevant files for logical errors, data flow issues, or missing connections
+3. **Data Flow Tracing**: Follow data/props from source to destination to identify breaks or transformations  
+4. **Targeted Diagnostics**: If logs/output needed, explain:
+   - What specific information you're seeking
+   - Which component/function/data point needs verification
+   - How this information will help solve the problem
+5. **Solution Implementation**: Make targeted changes based on analysis findings
+6. **Cleanup**: Remove all debugging code, console statements, and temporary artifacts
+
+#### Log Request Standards:
+When requesting logs/output from user:
+- **Specify exact location**: "Please run X and share the console output from Y component"
+- **Explain diagnostic purpose**: "I need to verify that data Z is reaching component A with the correct structure"
+- **Define success criteria**: "This will help me confirm whether the issue is in data transformation or component rendering"
+
+#### Code Cleanliness Requirements:
+- Remove all `console.log()`, `console.warn()`, `console.error()` statements when debugging is complete
+- Remove temporary variables or test code added during investigation
+- Clean up any commented-out code or debug imports
+- Scan existing codebase for old debugging artifacts and remove them
+
+#### Browser Testing & Feedback Protocol:
+- **NEVER run development servers or projects directly** 
+- **ALWAYS ask the user to provide browser feedback** when testing is needed
+- When requesting browser testing, specify:
+  - Exact functionality to test
+  - Expected behavior vs what to look for
+  - Specific UI elements or interactions to verify
+- User will provide screenshots, console logs, or behavior descriptions
+- Base debugging and problem-solving on user-provided feedback rather than direct execution
+
+### 🔍 Requirements Conflict Analysis
+When user feedback conflicts with documented requirements:
+1. Document the conflict in `activeContext.md` under "Requirements Conflicts"
+2. List the original requirement vs. user feedback
+3. Update `projectbrief.md` to reflect the change
+4. Add decision rationale to `progress.md`
+
+### 🐛 Memory Bank Debugging
+If Memory Bank files seem incomplete:
+1. Check `activeContext.md` for recent changes
+2. Verify all 6 Memory Bank files exist and are readable
+3. Use `progress.md` to track what should be documented
+4. Cross-reference with actual code changes
+
+### 📊 Decision Documentation Template
+For architectural decisions:
+```
+**Decision**: [What changed]
+**Rationale**: [Why it changed]
+**Impact**: [What files/requirements affected]
+**Date**: [When decided]
+**Status**: [Completed/In Progress/Blocked]
+```
+
+### 🔄 Requirements Evolution Tracking
+When requirements change:
+1. Update `projectbrief.md` with new requirements
+2. Document the change in `activeContext.md`
+3. Mark as completed in `progress.md`
+4. Note any technical implications
+
+## Quality Gates for Task Completion
+
+### Completion Status Definitions
+- **Infrastructure Complete**: Scaffolding/structure in place, may have placeholder implementations
+- **Feature Complete**: Actual functionality working end-to-end with real components
+- **Fully Complete**: Feature working, tested, and documented accurately
+
+### Before Marking Any Task Complete:
+- [ ] Verify documented functionality exists in actual code
+- [ ] Test that described features actually work as documented  
+- [ ] Confirm all component references point to real implementations
+- [ ] Check that placeholder code is clearly marked as such
+- [ ] Update documentation to reflect actual vs planned functionality
+- [ ] Cross-reference completion against Implementation Task Breakdown criteria
+
+### Sprint Completion Requirements:
+- Include verification section: "Verified working: [list]" and "Still placeholder: [list]"
+- Test actual user workflows described in documentation
+- Cross-reference all Memory Bank claims against implementation reality
+
+## JIRA Ticket Creation Rules
+
+### MCP Atlassian Tool Usage Guidelines
+**UPDATED**: September 4, 2025 - Enhanced server with field discovery and corrected mappings
+
+#### ✅ REQUIRED FIELDS (Always Include)
+- `project_key`: "PL" (Platform project)
+- `issue_type`: "Story" (primary type used)
+- `summary`: Brief, descriptive title
+- `description`: Simple text description (avoid complex markdown)
+- `components`: ["Components"] (ONLY valid component name confirmed)
+
+#### ✅ OPTIONAL FIELDS (Safe to Include)
+- `assignee`: Use format "firstname.lastname@method.me" (e.g., "b.grady@method.me")
+- `labels`: Array of simple strings (e.g., ["layout-engine", "container-system"])
+
+#### ✅ ENHANCED CUSTOM FIELD SUPPORT (Now Working!)
+**Field Discovery Tool**: Use `jira_get_create_metadata` to discover field IDs
+**Corrected Field Mappings for PL Project**:
+- `epic_link`: **customfield_10007** ✅ (CORRECTED - was customfield_10016)
+- `story_points`: **customfield_10506** ✅ (CORRECTED - was customfield_10014)
+- `scrum_team`: **customfield_10700** ✅ (Auto-discovered, required field)
+
+#### ⚠️ REMAINING LIMITATIONS (Manual Required)
+- `parent`: Story→Story hierarchy blocked by JIRA validation (use manual linking)
+- `priority`: Cannot be set during creation (auto-assigned to "None")
+- `components`: Only "Components" is valid - other component names will fail
+
+#### 🔄 RECOMMENDED WORKFLOW (Two-Step Process)
+**Step 1: Create with Basic Fields**
+```json
+{
+  "project_key": "PL",
+  "issue_type": "Story", 
+  "summary": "Issue title",
+  "description": "Issue description",
+  "assignee": "b.grady@method.me",
+  "labels": ["layout-engine"],
+  "components": ["Components"]
+}
+```
+
+**Step 2: Update with Enhanced Metadata**
+```json
+{
+  "issue_key": "PL-XXXXX",
+  "fields": {
+    "epic_link": "PL-54667",
+    "story_points": 8
+  }
+}
+```
+
+#### 📋 VERIFIED SUCCESS PATTERNS
+✅ **Epic Link**: `jira_update_issue` with `epic_link: "PL-54667"` → **WORKS**
+✅ **Story Points**: `jira_update_issue` with `story_points: 8` → **WORKS**  
+✅ **Field Discovery**: `jira_get_create_metadata` → **WORKS** (discovers all custom fields)
+✅ **Issue Linking**: `jira_link_issues` for Relates/Blocks relationships → **WORKS**
+✅ **Comments**: `jira_add_comment` → **WORKS**
+✅ **Transitions**: `jira_get_transitions` and `jira_transition_issue` → **WORKS**
+
+#### 🚫 ERROR PATTERNS TO AVOID
+- Don't use old field IDs (customfield_10016, customfield_10014) - they will fail
+- Don't include `parent` in `jira_create_issue` - causes hierarchy validation errors
+- Don't assume field availability without using `jira_get_create_metadata` first
+- Don't use unverified component names beyond "Components"
+
+#### 🔧 TROUBLESHOOTING GUIDE
+**If Epic Link Fails**: Verify using `jira_get_create_metadata` for current field ID
+**If Story Points Fail**: Check if field ID changed from customfield_10506
+**If Parent Fails**: Use manual linking in JIRA UI or different relationship types
+**If Creation Fails**: Remove optional fields and retry with minimal payload
+
+### JIRA Formatting Standards (Wiki Markup)
+**CRITICAL**: JIRA uses wiki markup, NOT Markdown syntax. Always use JIRA-native formatting.
+
+#### ✅ CORRECT JIRA FORMATTING
+**Headers**: Use `*Header Text*` (bold) or plain text  
+**Bold Text**: Use `*bold text*` (single asterisks)  
+**Bullet Points**: Use `* item` or `• item`  
+**Numbered Lists**: Use `# item` (with space after #)  
+**Code Blocks**: Use `{code}code here{code}`  
+**Colored Panels**: Use `{panel:bgColor=#deebff}content{panel}`  
+**Available Panel Colors**:  
+- `#deebff` (blue - for information)
+- `#fffae6` (yellow - for warnings) 
+- `#e3fcef` (green - for success/implementation)
+
+#### 🚫 INCORRECT FORMATTING (Markdown - Will NOT Render)
+**Headers**: `## Header Text` or `### Subheader`  
+**Bold Text**: `**bold text**` (double asterisks)  
+**Bullet Points**: `- item` (dash syntax)  
+**Code Blocks**: ``` code blocks ``` (triple backticks)
+
+#### 📝 JIRA DESCRIPTION TEMPLATE
+```
+*Overview*
+
+Brief description here.
+
+{panel:bgColor=#fffae6}
+Important context or warning information
+{panel}
+
+*Business Requirements*
+* Enable feature X with visual feedback
+* Implement Y system for intuitive UX
+* Provide Z functionality for user benefit
+
+*Technical Requirements*
+
+*Key Features*
+* Visual feedback indicators
+* Advanced system management
+* Integration compatibility
+
+*Implementation Details*
+
+{panel:bgColor=#e3fcef}
+*File:* path/to/file.ts
+Description of implementation area.
+{panel}
+
+*Acceptance Criteria*
+
+*Functional Requirements*
+* Feature X fully operational
+* System Y working correctly
+* Integration Z maintained
+
+*Testing Instructions*
+
+*Manual Testing Scenarios*
+# Test scenario 1: Description
+# Test scenario 2: Description
+
+*Definition of Done*
+* All acceptance criteria met
+* Code review completed
+* Tests written and passing
+* Documentation updated
+```
+
+#### 🔍 FORMATTING VALIDATION CHECKLIST
+Before creating/updating JIRA tickets:
+- [ ] No `##` or `###` headers (use `*Header*` instead)
+- [ ] No `**bold**` text (use `*bold*` instead)  
+- [ ] No `- bullet` points (use `* bullet` instead)
+- [ ] No ``` code blocks ``` (use `{code}code{code}` instead)
+- [ ] Use colored panels for important sections
+- [ ] Structure follows standard template format
+
+## ✅ Quick Reference Checklist
+
+**Before Starting Any Task:**
+- [ ] Read all Memory Bank files
+- [ ] Review relevant sections of PRD and System Design Proposal
+- [ ] Check Implementation Task Breakdown for specific completion criteria
+- [ ] Check for requirements conflicts or unknowns
+- [ ] Document any uncertainties in activeContext.md
+
+**During Task Execution:**
+- [ ] Update activeContext.md with decisions and progress
+- [ ] Update progress.md with completed tasks
+- [ ] Update projectbrief.md if requirements change
+- [ ] Document deviations from original requirements
+- [ ] Ensure implementation follows System Design architecture
+- [ ] Mark placeholder code clearly with TODOs
+
+**Before JIRA Ticket Creation:**
+- [ ] Use only confirmed safe fields: project_key, issue_type, summary, description, components
+- [ ] Set components to ["Components"] only
+- [ ] Use simple text descriptions (not complex markdown)
+- [ ] Plan to use update tool for epic_link, story_points after creation
+
+**Before Completion:**
+- [ ] Verify all Memory Bank files are updated
+- [ ] Check that all changes are properly documented
+- [ ] Ensure no requirements conflicts remain undocumented
+- [ ] Cross-reference documented functionality against actual code
+- [ ] Verify completion criteria from Implementation Task Breakdown are met
+- [ ] Test that documented features actually work as described

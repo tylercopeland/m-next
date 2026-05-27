@@ -1,0 +1,66 @@
+{
+  "id": "Contacts",
+  "fields": [
+    {
+      "name": "CompanyName",
+      "caption": "Company name",
+      "type": "Text",
+      "isVisible": true,
+      "isRequired": false,
+      "isLinked": true,
+      "sourceModel": "Entity",
+      "sourceField": "CompanyName"
+    },
+    {
+      "name": "AltEmail",
+      "caption": "Alt email",
+      "type": "Text",
+      "isVisible": true,
+      "isRequired": false,
+      "maxLength": null
+    },
+    {
+      "name": "Email",
+      "caption": "Email",
+      "type": "Text",
+      "isVisible": true,
+      "isRequired": false,
+      "maxLength": null
+    },
+    {
+      "name": "Balance",
+      "caption": "Balance",
+      "type": "Money",
+      "isVisible": true,
+      "isRequired": false
+    },
+    {
+      "name": "CPEPerYear",
+      "caption": "Cpeper year",
+      "type": "Decimal",
+      "isVisible": true,
+      "isRequired": false
+    },
+    {
+      "name": "IsOptOutOfMarketing",
+      "caption": "Is opt out of marketing",
+      "type": "YesNo",
+      "isVisible": true,
+      "isRequired": false,
+      "displayOptions": {
+        "trueValue": "Cookie",
+        "falseValue": "Monster"
+      }
+    },
+    {
+      "name": "BirthDate",
+      "caption": "Birth date",
+      "type": "DateTime",
+      "isVisible": true,
+      "isRequired": false,
+      "displayOptions": {
+        "dateFormat": 2
+      }
+    }
+  ]
+}

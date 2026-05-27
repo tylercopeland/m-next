@@ -1,0 +1,294 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MultiSelect Component snapshots 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": .emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: flex-start;
+  align-content: flex-start;
+  border: 1px solid #BACAD0;
+  border-radius: 2px;
+  height: 200px;
+  padding: 8px;
+  overflow-y: auto;
+}
+
+.emotion-2:focus-within {
+  border: 1px solid #0D71C8;
+}
+
+.emotion-2 input::-webkit-input-placeholder {
+  text-overflow: ellipsis;
+}
+
+.emotion-2 input::-moz-placeholder {
+  text-overflow: ellipsis;
+}
+
+.emotion-2 input:-ms-input-placeholder {
+  text-overflow: ellipsis;
+}
+
+.emotion-2 input:placeholder-shown,
+.emotion-2 input::placeholder {
+  text-overflow: ellipsis;
+}
+
+.emotion-4 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: 200px;
+  -ms-flex-preferred-size: 200px;
+  flex-basis: 200px;
+  height: 24px!important;
+  font-size: 14px!important;
+  margin: 0px!important;
+  padding: 0px!important;
+  border: none!important;
+  outline: none!important;
+}
+
+<body>
+    <div>
+      <div
+        class="emotion-0 emotion-1"
+      >
+        <div
+          class="test-multi-select emotion-2 emotion-3"
+          height="200px"
+          id="multi-select-wrapper"
+        >
+          <input
+            autocomplete="on"
+            class="test-multi-select-input emotion-4 emotion-5"
+            id="multi-select-input"
+            placeholder="Enter values"
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": .emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: flex-start;
+  align-content: flex-start;
+  border: 1px solid #BACAD0;
+  border-radius: 2px;
+  height: 200px;
+  padding: 8px;
+  overflow-y: auto;
+}
+
+.emotion-2:focus-within {
+  border: 1px solid #0D71C8;
+}
+
+.emotion-2 input::-webkit-input-placeholder {
+  text-overflow: ellipsis;
+}
+
+.emotion-2 input::-moz-placeholder {
+  text-overflow: ellipsis;
+}
+
+.emotion-2 input:-ms-input-placeholder {
+  text-overflow: ellipsis;
+}
+
+.emotion-2 input:placeholder-shown,
+.emotion-2 input::placeholder {
+  text-overflow: ellipsis;
+}
+
+.emotion-4 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: 200px;
+  -ms-flex-preferred-size: 200px;
+  flex-basis: 200px;
+  height: 24px!important;
+  font-size: 14px!important;
+  margin: 0px!important;
+  padding: 0px!important;
+  border: none!important;
+  outline: none!important;
+}
+
+<div>
+    <div
+      class="emotion-0 emotion-1"
+    >
+      <div
+        class="test-multi-select emotion-2 emotion-3"
+        height="200px"
+        id="multi-select-wrapper"
+      >
+        <input
+          autocomplete="on"
+          class="test-multi-select-input emotion-4 emotion-5"
+          id="multi-select-input"
+          placeholder="Enter values"
+          type="text"
+        />
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "tree": .emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: flex-start;
+  align-content: flex-start;
+  border: 1px solid #BACAD0;
+  border-radius: 2px;
+  height: 200px;
+  padding: 8px;
+  overflow-y: auto;
+}
+
+.emotion-2:focus-within {
+  border: 1px solid #0D71C8;
+}
+
+.emotion-2 input::-webkit-input-placeholder {
+  text-overflow: ellipsis;
+}
+
+.emotion-2 input::-moz-placeholder {
+  text-overflow: ellipsis;
+}
+
+.emotion-2 input:-ms-input-placeholder {
+  text-overflow: ellipsis;
+}
+
+.emotion-2 input:placeholder-shown,
+.emotion-2 input::placeholder {
+  text-overflow: ellipsis;
+}
+
+.emotion-4 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: 200px;
+  -ms-flex-preferred-size: 200px;
+  flex-basis: 200px;
+  height: 24px!important;
+  font-size: 14px!important;
+  margin: 0px!important;
+  padding: 0px!important;
+  border: none!important;
+  outline: none!important;
+}
+
+<div>
+    <div
+      class="emotion-0 emotion-1"
+    >
+      <div
+        class="test-multi-select emotion-2 emotion-3"
+        height="200px"
+        id="multi-select-wrapper"
+      >
+        <input
+          autocomplete="on"
+          class="test-multi-select-input emotion-4 emotion-5"
+          id="multi-select-input"
+          placeholder="Enter values"
+          type="text"
+        />
+      </div>
+    </div>
+  </div>,
+  "unmount": [Function],
+}
+`;

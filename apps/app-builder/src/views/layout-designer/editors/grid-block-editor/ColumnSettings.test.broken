@@ -1,0 +1,162 @@
+/* eslint-disable import/no-extraneous-dependencies */
+// Tests broken due to action editor 
+import React from 'react';
+import { render } from '@testing-library/react';
+import fetchMock from 'jest-fetch-mock';
+import { FieldTypeIds } from '@m-next/types';
+import ColumnSettings from './ColumnSettings';
+import { createGridColumn, ValidationRuleTypes } from '../../control-classes';
+
+fetchMock.enableMocks();
+
+describe('ColumnSettings', () => {
+  test('text column', async () => {
+    const mockChange = jest.fn();
+    const { tree } = render(
+      <ColumnSettings
+        column={
+          createGridColumn({
+            field: 'FullName',
+            header: 'Full name',
+            visible: true,
+            fieldType: FieldTypeIds.Text,
+
+            validationRules: [
+              { rule: ValidationRuleTypes.Required, value: true, canDelete: false },
+              { rule: ValidationRuleTypes.MaliciousValues, value: true, canDelete: false },
+            ],
+          })
+        }
+        onChange={mockChange}
+      />,
+    ).container;
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('Money column', async () => {
+    const mockChange = jest.fn();
+    const { tree } = render(
+      <ColumnSettings
+        column={
+          createGridColumn({
+            field: 'Balance',
+            header: 'Balance',
+            visible: true,
+            fieldType: FieldTypeIds.Money,
+          })
+        }
+        onChange={mockChange}
+      />,
+    ).container;
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('YesNo column', async () => {
+    const mockChange = jest.fn();
+    const { tree } = render(
+      <ColumnSettings
+        column={
+          createGridColumn({
+            field: 'IsActive',
+            header: 'Is Active',
+            visible: true,
+            fieldType: FieldTypeIds.YesNo,
+          })
+        }
+        onChange={mockChange}
+      />,
+    ).container;
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('DateTime column', async () => {
+    const mockChange = jest.fn();
+    const { tree } = render(
+      <ColumnSettings
+        column={
+          createGridColumn({
+            field: 'LastActivityCompletedDate',
+            header: 'Last activity completed date',
+            visible: true,
+            fieldType: FieldTypeIds.DateTime,
+          })
+        }
+        onChange={mockChange}
+      />,
+    ).container;
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('Integer column', async () => {
+    const mockChange = jest.fn();
+    const { tree } = render(
+      <ColumnSettings
+        column={
+          createGridColumn({
+            field: 'RecordID',
+            header: 'Record id',
+            visible: true,
+            fieldType: FieldTypeIds.Integer,
+          })
+        }
+        onChange={mockChange}
+      />,
+    ).container;
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('Decimal column', async () => {
+    const mockChange = jest.fn();
+    const { tree } = render(
+      <ColumnSettings
+        column={
+          createGridColumn({
+            field: 'CPEPerYear',
+            header: 'CPEPerYear',
+            visible: true,
+            fieldType: FieldTypeIds.Decimal,
+          })
+        }
+        onChange={mockChange}
+      />,
+    ).container;
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('Formula column', async () => {
+    const mockChange = jest.fn();
+    const { tree } = render(
+      <ColumnSettings
+        column={
+          createGridColumn({
+            field: 'F1',
+            header: 'F1',
+            visible: true,
+            formula: 'TotalDaysBetween(Date(),Date(@LastActivityCompletedDate))',
+            fieldType: FieldTypeIds.Decimal,
+          })
+        }
+        onChange={mockChange}
+      />,
+    ).container;
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('Button column', async () => {
+    const mockChange = jest.fn();
+    const { tree } = render(
+      <ColumnSettings
+        column={
+          createGridColumn({
+            field: 'Button1',
+            header: 'Button1',
+            visible: true,
+            fieldType: FieldTypeIds.Button,
+          })
+        }
+        onChange={mockChange}
+      />,
+    ).container;
+    expect(tree).toMatchSnapshot();
+  });
+});

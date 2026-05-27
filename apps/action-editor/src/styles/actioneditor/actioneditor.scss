@@ -1,0 +1,66 @@
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-weight: 300;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-weight: 300;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-weight: 300;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-weight: 300;
+}
+
+@import "variables",
+        "mixins", 
+        "framework",
+        "framework/grid",
+        "framework/dropdown",
+        "framework/scaffolding",
+        "framework/buttons",
+        "partials/code-block",
+        "partials/criteria-builder",
+        "partials/new-action-list";
+
+// Problems
+svg-icon span[color] {
+  display: flex !important;
+  padding-right: 0!important;
+}
+
+li[data-ng-repeat="item in controlValidations"] i.mi-icon svg-icon span[color] {
+  padding: 0!important;
+  margin: 0!important;
+}
+
+.mi-ae-drag-handle {
+  display: inline-flex;
+}
+
+.svg-inline-text {
+  display: inline-flex;
+
+  svg-icon {
+      padding-right: 0.5em;
+  }
+}
+
+.mi-ae-codeblock li .action-name button.mi-icon span {
+  color: #000;
+  opacity: 1;
+}
+
+.mi-datetimepicker .buttonGroup button.datepickerbutton:focus {
+  color: #0D71C8;
+  svg {
+    fill: #0D71C8 !important; /* Overrides any inline React styles */
+    stroke: #0D71C8 !important; /* Ensures stroke follows the same color */
+  }
+}
+
+div[data-testid="react-action-editor-wrapper"] {
+  background-color: #ff0;
+  .mi-ae-framework-exterior {
+    top: ($header-height + $header-border);
+  }
+}

@@ -1,0 +1,159 @@
+// Float
+.is-clearfix
+  +clearfix
+
+.is-pulled-left
+  float: left !important
+
+.is-pulled-right
+  float: right !important
+
+// Overflow
+.is-clipped
+  overflow: hidden !important
+
+// Overlay
+.is-overlay
+  +overlay
+
+@each $alignment, $text-align in $alignments
+  .has-text-#{$alignment}
+    text-align: #{$text-align} !important
+  +mobile
+    .has-text-#{$alignment}-mobile
+      text-align: #{$text-align} !important
+  +tablet
+    .has-text-#{$alignment}-tablet
+      text-align: #{$text-align} !important
+  +tablet-only
+    .has-text-#{$alignment}-tablet-only
+      text-align: #{$text-align} !important
+  +touch
+    .has-text-#{$alignment}-touch
+      text-align: #{$text-align} !important
+  +desktop
+    .has-text-#{$alignment}-desktop
+      text-align: #{$text-align} !important
+  +desktop-only
+    .has-text-#{$alignment}-desktop-only
+      text-align: #{$text-align} !important
+  +widescreen
+    .has-text-#{$alignment}-widescreen
+      text-align: #{$text-align} !important
+  +widescreen-only
+    .has-text-#{$alignment}-widescreen-only
+      text-align: #{$text-align} !important
+  +fullhd
+    .has-text-#{$alignment}-fullhd
+      text-align: #{$text-align} !important
+
+.is-capitalized
+  text-transform: capitalize !important
+
+.is-lowercase
+  text-transform: lowercase !important
+
+.is-uppercase
+  text-transform: uppercase !important
+
+.is-hidden
+  display: none !important
+
++mobile
+  .is-hidden-mobile
+    display: none !important
+
++tablet
+  .is-hidden-tablet
+    display: none !important
+
++tablet-only
+  .is-hidden-tablet-only
+    display: none !important
+
++touch
+  .is-hidden-touch
+    display: none !important
+
++desktop
+  .is-hidden-desktop
+    display: none !important
+
++desktop-only
+  .is-hidden-desktop-only
+    display: none !important
+
++widescreen
+  .is-hidden-widescreen
+    display: none !important
+
++widescreen-only
+  .is-hidden-widescreen-only
+    display: none !important
+
++fullhd
+  .is-hidden-fullhd
+    display: none !important
+
+.is-radiusless
+  border-radius: 0 !important
+
+.is-shadowless
+  box-shadow: none !important
+
+.is-unselectable
+  +unselectable
+
+@each $name, $color in $colors
+  .has-text-#{$name}
+    color: $color
+
+// Padding Helpers
+@each $value in $paddingMargin
+  .has-padding-#{$value}
+    padding: #{$value}px !important
+
+  .has-padding-tb-#{$value}
+    padding-top: #{$value}px !important
+    padding-bottom: #{$value}px !important
+
+  .has-padding-lr-#{$value}
+    padding-left: #{$value}px !important
+    padding-right: #{$value}px !important
+
+  .has-padding-t-#{$value}
+    padding-top: #{$value}px !important
+
+  .has-padding-r-#{$value}
+    padding-right: #{$value}px !important
+
+  .has-padding-b-#{$value}
+    padding-bottom: #{$value}px !important
+
+  .has-padding-l-#{$value}
+    padding-left: #{$value}px !important
+
+// Margin Helpers
+@each $value in $paddingMargin
+  .has-margin-#{$value}
+    margin: #{$value}px !important
+
+  .has-margin-tb-#{$value}
+    margin-top: #{$value}px !important
+    margin-bottom: #{$value}px !important
+
+  .has-margin-lr-#{$value}
+    margin-left: #{$value}px !important
+    margin-right: #{$value}px !important
+
+  .has-margin-t-#{$value}
+    margin-top: #{$value}px !important
+
+  .has-margin-r-#{$value}
+    margin-right: #{$value}px !important
+
+  .has-margin-b-#{$value}
+    margin-bottom: #{$value}px !important
+
+  .has-margin-l-#{$value}
+    margin-left: #{$value}px !important

@@ -1,0 +1,9 @@
+{
+  "packages": [
+    "packages/*",
+    "apps/*"
+  ],
+  "version": "independent",
+  "useNx": true,
+  "useWorkspaces": true
+}

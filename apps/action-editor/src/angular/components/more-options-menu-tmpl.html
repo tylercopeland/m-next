@@ -1,0 +1,45 @@
+<div class="more-options">
+  <div class="more-menu" data-ng-class="{'more-menu-narrow': limited}">
+    <button class="mi-icon" tooltip-placement="bottom-left" uib-tooltip="Add action below"
+      data-ng-click="addActionBelow($event, setId)"><svg-icon
+      name="'circle-plus'"
+      ng-attr-style="svgIconStyle"
+      size="14">
+    </svg-icon></button>
+
+    <button class="mi-icon" tooltip-placement="bottom" uib-tooltip="Copy" data-ng-click="copyAction($event)"
+      data-ng-hide="limited"><svg-icon
+      name="'copy'"
+      ng-attr-style="svgIconStyle"
+      size="14">
+    </svg-icon></button>
+
+    <button class="mi-icon" tooltip-placement="bottom" uib-tooltip="Paste below" data-ng-disabled="!hasPaste"
+      data-ng-click="pasteAction($event, setId)"><svg-icon
+      name="'paste'"
+      ng-attr-style="svgIconStyle"
+      size="14">
+    </svg-icon></button>
+
+    <button class="mi-icon" tooltip-placement="bottom" uib-tooltip="Disable" data-ng-if="!action.Disabled"
+      data-ng-click="toggleDisabled($event)" data-ng-hide="limited"><svg-icon
+      name="'hide-visible'"
+      ng-attr-style="svgIconStyle"
+      size="14">
+    </svg-icon></button>
+
+    <button class="mi-icon" tooltip-placement="bottom" uib-tooltip="Enable" data-ng-if="action.Disabled"
+      data-ng-click="toggleDisabled($event)" data-ng-hide="limited"><svg-icon
+      name="'eye-open'"
+      ng-attr-style="svgIconStyle"
+      size="14">
+    </svg-icon></button>
+
+    <button class="mi-icon" tooltip-placement="bottom-right" uib-tooltip="Delete"
+      data-ng-click="deleteAction($event)" data-ng-hide="limited"><svg-icon
+      name="'delete'"
+      ng-attr-style="svgIconStyle"
+      size="14">
+    </svg-icon></button>
+  </div>
+</div>

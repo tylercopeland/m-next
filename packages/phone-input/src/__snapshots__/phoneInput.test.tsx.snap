@@ -1,0 +1,1524 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PhoneInput Snapshots Change fires the callback 1`] = `
+.emotion-0 {
+  border: none;
+  position: relative;
+  width: 100%;
+}
+
+.emotion-2 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-4 .country-list {
+  width: 300px;
+  height: 300px;
+  max-height: 300px;
+  overflow-x: hidden;
+}
+
+.emotion-4 .form-control {
+  height: 32px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: transparent;
+  z-index: 3;
+}
+
+.emotion-4 .form-control:hover:not(:focus) {
+  border-color: black;
+  background-color: transparent;
+}
+
+.emotion-4 .form-control:focus {
+  border-color: #0D71C8;
+  background-color: transparent;
+}
+
+.emotion-4 .flag-dropdown {
+  border: none;
+  margin: 1px;
+  border-radius: 2px;
+  background-color: transparent;
+  z-index: 4;
+}
+
+.emotion-4 .flag-dropdown:hover {
+  background-color: transparent;
+}
+
+.emotion-4 .selected-flag,
+.emotion-4 .selected-flag:hover {
+  background-color: transparent;
+}
+
+.emotion-4 .selected-flag>div {
+  border-radius: 2px;
+}
+
+.emotion-4 .search {
+  padding-right: 20px!important;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin: 6px 0 14px 0;
+  margin-bottom: 10px;
+}
+
+.emotion-8 {
+  padding-right: 4px;
+  color: #DA211E;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+.emotion-12 {
+  display: block;
+  color: #DA211E;
+  width: 100%;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="phoneInputTest-phoneinput"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      for=""
+      id="phoneInputTest-caption-Caption"
+    >
+      Phone number
+    </div>
+    <div
+      class=" react-tel-input emotion-4 emotion-5"
+    >
+      <div
+        class="special-label"
+      >
+        Phone
+      </div>
+      <input
+        class="form-control "
+        placeholder=""
+        type="tel"
+        value="+1 (437) 220-7682"
+      />
+      <div
+        class="flag-dropdown "
+      >
+        <div
+          aria-haspopup="listbox"
+          class="selected-flag"
+          role="button"
+          tabindex="0"
+          title="Canada: + 1"
+        >
+          <div
+            class="flag ca"
+          >
+            <div
+              class="arrow"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="emotion-6 emotion-7"
+    >
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <span
+          class="emotion-10 emotion-11"
+          color="currentColor"
+          data-testid="svg-icon-wrapper-warning-sign"
+        >
+          <svg
+            aria-label="warning-sign icon"
+            data-testid="svg-icon-svg-warning-sign"
+            fill="currentColor"
+            height="14px"
+            preserveAspectRatio="none"
+            role="img"
+            viewBox="0 0 1024 1024"
+            width="14px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M499.029 42.667l-8.747 0.085c-131.456 2.261-255.104 55.381-348.288 149.547-93.781 94.805-144.171 219.008-141.909 349.611 4.693 270.421 216.533 482.219 482.347 482.219l8.619-0.043c274.987-4.821 494.933-228.779 490.197-499.243-4.693-270.379-216.491-482.176-482.219-482.176zM490.283 981.419l-7.893 0.043c-242.261 0-435.371-193.408-439.68-440.32-2.091-119.040 43.947-232.277 129.579-318.848 85.291-86.229 198.443-134.827 318.72-136.917l8.021-0.043c242.219 0 435.243 193.365 439.552 440.235 4.309 246.955-196.821 451.456-448.299 455.851zM490.667 618.667c11.776 0 21.333-9.557 21.333-21.333v-298.667c0-11.776-9.557-21.333-21.333-21.333s-21.333 9.557-21.333 21.333v298.667c0 11.776 9.557 21.333 21.333 21.333z M533.333 746.667c0 23.564-19.103 42.667-42.667 42.667s-42.667-19.103-42.667-42.667c0-23.564 19.103-42.667 42.667-42.667s42.667 19.103 42.667 42.667z"
+              stroke="inherit"
+              stroke-width=""
+            />
+          </svg>
+        </span>
+      </div>
+      <span
+        class="emotion-12 emotion-13"
+        id="phoneInputTest-validation"
+      >
+         
+        Something went wrong
+         
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PhoneInput Snapshots Default 1`] = `
+.emotion-0 {
+  border: none;
+  position: relative;
+  width: 100%;
+}
+
+.emotion-2 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-4 .country-list {
+  width: 300px;
+  height: 300px;
+  max-height: 300px;
+  overflow-x: hidden;
+}
+
+.emotion-4 .form-control {
+  height: 32px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: transparent;
+  z-index: 3;
+}
+
+.emotion-4 .form-control:hover:not(:focus) {
+  border-color: black;
+  background-color: transparent;
+}
+
+.emotion-4 .form-control:focus {
+  border-color: #0D71C8;
+  background-color: transparent;
+}
+
+.emotion-4 .flag-dropdown {
+  border: none;
+  margin: 1px;
+  border-radius: 2px;
+  background-color: transparent;
+  z-index: 4;
+}
+
+.emotion-4 .flag-dropdown:hover {
+  background-color: transparent;
+}
+
+.emotion-4 .selected-flag,
+.emotion-4 .selected-flag:hover {
+  background-color: transparent;
+}
+
+.emotion-4 .selected-flag>div {
+  border-radius: 2px;
+}
+
+.emotion-4 .search {
+  padding-right: 20px!important;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="myPhoneComponent-phoneinput"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      for=""
+      id="myPhoneComponent-caption-Caption"
+    >
+      Phone number
+    </div>
+    <div
+      class=" react-tel-input emotion-4 emotion-5"
+    >
+      <div
+        class="special-label"
+      >
+        Phone
+      </div>
+      <input
+        class="form-control "
+        placeholder=""
+        type="tel"
+        value="+1"
+      />
+      <div
+        class="flag-dropdown "
+      >
+        <div
+          aria-haspopup="listbox"
+          class="selected-flag"
+          role="button"
+          tabindex="0"
+          title="Canada: + 1"
+        >
+          <div
+            class="flag ca"
+          >
+            <div
+              class="arrow"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PhoneInput Snapshots DefaultCountry 1`] = `
+.emotion-0 {
+  border: none;
+  position: relative;
+  width: 100%;
+}
+
+.emotion-2 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-4 .country-list {
+  width: 300px;
+  height: 300px;
+  max-height: 300px;
+  overflow-x: hidden;
+}
+
+.emotion-4 .form-control {
+  height: 32px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: transparent;
+  z-index: 3;
+}
+
+.emotion-4 .form-control:hover:not(:focus) {
+  border-color: black;
+  background-color: transparent;
+}
+
+.emotion-4 .form-control:focus {
+  border-color: #0D71C8;
+  background-color: transparent;
+}
+
+.emotion-4 .flag-dropdown {
+  border: none;
+  margin: 1px;
+  border-radius: 2px;
+  background-color: transparent;
+  z-index: 4;
+}
+
+.emotion-4 .flag-dropdown:hover {
+  background-color: transparent;
+}
+
+.emotion-4 .selected-flag,
+.emotion-4 .selected-flag:hover {
+  background-color: transparent;
+}
+
+.emotion-4 .selected-flag>div {
+  border-radius: 2px;
+}
+
+.emotion-4 .search {
+  padding-right: 20px!important;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin: 6px 0 14px 0;
+  margin-bottom: 10px;
+}
+
+.emotion-8 {
+  padding-right: 4px;
+  color: #DA211E;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+.emotion-12 {
+  display: block;
+  color: #DA211E;
+  width: 100%;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="phoneInputTest-phoneinput"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      for=""
+      id="phoneInputTest-caption-Caption"
+    >
+      Phone number
+    </div>
+    <div
+      class=" react-tel-input emotion-4 emotion-5"
+    >
+      <div
+        class="special-label"
+      >
+        Phone
+      </div>
+      <input
+        class="form-control "
+        placeholder=""
+        type="tel"
+        value="+1 (437) 220-7682"
+      />
+      <div
+        class="flag-dropdown "
+      >
+        <div
+          aria-haspopup="listbox"
+          class="selected-flag"
+          role="button"
+          tabindex="0"
+          title="Canada: + 1"
+        >
+          <div
+            class="flag ca"
+          >
+            <div
+              class="arrow"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="emotion-6 emotion-7"
+    >
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <span
+          class="emotion-10 emotion-11"
+          color="currentColor"
+          data-testid="svg-icon-wrapper-warning-sign"
+        >
+          <svg
+            aria-label="warning-sign icon"
+            data-testid="svg-icon-svg-warning-sign"
+            fill="currentColor"
+            height="14px"
+            preserveAspectRatio="none"
+            role="img"
+            viewBox="0 0 1024 1024"
+            width="14px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M499.029 42.667l-8.747 0.085c-131.456 2.261-255.104 55.381-348.288 149.547-93.781 94.805-144.171 219.008-141.909 349.611 4.693 270.421 216.533 482.219 482.347 482.219l8.619-0.043c274.987-4.821 494.933-228.779 490.197-499.243-4.693-270.379-216.491-482.176-482.219-482.176zM490.283 981.419l-7.893 0.043c-242.261 0-435.371-193.408-439.68-440.32-2.091-119.040 43.947-232.277 129.579-318.848 85.291-86.229 198.443-134.827 318.72-136.917l8.021-0.043c242.219 0 435.243 193.365 439.552 440.235 4.309 246.955-196.821 451.456-448.299 455.851zM490.667 618.667c11.776 0 21.333-9.557 21.333-21.333v-298.667c0-11.776-9.557-21.333-21.333-21.333s-21.333 9.557-21.333 21.333v298.667c0 11.776 9.557 21.333 21.333 21.333z M533.333 746.667c0 23.564-19.103 42.667-42.667 42.667s-42.667-19.103-42.667-42.667c0-23.564 19.103-42.667 42.667-42.667s42.667 19.103 42.667 42.667z"
+              stroke="inherit"
+              stroke-width=""
+            />
+          </svg>
+        </span>
+      </div>
+      <span
+        class="emotion-12 emotion-13"
+        id="phoneInputTest-validation"
+      >
+         
+        Something went wrong
+         
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PhoneInput Snapshots DisableSearch 1`] = `
+.emotion-0 {
+  border: none;
+  position: relative;
+  width: 100%;
+}
+
+.emotion-2 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-4 .country-list {
+  width: 300px;
+  height: 300px;
+  max-height: 300px;
+  overflow-x: hidden;
+}
+
+.emotion-4 .form-control {
+  height: 32px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: transparent;
+  z-index: 3;
+}
+
+.emotion-4 .form-control:hover:not(:focus) {
+  border-color: black;
+  background-color: transparent;
+}
+
+.emotion-4 .form-control:focus {
+  border-color: #0D71C8;
+  background-color: transparent;
+}
+
+.emotion-4 .flag-dropdown {
+  border: none;
+  margin: 1px;
+  border-radius: 2px;
+  background-color: transparent;
+  z-index: 4;
+}
+
+.emotion-4 .flag-dropdown:hover {
+  background-color: transparent;
+}
+
+.emotion-4 .selected-flag,
+.emotion-4 .selected-flag:hover {
+  background-color: transparent;
+}
+
+.emotion-4 .selected-flag>div {
+  border-radius: 2px;
+}
+
+.emotion-4 .search {
+  padding-right: 20px!important;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin: 6px 0 14px 0;
+  margin-bottom: 10px;
+}
+
+.emotion-8 {
+  padding-right: 4px;
+  color: #DA211E;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+.emotion-12 {
+  display: block;
+  color: #DA211E;
+  width: 100%;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="phoneInputTest-phoneinput"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      for=""
+      id="phoneInputTest-caption-Caption"
+    >
+      Phone number
+    </div>
+    <div
+      class=" react-tel-input emotion-4 emotion-5"
+    >
+      <div
+        class="special-label"
+      >
+        Phone
+      </div>
+      <input
+        class="form-control "
+        placeholder=""
+        type="tel"
+        value="+1 (437) 220-7682"
+      />
+      <div
+        class="flag-dropdown "
+      >
+        <div
+          aria-haspopup="listbox"
+          class="selected-flag"
+          role="button"
+          tabindex="0"
+          title="Canada: + 1"
+        >
+          <div
+            class="flag ca"
+          >
+            <div
+              class="arrow"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="emotion-6 emotion-7"
+    >
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <span
+          class="emotion-10 emotion-11"
+          color="currentColor"
+          data-testid="svg-icon-wrapper-warning-sign"
+        >
+          <svg
+            aria-label="warning-sign icon"
+            data-testid="svg-icon-svg-warning-sign"
+            fill="currentColor"
+            height="14px"
+            preserveAspectRatio="none"
+            role="img"
+            viewBox="0 0 1024 1024"
+            width="14px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M499.029 42.667l-8.747 0.085c-131.456 2.261-255.104 55.381-348.288 149.547-93.781 94.805-144.171 219.008-141.909 349.611 4.693 270.421 216.533 482.219 482.347 482.219l8.619-0.043c274.987-4.821 494.933-228.779 490.197-499.243-4.693-270.379-216.491-482.176-482.219-482.176zM490.283 981.419l-7.893 0.043c-242.261 0-435.371-193.408-439.68-440.32-2.091-119.040 43.947-232.277 129.579-318.848 85.291-86.229 198.443-134.827 318.72-136.917l8.021-0.043c242.219 0 435.243 193.365 439.552 440.235 4.309 246.955-196.821 451.456-448.299 455.851zM490.667 618.667c11.776 0 21.333-9.557 21.333-21.333v-298.667c0-11.776-9.557-21.333-21.333-21.333s-21.333 9.557-21.333 21.333v298.667c0 11.776 9.557 21.333 21.333 21.333z M533.333 746.667c0 23.564-19.103 42.667-42.667 42.667s-42.667-19.103-42.667-42.667c0-23.564 19.103-42.667 42.667-42.667s42.667 19.103 42.667 42.667z"
+              stroke="inherit"
+              stroke-width=""
+            />
+          </svg>
+        </span>
+      </div>
+      <span
+        class="emotion-12 emotion-13"
+        id="phoneInputTest-validation"
+      >
+         
+        Something went wrong
+         
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PhoneInput Snapshots Empty 1`] = `
+.emotion-0 {
+  border: none;
+  position: relative;
+  width: 100%;
+}
+
+.emotion-2 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-4 .country-list {
+  width: 300px;
+  height: 300px;
+  max-height: 300px;
+  overflow-x: hidden;
+}
+
+.emotion-4 .form-control {
+  height: 32px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: transparent;
+  z-index: 3;
+}
+
+.emotion-4 .form-control:hover:not(:focus) {
+  border-color: black;
+  background-color: transparent;
+}
+
+.emotion-4 .form-control:focus {
+  border-color: #0D71C8;
+  background-color: transparent;
+}
+
+.emotion-4 .flag-dropdown {
+  border: none;
+  margin: 1px;
+  border-radius: 2px;
+  background-color: transparent;
+  z-index: 4;
+}
+
+.emotion-4 .flag-dropdown:hover {
+  background-color: transparent;
+}
+
+.emotion-4 .selected-flag,
+.emotion-4 .selected-flag:hover {
+  background-color: transparent;
+}
+
+.emotion-4 .selected-flag>div {
+  border-radius: 2px;
+}
+
+.emotion-4 .search {
+  padding-right: 20px!important;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin: 6px 0 14px 0;
+  margin-bottom: 10px;
+}
+
+.emotion-8 {
+  padding-right: 4px;
+  color: #DA211E;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+.emotion-12 {
+  display: block;
+  color: #DA211E;
+  width: 100%;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="phoneInputTest-phoneinput"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      for=""
+      id="phoneInputTest-caption-Caption"
+    >
+      Phone number
+    </div>
+    <div
+      class=" react-tel-input emotion-4 emotion-5"
+    >
+      <div
+        class="special-label"
+      >
+        Phone
+      </div>
+      <input
+        class="form-control "
+        placeholder=""
+        type="tel"
+        value="+1 (437) 220-7682"
+      />
+      <div
+        class="flag-dropdown "
+      >
+        <div
+          aria-haspopup="listbox"
+          class="selected-flag"
+          role="button"
+          tabindex="0"
+          title="Canada: + 1"
+        >
+          <div
+            class="flag ca"
+          >
+            <div
+              class="arrow"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="emotion-6 emotion-7"
+    >
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <span
+          class="emotion-10 emotion-11"
+          color="currentColor"
+          data-testid="svg-icon-wrapper-warning-sign"
+        >
+          <svg
+            aria-label="warning-sign icon"
+            data-testid="svg-icon-svg-warning-sign"
+            fill="currentColor"
+            height="14px"
+            preserveAspectRatio="none"
+            role="img"
+            viewBox="0 0 1024 1024"
+            width="14px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M499.029 42.667l-8.747 0.085c-131.456 2.261-255.104 55.381-348.288 149.547-93.781 94.805-144.171 219.008-141.909 349.611 4.693 270.421 216.533 482.219 482.347 482.219l8.619-0.043c274.987-4.821 494.933-228.779 490.197-499.243-4.693-270.379-216.491-482.176-482.219-482.176zM490.283 981.419l-7.893 0.043c-242.261 0-435.371-193.408-439.68-440.32-2.091-119.040 43.947-232.277 129.579-318.848 85.291-86.229 198.443-134.827 318.72-136.917l8.021-0.043c242.219 0 435.243 193.365 439.552 440.235 4.309 246.955-196.821 451.456-448.299 455.851zM490.667 618.667c11.776 0 21.333-9.557 21.333-21.333v-298.667c0-11.776-9.557-21.333-21.333-21.333s-21.333 9.557-21.333 21.333v298.667c0 11.776 9.557 21.333 21.333 21.333z M533.333 746.667c0 23.564-19.103 42.667-42.667 42.667s-42.667-19.103-42.667-42.667c0-23.564 19.103-42.667 42.667-42.667s42.667 19.103 42.667 42.667z"
+              stroke="inherit"
+              stroke-width=""
+            />
+          </svg>
+        </span>
+      </div>
+      <span
+        class="emotion-12 emotion-13"
+        id="phoneInputTest-validation"
+      >
+         
+        Something went wrong
+         
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PhoneInput Snapshots ValidationMessage 1`] = `
+.emotion-0 {
+  border: none;
+  position: relative;
+  width: 100%;
+}
+
+.emotion-2 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-4 .country-list {
+  width: 300px;
+  height: 300px;
+  max-height: 300px;
+  overflow-x: hidden;
+}
+
+.emotion-4 .form-control {
+  height: 32px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: transparent;
+  z-index: 3;
+}
+
+.emotion-4 .form-control:hover:not(:focus) {
+  border-color: black;
+  background-color: transparent;
+}
+
+.emotion-4 .form-control:focus {
+  border-color: #0D71C8;
+  background-color: transparent;
+}
+
+.emotion-4 .flag-dropdown {
+  border: none;
+  margin: 1px;
+  border-radius: 2px;
+  background-color: transparent;
+  z-index: 4;
+}
+
+.emotion-4 .flag-dropdown:hover {
+  background-color: transparent;
+}
+
+.emotion-4 .selected-flag,
+.emotion-4 .selected-flag:hover {
+  background-color: transparent;
+}
+
+.emotion-4 .selected-flag>div {
+  border-radius: 2px;
+}
+
+.emotion-4 .search {
+  padding-right: 20px!important;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin: 6px 0 14px 0;
+  margin-bottom: 10px;
+}
+
+.emotion-8 {
+  padding-right: 4px;
+  color: #DA211E;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+.emotion-12 {
+  display: block;
+  color: #DA211E;
+  width: 100%;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="phoneInputTest-phoneinput"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      for=""
+      id="phoneInputTest-caption-Caption"
+    >
+      Phone number
+    </div>
+    <div
+      class=" react-tel-input emotion-4 emotion-5"
+    >
+      <div
+        class="special-label"
+      >
+        Phone
+      </div>
+      <input
+        class="form-control "
+        placeholder=""
+        type="tel"
+        value="+1 (437) 220-7682"
+      />
+      <div
+        class="flag-dropdown "
+      >
+        <div
+          aria-haspopup="listbox"
+          class="selected-flag"
+          role="button"
+          tabindex="0"
+          title="Canada: + 1"
+        >
+          <div
+            class="flag ca"
+          >
+            <div
+              class="arrow"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="emotion-6 emotion-7"
+    >
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <span
+          class="emotion-10 emotion-11"
+          color="currentColor"
+          data-testid="svg-icon-wrapper-warning-sign"
+        >
+          <svg
+            aria-label="warning-sign icon"
+            data-testid="svg-icon-svg-warning-sign"
+            fill="currentColor"
+            height="14px"
+            preserveAspectRatio="none"
+            role="img"
+            viewBox="0 0 1024 1024"
+            width="14px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M499.029 42.667l-8.747 0.085c-131.456 2.261-255.104 55.381-348.288 149.547-93.781 94.805-144.171 219.008-141.909 349.611 4.693 270.421 216.533 482.219 482.347 482.219l8.619-0.043c274.987-4.821 494.933-228.779 490.197-499.243-4.693-270.379-216.491-482.176-482.219-482.176zM490.283 981.419l-7.893 0.043c-242.261 0-435.371-193.408-439.68-440.32-2.091-119.040 43.947-232.277 129.579-318.848 85.291-86.229 198.443-134.827 318.72-136.917l8.021-0.043c242.219 0 435.243 193.365 439.552 440.235 4.309 246.955-196.821 451.456-448.299 455.851zM490.667 618.667c11.776 0 21.333-9.557 21.333-21.333v-298.667c0-11.776-9.557-21.333-21.333-21.333s-21.333 9.557-21.333 21.333v298.667c0 11.776 9.557 21.333 21.333 21.333z M533.333 746.667c0 23.564-19.103 42.667-42.667 42.667s-42.667-19.103-42.667-42.667c0-23.564 19.103-42.667 42.667-42.667s42.667 19.103 42.667 42.667z"
+              stroke="inherit"
+              stroke-width=""
+            />
+          </svg>
+        </span>
+      </div>
+      <span
+        class="emotion-12 emotion-13"
+        id="phoneInputTest-validation"
+      >
+         
+        Something Wrong here
+         
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PhoneInput Snapshots WithPhone 1`] = `
+.emotion-0 {
+  border: none;
+  position: relative;
+  width: 100%;
+}
+
+.emotion-2 {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+  position: absolute;
+  top: 0;
+  margin: 0!important;
+  -webkit-transition: font-size 250ms ease,-webkit-transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  transition: font-size 250ms ease,transform 250ms ease,color 100ms ease,z-index 0ms ease 50ms;
+  background-color: #FFFFFF;
+  padding: 0 4px;
+  left: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 4;
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  transform: translateY(-4px);
+  line-height: 8px;
+}
+
+.emotion-4 .country-list {
+  width: 300px;
+  height: 300px;
+  max-height: 300px;
+  overflow-x: hidden;
+}
+
+.emotion-4 .form-control {
+  height: 32px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: transparent;
+  z-index: 3;
+}
+
+.emotion-4 .form-control:hover:not(:focus) {
+  border-color: black;
+  background-color: transparent;
+}
+
+.emotion-4 .form-control:focus {
+  border-color: #0D71C8;
+  background-color: transparent;
+}
+
+.emotion-4 .flag-dropdown {
+  border: none;
+  margin: 1px;
+  border-radius: 2px;
+  background-color: transparent;
+  z-index: 4;
+}
+
+.emotion-4 .flag-dropdown:hover {
+  background-color: transparent;
+}
+
+.emotion-4 .selected-flag,
+.emotion-4 .selected-flag:hover {
+  background-color: transparent;
+}
+
+.emotion-4 .selected-flag>div {
+  border-radius: 2px;
+}
+
+.emotion-4 .search {
+  padding-right: 20px!important;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin: 6px 0 14px 0;
+  margin-bottom: 10px;
+}
+
+.emotion-8 {
+  padding-right: 4px;
+  color: #DA211E;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+.emotion-12 {
+  display: block;
+  color: #DA211E;
+  width: 100%;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="phoneInputTest-phoneinput"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      for=""
+      id="phoneInputTest-caption-Caption"
+    >
+      Phone number
+    </div>
+    <div
+      class=" react-tel-input emotion-4 emotion-5"
+    >
+      <div
+        class="special-label"
+      >
+        Phone
+      </div>
+      <input
+        class="form-control "
+        placeholder=""
+        type="tel"
+        value="+1 (437) 220-7682"
+      />
+      <div
+        class="flag-dropdown "
+      >
+        <div
+          aria-haspopup="listbox"
+          class="selected-flag"
+          role="button"
+          tabindex="0"
+          title="Canada: + 1"
+        >
+          <div
+            class="flag ca"
+          >
+            <div
+              class="arrow"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="emotion-6 emotion-7"
+    >
+      <div
+        class="emotion-8 emotion-9"
+      >
+        <span
+          class="emotion-10 emotion-11"
+          color="currentColor"
+          data-testid="svg-icon-wrapper-warning-sign"
+        >
+          <svg
+            aria-label="warning-sign icon"
+            data-testid="svg-icon-svg-warning-sign"
+            fill="currentColor"
+            height="14px"
+            preserveAspectRatio="none"
+            role="img"
+            viewBox="0 0 1024 1024"
+            width="14px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M499.029 42.667l-8.747 0.085c-131.456 2.261-255.104 55.381-348.288 149.547-93.781 94.805-144.171 219.008-141.909 349.611 4.693 270.421 216.533 482.219 482.347 482.219l8.619-0.043c274.987-4.821 494.933-228.779 490.197-499.243-4.693-270.379-216.491-482.176-482.219-482.176zM490.283 981.419l-7.893 0.043c-242.261 0-435.371-193.408-439.68-440.32-2.091-119.040 43.947-232.277 129.579-318.848 85.291-86.229 198.443-134.827 318.72-136.917l8.021-0.043c242.219 0 435.243 193.365 439.552 440.235 4.309 246.955-196.821 451.456-448.299 455.851zM490.667 618.667c11.776 0 21.333-9.557 21.333-21.333v-298.667c0-11.776-9.557-21.333-21.333-21.333s-21.333 9.557-21.333 21.333v298.667c0 11.776 9.557 21.333 21.333 21.333z M533.333 746.667c0 23.564-19.103 42.667-42.667 42.667s-42.667-19.103-42.667-42.667c0-23.564 19.103-42.667 42.667-42.667s42.667 19.103 42.667 42.667z"
+              stroke="inherit"
+              stroke-width=""
+            />
+          </svg>
+        </span>
+      </div>
+      <span
+        class="emotion-12 emotion-13"
+        id="phoneInputTest-validation"
+      >
+         
+        Something went wrong
+         
+      </span>
+    </div>
+  </div>
+</div>
+`;

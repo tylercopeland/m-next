@@ -1,0 +1,129 @@
+<span class="action-info">
+  <span class="error-dot" tooltip-placement="right" uib-tooltip="Error found"></span>
+  <span class="move"><i class="mi-icon mi-ae-drag-handle">
+    <svg-icon
+      name="'move'"
+      ng-attr-style="svgIconStyle"
+      size="14">
+    </svg-icon>
+  </i></span>
+</span>
+
+<span class="action-name" data-ng-click="editAction()" data-ng-if="action.ActionId !== 1 && action.ActionId !== 26 && action.ActionId !== 29 && action.ActionId !== 38 && action.ActionId !== 55" data-ng-class="{ 'is-referencing-control': isUsingControl(action)}">
+  <i class="mi-icon" style="position:absolute;left: 5px;top: 5px;transform: scaleX(-1);"><svg-icon
+    ng-if="action.Disabled"
+    color="'#da211e'"
+    name="'eye-closed-V4'"
+    ng-attr-style="svgIconStyle"
+    size="20"
+  /></i>
+  <div style="display: flex;">  
+      <span style="padding-right:0px;">{{ actionName }}</span>
+  <!--    <span style="color: #115DF0;padding-right:0px">References {{action.referencedControl}}</span> -->
+    </div>
+    <mi-more-options-menu data-ng-if="!v4 || (v4 && !readonly)"></mi-more-options-menu>
+    <p data-ng-if="action.Notes.length > 0">{{ action.Notes }}</p>
+    <p class="incompatible" data-ng-if="isIncompatible(action)" data-ng-style="action.Notes.length === 0 && {'position':'relative'}">Not Supported, Update or Remove.</p>
+    <p class="referenced-control" data-ng-if="isUsingControl(action)" data-ng-style="action.Notes.length === 0 && {'position':'relative'}">References {{referencedControl }}</p>
+  </span>
+
+<!-- Conditional Statement -->
+<span class="action-name action-name-bold" data-ng-if="action.ActionId === 1" data-ng-click="editAction()" data-ng-class="{ 'is-referencing-control': isUsingControl(action)}">
+  <div style="display: flex;">  
+    <span>
+      <i tooltip-placement="right" uib-tooltip="Collapse/Expand" data-ng-click="toggleConditional($event)">
+        <svg-icon
+          name="expanded ? 'box-minus' : 'box-plus'"
+          ng-attr-style="svgIconStyle"
+          size="14">
+        </svg-icon> 
+      </i> If...then
+    </span>
+   <!-- <span style="color: #115DF0;padding-right:0px">References {{action.referencedControl}}</span>-->
+  </div>
+
+    <mi-more-options-menu  data-ng-if="!v4 || (v4 && !readonly)" action-set-id="{{ action.ActionSetOnTrue.ActionSetId }}"></mi-more-options-menu>
+    <p data-ng-if="action.Notes.length > 0">{{ action.Notes }}</p>
+    <p class="incompatible" data-ng-if="isIncompatible(action)" data-ng-style="action.Notes.length ===0 && {'position':'relative'}">Not Supported, Update or Remove.</p>
+    <p class="referenced-control" data-ng-if="isUsingControl(action)" data-ng-style="action.Notes.length === 0 && {'position':'relative'}">References {{referencedControl }}</p>
+</span>
+<ul data-ng-if="action.ActionId === 1" class="condition-items can-move" ng-sortable="sortableConfig">
+  <li  data-ng-repeat="ifAction in action.ActionSetOnTrue.Actions" data-ng-class="{'disabled-action': ifAction.Disabled, 'has-error': ifAction.InValid, 'line-indent-new': ifAction.config.hasNested, 'highlight-line' : ifAction.config.hasNested && isActionSelected(ifAction), 'active': isActionSelected(ifAction), 'is-incompatible': isIncompatible(ifAction), 'is-referencing-control': isUsingControl(ifAction)}">
+    <mi-control-action-item 
+    v4="v4"
+    readonly="readonly"
+      action="ifAction" 
+      loop-index="$index" 
+      action-set-id="action.ActionSetOnTrue.ActionSetId" 
+      editor="editor" 
+      sortable-config="sortableConfig" 
+      selected-action="selectedAction" 
+      current-position="currentPosition"
+      referenced-control="referencedControl"
+      referenced-control-id="referencedControlId"
+      >
+    
+    </mi-control-action-item>
+  </li>
+</ul>
+
+<span class="action-name action-name-bold action-name-else" data-ng-if="action.ActionId === 1">
+    <span>Else</span>
+    <mi-more-options-menu  data-ng-if="!v4 || (v4 && !readonly)" action-set-id="{{ action.ActionSetOnFalse.ActionSetId }}" 
+      limited-version="true"></mi-more-options-menu>
+</span>
+<ul data-ng-if="action.ActionId === 1" class="condition-items can-move" ng-sortable="sortableConfig">
+  <li  data-ng-repeat="elseAction in action.ActionSetOnFalse.Actions" data-ng-class="{'disabled-action': elseAction.Disabled, 'has-error': elseAction.InValid, 'line-indent-new': elseAction.config.hasNested,'highlight-line' : elseAction.config.hasNested && isActionSelected(elseAction),  'active': isActionSelected(elseAction), 'is-incompatible': isIncompatible(elseAction), 'is-referencing-control': isUsingControl(elseAction)}">
+    <mi-control-action-item 
+    v4="v4"
+    readonly="readonly"
+      action="elseAction" 
+      loop-index="$index" 
+      action-set-id="action.ActionSetOnFalse.ActionSetId" 
+      editor="editor" 
+      sortable-config="sortableConfig" 
+      selected-action="selectedAction" 
+      current-position="currentPosition"
+      referenced-control="referencedControl"
+      referenced-control-id="referencedControlId"
+      ></mi-control-action-item>
+  </li>
+</ul>
+
+<!-- Loop Through Table/Grid/List -->
+<span class="action-name action-name-bold" data-ng-if="action.ActionId === 26 || action.ActionId === 29 || action.ActionId === 38 || action.ActionId === 55" data-ng-click="editAction()" data-ng-class="{ 'is-referencing-control': isUsingControl(action)}">
+  <div style="display: flex;">  
+    <span>
+      <i tooltip-placement="right" uib-tooltip="Collapse/Expand" data-ng-click="toggleConditional($event)">
+        <svg-icon
+          name = "expanded ? 'box-minus' : 'box-plus'"
+          ng-attr-style="svgIconStyle"
+          size="14">
+        </svg-icon>
+      </i> {{ actionName }}
+    </span>
+   <!-- <span style="color: #115DF0;padding-right:0px">References {{action.referencedControl}}</span>-->
+  </div>
+
+    <mi-more-options-menu data-ng-if="!v4 || (v4 && !readonly)" action-set-id="{{ action.LoopActionSet.ActionSetId }}"></mi-more-options-menu>
+    <p data-ng-if="action.Notes.length > 0">{{ action.Notes }}</p>
+    <p class="incompatible" data-ng-if="isIncompatible(action)" data-ng-style="action.Notes.length === 0 && {'position':'relative'}">Not Supported, Update or Remove.</p>
+    <p class="referenced-control" data-ng-if="isUsingControl(action)" data-ng-style="action.Notes.length === 0 && {'position':'relative'}">References {{referencedControl }}</p>
+</span>
+<ul data-ng-if="action.ActionId === 26 || action.ActionId === 29 || action.ActionId === 38 || action.ActionId === 55" class="condition-items can-move" ng-sortable="sortableConfig">
+  <li data-ng-repeat="loopAction in action.LoopActionSet.Actions" data-ng-class="{'disabled-action': loopAction.Disabled, 'has-error': loopAction.InValid, 'line-indent-new': loopAction.config.hasNested, 'highlight-line' : loopAction.config.hasNested && isActionSelected(loopAction),  'active': isActionSelected(loopAction), 'is-incompatible': isIncompatible(loopAction), 'is-referencing-control': isUsingControl(loopAction)}">
+    <mi-control-action-item
+     v4="v4"
+     readonly="readonly"
+      action="loopAction" 
+      loop-index="$index" 
+      action-set-id="action.LoopActionSet.ActionSetId" 
+      editor="editor" 
+      sortable-config="sortableConfig" 
+      selected-action="selectedAction" 
+      current-position="currentPosition"
+      referenced-control="referencedControl"
+      referenced-control-id="referencedControlId"
+      ></mi-control-action-item>
+  </li>
+</ul>

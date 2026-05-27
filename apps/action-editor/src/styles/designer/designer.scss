@@ -1,0 +1,282 @@
+@import "colors";
+
+$top-header-height:   50px !default;
+
+@import "partials/modal",
+        "partials/dropdown-colors",
+        "control-sections",
+        "dialogs",
+        "designer-wizard",
+        "extras";
+
+.searchbar-inner {
+  .mi-icon-remove {
+    cursor: pointer;
+  }
+}
+
+.mi-dialog,
+.m-modal {
+  background: $white !important;
+  box-shadow:0px 1px 5px rgba(35,34,32,0.25);
+
+  .mi-dialog-titlebar, 
+  .mi-dialog-buttonpane, 
+  .mi-dialog-content {
+    @include boxSizing;
+    
+    & {
+      padding: 20px !important;
+      background: $white !important;
+    }
+  }
+
+  .mi-dialog-titlebar {
+    @include flexbox;
+    @include flexjustify(space-between);
+    @include flexalignitems(center);
+
+    .mi-button {
+      &.blank {
+        color: $grey;
+      }
+    }
+  }
+
+  .mi-dialog-content {
+    ul.bundle-list {
+      @include boxSizing;
+      @include borderRadius;
+      
+      & {
+        background: lighten($card-border,10%);
+        list-style: none;
+        padding: 10px;
+        margin: 0;
+        border: 1px solid $card-border;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+    }
+  }
+
+  .mi-dialog-buttonpane,
+  .mi-dialog-buttonset {
+    @include flexbox;
+    @include flexjustify(flex-end);
+    @include flexalignitems(center);
+
+    span {
+      margin-left: 10px;
+
+      button {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+//  Modal overlay override
+.mi-widget-overlay[style] {
+  position:absolute;
+  top: 0;
+  bottom:0;
+  left: 0;
+  right:0;
+  background: rgba(43,62,81,0.5);
+}
+
+.error-container {
+  color: red;
+}
+
+.saveoverlay{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: $white;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out 0s;
+  z-index: 100;
+}
+.saveoverlay-on{
+  opacity: 0.8;
+}
+
+// .designer-toggle {
+//   margin-top: -10px;
+// }
+
+.grid-content-designer {
+
+  @import "partials/context-menu",
+          "partials/control",
+          "partials/precontrol",
+          "partials/section",
+          "partials/table-align",
+          "partials/version-link";
+
+  .designer-content-inner {
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    overflow: hidden;
+
+    .mi-designer-body {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
+      width: 100%;
+
+      @import "partials/property-panel";
+
+      .mi-designer-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 260px;
+        bottom: 0;
+        overflow: hidden;
+
+        
+
+        .mi-spinner-container {
+          position: relative;
+          margin: 0;
+          top: 10px;
+          left: 10px;
+          margin: 0;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          display: none;
+          
+          &.is-loading {
+            display: flex;
+          }
+        }
+
+        @import "partials/top-menu";
+
+        .mi-designer-canvas-wrapper {
+          position: fixed;
+          top: 50px;
+          left: 0;
+          right: 260px;
+          bottom: 0;
+          overflow: auto;
+          background-color: $m-medium-grey;
+
+          .mi-designer-canvas {
+            min-height: 100%;
+            display: table;
+            padding: 10px 0 130px;
+            min-width: 100%;
+            width: 100%;
+          }
+        }
+
+        .mi-designer-preview-wrapper {
+          display: none;
+          flex: 2;
+          background-color: $m-medium-grey;
+          overflow: hidden;
+
+          .mi-designer-preview {
+            margin: 0 auto;
+            background-color: $white;
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+          }
+        }
+
+        &.preview-mode {
+          right: 40px;
+        }
+
+        &.ff-color-fix {
+          right: 40px;
+
+          .mi-designer-canvas-wrapper {
+            right: 40px;
+          }
+        }
+      }
+    }
+
+    .panelTitle {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 4px 10px;
+      border-bottom: 1px solid $app-header;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      background-color: $m-grey;
+      color: $white;
+      cursor: pointer;
+
+      h5 {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #0F1B31 !important;
+
+        i {
+          position: absolute;
+          right: 0;
+          top: 5px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .panelcontent {
+      padding: 10px;
+      background-color: $app-header;
+    }
+
+    @import "partials/control-list";
+  }
+
+  .highlightSection {
+    background-color:rgba(241, 218, 54, 0.68) !important;
+  }
+
+  .sectionDrag {
+    z-index: 1000;
+  }
+
+  .previewnote {
+    display: block;
+    text-align: center;
+    padding: 6px;
+    color: $white;
+    background: $m-red;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+}
+

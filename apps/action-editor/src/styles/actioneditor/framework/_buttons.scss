@@ -1,0 +1,20 @@
+.mi-button-icon {
+  display: inline-block;
+  padding: 6px;
+  font-size: 16px;
+  border: 0;
+  background-color: transparent;
+}
+.mi-button-clear {
+  border: 0 !important;
+  background-color: transparent !important;
+  padding: 10px;
+  min-width: auto !important;
+}
+.icon-right {
+  &:before {
+    position: relative;
+    float: right;
+    margin-top: 2px;
+  }
+}

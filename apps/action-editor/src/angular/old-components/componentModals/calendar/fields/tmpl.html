@@ -1,0 +1,112 @@
+<div data-ng-controller="ComponentCalendarFieldsCtrl" class="mi-ae-fullheight">
+  <!-- Panel -->
+  <div class="mi-ae-framework-full-panel">
+    <div class="mi-ae-header-block">
+        <h2>{{ subtitle }}</h2>
+    </div>
+
+    <div class="mi-ae-main-content mi-ae-main-content-full">
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Resource</label>
+        </div>
+        <div class="mi-ae-col-6">
+          <ui-select data-ng-model="columns[1].expression[0].Source.Value" theme="selectize" on-select="columns[1].name = $select.selected.key">
+              <ui-select-match placeholder="Select...">{{$select.selected.key}}</ui-select-match>
+              <ui-select-choices repeat="opt.key as opt in fields | filter:dropdownOnly() | filter: $select.search">
+                  <span ng-bind-html="opt.key"></span>
+              </ui-select-choices>
+          </ui-select>
+        </div>
+      </div>
+
+      <div class="mi-ae-row" data-ng-if="columns[1].expression[0].Source.Value === 'AssignedTo'">
+        <div class="mi-ae-col-4 mi-ae-col-offset-4">
+          <label class="mi-radio-checkbox mi-checkbox">
+            <span>Default to user signed in</span>
+            <input type="checkbox" data-ng-model="checkbox.selected"> 
+            <div class="mi-radio-checkbox-indicator"></div>
+          </label>
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Start date &amp; time</label>
+        </div>
+        <div class="mi-ae-col-6">
+          <ui-select data-ng-model="columns[3].expression[0].Source.Value" theme="selectize" on-select="columns[3].name = $select.selected.key">
+              <ui-select-match placeholder="Select...">{{$select.selected.key}}</ui-select-match>
+              <ui-select-choices repeat="opt.key as opt in fields | filter:dateTimeOnly() | filter: $select.search">
+                  <span ng-bind-html="opt.key"></span>
+              </ui-select-choices>
+          </ui-select>
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">End date &amp; time</label>
+        </div>
+        <div class="mi-ae-col-6">
+          <ui-select data-ng-model="columns[4].expression[0].Source.Value" theme="selectize" on-select="columns[4].name = $select.selected.key">
+              <ui-select-match placeholder="Select...">{{$select.selected.key}}</ui-select-match>
+              <ui-select-choices repeat="opt.key as opt in fields | filter:dateTimeOnly() | filter: $select.search">
+                  <span ng-bind-html="opt.key"></span>
+              </ui-select-choices>
+          </ui-select>
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Appointment colors</label>
+        </div>
+        <div class="mi-ae-col-6">
+          <ui-select data-ng-model="columns[2].expression[0].Source.Value" theme="selectize" on-select="columns[2].name = $select.selected.key">
+              <ui-select-match placeholder="Select...">{{$select.selected.key}}</ui-select-match>
+              <ui-select-choices repeat="opt.key as opt in fields | filter: $select.search">
+                  <span ng-bind-html="opt.key"></span>
+              </ui-select-choices>
+          </ui-select>
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">All day appointment (optional)</label>
+        </div>
+        <div class="mi-ae-col-6">
+          <ui-select data-ng-model="columns[7].expression[0].Source.Value" theme="selectize" on-select="columns[7].name = $select.selected.key; columns[7].caption = $select.selected.key">
+              <ui-select-match placeholder="Select...">{{$select.selected.key}}</ui-select-match>
+              <ui-select-choices repeat="opt.key as opt in fields | filter:allDayFields() | filter: $select.search">
+                  <span ng-bind-html="opt.key"></span>
+              </ui-select-choices>
+          </ui-select>
+        </div>
+      </div>
+
+      <h3>Appointment Display</h3>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Title</label>
+        </div>
+        <div class="mi-ae-col-6">
+          <mi-complex-value action="action" model="columns[5].expression[0].Source" allow="allow"></mi-complex-value>
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Description</label>
+        </div>
+        <div class="mi-ae-col-6">
+          <mi-complex-value action="action" model="columns[6].expression[0].Source" allow="allow"></mi-complex-value>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!--/ Panel -->
+</div>

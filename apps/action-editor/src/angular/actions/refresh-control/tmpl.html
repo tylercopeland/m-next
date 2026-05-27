@@ -1,0 +1,48 @@
+<div data-ng-controller="RefreshControlCtrl">
+  <mi-action-description info="action"></mi-action-description>
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content">
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-7">
+        <label class="mi-ae-label mi-ae-margin-b-0">Select a control</label>
+      </div>
+    </div>
+    <div class="mi-ae-row table-row" data-ng-class="{'alt-row': $odd}" data-ng-repeat="item in action.ControlsToRefresh">
+      <div class="mi-ae-col-7" mi-validation-class="item.ValidationMessages" error-property="'ControlId'">
+        <ui-select data-ng-model="item.ControlId" theme="selectize" on-select="itemSelection($select.selected, item)" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices group-by="'typeLabel'" repeat="opt.value as opt in controlList | orderBy: 'typeLabel+label' | filter: controlFilter(item) | filter: $select.search">
+            <span ng-bind-html="opt.label"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+      <div class="mi-ae-col-7" data-ng-if="item.isGrid">
+        <label class="mi-ae-margin-0 mi-ae-padding-t-15 mi-radio-checkbox mi-checkbox">
+          <span>Clear all checkboxes</span>
+          <input type="checkbox" data-ng-model="item.ClearCheckboxes" ng-disabled="action.isReadOnly" />
+          <div class="mi-radio-checkbox-indicator"></div>
+        </label>
+      </div>
+      <div class="mi-ae-col-7" data-ng-if="!item.isGrid">
+        <label class="mi-ae-margin-0 mi-ae-padding-t-15 mi-radio-checkbox mi-checkbox"> </label>
+      </div>
+      <div class="mi-ae-col-2" data-ng-if="action.ControlsToRefresh.length > 1 && !action.isReadOnly">
+        <miae-button 
+          button-class="'ghost mi-button-clear mi-ae-margin-0'" 
+          clickevent="removeItem($index)"
+          svg-icon-type="'delete'" 
+          svg-icon-size="14"></miae-button>
+      </div>
+    </div>
+    <miae-button
+      name="' Add another control'"
+      data-ng-if="action.ControlsToRefresh.length < controlList.length && !action.isReadOnly"
+      button-class="'ghost mi-button-clear'"
+      clickevent="addItem()"
+      svg-icon-type="'circle-plus'" 
+      svg-icon-size="14"
+    ></miae-button>
+  </div>
+  <!--/ Main Content Area -->
+  <mi-action-notes is-read-only="action.isReadOnly"></mi-action-notes>
+</div>

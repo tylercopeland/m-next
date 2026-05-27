@@ -1,0 +1,351 @@
+<div data-ng-controller="CallWebServiceCtrl">
+  <mi-action-description info="action" show-back="testMode" back-button="toggleTestMode()" alt-title="altTitle"></mi-action-description>
+
+  <!-- Edit Mode -->
+  <div class="mi-ae-main-content" data-ng-if="!testMode">
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Web service type</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <ul class="mi-radiobutton-group">
+          <li class="rad-horizontal">
+            <label class="mi-radio-checkbox mi-radio" data-ng-click="toggleServiceType('REST')">
+              <span>REST</span>
+              <input type="radio" name="RestOptions" data-ng-model="serviceType" data-ng-value="'REST'" ng-disabled="action.isReadOnly" />
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </li>
+          <li class="rad-horizontal">
+            <label class="mi-radio-checkbox mi-radio" data-ng-click="toggleServiceType('SOAP')">
+              <span>SOAP</span>
+              <input type="radio" name="RestOptions" data-ng-model="serviceType" data-ng-value="'SOAP'" ng-disabled="action.isReadOnly" />
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Endpoint URL</label>
+      </div>
+      <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'Url'">
+        <input type="text" placeholder="{{ placeholder }}" data-ng-model="action.Url" ng-disabled="action.isReadOnly" />
+      </div>
+    </div>
+
+    <div data-ng-if="serviceType === 'REST'" class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">HTTP Method</label>
+      </div>
+      <div class="mi-ae-col-5" mi-validation-class="action.ValidationMessages">
+        <ui-select data-ng-model="action.HttpMethod" theme="selectize" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices repeat="opt.value as opt in httpMethods">
+            <span ng-bind-html="opt.label"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+
+    <div data-ng-if="serviceType === 'REST'" class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Content-Type</label>
+      </div>
+      <div class="mi-ae-col-5" mi-validation-class="action.ValidationMessages">
+        <ui-select data-ng-model="action.ContentType" theme="selectize" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices repeat="opt.value as opt in contentTypes">
+            <span ng-bind-html="opt.label"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+
+    <div class="mi-ae-row" data-ng-if="serviceType === 'SOAP'">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label mi-ae-margin-b-0">SOAP action</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <input type="text" placeholder="myFunctionCall" data-ng-model="action.Function" ng-disabled="action.isReadOnly" />
+      </div>
+    </div>
+
+    <h3>Parameters</h3>
+
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label mi-ae-margin-b-0">Parameter name</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <label class="mi-ae-label mi-ae-margin-b-0">Value from</label>
+      </div>
+      <div class="mi-ae-col-2"></div>
+    </div>
+
+    <div class="mi-ae-row" data-ng-repeat="param in action.Params">
+      <div class="mi-ae-col-4" mi-validation-class="param.ValidationMessage" error-property="'108'">
+        <input type="text" placeholder="e.g. Account" data-ng-model="param.Key" ng-disabled="action.isReadOnly" />
+      </div>
+      <div class="mi-ae-col-10">
+        <mi-complex-value action="action" model="param.Value" allow="allow" placeholder="'e.g. MyAccountName'" is-read-only="action.isReadOnly"></mi-complex-value>
+      </div>
+      <div class="mi-ae-col-2">
+        <miae-button 
+          button-class="'ghost mi-button-clear'" 
+          clickevent="removeItem('param', $index)" 
+          is-disabled="action.isReadOnly"
+          svg-icon-type="'delete'" 
+          svg-icon-size="14"></miae-button>
+      </div>
+    </div>
+
+    <miae-button 
+      name="' Add another parameter'" 
+      button-class="'ghost mi-button-clear'" 
+      clickevent="addItem('param')" 
+      is-disabled="action.isReadOnly"
+      svg-icon-type="'circle-plus'" 
+      svg-icon-size="14"></miae-button>
+
+    <div data-ng-if="serviceType === 'REST'">
+      <h3>Headers</h3>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label mi-ae-margin-b-0">Key</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <label class="mi-ae-label mi-ae-margin-b-0">Value from</label>
+        </div>
+        <div class="mi-ae-col-2"></div>
+      </div>
+
+      <div data-ng-if="serviceType === 'REST'" class="mi-ae-row" data-ng-repeat="header in action.Headers">
+        <div class="mi-ae-col-4" mi-validation-class="header.ValidationMessage" error-property="'108'">
+          <input type="text" placeholder="e.g. Accept" data-ng-model="header.Key" ng-disabled="action.isReadOnly" />
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value action="action" model="header.Value" allow="allow" placeholder="'e.g. application/json'" is-read-only="action.isReadOnly"></mi-complex-value>
+        </div>
+        <div class="mi-ae-col-2">
+          <miae-button 
+            button-class="'ghost mi-button-clear'" 
+            clickevent="removeItem('header',$index)" 
+            is-disabled="action.isReadOnly"
+            svg-icon-type="'delete'" 
+            svg-icon-size="14"></miae-button>
+        </div>
+      </div>
+
+      <miae-button
+        data-ng-if="serviceType === 'REST'"
+        name="' Add another header'"
+        button-class="'ghost mi-button-clear'"
+        clickevent="addItem('header')"
+        is-disabled="action.isReadOnly"
+        svg-icon-type="'circle-plus'" 
+        svg-icon-size="14"
+      ></miae-button>
+    </div>
+
+    <div data-ng-if="serviceType === 'REST' && (action.HttpMethod === 1 || action.HttpMethod === 2 || action.HttpMethod === 6)">
+      <h3>Body</h3>
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label mi-ae-margin-b-0">Value from</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value action="action" model="action.Payload" allow="allow" text-area="true" placeholder="payload.default(action.ContentType)" is-read-only="action.isReadOnly"></mi-complex-value>
+        </div>
+      </div>
+    </div>
+
+    <h3>Advanced Options</h3>
+
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-16">
+        <label class="mi-radio-checkbox mi-checkbox">
+          <span>Store web service response in an Action Result?</span>
+          <input type="checkbox" data-ng-model="action.Checked" ng-disabled="action.isReadOnly" />
+          <div class="mi-radio-checkbox-indicator"></div>
+        </label>
+      </div>
+    </div>
+
+    <div data-ng-if="action.Checked">
+      <mi-result-to-set label="'Store response in'" action="action" item="action.ResultToSet" col-widths="[4,10]" is-read-only="action.isReadOnly"></mi-result-to-set>
+
+      <mi-result-to-set label="'Store status code in'" action="action" item="action.StatusCodeToSet" col-widths="[4,10]" is-read-only="action.isReadOnly"></mi-result-to-set>
+    </div>
+
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-16 text-right">
+        <miae-button 
+          name="'Test web service'" 
+          button-class="'ghost mi-button-clear icon-right'" 
+          clickevent="toggleTestMode()"
+          svg-icon-type="'chevron-right'" 
+          svg-icon-size="14"></miae-button>
+      </div>
+    </div>
+  </div>
+  <!--/ Edit Mode -->
+
+  <!-- Test Mode -->
+  <div class="mi-ae-main-content" data-ng-if="testMode">
+    <h3>Web Service Definition</h3>
+
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Endpoint URL</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <input type="text" data-ng-model="action.Url" />
+      </div>
+    </div>
+
+    <div data-ng-if="serviceType === 'REST'" class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">HTTP Method</label>
+      </div>
+      <div class="mi-ae-col-5" mi-validation-class="action.ValidationMessages">
+        <ui-select data-ng-model="action.HttpMethod" theme="selectize">
+          <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices repeat="opt.value as opt in httpMethods">
+            <span ng-bind-html="opt.label"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+
+    <div data-ng-if="serviceType === 'REST'" class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Content-Type</label>
+      </div>
+      <div class="mi-ae-col-5" mi-validation-class="action.ValidationMessages">
+        <ui-select data-ng-model="action.ContentType" theme="selectize">
+          <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices repeat="opt.value as opt in contentTypes">
+            <span ng-bind-html="opt.label"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+
+    <div class="mi-ae-row" data-ng-if="serviceType === 'SOAP'">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label mi-ae-margin-b-0">Soap action</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <input type="text" data-ng-model="action.Function" />
+      </div>
+    </div>
+
+    <h3>Parameters</h3>
+
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Parameter name</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <label class="mi-ae-label">Value from</label>
+      </div>
+      <div class="mi-ae-col-2"></div>
+    </div>
+
+    <div class="mi-ae-row" data-ng-repeat="param in action.Params">
+      <div class="mi-ae-col-4">
+        <input type="text" data-ng-model="param.Key" />
+      </div>
+      <div class="mi-ae-col-10">
+        <input name="values" type="text" ng-value="(param.Value && param.Value.ValueType === 9) ? param.Value.Value : ''" />
+      </div>
+      <div class="mi-ae-col-2"></div>
+    </div>
+
+    <div data-ng-if="serviceType === 'REST'">
+      <h3>Headers</h3>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Key</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <label class="mi-ae-label">Value</label>
+        </div>
+        <div class="mi-ae-col-2"></div>
+      </div>
+
+      <div class="mi-ae-row" data-ng-repeat="header in action.Headers">
+        <div class="mi-ae-col-4">
+          <input type="text" data-ng-model="header.Key" />
+        </div>
+        <div class="mi-ae-col-10">
+          <input name="headerValues" type="text" ng-value="(header.Value && header.Value.ValueType === 9) ? header.Value.Value : ''" />
+        </div>
+        <div class="mi-ae-col-2"></div>
+      </div>
+    </div>
+
+    <div data-ng-if="serviceType === 'REST' && (action.HttpMethod === 1 || action.HttpMethod === 2 || action.HttpMethod === 6)">
+      <h3>Body</h3>
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label mi-ae-margin-b-0">Value</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <textarea class="mi-ae-editable-textarea" ng-model="payload.value" placeholder="{{payload.default(action.ContentType)}}"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-16 text-right">
+        <miae-button 
+          name="'Submit test'" 
+          button-class="'ghost mi-button-clear icon-right'" 
+          clickevent="testService()"
+          svg-icon-type="'chevron-right'" 
+          svg-icon-size="14"></miae-button>
+      </div>
+    </div>
+
+    <div data-ng-if="showResult">
+      <h3>Result</h3>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-16">
+          <label class="mi-ae-label mi-ae-margin-b-0">URL</label>
+          <p class="mi-ae-margin-b-10">{{ result.url }}</p>
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-16">
+          <label class="mi-ae-label mi-ae-margin-b-0">Duration</label>
+          <p class="mi-ae-margin-b-10">{{ result.duration }}</p>
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-16">
+          <label class="mi-ae-label mi-ae-margin-b-0">Response</label>
+          <p class="mi-ae-margin-b-10">{{ result.response }}</p>
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-16">
+          <label class="mi-ae-label mi-ae-margin-b-0">Status code</label>
+          <p class="mi-ae-margin-b-10">{{ result.statusCode }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Text Mode -->
+
+  <mi-action-notes is-read-only="action.isReadOnly"></mi-action-notes>
+</div>

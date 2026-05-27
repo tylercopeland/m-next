@@ -1,0 +1,93 @@
+.mi-menu
+
+  &.is-dark
+    .mi-menu-list
+      a
+        color: $white
+
+        &:hover
+          background-color: rgba($blue, 0.3)
+          color: $white
+
+        &.is-active
+          color: $white
+          background-color: rgba($white, 0.1)
+
+    .mi-menu-label
+      color: rgba($white, 0.3)
+
+.mi-menu-list
+  line-height: 1.25
+  margin: 0
+
+  li
+    display: block
+    position: relative
+
+    &.is-active
+      &:before
+        position: absolute
+        top: 8px
+        right: -10px
+        content: ""
+        width: 0
+        height: 0
+        border-top: 7px solid transparent
+        border-bottom: 7px solid transparent
+
+      &.has-white-arrow:before
+        border-right: 7px solid $white
+
+      &.has-blue-arrow:before
+        border-right: 7px solid $blue-light
+        
+    a
+      display: block
+      border-radius: $radius
+      color: $black
+      padding: 0.5em 0.75em
+      text-overflow: ellipsis
+      white-space: nowrap
+      overflow: hidden
+      
+      &:hover
+        background-color: $blue
+        color: $white
+
+        .is-delete-icon
+          display: block
+      
+      // Modifiers
+      &.is-active
+        background-color: rgba($blue, 0.3)
+        color: $black
+
+      .is-delete-icon 
+        display: none
+        margin-left: 5px
+        cursor: pointer
+
+      @each $name, $color in $colors
+        &.has-text-#{$name}
+          color: $color !important
+
+          &:hover
+            color: $white !important
+        
+    ul
+      border-left: $border-light
+      margin: 0.75em
+      padding-left: 0.75em
+
+.mi-menu-label
+  color: rgba($black, 0.3)
+  font-weight: 600
+  font-size: 0.8em
+  letter-spacing: 0.1em
+  text-transform: uppercase
+  
+  &:not(:first-child)
+    margin-top: 1em
+  
+  &:not(:last-child)
+    margin-bottom: 1em

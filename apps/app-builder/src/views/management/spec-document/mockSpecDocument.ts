@@ -1,0 +1,563 @@
+/**
+ * Mock spec document data for Storybook stories and testing
+ */
+
+import { SpecDocument } from '@m-next/api-interface';
+
+export const mockSpecDocumentFull: SpecDocument = {
+  _id: '507f1f77bcf86cd799439011',
+  appId: 'app-12345',
+  isActive: true,
+  content: {
+    appName: 'Customer Relationship Manager',
+    appPurpose:
+      'A comprehensive CRM solution designed to help businesses manage customer interactions, track sales opportunities, and improve customer satisfaction through centralized contact management and communication tracking.',
+    userRoles: [
+      {
+        name: 'Sales Representative',
+        description:
+          'Manages customer interactions, creates opportunities, and tracks deals through the sales pipeline.',
+        permissions: ['View Contacts', 'Edit Contacts', 'Create Opportunities', 'View Reports'],
+      },
+      {
+        name: 'Sales Manager',
+        description:
+          'Oversees sales team performance, approves discounts, and manages territory assignments and pipeline forecasts.',
+        permissions: [
+          'All Sales Rep Permissions',
+          'Approve Discounts',
+          'Manage Territories',
+          'View All Opportunities',
+          'Export Data',
+        ],
+      },
+      {
+        name: 'Customer Support',
+        description:
+          'Handles customer inquiries, manages support tickets, and maintains customer satisfaction records.',
+        permissions: ['View Contacts', 'Create Support Tickets', 'Update Cases', 'View Customer History'],
+      },
+    ],
+    keyWorkflows: [
+      {
+        name: 'Lead to Customer Conversion',
+        description:
+          'Complete workflow for converting a lead into a qualified opportunity and eventually a paying customer.',
+        steps: [
+          'Sales rep receives lead notification',
+          'Initial contact is made and lead is qualified',
+          'Opportunity is created with estimated value',
+          'Proposal is sent to prospect',
+          'Deal is closed and customer record is created',
+          'Handoff to customer success team',
+        ],
+        triggers: ['New Lead Created', 'Lead Status Changed', 'Opportunity Won'],
+      },
+      {
+        name: 'Support Ticket Resolution',
+        description: 'End-to-end process for handling customer support requests from creation to resolution.',
+        steps: [
+          'Customer submits support request',
+          'Ticket is auto-assigned based on category',
+          'Support agent investigates issue',
+          'Resolution is provided to customer',
+          'Customer confirms satisfaction',
+          'Ticket is closed',
+        ],
+        triggers: ['Support Ticket Created', 'Ticket Escalated', 'Ticket Resolved'],
+      },
+      {
+        name: 'Opportunity Pipeline Management',
+        description: 'Sales process for managing opportunities through different pipeline stages.',
+        steps: [
+          'Opportunity is created from qualified lead',
+          'Discovery call is scheduled',
+          'Proposal is prepared and sent',
+          'Negotiations occur',
+          'Contract is finalized',
+          'Deal is won or lost',
+        ],
+        triggers: ['Opportunity Created', 'Stage Changed', 'Deal Closed'],
+      },
+    ],
+    dataEntities: [
+      {
+        tableName: 'Customer',
+        description: 'Core customer information including contact details and account status.',
+        fields: [
+          { fieldName: 'Name', type: 'Text', required: true, description: 'Customer name', source: 'existing' },
+          { fieldName: 'Email', type: 'Text', required: true, description: 'Email address', source: 'existing' },
+          { fieldName: 'Phone', type: 'Text', required: false, description: 'Phone number', source: 'existing' },
+          { fieldName: 'Company', type: 'Text', required: false, description: 'Company name', source: 'existing' },
+          { fieldName: 'Industry', type: 'Text', required: false, description: 'Industry sector', source: 'existing' },
+          {
+            fieldName: 'AccountStatus',
+            type: 'Select',
+            required: true,
+            description: 'Account status',
+            source: 'existing',
+          },
+          {
+            fieldName: 'CreatedDate',
+            type: 'DateTime',
+            required: true,
+            description: 'Creation date',
+            source: 'existing',
+          },
+          {
+            fieldName: 'AssignedTo',
+            type: 'UUID',
+            required: false,
+            description: 'Assigned user ID',
+            source: 'existing',
+          },
+          {
+            fieldName: 'LastContactDate',
+            type: 'DateTime',
+            required: false,
+            description: 'Last contact date',
+            source: 'existing',
+          },
+        ],
+        relationships: [
+          { type: 'Has many', relatedTable: 'Opportunities', description: 'Customer opportunities' },
+          { type: 'Has many', relatedTable: 'SupportTickets', description: 'Support tickets' },
+          { type: 'Belongs to', relatedTable: 'Territory', description: 'Sales territory' },
+        ],
+        source: 'existing',
+      },
+      {
+        tableName: 'Opportunity',
+        description: 'Sales opportunities with pipeline stage tracking and revenue forecasting.',
+        fields: [
+          {
+            fieldName: 'OpportunityName',
+            type: 'Text',
+            required: true,
+            description: 'Opportunity name',
+            source: 'new',
+          },
+          { fieldName: 'CustomerId', type: 'UUID', required: true, description: 'Related customer ID', source: 'new' },
+          {
+            fieldName: 'EstimatedValue',
+            type: 'Number',
+            required: false,
+            description: 'Estimated value',
+            source: 'new',
+          },
+          { fieldName: 'Stage', type: 'Select', required: true, description: 'Pipeline stage', source: 'new' },
+          { fieldName: 'Probability', type: 'Number', required: false, description: 'Win probability', source: 'new' },
+          {
+            fieldName: 'CloseDate',
+            type: 'DateTime',
+            required: false,
+            description: 'Expected close date',
+            source: 'new',
+          },
+          { fieldName: 'OwnerId', type: 'UUID', required: true, description: 'Opportunity owner ID', source: 'new' },
+          {
+            fieldName: 'ProductInterest',
+            type: 'Text',
+            required: false,
+            description: 'Product of interest',
+            source: 'new',
+          },
+          {
+            fieldName: 'CompetitorInfo',
+            type: 'Text',
+            required: false,
+            description: 'Competitor information',
+            source: 'new',
+          },
+        ],
+        relationships: [
+          { type: 'Belongs to', relatedTable: 'Customer', description: 'Related customer' },
+          { type: 'Has many', relatedTable: 'Activities', description: 'Opportunity activities' },
+        ],
+        source: 'new',
+      },
+      {
+        tableName: 'SupportTicket',
+        description: 'Customer support cases and issue tracking.',
+        fields: [
+          { fieldName: 'TicketNumber', type: 'Text', required: true, description: 'Ticket number', source: 'new' },
+          { fieldName: 'CustomerId', type: 'UUID', required: true, description: 'Related customer ID', source: 'new' },
+          { fieldName: 'Subject', type: 'Text', required: true, description: 'Ticket subject', source: 'new' },
+          { fieldName: 'Description', type: 'Text', required: false, description: 'Ticket description', source: 'new' },
+          { fieldName: 'Priority', type: 'Select', required: true, description: 'Priority level', source: 'new' },
+          { fieldName: 'Status', type: 'Select', required: true, description: 'Ticket status', source: 'new' },
+          {
+            fieldName: 'AssignedAgent',
+            type: 'UUID',
+            required: false,
+            description: 'Assigned agent ID',
+            source: 'new',
+          },
+          { fieldName: 'CreatedDate', type: 'DateTime', required: true, description: 'Creation date', source: 'new' },
+          {
+            fieldName: 'ResolvedDate',
+            type: 'DateTime',
+            required: false,
+            description: 'Resolution date',
+            source: 'new',
+          },
+        ],
+        relationships: [
+          { type: 'Belongs to', relatedTable: 'Customer', description: 'Related customer' },
+          { type: 'Has many', relatedTable: 'Comments', description: 'Ticket comments' },
+        ],
+        source: 'new',
+      },
+      {
+        tableName: 'Activity',
+        description: 'Customer interaction history including calls, emails, and meetings.',
+        fields: [
+          {
+            fieldName: 'ActivityType',
+            type: 'Select',
+            required: true,
+            description: 'Type of activity',
+            source: 'existing',
+          },
+          {
+            fieldName: 'CustomerId',
+            type: 'UUID',
+            required: true,
+            description: 'Related customer ID',
+            source: 'existing',
+          },
+          {
+            fieldName: 'OpportunityId',
+            type: 'UUID',
+            required: false,
+            description: 'Related opportunity ID',
+            source: 'existing',
+          },
+          { fieldName: 'Subject', type: 'Text', required: true, description: 'Activity subject', source: 'new' },
+          { fieldName: 'Notes', type: 'Text', required: false, description: 'Activity notes', source: 'new' },
+          { fieldName: 'Date', type: 'DateTime', required: true, description: 'Activity date', source: 'new' },
+          { fieldName: 'Duration', type: 'Number', required: false, description: 'Duration in minutes', source: 'new' },
+          { fieldName: 'OwnerId', type: 'UUID', required: true, description: 'Activity owner ID', source: 'new' },
+        ],
+        relationships: [
+          { type: 'Belongs to', relatedTable: 'Customer', description: 'Related customer' },
+          { type: 'Belongs to', relatedTable: 'Opportunity', description: 'Related opportunity' },
+        ],
+        source: 'recommended',
+      },
+      {
+        tableName: 'Territory',
+        description: 'Sales territory definitions and assignments.',
+        fields: [
+          { fieldName: 'TerritoryName', type: 'Text', required: true, description: 'Territory name', source: 'new' },
+          { fieldName: 'Region', type: 'Text', required: true, description: 'Geographic region', source: 'new' },
+          { fieldName: 'ManagerId', type: 'UUID', required: true, description: 'Territory manager ID', source: 'new' },
+          { fieldName: 'IsActive', type: 'Boolean', required: true, description: 'Active status', source: 'new' },
+        ],
+        relationships: [
+          { type: 'Has many', relatedTable: 'Customers', description: 'Territory customers' },
+          { type: 'Has many', relatedTable: 'SalesReps', description: 'Sales representatives' },
+        ],
+        source: 'new',
+      },
+    ],
+    businessRules: [
+      {
+        id: 'BR-001',
+        name: 'Opportunity Value Validation',
+        description: 'Large opportunities require manager approval before moving to proposal stage.',
+        condition: 'EstimatedValue > $50,000 AND Stage = "Proposal"',
+        action: 'Require manager approval and add approval task',
+        priority: 'essential',
+      },
+      {
+        id: 'BR-002',
+        name: 'High Priority Ticket Assignment',
+        description: 'Critical support tickets must be assigned to senior agents only.',
+        condition: 'Priority = "Critical" OR Priority = "High"',
+        action: 'Auto-assign to senior support agent queue',
+        priority: 'essential',
+      },
+      {
+        id: 'BR-003',
+        name: 'Lead Age Notification',
+        description: 'Alert sales reps when leads have not been contacted within 24 hours.',
+        condition: 'Lead.CreatedDate < NOW() - 24 hours AND Lead.Status = "New"',
+        action: 'Send email notification to assigned sales rep',
+        priority: 'important',
+      },
+      {
+        id: 'BR-004',
+        name: 'Customer Satisfaction Follow-up',
+        description: 'Automatically schedule follow-up call after support ticket is resolved.',
+        condition: 'SupportTicket.Status = "Resolved"',
+        action: 'Create follow-up task 3 days after resolution',
+        priority: 'helpful',
+      },
+      {
+        id: 'BR-005',
+        name: 'Duplicate Contact Prevention',
+        description: 'Prevent creation of duplicate customer records based on email address.',
+        condition: 'Customer.Email matches existing record',
+        action: 'Show warning and suggest merging records',
+        priority: 'important',
+      },
+    ],
+    screens: [
+      {
+        screenName: 'Customer Dashboard',
+        purpose: 'Overview of all customers with filtering and search capabilities.',
+        screenType: 'list',
+        isStartingScreen: true,
+        primaryWorkflows: ['Lead to Customer Conversion', 'Opportunity Pipeline Management'],
+        hasDetailedSpec: true,
+        baseTable: 'Customer',
+        callToActions: ['Add New Customer', 'Import Customers', 'Export to Excel'],
+        controlsSummary: 'Grid with customer list, search bar, filter panel, action buttons',
+      },
+      {
+        screenName: 'Customer Details',
+        purpose: 'Comprehensive view of individual customer information and related records.',
+        screenType: 'record',
+        isStartingScreen: false,
+        primaryWorkflows: ['Lead to Customer Conversion', 'Support Ticket Resolution'],
+        hasDetailedSpec: true,
+        baseTable: 'Customer',
+        callToActions: ['Edit Customer', 'Create Opportunity', 'Log Activity', 'Create Support Ticket'],
+        controlsSummary: 'Form fields, related opportunities grid, support tickets grid, activity timeline',
+      },
+      {
+        screenName: 'Opportunity Pipeline',
+        purpose: 'Visual pipeline view showing all opportunities by stage with drag-and-drop.',
+        screenType: 'dashboard',
+        isStartingScreen: false,
+        primaryWorkflows: ['Opportunity Pipeline Management'],
+        hasDetailedSpec: true,
+        baseTable: 'Opportunity',
+        callToActions: ['Add Opportunity', 'Move to Next Stage', 'Update Forecast'],
+        controlsSummary: 'Kanban board with opportunity cards, stage columns, pipeline metrics',
+      },
+      {
+        screenName: 'Support Tickets',
+        purpose: 'Manage and track all customer support requests and resolutions.',
+        screenType: 'list',
+        isStartingScreen: false,
+        primaryWorkflows: ['Support Ticket Resolution'],
+        hasDetailedSpec: true,
+        baseTable: 'SupportTicket',
+        callToActions: ['Create Ticket', 'Assign Tickets', 'Close Ticket'],
+        controlsSummary: 'Grid with tickets, priority filters, status indicators, assignment dropdown',
+      },
+      {
+        screenName: 'Sales Reports',
+        purpose: 'Analytics and reporting for sales performance, pipeline, and forecasting.',
+        screenType: 'dashboard',
+        isStartingScreen: false,
+        primaryWorkflows: ['Opportunity Pipeline Management'],
+        hasDetailedSpec: false,
+        baseTable: 'Opportunity',
+        callToActions: ['Export Report', 'Schedule Report', 'Customize View'],
+        controlsSummary: 'Charts showing pipeline by stage, revenue forecast, win/loss analysis',
+      },
+    ],
+  },
+  generationContext: {
+    userIntent:
+      'Create a CRM system to manage customer relationships, track sales opportunities, and handle support requests',
+    clarifyingQuestions: [
+      'What industries will your customers be in?',
+      'Do you need integration with email or calendar systems?',
+      'What are your sales team size and structure?',
+    ],
+    llmModel: 'gpt-4',
+    confidence: 0.92,
+  },
+  metadata: {
+    version: 1,
+    status: 'approved',
+    createdBy: 'john.smith@method.com',
+    createdAt: '2024-01-15T10:30:00Z',
+    updatedBy: 'john.smith@method.com',
+    updatedAt: '2024-01-20T14:45:00Z',
+    title: 'Customer Relationship Manager Specification',
+    sessionId: 'session-abc123',
+    visualizer: 'v1',
+    tags: ['CRM', 'Sales', 'Customer Support', 'Enterprise'],
+  },
+};
+
+export const mockSpecDocumentPartial: SpecDocument = {
+  _id: '507f1f77bcf86cd799439011',
+  appId: 'app-12345',
+  isActive: true,
+  content: {
+    appName: 'Customer Relationship Manager',
+    appPurpose:
+      'A comprehensive CRM solution designed to help businesses manage customer interactions, track sales opportunities, and improve customer satisfaction through centralized contact management and communication tracking.',
+    userRoles: [
+      {
+        name: 'Sales Representative',
+        description:
+          'Manages customer interactions, creates opportunities, and tracks deals through the sales pipeline.',
+        permissions: ['View Contacts', 'Edit Contacts', 'Create Opportunities', 'View Reports'],
+      },
+      {
+        name: 'Sales Manager',
+        description:
+          'Oversees sales team performance, approves discounts, and manages territory assignments and pipeline forecasts.',
+        permissions: [
+          'All Sales Rep Permissions',
+          'Approve Discounts',
+          'Manage Territories',
+          'View All Opportunities',
+          'Export Data',
+        ],
+      },
+      {
+        name: 'Customer Support',
+        description:
+          'Handles customer inquiries, manages support tickets, and maintains customer satisfaction records.',
+        permissions: ['View Contacts', 'Create Support Tickets', 'Update Cases', 'View Customer History'],
+      },
+    ],
+    keyWorkflows: [],
+    dataEntities: [],
+    businessRules: [],
+    screens: [],
+  },
+  generationContext: {
+    userIntent:
+      'Create a CRM system to manage customer relationships, track sales opportunities, and handle support requests',
+    clarifyingQuestions: [
+      'What industries will your customers be in?',
+      'Do you need integration with email or calendar systems?',
+      'What are your sales team size and structure?',
+    ],
+    llmModel: 'gpt-4',
+    confidence: 0.92,
+  },
+  metadata: {
+    version: 1,
+    status: 'approved',
+    createdBy: 'john.smith@method.com',
+    createdAt: '2024-01-15T10:30:00Z',
+    updatedBy: 'john.smith@method.com',
+    updatedAt: '2024-01-20T14:45:00Z',
+    title: 'Customer Relationship Manager Specification',
+    sessionId: 'session-abc123',
+    visualizer: 'v1',
+    tags: ['CRM', 'Sales', 'Customer Support', 'Enterprise'],
+  },
+};
+export const mockSpecDocumentMinimal: SpecDocument = {
+  _id: '507f1f77bcf86cd799439022',
+  appId: 'app-67890',
+  isActive: true,
+  content: {
+    appName: 'Simple Task Manager',
+    appPurpose: 'A basic task management system for tracking to-do items and project assignments.',
+    userRoles: [
+      {
+        name: 'Team Member',
+        description: 'Can create and manage their own tasks.',
+        permissions: ['View Tasks', 'Create Tasks', 'Edit Own Tasks'],
+      },
+    ],
+    keyWorkflows: [
+      {
+        name: 'Task Completion',
+        description: 'Basic workflow for creating and completing tasks.',
+        steps: ['Create task', 'Assign task', 'Work on task', 'Mark as complete'],
+        triggers: ['Task Created', 'Task Completed'],
+      },
+    ],
+    dataEntities: [
+      {
+        tableName: 'Task',
+        description: 'Individual tasks with assignments and due dates.',
+        fields: [
+          { fieldName: 'Title', type: 'Text', required: true, description: 'Task title', source: 'new' },
+          { fieldName: 'Description', type: 'Text', required: false, description: 'Task description', source: 'new' },
+          { fieldName: 'DueDate', type: 'DateTime', required: false, description: 'Due date', source: 'new' },
+          { fieldName: 'Status', type: 'Select', required: true, description: 'Task status', source: 'new' },
+          { fieldName: 'AssignedTo', type: 'UUID', required: false, description: 'Assigned user ID', source: 'new' },
+        ],
+        relationships: [{ type: 'Belongs to', relatedTable: 'Project', description: 'Parent project' }],
+        source: 'new',
+      },
+    ],
+    businessRules: [
+      {
+        id: 'BR-001',
+        name: 'Overdue Task Alert',
+        description: 'Send notification when tasks become overdue.',
+        condition: 'DueDate < TODAY() AND Status != "Completed"',
+        action: 'Send email notification',
+        priority: 'important',
+      },
+    ],
+    screens: [
+      {
+        screenName: 'My Tasks',
+        purpose: 'View and manage personal task list.',
+        screenType: 'list',
+        isStartingScreen: true,
+        primaryWorkflows: ['Task Completion'],
+        hasDetailedSpec: true,
+        baseTable: 'Task',
+        callToActions: ['Add Task', 'Mark Complete'],
+      },
+    ],
+  },
+  generationContext: {
+    userIntent: 'Simple task tracking for small team',
+    clarifyingQuestions: ['How many team members?', 'Need project grouping?'],
+    llmModel: 'gpt-4',
+    confidence: 0.85,
+  },
+  metadata: {
+    version: 1,
+    status: 'draft',
+    createdBy: 'jane.doe@method.com',
+    createdAt: '2024-02-01T09:00:00Z',
+    updatedBy: 'jane.doe@method.com',
+    updatedAt: '2024-02-01T09:15:00Z',
+    title: 'Task Manager Specification',
+    sessionId: 'session-xyz789',
+    visualizer: 'v1',
+    tags: ['Tasks', 'Productivity'],
+  },
+};
+
+export const mockSpecDocumentEmpty: SpecDocument = {
+  _id: '507f1f77bcf86cd799439033',
+  appId: 'app-99999',
+  isActive: true,
+  content: {
+    appName: 'Untitled App',
+    appPurpose: '',
+    userRoles: [],
+    keyWorkflows: [],
+    dataEntities: [],
+    businessRules: [],
+    screens: [],
+  },
+  generationContext: {
+    userIntent: '',
+    clarifyingQuestions: [],
+    llmModel: 'gpt-4',
+    confidence: 0,
+  },
+  metadata: {
+    version: 1,
+    status: 'draft',
+    createdBy: 'system@method.com',
+    createdAt: '2024-02-10T12:00:00Z',
+    updatedBy: 'system@method.com',
+    updatedAt: '2024-02-10T12:00:00Z',
+    title: 'New Specification',
+    sessionId: 'session-empty',
+    visualizer: 'v1',
+    tags: [],
+  },
+};

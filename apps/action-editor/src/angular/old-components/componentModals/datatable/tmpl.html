@@ -1,0 +1,36 @@
+<div data-ng-controller="ComponentDataTableCtrl" class="mi-ae-fullheight">
+    <!-- Main Panel -->
+    <div class="mi-ae-framework-full-panel">
+        <div class="mi-ae-main-content mi-ae-main-content-with-footer show-scrollbar">
+            <!-- Tabs -->
+            <div class="tabs is-medium">
+                <ul>
+                    <li data-ng-class="{'is-active': tab === 'config'}"><a data-ng-click="switchTab('config')">Configuration</a></li>
+                    <li data-ng-class="{'is-active': tab === 'columns', 'is-disabled': tabDisabled}"><a data-ng-click="switchTab('columns')">Columns</a></li>
+                    <li data-ng-class="{'is-active': tab === 'views', 'is-disabled': tabDisabled}"><a data-ng-click="switchTab('views')">Views</a></li>
+                </ul>
+            </div>
+
+            <!-- Data Pane -->
+            <div class="tab-pane" data-ng-class="{'is-hidden': tab !== 'config'}" data-ng-include="'public/src/componentModals/datatable/tabs/config.html'"></div>
+
+            <!-- Column Pane -->
+            <div class="tab-pane" data-ng-class="{'is-hidden': tab !== 'columns'}" data-ng-include="'public/src/componentModals/datatable/tabs/columns.html'"></div>
+
+            <!-- View Pane -->
+            <div class="tab-pane" data-ng-class="{'is-hidden': tab !== 'views'}" data-ng-include="'public/src/componentModals/datatable/tabs/views.html'"></div>
+        </div>
+        <div class="mi-ae-content-footer">
+            <hr>
+            <button class="mi-button blue float-right" data-ng-click="switchTab('columns')" data-ng-disabled="tabDisabled" data-ng-if="tab ==='config'">Next</button>
+            <button class="mi-button blue" data-ng-disabled="tab === 'config'" data-ng-if="tab ==='config'">Previous</button>
+
+            <button class="mi-button blue float-right" data-ng-click="switchTab('views')" data-ng-disabled="tabDisabled" data-ng-if="tab ==='columns'">Next</button>
+            <button class="mi-button blue" data-ng-click="switchTab('config')" data-ng-disabled="tabDisabled" data-ng-if="tab ==='columns'">Previous</button>
+
+            <button class="mi-button blue float-right" data-ng-click="closeModal()" data-ng-disabled="tabDisabled" data-ng-if="tab ==='views'">Close</button>
+            <button class="mi-button blue" data-ng-click="switchTab('columns')" data-ng-disabled="tabDisabled" data-ng-if="tab ==='views'">Previous</button>
+        </div>
+    </div>
+    <!--/ Main Panel -->
+</div>

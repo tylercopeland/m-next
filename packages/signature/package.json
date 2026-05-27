@@ -1,0 +1,58 @@
+{
+  "name": "@m-next/signature",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Signature widget",
+  "homepage": "",
+  "license": "ISC",
+  "main": "src/index.ts",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "index"
+  ],
+  "peerDependencies": {
+    "@emotion/react": ">=11.10.5",
+    "@emotion/styled": ">=11.10.5",
+    "prop-types": ">=15.8.1",
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2"
+  },
+  "dependencies": {
+    "@m-next/button": "^1.0.0",
+    "@m-next/dialog": "^1.0.0",
+    "@m-next/input": "^1.0.0",
+    "@m-next/styles": "1.0.0",
+    "@m-next/tabs": "^1.0.0",
+    "@m-next/utilities": "^1.0.0",
+    "@m-next/validation": "^1.0.0",
+    "@testing-library/jest-dom": "5.16.5",
+    "@testing-library/react": "12.1.4",
+    "@types/react-signature-canvas": "^1.0.5",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^1.5.3",
+    "moment": "^2.30.1",
+    "react-signature-canvas": "^1.0.5",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/jspdf": "^1.3.3",
+    "ts-jest": "^29.1.0"
+  },
+  "scripts": {
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "build": "npm run prettify && npm run lint && npm run test &&webpack --mode production",
+    "prettify": "npx prettier \"**/*.*(js|jsx)\" --ignore-path=.prettierignore --write --log-level=error",
+    "release": "npm build && npm publish build --tag next",
+    "test": "jest",
+    "test-storybook": "npm run lint && jest --json --outputFile=.jest-test-results.json",
+    "test-snapshot-update": "npm run test -- -u",
+    "lint-js": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --cache --report-unused-disable-directives --max-warnings=0",
+    "lint-ls": "npx ls-lint",
+    "lint": "npm run lint-js && npm run lint-ls",
+    "lint-fix": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix --cache --report-unused-disable-directives --max-warnings=0",
+    "check-types": "tsc --noemit"
+  }
+}

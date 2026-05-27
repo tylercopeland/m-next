@@ -1,0 +1,112 @@
+<div class="mi-row">
+    <!-- Left Column -->
+    <div class="mi-ae-col-4">
+        <div class="mi-ae-header-block">
+            <h2 class="mi-ae-padding-r-0">Views</h2>
+        </div>
+        <ul class="mi-ae-simple-list" ng-sortable="layout.sortableConfig">
+            <li data-ng-repeat="view in control.viewList" data-ng-class="{'selected' : view.id === control.viewList[layout.selectedViewIdx].id }">
+                <span><i class="mi-icon">
+                    <svg-icon name="'move'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+                  </i></span>
+                <span data-ng-click="configureView($index)">{{ view.name }}</span>
+                <span class="text-center" data-ng-if="control.defaultViewFilter === view.id"><i class="mi-icon">
+                    <svg-icon name="'star-solid'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+                  </i>
+                <span data-ng-click="setDefaultView(view.id)" class="text-center" data-ng-if="control.defaultViewFilter !== view.id"><i class="mi-icon">
+                    <svg-icon name="'star-outline'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+                  </i></span>
+                <span><i class="mi-icon" data-ng-click="deleteView($event, $index)">
+                    <svg-icon name="'delete'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+                  </i></span>
+            </li>
+        </ul>
+        <div class="mi-ae-padding-t-15 mi-ae-padding-l-10">
+            <a data-ng-click="addView()"><i class="mi-icon">
+                <svg-icon name="'circle-plus'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+              </i> Add another view</a>
+        </div>
+    </div>
+
+    <!-- Right Column Select -->
+    <div class="mi-ae-col-12" data-ng-if="layout.selectedViewIdx !== null">
+        <div class="mi-ae-header-block mi-ae-padding-l-0">
+            <h2>Configure View</h2>
+        </div>
+        
+        <!-- Name -->
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-4">
+                <label class="mi-ae-label">Name</label>
+            </div>
+            <div class="mi-ae-col-8">
+                <input type="text" data-ng-model="control.viewList[layout.selectedViewIdx].name">
+            </div>
+        </div>
+
+        <!-- Dynamic Dates -->
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-3 mi-ae-col-offset-4">
+                <label class="mi-radio-checkbox mi-checkbox" 
+                  data-ng-disabled="layout.disableDynamic" 
+                  data-ng-class="{'is-disabled': layout.disableDynamic}"
+                  tooltip-placement="bottom" 
+                  tooltip-enable="layout.disableDynamic" 
+                  uib-tooltip="Dynamic dates are only available if a single dynamic date is used in your selection criteria (e.g. Start Date is greater than Last Month).">
+                  <input type="checkbox" data-ng-model="control.viewList[layout.selectedViewIdx].enableDynamicDates" data-ng-disabled="layout.disableDynamic"> 
+                  <span class="mi-radio-checkbox-indicator"></span>
+                  <span style="font-weight: 600">Show Dynamic Dates</span>
+                </label>
+            </div>
+        </div>
+
+        <h5 class="mi-ae-label mi-ae-margin-b-10 mi-ae-margin-t-10">Visible Columns</h5>
+        <div data-ng-if="control.viewList[layout.selectedViewIdx].columns.length > 0">
+            <ul class="mi-data-table-selectable-column" ng-sortable="layout.sortableConfig">
+                <li data-ng-repeat="column in control.viewList[layout.selectedViewIdx].columns">
+                    <i class="mi-icon">
+                        <svg-icon name="'move'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+                      </i>
+                    <span>{{ column.field }}</span>
+                    <i class="mi-icon" data-ng-click="deleteViewColumn($event, $index)">
+                        <svg-icon name="'delete'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+                      </i>
+                </li>
+            </ul>
+        </div>
+        <div data-ng-if="control.viewList[layout.selectedViewIdx].columns.length === 0">
+            <strong>Select your columns below</strong>
+        </div>
+
+        <h5 class="mi-ae-label mi-ae-margin-b-10 mi-ae-margin-t-10">Available Columns</h5>
+        <div data-ng-if="control.viewList[layout.selectedViewIdx].columns.length < control.columns.length">
+            <ul class="mi-data-table-selectable-column">
+                <li data-ng-repeat="column in control.columns" data-ng-click="addColumnToView(column.field)" data-ng-if="existsInView(column.field)">{{ column.field }}</li>
+            </ul>
+        </div>
+        <div data-ng-if="control.viewList[layout.selectedViewIdx].columns.length > 0 && control.columns.length === control.viewList[layout.selectedViewIdx].columns.length">
+            <strong>No more columns to select</strong>
+        </div>
+        
+        <!-- Sorting -->
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-16">
+                <h5 class="mi-ae-label mi-ae-margin-b-10 mi-ae-margin-t-10">Sorting</h5>
+                <mi-sorting filter-def="control.viewList[layout.selectedViewIdx]" view-name="control.viewFriendlyName"></mi-sorting>
+            </div>
+        </div>
+
+        <!-- Filtering -->
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-16">
+                <h5 class="mi-ae-h5 mi-ae-margin-b-10">Selection Criteria</h5>
+                <mi-criteria-builder 
+                    action="layout.action" 
+                    fields-only="true"
+                    where-clause="control.viewList[layout.selectedViewIdx].filtering" 
+                    table-name="control.viewFriendlyName" 
+                    show-dynamic="true"></mi-criteria-builder>
+            </div>
+        </div>
+    </div>
+</div>

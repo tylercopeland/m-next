@@ -1,0 +1,557 @@
+﻿@import "../designer/colors", "../../scss/partials/mixins";
+
+.mi-import-cd-btn {
+    height: 90px;
+    width: 750px;
+    margin: auto;
+
+    .mi-img-btn:last-child {
+        margin-left: 50px;
+    }
+}
+
+.mi-upload-wrapper {
+    position: relative;
+    min-height: 150px;
+
+    .mi-spinner-wrapper {
+        height: 150px;
+        position: absolute;
+        left: 50%;
+        z-index: -1; // <= IE11 issue with animation
+
+        &.is-active {
+            z-index: 0;
+        }
+    }
+
+    .mi-spinner-container {
+        margin: -40px 0 0 -50px;
+    }
+
+    .documents-preview {
+        overflow-y: hidden !important;
+    }
+}
+
+#mi-upload-doc {
+
+    .documents-drop {
+        height: 150px;
+        width: 750px;
+        margin: auto;
+    }
+
+    .documents-preview {
+        display: block;
+        width: 750px;
+        margin: auto;
+
+        .documents-item {
+            height: 150px;
+
+            &.dz-complete {
+                width: 400px;
+                margin: auto;
+
+                &.dz-error {
+                    height: 40px !important;
+                }
+            }
+
+            .file-delete span {
+                display: block;
+            }
+        }
+    }
+}
+
+.mi-import-mapping {
+    height: 100%;
+    margin: auto;
+    width: 1170px;
+    position: relative;
+
+    .mapping-fields {
+        height: 100%;
+        width: 770px;
+        position: absolute;
+        left: 0;
+
+        .mapping-outer {
+            height: 900px;
+            float: left;
+            display: table-cell;
+        }
+
+        .mapping-title {
+            height: 25px;
+            display: table;
+
+            p {
+                font-size: 16px;
+            }
+
+            p:first-child {
+                width: 300px;
+                float: left;
+                margin: 0 70px 0 25px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+
+            p:last-child {
+                float: left;
+            }
+        }
+
+        ul {
+            list-style: none;
+
+            li {
+                display: table;
+            }
+        }
+
+        .mapping-file-fields {
+            padding: 0;
+            margin-left: 20px;
+
+            .mapping-file-filed {
+                border: 1px solid $m-grey;
+                margin: 5px;
+                padding: 5px;
+                float: left;
+                width: 300px;
+                height: 60px;
+                display: block;
+
+                .mapping-file-filed-title {
+                    display: block;
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+
+                .mapping-file-filed-sample {
+                    display: block;
+                    font-size: 12px;
+                    font-weight: initial;
+                    font-style: italic;
+                    color:$m-dark-grey;
+                    line-height: 14px;
+                }
+            }
+
+            .mapping-arrow-wrapper {
+                float: left;
+                height: 75px;
+                margin: 0 10px;
+                display: block;
+
+                span {
+                    font-size: 40px;
+                    line-height: 70px;
+                }
+            }
+
+            .menu-trigger {
+                &.mi-icon-caution-knockout {
+                    color: $yellow !important;
+                }
+
+                &.mi-icon-circle-minus-alt {
+                    color: $m-red !important;
+                }
+            }
+
+            .mapping-placeholder-wrapper {
+                position: relative;
+                float: left;
+                border: 1px dashed $nav-hover;
+                margin: 5px;
+                padding: 5px;
+                float: left;
+                width: 300px;
+                height: 60px;
+
+                ul {
+                    height: 42px;
+                    list-style: none;
+                    margin: auto;
+                    width: 280px;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                }
+            }
+
+            .mapping-validation-wrapper {
+                position: relative;
+                float: left;
+                margin: 5px;
+                line-height: 60px;
+                text-align: center;
+                font-size: 20px;
+                color: #007B4A;
+                height: 60px;
+                width: 30px;
+            }
+        }
+    }
+
+    .ps-container > .ps-scrollbar-x-rail,
+    .ps-container > .ps-scrollbar-y-rail {
+        opacity: 0.6;
+    }
+
+    .draggable-handle {
+        cursor: move;
+        cursor: -webkit-grabbing;
+    }
+
+    .drop-placeholder {
+        opacity: .2;
+        border: 1px dashed $light-blue;
+        background: $nav-hover;
+    }
+
+    .mi-import-method-fields {
+        height: 100%;
+        width: 350px;
+        position: absolute;
+        left: 770px;
+
+        .method-fields-wrapper {
+            width: 280px;
+            margin-left: 25px;
+            height: 900px;
+            float: left;
+
+            .method-fields-caption {
+                p {
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin-left: 0;
+
+                li {
+                    margin-bottom: 2px;
+                }
+            }
+
+            .method-fields-search {
+                margin-bottom: 10px;
+
+                input {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .method-fields-new-title {
+            height: 20px;
+
+            button {
+                float: right;
+            }
+        }
+
+        .method-fields-new-field {
+            margin-bottom: 2px;
+            display: flex;
+            flex-direction: column;
+
+            .method-field-new-content {
+                padding: 0;
+                border: 0;
+                display: flex;
+                flex-direction: row;
+                width: 280px;
+
+                div:first-child {
+                    flex: 2;
+                }
+
+                .border-blue {
+                    border: 1px solid $blue;
+                }
+            }
+
+            input {
+                margin: 0;
+                height: 40px !important;
+                border: 1px solid #BACAD0;
+            }
+
+            button {
+                border: none;
+                background-color: transparent;
+                font-weight: bold;
+                display: inline-block;
+                border-width: 1px 1px 1px 0;
+                border-style: solid;
+                border-color: #BACAD0;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .mi-icon-ok {
+                color: $green;
+            }
+
+            .mi-icon-remove {
+                color: $m-red;
+            }
+        }
+    }
+
+    .method-fields-title {
+        p {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    }
+
+    .method-field-draggable {
+        display: table;
+        border: 1px solid $m-grey;
+        padding: 5px 0;
+        width: 280px;
+        table-layout: fixed;
+        cursor: move;
+        cursor: -webkit-grabbing;
+
+        .draggable-handle {
+            display: table-cell;
+            line-height: 30px;
+            width: 35px;
+            border-right: 1px solid $m-grey;
+            text-align: center;
+            float: none;
+        }
+
+        .draggable-content {
+            width: 200px;
+            display: table-cell;
+            line-height: 30px;
+            text-align: left;
+            float: none;
+            padding-left: 10px;
+            font-weight: bold;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+
+            input {
+                margin: 0;
+                height: 30px !important;
+            }
+        }
+
+        .draggable-remove {
+            display: table-cell;
+            line-height: 30px;
+            text-align: left;
+            float: none;
+            padding-left: 10px;
+            font-weight: bold;
+
+            button {
+                border: none;
+                background-color: transparent;
+                font-weight: bold;
+                margin: auto;
+                display: inline-block;
+            }
+        }
+    }
+
+    .mi-context-menu {
+        font-size: 14px;
+        height: 60px;
+        position: relative;
+        line-height: initial;
+
+        button {
+            position: absolute;
+            top: 35%;
+            width: 30px;
+            padding: 0;
+            font-size: 20px;
+        }
+
+        .sub-menu-popup {
+            right: -10px;
+            width: 200px;
+            line-height: 18px;
+            color: $black;
+
+            &:before,
+            &:after {
+                left: 71%;
+            }
+        }
+    }
+}
+
+.mi-import-review {
+    height: 100%;
+    position: relative;
+
+    .import-tags {
+        width: 33%;
+        margin: 0 30px 0px 20px;
+        position: absolute;
+        top: -25px;
+        right: -10px;
+        z-index: 110;
+
+        .mi-taglist .mi-caption {
+            font-weight: bold !important;
+        }
+
+        .mi-taglist .selectize-dropdown-content {
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .mi-taglist .selectize-dropdown-content .optgroup .option .highlight {
+            display: inline;
+        }
+    }
+
+    .handsontable input, .handsontable textarea {
+        max-height: initial !important;
+    }
+
+    .handsontableInput {
+        &.autoHeightSize {
+            min-height: initial;
+            max-height: 24px;
+        }
+    }
+
+    .review-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .review-grid {
+        margin: 0 20px 0 20px;
+        flex: 1 0 auto;
+    }
+
+    .review-details {
+        font-size: 16px;
+        line-height: 18px;
+        display: table;
+        width: 100%;
+        padding: 0 30px 20px 0;
+
+        .float-right {
+            float: right;
+            margin: 0 30px 20px 0;
+        }
+
+        span {
+            display: block;
+        }
+
+        .review-conflicts {
+            .conflicts-desc {
+                font-size: 14px;
+                font-style: italic;
+            }
+
+            .txt-red {
+                color: $m-red !important;
+                display: inline;
+                font-weight: bold;
+            }
+        }
+
+        .review-ready, .review-skipped {
+            margin-top: 10px;
+
+            .txt-bold {
+                font-weight: bold;
+                display: inline;
+            }
+        }
+    }
+}
+
+.mi-import-process {
+    width: 900px;
+    margin: auto;
+    padding-top: 50px;
+    font-size: 16px;
+
+    progress {
+        &::-webkit-progress-bar {
+            @include borderRadius(3px);
+        }
+
+        &::-webkit-progress-value {
+            background: $green;
+        }
+
+        &::-moz-progress-bar {
+            background-color: $green;
+        }
+
+        color: $green;
+        margin-bottom: 5px;
+    }
+
+    .progress-percent {
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .progress-info {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        text-align: left;
+    }
+
+    .progress-count {
+        padding-right: 10px;
+        font-weight: bold;
+
+        span:last-child {
+            color: $m-red;
+        }
+    }
+
+    span {
+        padding-top: 10px;
+        display: block;
+    }
+}
+
+
+.mi-import-txt-block {
+    margin: 30px 0;
+    text-align: center;
+
+    a {
+        color: $blue;
+        font-weight: 600;
+    }
+}
+
+.import-green {
+    color: orangered;
+}

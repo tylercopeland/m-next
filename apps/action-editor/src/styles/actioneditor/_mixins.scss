@@ -1,0 +1,187 @@
+@use "sass:math";
+
+@mixin lineIndent($iteration, $position) {
+  @if $iteration <= $max-iterations {
+    .line-indent {
+      &:after { margin-left: $position + 4; }
+
+      @include lineIndent($iteration + 1, $position + 4);
+    }
+  }
+}
+
+@mixin actionIndent($iteration, $position) {
+  @if $iteration <= $max-iterations {
+    li {
+      .action-name { margin-left: $position + 20 }
+
+      @include actionIndent($iteration + 1, $position + 20);
+    }
+  }
+}
+
+@mixin actionIndentNew($iteration, $position) {
+  @if $iteration <= $max-iterations {
+    li {
+      .action-name { margin-left: $position + 20 }
+
+      @include actionIndent($iteration + 1, $position + 20);
+    }
+  }
+}
+
+@mixin noselect() {
+  & {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently supported by any browser */
+                                 /* not supported by any browser */  
+  }
+}
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Creates a wrapper for a series of columns
+@mixin make-row($gutter: $grid-gutter-width) {
+  & {
+    margin-left:  ceil(math.div($gutter, -2));
+    margin-right: floor(math.div($gutter, -2));
+  }
+  
+  @include clearfix;
+}
+
+// [converter] This is defined recursively in LESS, but Sass supports real loops
+@mixin make-grid-columns($i: 1, $list: ".mi-ae-col-#{$i}, .mi-ae-col-xs-#{$i}") {
+  @for $i from (1 + 1) through $grid-columns {
+    $list: "#{$list}, .mi-ae-col-#{$i}, .mi-ae-col-xs-#{$i}";
+  }
+  #{$list} {
+    position: relative;
+    // Prevent columns from collapsing when empty
+    min-height: 1px;
+    // Inner gutter via padding
+    padding-left:  ceil(($grid-gutter-width * 0.5));
+    padding-right: floor(($grid-gutter-width * 0.5));
+  }
+}
+
+// [converter] This is defined recursively in LESS, but Sass supports real loops
+@mixin float-grid-columns($class, $i: 1, $list: ".mi-ae-col-#{$i}") {
+  @if($class == null) {
+    @for $i from (1 + 1) through $grid-columns {
+      $list: "#{$list}, .mi-ae-col-#{$i}";
+    }
+  }
+  @if($class != null) {
+    @for $i from (1 + 1) through $grid-columns {
+      $list: "#{$list}, .mi-ae-col-#{$class}-#{$i}";
+    }
+  }
+  #{$list} {
+    float: left;
+  }
+}
+
+@mixin calc-grid-column($index, $class, $type) {
+  @if ($type == width) and ($index > 0) {
+    @if($class != null) {
+      .mi-ae-col-#{$class}-#{$index} {
+        width: percentage(math.div($index, $grid-columns));
+      }
+    }
+    @if($class == null) {
+      .mi-ae-col-#{$index} {
+        width: percentage(math.div($index, $grid-columns));
+      }
+    }
+  }
+  @if ($type == push) and ($index > 0) {
+    @if($class != null) {
+      .mi-ae-col-#{$class}-push-#{$index} {
+        left: percentage(math.div($index, $grid-columns));
+      }
+    }
+    @if($class == null) {
+      .mi-ae-col-push-#{$index} {
+        left: percentage(math.div($index, $grid-columns));
+      }
+    }
+  }
+  @if ($type == push) and ($index == 0) {
+    @if($class != null) {
+      .mi-ae-col-#{$class}-push-0 {
+        left: auto;
+      }
+    }
+    @if($class == null) {
+      .mi-ae-col-push-0 {
+        left: auto;
+      }
+    }
+  }
+  @if ($type == pull) and ($index > 0) {
+    @if($class != null) {
+      .mi-ae-col-#{$class}-pull-#{$index} {
+        right: percentage(math.div($index, $grid-columns));
+      }
+    }
+    @if($class == null) {
+      .mi-ae-col-pull-#{$index} {
+        right: percentage(math.div($index, $grid-columns));
+      }
+    }
+  }
+  @if ($type == pull) and ($index == 0) {
+    @if($class != null) {
+      .mi-ae-col-#{$class}-pull-0 {
+        right: auto;
+      }
+    }
+    @if($class == null) {
+      .mi-ae-col-pull-0 {
+        right: auto;
+      }
+    }
+  }
+  @if ($type == offset) {
+    @if($class != null) {
+      .mi-ae-col-#{$class}-offset-#{$index} {
+        margin-left: percentage(math.div($index, $grid-columns));
+      }
+    }
+    @if($class == null) {
+      .mi-ae-col-offset-#{$index} {
+        margin-left: percentage(math.div($index, $grid-columns));
+      }
+    }
+  }
+}
+
+// [converter] This is defined recursively in LESS, but Sass supports real loops
+@mixin loop-grid-columns($columns, $class, $type) {
+  @for $i from 0 through $columns {
+    @include calc-grid-column($i, $class, $type);
+  }
+}
+
+// Create grid for specific class
+@mixin make-grid($class: null) {
+  @include float-grid-columns($class);
+  @include loop-grid-columns($grid-columns, $class, width);
+  @include loop-grid-columns($grid-columns, $class, pull);
+  @include loop-grid-columns($grid-columns, $class, push);
+  @include loop-grid-columns($grid-columns, $class, offset);
+}

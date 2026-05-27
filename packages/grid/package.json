@@ -1,0 +1,75 @@
+{
+  "name": "@m-next/grid",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Grid widget",
+  "keywords": [
+    "V5"
+  ],
+  "author": "Alexander Ballard <a.ballard@method.me>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "src/index.js",
+  "types": "index.d.ts",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "index",
+    "index.d.ts"
+  ],
+  "dependencies": {
+    "@m-next/button": "1.0.0",
+    "@m-next/caption": "1.0.0",
+    "@m-next/card": "1.0.0",
+    "@m-next/checkbox": "1.0.0",
+    "@m-next/chips-filter": "1.0.0",
+    "@m-next/container": "^1.0.0",
+    "@m-next/datepicker": "1.0.0",
+    "@m-next/dialog": "1.0.0",
+    "@m-next/dropdown": "1.0.0",
+    "@m-next/image": "1.0.0",
+    "@m-next/input": "1.0.0",
+    "@m-next/input-area": "1.0.0",
+    "@m-next/loading-skeleton": "1.0.0",
+    "@m-next/menu": "1.0.0",
+    "@m-next/pill": "1.0.0",
+    "@m-next/popover": "1.0.0",
+    "@m-next/radio-button": "1.0.0",
+    "@m-next/styles": "1.0.0",
+    "@m-next/svg-icon": "1.0.0",
+    "@m-next/tag-widget": "1.0.0",
+    "@m-next/typeography": "1.0.0",
+    "@m-next/search-input": "1.0.0",
+    "@m-next/types": "1.0.0",
+    "@m-next/utilities": "1.0.0",
+    "@syncfusion/ej2-base": "22.1.34",
+    "dompurify": "^3.2.3",
+    "react-beautiful-dnd": "^13.1.1",
+    "react-modal": "^3.16.1",
+    "react-resize-detector": "^9.1.0",
+    "simplebar-react": "^3.2.4",
+    "xss": "^1.0.14"
+  },
+  "peerDependencies": {
+    "@emotion/react": ">=11.10.5",
+    "@emotion/styled": ">=11.10.5",
+    "prop-types": ">=15.8.1",
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2"
+  },
+  "scripts": {
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "build": "npm run prettify && npm run lint && npm run test && webpack --mode production",
+    "prettify": "npx prettier \"**/*.*(js|jsx)\" --ignore-path=.prettierignore --write --log-level=error",
+    "release": "npm build && npm publish build --tag next",
+    "test": "jest",
+    "test-storybook": "jest --json --outputFile=.jest-test-results.json",
+    "test-snapshot-update": "npm run test -- -u",
+    "lint-js": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --cache --report-unused-disable-directives --max-warnings=0",
+    "lint-ls": "npx ls-lint",
+    "lint": "npm run lint-js && npm run lint-ls",
+    "lint-fix": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix --cache --report-unused-disable-directives --max-warnings=0"
+  }
+}

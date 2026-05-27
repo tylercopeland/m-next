@@ -1,0 +1,173 @@
+componentName: ButtonGroupRow
+description: A horizontal row of connected buttons that function as a single-select button group. Provides a segmented control interface where only one button can be selected at a time. Supports icons, tooltips, and customizable styling with visual feedback for selection states.
+
+dependencies:
+  - React
+  - '@m-next/svg-icon' # SvgIcon component
+  - '@m-next/styles' # colors
+
+props:
+  required:
+    data:
+      type: array
+      description: Array of button objects defining the available options
+      structure: |
+        [{
+          value: string | number | boolean,  # Unique identifier for selection
+          label: string,                     # Display text
+          icon?: string,                     # Optional icon name
+          tooltip?: string                   # Optional tooltip text
+        }]
+
+  optional:
+    id:
+      type: string
+      description: Unique identifier for the button group
+      default: null
+    
+    selected:
+      type: string | number | boolean
+      description: Value of the currently selected button
+      default: null
+    
+    onClick:
+      type: function
+      description: Callback function when a button is clicked, receives (item, index)
+      default: null
+    
+    tooltipId:
+      type: string
+      description: ID for tooltip element integration
+      default: null
+    
+    width:
+      type: string | number
+      description: Width of the entire button group
+      default: null
+
+behavior:
+  - Maintains internal selected state synchronized with external selected prop
+  - Only one button can be selected at a time (radio button behavior)
+  - Clicking a button updates selection and triggers onClick callback
+  - Visual feedback shows selected state with different colors
+  - Icons change color based on selection state
+  - Supports keyboard navigation and accessibility features
+
+styling:
+  layout: Horizontal row of connected buttons
+  selection: Visual distinction between selected and unselected states
+  icons: Color changes based on selection (blue for selected, grey for unselected)
+  responsive: Configurable width for the entire group
+  connected: Buttons appear as a unified segmented control
+
+usage_scenarios:
+  - View mode toggles (list/grid/card views)
+  - Filter category selection
+  - Chart type selection
+  - Display preference controls
+  - Navigation tab alternatives
+  - Settings option groups
+
+example_usage:
+  view_mode_selector:
+    code: |
+      <ButtonGroupRow
+        id="view-mode"
+        data={[
+          { value: "list", label: "List", icon: "list" },
+          { value: "grid", label: "Grid", icon: "grid" },
+          { value: "card", label: "Card", icon: "card" }
+        ]}
+        selected={currentView}
+        onClick={(item, index) => setCurrentView(item.value)}
+        width="200px"
+      />
+  
+  filter_categories:
+    code: |
+      <ButtonGroupRow
+        id="filter-category"
+        data={[
+          { value: "all", label: "All" },
+          { value: "active", label: "Active" },
+          { value: "inactive", label: "Inactive" }
+        ]}
+        selected={filterCategory}
+        onClick={(item) => handleFilterChange(item.value)}
+      />
+  
+  chart_type_selector:
+    code: |
+      <ButtonGroupRow
+        id="chart-type"
+        data={[
+          { 
+            value: "bar", 
+            label: "Bar", 
+            icon: "chart-bar",
+            tooltip: "Display data as bar chart"
+          },
+          { 
+            value: "line", 
+            label: "Line", 
+            icon: "chart-line",
+            tooltip: "Display data as line chart"
+          },
+          { 
+            value: "pie", 
+            label: "Pie", 
+            icon: "chart-pie",
+            tooltip: "Display data as pie chart"
+          }
+        ]}
+        selected={chartType}
+        onClick={(item) => setChartType(item.value)}
+        tooltipId="chart-tooltip"
+        width="300px"
+      />
+  
+  simple_toggle:
+    code: |
+      <ButtonGroupRow
+        id="simple-toggle"
+        data={[
+          { value: true, label: "On" },
+          { value: false, label: "Off" }
+        ]}
+        selected={isEnabled}
+        onClick={(item) => setIsEnabled(item.value)}
+      />
+
+data_structure:
+  button_item:
+    value: "Unique identifier used for selection comparison"
+    label: "Text displayed on the button"
+    icon: "Optional icon name from the icon library"
+    tooltip: "Optional tooltip text for hover information"
+
+state_management:
+  internal_state: "Tracks currently selected value"
+  external_sync: "Synchronizes with selected prop changes"
+  callback: "onClick provides both item object and index"
+
+accessibility:
+  - Proper button semantics for screen readers
+  - Keyboard navigation support
+  - Focus management across button group
+  - ARIA attributes for selection state
+  - Tooltip integration for additional context
+
+styling_features:
+  connected_appearance: "Buttons appear as unified segmented control"
+  selection_feedback: "Clear visual distinction for selected state"
+  icon_integration: "Icons with color state changes"
+  hover_effects: "Interactive feedback on hover"
+  customizable_width: "Flexible sizing for different layouts"
+
+implementation_details:
+  - Uses styled-components for theming and layout
+  - Manages selection state with useEffect synchronization
+  - Icon color changes dynamically based on selection
+  - Supports tooltip integration with data attributes
+  - Index-based button identification for accessibility
+  - Flexible value types (string, number, boolean)

@@ -1,0 +1,343 @@
+Address lookup
+
+Default size:
+
+Width (columns): 3
+
+Height (rows): N/A
+
+Min size:
+
+Width (columns): 2
+
+Height (rows): N/A
+
+
+Attachments
+
+Default size:
+
+Width (columns): 3
+
+Height (rows): N/A
+
+Min size:
+
+Width (columns): 2
+
+Height (rows): N/A
+
+
+Button
+
+Default size:
+
+Width (columns): 2
+
+Height (rows): N/A
+
+Min size:
+
+Width (columns): 1
+
+Height (rows): N/A
+
+
+Button menu
+
+Default size:
+
+Width (columns): 2
+
+Height (rows): N/A
+
+Min size:
+
+Width (columns): 1
+
+Height (rows): N/A
+
+
+Calendar*
+
+Default size:
+
+Width (columns): 12
+
+Height (rows): Should fit calendar height
+
+Min size:
+
+Width (columns): T.B.D.
+
+Height (rows): T.B.D.
+
+
+Chart*
+
+Default size:
+
+Width (columns): 6
+
+Height (rows): 10
+
+Min size:
+
+Width (columns): 3
+
+Height (rows): 5
+
+
+Checkbox
+
+Default size:
+
+Width (columns): 2
+
+Height (rows): N/A
+
+Min size:
+
+Width (columns): 1
+
+Height (rows): N/A
+
+
+Container*
+
+Default size:
+
+Width (columns): 12
+
+Height (rows): 10
+
+Min size:
+
+Width (columns): 3
+
+Height (rows): 6
+
+
+Dropdown
+
+Default size:
+
+Width (columns): 3
+
+Height (rows): N/A
+
+Min size:
+
+Width (columns): 2
+
+Height (rows): N/A
+
+
+Date time picker
+
+Default size:
+
+Width (columns): 3
+
+Height (rows): N/A
+
+Min size:
+
+Width (columns): 2
+
+Height (rows): N/A
+
+
+Editable grid*
+
+Default size:
+
+Width (columns): 12
+
+Height (rows): 8
+
+Min size:
+
+Width (columns): 3
+
+Height (rows): 6
+
+
+Gallery*
+
+Default size:
+
+Width (columns): 12
+
+Height (rows): N/A
+
+Min size:
+
+Width (columns): 6
+
+Height (rows): N/A
+
+
+HTML Editor*
+
+Default size:
+
+Width (columns): 12
+
+Height (rows): 6
+
+Min size:
+
+Width (columns): 3
+
+Height (rows): 4
+
+
+Image
+
+Default size:
+
+Width (columns): 3
+
+Height (rows): 6
+
+Min size:
+
+Width (columns): 1
+
+Height (rows): 1
+
+
+Map
+
+Default size:
+
+Width (columns): 12
+
+Height (rows): 12
+
+Min size:
+
+Width (columns): 3
+
+Height (rows): 6
+
+
+Radio button
+
+Default size:
+
+Width (columns): 3
+
+Height (rows): N/A
+
+Min size:
+
+Width (columns): 2
+
+Height (rows): N/A
+
+
+Recurrence widget
+
+Default size:
+
+Width (columns): 3
+
+Height (rows): N/A
+
+Min size:
+
+Width (columns): 3
+
+Height (rows): N/A
+
+
+Signature
+
+Default size:
+
+Width (columns): 3
+
+Height (rows): N/A
+
+Min size:
+
+Width (columns): 2
+
+Height (rows): N/A
+
+
+Tags
+
+Default size:
+
+Width (columns): 3
+
+Height (rows): N/A
+
+Min size:
+
+Width (columns): 2
+
+Height (rows): N/A
+
+
+Text/Label
+
+Default size:
+
+Width (columns): 3
+
+Height (rows): N/A
+
+Min size:
+
+Width (columns): 1
+
+Height (rows): N/A
+
+
+Text input
+
+Default size:
+
+Width (columns): 3
+
+Height (rows): N/A
+
+Min size:
+
+Width (columns): 2
+
+Height (rows): N/A
+
+
+Text area*
+
+Default size:
+
+Width (columns): 3
+
+Height (rows): 2
+
+Min size:
+
+Width (columns): 2
+
+Height (rows): 2
+
+
+Toggle
+
+Default size:
+
+Width (columns): 3
+
+Height (rows): N/A
+
+Min size:
+
+Width (columns): 2
+
+Height (rows): N/A

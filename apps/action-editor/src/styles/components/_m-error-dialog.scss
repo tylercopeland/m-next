@@ -1,0 +1,20 @@
+.error-moreinfo-link {
+    display: inline-block;
+    padding: 10px 0 8px;
+
+    span {
+        font-weight: bold;
+    }
+
+    i {
+        font-size: 9px;
+        font-weight: bold;
+    }
+}
+
+.error-moreinfo-container {
+    .error-stack {
+        list-style: none;
+        list-style-type: none;
+    }
+}

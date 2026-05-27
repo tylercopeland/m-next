@@ -1,0 +1,168 @@
+{
+  "id": "assistant_1759967390309_3eu9ma51j",
+  "role": "assistant",
+  "content": [
+    {
+      "id": "artifact_1759967390309_zw6radlzm",
+      "type": "artifact",
+      "artifact": {
+        "id": "storage_locker_management_system_spec",
+        "versionId": "49c2cffc-ce87-4577-8bd7-6b658f7f4cdb",
+        "versionNumber": 1,
+        "title": "Storage Locker Management System - Specification",
+        "visualizer": "spec_document",
+        "content": {
+          "appName": "Storage Locker Management System",
+          "appPurpose": "A comprehensive digital platform for managing self-storage locker rentals, enabling customers to browse, reserve, rent, and manage storage units while providing administrators robust tools for inventory tracking, billing, and facility management. The application streamlines the entire storage rental lifecycle, from initial unit selection through long-term occupancy management, with integrated payment processing and real-time availability tracking.",
+          "userRoles": [
+            {
+              "name": "Customer",
+              "description": "End-users who rent storage units",
+              "permissions": [
+                "view_available_units",
+                "reserve_unit",
+                "make_payments",
+                "manage_rental",
+                "view_rental_history"
+              ]
+            },
+            {
+              "name": "Facility Manager",
+              "description": "Staff responsible for unit management and operations",
+              "permissions": [
+                "view_all_units",
+                "modify_unit_status",
+                "process_rentals",
+                "generate_reports",
+                "manage_customer_accounts"
+              ]
+            },
+            {
+              "name": "Administrator",
+              "description": "System administrators with full platform control",
+              "permissions": [
+                "full_system_access",
+                "configure_pricing",
+                "manage_user_roles",
+                "generate_comprehensive_reports"
+              ]
+            }
+          ],
+          "keyWorkflows": [
+            {
+              "name": "Unit Reservation",
+              "description": "Process for customers to find and reserve a storage unit",
+              "steps": [
+                "Select storage facility",
+                "Choose unit size",
+                "Check unit availability",
+                "Provide contact information",
+                "Complete reservation deposit",
+                "Receive reservation confirmation"
+              ],
+              "triggers": ["customer_search", "availability_check", "payment_processing"]
+            },
+            {
+              "name": "Rental Management",
+              "description": "Comprehensive workflow for managing active storage unit rentals",
+              "steps": [
+                "Sign digital rental agreement",
+                "Complete initial payment",
+                "Receive access credentials",
+                "Set up automatic recurring billing",
+                "Manage rental settings",
+                "Process unit vacating"
+              ],
+              "triggers": ["new_rental_initiation", "payment_verification", "contract_acceptance"]
+            }
+          ],
+          "dataEntities": [
+            {
+              "tableName": "StorageUnits",
+              "description": "Tracks individual storage unit details",
+              "fields": ["unitId", "facilityId", "size", "type", "currentStatus", "monthlyRate", "accessRestrictions"],
+              "relationships": ["Facilities", "Rentals"],
+              "source": "recommended"
+            },
+            {
+              "tableName": "Customers",
+              "description": "Stores customer account and contact information",
+              "fields": ["customerId", "firstName", "lastName", "email", "phoneNumber", "billingAddress"],
+              "relationships": ["Rentals", "Payments"],
+              "source": "recommended"
+            }
+          ],
+          "businessRules": [
+            {
+              "id": "BR001",
+              "name": "Minimum Rental Period",
+              "description": "Storage units require a minimum one-month rental commitment",
+              "condition": "rental_duration < 30_days",
+              "action": "prevent_reservation",
+              "priority": "high"
+            },
+            {
+              "id": "BR002",
+              "name": "Automatic Late Fee",
+              "description": "Apply late fee if payment is not received within 5 days of due date",
+              "condition": "payment_overdue > 5_days",
+              "action": "apply_late_fee",
+              "priority": "medium"
+            }
+          ],
+          "screens": [
+            {
+              "screenName": "Unit Search",
+              "purpose": "Allow customers to find available storage units",
+              "primaryWorkflows": ["unit_availability_check", "size_selection"],
+              "hasDetailedSpec": true
+            },
+            {
+              "screenName": "Rental Dashboard",
+              "purpose": "Manage active storage unit rentals",
+              "primaryWorkflows": ["payment_management", "rental_modification"],
+              "hasDetailedSpec": true
+            }
+          ],
+          "integrations": [
+            {
+              "system": "Payment Gateway",
+              "purpose": "Process rental payments and manage billing",
+              "dataFlow": "bidirectional"
+            },
+            {
+              "system": "Access Control System",
+              "purpose": "Manage physical unit access credentials",
+              "dataFlow": "outbound"
+            }
+          ],
+          "analyticsRequirements": [
+            {
+              "event": "Unit Reservation",
+              "purpose": "Track reservation conversion rates",
+              "dataPoints": ["units_searched", "units_reserved", "reservation_completion_rate"]
+            },
+            {
+              "event": "Rental Performance",
+              "purpose": "Monitor facility occupancy and revenue",
+              "dataPoints": ["total_units", "occupied_units", "monthly_revenue"]
+            }
+          ],
+          "knownLimitations": "Initial MVP will support single-facility operations, with limited multi-site management capabilities. Payment integration will be restricted to primary payment methods.",
+          "futureEnhancements": "Planned improvements include multi-site support, advanced reporting, mobile app development, and integration with smart lock systems for enhanced access management."
+        },
+        "approved": false,
+        "metadata": {
+          "createdAt": "2025-10-08T23:49:50.308Z",
+          "lastModified": "2025-10-08T23:49:50.308Z",
+          "size": "large",
+          "docId": "97aa20a3-a096-490e-bdbd-e408181e26aa",
+          "appId": "dc40eaa1-9b28-42b4-8922-43b8e19c79e1",
+          "confidence": 1
+        }
+      },
+      "description": "Comprehensive specification document for Storage Locker Management System"
+    }
+  ],
+  "timestamp": "2025-10-08T23:49:50.309Z"
+}

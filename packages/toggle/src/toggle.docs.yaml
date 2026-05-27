@@ -1,0 +1,193 @@
+componentName: Toggle
+description: A toggle switch component with runtime and design-time modes. Supports text labels, icons, tooltips, and customizable sizing. Can display various text options (Yes/No, On/Off, True/False) and has different rendering modes.
+
+dependencies:
+  - React
+  - "@m-next/svg-icon" # SvgIcon component
+  - "@m-next/caption" # Caption component
+
+props:
+  required:
+    id:
+      type: string
+      description: Unique identifier for the toggle component, used for accessibility and form management
+
+  optional:
+    disabled:
+      type: boolean
+      description: Whether the toggle is disabled and cannot be interacted with
+      default: false
+
+    checked:
+      type: boolean
+      description: Current checked state of the toggle
+      default: false
+
+    onChange:
+      type: function
+      description: Callback function that receives the new checked state when toggle changes
+      default: null
+
+    onBlur:
+      type: function
+      description: Callback function triggered when toggle loses focus
+      default: null
+
+    onFocus:
+      type: function
+      description: Callback function triggered when toggle gains focus
+      default: null
+
+    alignRight:
+      type: boolean
+      description: Whether to align the toggle to the right side
+      default: false
+
+    isRuntime:
+      type: boolean
+      description: Switches between runtime mode (with text labels) and design mode (simple toggle)
+      default: false
+
+    textOpt:
+      type: string
+      description: Text display option for runtime mode
+      default: "Blank"
+      options: ["Blank", "Yes/No", "On/Off", "True/False"]
+
+    width:
+      type: string
+      description: CSS width value for the toggle wrapper
+      default: "auto"
+
+    color:
+      type: string
+      description: Custom color for the toggle
+      default: null
+
+    label:
+      type: string
+      description: Text label displayed next to the toggle
+      default: null
+
+    forwardRef:
+      type: object
+      description: React ref to forward to the input element
+      default: null
+
+    style:
+      type: object
+      description: Custom styles for the wrapper component
+      default: {}
+
+    labelStyle:
+      type: object
+      description: Custom styles for the label text
+      default: {}
+
+    legacyClass:
+      type: string
+      description: Legacy CSS class name for backwards compatibility
+      default: null
+
+    bold:
+      type: boolean
+      description: Whether to display the label text in bold
+      default: false
+
+    tooltip:
+      type: string
+      description: Tooltip text to display on hover
+      default: null
+
+    tooltipId:
+      type: string
+      description: ID for the tooltip element
+      default: null
+
+    icon:
+      type: string
+      description: Icon name to display next to the label (design mode only)
+      default: null
+
+    size:
+      type: string
+      description: Size variant for the toggle
+      default: "medium"
+      options: ["small", "medium", "large"]
+
+behavior:
+  - Maintains internal checked state synchronized with the checked prop
+  - Handles focus and blur states for accessibility
+  - Renders differently based on isRuntime mode
+  - Runtime mode includes text labels (Yes/No, On/Off, True/False) within the toggle
+  - Design mode shows a simple toggle with optional icon and label
+  - Supports keyboard interaction and ARIA attributes for accessibility
+
+styling:
+  layout: Horizontal layout with configurable alignment
+  modes:
+    runtime: Toggle with text labels inside the track
+    design: Simple toggle with external label and optional icon
+  sizing: Three size variants (small, medium, large)
+  alignment: Configurable left/right alignment
+
+usage_scenarios:
+  - Form controls requiring boolean input
+  - Settings panels with on/off states
+  - Runtime applications needing labeled toggles
+  - Design-time configuration with simple toggles
+  - Accessibility-compliant switch controls
+
+example_usage:
+  basic_toggle:
+    code: |
+      <Toggle
+        id="enable-feature"
+        checked={isEnabled}
+        onChange={setIsEnabled}
+        label="Enable Feature"
+      />
+
+  runtime_with_text:
+    code: |
+      <Toggle
+        id="visibility-toggle"
+        checked={isVisible}
+        onChange={setIsVisible}
+        label="Show Component"
+        isRuntime={true}
+        textOpt="Yes/No"
+        size="large"
+      />
+
+  with_icon_and_tooltip:
+    code: |
+      <Toggle
+        id="advanced-mode"
+        checked={advancedMode}
+        onChange={setAdvancedMode}
+        label="Advanced Mode"
+        icon="settings"
+        tooltip="Enable advanced configuration options"
+        tooltipId="advanced-tooltip"
+        bold={true}
+      />
+
+  disabled_state:
+    code: |
+      <Toggle
+        id="readonly-setting"
+        checked={true}
+        label="Read-only Setting"
+        disabled={true}
+        alignRight={true}
+      />
+
+implementation_details:
+  - Uses styled components for theming and layout
+  - Maintains focus state for visual feedback
+  - Implements proper ARIA attributes for screen readers
+  - Conditionally renders different layouts based on isRuntime prop
+  - Supports ref forwarding for programmatic access
+  - Uses Caption component for runtime mode labels
+  - Includes proper keyboard navigation support

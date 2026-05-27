@@ -1,0 +1,361 @@
+<div data-ng-controller="ProcessPaymentsV2Ctrl">
+  <mi-action-description info="action"></mi-action-description>
+
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content">
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label font-size-16">Action</label>
+      </div>
+      <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'ActionType'">
+        <ui-select data-ng-model="actionType.selected" theme="selectize" search-enabled="false" on-select="action.handleCurrencyDropDown($item.value === 1 || action.IsSpecificEntity)" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select an action...">
+            {{$select.selected.label}}
+          </ui-select-match>
+          <ui-select-choices repeat="opt in action.txnTypes">
+            <span ng-bind-html="opt.label"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+
+    <div ng-show="actionType.selected.value === 2">
+      <div class="mi-ae-row" ng-show="actionType.selected">
+        <div class="mi-ae-col-10" style="padding: 15px 8px;">
+          <i> Launches payments pop-up in setup mode. Action will not be executed in Guest Pages, Public Pages or App Routines.</i>
+        </div>
+      </div>
+    </div>
+
+    <div ng-show="actionType.selected.value !== 2">
+      <div ng-show="actionType.selected && actionType.selected.value !== 3 && actionType.selected.value !== 4">
+        <!-- This div section below is for the using dropdown only for type charge -->
+        <div class="mi-ae-row" ng-show="actionType.selected.value !== 1"> 
+          <div class="mi-ae-col-4">
+            <label class="mi-ae-label font-size-16">Using</label>
+          </div>
+          <div class="mi-ae-col-10">
+            <ui-select
+              data-ng-model="usingType.selected"
+              theme="selectize"
+              search-enabled="false" on-select="action.handleCurrencyDropDown($item.value === 1 || action.IsSpecificEntity)" ng-disabled="action.isReadOnly">
+              <ui-select-match placeholder="Select a using type...">
+                {{$select.selected.label}}
+              </ui-select-match>
+              <ui-select-choices repeat="opt in action.usingTypes">
+                <span ng-bind-html="opt.label"></span>
+              </ui-select-choices>
+            </ui-select>
+          </div>
+        </div>
+  
+        <!-- Checkbox to confirm if payment is for a specific entity -->
+        <div class="mi-ae-row" style="padding: 10px 0px 10px 0px" data-ng-show="usingType.selected.label === 'UI Widget' && actionType.selected.value !== 1">
+          <div class="mi-ae-col-8">
+            <label class="mi-radio-checkbox mi-checkbox">
+              <span>Payment is for specific entity</span>
+              <input type="checkbox" data-ng-model="action.IsSpecificEntity" data-ng-change="action.handleCurrencyDropDown(action.IsSpecificEntity)" ng-disabled="action.isReadOnly"/>
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Record ID of Entity Payment/PreAuth is Processed for  -->
+        <div class="mi-ae-row" data-ng-show="action.IsSpecificEntity || usingType.selected.label !== 'UI Widget' || actionType.selected.value === 1">
+          <div class="mi-ae-col-4">
+            <div ng-show="usingType.selected.label === 'UI Widget' && actionType.selected.value !== 1 " class="mi-ae-margin-b-15">
+              <label class="mi-ae-label font-size-16 mi-ae-margin-0">Customer RecordID</label>
+              <span style="line-height: 20px;">Unique Method identifier for the Customer to be charged.</span>
+            </div>
+            <label ng-show="actionType.selected.value === 1 "class="mi-ae-label font-size-16" style="height:50px;">Save for Entity RecordID</label>
+            <label ng-show="usingType.selected.label === 'Stored Payment Details' && actionType.selected.value !== 1 "class="mi-ae-label font-size-16">Entity RecordID Stored</label>
+          </div>
+          <div class="mi-ae-col-10">
+            <mi-complex-value
+              action="action"
+              model="action.EntityId"
+              allow="allowedTypesNumber" is-read-only ="action.isReadOnly"
+            ></mi-complex-value >
+          </div>
+        </div>
+        
+        <!-- Record ID of Stored Payment Method -->
+        <div ng-show="usingType.selected.label === 'Stored Payment Details' && actionType.selected && actionType.selected.value !== 1">
+          <div class="mi-ae-row">
+            <div class="mi-ae-col-4">
+              <label class="mi-ae-label font-size-16">Payment Method ID (Optional)</label>
+            </div>
+            <div class="mi-ae-col-10">
+              <mi-complex-value
+                action="action"
+                model="action.StoredPayment"
+                allow="allowedTypesNumber"
+                is-read-only ="action.isReadOnly"
+              ></mi-complex-value>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Amount of Payment/PreAuth -->
+        <div class="mi-ae-row">
+          <div class="mi-ae-col-4 mi-ae-margin-b-15">
+            <label class="mi-ae-label font-size-16 mi-ae-margin-0">Amount</label>
+            <span style="line-height: 20px;">Define the monetary amount of the transaction.</span>
+          </div>
+          <div class="mi-ae-col-5" data-ng-show="actionType.selected.value === 1">
+            <input type="text" value="1.00" disabled>
+          </div>
+          <div class="mi-ae-col-6" data-ng-show="actionType.selected.value === 0">
+            <mi-complex-value
+              action="action"
+              model="action.Amount"
+              allow="allowedTypesNumber"
+              is-read-only ="action.isReadOnly"
+            ></mi-complex-value>
+          </div>
+          <div data-ng-class="{'mi-ae-col-5' : actionType.selected.value === 1 ,'mi-ae-col-4' : actionType.selected.value === 0}" mi-validation-class="action.ValidationMessages" error-property="'CurrencyOption'">
+            <ui-select data-ng-model="action.CurrencyOption" theme="selectize" search-enabled="true" on-select="action.validate()" ng-disabled="action.isReadOnly">
+              <ui-select-match placeholder="Select a currency...">{{$select.selected.label}}</ui-select-match>
+              <ui-select-choices repeat="curr.code as curr in action.currencies">
+                <span ng-bind-html="curr.label"></span>
+              </ui-select-choices>
+            </ui-select>
+          </div>
+        </div>
+
+        <!-- App Routine of UI Widget/PreAuth -->
+        <div class="mi-ae-row" ng-show="(usingType.selected.label === 'UI Widget' || actionType.selected.value === 1)">
+          <div class="mi-ae-col-4 mi-ae-margin-b-15">
+            <label class="mi-ae-label font-size-16 mi-ae-margin-0">App Routine</label>
+            <span style="line-height: 20px;">Select an app routine to execute for the transaction.</span>
+          </div>
+          <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'routineId'">
+            <ui-select data-ng-model="routineId" theme="selectize" on-select="selectRoutine($item)" ng-disabled="action.isReadOnly">
+              <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+              <ui-select-choices repeat="opt.value as opt in availableRoutines | filter: $select.search">
+                <span ng-bind-html="opt.label"></span>
+              </ui-select-choices>
+            </ui-select>
+          </div>
+        </div>
+
+        <div ng-show="(usingType.selected.label === 'UI Widget' || actionType.selected.value === 1) && action.InputValues.length > 0">
+          <div class="mi-ae-row">
+            <div class="mi-ae-col-5">
+              <label class="mi-ae-label mi-ae-margin-b-0"><strong>App Routine Inputs</strong></label>
+            </div>
+            <div class="mi-ae-col-10">
+              <label class="mi-ae-label mi-ae-margin-b-0"><strong>Populate using this value</strong></label>
+            </div>
+          </div>
+      
+          <div class="mi-ae-row" data-ng-repeat="inputValue in action.InputValues">
+            <div class="mi-ae-col-5" mi-validation-class="inputValue.ValidationMessage" error-property="'108'">
+              <label class="mi-ae-label not-bold">{{getInputValue(inputValue)}}</label>
+            </div>
+            <div class="mi-ae-col-10">
+              <mi-complex-value action="action" model="inputValue.Value" allow="allowedTypesText" is-read-only="action.isReadOnly">
+              </mi-complex-value>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Currency Option  -->
+        <div class="mi-ae-row" data-ng-show="action.CurrencyOption === '-1'">
+          <div class="mi-ae-col-4">
+            <label class="mi-ae-label font-size-16">Currency</label>
+          </div>
+          <div class="mi-ae-col-10">
+            <mi-complex-value
+              action="action"
+              model="action.Currency"
+              allow="allowedTypesNumber"
+              is-read-only ="action.isReadOnly"
+            ></mi-complex-value >
+          </div>
+        </div>
+      </div>
+  
+      <!-- Warning message regarding currency -->
+      <div class="mi-ae-row" ng-show="actionType.selected && actionType.selected.value !== 3 && actionType.selected.value !== 4">
+        <div class="mi-ae-col-12" style="padding: 15px 8px;">
+          If your payment gateway does not support the specified currency the payment may fail.
+        </div>
+      </div>
+  
+      <!-- Options to save card, never save card, or always save card -->
+      <!-- Should not display for PreAuth/Refund/Void -->
+      <div data-ng-show="action.IsSpecificEntity && usingType.selected.label === 'UI Widget' && actionType.selected.value !== 1 && actionType.selected.value !== 3 && actionType.selected.value !== 4">
+        <h2 class="mi-ae-margin-b-15" style="font-weight: 600;">Additional options</h2>
+        <div class="mi-ae-row mi-ae-margin-b-15">
+          <div class="mi-ae-col-5">
+              <label class="mi-ae-label font-size-16 mi-ae-margin-0" style="line-height: 20px !important;">Configure payment methods</label>
+              <span style="line-height: 20px;">Your selection only applies if ACH is enabled in 
+                <a target="_blank" href="/apps/Default.aspx#/integrations/paymentgateways">Integrations > Payment Gateways.</a>
+              </span>
+          </div>
+          <div class="mi-ae-col-8">
+              <ul class="mi-radiobutton-group" style="padding-top: 8px;" data-ng-disabled="">
+                  <li class="rad-vertical">
+                    <label class="mi-radio-checkbox mi-radio">
+                      <span>All payment methods</span>
+                      <input
+                        type="radio"
+                        data-ng-model="action.ConfiguredPaymentMethods"
+                        data-ng-value="0" ng-disabled="action.isReadOnly"
+                      />
+                      <div class="mi-radio-checkbox-indicator"></div>
+                    </label>
+                  </li>
+                  <li class="rad-vertical">
+                    <label class="mi-radio-checkbox mi-radio">
+                      <span>ACH (or e-check)</span>
+                      <input
+                        type="radio"
+                        data-ng-model="action.ConfiguredPaymentMethods"
+                        data-ng-value="1" ng-disabled="action.isReadOnly"
+                      />
+                      <div class="mi-radio-checkbox-indicator"></div>
+                    </label>
+                  </li>
+                  <li class="rad-vertical">
+                      <label class="mi-radio-checkbox mi-radio">
+                        <span>Credit card</span>
+                        <input
+                          type="radio"
+                          data-ng-model="action.ConfiguredPaymentMethods"
+                          data-ng-value="2" ng-disabled="action.isReadOnly"
+                        />
+                        <div class="mi-radio-checkbox-indicator"></div>
+                      </label>
+                    </li>
+                </ul>
+          </div>
+        </div>
+        <div class="mi-ae-row mi-ae-margin-b-15">
+          <div class="mi-ae-col-5">
+              <label class="mi-ae-label font-size-16 mi-ae-margin-0" style="line-height: 20px !important;">Save payment details</label>
+              <span style="line-height: 20px;">Your selection will determine the options available on checkout.</span>
+          </div>
+          <div class="mi-ae-col-8">
+              <ul class="mi-radiobutton-group" style="padding-top: 8px;" data-ng-disabled="">
+                  <li class="rad-vertical">
+                    <label class="mi-radio-checkbox mi-radio">
+                      <span>Do not save details</span>
+                      <input
+                        type="radio"
+                        data-ng-model="action.SaveCardOption"
+                        data-ng-value="0" ng-disabled="action.isReadOnly"
+                      />
+                      <div class="mi-radio-checkbox-indicator"></div>
+                    </label>
+                  </li>
+                  <li class="rad-vertical">
+                    <label class="mi-radio-checkbox mi-radio">
+                      <span>Allow details to be saved</span>
+                      <input
+                        type="radio"
+                        data-ng-model="action.SaveCardOption"
+                        data-ng-value="1" ng-disabled="action.isReadOnly"
+                      />
+                      <div class="mi-radio-checkbox-indicator"></div>
+                    </label>
+                  </li>
+                  <li class="rad-vertical">
+                      <label class="mi-radio-checkbox mi-radio">
+                        <span>Always save details</span>
+                        <input
+                          type="radio"
+                          data-ng-model="action.SaveCardOption"
+                          data-ng-value="2" ng-disabled="action.isReadOnly"
+                        />
+                        <div class="mi-radio-checkbox-indicator"></div>
+                      </label>
+                    </li>
+                </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Refund And Void Section -->
+      <div ng-show="actionType.selected.value === 3 || actionType.selected.value === 4">
+        <!-- Refund Amount -->
+        <div class="mi-ae-row" ng-show="actionType.selected.value === 3">
+          <div class="mi-ae-col-4">
+            <label class="mi-ae-label font-size-16">Amount</label>
+          </div>
+          <div class="mi-ae-col-10">
+            <mi-complex-value
+              action="action"
+              model="action.Amount"
+              allow="allowedTypesNumber"
+              is-read-only ="action.isReadOnly"
+            ></mi-complex-value >
+          </div>
+        </div>
+
+        <!-- Payment/PreAuth Reference Number -->
+        <div class="mi-ae-row">
+          <div class="mi-ae-col-4">
+            <label class="mi-ae-label font-size-16">Reference Number</label>
+          </div>
+          <div class="mi-ae-col-10">
+            <mi-complex-value
+              action="action"
+              model="action.ReferenceNumber"
+              allow="allowedTypesText"
+              is-read-only ="action.isReadOnly"
+            ></mi-complex-value >
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Results -->
+      <div ng-show="actionType.selected">
+        <h2 class="mi-ae-margin-b-15" style="font-weight: 600;">
+          Store merchant response in Action Results
+        </h2>
+  
+        <!-- <div style="position: relative;" class="mi-ae-margin-b-15"> -->
+        <div style="position: relative;">
+          <mi-result-to-set
+            label="'Gateway response'"
+            hide-store-in="true"
+            action="action"
+            item="action.ActionResultGatewayResponse" is-read-only ="action.isReadOnly">
+          </mi-result-to-set>
+          <span style="position: absolute; top: 32px; width: 25%; line-height: 16px;">
+            A detailed status from the processor.
+          </span>
+        </div>
+
+        <div style="position: relative;" class="mi-ae-margin-t-20">
+          <mi-result-to-set
+            label="'Processed successfully?'"
+            hide-store-in="true"
+            action="action"
+            item="action.ActionResultSuccessOrFail" is-read-only ="action.isReadOnly">
+          </mi-result-to-set>
+          <span style="position: absolute; top: 32px; width: 25%; line-height: 16px;">
+            Simplified outcome of transaction.(True/False)
+          </span>
+        </div>
+        
+        <div style="position: relative;" class="mi-ae-margin-t-20">
+          <mi-result-to-set
+            label="'Reference number'"
+            hide-store-in="true"
+            action="action"
+            item="action.ActionResultReferenceNumber" is-read-only ="action.isReadOnly">
+          </mi-result-to-set>
+          <span style="position: absolute; top: 32px; width: 25%; line-height: 16px;">
+            The unique identifier for your processed payment.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Main Content Area -->
+
+   <mi-action-notes  is-read-only ="action.isReadOnly"></mi-action-notes>
+</div>

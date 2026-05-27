@@ -1,0 +1,39 @@
+.mi-ae-framework-helper {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: -$sidebar-width - 10;
+  bottom: 0;
+  width: $sidebar-width;
+  background-color: $lightest-grey;
+  z-index: $z-index + 1;
+  transition: 500ms;
+  box-shadow: -1px 0 2px rgba($black, 0.25);
+  padding: 5px 20px 10px;
+
+  &.opened {
+    right: 0;
+  }
+
+  ul {
+    margin-top: 10px;
+    padding-left: 15px;
+  }
+
+  .mi-ae-framework-helper-links {
+    padding: 0;
+    margin: 10px 0 0;
+    list-style: none;
+    list-style-type: none;
+
+    li {
+      display: block;
+      padding: 0 0 5px;
+
+      a {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules",
+    "**/*.test.*",
+    "**/*.spec.*",
+    "**/__tests__/**",
+    "**/__mocks__/**",
+    "**/*.stories.*",
+    "**/*.story.*",
+    "dist"
+  ],
+  "compilerOptions": {
+    "allowJs": true,
+    "declaration": false,
+    "outDir": "dist/assets/js",
+    "declarationMap": false,
+    "jsx": "react-jsx",
+    "target": "es5",
+    "lib": ["dom", "es6"],
+    "moduleResolution": "node",
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmitOnError": false,
+  }
+}

@@ -1,0 +1,2326 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonGroup Snapshots Classes 1`] = `
+.emotion-0 {
+  width: auto;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px 5px 10px 5px;
+}
+
+.emotion-2 {
+  position: relative;
+  box-sizing: border-box;
+  background-color: inherit;
+  outline: none;
+  border-radius: 17px!important;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-2:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-4 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #545F67;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  border: solid #FFFFFF;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  min-height: 32px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 6px 16px;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  border-left: 1px solid #FFFFFF;
+  border-right: 1px solid #FFFFFF;
+  border-radius: 17px 0 0 17px;
+  opacity: 1;
+  outline: none;
+  line-height: 18px;
+}
+
+body.user-is-tabbing .emotion-6:focus {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-6:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-8 {
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  border-left: 0px none;
+  border-right: 1px solid #FFFFFF;
+  min-height: 32px;
+  border-radius: 0 17px 17px 0!important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #545F67;
+  color: #FFFFFF;
+  padding: 6px 16px;
+  opacity: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.emotion-8:hover {
+  background-color: #064499;
+}
+
+.emotion-8:focus {
+  background-color: #064499;
+}
+
+body.user-is-tabbing .emotion-8:focus {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-8:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test"
+    width="auto"
+  >
+    
+    <div
+      class="emotion-2 emotion-3"
+      id="test-container"
+      tabindex="-1"
+      width="auto"
+    >
+      <div
+        aria-controls=""
+        aria-haspopup="true"
+        class="emotion-4 emotion-5"
+        role="button"
+      >
+        <div
+          class="emotion-6 emotion-7"
+          id="test-0"
+          tabindex="0"
+        >
+          First
+        </div>
+        <button
+          class="emotion-8 emotion-9"
+          id="test-Arrow"
+          tabindex="0"
+        >
+          <div
+            class=""
+          >
+            <span
+              class="emotion-10 emotion-11"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-mi-icon-arrow-down-v4"
+            >
+              <svg
+                aria-label=" open menu button icon"
+                data-testid="svg-icon-svg-mi-icon-arrow-down-v4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M512 832c28.245 0.043 55.125-12.075 73.771-33.28l418.603-475.733c29.483-32 27.477-81.877-4.523-111.36s-81.877-27.477-111.36 4.523c-0.811 0.896-1.621 1.835-2.432 2.773l-366.037 416c-3.883 4.437-10.624 4.864-15.061 0.981-0.341-0.299-0.683-0.64-0.981-0.981l-366.037-416.085c-27.989-33.323-77.696-37.675-111.019-9.728s-37.675 77.696-9.728 111.019c0.768 0.939 1.579 1.835 2.432 2.773l418.475 475.648c18.688 21.248 45.611 33.408 73.899 33.451z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+                <title>
+                   open menu button
+                </title>
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ButtonGroup Snapshots Default 1`] = `
+.emotion-0 {
+  width: auto;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px 5px 10px 5px;
+}
+
+.emotion-2 {
+  position: relative;
+  box-sizing: border-box;
+  background-color: inherit;
+  outline: none;
+  border-radius: 17px!important;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-2:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-4 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #545F67;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  border: solid #FFFFFF;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  min-height: 32px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 6px 16px;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  border-left: 1px solid #FFFFFF;
+  border-right: 1px solid #FFFFFF;
+  border-radius: 17px 0 0 17px;
+  opacity: 1;
+  outline: none;
+  line-height: 18px;
+}
+
+body.user-is-tabbing .emotion-6:focus {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-6:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-8 {
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  border-left: 0px none;
+  border-right: 1px solid #FFFFFF;
+  min-height: 32px;
+  border-radius: 0 17px 17px 0!important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #545F67;
+  color: #FFFFFF;
+  padding: 6px 16px;
+  opacity: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.emotion-8:hover {
+  background-color: #064499;
+}
+
+.emotion-8:focus {
+  background-color: #064499;
+}
+
+body.user-is-tabbing .emotion-8:focus {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-8:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test"
+    width="auto"
+  >
+    
+    <div
+      class="emotion-2 emotion-3"
+      id="test-container"
+      tabindex="-1"
+      width="auto"
+    >
+      <div
+        aria-controls=""
+        aria-haspopup="true"
+        class="emotion-4 emotion-5"
+        role="button"
+      >
+        <div
+          class="emotion-6 emotion-7"
+          id="test-0"
+          tabindex="0"
+        >
+          First
+        </div>
+        <button
+          class="emotion-8 emotion-9"
+          id="test-Arrow"
+          tabindex="0"
+        >
+          <div
+            class=""
+          >
+            <span
+              class="emotion-10 emotion-11"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-mi-icon-arrow-down-v4"
+            >
+              <svg
+                aria-label=" open menu button icon"
+                data-testid="svg-icon-svg-mi-icon-arrow-down-v4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M512 832c28.245 0.043 55.125-12.075 73.771-33.28l418.603-475.733c29.483-32 27.477-81.877-4.523-111.36s-81.877-27.477-111.36 4.523c-0.811 0.896-1.621 1.835-2.432 2.773l-366.037 416c-3.883 4.437-10.624 4.864-15.061 0.981-0.341-0.299-0.683-0.64-0.981-0.981l-366.037-416.085c-27.989-33.323-77.696-37.675-111.019-9.728s-37.675 77.696-9.728 111.019c0.768 0.939 1.579 1.835 2.432 2.773l418.475 475.648c18.688 21.248 45.611 33.408 73.899 33.451z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+                <title>
+                   open menu button
+                </title>
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ButtonGroup Snapshots IsDropdown 1`] = `
+.emotion-0 {
+  width: auto;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px 5px 10px 5px;
+}
+
+.emotion-2 {
+  position: relative;
+  box-sizing: border-box;
+  background-color: inherit;
+  outline: none;
+  border-radius: 17px!important;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-2:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-4 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.emotion-4:hover>div {
+  background-color: #064499;
+  border-color: #0D71C8;
+  color: #FFFFFF;
+}
+
+.emotion-4:focus>div {
+  background-color: #064499;
+  border-color: #0D71C8;
+  color: #FFFFFF;
+}
+
+.emotion-6 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #545F67;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  border: solid #FFFFFF;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  min-height: 32px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 6px 0px 6px 16px;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  border-left: 1px solid #FFFFFF;
+  border-right: 0px solid #FFFFFF;
+  border-radius: 17px 0 0 17px;
+  opacity: 1;
+  outline: none;
+  line-height: 18px;
+}
+
+body.user-is-tabbing .emotion-6:focus {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-6:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-8 {
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  border-left: 0px none;
+  border-right: 1px solid #FFFFFF;
+  min-height: 32px;
+  border-radius: 0 17px 17px 0!important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #545F67;
+  color: #FFFFFF;
+  padding: 6px 16px;
+  opacity: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.emotion-8:hover {
+  background-color: #064499;
+}
+
+.emotion-8:focus {
+  background-color: #064499;
+}
+
+body.user-is-tabbing .emotion-8:focus {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-8:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test"
+    width="auto"
+  >
+    
+    <div
+      class="emotion-2 emotion-3"
+      id="test-container"
+      tabindex="0"
+      width="auto"
+    >
+      <div
+        aria-controls=""
+        aria-haspopup="true"
+        class="emotion-4 emotion-5"
+        role="button"
+      >
+        <div
+          class="emotion-6 emotion-7"
+          id="test-0"
+          tabindex="-1"
+        >
+          First
+        </div>
+        <button
+          class="emotion-8 emotion-9"
+          id="test-Arrow"
+          tabindex="-1"
+        >
+          <div
+            class=""
+          >
+            <span
+              class="emotion-10 emotion-11"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-mi-icon-arrow-down-v4"
+            >
+              <svg
+                aria-label=" open menu button icon"
+                data-testid="svg-icon-svg-mi-icon-arrow-down-v4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M512 832c28.245 0.043 55.125-12.075 73.771-33.28l418.603-475.733c29.483-32 27.477-81.877-4.523-111.36s-81.877-27.477-111.36 4.523c-0.811 0.896-1.621 1.835-2.432 2.773l-366.037 416c-3.883 4.437-10.624 4.864-15.061 0.981-0.341-0.299-0.683-0.64-0.981-0.981l-366.037-416.085c-27.989-33.323-77.696-37.675-111.019-9.728s-37.675 77.696-9.728 111.019c0.768 0.939 1.579 1.835 2.432 2.773l418.475 475.648c18.688 21.248 45.611 33.408 73.899 33.451z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+                <title>
+                   open menu button
+                </title>
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ButtonGroup Snapshots IsMobile 1`] = `
+.emotion-0 {
+  width: auto;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px 5px 10px 5px;
+}
+
+.emotion-2 {
+  position: relative;
+  box-sizing: border-box;
+  background-color: inherit;
+  outline: none;
+  border-radius: 17px!important;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-2:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-4 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #545F67;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  border: solid #FFFFFF;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  min-height: 48px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  border-left: 1px solid #FFFFFF;
+  border-right: 1px solid #FFFFFF;
+  border-radius: 28px 0 0 28px;
+  opacity: 1;
+  outline: none;
+  line-height: 18px;
+}
+
+body.user-is-tabbing .emotion-6:focus {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-6:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-8 {
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  border-left: 0px none;
+  border-right: 1px solid #FFFFFF;
+  min-height: 48px;
+  border-radius: 0 28px 28px 0!important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #545F67;
+  color: #FFFFFF;
+  padding: 14px 16px;
+  opacity: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.emotion-8:hover {
+  background-color: #064499;
+}
+
+.emotion-8:focus {
+  background-color: #064499;
+}
+
+body.user-is-tabbing .emotion-8:focus {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-8:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test"
+    width="auto"
+  >
+    
+    <div
+      class="emotion-2 emotion-3"
+      id="test-container"
+      tabindex="-1"
+      width="auto"
+    >
+      <div
+        aria-controls=""
+        aria-haspopup="true"
+        class="emotion-4 emotion-5"
+        role="button"
+      >
+        <div
+          class="emotion-6 emotion-7"
+          id="test-0"
+          tabindex="0"
+        >
+          First
+        </div>
+        <button
+          class="emotion-8 emotion-9"
+          id="test-Arrow"
+          tabindex="0"
+        >
+          <div
+            class=""
+          >
+            <span
+              class="emotion-10 emotion-11"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-mi-icon-arrow-down-v4"
+            >
+              <svg
+                aria-label=" open menu button icon"
+                data-testid="svg-icon-svg-mi-icon-arrow-down-v4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M512 832c28.245 0.043 55.125-12.075 73.771-33.28l418.603-475.733c29.483-32 27.477-81.877-4.523-111.36s-81.877-27.477-111.36 4.523c-0.811 0.896-1.621 1.835-2.432 2.773l-366.037 416c-3.883 4.437-10.624 4.864-15.061 0.981-0.341-0.299-0.683-0.64-0.981-0.981l-366.037-416.085c-27.989-33.323-77.696-37.675-111.019-9.728s-37.675 77.696-9.728 111.019c0.768 0.939 1.579 1.835 2.432 2.773l418.475 475.648c18.688 21.248 45.611 33.408 73.899 33.451z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+                <title>
+                   open menu button
+                </title>
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ButtonGroup Snapshots Not visible 1`] = `
+.emotion-0 {
+  width: auto;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px 5px 10px 5px;
+}
+
+.emotion-2 {
+  position: relative;
+  box-sizing: border-box;
+  background-color: inherit;
+  outline: none;
+  border-radius: 17px!important;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-2:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-4 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #545F67;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  border: solid #FFFFFF;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  min-height: 32px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 6px 16px;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  border-left: 1px solid #FFFFFF;
+  border-right: 1px solid #FFFFFF;
+  border-radius: 17px 0 0 17px;
+  opacity: 1;
+  outline: none;
+  line-height: 18px;
+}
+
+body.user-is-tabbing .emotion-6:focus {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-6:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-8 {
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  border-left: 0px none;
+  border-right: 1px solid #FFFFFF;
+  min-height: 32px;
+  border-radius: 0 17px 17px 0!important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #545F67;
+  color: #FFFFFF;
+  padding: 6px 16px;
+  opacity: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.emotion-8:hover {
+  background-color: #064499;
+}
+
+.emotion-8:focus {
+  background-color: #064499;
+}
+
+body.user-is-tabbing .emotion-8:focus {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-8:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test"
+    width="auto"
+  >
+    
+    <div
+      class="emotion-2 emotion-3"
+      id="test-container"
+      tabindex="-1"
+      width="auto"
+    >
+      <div
+        aria-controls=""
+        aria-haspopup="true"
+        class="emotion-4 emotion-5"
+        role="button"
+      >
+        <div
+          class="emotion-6 emotion-7"
+          id="test-0"
+          tabindex="0"
+        >
+          First
+        </div>
+        <button
+          class="emotion-8 emotion-9"
+          id="test-Arrow"
+          tabindex="0"
+        >
+          <div
+            class=""
+          >
+            <span
+              class="emotion-10 emotion-11"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-mi-icon-arrow-down-v4"
+            >
+              <svg
+                aria-label=" open menu button icon"
+                data-testid="svg-icon-svg-mi-icon-arrow-down-v4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M512 832c28.245 0.043 55.125-12.075 73.771-33.28l418.603-475.733c29.483-32 27.477-81.877-4.523-111.36s-81.877-27.477-111.36 4.523c-0.811 0.896-1.621 1.835-2.432 2.773l-366.037 416c-3.883 4.437-10.624 4.864-15.061 0.981-0.341-0.299-0.683-0.64-0.981-0.981l-366.037-416.085c-27.989-33.323-77.696-37.675-111.019-9.728s-37.675 77.696-9.728 111.019c0.768 0.939 1.579 1.835 2.432 2.773l418.475 475.648c18.688 21.248 45.611 33.408 73.899 33.451z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+                <title>
+                   open menu button
+                </title>
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ButtonGroup Snapshots Open 1`] = `
+.emotion-0 {
+  width: auto;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px 5px 10px 5px;
+}
+
+.emotion-2 {
+  position: relative;
+  box-sizing: border-box;
+  background-color: inherit;
+  outline: none;
+  border-radius: 17px!important;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-2:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-4 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #545F67;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  border: solid #FFFFFF;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  min-height: 32px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 6px 16px;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  border-left: 1px solid #FFFFFF;
+  border-right: 1px solid #FFFFFF;
+  border-radius: 17px 0 0 17px;
+  opacity: 1;
+  outline: none;
+  line-height: 18px;
+}
+
+body.user-is-tabbing .emotion-6:focus {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-6:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-8 {
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  border-left: 0px none;
+  border-right: 1px solid #FFFFFF;
+  min-height: 32px;
+  border-radius: 0 17px 17px 0!important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #545F67;
+  color: #FFFFFF;
+  padding: 6px 16px;
+  opacity: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.emotion-8:hover {
+  background-color: #064499;
+}
+
+.emotion-8:focus {
+  background-color: #064499;
+}
+
+body.user-is-tabbing .emotion-8:focus {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-8:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+.emotion-12 {
+  min-width: 40px;
+  background-color: #FFFFFF;
+  z-index: 300;
+  max-width: 280px;
+  position: absolute;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #EEF5F7;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.emotion-14 {
+  font-size: 14px;
+  padding: 8px 16px;
+  color: #000000;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: left;
+  line-height: 16px;
+  opacity: 1;
+}
+
+.emotion-14:hover {
+  color: #0D71C8;
+  background-color: #EEF5F7;
+}
+
+.emotion-14:focus {
+  color: #0D71C8;
+  background-color: #EEF5F7;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test"
+    width="auto"
+  >
+    
+    <div
+      class="emotion-2 emotion-3"
+      id="test-container"
+      tabindex="-1"
+      width="auto"
+    >
+      <div
+        aria-controls="test-menu"
+        aria-expanded="true"
+        aria-haspopup="true"
+        class="emotion-4 emotion-5"
+        role="button"
+      >
+        <div
+          class="emotion-6 emotion-7"
+          id="test-0"
+          tabindex="0"
+        >
+          First
+        </div>
+        <button
+          class="emotion-8 emotion-9"
+          id="test-Arrow"
+          tabindex="0"
+        >
+          <div
+            class=""
+          >
+            <span
+              class="emotion-10 emotion-11"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-mi-icon-arrow-down-v4"
+            >
+              <svg
+                aria-label=" open menu button icon"
+                data-testid="svg-icon-svg-mi-icon-arrow-down-v4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M512 832c28.245 0.043 55.125-12.075 73.771-33.28l418.603-475.733c29.483-32 27.477-81.877-4.523-111.36s-81.877-27.477-111.36 4.523c-0.811 0.896-1.621 1.835-2.432 2.773l-366.037 416c-3.883 4.437-10.624 4.864-15.061 0.981-0.341-0.299-0.683-0.64-0.981-0.981l-366.037-416.085c-27.989-33.323-77.696-37.675-111.019-9.728s-37.675 77.696-9.728 111.019c0.768 0.939 1.579 1.835 2.432 2.773l418.475 475.648c18.688 21.248 45.611 33.408 73.899 33.451z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+                <title>
+                   open menu button
+                </title>
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        aria-labelledby="test"
+        class="emotion-12 emotion-13"
+        id="test-menu"
+        role="menu"
+        style="height: 64px;"
+      >
+        <div
+          class="emotion-14 emotion-15"
+          id="test-1"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Two
+        </div>
+        <div
+          class="emotion-14 emotion-15"
+          id="test-2"
+          role="menuitem"
+          tabindex="-1"
+        >
+          One
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ButtonGroup Snapshots Stlye Ghost 1`] = `
+.emotion-0 {
+  width: auto;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px 5px 10px 5px;
+}
+
+.emotion-2 {
+  position: relative;
+  box-sizing: border-box;
+  background-color: inherit;
+  outline: none;
+  border-radius: 17px!important;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-2:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-4 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  color: #0D71C8;
+  font-size: 14px;
+  font-weight: 600;
+  border: solid #0D71C8;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  min-height: 32px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 6px 16px;
+  border-top: 1px solid #0D71C8;
+  border-bottom: 1px solid #0D71C8;
+  border-left: 1px solid #0D71C8;
+  border-right: 1px solid #0D71C8;
+  border-radius: 17px 0 0 17px;
+  opacity: 1;
+  outline: none;
+  line-height: 18px;
+}
+
+body.user-is-tabbing .emotion-6:focus {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-6:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-8 {
+  border-top: 1px solid #0D71C8;
+  border-bottom: 1px solid #0D71C8;
+  border-left: 0px none;
+  border-right: 1px solid #0D71C8;
+  min-height: 32px;
+  border-radius: 0 17px 17px 0!important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  color: #0D71C8;
+  padding: 6px 16px;
+  opacity: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.emotion-8:hover {
+  background-color: transparent;
+}
+
+.emotion-8:focus {
+  background-color: transparent;
+}
+
+body.user-is-tabbing .emotion-8:focus {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-8:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test"
+    width="auto"
+  >
+    
+    <div
+      class="emotion-2 emotion-3"
+      id="test-container"
+      tabindex="-1"
+      width="auto"
+    >
+      <div
+        aria-controls=""
+        aria-haspopup="true"
+        class="emotion-4 emotion-5"
+        role="button"
+      >
+        <div
+          class="emotion-6 emotion-7"
+          id="test-0"
+          tabindex="0"
+        >
+          First
+        </div>
+        <button
+          class="emotion-8 emotion-9"
+          id="test-Arrow"
+          tabindex="0"
+        >
+          <div
+            class=""
+          >
+            <span
+              class="emotion-10 emotion-11"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-mi-icon-arrow-down-v4"
+            >
+              <svg
+                aria-label=" open menu button icon"
+                data-testid="svg-icon-svg-mi-icon-arrow-down-v4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M512 832c28.245 0.043 55.125-12.075 73.771-33.28l418.603-475.733c29.483-32 27.477-81.877-4.523-111.36s-81.877-27.477-111.36 4.523c-0.811 0.896-1.621 1.835-2.432 2.773l-366.037 416c-3.883 4.437-10.624 4.864-15.061 0.981-0.341-0.299-0.683-0.64-0.981-0.981l-366.037-416.085c-27.989-33.323-77.696-37.675-111.019-9.728s-37.675 77.696-9.728 111.019c0.768 0.939 1.579 1.835 2.432 2.773l418.475 475.648c18.688 21.248 45.611 33.408 73.899 33.451z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+                <title>
+                   open menu button
+                </title>
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ButtonGroup Snapshots Stlye calendarMenu 1`] = `
+.emotion-0 {
+  width: auto;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px 5px 10px 5px;
+}
+
+.emotion-2 {
+  position: relative;
+  box-sizing: border-box;
+  background-color: inherit;
+  outline: none;
+  border-radius: 17px!important;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-2:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-4 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  border: solid #FFFFFF;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  min-height: 32px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 6px 16px;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  border-left: 1px solid #FFFFFF;
+  border-right: 1px solid #FFFFFF;
+  border-radius: 17px 0 0 17px;
+  opacity: 1;
+  outline: none;
+  line-height: 18px;
+}
+
+body.user-is-tabbing .emotion-6:focus {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-6:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-8 {
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  border-left: 0px none;
+  border-right: 1px solid #FFFFFF;
+  min-height: 32px;
+  border-radius: 0 17px 17px 0!important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #0D71C8;
+  color: #FFFFFF;
+  padding: 6px 16px;
+  opacity: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.emotion-8:hover {
+  background-color: #0D71C8;
+}
+
+.emotion-8:focus {
+  background-color: #0D71C8;
+}
+
+body.user-is-tabbing .emotion-8:focus {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-8:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test"
+    width="auto"
+  >
+    
+    <div
+      class="emotion-2 emotion-3"
+      id="test-container"
+      tabindex="-1"
+      width="auto"
+    >
+      <div
+        aria-controls=""
+        aria-haspopup="true"
+        class="emotion-4 emotion-5"
+        role="button"
+      >
+        <div
+          class="emotion-6 emotion-7"
+          id="test-0"
+          tabindex="0"
+        >
+          First
+        </div>
+        <button
+          class="emotion-8 emotion-9"
+          id="test-Arrow"
+          tabindex="0"
+        >
+          <div
+            class=""
+          >
+            <span
+              class="emotion-10 emotion-11"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-mi-icon-arrow-down-v4"
+            >
+              <svg
+                aria-label=" open menu button icon"
+                data-testid="svg-icon-svg-mi-icon-arrow-down-v4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M512 832c28.245 0.043 55.125-12.075 73.771-33.28l418.603-475.733c29.483-32 27.477-81.877-4.523-111.36s-81.877-27.477-111.36 4.523c-0.811 0.896-1.621 1.835-2.432 2.773l-366.037 416c-3.883 4.437-10.624 4.864-15.061 0.981-0.341-0.299-0.683-0.64-0.981-0.981l-366.037-416.085c-27.989-33.323-77.696-37.675-111.019-9.728s-37.675 77.696-9.728 111.019c0.768 0.939 1.579 1.835 2.432 2.773l418.475 475.648c18.688 21.248 45.611 33.408 73.899 33.451z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+                <title>
+                   open menu button
+                </title>
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ButtonGroup Snapshots Stlye plain 1`] = `
+.emotion-0 {
+  width: auto;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px 5px 10px 5px;
+}
+
+.emotion-2 {
+  position: relative;
+  box-sizing: border-box;
+  background-color: inherit;
+  outline: none;
+  border-radius: 17px!important;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-2:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-4 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #545F67;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  border: solid #FFFFFF;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  min-height: 32px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 6px 16px;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  border-left: 1px solid #FFFFFF;
+  border-right: 1px solid #FFFFFF;
+  border-radius: 17px 0 0 17px;
+  opacity: 1;
+  outline: none;
+  line-height: 18px;
+}
+
+body.user-is-tabbing .emotion-6:focus {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-6:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-8 {
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  border-left: 0px none;
+  border-right: 1px solid #FFFFFF;
+  min-height: 32px;
+  border-radius: 0 17px 17px 0!important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #545F67;
+  color: #FFFFFF;
+  padding: 6px 16px;
+  opacity: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.emotion-8:hover {
+  color: #0F1B31;
+}
+
+.emotion-8:focus {
+  color: #0F1B31;
+}
+
+body.user-is-tabbing .emotion-8:focus {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-8:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test"
+    width="auto"
+  >
+    
+    <div
+      class="emotion-2 emotion-3"
+      id="test-container"
+      tabindex="-1"
+      width="auto"
+    >
+      <div
+        aria-controls=""
+        aria-haspopup="true"
+        class="emotion-4 emotion-5"
+        role="button"
+      >
+        <div
+          class="emotion-6 emotion-7"
+          id="test-0"
+          tabindex="0"
+        >
+          First
+        </div>
+        <button
+          class="emotion-8 emotion-9"
+          id="test-Arrow"
+          tabindex="0"
+        >
+          <div
+            class=""
+          >
+            <span
+              class="emotion-10 emotion-11"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-mi-icon-arrow-down-v4"
+            >
+              <svg
+                aria-label=" open menu button icon"
+                data-testid="svg-icon-svg-mi-icon-arrow-down-v4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M512 832c28.245 0.043 55.125-12.075 73.771-33.28l418.603-475.733c29.483-32 27.477-81.877-4.523-111.36s-81.877-27.477-111.36 4.523c-0.811 0.896-1.621 1.835-2.432 2.773l-366.037 416c-3.883 4.437-10.624 4.864-15.061 0.981-0.341-0.299-0.683-0.64-0.981-0.981l-366.037-416.085c-27.989-33.323-77.696-37.675-111.019-9.728s-37.675 77.696-9.728 111.019c0.768 0.939 1.579 1.835 2.432 2.773l418.475 475.648c18.688 21.248 45.611 33.408 73.899 33.451z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+                <title>
+                   open menu button
+                </title>
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ButtonGroup Snapshots Stlye primary 1`] = `
+.emotion-0 {
+  width: auto;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px 5px 10px 5px;
+}
+
+.emotion-2 {
+  position: relative;
+  box-sizing: border-box;
+  background-color: inherit;
+  outline: none;
+  border-radius: 17px!important;
+}
+
+body.user-is-tabbing .emotion-2:focus {
+  --outline-offset-box-shadow-color: white;
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0 2pt var(--outline-offset-box-shadow-color),0 0 0.75pt 3.5pt var(--outline-box-shadow-color);
+}
+
+.emotion-2:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-4 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.emotion-6 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #545F67;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  border: solid #FFFFFF;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  min-height: 32px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 6px 16px;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  border-left: 1px solid #FFFFFF;
+  border-right: 1px solid #FFFFFF;
+  border-radius: 17px 0 0 17px;
+  opacity: 1;
+  outline: none;
+  line-height: 18px;
+}
+
+body.user-is-tabbing .emotion-6:focus {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-6:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-8 {
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  border-left: 0px none;
+  border-right: 1px solid #FFFFFF;
+  min-height: 32px;
+  border-radius: 0 17px 17px 0!important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #545F67;
+  color: #FFFFFF;
+  padding: 6px 16px;
+  opacity: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.emotion-8:hover {
+  background-color: #064499;
+}
+
+.emotion-8:focus {
+  background-color: #064499;
+}
+
+body.user-is-tabbing .emotion-8:focus {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-8:focus-visible {
+  --outline-box-shadow-color: #0D71C8;
+  box-shadow: 0 0 0.75pt 1.5pt var(--outline-box-shadow-color);
+  z-index: 200;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test"
+    width="auto"
+  >
+    
+    <div
+      class="emotion-2 emotion-3"
+      id="test-container"
+      tabindex="-1"
+      width="auto"
+    >
+      <div
+        aria-controls=""
+        aria-haspopup="true"
+        class="emotion-4 emotion-5"
+        role="button"
+      >
+        <div
+          class="emotion-6 emotion-7"
+          id="test-0"
+          tabindex="0"
+        >
+          First
+        </div>
+        <button
+          class="emotion-8 emotion-9"
+          id="test-Arrow"
+          tabindex="0"
+        >
+          <div
+            class=""
+          >
+            <span
+              class="emotion-10 emotion-11"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-mi-icon-arrow-down-v4"
+            >
+              <svg
+                aria-label=" open menu button icon"
+                data-testid="svg-icon-svg-mi-icon-arrow-down-v4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M512 832c28.245 0.043 55.125-12.075 73.771-33.28l418.603-475.733c29.483-32 27.477-81.877-4.523-111.36s-81.877-27.477-111.36 4.523c-0.811 0.896-1.621 1.835-2.432 2.773l-366.037 416c-3.883 4.437-10.624 4.864-15.061 0.981-0.341-0.299-0.683-0.64-0.981-0.981l-366.037-416.085c-27.989-33.323-77.696-37.675-111.019-9.728s-37.675 77.696-9.728 111.019c0.768 0.939 1.579 1.835 2.432 2.773l418.475 475.648c18.688 21.248 45.611 33.408 73.899 33.451z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+                <title>
+                   open menu button
+                </title>
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

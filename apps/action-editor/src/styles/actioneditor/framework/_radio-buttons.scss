@@ -1,0 +1,16 @@
+// Radio Buttons
+.mi-radiobutton-group {
+  margin: 0;
+  list-style: none;
+  list-style-type: none;
+
+  .rad-horizontal {
+    float: left;
+    margin-right: 15px;
+
+    label {
+      margin: 4px 0 !important;
+    }
+  }
+}
+

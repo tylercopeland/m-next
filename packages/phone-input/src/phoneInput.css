@@ -1,0 +1,47 @@
+.country-list {
+  width: 300px;
+  height: 300px;
+  max-height: 300px;
+  overflow-x: hidden;
+}
+
+.form-control {
+  height: 32px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: transparent;
+  z-index: 3;
+}
+
+.form-control:hover:not(:focus) {
+  border-color: black;
+  background-color: transparent;
+}
+
+.form-control:focus {
+  border-color: #0d71c8;
+  background-color: transparent;
+}
+
+.flag-dropdown {
+  border: none;
+  margin: 1px;
+  border-radius: 2px;
+  background-color: transparent;
+  z-index: 4;
+}
+.flag-dropdown:hover {
+  background-color: transparent;
+}
+
+.selected-flag,
+.selected-flag:hover {
+  background-color: transparent;
+}
+.selected-flag > div {
+  border-radius: 2px;
+}
+
+.search {
+  padding-right: 20px !important;
+}

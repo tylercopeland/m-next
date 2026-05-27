@@ -1,0 +1,19 @@
+/*
+ * For a detailed explanation regarding each configuration property, visit:
+ * https://jestjs.io/docs/configuration
+ */
+const baseConfig = require('../../jest.config');
+
+module.exports = {
+  ...baseConfig,
+  /* Add any custom jest config needed for this package (e.g. coverageThreshold) */
+  coverageThreshold: {
+    global: {
+      ...baseConfig.coverageThreshold.global,
+      branches: 33,
+      functions: 45,
+      lines: 42,
+      statements: 41,
+    },
+  },
+};

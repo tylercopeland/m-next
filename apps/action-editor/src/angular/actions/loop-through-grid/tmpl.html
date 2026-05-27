@@ -1,0 +1,36 @@
+<div data-ng-controller="LoopThroughGridCtrl">
+  <mi-action-description info="action"></mi-action-description>
+
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content">
+
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Select a grid</label>
+      </div>
+      <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'GridId'">
+        <ui-select data-ng-model="action.GridId" theme="selectize" ng-disabled="action.isReadOnly">
+            <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+            <ui-select-choices repeat="opt.value as opt in controlList | orderBy: 'typeLabel+label' | filter: $select.search">
+                <span ng-bind-html="opt.label"></span>
+            </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+
+    <h3>Advanced Options</h3>
+
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-8">
+        <label class="mi-radio-checkbox mi-checkbox">
+          <span>Only select rows that are checked</span>
+          <input type="checkbox" data-ng-model="action.OnlyCheckedRecords" ng-disabled="action.isReadOnly"> 
+          <div class="mi-radio-checkbox-indicator"></div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--/ Main Content Area -->
+
+   <mi-action-notes  is-read-only ="action.isReadOnly"></mi-action-notes>
+</div>

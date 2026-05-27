@@ -1,0 +1,3970 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StepperItem Snapshots Default 1`] = `
+.emotion-0 {
+  width: 100%;
+}
+
+.emotion-0 .MuiStepLabel-label {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  color: #BACAD0;
+}
+
+.emotion-0 .MuiStepLabel-label.MuiStepLabel-alternativeLabel {
+  margin-top: 6px;
+}
+
+.emotion-0 .MuiStepLabel-label.Mui-active,
+.emotion-0 .MuiStepLabel-label.Mui-completed {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0D71C8;
+}
+
+.emotion-0 .MuiStepConnector-line {
+  display: none;
+}
+
+.emotion-0 .MuiStepConnector-root {
+  border-top: 1px dashed #BACAD0;
+}
+
+.emotion-0 .MuiStepConnector-root.Mui-active,
+.emotion-0 .MuiStepConnector-root.Mui-completed {
+  border-top: 1px solid #0D71C8;
+}
+
+.emotion-0 .MuiStepConnector-root.MuiStepConnector-alternativeLabel {
+  top: 15px;
+}
+
+.emotion-0 .MuiStep-root {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-3 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.emotion-4 .MuiStepIcon-text {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.emotion-4 .MuiStepIcon-root {
+  color: #FFFFFF;
+  border: 1px solid #BACAD0;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+
+.emotion-4 .MuiStepIcon-root text {
+  fill: #545F67;
+}
+
+.emotion-4 .MuiStepIcon-root.Mui-active {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #0D71C8;
+  color: #0D71C8;
+  padding: 2px;
+}
+
+.emotion-4 .MuiStepIcon-root.Mui-active text {
+  fill: #FFFFFF;
+}
+
+.emotion-4 .MuiStepLabel-iconContainer {
+  padding-right: 6px;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-6.MuiStepLabel-alternativeLabel {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-6.Mui-disabled {
+  cursor: default;
+}
+
+.emotion-7 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-right: 8px;
+}
+
+.emotion-7.MuiStepLabel-alternativeLabel {
+  padding-right: 0;
+}
+
+.emotion-8 {
+  width: 24px;
+  height: 24px;
+  background-color: #0D71C8;
+  border-radius: 50%;
+}
+
+.emotion-8 .custom-completed-icon {
+  -webkit-transform: translateY(65%);
+  -moz-transform: translateY(65%);
+  -ms-transform: translateY(65%);
+  transform: translateY(65%);
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: white;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+.emotion-12 {
+  width: 100%;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.emotion-12.MuiStepLabel-alternativeLabel {
+  text-align: center;
+}
+
+.emotion-13 {
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+  display: block;
+  -webkit-transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.emotion-13.Mui-active {
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 500;
+}
+
+.emotion-13.Mui-completed {
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 500;
+}
+
+.emotion-13.MuiStepLabel-alternativeLabel {
+  margin-top: 16px;
+}
+
+.emotion-13.Mui-error {
+  color: #d32f2f;
+}
+
+.emotion-14 {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.emotion-15 {
+  display: block;
+  border-color: #bdbdbd;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+.emotion-21 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-size: 1.5rem;
+  display: block;
+  -webkit-transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.emotion-21.Mui-completed {
+  color: #1976d2;
+}
+
+.emotion-21.Mui-active {
+  color: #1976d2;
+}
+
+.emotion-21.Mui-error {
+  color: #d32f2f;
+}
+
+.emotion-22 {
+  fill: #fff;
+  font-size: 0.75rem;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+}
+
+<div>
+  <div
+    class="mui-stepper-section-wrapper emotion-0 emotion-1"
+    id="undefined-mui-stepper-section-wrapper"
+  >
+    <div
+      class="MuiStepper-root MuiStepper-horizontal mui-stepper-item emotion-2"
+    >
+      <div
+        class="MuiStep-root MuiStep-horizontal Mui-completed mui-stepper-step-0 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-completed emotion-7"
+            >
+              <div
+                class="custom-completed-icon-wrapper emotion-8 emotion-9"
+              >
+                <div
+                  class="custom-completed-icon"
+                >
+                  <span
+                    class="emotion-10 emotion-11"
+                    color="white"
+                    data-testid="svg-icon-wrapper-completed-check"
+                    id="completed-step-icon"
+                  >
+                    <svg
+                      aria-label="completed-check icon"
+                      data-testid="svg-icon-svg-completed-check"
+                      fill="white"
+                      height="10px"
+                      preserveAspectRatio="none"
+                      role="img"
+                      viewBox="0 0 10 10"
+                      width="10px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M9.73786 0.188788C9.976 0.403441 10.0165 0.797611 9.82824 1.06919L4.08375 9.35796C3.95725 9.5461 3.7935 9.69748 3.60586 9.7997C3.41642 9.9029 3.20811 9.95301 2.99827 9.94586C2.78842 9.93871 2.58311 9.87451 2.39941 9.7586C2.21789 9.64406 2.06266 9.4823 1.94632 9.28651L0.154238 6.386C-0.0205974 6.10302 0.0388146 5.71199 0.286939 5.51259C0.535063 5.3132 0.877939 5.38096 1.05278 5.66393L2.84813 8.56974L2.85556 8.58208C2.87497 8.61515 2.90103 8.64245 2.93156 8.66172C2.96209 8.68098 2.99621 8.69165 3.03109 8.69284C3.06597 8.69403 3.10059 8.6857 3.13208 8.66855C3.16356 8.6514 3.191 8.62592 3.21211 8.59423L3.21856 8.58472L8.96589 0.291864C9.1541 0.0202836 9.49973 -0.0258648 9.73786 0.188788Z"
+                        fill="inherit"
+                        fill-rule="evenodd"
+                        stroke="inherit"
+                        stroke-width=""
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            >
+              <span
+                class="MuiStepLabel-label Mui-completed emotion-13"
+              >
+                Step 1
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStepConnector-root MuiStepConnector-horizontal Mui-active emotion-14"
+      >
+        <span
+          class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-15"
+        />
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal mui-stepper-step-1 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-active emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root Mui-active emotion-21"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-22"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  2
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            >
+              <span
+                class="MuiStepLabel-label Mui-active emotion-13"
+              >
+                Step 2
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStepConnector-root MuiStepConnector-horizontal Mui-disabled emotion-14"
+      >
+        <span
+          class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-15"
+        />
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal mui-stepper-step-2 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-disabled emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root emotion-21"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-22"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  3
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            >
+              <span
+                class="MuiStepLabel-label Mui-disabled emotion-13"
+              >
+                Step 3
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStepConnector-root MuiStepConnector-horizontal Mui-disabled emotion-14"
+      >
+        <span
+          class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-15"
+        />
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal mui-stepper-step-3 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-disabled emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root emotion-21"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-22"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  4
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            >
+              <span
+                class="MuiStepLabel-label Mui-disabled emotion-13"
+              >
+                Step 4
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`StepperItem Snapshots alternativeLabel 1`] = `
+.emotion-0 {
+  width: 100%;
+}
+
+.emotion-0 .MuiStepLabel-label {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  color: #BACAD0;
+}
+
+.emotion-0 .MuiStepLabel-label.MuiStepLabel-alternativeLabel {
+  margin-top: 6px;
+}
+
+.emotion-0 .MuiStepLabel-label.Mui-active,
+.emotion-0 .MuiStepLabel-label.Mui-completed {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0D71C8;
+}
+
+.emotion-0 .MuiStepConnector-line {
+  display: none;
+}
+
+.emotion-0 .MuiStepConnector-root {
+  border-top: 1px dashed #BACAD0;
+}
+
+.emotion-0 .MuiStepConnector-root.Mui-active,
+.emotion-0 .MuiStepConnector-root.Mui-completed {
+  border-top: 1px solid #0D71C8;
+}
+
+.emotion-0 .MuiStepConnector-root.MuiStepConnector-alternativeLabel {
+  top: 15px;
+}
+
+.emotion-0 .MuiStep-root {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.emotion-3 {
+  padding-left: 8px;
+  padding-right: 8px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+}
+
+.emotion-4 .MuiStepIcon-text {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.emotion-4 .MuiStepIcon-root {
+  color: #FFFFFF;
+  border: 1px solid #BACAD0;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  -webkit-transform: translateY(2px);
+  -moz-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.emotion-4 .MuiStepIcon-root text {
+  fill: #545F67;
+}
+
+.emotion-4 .MuiStepIcon-root.Mui-active {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #0D71C8;
+  color: #0D71C8;
+  padding: 2px;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+.emotion-4 .MuiStepIcon-root.Mui-active text {
+  fill: #FFFFFF;
+}
+
+.emotion-4 .MuiStepLabel-iconContainer {
+  padding-right: 0;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-6.MuiStepLabel-alternativeLabel {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-6.Mui-disabled {
+  cursor: default;
+}
+
+.emotion-7 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-right: 8px;
+}
+
+.emotion-7.MuiStepLabel-alternativeLabel {
+  padding-right: 0;
+}
+
+.emotion-8 {
+  width: 24px;
+  height: 24px;
+  background-color: #0D71C8;
+  border-radius: 50%;
+  -webkit-transform: translateY(2px);
+  -moz-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.emotion-8 .custom-completed-icon {
+  -webkit-transform: translateY(65%);
+  -moz-transform: translateY(65%);
+  -ms-transform: translateY(65%);
+  transform: translateY(65%);
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: white;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+.emotion-12 {
+  width: 100%;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.emotion-12.MuiStepLabel-alternativeLabel {
+  text-align: center;
+}
+
+.emotion-13 {
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+  display: block;
+  -webkit-transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.emotion-13.Mui-active {
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 500;
+}
+
+.emotion-13.Mui-completed {
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 500;
+}
+
+.emotion-13.MuiStepLabel-alternativeLabel {
+  margin-top: 16px;
+}
+
+.emotion-13.Mui-error {
+  color: #d32f2f;
+}
+
+.emotion-15 {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  position: absolute;
+  top: 12px;
+  left: calc(-50% + 20px);
+  right: calc(50% + 20px);
+}
+
+.emotion-16 {
+  display: block;
+  border-color: #bdbdbd;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+.emotion-21 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-size: 1.5rem;
+  display: block;
+  -webkit-transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.emotion-21.Mui-completed {
+  color: #1976d2;
+}
+
+.emotion-21.Mui-active {
+  color: #1976d2;
+}
+
+.emotion-21.Mui-error {
+  color: #d32f2f;
+}
+
+.emotion-22 {
+  fill: #fff;
+  font-size: 0.75rem;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+}
+
+<div>
+  <div
+    class="mui-stepper-section-wrapper emotion-0 emotion-1"
+    id="undefined-mui-stepper-section-wrapper"
+  >
+    <div
+      class="MuiStepper-root MuiStepper-horizontal MuiStepper-alternativeLabel mui-stepper-item emotion-2"
+    >
+      <div
+        class="MuiStep-root MuiStep-horizontal MuiStep-alternativeLabel Mui-completed mui-stepper-step-0 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal MuiStepLabel-alternativeLabel mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-completed MuiStepLabel-alternativeLabel emotion-7"
+            >
+              <div
+                class="custom-completed-icon-wrapper emotion-8 emotion-9"
+              >
+                <div
+                  class="custom-completed-icon"
+                >
+                  <span
+                    class="emotion-10 emotion-11"
+                    color="white"
+                    data-testid="svg-icon-wrapper-completed-check"
+                    id="completed-step-icon"
+                  >
+                    <svg
+                      aria-label="completed-check icon"
+                      data-testid="svg-icon-svg-completed-check"
+                      fill="white"
+                      height="10px"
+                      preserveAspectRatio="none"
+                      role="img"
+                      viewBox="0 0 10 10"
+                      width="10px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M9.73786 0.188788C9.976 0.403441 10.0165 0.797611 9.82824 1.06919L4.08375 9.35796C3.95725 9.5461 3.7935 9.69748 3.60586 9.7997C3.41642 9.9029 3.20811 9.95301 2.99827 9.94586C2.78842 9.93871 2.58311 9.87451 2.39941 9.7586C2.21789 9.64406 2.06266 9.4823 1.94632 9.28651L0.154238 6.386C-0.0205974 6.10302 0.0388146 5.71199 0.286939 5.51259C0.535063 5.3132 0.877939 5.38096 1.05278 5.66393L2.84813 8.56974L2.85556 8.58208C2.87497 8.61515 2.90103 8.64245 2.93156 8.66172C2.96209 8.68098 2.99621 8.69165 3.03109 8.69284C3.06597 8.69403 3.10059 8.6857 3.13208 8.66855C3.16356 8.6514 3.191 8.62592 3.21211 8.59423L3.21856 8.58472L8.96589 0.291864C9.1541 0.0202836 9.49973 -0.0258648 9.73786 0.188788Z"
+                        fill="inherit"
+                        fill-rule="evenodd"
+                        stroke="inherit"
+                        stroke-width=""
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer MuiStepLabel-alternativeLabel emotion-12"
+            >
+              <span
+                class="MuiStepLabel-label Mui-completed MuiStepLabel-alternativeLabel emotion-13"
+              >
+                Step 1
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal MuiStep-alternativeLabel mui-stepper-step-1 emotion-3"
+      >
+        <div
+          class="MuiStepConnector-root MuiStepConnector-horizontal MuiStepConnector-alternativeLabel Mui-active emotion-15"
+        >
+          <span
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-16"
+          />
+        </div>
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal MuiStepLabel-alternativeLabel mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-active MuiStepLabel-alternativeLabel emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root Mui-active emotion-21"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-22"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  2
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer MuiStepLabel-alternativeLabel emotion-12"
+            >
+              <span
+                class="MuiStepLabel-label Mui-active MuiStepLabel-alternativeLabel emotion-13"
+              >
+                Step 2
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal MuiStep-alternativeLabel mui-stepper-step-2 emotion-3"
+      >
+        <div
+          class="MuiStepConnector-root MuiStepConnector-horizontal MuiStepConnector-alternativeLabel Mui-disabled emotion-15"
+        >
+          <span
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-16"
+          />
+        </div>
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled MuiStepLabel-alternativeLabel mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-disabled MuiStepLabel-alternativeLabel emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root emotion-21"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-22"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  3
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer MuiStepLabel-alternativeLabel emotion-12"
+            >
+              <span
+                class="MuiStepLabel-label Mui-disabled MuiStepLabel-alternativeLabel emotion-13"
+              >
+                Step 3
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal MuiStep-alternativeLabel mui-stepper-step-3 emotion-3"
+      >
+        <div
+          class="MuiStepConnector-root MuiStepConnector-horizontal MuiStepConnector-alternativeLabel Mui-disabled emotion-15"
+        >
+          <span
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-16"
+          />
+        </div>
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled MuiStepLabel-alternativeLabel mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-disabled MuiStepLabel-alternativeLabel emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root emotion-21"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-22"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  4
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer MuiStepLabel-alternativeLabel emotion-12"
+            >
+              <span
+                class="MuiStepLabel-label Mui-disabled MuiStepLabel-alternativeLabel emotion-13"
+              >
+                Step 4
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`StepperItem Snapshots displayLabel completed step 1`] = `
+.emotion-0 {
+  width: 100%;
+}
+
+.emotion-0 .MuiStepLabel-label {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  color: #BACAD0;
+}
+
+.emotion-0 .MuiStepLabel-label.MuiStepLabel-alternativeLabel {
+  margin-top: 6px;
+}
+
+.emotion-0 .MuiStepLabel-label.Mui-active,
+.emotion-0 .MuiStepLabel-label.Mui-completed {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0D71C8;
+}
+
+.emotion-0 .MuiStepConnector-line {
+  display: none;
+}
+
+.emotion-0 .MuiStepConnector-root {
+  border-top: 1px dashed #BACAD0;
+}
+
+.emotion-0 .MuiStepConnector-root.Mui-active,
+.emotion-0 .MuiStepConnector-root.Mui-completed {
+  border-top: 1px solid #0D71C8;
+}
+
+.emotion-0 .MuiStepConnector-root.MuiStepConnector-alternativeLabel {
+  top: 15px;
+}
+
+.emotion-0 .MuiStep-root {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-3 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.emotion-4 .MuiStepIcon-text {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.emotion-4 .MuiStepIcon-root {
+  color: #FFFFFF;
+  border: 1px solid #BACAD0;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+
+.emotion-4 .MuiStepIcon-root text {
+  fill: #545F67;
+}
+
+.emotion-4 .MuiStepIcon-root.Mui-active {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #0D71C8;
+  color: #0D71C8;
+  padding: 2px;
+}
+
+.emotion-4 .MuiStepIcon-root.Mui-active text {
+  fill: #FFFFFF;
+}
+
+.emotion-4 .MuiStepLabel-iconContainer {
+  padding-right: 6px;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-6.MuiStepLabel-alternativeLabel {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-6.Mui-disabled {
+  cursor: default;
+}
+
+.emotion-7 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-right: 8px;
+}
+
+.emotion-7.MuiStepLabel-alternativeLabel {
+  padding-right: 0;
+}
+
+.emotion-8 {
+  width: 24px;
+  height: 24px;
+  background-color: #0D71C8;
+  border-radius: 50%;
+}
+
+.emotion-8 .custom-completed-icon {
+  -webkit-transform: translateY(65%);
+  -moz-transform: translateY(65%);
+  -ms-transform: translateY(65%);
+  transform: translateY(65%);
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: white;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+.emotion-12 {
+  width: 100%;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.emotion-12.MuiStepLabel-alternativeLabel {
+  text-align: center;
+}
+
+.emotion-13 {
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+  display: block;
+  -webkit-transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.emotion-13.Mui-active {
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 500;
+}
+
+.emotion-13.Mui-completed {
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 500;
+}
+
+.emotion-13.MuiStepLabel-alternativeLabel {
+  margin-top: 16px;
+}
+
+.emotion-13.Mui-error {
+  color: #d32f2f;
+}
+
+<div>
+  <div
+    class="mui-stepper-section-wrapper emotion-0 emotion-1"
+    id="undefined-mui-stepper-section-wrapper"
+  >
+    <div
+      class="MuiStepper-root MuiStepper-horizontal mui-stepper-item emotion-2"
+    >
+      <div
+        class="MuiStep-root MuiStep-horizontal Mui-completed mui-stepper-step-0 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-completed emotion-7"
+            >
+              <div
+                class="custom-completed-icon-wrapper emotion-8 emotion-9"
+              >
+                <div
+                  class="custom-completed-icon"
+                >
+                  <span
+                    class="emotion-10 emotion-11"
+                    color="white"
+                    data-testid="svg-icon-wrapper-completed-check"
+                    id="completed-step-icon"
+                  >
+                    <svg
+                      aria-label="completed-check icon"
+                      data-testid="svg-icon-svg-completed-check"
+                      fill="white"
+                      height="10px"
+                      preserveAspectRatio="none"
+                      role="img"
+                      viewBox="0 0 10 10"
+                      width="10px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M9.73786 0.188788C9.976 0.403441 10.0165 0.797611 9.82824 1.06919L4.08375 9.35796C3.95725 9.5461 3.7935 9.69748 3.60586 9.7997C3.41642 9.9029 3.20811 9.95301 2.99827 9.94586C2.78842 9.93871 2.58311 9.87451 2.39941 9.7586C2.21789 9.64406 2.06266 9.4823 1.94632 9.28651L0.154238 6.386C-0.0205974 6.10302 0.0388146 5.71199 0.286939 5.51259C0.535063 5.3132 0.877939 5.38096 1.05278 5.66393L2.84813 8.56974L2.85556 8.58208C2.87497 8.61515 2.90103 8.64245 2.93156 8.66172C2.96209 8.68098 2.99621 8.69165 3.03109 8.69284C3.06597 8.69403 3.10059 8.6857 3.13208 8.66855C3.16356 8.6514 3.191 8.62592 3.21211 8.59423L3.21856 8.58472L8.96589 0.291864C9.1541 0.0202836 9.49973 -0.0258648 9.73786 0.188788Z"
+                        fill="inherit"
+                        fill-rule="evenodd"
+                        stroke="inherit"
+                        stroke-width=""
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            >
+              <span
+                class="MuiStepLabel-label Mui-completed emotion-13"
+              >
+                Step 1
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`StepperItem Snapshots displayLabel customIcon 1`] = `
+.emotion-0 {
+  width: 100%;
+}
+
+.emotion-0 .MuiStepLabel-label {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  color: #BACAD0;
+}
+
+.emotion-0 .MuiStepLabel-label.MuiStepLabel-alternativeLabel {
+  margin-top: 6px;
+}
+
+.emotion-0 .MuiStepLabel-label.Mui-active,
+.emotion-0 .MuiStepLabel-label.Mui-completed {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0D71C8;
+}
+
+.emotion-0 .MuiStepConnector-line {
+  display: none;
+}
+
+.emotion-0 .MuiStepConnector-root {
+  border-top: 1px dashed #BACAD0;
+}
+
+.emotion-0 .MuiStepConnector-root.Mui-active,
+.emotion-0 .MuiStepConnector-root.Mui-completed {
+  border-top: 1px solid #0D71C8;
+}
+
+.emotion-0 .MuiStepConnector-root.MuiStepConnector-alternativeLabel {
+  top: 15px;
+}
+
+.emotion-0 .MuiStep-root {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-3 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.emotion-4 .MuiStepIcon-text {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.emotion-4 .MuiStepIcon-root {
+  color: #FFFFFF;
+  border: 1px solid #BACAD0;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+
+.emotion-4 .MuiStepIcon-root text {
+  fill: #545F67;
+}
+
+.emotion-4 .MuiStepIcon-root.Mui-active {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #0D71C8;
+  color: #0D71C8;
+  padding: 2px;
+}
+
+.emotion-4 .MuiStepIcon-root.Mui-active text {
+  fill: #FFFFFF;
+}
+
+.emotion-4 .MuiStepLabel-iconContainer {
+  padding-right: 6px;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-6.MuiStepLabel-alternativeLabel {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-6.Mui-disabled {
+  cursor: default;
+}
+
+.emotion-7 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-right: 8px;
+}
+
+.emotion-7.MuiStepLabel-alternativeLabel {
+  padding-right: 0;
+}
+
+.emotion-8 {
+  width: 24px;
+  height: 24px;
+  background-color: #0D71C8;
+  border-radius: 50%;
+}
+
+.emotion-8 .custom-completed-icon {
+  -webkit-transform: translateY(65%);
+  -moz-transform: translateY(65%);
+  -ms-transform: translateY(65%);
+  transform: translateY(65%);
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: white;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+.emotion-12 {
+  width: 100%;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.emotion-12.MuiStepLabel-alternativeLabel {
+  text-align: center;
+}
+
+.emotion-13 {
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+  display: block;
+  -webkit-transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.emotion-13.Mui-active {
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 500;
+}
+
+.emotion-13.Mui-completed {
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 500;
+}
+
+.emotion-13.MuiStepLabel-alternativeLabel {
+  margin-top: 16px;
+}
+
+.emotion-13.Mui-error {
+  color: #d32f2f;
+}
+
+.emotion-14 {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.emotion-15 {
+  display: block;
+  border-color: #bdbdbd;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+.emotion-21 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-size: 1.5rem;
+  display: block;
+  -webkit-transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.emotion-21.Mui-completed {
+  color: #1976d2;
+}
+
+.emotion-21.Mui-active {
+  color: #1976d2;
+}
+
+.emotion-21.Mui-error {
+  color: #d32f2f;
+}
+
+.emotion-22 {
+  fill: #fff;
+  font-size: 0.75rem;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+}
+
+<div>
+  <div
+    class="mui-stepper-section-wrapper emotion-0 emotion-1"
+    id="undefined-mui-stepper-section-wrapper"
+  >
+    <div
+      class="MuiStepper-root MuiStepper-horizontal mui-stepper-item emotion-2"
+    >
+      <div
+        class="MuiStep-root MuiStep-horizontal Mui-completed mui-stepper-step-0 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-completed emotion-7"
+            >
+              <div
+                class="custom-completed-icon-wrapper emotion-8 emotion-9"
+              >
+                <div
+                  class="custom-completed-icon"
+                >
+                  <span
+                    class="emotion-10 emotion-11"
+                    color="white"
+                    data-testid="svg-icon-wrapper-user"
+                    id="completed-step-icon"
+                  >
+                    <svg
+                      aria-label="user icon"
+                      data-testid="svg-icon-svg-user"
+                      fill="white"
+                      height="10px"
+                      preserveAspectRatio="none"
+                      role="img"
+                      viewBox="0 0 1024 1024"
+                      width="10px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 64c-106.038 0-192 85.962-192 192s85.962 192 192 192c106.038 0 192-85.962 192-192s-85.962-192-192-192zM256 256c0-141.385 114.615-256 256-256 141.382 0 256 114.615 256 256s-114.618 256-256 256c-141.385 0-256-114.615-256-256z M512 608c-101.843 0-199.515 40.454-271.529 112.474-72.014 72.013-112.471 169.683-112.471 271.526 0 17.67-14.327 32-32 32s-32-14.33-32-32c0-118.816 47.2-232.768 131.216-316.781 84.017-84.019 197.967-131.219 316.784-131.219s232.768 47.2 316.781 131.219c84.019 84.013 131.219 197.965 131.219 316.781 0 17.67-14.33 32-32 32s-32-14.33-32-32c0-101.843-40.454-199.514-112.474-271.526-72.013-72.019-169.683-112.474-271.526-112.474z"
+                        stroke="inherit"
+                        stroke-width=""
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            >
+              <span
+                class="MuiStepLabel-label Mui-completed emotion-13"
+              >
+                Step 1
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStepConnector-root MuiStepConnector-horizontal Mui-active emotion-14"
+      >
+        <span
+          class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-15"
+        />
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal mui-stepper-step-1 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-active emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root Mui-active emotion-21"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-22"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  2
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            >
+              <span
+                class="MuiStepLabel-label Mui-active emotion-13"
+              >
+                Step 2
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStepConnector-root MuiStepConnector-horizontal Mui-disabled emotion-14"
+      >
+        <span
+          class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-15"
+        />
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal mui-stepper-step-2 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-disabled emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root emotion-21"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-22"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  3
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            >
+              <span
+                class="MuiStepLabel-label Mui-disabled emotion-13"
+              >
+                Step 3
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStepConnector-root MuiStepConnector-horizontal Mui-disabled emotion-14"
+      >
+        <span
+          class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-15"
+        />
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal mui-stepper-step-3 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-disabled emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root emotion-21"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-22"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  4
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            >
+              <span
+                class="MuiStepLabel-label Mui-disabled emotion-13"
+              >
+                Step 4
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`StepperItem Snapshots displayLabel three steps 1`] = `
+.emotion-0 {
+  width: 100%;
+}
+
+.emotion-0 .MuiStepLabel-label {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  color: #BACAD0;
+}
+
+.emotion-0 .MuiStepLabel-label.MuiStepLabel-alternativeLabel {
+  margin-top: 6px;
+}
+
+.emotion-0 .MuiStepLabel-label.Mui-active,
+.emotion-0 .MuiStepLabel-label.Mui-completed {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0D71C8;
+}
+
+.emotion-0 .MuiStepConnector-line {
+  display: none;
+}
+
+.emotion-0 .MuiStepConnector-root {
+  border-top: 1px dashed #BACAD0;
+}
+
+.emotion-0 .MuiStepConnector-root.Mui-active,
+.emotion-0 .MuiStepConnector-root.Mui-completed {
+  border-top: 1px solid #0D71C8;
+}
+
+.emotion-0 .MuiStepConnector-root.MuiStepConnector-alternativeLabel {
+  top: 15px;
+}
+
+.emotion-0 .MuiStep-root {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-3 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.emotion-4 .MuiStepIcon-text {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.emotion-4 .MuiStepIcon-root {
+  color: #FFFFFF;
+  border: 1px solid #BACAD0;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+
+.emotion-4 .MuiStepIcon-root text {
+  fill: #545F67;
+}
+
+.emotion-4 .MuiStepIcon-root.Mui-active {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #0D71C8;
+  color: #0D71C8;
+  padding: 2px;
+}
+
+.emotion-4 .MuiStepIcon-root.Mui-active text {
+  fill: #FFFFFF;
+}
+
+.emotion-4 .MuiStepLabel-iconContainer {
+  padding-right: 6px;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-6.MuiStepLabel-alternativeLabel {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-6.Mui-disabled {
+  cursor: default;
+}
+
+.emotion-7 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-right: 8px;
+}
+
+.emotion-7.MuiStepLabel-alternativeLabel {
+  padding-right: 0;
+}
+
+.emotion-8 {
+  width: 24px;
+  height: 24px;
+  background-color: #0D71C8;
+  border-radius: 50%;
+}
+
+.emotion-8 .custom-completed-icon {
+  -webkit-transform: translateY(65%);
+  -moz-transform: translateY(65%);
+  -ms-transform: translateY(65%);
+  transform: translateY(65%);
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: white;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+.emotion-12 {
+  width: 100%;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.emotion-12.MuiStepLabel-alternativeLabel {
+  text-align: center;
+}
+
+.emotion-13 {
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+  display: block;
+  -webkit-transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.emotion-13.Mui-active {
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 500;
+}
+
+.emotion-13.Mui-completed {
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 500;
+}
+
+.emotion-13.MuiStepLabel-alternativeLabel {
+  margin-top: 16px;
+}
+
+.emotion-13.Mui-error {
+  color: #d32f2f;
+}
+
+.emotion-14 {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.emotion-15 {
+  display: block;
+  border-color: #bdbdbd;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+.emotion-21 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-size: 1.5rem;
+  display: block;
+  -webkit-transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.emotion-21.Mui-completed {
+  color: #1976d2;
+}
+
+.emotion-21.Mui-active {
+  color: #1976d2;
+}
+
+.emotion-21.Mui-error {
+  color: #d32f2f;
+}
+
+.emotion-22 {
+  fill: #fff;
+  font-size: 0.75rem;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+}
+
+<div>
+  <div
+    class="mui-stepper-section-wrapper emotion-0 emotion-1"
+    id="undefined-mui-stepper-section-wrapper"
+  >
+    <div
+      class="MuiStepper-root MuiStepper-horizontal mui-stepper-item emotion-2"
+    >
+      <div
+        class="MuiStep-root MuiStep-horizontal Mui-completed mui-stepper-step-0 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-completed emotion-7"
+            >
+              <div
+                class="custom-completed-icon-wrapper emotion-8 emotion-9"
+              >
+                <div
+                  class="custom-completed-icon"
+                >
+                  <span
+                    class="emotion-10 emotion-11"
+                    color="white"
+                    data-testid="svg-icon-wrapper-completed-check"
+                    id="completed-step-icon"
+                  >
+                    <svg
+                      aria-label="completed-check icon"
+                      data-testid="svg-icon-svg-completed-check"
+                      fill="white"
+                      height="10px"
+                      preserveAspectRatio="none"
+                      role="img"
+                      viewBox="0 0 10 10"
+                      width="10px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M9.73786 0.188788C9.976 0.403441 10.0165 0.797611 9.82824 1.06919L4.08375 9.35796C3.95725 9.5461 3.7935 9.69748 3.60586 9.7997C3.41642 9.9029 3.20811 9.95301 2.99827 9.94586C2.78842 9.93871 2.58311 9.87451 2.39941 9.7586C2.21789 9.64406 2.06266 9.4823 1.94632 9.28651L0.154238 6.386C-0.0205974 6.10302 0.0388146 5.71199 0.286939 5.51259C0.535063 5.3132 0.877939 5.38096 1.05278 5.66393L2.84813 8.56974L2.85556 8.58208C2.87497 8.61515 2.90103 8.64245 2.93156 8.66172C2.96209 8.68098 2.99621 8.69165 3.03109 8.69284C3.06597 8.69403 3.10059 8.6857 3.13208 8.66855C3.16356 8.6514 3.191 8.62592 3.21211 8.59423L3.21856 8.58472L8.96589 0.291864C9.1541 0.0202836 9.49973 -0.0258648 9.73786 0.188788Z"
+                        fill="inherit"
+                        fill-rule="evenodd"
+                        stroke="inherit"
+                        stroke-width=""
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            >
+              <span
+                class="MuiStepLabel-label Mui-completed emotion-13"
+              >
+                Step 1
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStepConnector-root MuiStepConnector-horizontal Mui-active emotion-14"
+      >
+        <span
+          class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-15"
+        />
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal mui-stepper-step-1 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-active emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root Mui-active emotion-21"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-22"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  2
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            >
+              <span
+                class="MuiStepLabel-label Mui-active emotion-13"
+              >
+                Step 2
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStepConnector-root MuiStepConnector-horizontal Mui-disabled emotion-14"
+      >
+        <span
+          class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-15"
+        />
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal mui-stepper-step-2 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-disabled emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root emotion-21"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-22"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  3
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            >
+              <span
+                class="MuiStepLabel-label Mui-disabled emotion-13"
+              >
+                Step 3
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`StepperItem Snapshots displayLabel two steps 1`] = `
+.emotion-0 {
+  width: 100%;
+}
+
+.emotion-0 .MuiStepLabel-label {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  color: #BACAD0;
+}
+
+.emotion-0 .MuiStepLabel-label.MuiStepLabel-alternativeLabel {
+  margin-top: 6px;
+}
+
+.emotion-0 .MuiStepLabel-label.Mui-active,
+.emotion-0 .MuiStepLabel-label.Mui-completed {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0D71C8;
+}
+
+.emotion-0 .MuiStepConnector-line {
+  display: none;
+}
+
+.emotion-0 .MuiStepConnector-root {
+  border-top: 1px dashed #BACAD0;
+}
+
+.emotion-0 .MuiStepConnector-root.Mui-active,
+.emotion-0 .MuiStepConnector-root.Mui-completed {
+  border-top: 1px solid #0D71C8;
+}
+
+.emotion-0 .MuiStepConnector-root.MuiStepConnector-alternativeLabel {
+  top: 15px;
+}
+
+.emotion-0 .MuiStep-root {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-3 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.emotion-4 .MuiStepIcon-text {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.emotion-4 .MuiStepIcon-root {
+  color: #FFFFFF;
+  border: 1px solid #BACAD0;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+
+.emotion-4 .MuiStepIcon-root text {
+  fill: #545F67;
+}
+
+.emotion-4 .MuiStepIcon-root.Mui-active {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #0D71C8;
+  color: #0D71C8;
+  padding: 2px;
+}
+
+.emotion-4 .MuiStepIcon-root.Mui-active text {
+  fill: #FFFFFF;
+}
+
+.emotion-4 .MuiStepLabel-iconContainer {
+  padding-right: 6px;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-6.MuiStepLabel-alternativeLabel {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-6.Mui-disabled {
+  cursor: default;
+}
+
+.emotion-7 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-right: 8px;
+}
+
+.emotion-7.MuiStepLabel-alternativeLabel {
+  padding-right: 0;
+}
+
+.emotion-8 {
+  width: 24px;
+  height: 24px;
+  background-color: #0D71C8;
+  border-radius: 50%;
+}
+
+.emotion-8 .custom-completed-icon {
+  -webkit-transform: translateY(65%);
+  -moz-transform: translateY(65%);
+  -ms-transform: translateY(65%);
+  transform: translateY(65%);
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: white;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+.emotion-12 {
+  width: 100%;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.emotion-12.MuiStepLabel-alternativeLabel {
+  text-align: center;
+}
+
+.emotion-13 {
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+  display: block;
+  -webkit-transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.emotion-13.Mui-active {
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 500;
+}
+
+.emotion-13.Mui-completed {
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 500;
+}
+
+.emotion-13.MuiStepLabel-alternativeLabel {
+  margin-top: 16px;
+}
+
+.emotion-13.Mui-error {
+  color: #d32f2f;
+}
+
+.emotion-14 {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.emotion-15 {
+  display: block;
+  border-color: #bdbdbd;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+.emotion-21 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-size: 1.5rem;
+  display: block;
+  -webkit-transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.emotion-21.Mui-completed {
+  color: #1976d2;
+}
+
+.emotion-21.Mui-active {
+  color: #1976d2;
+}
+
+.emotion-21.Mui-error {
+  color: #d32f2f;
+}
+
+.emotion-22 {
+  fill: #fff;
+  font-size: 0.75rem;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+}
+
+<div>
+  <div
+    class="mui-stepper-section-wrapper emotion-0 emotion-1"
+    id="undefined-mui-stepper-section-wrapper"
+  >
+    <div
+      class="MuiStepper-root MuiStepper-horizontal mui-stepper-item emotion-2"
+    >
+      <div
+        class="MuiStep-root MuiStep-horizontal Mui-completed mui-stepper-step-0 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-completed emotion-7"
+            >
+              <div
+                class="custom-completed-icon-wrapper emotion-8 emotion-9"
+              >
+                <div
+                  class="custom-completed-icon"
+                >
+                  <span
+                    class="emotion-10 emotion-11"
+                    color="white"
+                    data-testid="svg-icon-wrapper-completed-check"
+                    id="completed-step-icon"
+                  >
+                    <svg
+                      aria-label="completed-check icon"
+                      data-testid="svg-icon-svg-completed-check"
+                      fill="white"
+                      height="10px"
+                      preserveAspectRatio="none"
+                      role="img"
+                      viewBox="0 0 10 10"
+                      width="10px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M9.73786 0.188788C9.976 0.403441 10.0165 0.797611 9.82824 1.06919L4.08375 9.35796C3.95725 9.5461 3.7935 9.69748 3.60586 9.7997C3.41642 9.9029 3.20811 9.95301 2.99827 9.94586C2.78842 9.93871 2.58311 9.87451 2.39941 9.7586C2.21789 9.64406 2.06266 9.4823 1.94632 9.28651L0.154238 6.386C-0.0205974 6.10302 0.0388146 5.71199 0.286939 5.51259C0.535063 5.3132 0.877939 5.38096 1.05278 5.66393L2.84813 8.56974L2.85556 8.58208C2.87497 8.61515 2.90103 8.64245 2.93156 8.66172C2.96209 8.68098 2.99621 8.69165 3.03109 8.69284C3.06597 8.69403 3.10059 8.6857 3.13208 8.66855C3.16356 8.6514 3.191 8.62592 3.21211 8.59423L3.21856 8.58472L8.96589 0.291864C9.1541 0.0202836 9.49973 -0.0258648 9.73786 0.188788Z"
+                        fill="inherit"
+                        fill-rule="evenodd"
+                        stroke="inherit"
+                        stroke-width=""
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            >
+              <span
+                class="MuiStepLabel-label Mui-completed emotion-13"
+              >
+                Step 1
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStepConnector-root MuiStepConnector-horizontal Mui-active emotion-14"
+      >
+        <span
+          class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-15"
+        />
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal mui-stepper-step-1 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-active emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root Mui-active emotion-21"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-22"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  2
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            >
+              <span
+                class="MuiStepLabel-label Mui-active emotion-13"
+              >
+                Step 2
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`StepperItem Snapshots not displayLabel alternativeLabel 1`] = `
+.emotion-0 {
+  width: 100%;
+}
+
+.emotion-0 .MuiStepLabel-label {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  color: #BACAD0;
+}
+
+.emotion-0 .MuiStepLabel-label.MuiStepLabel-alternativeLabel {
+  margin-top: 6px;
+}
+
+.emotion-0 .MuiStepLabel-label.Mui-active,
+.emotion-0 .MuiStepLabel-label.Mui-completed {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0D71C8;
+}
+
+.emotion-0 .MuiStepConnector-line {
+  display: none;
+}
+
+.emotion-0 .MuiStepConnector-root {
+  border-top: 1px dashed #BACAD0;
+}
+
+.emotion-0 .MuiStepConnector-root.Mui-active,
+.emotion-0 .MuiStepConnector-root.Mui-completed {
+  border-top: 1px solid #0D71C8;
+}
+
+.emotion-0 .MuiStepConnector-root.MuiStepConnector-alternativeLabel {
+  top: 15px;
+}
+
+.emotion-0 .MuiStep-root {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.emotion-3 {
+  padding-left: 8px;
+  padding-right: 8px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+}
+
+.emotion-4 .MuiStepIcon-text {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.emotion-4 .MuiStepIcon-root {
+  color: #FFFFFF;
+  border: 1px solid #BACAD0;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  -webkit-transform: translateY(2px);
+  -moz-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.emotion-4 .MuiStepIcon-root text {
+  fill: #545F67;
+}
+
+.emotion-4 .MuiStepIcon-root.Mui-active {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #0D71C8;
+  color: #0D71C8;
+  padding: 2px;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+.emotion-4 .MuiStepIcon-root.Mui-active text {
+  fill: #FFFFFF;
+}
+
+.emotion-4 .MuiStepLabel-iconContainer {
+  padding-right: 0;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-6.MuiStepLabel-alternativeLabel {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-6.Mui-disabled {
+  cursor: default;
+}
+
+.emotion-7 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-right: 8px;
+}
+
+.emotion-7.MuiStepLabel-alternativeLabel {
+  padding-right: 0;
+}
+
+.emotion-8 {
+  width: 24px;
+  height: 24px;
+  background-color: #0D71C8;
+  border-radius: 50%;
+  -webkit-transform: translateY(2px);
+  -moz-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  transform: translateY(2px);
+}
+
+.emotion-8 .custom-completed-icon {
+  -webkit-transform: translateY(65%);
+  -moz-transform: translateY(65%);
+  -ms-transform: translateY(65%);
+  transform: translateY(65%);
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: white;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+.emotion-12 {
+  width: 100%;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.emotion-12.MuiStepLabel-alternativeLabel {
+  text-align: center;
+}
+
+.emotion-14 {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  position: absolute;
+  top: 12px;
+  left: calc(-50% + 20px);
+  right: calc(50% + 20px);
+}
+
+.emotion-15 {
+  display: block;
+  border-color: #bdbdbd;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+.emotion-20 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-size: 1.5rem;
+  display: block;
+  -webkit-transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.emotion-20.Mui-completed {
+  color: #1976d2;
+}
+
+.emotion-20.Mui-active {
+  color: #1976d2;
+}
+
+.emotion-20.Mui-error {
+  color: #d32f2f;
+}
+
+.emotion-21 {
+  fill: #fff;
+  font-size: 0.75rem;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+}
+
+<div>
+  <div
+    class="mui-stepper-section-wrapper emotion-0 emotion-1"
+    id="undefined-mui-stepper-section-wrapper"
+  >
+    <div
+      class="MuiStepper-root MuiStepper-horizontal MuiStepper-alternativeLabel mui-stepper-item emotion-2"
+    >
+      <div
+        class="MuiStep-root MuiStep-horizontal MuiStep-alternativeLabel Mui-completed mui-stepper-step-0 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal MuiStepLabel-alternativeLabel mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-completed MuiStepLabel-alternativeLabel emotion-7"
+            >
+              <div
+                class="custom-completed-icon-wrapper emotion-8 emotion-9"
+              >
+                <div
+                  class="custom-completed-icon"
+                >
+                  <span
+                    class="emotion-10 emotion-11"
+                    color="white"
+                    data-testid="svg-icon-wrapper-completed-check"
+                    id="completed-step-icon"
+                  >
+                    <svg
+                      aria-label="completed-check icon"
+                      data-testid="svg-icon-svg-completed-check"
+                      fill="white"
+                      height="10px"
+                      preserveAspectRatio="none"
+                      role="img"
+                      viewBox="0 0 10 10"
+                      width="10px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M9.73786 0.188788C9.976 0.403441 10.0165 0.797611 9.82824 1.06919L4.08375 9.35796C3.95725 9.5461 3.7935 9.69748 3.60586 9.7997C3.41642 9.9029 3.20811 9.95301 2.99827 9.94586C2.78842 9.93871 2.58311 9.87451 2.39941 9.7586C2.21789 9.64406 2.06266 9.4823 1.94632 9.28651L0.154238 6.386C-0.0205974 6.10302 0.0388146 5.71199 0.286939 5.51259C0.535063 5.3132 0.877939 5.38096 1.05278 5.66393L2.84813 8.56974L2.85556 8.58208C2.87497 8.61515 2.90103 8.64245 2.93156 8.66172C2.96209 8.68098 2.99621 8.69165 3.03109 8.69284C3.06597 8.69403 3.10059 8.6857 3.13208 8.66855C3.16356 8.6514 3.191 8.62592 3.21211 8.59423L3.21856 8.58472L8.96589 0.291864C9.1541 0.0202836 9.49973 -0.0258648 9.73786 0.188788Z"
+                        fill="inherit"
+                        fill-rule="evenodd"
+                        stroke="inherit"
+                        stroke-width=""
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer MuiStepLabel-alternativeLabel emotion-12"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal MuiStep-alternativeLabel mui-stepper-step-1 emotion-3"
+      >
+        <div
+          class="MuiStepConnector-root MuiStepConnector-horizontal MuiStepConnector-alternativeLabel Mui-active emotion-14"
+        >
+          <span
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-15"
+          />
+        </div>
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal MuiStepLabel-alternativeLabel mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-active MuiStepLabel-alternativeLabel emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root Mui-active emotion-20"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-21"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  2
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer MuiStepLabel-alternativeLabel emotion-12"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal MuiStep-alternativeLabel mui-stepper-step-2 emotion-3"
+      >
+        <div
+          class="MuiStepConnector-root MuiStepConnector-horizontal MuiStepConnector-alternativeLabel Mui-disabled emotion-14"
+        >
+          <span
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-15"
+          />
+        </div>
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled MuiStepLabel-alternativeLabel mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-disabled MuiStepLabel-alternativeLabel emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root emotion-20"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-21"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  3
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer MuiStepLabel-alternativeLabel emotion-12"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal MuiStep-alternativeLabel mui-stepper-step-3 emotion-3"
+      >
+        <div
+          class="MuiStepConnector-root MuiStepConnector-horizontal MuiStepConnector-alternativeLabel Mui-disabled emotion-14"
+        >
+          <span
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-15"
+          />
+        </div>
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled MuiStepLabel-alternativeLabel mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-disabled MuiStepLabel-alternativeLabel emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root emotion-20"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-21"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  4
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer MuiStepLabel-alternativeLabel emotion-12"
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`StepperItem Snapshots not displayLabel not alternativeLabel 1`] = `
+.emotion-0 {
+  width: 100%;
+}
+
+.emotion-0 .MuiStepLabel-label {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  color: #BACAD0;
+}
+
+.emotion-0 .MuiStepLabel-label.MuiStepLabel-alternativeLabel {
+  margin-top: 6px;
+}
+
+.emotion-0 .MuiStepLabel-label.Mui-active,
+.emotion-0 .MuiStepLabel-label.Mui-completed {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0D71C8;
+}
+
+.emotion-0 .MuiStepConnector-line {
+  display: none;
+}
+
+.emotion-0 .MuiStepConnector-root {
+  border-top: 1px dashed #BACAD0;
+}
+
+.emotion-0 .MuiStepConnector-root.Mui-active,
+.emotion-0 .MuiStepConnector-root.Mui-completed {
+  border-top: 1px solid #0D71C8;
+}
+
+.emotion-0 .MuiStepConnector-root.MuiStepConnector-alternativeLabel {
+  top: 15px;
+}
+
+.emotion-0 .MuiStep-root {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-3 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.emotion-4 .MuiStepIcon-text {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.emotion-4 .MuiStepIcon-root {
+  color: #FFFFFF;
+  border: 1px solid #BACAD0;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+
+.emotion-4 .MuiStepIcon-root text {
+  fill: #545F67;
+}
+
+.emotion-4 .MuiStepIcon-root.Mui-active {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #0D71C8;
+  color: #0D71C8;
+  padding: 2px;
+}
+
+.emotion-4 .MuiStepIcon-root.Mui-active text {
+  fill: #FFFFFF;
+}
+
+.emotion-4 .MuiStepLabel-iconContainer {
+  padding-right: 0;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-6.MuiStepLabel-alternativeLabel {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-6.Mui-disabled {
+  cursor: default;
+}
+
+.emotion-7 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-right: 8px;
+}
+
+.emotion-7.MuiStepLabel-alternativeLabel {
+  padding-right: 0;
+}
+
+.emotion-8 {
+  width: 24px;
+  height: 24px;
+  background-color: #0D71C8;
+  border-radius: 50%;
+}
+
+.emotion-8 .custom-completed-icon {
+  -webkit-transform: translateY(65%);
+  -moz-transform: translateY(65%);
+  -ms-transform: translateY(65%);
+  transform: translateY(65%);
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: white;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+.emotion-12 {
+  width: 100%;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.emotion-12.MuiStepLabel-alternativeLabel {
+  text-align: center;
+}
+
+.emotion-13 {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.emotion-14 {
+  display: block;
+  border-color: #bdbdbd;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+.emotion-20 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-size: 1.5rem;
+  display: block;
+  -webkit-transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.emotion-20.Mui-completed {
+  color: #1976d2;
+}
+
+.emotion-20.Mui-active {
+  color: #1976d2;
+}
+
+.emotion-20.Mui-error {
+  color: #d32f2f;
+}
+
+.emotion-21 {
+  fill: #fff;
+  font-size: 0.75rem;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+}
+
+<div>
+  <div
+    class="mui-stepper-section-wrapper emotion-0 emotion-1"
+    id="undefined-mui-stepper-section-wrapper"
+  >
+    <div
+      class="MuiStepper-root MuiStepper-horizontal mui-stepper-item emotion-2"
+    >
+      <div
+        class="MuiStep-root MuiStep-horizontal Mui-completed mui-stepper-step-0 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-completed emotion-7"
+            >
+              <div
+                class="custom-completed-icon-wrapper emotion-8 emotion-9"
+              >
+                <div
+                  class="custom-completed-icon"
+                >
+                  <span
+                    class="emotion-10 emotion-11"
+                    color="white"
+                    data-testid="svg-icon-wrapper-completed-check"
+                    id="completed-step-icon"
+                  >
+                    <svg
+                      aria-label="completed-check icon"
+                      data-testid="svg-icon-svg-completed-check"
+                      fill="white"
+                      height="10px"
+                      preserveAspectRatio="none"
+                      role="img"
+                      viewBox="0 0 10 10"
+                      width="10px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M9.73786 0.188788C9.976 0.403441 10.0165 0.797611 9.82824 1.06919L4.08375 9.35796C3.95725 9.5461 3.7935 9.69748 3.60586 9.7997C3.41642 9.9029 3.20811 9.95301 2.99827 9.94586C2.78842 9.93871 2.58311 9.87451 2.39941 9.7586C2.21789 9.64406 2.06266 9.4823 1.94632 9.28651L0.154238 6.386C-0.0205974 6.10302 0.0388146 5.71199 0.286939 5.51259C0.535063 5.3132 0.877939 5.38096 1.05278 5.66393L2.84813 8.56974L2.85556 8.58208C2.87497 8.61515 2.90103 8.64245 2.93156 8.66172C2.96209 8.68098 2.99621 8.69165 3.03109 8.69284C3.06597 8.69403 3.10059 8.6857 3.13208 8.66855C3.16356 8.6514 3.191 8.62592 3.21211 8.59423L3.21856 8.58472L8.96589 0.291864C9.1541 0.0202836 9.49973 -0.0258648 9.73786 0.188788Z"
+                        fill="inherit"
+                        fill-rule="evenodd"
+                        stroke="inherit"
+                        stroke-width=""
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStepConnector-root MuiStepConnector-horizontal Mui-active emotion-13"
+      >
+        <span
+          class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-14"
+        />
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal mui-stepper-step-1 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-active emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root Mui-active emotion-20"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-21"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  2
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStepConnector-root MuiStepConnector-horizontal Mui-disabled emotion-13"
+      >
+        <span
+          class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-14"
+        />
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal mui-stepper-step-2 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-disabled emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root emotion-20"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-21"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  3
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStepConnector-root MuiStepConnector-horizontal Mui-disabled emotion-13"
+      >
+        <span
+          class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-14"
+        />
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal mui-stepper-step-3 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-disabled emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root emotion-20"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-21"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  4
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`StepperItem Snapshots not displayLabel not alternativeLabel customIcon 1`] = `
+.emotion-0 {
+  width: 100%;
+}
+
+.emotion-0 .MuiStepLabel-label {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  color: #BACAD0;
+}
+
+.emotion-0 .MuiStepLabel-label.MuiStepLabel-alternativeLabel {
+  margin-top: 6px;
+}
+
+.emotion-0 .MuiStepLabel-label.Mui-active,
+.emotion-0 .MuiStepLabel-label.Mui-completed {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0D71C8;
+}
+
+.emotion-0 .MuiStepConnector-line {
+  display: none;
+}
+
+.emotion-0 .MuiStepConnector-root {
+  border-top: 1px dashed #BACAD0;
+}
+
+.emotion-0 .MuiStepConnector-root.Mui-active,
+.emotion-0 .MuiStepConnector-root.Mui-completed {
+  border-top: 1px solid #0D71C8;
+}
+
+.emotion-0 .MuiStepConnector-root.MuiStepConnector-alternativeLabel {
+  top: 15px;
+}
+
+.emotion-0 .MuiStep-root {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-3 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.emotion-4 .MuiStepIcon-text {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.emotion-4 .MuiStepIcon-root {
+  color: #FFFFFF;
+  border: 1px solid #BACAD0;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+
+.emotion-4 .MuiStepIcon-root text {
+  fill: #545F67;
+}
+
+.emotion-4 .MuiStepIcon-root.Mui-active {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #0D71C8;
+  color: #0D71C8;
+  padding: 2px;
+}
+
+.emotion-4 .MuiStepIcon-root.Mui-active text {
+  fill: #FFFFFF;
+}
+
+.emotion-4 .MuiStepLabel-iconContainer {
+  padding-right: 0;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-6.MuiStepLabel-alternativeLabel {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-6.Mui-disabled {
+  cursor: default;
+}
+
+.emotion-7 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-right: 8px;
+}
+
+.emotion-7.MuiStepLabel-alternativeLabel {
+  padding-right: 0;
+}
+
+.emotion-8 {
+  width: 24px;
+  height: 24px;
+  background-color: #0D71C8;
+  border-radius: 50%;
+}
+
+.emotion-8 .custom-completed-icon {
+  -webkit-transform: translateY(65%);
+  -moz-transform: translateY(65%);
+  -ms-transform: translateY(65%);
+  transform: translateY(65%);
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: white;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+.emotion-12 {
+  width: 100%;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.emotion-12.MuiStepLabel-alternativeLabel {
+  text-align: center;
+}
+
+.emotion-13 {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.emotion-14 {
+  display: block;
+  border-color: #bdbdbd;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+.emotion-20 {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-size: 1.5rem;
+  display: block;
+  -webkit-transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.emotion-20.Mui-completed {
+  color: #1976d2;
+}
+
+.emotion-20.Mui-active {
+  color: #1976d2;
+}
+
+.emotion-20.Mui-error {
+  color: #d32f2f;
+}
+
+.emotion-21 {
+  fill: #fff;
+  font-size: 0.75rem;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+}
+
+<div>
+  <div
+    class="mui-stepper-section-wrapper emotion-0 emotion-1"
+    id="undefined-mui-stepper-section-wrapper"
+  >
+    <div
+      class="MuiStepper-root MuiStepper-horizontal mui-stepper-item emotion-2"
+    >
+      <div
+        class="MuiStep-root MuiStep-horizontal Mui-completed mui-stepper-step-0 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-completed emotion-7"
+            >
+              <div
+                class="custom-completed-icon-wrapper emotion-8 emotion-9"
+              >
+                <div
+                  class="custom-completed-icon"
+                >
+                  <span
+                    class="emotion-10 emotion-11"
+                    color="white"
+                    data-testid="svg-icon-wrapper-user"
+                    id="completed-step-icon"
+                  >
+                    <svg
+                      aria-label="user icon"
+                      data-testid="svg-icon-svg-user"
+                      fill="white"
+                      height="10px"
+                      preserveAspectRatio="none"
+                      role="img"
+                      viewBox="0 0 1024 1024"
+                      width="10px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 64c-106.038 0-192 85.962-192 192s85.962 192 192 192c106.038 0 192-85.962 192-192s-85.962-192-192-192zM256 256c0-141.385 114.615-256 256-256 141.382 0 256 114.615 256 256s-114.618 256-256 256c-141.385 0-256-114.615-256-256z M512 608c-101.843 0-199.515 40.454-271.529 112.474-72.014 72.013-112.471 169.683-112.471 271.526 0 17.67-14.327 32-32 32s-32-14.33-32-32c0-118.816 47.2-232.768 131.216-316.781 84.017-84.019 197.967-131.219 316.784-131.219s232.768 47.2 316.781 131.219c84.019 84.013 131.219 197.965 131.219 316.781 0 17.67-14.33 32-32 32s-32-14.33-32-32c0-101.843-40.454-199.514-112.474-271.526-72.013-72.019-169.683-112.474-271.526-112.474z"
+                        stroke="inherit"
+                        stroke-width=""
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStepConnector-root MuiStepConnector-horizontal Mui-active emotion-13"
+      >
+        <span
+          class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-14"
+        />
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal mui-stepper-step-1 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-active emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root Mui-active emotion-20"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-21"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  2
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStepConnector-root MuiStepConnector-horizontal Mui-disabled emotion-13"
+      >
+        <span
+          class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-14"
+        />
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal mui-stepper-step-2 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-disabled emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root emotion-20"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-21"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  3
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="MuiStepConnector-root MuiStepConnector-horizontal Mui-disabled emotion-13"
+      >
+        <span
+          class="MuiStepConnector-line MuiStepConnector-lineHorizontal emotion-14"
+        />
+      </div>
+      <div
+        class="MuiStep-root MuiStep-horizontal mui-stepper-step-3 emotion-3"
+      >
+        <div
+          class="mui-stepper-icon-wrapper emotion-4 emotion-5"
+        >
+          <span
+            class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled mui-stepper-label emotion-6"
+          >
+            <span
+              class="MuiStepLabel-iconContainer Mui-disabled emotion-7"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiStepIcon-root emotion-20"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="12"
+                />
+                <text
+                  class="MuiStepIcon-text emotion-21"
+                  dominant-baseline="central"
+                  text-anchor="middle"
+                  x="12"
+                  y="12"
+                >
+                  4
+                </text>
+              </svg>
+            </span>
+            <span
+              class="MuiStepLabel-labelContainer emotion-12"
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

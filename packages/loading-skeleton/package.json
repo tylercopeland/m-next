@@ -1,0 +1,48 @@
+{
+  "name": "@m-next/loading-skeleton",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Skeleton Loading widget",
+  "keywords": [
+    "Loading"
+  ],
+  "author": "Alexander Ballard <a.ballard@method.me>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "src/index.js",
+  "types": "src/loadingSkeleton.d.ts",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "index",
+    "loadingSkeleton.d.ts"
+  ],
+  "dependencies": {
+    "react-loading-skeleton": "^3.3.1"
+  },
+  "peerDependencies": {
+    "@emotion/react": ">=11.10.5",
+    "@emotion/styled": ">=11.10.5",
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2",
+    "prop-types": ">=15.8.1"
+
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "build": "npm run prettify && npm run lint && npm run test &&  webpack --mode production",
+    "prettify": "npx prettier \"**/*.*(js|jsx)\" --ignore-path=.prettierignore --write --log-level=error",
+    "release": "npm build && npm publish build --tag next",
+    "test": "jest",
+    "test-storybook": "jest --json --outputFile=.jest-test-results.json",
+    "test-snapshot-update": "npm run test -- -u",
+    "lint-js": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --cache --report-unused-disable-directives --max-warnings=0",
+    "lint-ls": "npx ls-lint",
+    "lint": "npm run lint-js && npm run lint-ls",
+    "lint-fix": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix --cache --report-unused-disable-directives --max-warnings=0"
+  }
+}

@@ -1,0 +1,234 @@
+.mi-view-manager-panel
+	padding-bottom: 270px
+
+	.mi-vm-list-selection
+		display: block
+		margin: 0 1rem
+		padding-top: 10px
+
+	.mi-vm-header
+		display: flex
+		align-items: center
+		justify-content: space-between
+		margin: 0 1rem
+		padding: 20px 0 6px 0
+		border-bottom: 1px solid $grey-light
+		cursor: pointer
+
+		.mi-vm-title
+			color: $blue-darker
+			font-size: 12px
+			font-weight: bold
+			white-space: nowrap
+			overflow: hidden
+			text-overflow: ellipsis
+			text-transform: uppercase
+
+		.link
+			font-size: 12px
+			font-weight: bold
+			color: $blue
+
+	.mi-vm-list
+		display: block
+		margin: 0 1rem
+		padding: 0
+		list-style: none
+		list-style-type: none
+
+		.mi-vm-list-item
+			display: flex
+			align-items: center
+			justify-content: space-between
+			border-bottom: 1px solid $grey-light
+
+			.list-item-left
+				display: flex
+				position: relative
+				align-items: center
+				justify-content: flex-start
+				flex-grow: 0
+				flex-shrink: 1
+
+				&:after
+					content: ""
+					border-right: 1px solid $grey-light
+					position: absolute
+					height: 18px
+					right: 0
+
+			.list-item-center
+				display: flex
+				align-items: center
+				justify-content: flex-start
+				flex: 1
+				overflow: hidden
+
+			.list-item-right
+				position: relative
+				display: flex
+				align-items: center
+				justify-content: flex-end
+				flex-grow: 0
+				flex-shrink: 1
+
+			.item-move
+				display: flex
+				align-items: center
+				justify-content: center
+				cursor: move
+				padding: 8px 5px
+				color: $grey
+
+			.item-title
+				display: block
+				padding: 4px 5px
+				color: $blue-dark
+				font-weight: bold
+				white-space: nowrap
+				text-overflow: ellipsis
+				overflow: hidden
+				text-align: left
+
+				&.is-not-visible
+					opacity: 0.7
+					text-decoration: line-through
+
+			.item-edit-title
+				display: flex
+				padding: 4px 0
+				flex: 1
+
+				input
+					margin: 0 0 0 6px
+					flex: 1
+
+				.attach-icon
+					display: inline-block
+					border-width: 1px 1px 1px 0
+					border-style: solid
+					border-color: $grey-light
+					background-color: $white
+					padding-left: 10px
+					padding-right: 10px
+
+					&:before
+						font-size: 0.8rem
+
+					&.mi-icon-ok:before
+						color: $green
+						font-weight: 900
+
+					&.mi-icon-remove:before
+						color: $red
+						font-weight: 900
+
+			.list-item-icon
+				position: relative
+				display: flex
+				align-items: center
+				justify-content: center
+
+				a
+					padding: 8px 5px
+					position: relative
+					display: flex
+					align-items: center
+					justify-content: center
+					color: $grey-dark
+
+			.manage-views-submenu
+				position: absolute
+				top: 32px
+				right: -8px
+				display: none
+				padding: 2px 0
+				margin: 0
+				z-index: 200
+				background-color: $white
+				border: 1px solid $grey-alt
+				width: 260px
+				box-shadow: 1px 1px 2px rgba($black, 0.1)
+				+borderRadius
+
+				&.is-active
+					display: block
+
+				&:after, 
+				&:before 
+					bottom: 100%
+					right: 10px
+					border: solid transparent
+					content: " "
+					height: 0
+					width: 0
+					position: absolute
+					pointer-events: none
+
+				&:after 
+					border-color: transparent
+					border-bottom-color: $white
+					border-width: 7px
+					margin-right: 1px
+
+				&:before 
+					border-color: transparent
+					border-bottom-color: $grey-alt
+					border-width: 8px
+
+				li
+					display: block
+					cursor: pointer
+					padding: 0 10px
+
+					&:last-child
+						a
+							border-bottom: none
+
+					&:hover, 
+					&.is-active
+						color: $white
+						background-color: $blue
+
+						a
+							border-bottom-color: $blue
+
+							i, span
+								color: $white
+	            
+				a
+					display: flex
+					align-items: center
+					justify-content: flex-start
+					padding: 5px 0
+					border-bottom: 1px solid $grey-alt
+					cursor: pointer
+					overflow: hidden
+
+					i
+						display: flex
+						align-items: center
+						justify-content: center
+						color: $blue-dark
+
+					span
+						display: block
+						font-size: 14px
+						color: $blue-dark
+						padding-left: 5px
+						white-space: nowrap
+						text-overflow: ellipsis
+						overflow: hidden
+
+	.mi-vm-footer-bar
+		display: block
+		text-align: right
+		padding: 10px 0
+		margin: 0 1rem
+
+	.mi-back-link
+		float: left
+		margin-right: 10px
+		margin-top: 18px
+		color: $blue
+		font-weight: bold

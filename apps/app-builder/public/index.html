@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <meta name="robots" content="nofollow" />
+    <title>App Builder</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script>
+      (function () {
+        var RETRY_KEY = 'appBuilderChunkReloadAt';
+        var RETRY_COUNT_KEY = 'appBuilderChunkReloadCount';
+        var CACHE_BUST_KEY = '__chunk_reload';
+        var RETRY_COOLDOWN_MS = 3000;
+        var MAX_RETRIES = 3;
+        var CHUNK_ERROR_PATTERN =
+          /ChunkLoadError|Loading chunk [0-9]+ failed|Failed to fetch dynamically imported module|Importing a module script failed/i;
+
+        function readRetryTimestamp() {
+          try {
+            return Number(window.sessionStorage.getItem(RETRY_KEY) || '0');
+          } catch (_error) {
+            return 0;
+          }
+        }
+
+        function writeRetryTimestamp(value) {
+          try {
+            window.sessionStorage.setItem(RETRY_KEY, String(value));
+          } catch (_error) {
+            // Ignore storage failures and fall back to a best-effort reload.
+          }
+        }
+
+        function getErrorText(candidate) {
+          if (!candidate) {
+            return '';
+          }
+
+          var details = [];
+
+          if (candidate.name) {
+            details.push(candidate.name);
+          }
+
+          if (candidate.message) {
+            details.push(candidate.message);
+          }
+
+          if (typeof candidate === 'string') {
+            details.push(candidate);
+          }
+
+          return details.join(' ');
+        }
+
+        function isChunkLoadError(candidate) {
+          return CHUNK_ERROR_PATTERN.test(getErrorText(candidate));
+        }
+
+        function getRetryCount() {
+          try {
+            return Number(window.sessionStorage.getItem(RETRY_COUNT_KEY) || '0');
+          } catch (_error) {
+            return 0;
+          }
+        }
+
+        function shouldReload() {
+          var timeSinceLastRetry = Date.now() - readRetryTimestamp();
+          // Reset retry count if enough time has passed (app was working fine)
+          if (timeSinceLastRetry > 60000) {
+            try { window.sessionStorage.removeItem(RETRY_COUNT_KEY); } catch (_e) {}
+            return true;
+          }
+          // Allow retries with short cooldown, but cap total attempts
+          return timeSinceLastRetry > RETRY_COOLDOWN_MS && getRetryCount() < MAX_RETRIES;
+        }
+
+        function reloadWithCacheBust() {
+          if (!shouldReload()) {
+            return false;
+          }
+
+          writeRetryTimestamp(Date.now());
+          try {
+            var count = getRetryCount();
+            window.sessionStorage.setItem(RETRY_COUNT_KEY, String(count + 1));
+          } catch (_e) {}
+
+          var nextUrl = new URL(window.location.href);
+          nextUrl.searchParams.set(CACHE_BUST_KEY, String(Date.now()));
+          window.location.replace(nextUrl.toString());
+
+          return true;
+        }
+
+        window.__APP_BUILDER_CHUNK_RECOVERY__ = {
+          isChunkLoadError: isChunkLoadError,
+          reload: reloadWithCacheBust,
+        };
+
+        window.addEventListener(
+          'error',
+          function (event) {
+            var target = event.target;
+
+            if (target && target.tagName === 'SCRIPT' && /\/assets\/js\//.test(target.src || '')) {
+              reloadWithCacheBust();
+              return;
+            }
+
+            if (isChunkLoadError(event.error)) {
+              reloadWithCacheBust();
+            }
+          },
+          true,
+        );
+
+        window.addEventListener('unhandledrejection', function (event) {
+          if (isChunkLoadError(event.reason)) {
+            reloadWithCacheBust();
+          }
+        });
+
+        // Fallback: if the app hasn't mounted after 8 seconds, scripts likely failed to load.
+        // The error event on <script defer> doesn't always propagate to window in all browsers.
+        var MOUNT_TIMEOUT_MS = 8000;
+        window.__APP_BUILDER_MOUNTED__ = false;
+        setTimeout(function () {
+          if (!window.__APP_BUILDER_MOUNTED__) {
+            var root = document.getElementById('root');
+            var hasContent = root && root.children.length > 0;
+            if (!hasContent) {
+              reloadWithCacheBust();
+            }
+          }
+        }, MOUNT_TIMEOUT_MS);
+
+        if (window.location.search.indexOf(CACHE_BUST_KEY + '=') !== -1) {
+          var cleanedUrl = new URL(window.location.href);
+          cleanedUrl.searchParams.delete(CACHE_BUST_KEY);
+          window.history.replaceState(null, document.title, cleanedUrl.toString());
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root" />
+    <div id="modal-root"></div>
+  </body>
+</html>

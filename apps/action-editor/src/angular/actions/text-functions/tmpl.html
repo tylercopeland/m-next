@@ -1,0 +1,418 @@
+<div data-ng-controller="TextFunctionsCtrl">
+    <mi-action-description info="action"></mi-action-description>
+    <!-- Main Content Area -->
+    <div class="mi-ae-main-content">
+        <!-- Step 1 -->
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-6">
+                <label class="mi-ae-label">Select a function</label>
+            </div>
+            <div class="mi-ae-col-8">
+                <ui-select data-ng-model="action.TextFunctionType" theme="selectize" search-enabled="false" ng-disabled="action.isReadOnly">
+                    <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+                    <ui-select-choices repeat="opt.value as opt in functionTypes">
+                        <span ng-bind-html="opt.label"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+
+        <h3>Evaluate The Following</h3>
+
+        <!-- Find in JSON Function -->
+        <div data-ng-if="action.TextFunctionType === 0">
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">JSON text</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-complex-value action="action"
+                                      model="action.Source"
+                                      allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+            </div>
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">Find value for key</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-complex-value action="action"
+                                      model="action.Options.SearchText"
+                                      allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search In Text Function -->
+        <div data-ng-if="action.TextFunctionType === 1">
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">Find the</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <ul class="mi-radiobutton-group">
+                        <li class="rad-horizontal" data-ng-repeat="opt in textFindList">
+                            <label for="{{ opt.label }}" class="mi-radio-checkbox mi-radio">
+                                <span>{{ opt.label }}</span>
+                                <input type="radio" data-ng-model="action.Options.FindLast" data-ng-value="{{ opt.value }}" id="{{ opt.label }}" ng-disabled="action.isReadOnly">
+                                <div class="mi-radio-checkbox-indicator"></div>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">Occurence of</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-complex-value action="action"
+                                      model="action.Options.SearchText"
+                                      allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+            </div>
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">Inside the text</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-complex-value action="action"
+                                      model="action.Source"
+                                      allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+            </div>
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">Starting at character</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-complex-value action="action"
+                                      model="action.Options.StartIndex"
+                                      allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+            </div>
+        </div>
+
+        <!-- Is Date, Is Empty, Is Numeric, Length, LowerCase, UpperCase, TitleCase, IsEmailAddress Functions -->
+        <div data-ng-if="(action.TextFunctionType >= 2 && action.TextFunctionType <= 4) || action.TextFunctionType === 9 || (action.TextFunctionType >= 12 && action.TextFunctionType <= 15)">
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">{{ mainLabel }}</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-complex-value action="action"
+                                      model="action.Source"
+                                      allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+            </div>
+        </div>
+
+        <!-- Join Functions -->
+        <div data-ng-if="action.TextFunctionType === 5">
+            <div class="mi-ae-row" data-ng-repeat="value in action.Options.TextValues">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">{{ ($index === 0) ? 'Join this' : ($index === 1) ? 'With this' : 'And then this' }}</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-complex-value action="action"
+                                      model="value"
+                                      allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+                <div class="mi-ae-col-2" data-ng-show="($index !== 0 && $index !== 1) && !action.isReadOnly">
+                    <miae-button 
+                        button-class="'ghost mi-button-clear'" 
+                        clickevent="removeJoin($index)"
+                        svg-icon-type="'delete'" 
+                        svg-icon-size="14"></miae-button>
+                </div>
+            </div>
+            <miae-button name="' Add another join'"
+                       button-class="'ghost mi-button-clear'"
+                       clickevent="addJoin()" 
+                       data-ng-if="!action.isReadOnly"
+                       svg-icon-type="'circle-plus'" 
+                       svg-icon-size="14"></miae-button>
+        </div>
+
+        <!-- Left, Right Functions -->
+        <div data-ng-if="action.TextFunctionType === 6 || action.TextFunctionType === 7">
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">Extract text from</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-complex-value action="action"
+                                      model="action.Source"
+                                      allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+            </div>
+
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">Search using</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <ul class="mi-radiobutton-group">
+                        <li class="rad-horizontal" data-ng-repeat="opt in searchUsing">
+                            <label for="LR-{{ opt.label }}" class="mi-radio-checkbox mi-radio">
+                                <span>{{ opt.label }}</span>
+                                <input type="radio" data-ng-model="radio.isPosition" data-ng-value="{{ opt.value }}" id="LR-{{ opt.label }}" data-ng-change="updateSearchUsing()" ng-disabled="action.isReadOnly">
+                                <div class="mi-radio-checkbox-indicator"></div>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Position -->
+            <div class="mi-ae-row" data-ng-if="radio.isPosition">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label" style="line-height: 16px;">{{ getLRPositionLabel() }}</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-complex-value action="action"
+                                      model="action.Options.Length"
+                                      allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+            </div>
+
+            <!-- Text -->
+            <div class="mi-ae-row" data-ng-if="!radio.isPosition">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label" style="line-height: 16px;">{{ getLRPositionLabel() }}</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-complex-value action="action"
+                                      model="action.Options.SearchText"
+                                      allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Function -->
+        <div data-ng-if="action.TextFunctionType === 8">
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">Extract the text from</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-complex-value action="action"
+                                      model="action.Source"
+                                      allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+            </div>
+            
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">Search using</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <ul class="mi-radiobutton-group">
+                        <li class="rad-horizontal" data-ng-repeat="opt in searchUsing">
+                            <label for="Substring-{{ opt.label }}" class="mi-radio-checkbox mi-radio">
+                                <span>{{ opt.label }}</span>
+                                <input type="radio" data-ng-model="radio.isPosition" data-ng-value="{{ opt.value }}" id="Substring-{{ opt.label }}" data-ng-change="updateSearchUsing()" ng-disabled="action.isReadOnly">
+                                <div class="mi-radio-checkbox-indicator"></div>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Position -->
+            <div data-ng-if="radio.isPosition">
+                <div class="mi-ae-row">
+                    <div class="mi-ae-col-6">
+                        <label class="mi-ae-label">Return this number of characters</label>
+                    </div>
+                    <div class="mi-ae-col-8">
+                      <mi-complex-value action="action"
+                                        model="action.Options.Length"
+                                        allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                    </div>
+                </div>
+                <div class="mi-ae-row">
+                    <div class="mi-ae-col-6">
+                        <label class="mi-ae-label">Starting at position</label>
+                    </div>
+                    <div class="mi-ae-col-8">
+                      <mi-complex-value action="action"
+                                        model="action.Options.StartIndex"
+                                        allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text -->
+            <div data-ng-if="!radio.isPosition">
+                <div class="mi-ae-row">
+                    <div class="mi-ae-col-6">
+                        <label class="mi-ae-label">Return characters between this</label>
+                    </div>
+                    <div class="mi-ae-col-8">
+                        <mi-complex-value action="action"
+                                      model="action.Options.StartText"
+                                      allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                    </div>
+                </div>
+                <div class="mi-ae-row">
+                    <div class="mi-ae-col-6">
+                        <label class="mi-ae-label">And this</label>
+                    </div>
+                    <div class="mi-ae-col-8">
+                        <mi-complex-value action="action"
+                                      model="action.Options.EndText"
+                                      allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Replace Function -->
+        <div data-ng-if="action.TextFunctionType === 10">
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">Within text</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-complex-value action="action"
+                                      model="action.Source"
+                                      allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+            </div>
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">Replace this</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-complex-value action="action"
+                                      model="action.Options.TextToReplace"
+                                      allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+            </div>
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">With this</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-complex-value action="action"
+                                      model="action.Options.ReplacementText"
+                                      allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+            </div>
+        </div>
+
+        <!-- Replace Function -->
+        <div data-ng-if="action.TextFunctionType === 11">
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">Using this text</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-complex-value action="action"
+                                      model="action.Source"
+                                      allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+            </div>
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">Merge data from this table</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-complex-value action="action"
+                                      model="action.Options.ViewFriendlyName"
+                                      allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+            </div>
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">Using this RecordID</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-complex-value action="action"
+                                      model="action.Options.RecordId"
+                                      allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+            </div>
+        </div>
+
+        <!-- Split Name Function -->
+        <div data-ng-if="action.TextFunctionType === 16">
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">Full name to split</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-complex-value action="action"
+                                      model="action.Source"
+                                      allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+                </div>
+            </div>
+            <p class="mi-ae-hint">Splits the name into first name and last name. Handles particles (de, da, del, van, von, bin, al) and multi-part names.</p>
+        </div>
+
+        <div class="mi-ae-row" data-ng-if="action.TextFunctionType === 5">
+            <div class="mi-ae-col-6">
+                <label class="mi-ae-label">Separate joins with</label>
+            </div>
+            <div class="mi-ae-col-4">
+                <ui-select data-ng-model="dropdown.separator" theme="selectize" ng-disabled="action.isReadOnly">
+                    <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+                    <ui-select-choices group-by="'category'" repeat="separate in separatorOptions | filter: $select.search">
+                        <span ng-bind-html="separate.label | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="mi-ae-col-4" data-ng-show="dropdown.separator.label === 'Text'">
+                <input type="text" data-ng-model="action.Options.Separator" ng-disabled="action.isReadOnly">
+            </div>
+        </div>
+
+        <!-- Result To Set - Standard (non-Split Name) -->
+        <div class="mi-ae-row" data-ng-if="action.TextFunctionType !== 16">
+            <div class="mi-ae-col-16">
+                <mi-result-to-set action="action"
+                                  item="action.ResultToSet"
+                                  col-widths="[6,8]"
+                                  include-controls="true"
+                                  controls-ignore="['SEC', 'DOC']"
+                                  control-model="action.ControlToUpdate" is-read-only ="action.isReadOnly"></mi-result-to-set>
+            </div>
+        </div>
+
+        <!-- Result To Set - Split Name (dual outputs) -->
+        <div data-ng-if="action.TextFunctionType === 16">
+            <h3>Store Results</h3>
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">Store First Name in</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-result-to-set action="action"
+                                      item="action.ResultToSet"
+                                      col-widths="[0,16]"
+                                      include-controls="true"
+                                      controls-ignore="['SEC', 'DOC']"
+                                      control-model="action.ControlToUpdate"
+                                      is-read-only ="action.isReadOnly"></mi-result-to-set>
+                </div>
+            </div>
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-6">
+                    <label class="mi-ae-label">Store Last Name in</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-result-to-set action="action"
+                                      item="action.SecondResultToSet"
+                                      col-widths="[0,16]"
+                                      include-controls="true"
+                                      controls-ignore="['SEC', 'DOC']"
+                                      control-model="action.SecondControlToUpdate"
+                                      is-read-only ="action.isReadOnly"></mi-result-to-set>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ Main Content Area -->
+     <mi-action-notes  is-read-only ="action.isReadOnly"></mi-action-notes>
+</div>

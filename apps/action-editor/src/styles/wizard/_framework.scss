@@ -1,0 +1,80 @@
+@import "../_variables.scss", 
+        "../designer/media-queries";
+
+.mi-wiz-framework {
+    display: block;
+    position: fixed;
+    top: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $gray-alt;
+    z-index: 200;
+    -webkit-transition: top 0.3s ease-in-out;
+    -moz-transition: top 0.3s ease-in-out;
+    -o-transition: top 0.3s ease-in-out;
+    transition: top 0.3s ease-in-out;
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        height: 70px;
+        width: 100%;
+        padding: 0 10px 10px 10px;
+
+        .mi-wiz-footer-wrapper {
+            background-color: white;
+            height: 100%;
+            width: 100%;
+
+            .mi-wiz-footer-content {
+                border-top: 1px $gray-border solid;
+                margin: 0 20px;
+                position: relative;
+                height: 100%;
+            }
+
+            .mi-wiz-footer-button-group {
+                display: block;
+                height: 50px;
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                padding: 10px;
+                width: 50%;
+
+                button {
+                    margin: 0 0 0 10px;
+                }
+
+                @include mobile-medium() {
+                    display: none;
+                }
+
+                &.is-mobile {
+                    display: none;
+                }
+
+                &:last-child {
+                    left: auto;
+                    right: 0;
+                    padding: 10px 0;
+                    width: 50%;
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    &.mi-wiz-framework-open {
+        top: 0;
+    }
+
+    .mi-wiz-fullheight {
+        height: 100%;
+    }
+
+
+    @import "framework/header", "framework/wrapper", "framework/steps";
+}

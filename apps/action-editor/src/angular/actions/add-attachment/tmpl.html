@@ -1,0 +1,48 @@
+<div data-ng-controller="AddAttachmentCtrl">
+  <mi-action-description info="action"></mi-action-description>
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content">
+    <!-- Table Selection -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Select a table</label>
+      </div>
+      <div class="mi-ae-col-8" mi-validation-class="action.ValidationMessages" error-property="'ViewNameFriendly'">
+        <ui-select data-ng-model="action.ViewNameFriendly" theme="selectize" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select a table...">{{$select.selected.value}}</ui-select-match>
+          <ui-select-choices repeat="table.value as table in tables | filter: $select.search">
+            <span ng-bind-html="table.value | highlight: $select.search"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Specify RecordID</label>
+      </div>
+      <div class="mi-ae-col-8">
+        <mi-complex-value action="action" model="action.RecordId" allow="allow" number-min-value="0" is-read-only="action.isReadOnly"></mi-complex-value>
+      </div>
+    </div>
+
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Attachment URL</label>
+      </div>
+      <div class="mi-ae-col-8" mi-validation-class="action.ValidationMessages" error-property="'Url'">
+        <mi-complex-value action="action" model="action.Url" allow="allowUrl" is-read-only="action.isReadOnly"></mi-complex-value>
+      </div>
+    </div>
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">To be included in email</label>
+      </div>
+      <div class="mi-ae-col-8" mi-validation-class="action.ValidationMessages" error-property="'AttachToEmail'">
+        <mi-complex-value action="action" model="action.AttachToEmail" allow="allowAttachToEmail" is-read-only="action.isReadOnly"></mi-complex-value>
+      </div>
+    </div>
+  </div>
+  <!--/ Main Content Area -->
+  <mi-action-notes is-read-only="action.isReadOnly"></mi-action-notes>
+</div>

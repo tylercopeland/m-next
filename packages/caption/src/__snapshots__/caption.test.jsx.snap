@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingSkeleton Snapshots Defaults 1`] = `
+.emotion-0 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    for=""
+    id="null-Caption"
+    style="font-size: 8.75px; color: rgb(218, 33, 30); text-align: left;"
+  >
+    Blue Fish
+  </div>
+</div>
+`;

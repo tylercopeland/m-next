@@ -1,0 +1,254 @@
+.chart-types {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+        color: $dark-grey;
+        border: 1px solid $card-border;
+        background-color: $card-border;
+        border-radius: 3px;
+        overflow: hidden;
+        margin-right: 10px;
+        box-sizing: border-box;
+
+        &.is-active {
+            color: $blue;
+            border-color: $blue;
+            background-color: $white;
+        }
+    }
+}
+
+.chart-short-offset {
+    margin-top: 74px;
+}
+
+.chart-tall-offset {
+    margin-top: 108px;
+}
+
+.chart-order-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    &.is-reversed {
+        .chart-order {
+            &:first-child { order: 2; }
+            &:last-child { order: 1; }
+        }
+    }
+
+    .chart-order {
+        width: 100%;
+
+        &:first-child { order: 1; }
+        &:last-child { order: 2; }
+    }
+}
+
+.chart-color-picker {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    justify-content: space-between;
+
+    label {
+        line-height: 16px;
+        margin-bottom: 0;
+    }
+
+    .chart-color-picker-selector {
+        display: block;
+        position: relative;
+
+        .chart-color-selected {
+            display: block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .chart-color-picker {
+            position: absolute;
+            display: none;
+            top: 20px;
+            left: 0;
+            z-index: 5;
+            width: 176px;
+            height: 88px;
+            cursor: pointer;
+
+            &.is-active {
+                display: block;
+            }
+
+            .chart-color-opt {
+                display: inline-block;
+                float: left;
+                width: 44px;
+                height: 44px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.chart-arrow-alt {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 67px;
+
+    &:before {
+        position: absolute;
+        right: 0;
+        top: 5px;
+        content: "";
+        width: 28px;
+        height: 45px;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+
+    &:after {
+        position: absolute;
+        content: "";
+        height: 10px;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        border-left: 6px solid black;
+        right: -6px;
+        top: 44px;
+    }
+}
+
+.chart-preview {
+    margin-top: 40px;
+}
+
+.mi-chart-dynamic {
+    position: relative;
+    display: block;
+    min-height: 30px;
+    width: auto;
+
+    &.is-open {
+        .mi-chart-dynamic-options {
+            display: block;
+        }
+    }
+
+    .mi-chart-dynamic-value {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+        height: 34px;
+        line-height: 34px;
+        padding: 6px 0;
+        border: 1px solid $card-border;
+        border-radius: 3px;
+        max-width: 200px;
+        float: right;
+
+        span {
+            height: 34px;
+            line-height: 22px;
+            padding: 6px 8px;
+            cursor: pointer;
+            width: 100%;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 34px;
+            font-size: 8px;
+            margin: 0;
+            opacity: 0.6;
+            padding: 6px 8px;
+            cursor: pointer;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    }
+
+    .mi-chart-dynamic-options {
+        position: absolute;
+        display: none;
+        top: 36px;
+        right: 0;
+        border: 1px solid $card-border;
+        box-shadow: -1px 1px 2px rgba($black, 0.1);
+        width: 100px;
+        height: auto;
+        background-color: $white;
+        z-index: 99;
+        @include borderRadius(3px);
+
+        &:after, 
+        &:before {
+            bottom: 100%;
+            right: 8px;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+        }
+
+        &:after {
+            border-color: transparent;
+            border-bottom-color: $white;
+            border-width: 7px;
+            margin-right: 0;
+        }
+
+        &:before {
+            border-color: transparent;
+            border-bottom-color: $card-border;
+            border-width: 8px;
+            margin-right: -1px;
+        }
+
+        a {
+            display: block;
+            padding: 8px 10px;
+            color: $black;
+            text-decoration: none;
+            cursor: pointer;
+            text-align: left;
+
+            &.is-active, 
+            &:hover {
+                color: $white;
+                background-color: $blue;
+            }
+        }
+    }
+}

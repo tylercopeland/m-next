@@ -1,0 +1,15 @@
+node_modules
+build
+dist
+coverage
+.eslintrc.js
+Prototypes
+Scripts
+Views
+Content
+public/css
+public/fonts
+public/js
+public/src
+public/styles
+public/tests

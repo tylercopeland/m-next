@@ -1,0 +1,134 @@
+.mi-ae-framework-wrapper {
+  display: block;
+  position: absolute;
+  top: $header-height + $header-border;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  overflow: hidden;
+
+  .mi-ae-framework-full-panel {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    box-sizing: border-box; 
+    overflow: hidden;
+  }
+
+  .mi-ae-framework-left-panel {
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: $panel-left-width;
+    height: 100%;
+    background-color: $white;
+    box-sizing: border-box;
+    overflow: hidden;
+    &.collapsed {
+      width: 28px;
+    }
+  }
+
+  .mi-ae-framework-right-panel {
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: $panel-right-width - 1;
+    margin-left: 10px;
+    height: 100%;
+    background-color: $white;
+    box-sizing: border-box;
+    overflow: hidden;
+    &.expanded {
+      width: 96.9%;
+    }
+  }
+}
+
+.mi-ae-framework-exterior {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: calc(100% - 50px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  // bottom: 50px;
+  overflow: hidden;
+  overflow-x: auto;
+  min-width: 1200px;
+  pointer-events: none;
+
+  .mi-ae-framework-wrapper {
+    pointer-events: auto;
+    flex-grow: 1;
+    position: relative;
+    padding: 10px;
+    overflow: hidden;
+    top: 0;
+
+    .mi-ae-framework-full-panel {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: $white;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .mi-ae-framework-left-panel {
+      display: block;
+      position: relative;
+      float: left;
+      width: $panel-left-width;
+      height: 100%;
+      background-color: $white;
+      box-sizing: border-box;
+      overflow: hidden;
+
+      &.collapsed {
+        width: 28px;
+      }
+    }
+
+    .mi-ae-framework-right-panel {
+      display: block;
+      position: relative;
+      float: left;
+      width: $panel-right-width - 1;
+      margin-left: 10px;
+      height: 100%;
+      background-color: $white;
+      box-sizing: border-box;
+      overflow: hidden;
+
+      &.expanded {
+        width: 96.9%;
+      }
+    }
+  }
+
+  .mi-ae-copilot-container {
+    pointer-events: auto;
+    width: 0;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &.open {
+      width: 368px;
+      flex-shrink: 0;
+    }
+
+    action-editor-copilot {
+      height: calc(100% - 70px);
+    }
+  }
+}
+

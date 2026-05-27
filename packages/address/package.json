@@ -1,0 +1,51 @@
+{
+  "name": "@m-next/address",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Address widget",
+  "keywords": [
+    "V5"
+  ],
+  "author": "Alexander Ballard <a.ballard@method.me>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "src/index.js",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "index"
+  ],
+  "dependencies": {
+    "@m-next/styles": "1.0.0",
+    "@m-next/container": "1.0.0",
+    "@m-next/utilities": "1.0.0",
+    "@m-next/typeography": "1.0.0",
+    "@m-next/input": "1.0.0",
+    "@m-next/input-area": "1.0.0",
+    "@m-next/loading-skeleton": "1.0.0"
+  },
+  "peerDependencies": {
+    "@emotion/react": ">=11.10.5",
+    "@emotion/styled": ">=11.10.5",
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2",
+    "prop-types": ">=15.8.1"
+
+  },
+
+  "scripts": {
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "build": "npm run prettify && npm run lint && npm run test &&  webpack --mode production",
+    "prettify": "npx prettier \"**/*.*(js|jsx)\" --ignore-path=.prettierignore --write --log-level=error",
+    "release": "npm build && npm publish build --tag next",
+    "test": "jest",
+    "test-storybook": "jest --json --outputFile=.jest-test-results.json",
+    "test-snapshot-update": "npm run test -- -u",
+    "lint-js": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --cache --report-unused-disable-directives --max-warnings=0",
+    "lint-ls": "npx ls-lint",
+    "lint": "npm run lint-js && npm run lint-ls",
+    "lint-fix": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix --cache --report-unused-disable-directives --max-warnings=0"
+  }
+}

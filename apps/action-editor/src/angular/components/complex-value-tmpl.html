@@ -1,0 +1,83 @@
+<div class="mi-ae-row">
+  <div
+    data-ng-class="{'mi-ae-col-16  mi-ae-col-sm-16': !dropdown.showMore, 'mi-ae-col-8  mi-ae-col-sm-16': dropdown.showMore}"
+    mi-validation-class="model.ValidationMessage"
+    error-property="['102','106', '138']"
+  >
+    <ui-select data-ng-model="dropdown.selected" theme="selectize" ng-disabled="disableValue || isReadOnly" title="{{ label }}">
+      <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+      <ui-select-choices group-by="'category'" group-filter="groupFilter" repeat="complex in complexSelect | filter: fieldTypeFilter(dropdown) | filter: { label: $select.search } | orderBy: 'label'">
+        <span ng-bind-html="complex.label | highlight: $select.search"></span>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+  <div class="mi-ae-col-8 mi-ae-col-sm-16" data-ng-show="dropdown.showMore" mi-validation-class="errorNumber" error-property="model.ValueType">
+    <!-- Expression Builder -->
+    <miae-button data-ng-if="!isReadOnly" name="'Edit Expression'" button-class="'ghost mi-button-clear'" hide-button="model.ValueType !== 1" clickevent="launchExpressionBuilder()"></miae-button>
+
+    <!-- Text Option -->
+    <input
+      type="text"
+      data-ng-class="'mi-ae-margin-0'"
+      data-ng-model="options.text"
+      data-ng-change="updateInputValue(options.text)"
+      data-ng-blur="updateInputValue(options.text)"
+      data-ng-show="model.ValueType === 8 || model.ValueType === 9"
+      data-ng-if="textAsInput"
+      data-ng-trim="false"
+      placeholder="{{ placeholder }}"
+      data-ng-disabled="isReadOnly"
+      ng-model-options="{ debounce: 500 }"
+      maxlength="{{maxLength}}"
+    />
+
+    <textarea
+      rows="4"
+      data-ng-style="maxLength ? {'resize': 'none'} : {'min-height': '100px'}"
+      data-ng-class="'mi-ae-margin-0'"
+      data-ng-model="options.text"
+      data-ng-change="updateInputValue(options.text)"
+      data-ng-blur="updateInputValue(options.text)"
+      data-ng-show="model.ValueType === 9"
+      data-ng-if="!textAsInput"
+      data-ng-trim="false"
+      placeholder="{{ placeholder }}"
+      data-ng-disabled="isReadOnly"
+      maxlength="{{maxLength}}"
+    ></textarea>
+
+    <!-- Date Option -->
+    <div class="mi-ae-datepicker" data-ng-show="model.ValueType === 11" data-ng-disabled="isReadOnly"></div>
+
+    <!-- Number Option -->
+    <input
+      type="number"
+      data-ng-class="'mi-ae-margin-0'"
+      data-ng-model="options.number"
+      data-ng-change="updateInputValue(options.number)"
+      data-ng-blur="validateNumberInput()"
+      data-ng-show="model.ValueType === 10"
+      placeholder="{{ placeholder }}"
+      min="{{ numberMinValue }}"
+      data-ng-disabled="isReadOnly"
+    />
+
+    <!-- Yes No Option -->
+    <ul class="mi-radiobutton-group" data-ng-show="model.ValueType === 12"  data-ng-disabled="isReadOnly">
+      <li class="rad-horizontal">
+        <label data-ng-click="updateInputValue(options.yesno)" class="mi-radio-checkbox mi-radio">
+          <span>Yes</span>
+          <input type="radio" data-ng-model="options.yesno" data-ng-value="true" data-ng-disabled="isReadOnly" />
+          <div class="mi-radio-checkbox-indicator"></div>
+        </label>
+      </li>
+      <li class="rad-horizontal">
+        <label data-ng-click="updateInputValue(options.yesno)" class="mi-radio-checkbox mi-radio">
+          <span>No</span>
+          <input type="radio" data-ng-model="options.yesno" data-ng-value="false" data-ng-disabled="isReadOnly" />
+          <div class="mi-radio-checkbox-indicator"></div>
+        </label>
+      </li>
+    </ul>
+  </div>
+</div>

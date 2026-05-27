@@ -1,0 +1,96 @@
+<span class="where-info">
+  <span class="error-dot" tooltip-placement="right" uib-tooltip="Error found"></span>
+  <span class="move"><i class="mi-icon mi-ae-drag-handle">
+      <svg-icon name="'move'" ng-attr-style="svgIconStyle" size="14">
+      </svg-icon>
+    </i></span>
+</span>
+
+<div class="where-row" data-ng-if="item.type === 'Condition'">
+  <div class="where-item">
+    <div class="mi-ae-row mi-ae-padding-b-5">
+      <div class="mi-ae-col-6 mi-ae-col-sm-15">
+        <mi-complex-value action="action" model="item.left.Source" allow="allow1st" table-name="tableName"
+          is-read-only="action.isReadOnly"></mi-complex-value>
+      </div>
+      <div class="mi-ae-col-4 mi-ae-col-sm-15">
+        <ui-select data-ng-model="item.compare.Operation" theme="selectize" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices repeat="opt.value as opt in operators | filter: $select.search">
+            <span ng-bind-html="opt.label | highlight: $select.search"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+      <div class="mi-ae-col-6 mi-ae-col-sm-15" data-ng-if="showRight">
+        <mi-complex-value action="action" model="item.right.Source" allow="allow2nd" table-name="tableName"
+          is-read-only="action.isReadOnly"></mi-complex-value>
+      </div>
+    </div>
+
+    <div class="mi-ae-row mi-ae-padding-b-5" data-ng-if="showCompare">
+      <div class="mi-ae-col-6 mi-ae-col-sm-15">
+        <span class="compare-as">Compare dates using</span>
+      </div>
+      <div class="mi-ae-col-4 mi-ae-col-sm-15">
+        <ui-select data-ng-model="item.compare.DateField" theme="selectize" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Compare As...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices repeat="opt.value as opt in compare | filter: $select.search">
+            <span ng-bind-html="opt.label | highlight: $select.search"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+  </div>
+  <div class="more-options">
+    <button class="mi-icon" tooltip-placement="bottom-right" uib-tooltip="Add condition below"
+      data-ng-click="addCondition()" ng-disabled="action.isReadOnly"><svg-icon
+      name="'circle-plus'"
+      ng-attr-style="svgIconStyle"
+      size="14">
+    </svg-icon></button>
+    <button class="mi-icon" tooltip-placement="bottom-right" uib-tooltip="Delete" data-ng-click="deleteItem()"
+      data-ng-hide="limited" ng-disabled="action.isReadOnly"><svg-icon
+      name="'delete'"
+      ng-attr-style="svgIconStyle"
+      size="14">
+    </svg-icon></button>
+  </div>
+</div>
+
+<div class="where-row" data-ng-if="item.type === 'Group'">
+  <div class="where-item">
+    <div class="mi-cb-condition-separator">
+      <span>If </span>
+      <span class="mi-ae-inline-block">
+        <ui-select data-ng-model="item.joiner" theme="selectize" search-enabled="false" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices repeat="opt.value as opt in joiners | filter: $select.search">
+            <span ng-bind-html="opt.label | highlight: $select.search"></span>
+          </ui-select-choices>
+        </ui-select>
+      </span>
+      <span>of the following are true:</span>
+    </div>
+  </div>
+  <div class="more-options">
+    <button class="mi-icon" tooltip-placement="bottom-right" uib-tooltip="Add condition below"
+      data-ng-click="addCondition()" ng-disabled="action.isReadOnly"><svg-icon
+      name="'circle-plus'"
+      ng-attr-style="svgIconStyle"
+      size="14">
+    </svg-icon></button>
+    <button class="mi-icon" tooltip-placement="bottom-right" uib-tooltip="Delete" data-ng-click="deleteItem()"
+      data-ng-hide="limited" ng-disabled="action.isReadOnly"><svg-icon
+      name="'delete'"
+      ng-attr-style="svgIconStyle"
+      size="14">
+    </svg-icon></button>
+  </div>
+</div>
+<ul data-ng-if="item.type === 'Group'" class="condition-items" ng-sortable="sortConfig">
+  <li data-ng-repeat="groupItem in item.items" data-ng-class="{'line-indent': groupItem.type === 'Group'}">
+    <miae-criteria-row item="groupItem" action="action" builder="builder" parent-array="item.items" loop-index="$index"
+      fields-only="fieldsOnly" additional-value-types="additionalValueTypes" table-name="tableName"
+      show-dynamic="showDynamic" is-read-only="action.isReadOnly"></miae-criteria-row>
+  </li>
+</ul>

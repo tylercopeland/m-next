@@ -1,0 +1,1237 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typeography Snapshots Default  highlight 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+  border-bottom: 1px dashed #BACAD0;
+}
+
+<div>
+  <p
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </p>
+</div>
+`;
+
+exports[`Typeography Snapshots Default 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <p
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </p>
+</div>
+`;
+
+exports[`Typeography Snapshots Div  highlight 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: default;
+  opacity: 1;
+  border-bottom: 1px dashed #BACAD0;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </div>
+</div>
+`;
+
+exports[`Typeography Snapshots Div 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: default;
+  opacity: 1;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </div>
+</div>
+`;
+
+exports[`Typeography Snapshots Text 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <span
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </span>
+</div>
+`;
+
+exports[`Typeography Snapshots Text highlight 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+  border-bottom: 1px dashed #BACAD0;
+}
+
+<div>
+  <span
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </span>
+</div>
+`;
+
+exports[`Typeography Snapshots Text mobile 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <span
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </span>
+</div>
+`;
+
+exports[`Typeography Snapshots Text mobile v4 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <span
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </span>
+</div>
+`;
+
+exports[`Typeography Snapshots TextLine 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <p
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </p>
+</div>
+`;
+
+exports[`Typeography Snapshots TextLine highlight 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+  border-bottom: 1px dashed #BACAD0;
+}
+
+<div>
+  <p
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </p>
+</div>
+`;
+
+exports[`Typeography Snapshots TextLine mobile 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <p
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </p>
+</div>
+`;
+
+exports[`Typeography Snapshots TextLine mobile v4 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <p
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </p>
+</div>
+`;
+
+exports[`Typeography Snapshots Themed Text 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #F8F8F8;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <span
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </span>
+</div>
+`;
+
+exports[`Typeography Snapshots Themed Text highlight 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #F8F8F8;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+  border-bottom: 1px dashed #BACAD0;
+}
+
+<div>
+  <span
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </span>
+</div>
+`;
+
+exports[`Typeography Snapshots Themed TextLine 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #F8F8F8;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <p
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </p>
+</div>
+`;
+
+exports[`Typeography Snapshots Themed TextLine highlight 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #F8F8F8;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+  border-bottom: 1px dashed #BACAD0;
+}
+
+<div>
+  <p
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </p>
+</div>
+`;
+
+exports[`Typeography Snapshots Themed h2 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <h2
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h2>
+</div>
+`;
+
+exports[`Typeography Snapshots Themed h3 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <h3
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h3>
+</div>
+`;
+
+exports[`Typeography Snapshots Themed h4 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <h4
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h4>
+</div>
+`;
+
+exports[`Typeography Snapshots Themed h5 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  min-height: 24px;
+  cursor: default;
+  opacity: 1;
+}
+
+<div>
+  <h5
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h5>
+</div>
+`;
+
+exports[`Typeography Snapshots Themed h5 highlight 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  min-height: 24px;
+  cursor: default;
+  opacity: 1;
+  border-bottom: 1px dashed #BACAD0;
+}
+
+<div>
+  <h5
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h5>
+</div>
+`;
+
+exports[`Typeography Snapshots Themed h6 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  min-height: 24px;
+  cursor: default;
+  opacity: 1;
+}
+
+<div>
+  <h6
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h6>
+</div>
+`;
+
+exports[`Typeography Snapshots Themed h6 highlight 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  min-height: 24px;
+  cursor: default;
+  opacity: 1;
+  border-bottom: 1px dashed #BACAD0;
+}
+
+<div>
+  <h6
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h6>
+</div>
+`;
+
+exports[`Typeography Snapshots Themed hq 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <h1
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h1>
+</div>
+`;
+
+exports[`Typeography Snapshots V4 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  line-height: 20px;
+  min-height: 20px;
+  opacity: 1;
+}
+
+<div>
+  <p
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </p>
+</div>
+`;
+
+exports[`Typeography Snapshots body2  highlight 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+  border-bottom: 1px dashed #BACAD0;
+}
+
+<div>
+  <span
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </span>
+</div>
+`;
+
+exports[`Typeography Snapshots body2 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <span
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </span>
+</div>
+`;
+
+exports[`Typeography Snapshots h1  highlight 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F1B31;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+  border-bottom: 1px dashed #BACAD0;
+}
+
+<div>
+  <h1
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h1>
+</div>
+`;
+
+exports[`Typeography Snapshots h1  highlight 2`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F1B31;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 4px;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <h1
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h1>
+</div>
+`;
+
+exports[`Typeography Snapshots h1 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F1B31;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <h1
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h1>
+</div>
+`;
+
+exports[`Typeography Snapshots h1 2`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F1B31;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 4px;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <h1
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h1>
+</div>
+`;
+
+exports[`Typeography Snapshots h2  highlight 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F1B31;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+  border-bottom: 1px dashed #BACAD0;
+}
+
+<div>
+  <h2
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h2>
+</div>
+`;
+
+exports[`Typeography Snapshots h2  highlight 2`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F1B31;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 4px;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <h2
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h2>
+</div>
+`;
+
+exports[`Typeography Snapshots h2 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F1B31;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <h2
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h2>
+</div>
+`;
+
+exports[`Typeography Snapshots h2 2`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F1B31;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 4px;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <h2
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h2>
+</div>
+`;
+
+exports[`Typeography Snapshots h3  highlight 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F1B31;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+  border-bottom: 1px dashed #BACAD0;
+}
+
+<div>
+  <h3
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h3>
+</div>
+`;
+
+exports[`Typeography Snapshots h3  highlight 2`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F1B31;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 4px;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <h3
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h3>
+</div>
+`;
+
+exports[`Typeography Snapshots h3 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F1B31;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <h3
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h3>
+</div>
+`;
+
+exports[`Typeography Snapshots h3 2`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F1B31;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 4px;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <h3
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h3>
+</div>
+`;
+
+exports[`Typeography Snapshots h4  highlight 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F1B31;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+  border-bottom: 1px dashed #BACAD0;
+}
+
+<div>
+  <h4
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h4>
+</div>
+`;
+
+exports[`Typeography Snapshots h4  highlight 2`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F1B31;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 4px;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <h4
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h4>
+</div>
+`;
+
+exports[`Typeography Snapshots h4 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F1B31;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <h4
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h4>
+</div>
+`;
+
+exports[`Typeography Snapshots h4 2`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F1B31;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 4px;
+  min-height: 24px;
+  cursor: text;
+  opacity: 1;
+}
+
+<div>
+  <h4
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h4>
+</div>
+`;
+
+exports[`Typeography Snapshots h5  highlight 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F1B31;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  min-height: 24px;
+  cursor: default;
+  opacity: 1;
+  border-bottom: 1px dashed #BACAD0;
+}
+
+<div>
+  <h5
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h5>
+</div>
+`;
+
+exports[`Typeography Snapshots h5  highlight 2`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F1B31;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 4px;
+  min-height: 24px;
+  cursor: default;
+  opacity: 1;
+}
+
+<div>
+  <h5
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h5>
+</div>
+`;
+
+exports[`Typeography Snapshots h6  highlight 1`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F1B31;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  min-height: 24px;
+  cursor: default;
+  opacity: 1;
+  border-bottom: 1px dashed #BACAD0;
+}
+
+<div>
+  <h6
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h6>
+</div>
+`;
+
+exports[`Typeography Snapshots h6  highlight 2`] = `
+.emotion-0 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F1B31;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 0.2rem;
+  margin-bottom: 4px;
+  min-height: 24px;
+  cursor: default;
+  opacity: 1;
+}
+
+<div>
+  <h6
+    class="emotion-0 emotion-1"
+    id="test"
+    opacity="1"
+  >
+    This is only a test
+  </h6>
+</div>
+`;

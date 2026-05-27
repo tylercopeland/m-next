@@ -1,0 +1,15 @@
+<div>
+  <ui-select data-ng-model="field.selected" theme="selectize"  ng-disabled="disableSelect" search-enabled="searchEnabled" on-select="onSelect()">
+    <ui-select-match placeholder="Select A Field..." allow-clear="true">
+        <span class="selected-value" ng-bind="$select.selected.label"></span>
+        <div class="mi-icon selectize-clear-opt" ng-click="clearOption()" data-ng-if="allowClear"><svg-icon
+          name="'close'"
+          ng-attr-style="svgIconStyle"
+          size="14">
+        </svg-icon></div>
+    </ui-select-match>
+    <ui-select-choices repeat="opt.value as opt in fields | filter: fieldFilter(field) | filter: filterLinked(field) | filter: $select.search">
+      <span ng-bind-html="opt.label | highlight: $select.search"></span>
+    </ui-select-choices>
+  </ui-select>
+</div>

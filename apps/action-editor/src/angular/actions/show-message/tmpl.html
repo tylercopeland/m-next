@@ -1,0 +1,67 @@
+<div data-ng-controller="ShowMessageCtrl">
+  <mi-action-description info="action"></mi-action-description>
+
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content">
+
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Title</label>
+      </div>
+      <div class="mi-ae-col-12">
+        <input type="text" data-ng-model="action.Title"  ng-disabled="action.isReadOnly" >
+      </div>
+    </div>
+
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Message</label>
+      </div>
+      <div class="mi-ae-col-12">
+        <textarea id="showMessage" class="mi-ae-editable-textarea" data-ng-model="editableMessage" ng-trim="false" rows="15" style="resize: none;"  ng-disabled="action.isReadOnly" ></textarea>
+      </div>
+    </div>
+
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Insert a value into the message</label>
+      </div>
+      <div class="mi-ae-col-12">
+        <ui-select data-ng-model="selection.dropdown" theme="selectize"  ng-disabled="action.isReadOnly" >
+          <ui-select-match placeholder="Select a value...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices group-by="'category'" group-filter="groupFilter" repeat="complex in selection.options | filter: { label: $select.search } | orderBy: 'label'">
+            <span ng-bind-html="complex.label | highlight: $select.search"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Show these button(s)</label>
+      </div>
+      <div class="mi-ae-col-6">
+        <ui-select data-ng-model="action.Buttons" theme="selectize" enable-search="false"  ng-disabled="action.isReadOnly" >
+            <ui-select-match placeholder="Select a value...">{{$select.selected.label}}</ui-select-match>
+            <ui-select-choices repeat="opt.value as opt in buttonOpts | orderBy: 'label'">
+                <span ng-bind-html="opt.label"></span>
+            </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+
+    <div data-ng-if="action.Buttons === 'no'">
+      <mi-result-to-set label="'Store button response in'" 
+                        action="action"
+                        item="action.ResultToSet"
+                        control="action.ControlToUpdate" 
+                        include-controls="true"
+                        controls-ignore="['SEC', 'DOC']" 
+                        col-widths="[4,12]"
+                        control-model="action.ControlToUpdate" is-read-only ="action.isReadOnly"></mi-result-to-set>
+    </div>
+  </div>
+  <!--/ Main Content Area -->
+
+   <mi-action-notes  is-read-only ="action.isReadOnly"></mi-action-notes>
+</div>

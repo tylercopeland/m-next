@@ -1,0 +1,43 @@
+<div data-ng-controller="ClosePopUpCtrl">
+    <mi-action-description info="action"></mi-action-description>
+  
+    <!-- Main Content Area -->
+    <div class="mi-ae-main-content">
+  
+      <!-- Close All Values Text -->
+      <div class="mi-ae-row mi-ae-margin-t-3 mi-ae-padding-b-20">
+        <div class="mi-ae-col-12 mi-ae-padding-l-5">
+          <span>This action returns the results and status, closes the Pop-Up and resumes the parent workflow.</span>
+        </div>
+      </div>
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Return this Result</label>
+        </div>
+        <div class="mi-ae-col-12">
+          <mi-complex-value action="action" model="action.ActiveRecordId" allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+        </div>
+      </div>
+
+      <!-- Modal Status - Simple String Input -->
+      <div class="mi-ae-section mi-ae-border-bottom mi-ae-margin-b-10">
+        <div class="mi-ae-row">
+          <div class="mi-ae-col-4">
+            <label class="mi-ae-label">Pop-Up Status on Close</label>
+          </div>
+          <div class="mi-ae-col-12">
+            <input 
+              type="text" 
+              class="form-control" 
+              ng-model="action.ModalStatus" 
+              placeholder="Enter modal status (e.g., Success, Failed, Cancelled)"
+              ng-disabled="action.isReadOnly">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Main Content Area -->
+  
+    <mi-action-notes is-read-only="action.isReadOnly"></mi-action-notes>
+  </div>
+  

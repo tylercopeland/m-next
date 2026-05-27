@@ -1,0 +1,206 @@
+//  Color theme icons
+@mixin icoColor($name, $color) {
+  &.button-#{$name},
+  &.mi-button-group-#{$name},
+  &.mi-button-group-text-#{$name},
+  &.mi-cell-#{$name},
+  &.mi-cell-border-#{$name},
+  &.mi-grid-background-#{$name},
+  &.mi-grid-header-#{$name},
+  &.mi-checkbox-#{$name},
+  &.mi-radio-#{$name},
+  &.mi-toggle-#{$name},
+  &.text-#{$name},
+  &.background-#{$name},
+  &.border-#{$name},
+  &.datepicker-#{$name},
+  &.tinymce-background-#{$name},
+  &.tinymce-border-#{$name},
+  &.mi-color-#{$name},
+  &.mi-caption-#{$name},
+  &.mi-grid-font-#{$name},
+  &.mi-grid-row-odd-#{$name},
+  &.mi-grid-row-even-#{$name},
+  &.mi-grid-footer-color-#{$name},
+  &.top-button-border-color-#{$name},
+  &.bottom-button-border-color-#{$name},
+  &.left-button-border-color-#{$name},
+  &.right-button-border-color-#{$name},
+  &.mi-section-header-background-#{$name},
+  &.mi-section-header-caption-#{$name},
+  &.mi-section-header-icon-#{$name},
+  &.mi-dropdown-text-#{$name},
+  &.np-background-#{$name},
+  &.mi-checkbox-label-#{$name},
+  &.mi-icon-color-#{$name},
+  &.mi-pay-form-top-border-color-#{$name},
+  &.mi-pay-form-bottom-border-color-#{$name},
+  &.mi-pay-form-left-border-color-#{$name},
+  &.mi-pay-form-right-border-color-#{$name},
+  &.mi-pay-label-#{$name},
+  &.mi-pay-textbox-background-#{$name},
+  &.mi-pay-textbox-text-#{$name},
+  &.mi-pay-textbox-top-border-color-#{$name},
+  &.mi-pay-textbox-bottom-border-color-#{$name},
+  &.mi-pay-textbox-left-border-color-#{$name},
+  &.mi-pay-textbox-right-border-color-#{$name},
+  &.mi-pay-caption-#{$name},
+  &.mi-top-border-color-#{$name},
+  &.mi-bottom-border-color-#{$name},
+  &.mi-left-border-color-#{$name},
+  &.mi-right-border-color-#{$name},
+  &.input-background-#{$name},
+  &.input-text-#{$name}
+  {
+      color: $color !important;
+  }
+}
+
+div[method_type=ICO] i, i {
+
+  @include icoColor('navigation', $m-darkest-blue);
+  @include icoColor('pink', $pink );
+  @include icoColor('alert', $m-red);
+  @include icoColor('primary', $blue);
+  @include icoColor('silver', $true-silver);
+  @include icoColor('caution', $m-orange);
+  @include icoColor('yellow', $yellow);
+  @include icoColor('success', $green);
+  @include icoColor('gunmetal', $gunmetal);
+  @include icoColor('dark-grey', $m-dark-grey);
+  @include icoColor('grey', $m-grey);
+  @include icoColor('black', $black);
+  @include icoColor('aqua', $aqua);
+  @include icoColor('purple', $purple);
+  @include icoColor('secondary', $app-header);
+
+  &.mi-icon-grey { color: $m-grey; }
+  &.mi-icon-dark-grey { color: $m-dark-grey; }
+  &.mi-icon-navigation { color: $m-dark-blue; }
+  &.mi-icon-alert { color: $m-red; }
+  &.mi-icon-pink { color: $pink; }
+  &.mi-icon-purple { color: $m-purple; }
+  &.mi-icon-primary { color: $blue; }
+  &.mi-icon-aqua { color: $aqua; }
+  &.mi-icon-success { color: $m-green; }
+  &.mi-icon-yellow { color: $m-yellow; }
+  &.mi-icon-caution { color: $m-orange; }
+  &.mi-icon-black { color: $black ; }
+  &.mi-icon-white {  color:$white; }
+
+     
+        &.mi-background-grey { color: $m-grey   }
+        &.mi-background-dark-grey  { color: $m-dark-grey  }
+        &.mi-background-navigation  { color: $m-dark-blue  }
+        &.mi-background-alert { color: $m-red  }
+        &.mi-background-pink  { color: $pink   }
+        &.mi-background-purple  { color: $m-purple   }
+        &.mi-background-primary{ color: $blue  }
+        &.mi-background-aqua { color: $aqua   }
+        &.mi-background-success  { color: $m-green   }
+        &.mi-background-yellow { color: $m-yellow  }
+        &.mi-background-caution  { color: $m-orange  }
+        &.mi-background-black {color: $black  }
+        &.mi-background-white  { color:$white;
+        &:before {
+          border: 1px dashed $m-grey;
+        }  } 
+
+
+  &.dropdown-alert { color: $fuschia; }
+  &.dropdown-blue { color: $blue; }
+  &.dropdown-ghost { color: $m-grey; }
+  &.dropdown-dark-blue { color: $m-darkest-blue; }
+  &.dropdown-yellow { color: $yellow; }
+  &.dropdown-green { color: $green; }
+  &.dropdown-dark-grey { color: $gunmetal; }
+  &.dropdown-silver { color: $true-silver; }
+  &.dropdown-black { color: $black; }
+
+  &.button-secondary,
+  &.mi-button-group-secondary {
+    color:$white  !important;
+    &:before {
+      border: 1px solid $blue;
+    }
+  }
+
+    &.button-white,
+    &.mi-button-group-white,
+    &.mi-button-group-text-white,
+    &.mi-cell-white,
+    &.mi-cell-border-white,
+    &.mi-grid-background-white,
+    &.mi-grid-header-white,
+    &.mi-checkbox-white,
+    &.mi-radio-white,
+    &.mi-toggle-white,
+    &.text-white,
+    &.background-white,
+    &.border-white,
+    &.datepicker-white,
+    &.tinymce-background-white,
+    &.tinymce-border-white,
+    &.mi-color-white,
+    &.mi-caption-white,
+    &.mi-grid-font-white,
+    &.mi-grid-row-odd-white,
+    &.mi-grid-row-even-white,
+    &.mi-grid-footer-color-white,
+    &.top-button-border-color-white,
+    &.bottom-button-border-color-white,
+    &.left-button-border-color-white,
+    &.right-button-border-color-white,
+    &.mi-section-header-background-white,
+    &.mi-section-header-caption-white,
+    &.mi-section-header-icon-white,
+    &.mi-dropdown-text-white,
+    &.np-background-white,
+    &.mi-checkbox-label-white,
+    &.mi-icon-color-white,
+    &.mi-pay-label-white,
+    &.mi-pay-textbox-background-white,
+    &.mi-pay-textbox-text-white,
+    &.mi-pay-caption-white,
+    &.dropdown-white,
+    &.mi-top-border-color-white,
+    &.mi-bottom-border-color-white,
+    &.mi-left-border-color-white,
+    &.mi-right-border-color-white,
+    &.input-background-white,
+    &.input-text-white
+    {
+        color:$white  !important;
+        &:before {
+          border: 1px dashed $m-grey;
+        }
+    }
+
+    &.mi-grid-row-odd-none,
+    &.mi-grid-row-even-none,
+    &.tinymce-border-none,
+    &.top-button-border-color-none,
+    &.bottom-border-color-none,
+    &.left-border-color-none,
+    &.right-border-color-none,
+    &.mi-grid-header-none,
+    &.mi-pay-form-top-border-color-none,
+    &.mi-pay-form-bottom-border-color-none,
+    &.mi-pay-form-left-border-color-none,
+    &.mi-pay-form-right-border-color-none,
+    &.mi-pay-textbox-top-border-color-none,
+    &.mi-pay-textbox-bottom-border-color-none,
+    &.mi-pay-textbox-left-border-color-none,
+    &.mi-pay-textbox-right-border-color-none,
+    &.mi-top-border-color-none,
+    &.mi-bottom-border-color-none,
+    &.mi-left-border-color-none,
+    &.mi-right-border-color-none
+     {
+        &:before {
+            font-family: 'method-icon';
+            content: "\e7d7";
+            color:$fuschia;
+        }
+    }
+}

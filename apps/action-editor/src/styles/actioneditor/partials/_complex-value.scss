@@ -1,0 +1,63 @@
+.complex-value {
+  position: relative;
+
+  &.open {
+    .selected {
+      font-weight: 600;
+    }
+    
+    .complex-value-options {
+      display: block !important;
+    }
+  }
+
+  .selected {
+    display: block;
+    color: $blue;
+    cursor: pointer;
+    @include noselect;
+  }
+
+  .complex-value-options {
+    position: absolute;
+    display: none;
+    top: 30px;
+    left: 0;
+    background-color: $white;
+    border: 1px solid $light-grey;
+    border-radius: 2px;
+    padding: 5px;
+    z-index: 1;
+    width: 250px;
+    box-shadow: 0 0 3px rgba($black, 0.1);
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -11px;
+      left: 9px;
+      border-bottom: 11px solid $light-grey;
+      border-right: 11px solid transparent;
+      border-left: 11px solid transparent;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      border-bottom: 10px solid $white;
+      border-right: 10px solid transparent;
+      border-left: 10px solid transparent;
+    }
+
+    select, input {
+      display: block;
+      margin-bottom: 3px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

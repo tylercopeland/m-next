@@ -1,0 +1,74 @@
+{
+  "name": "@m-next/calendar",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Calendar widget with scheduling, resource management, and waitlist functionality",
+  "keywords": [
+    "calendar",
+    "scheduler",
+    "events",
+    "resources",
+    "waitlist"
+  ],
+  "author": "Claude Code <noreply@anthropic.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "src/index.js",
+  "types": "src/calendar.d.ts",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "index",
+    "calendar.d.ts"
+  ],
+  "dependencies": {
+    "@m-next/button": "1.0.0",
+    "@m-next/button-group": "1.0.0",
+    "@m-next/caption": "1.0.0",
+    "@m-next/checkbox": "1.0.0",
+    "@m-next/dialog": "1.0.0",
+    "@m-next/dropdown": "1.0.0",
+    "@m-next/grid": "1.0.0",
+    "@m-next/styles": "1.0.0",
+    "@m-next/svg-icon": "1.0.0",
+    "@m-next/tabs": "1.0.0",
+    "@m-next/toggle": "1.0.0",
+    "@m-next/typeography": "1.0.0",
+    "@m-next/utilities": "1.0.0",
+    "@syncfusion/ej2-base": "22.1.34",
+    "@syncfusion/ej2-data": "22.1.34",
+    "@syncfusion/ej2-react-base": "22.1.34",
+    "@syncfusion/ej2-react-buttons": "22.1.34",
+    "@syncfusion/ej2-react-dropdowns": "22.1.34",
+    "@syncfusion/ej2-react-inputs": "22.1.34",
+    "@syncfusion/ej2-react-layouts": "22.1.34",
+    "@syncfusion/ej2-react-schedule": "22.1.34",
+    "date-fns": "^2.29.3",
+    "react-modal": "^3.16.3",
+    "simplebar-react": "3.3.0",
+    "uuid": "^11.1.0"
+  },
+  "peerDependencies": {
+    "@emotion/react": ">=11.10.5",
+    "@emotion/styled": ">=11.10.5",
+    "date-fns": "^2.29.3",
+    "prop-types": ">=15.8.1",
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2"
+  },
+  "scripts": {
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "build": "npm run prettify && npm run lint && npm run test && webpack --mode production",
+    "prettify": "npx prettier \"**/*.*(js|jsx)\" --ignore-path=.prettierignore --write --log-level=error",
+    "release": "npm build && npm publish build --tag next",
+    "test": "jest --passWithNoTests --json --outputFile=.jest-test-results.json",
+    "test-snapshot-update": "npm run test -- -u",
+    "test-storybook": "jest --json --outputFile=.jest-test-results.json",
+    "lint-js": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --cache --report-unused-disable-directives --max-warnings=0",
+    "lint-ls": "npx ls-lint",
+    "lint": "npm run lint-js && npm run lint-ls",
+    "lint-fix": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix --cache --report-unused-disable-directives --max-warnings=0"
+  }
+}

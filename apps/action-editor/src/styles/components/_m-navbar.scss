@@ -1,0 +1,122 @@
+div.mi-navbar-wrapper {
+    position: relative;
+    background-color: $m-dark-blue;
+    overflow: visible;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    // visibility: hidden;
+}
+div.mi-navbar-wrapper:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;  
+}
+ul.mi-navbar { float: left; }
+ul.mi-navbar.mi-navbar-right { float: right; }
+ul.mi-navbar, ul.mi-navbar > ol {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul.mi-navbar > li, ul.mi-navbar > ol > li {
+    display: block; 
+    float: left; 
+    padding: 0;
+    color: $white;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+ul.mi-navbar > li a, ul.mi-navbar > ol > li a {
+  display: block;
+  color: $white;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+ul.mi-navbar > li.hidden {
+  display: none;
+}
+
+ul.mi-navbar > li:hover a, ul.mi-navbar > li.active a {
+  color: $blue;
+}
+ul.mi-navbar li.mi-navbar-divider {
+  padding: 5px 0;
+}
+ul.mi-navbar li.mi-navbar-divider div {
+  width: 1px;
+  background-color: $white;
+  height: 32px;
+  box-sizing: border-box;
+}
+ol.mi-navbar-more {
+    display: none;
+    position: absolute;
+    right: 0; 
+    overflow: visible;
+    box-sizing: border-box;
+    height: inherit;
+    list-style: none;
+    list-style-type: none;
+    margin-top: 7px;
+}
+ol.mi-navbar-more > li { 
+  width: 40px; 
+  text-align: center; 
+  padding: 0px 0;
+  line-height: inherit;
+}
+
+ol.mi-navbar-more > li i {
+  display: block;
+  width: 40px;
+  line-height: inherit;
+  color: $white;
+  font-size: 20px;
+
+    &:hover {
+        color: $blue !important;
+    }
+}
+
+
+ol.mi-navbar-more ul.mi-navbar-submenu {
+    position: absolute;
+    top: 100%; 
+    right: 0;
+    background-color: $m-dark-blue;
+    min-width: 120px;
+    box-sizing: border-box;
+    z-index: 2000;
+    max-height: 220px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-top: -1px;
+}
+
+ol.mi-navbar-more li ul.mi-navbar-submenu > li {
+    list-style: none; 
+    color: $white;
+    padding: 10px 20px;
+    text-align: left;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+ol.mi-navbar-more li ul.mi-navbar-submenu > li a {
+    color: $white;
+
+    &:hover {
+        color: $blue !important;
+    }
+}
+
+ol.mi-navbar-more li ul.mi-navbar-submenu > li.mi-navbar-divider div {
+  display: block;
+  height: 1px;
+  background-color: $white;
+}

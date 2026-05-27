@@ -1,0 +1,215 @@
+[
+  {
+    "operation": 0
+  },
+  {
+    "operation": null,
+    "dateField": null,
+    "source": {
+      "Value": "ActualCompletedDate",
+      "ValueType": 3,
+      "Property": null,
+      "ChildProperty": null
+    }
+  },
+  {
+    "operation": 7,
+    "dateField": null,
+    "source": null
+  },
+  {
+    "operation": null,
+    "dateField": null,
+    "source": {
+      "Value": "2023-02-01T18:00",
+      "ValueType": 11,
+      "Property": null,
+      "ChildProperty": null
+    }
+  },
+  {
+    "operation": 2,
+    "dateField": null,
+    "source": null
+  },
+  {
+    "operation": null,
+    "dateField": null,
+    "source": {
+      "Value": "ActualDuration",
+      "ValueType": 3,
+      "Property": null,
+      "ChildProperty": null
+    }
+  },
+  {
+    "operation": 5,
+    "dateField": null,
+    "source": null
+  },
+  {
+    "operation": null,
+    "dateField": null,
+    "source": {
+      "Value": 60,
+      "ValueType": 10,
+      "Property": null,
+      "ChildProperty": null
+    }
+  },
+  {
+    "operation": 2,
+    "dateField": null,
+    "source": null
+  },
+  {
+    "operation": null,
+    "dateField": null,
+    "source": {
+      "Value": "Comments",
+      "ValueType": 3,
+      "Property": null,
+      "ChildProperty": null
+    }
+  },
+  {
+    "operation": 12,
+    "dateField": null,
+    "source": null
+  },
+  {
+    "operation": null,
+    "dateField": null,
+    "source": {
+      "Value": "gggg",
+      "ValueType": 9,
+      "Property": null,
+      "ChildProperty": null
+    }
+  },
+  {
+    "operation": 2,
+    "dateField": null,
+    "source": null
+  },
+  {
+    "operation": null,
+    "dateField": null,
+    "source": {
+      "Value": "FollowUpFromActivityNo",
+      "ValueType": 3,
+      "Property": null,
+      "ChildProperty": null
+    }
+  },
+  {
+    "operation": 6,
+    "dateField": null,
+    "source": null
+  },
+  {
+    "operation": null,
+    "dateField": null,
+    "source": {
+      "Value": 4,
+      "ValueType": 10,
+      "Property": null,
+      "ChildProperty": null
+    }
+  },
+  {
+    "operation": 2,
+    "dateField": null,
+    "source": null
+  },
+  {
+    "operation": null,
+    "dateField": null,
+    "source": {
+      "Value": "IsAllDayAppointment",
+      "ValueType": 3,
+      "Property": null,
+      "ChildProperty": null
+    }
+  },
+  {
+    "operation": 4,
+    "dateField": null,
+    "source": null
+  },
+  {
+    "operation": null,
+    "dateField": null,
+    "source": {
+      "Value": "true",
+      "ValueType": 12,
+      "Property": null,
+      "ChildProperty": null
+    }
+  },
+  {
+    "operation": 2,
+    "dateField": null,
+    "source": null
+  },
+  {
+    "operation": 0,
+    "dateField": null,
+    "source": null
+  },
+  {
+    "operation": null,
+    "dateField": null,
+    "source": {
+      "Value": "SaaSphaltMarkupDollars",
+      "ValueType": 3,
+      "Property": null,
+      "ChildProperty": null
+    }
+  },
+  {
+    "operation": 8,
+    "dateField": null,
+    "source": null
+  },
+  {
+    "operation": null,
+    "dateField": null,
+    "source": {
+      "Value": "1001",
+      "ValueType": 10,
+      "Property": null,
+      "ChildProperty": null
+    }
+  },
+  {
+    "operation": 2,
+    "dateField": null,
+    "source": null
+  },
+  {
+    "operation": null,
+    "dateField": null,
+    "source": {
+      "Value": "ContactsAssignedTo",
+      "ValueType": 3,
+      "Property": null,
+      "ChildProperty": null
+    }
+  },
+  {
+    "operation": 11,
+    "dateField": null,
+    "source": null
+  },
+  {
+    "operation": 1,
+    "dateField": null,
+    "source": null
+  },
+  {
+    "operation": 1,
+    "dateField": null,
+    "source": null
+  }
+]

@@ -1,0 +1,235 @@
+.mi-cb-condition-separator {
+  display: block;
+  position: relative;
+  height: 39px;
+  padding-bottom: 5px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  > span {
+    display: inline-block;
+    position: relative;
+    height: 35px;
+    line-height: 35px;
+    top: -12px;
+    padding-right: 6px;
+
+    &:nth-child(2) {
+      top: 0;
+      width: 100px;
+    }
+
+    .ui-select-container {
+      height: 35px;
+
+      .ui-select-choices {
+        margin-top: -13px;
+      }
+    }
+  }
+}
+
+.mi-cb-whereblock-wrapper {
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 10px 10px 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.mi-cb-whereblock {
+  display: block;
+  margin: 0;
+  width: 100%;
+  list-style: none;
+  list-style-type: none;
+  counter-reset: line;
+
+  li {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+
+    &:not(.rad-horizontal):before {
+      counter-increment: line;
+      content: counter(line);
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0 .5em;
+      margin-right: .5em;
+      width: 30px;
+      background-color: $light-grey;
+      border-bottom: 1px solid $light-grey;
+      text-align: center;
+      color: $dark-grey;
+      height: 100%;
+      line-height: 3;
+    }
+
+    &.line-indent {
+      &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        height: 100%;
+        border-top: 2px solid $lightest-blue;
+        border-left: 1px solid $lightest-blue;
+        border-bottom: 2px solid $lightest-blue;
+        margin-left: 31px;
+        width: 5px;
+      }
+
+      @include lineIndent(1, 31px);
+
+      ul {
+        min-height: 10px;
+
+        li {
+          .action-name { margin-left: 70px; }
+
+          @include actionIndent(1, 70px);
+        }
+      }
+    }
+
+    .where-row {
+      display: block;
+      max-width: 100%;
+      margin-left: 50px;
+      min-height: 30px;
+      padding: 5px 0 0 5px;
+      border-bottom: 1px solid $light-grey;
+      box-sizing: border-box;
+
+      &:first-child {
+        border-top: 0;
+      }
+
+      &:hover {
+        background-color: rgba($lightest-blue, 0.1);
+
+        .more-options {
+          display: block;
+        }
+      }
+
+      .where-item {
+        display: block;
+        width: 100%;
+        padding-right: 85px;
+      }
+
+      .mi-ae-label {
+        margin-bottom: 0;
+      }
+
+      .mi-ae-row {
+        line-height: 0.9;
+      }
+
+      .compare-as {
+        display: block;
+        font-weight: bold;
+        text-align: right;
+        height: 35px;
+        line-height: 32px;
+
+        &:before {
+          position: absolute;
+          right: 142px;
+          top: 6px;
+          content: "";
+          width: 28px;
+          height: 12px;
+          border-left: 1px solid black;
+          border-bottom: 1px solid black;
+        }
+
+        &:after {
+          position: absolute;
+          content: "";
+          height: 10px;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-bottom: 5px solid black;
+          right: 164px;
+        }
+      }
+
+      .more-options {
+        display: none;
+        position: absolute;
+        top: 8px;
+        right: 3px;
+        height: inherit;
+        line-height: inherit;
+        width: 75px;
+        text-align: right;
+        z-index: 1;
+        
+        button {
+          display: inline-block;
+          border: 0;
+          background: transparent;
+          height: 30px;
+          line-height: 31px;
+          padding: 0 4px;
+          text-align: center;
+
+          &:disabled {
+            opacity: 0.25;
+          }
+        }
+      }
+    }
+
+    .where-info {
+      position: absolute;
+      top: 12px;
+      left: 0;
+      display: block;      
+      width: 30px;
+      min-height: 30px;
+      height: 100%;
+      background-color: transparent;
+      z-index: 2;
+
+      .error-dot {
+        display: none;
+        position: absolute;
+        top: 12px;
+        left: -3px;
+        width: 6px;
+        height: 6px;
+        background-color: $pink;
+        border-radius: 50%;
+      }
+
+      &:hover {
+        .move {
+          display: block;
+        }
+      }
+
+      .move {
+        display: none;
+        width: 30px;
+        height: 30px;
+        background-color: $light-grey;
+        text-align: center;
+        color: $dark-grey;
+      }
+    }
+
+    ul {
+      margin-left: 0;
+    }
+  }
+}

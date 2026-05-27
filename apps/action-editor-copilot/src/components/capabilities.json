@@ -1,0 +1,43 @@
+{
+    "open_designer_view": {
+        "description": "Open Designer View",
+        "action": "sequence",
+        "steps": [
+            {
+                "action": "click",
+                "selector": "[aria-haspopup='menu'][role='button']"
+            },
+            {
+                "action": "click",
+                "selector": "#platform-actionbar-customize"
+            }
+        ],
+        "fallback": "User should manually open the menu and click 'Customize Screen'."
+    },
+    "enter_grid_builder_v2": {
+        "description": "Enter Grid Builder V2",
+        "action": "click",
+        "selector": ".grid-builder-button",
+        "fallback": "Provide a help page link."
+    },
+    "add_column": {
+        "description": "Add a Column to the Grid",
+        "action": "sequence",
+        "steps": [
+            {
+                "action": "click",
+                "selector": "#accordion-caption-add-icon-data"
+            },
+            {
+                "action": "fill",
+                "selector": "#field-search-search-input",
+                "param": "phone"
+            },
+            {
+                "action": "click",
+                "selector": "#field-search-search-input"
+            }
+        ],
+        "fallback": "User should manually add a column."
+    }
+}

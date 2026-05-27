@@ -1,0 +1,2994 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image Snapshots Avatar Image 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Test Image with initials, NR"
+      class="emotion-2 emotion-3"
+      color="#84F3FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NR
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Avatar Image 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Image with initials, NR"
+      class="emotion-2 emotion-3"
+      color="#84F3FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NR
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Avatar Image Round 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Test Image with initials, NR"
+      class="emotion-2 emotion-3"
+      color="#84F3FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NR
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Avatar Image Round 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Image with initials, NR"
+      class="emotion-2 emotion-3"
+      color="#84F3FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NR
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Avatar Image Round deafult 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Test Image with initials, NR"
+      class="emotion-2 emotion-3"
+      color="#84F3FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NR
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Avatar Image Round deafult 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Image with initials, NR"
+      class="emotion-2 emotion-3"
+      color="#84F3FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NR
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Avatar Image Round is loading 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <span
+      aria-busy="true"
+      aria-live="polite"
+    >
+      <span
+        class="react-loading-skeleton"
+        style="width: 100%; height: 100%; border-radius: 50%;"
+      >
+        ‌
+      </span>
+      <br />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Avatar Image Round is loading 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <span
+      aria-busy="true"
+      aria-live="polite"
+    >
+      <span
+        class="react-loading-skeleton"
+        style="width: 100%; height: 100%; border-radius: 50%;"
+      >
+        ‌
+      </span>
+      <br />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Avatar Image is loading 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <span
+      aria-busy="true"
+      aria-live="polite"
+    >
+      <span
+        class="react-loading-skeleton"
+        style="width: 100%; height: 100%;"
+      >
+        ‌
+      </span>
+      <br />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Avatar Image is loading 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <span
+      aria-busy="true"
+      aria-live="polite"
+    >
+      <span
+        class="react-loading-skeleton"
+        style="width: 100%; height: 100%;"
+      >
+        ‌
+      </span>
+      <br />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Background 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  min-width: 0;
+  max-width: 100%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: Test Image"
+        class="emotion-4 emotion-5"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Background 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  min-width: 0;
+  max-width: 100%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: "
+        class="emotion-4 emotion-5"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Background Avatar 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  min-width: 0;
+  max-width: 100%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Test Image with initials, NR"
+      class="emotion-2 emotion-3"
+      color="#84F3FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NR
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Background Avatar 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  min-width: 0;
+  max-width: 100%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Image with initials, NR"
+      class="emotion-2 emotion-3"
+      color="#84F3FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NR
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Default 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: "
+        class="emotion-4 emotion-5"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDE3IDE3IiBmaWxsPSJub25lIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0JBQ0FEMCI+PHBhdGggZD0iTTE1LjE3ODggMTEuNDQxNEwxMS4wMzMzIDguNDcxNjhDMTEuMDIzNCA4LjQ2NDYzIDExLjAxMzMgOC40NTc5NCAxMS4wMDQgOC40NTAyQzEwLjk5MTEgOC40Mzk1IDEwLjk3NDggOC40MzM1OSAxMC45NTgxIDguNDMzNTlDMTAuOTQyMiA4LjQzMzY5IDEwLjkyNjYgOC40Mzg0NCAxMC45MTQxIDguNDQ4MjRMMy41MDg4NSAxNS40Mjg3SDE0LjUzNTJDMTQuNzA1NyAxNS40Mjg3IDE0Ljg2OTcgMTUuMzYwOCAxNC45OTAzIDE1LjI0MDJDMTUuMTEwOSAxNS4xMTk3IDE1LjE3ODggMTQuOTU1NyAxNS4xNzg4IDE0Ljc4NTJWMTEuNDQxNFpNNi42MDc0OCA1LjY0MjU4QzYuNjA3NDUgNS4zMjA1OCA2LjQ3ODczIDUuMDExODcgNi4yNTEwNCA0Ljc4NDE4QzYuMDIzMzMgNC41NTY1NCA1LjcxNDYyIDQuNDI4NzEgNS4zOTI2NCA0LjQyODcxQzUuMDcwNjQgNC40Mjg3NSA0Ljc2MTkzIDQuNTU2NDkgNC41MzQyNCA0Ljc4NDE4QzQuMzA2NTUgNS4wMTE4NyA0LjE3ODgxIDUuMzIwNTggNC4xNzg3NyA1LjY0MjU4QzQuMTc4NzcgNS45NjQ1NiA0LjMwNjYxIDYuMjczMjcgNC41MzQyNCA2LjUwMDk4QzQuNzYxOTMgNi43Mjg2NyA1LjA3MDY0IDYuODU3MzggNS4zOTI2NCA2Ljg1NzQyTDUuNTEyNzYgNi44NTA1OUM1Ljc5MDczIDYuODIyOTggNi4wNTE3OCA2LjcwMDIzIDYuMjUxMDQgNi41MDA5OEM2LjQ3ODc2IDYuMjczMjUgNi42MDc0OCA1Ljk2NDYzIDYuNjA3NDggNS42NDI1OFpNMTUuMTc4OCAyLjIxMzg3QzE1LjE3ODcgMi4wNDM1NCAxNS4xMTA3IDEuODgwMjUgMTQuOTkwMyAxLjc1OTc3QzE0Ljg2OTcgMS42MzkyMSAxNC43MDU3IDEuNTcxMjkgMTQuNTM1MiAxLjU3MTI5SDEuOTYzOTNDMS43OTM1MyAxLjU3MTM2IDEuNjMwMzIgMS42MzkyNyAxLjUwOTgzIDEuNzU5NzdDMS4zODkzMyAxLjg4MDI2IDEuMzIxNDIgMi4wNDM0NyAxLjMyMTM1IDIuMjEzODdWMTQuNzg1MkMxLjMyMTM1IDE0Ljk1NTcgMS4zODkyNyAxNS4xMTk3IDEuNTA5ODMgMTUuMjQwMkMxLjYzMDMxIDE1LjM2MDYgMS43OTM2IDE1LjQyODYgMS45NjM5MyAxNS40Mjg3SDIuMDUwODRMMTAuMjUwMSA3LjcwMjE1TDEwLjI3MjUgNy42ODE2NEwxMC4zNDc3IDcuNjI1QzEwLjUyNjQgNy41MDA5MiAxMC43MzkxIDcuNDMzNjggMTAuOTU4MSA3LjQzMzU5QzExLjE5NjIgNy40MzM1OSAxMS40MjY3IDcuNTEzNjUgMTEuNjE0MyA3LjY1OTE4SDExLjYxNTNMMTUuMTc4OCAxMC4yMTE5VjIuMjEzODdaTTcuNjA3NDggNS42NDI1OEM3LjYwNzQ4IDYuMjI5ODQgNy4zNzMzMyA2Ljc5Mjc1IDYuOTU4MDcgNy4yMDgwMUM2LjU5NDY3IDcuNTcxNDEgNi4xMTgzNiA3Ljc5NTQxIDUuNjExMzkgNy44NDU3TDUuMzkyNjQgNy44NTc0MkM0LjgwNTQyIDcuODU3MzggNC4yNDI0NCA3LjYyMzIzIDMuODI3MjEgNy4yMDgwMUMzLjQxMjA0IDYuNzkyNzYgMy4xNzg3NyA2LjIyOTc4IDMuMTc4NzcgNS42NDI1OEMzLjE3ODgxIDUuMDU1MzYgMy40MTE5OCA0LjQ5MjM3IDMuODI3MjEgNC4wNzcxNUM0LjI0MjQ0IDMuNjYxOTIgNC44MDU0MiAzLjQyODc1IDUuMzkyNjQgMy40Mjg3MUM1Ljk3OTg0IDMuNDI4NzEgNi41NDI4MiAzLjY2MTk4IDYuOTU4MDcgNC4wNzcxNUM3LjM3MzMgNC40OTIzNyA3LjYwNzQ1IDUuMDU1MzYgNy42MDc0OCA1LjY0MjU4Wk0xNi4xNzg4IDE0Ljc4NTJDMTYuMTc4OCAxNS4yMjA5IDE2LjAwNTQgMTUuNjM5MiAxNS42OTczIDE1Ljk0NzNDMTUuMzg5MiAxNi4yNTU0IDE0Ljk3MDkgMTYuNDI4NyAxNC41MzUyIDE2LjQyODdIMS45NjM5M0MxLjUyODM4IDE2LjQyODYgMS4xMTA4MSAxNi4yNTUyIDAuODAyNzk1IDE1Ljk0NzNDMC40OTQ3IDE1LjYzOTIgMC4zMjEzNSAxNS4yMjA5IDAuMzIxMzUgMTQuNzg1MlYyLjIxMzg3QzAuMzIxNDI0IDEuNzc4MjUgMC40OTQ3NjYgMS4zNjA3NiAwLjgwMjc5NSAxLjA1MjczQzEuMTEwODMgMC43NDQ3MDUgMS41MjgzMiAwLjU3MTM2MyAxLjk2MzkzIDAuNTcxMjg5SDE0LjUzNTJDMTQuOTcwOSAwLjU3MTI4OSAxNS4zODkyIDAuNzQ0NjM5IDE1LjY5NzMgMS4wNTI3M0MxNi4wMDUzIDEuMzYwNzUgMTYuMTc4NyAxLjc3ODMyIDE2LjE3ODggMi4yMTM4N1YxNC43ODUyWiIvPjwvZz48L3N2Zz4="
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Image  with caption 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: Test Image"
+        class="emotion-4 emotion-5"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Image 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: Test Image"
+        class="emotion-4 emotion-5"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Image 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: "
+        class="emotion-4 emotion-5"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Image round  with caption 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: undefinedpx;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-background-position: center;
+  background-position: center;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Image: Test Image"
+      class="emotion-2 emotion-3"
+      height="undefinedpx"
+      role="img"
+      style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);"
+      width="100%"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Image round 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: undefinedpx;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-background-position: center;
+  background-position: center;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Image: Test Image"
+      class="emotion-2 emotion-3"
+      height="undefinedpx"
+      role="img"
+      style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);"
+      width="100%"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Image round 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  border-radius: 50%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: undefinedpx;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-background-position: center;
+  background-position: center;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Image: "
+      class="emotion-2 emotion-3"
+      height="undefinedpx"
+      role="img"
+      style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg);"
+      width="100%"
+    />
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Placeholder document 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: Test Image"
+        class="emotion-4 emotion-5"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZyBzdHJva2U9IiNCQUNBRDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBmaWxsPSJub25lIj48cGF0aCBkPSJNMjEuNSAyMy41aC0xOXYtMjNoMTNsNiA2ek0xNS41LjV2Nmg2TTcuNSA3LjVoNC41TTcuNSAxMC41aDlNNy41IDEzLjVoM003LjUgMTYuNWgzTTcuNSAxOS41aDNNMTIuNSAxNC41di0xaDR2MU0xNC41IDEzLjV2Nk0xMyAxOS41aDMiLz48L2c+PC9zdmc+"
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Placeholder document 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: "
+        class="emotion-4 emotion-5"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZyBzdHJva2U9IiNCQUNBRDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBmaWxsPSJub25lIj48cGF0aCBkPSJNMjEuNSAyMy41aC0xOXYtMjNoMTNsNiA2ek0xNS41LjV2Nmg2TTcuNSA3LjVoNC41TTcuNSAxMC41aDlNNy41IDEzLjVoM003LjUgMTYuNWgzTTcuNSAxOS41aDNNMTIuNSAxNC41di0xaDR2MU0xNC41IDEzLjV2Nk0xMyAxOS41aDMiLz48L2c+PC9zdmc+"
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Placeholder landscape circle 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: Test Image"
+        class="emotion-4 emotion-5"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDE3IDE3IiBmaWxsPSJub25lIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0JBQ0FEMCI+PHBhdGggZD0iTTE1LjE3ODggMTEuNDQxNEwxMS4wMzMzIDguNDcxNjhDMTEuMDIzNCA4LjQ2NDYzIDExLjAxMzMgOC40NTc5NCAxMS4wMDQgOC40NTAyQzEwLjk5MTEgOC40Mzk1IDEwLjk3NDggOC40MzM1OSAxMC45NTgxIDguNDMzNTlDMTAuOTQyMiA4LjQzMzY5IDEwLjkyNjYgOC40Mzg0NCAxMC45MTQxIDguNDQ4MjRMMy41MDg4NSAxNS40Mjg3SDE0LjUzNTJDMTQuNzA1NyAxNS40Mjg3IDE0Ljg2OTcgMTUuMzYwOCAxNC45OTAzIDE1LjI0MDJDMTUuMTEwOSAxNS4xMTk3IDE1LjE3ODggMTQuOTU1NyAxNS4xNzg4IDE0Ljc4NTJWMTEuNDQxNFpNNi42MDc0OCA1LjY0MjU4QzYuNjA3NDUgNS4zMjA1OCA2LjQ3ODczIDUuMDExODcgNi4yNTEwNCA0Ljc4NDE4QzYuMDIzMzMgNC41NTY1NCA1LjcxNDYyIDQuNDI4NzEgNS4zOTI2NCA0LjQyODcxQzUuMDcwNjQgNC40Mjg3NSA0Ljc2MTkzIDQuNTU2NDkgNC41MzQyNCA0Ljc4NDE4QzQuMzA2NTUgNS4wMTE4NyA0LjE3ODgxIDUuMzIwNTggNC4xNzg3NyA1LjY0MjU4QzQuMTc4NzcgNS45NjQ1NiA0LjMwNjYxIDYuMjczMjcgNC41MzQyNCA2LjUwMDk4QzQuNzYxOTMgNi43Mjg2NyA1LjA3MDY0IDYuODU3MzggNS4zOTI2NCA2Ljg1NzQyTDUuNTEyNzYgNi44NTA1OUM1Ljc5MDczIDYuODIyOTggNi4wNTE3OCA2LjcwMDIzIDYuMjUxMDQgNi41MDA5OEM2LjQ3ODc2IDYuMjczMjUgNi42MDc0OCA1Ljk2NDYzIDYuNjA3NDggNS42NDI1OFpNMTUuMTc4OCAyLjIxMzg3QzE1LjE3ODcgMi4wNDM1NCAxNS4xMTA3IDEuODgwMjUgMTQuOTkwMyAxLjc1OTc3QzE0Ljg2OTcgMS42MzkyMSAxNC43MDU3IDEuNTcxMjkgMTQuNTM1MiAxLjU3MTI5SDEuOTYzOTNDMS43OTM1MyAxLjU3MTM2IDEuNjMwMzIgMS42MzkyNyAxLjUwOTgzIDEuNzU5NzdDMS4zODkzMyAxLjg4MDI2IDEuMzIxNDIgMi4wNDM0NyAxLjMyMTM1IDIuMjEzODdWMTQuNzg1MkMxLjMyMTM1IDE0Ljk1NTcgMS4zODkyNyAxNS4xMTk3IDEuNTA5ODMgMTUuMjQwMkMxLjYzMDMxIDE1LjM2MDYgMS43OTM2IDE1LjQyODYgMS45NjM5MyAxNS40Mjg3SDIuMDUwODRMMTAuMjUwMSA3LjcwMjE1TDEwLjI3MjUgNy42ODE2NEwxMC4zNDc3IDcuNjI1QzEwLjUyNjQgNy41MDA5MiAxMC43MzkxIDcuNDMzNjggMTAuOTU4MSA3LjQzMzU5QzExLjE5NjIgNy40MzM1OSAxMS40MjY3IDcuNTEzNjUgMTEuNjE0MyA3LjY1OTE4SDExLjYxNTNMMTUuMTc4OCAxMC4yMTE5VjIuMjEzODdaTTcuNjA3NDggNS42NDI1OEM3LjYwNzQ4IDYuMjI5ODQgNy4zNzMzMyA2Ljc5Mjc1IDYuOTU4MDcgNy4yMDgwMUM2LjU5NDY3IDcuNTcxNDEgNi4xMTgzNiA3Ljc5NTQxIDUuNjExMzkgNy44NDU3TDUuMzkyNjQgNy44NTc0MkM0LjgwNTQyIDcuODU3MzggNC4yNDI0NCA3LjYyMzIzIDMuODI3MjEgNy4yMDgwMUMzLjQxMjA0IDYuNzkyNzYgMy4xNzg3NyA2LjIyOTc4IDMuMTc4NzcgNS42NDI1OEMzLjE3ODgxIDUuMDU1MzYgMy40MTE5OCA0LjQ5MjM3IDMuODI3MjEgNC4wNzcxNUM0LjI0MjQ0IDMuNjYxOTIgNC44MDU0MiAzLjQyODc1IDUuMzkyNjQgMy40Mjg3MUM1Ljk3OTg0IDMuNDI4NzEgNi41NDI4MiAzLjY2MTk4IDYuOTU4MDcgNC4wNzcxNUM3LjM3MzMgNC40OTIzNyA3LjYwNzQ1IDUuMDU1MzYgNy42MDc0OCA1LjY0MjU4Wk0xNi4xNzg4IDE0Ljc4NTJDMTYuMTc4OCAxNS4yMjA5IDE2LjAwNTQgMTUuNjM5MiAxNS42OTczIDE1Ljk0NzNDMTUuMzg5MiAxNi4yNTU0IDE0Ljk3MDkgMTYuNDI4NyAxNC41MzUyIDE2LjQyODdIMS45NjM5M0MxLjUyODM4IDE2LjQyODYgMS4xMTA4MSAxNi4yNTUyIDAuODAyNzk1IDE1Ljk0NzNDMC40OTQ3IDE1LjYzOTIgMC4zMjEzNSAxNS4yMjA5IDAuMzIxMzUgMTQuNzg1MlYyLjIxMzg3QzAuMzIxNDI0IDEuNzc4MjUgMC40OTQ3NjYgMS4zNjA3NiAwLjgwMjc5NSAxLjA1MjczQzEuMTEwODMgMC43NDQ3MDUgMS41MjgzMiAwLjU3MTM2MyAxLjk2MzkzIDAuNTcxMjg5SDE0LjUzNTJDMTQuOTcwOSAwLjU3MTI4OSAxNS4zODkyIDAuNzQ0NjM5IDE1LjY5NzMgMS4wNTI3M0MxNi4wMDUzIDEuMzYwNzUgMTYuMTc4NyAxLjc3ODMyIDE2LjE3ODggMi4yMTM4N1YxNC43ODUyWiIvPjwvZz48L3N2Zz4="
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Placeholder landscape circle 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: "
+        class="emotion-4 emotion-5"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDE3IDE3IiBmaWxsPSJub25lIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0JBQ0FEMCI+PHBhdGggZD0iTTE1LjE3ODggMTEuNDQxNEwxMS4wMzMzIDguNDcxNjhDMTEuMDIzNCA4LjQ2NDYzIDExLjAxMzMgOC40NTc5NCAxMS4wMDQgOC40NTAyQzEwLjk5MTEgOC40Mzk1IDEwLjk3NDggOC40MzM1OSAxMC45NTgxIDguNDMzNTlDMTAuOTQyMiA4LjQzMzY5IDEwLjkyNjYgOC40Mzg0NCAxMC45MTQxIDguNDQ4MjRMMy41MDg4NSAxNS40Mjg3SDE0LjUzNTJDMTQuNzA1NyAxNS40Mjg3IDE0Ljg2OTcgMTUuMzYwOCAxNC45OTAzIDE1LjI0MDJDMTUuMTEwOSAxNS4xMTk3IDE1LjE3ODggMTQuOTU1NyAxNS4xNzg4IDE0Ljc4NTJWMTEuNDQxNFpNNi42MDc0OCA1LjY0MjU4QzYuNjA3NDUgNS4zMjA1OCA2LjQ3ODczIDUuMDExODcgNi4yNTEwNCA0Ljc4NDE4QzYuMDIzMzMgNC41NTY1NCA1LjcxNDYyIDQuNDI4NzEgNS4zOTI2NCA0LjQyODcxQzUuMDcwNjQgNC40Mjg3NSA0Ljc2MTkzIDQuNTU2NDkgNC41MzQyNCA0Ljc4NDE4QzQuMzA2NTUgNS4wMTE4NyA0LjE3ODgxIDUuMzIwNTggNC4xNzg3NyA1LjY0MjU4QzQuMTc4NzcgNS45NjQ1NiA0LjMwNjYxIDYuMjczMjcgNC41MzQyNCA2LjUwMDk4QzQuNzYxOTMgNi43Mjg2NyA1LjA3MDY0IDYuODU3MzggNS4zOTI2NCA2Ljg1NzQyTDUuNTEyNzYgNi44NTA1OUM1Ljc5MDczIDYuODIyOTggNi4wNTE3OCA2LjcwMDIzIDYuMjUxMDQgNi41MDA5OEM2LjQ3ODc2IDYuMjczMjUgNi42MDc0OCA1Ljk2NDYzIDYuNjA3NDggNS42NDI1OFpNMTUuMTc4OCAyLjIxMzg3QzE1LjE3ODcgMi4wNDM1NCAxNS4xMTA3IDEuODgwMjUgMTQuOTkwMyAxLjc1OTc3QzE0Ljg2OTcgMS42MzkyMSAxNC43MDU3IDEuNTcxMjkgMTQuNTM1MiAxLjU3MTI5SDEuOTYzOTNDMS43OTM1MyAxLjU3MTM2IDEuNjMwMzIgMS42MzkyNyAxLjUwOTgzIDEuNzU5NzdDMS4zODkzMyAxLjg4MDI2IDEuMzIxNDIgMi4wNDM0NyAxLjMyMTM1IDIuMjEzODdWMTQuNzg1MkMxLjMyMTM1IDE0Ljk1NTcgMS4zODkyNyAxNS4xMTk3IDEuNTA5ODMgMTUuMjQwMkMxLjYzMDMxIDE1LjM2MDYgMS43OTM2IDE1LjQyODYgMS45NjM5MyAxNS40Mjg3SDIuMDUwODRMMTAuMjUwMSA3LjcwMjE1TDEwLjI3MjUgNy42ODE2NEwxMC4zNDc3IDcuNjI1QzEwLjUyNjQgNy41MDA5MiAxMC43MzkxIDcuNDMzNjggMTAuOTU4MSA3LjQzMzU5QzExLjE5NjIgNy40MzM1OSAxMS40MjY3IDcuNTEzNjUgMTEuNjE0MyA3LjY1OTE4SDExLjYxNTNMMTUuMTc4OCAxMC4yMTE5VjIuMjEzODdaTTcuNjA3NDggNS42NDI1OEM3LjYwNzQ4IDYuMjI5ODQgNy4zNzMzMyA2Ljc5Mjc1IDYuOTU4MDcgNy4yMDgwMUM2LjU5NDY3IDcuNTcxNDEgNi4xMTgzNiA3Ljc5NTQxIDUuNjExMzkgNy44NDU3TDUuMzkyNjQgNy44NTc0MkM0LjgwNTQyIDcuODU3MzggNC4yNDI0NCA3LjYyMzIzIDMuODI3MjEgNy4yMDgwMUMzLjQxMjA0IDYuNzkyNzYgMy4xNzg3NyA2LjIyOTc4IDMuMTc4NzcgNS42NDI1OEMzLjE3ODgxIDUuMDU1MzYgMy40MTE5OCA0LjQ5MjM3IDMuODI3MjEgNC4wNzcxNUM0LjI0MjQ0IDMuNjYxOTIgNC44MDU0MiAzLjQyODc1IDUuMzkyNjQgMy40Mjg3MUM1Ljk3OTg0IDMuNDI4NzEgNi41NDI4MiAzLjY2MTk4IDYuOTU4MDcgNC4wNzcxNUM3LjM3MzMgNC40OTIzNyA3LjYwNzQ1IDUuMDU1MzYgNy42MDc0OCA1LjY0MjU4Wk0xNi4xNzg4IDE0Ljc4NTJDMTYuMTc4OCAxNS4yMjA5IDE2LjAwNTQgMTUuNjM5MiAxNS42OTczIDE1Ljk0NzNDMTUuMzg5MiAxNi4yNTU0IDE0Ljk3MDkgMTYuNDI4NyAxNC41MzUyIDE2LjQyODdIMS45NjM5M0MxLjUyODM4IDE2LjQyODYgMS4xMTA4MSAxNi4yNTUyIDAuODAyNzk1IDE1Ljk0NzNDMC40OTQ3IDE1LjYzOTIgMC4zMjEzNSAxNS4yMjA5IDAuMzIxMzUgMTQuNzg1MlYyLjIxMzg3QzAuMzIxNDI0IDEuNzc4MjUgMC40OTQ3NjYgMS4zNjA3NiAwLjgwMjc5NSAxLjA1MjczQzEuMTEwODMgMC43NDQ3MDUgMS41MjgzMiAwLjU3MTM2MyAxLjk2MzkzIDAuNTcxMjg5SDE0LjUzNTJDMTQuOTcwOSAwLjU3MTI4OSAxNS4zODkyIDAuNzQ0NjM5IDE1LjY5NzMgMS4wNTI3M0MxNi4wMDUzIDEuMzYwNzUgMTYuMTc4NyAxLjc3ODMyIDE2LjE3ODggMi4yMTM4N1YxNC43ODUyWiIvPjwvZz48L3N2Zz4="
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Placeholder loader 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: Test Image"
+        class="emotion-4 emotion-5"
+        src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPScxLjEnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycgeG1sbnM6eGxpbms9J2h0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsnIHg9JzBweCcgeT0nMHB4JyB3aWR0aD0nMzBweCcgaGVpZ2h0PSczMHB4JyB2aWV3Qm94PScwIDAgNDAgNDAnIGVuYWJsZS1iYWNrZ3JvdW5kPSduZXcgMCAwIDQwIDQwJyB4bWw6c3BhY2U9J3ByZXNlcnZlJz4KPHBhdGggb3BhY2l0eT0nMC4yJyBmaWxsPScjOURBMUE1JyBkPSdNMjAuMjAxLDUuMTY5Yy04LjI1NCwwLTE0Ljk0Niw2LjY5Mi0xNC45NDYsMTQuOTQ2YzAsOC4yNTUsNi42OTIsMTQuOTQ2LDE0Ljk0NiwxNC45NDYgczE0Ljk0Ni02LjY5MSwxNC45NDYtMTQuOTQ2QzM1LjE0NiwxMS44NjEsMjguNDU1LDUuMTY5LDIwLjIwMSw1LjE2OXogTTIwLjIwMSwzMS43NDljLTYuNDI1LDAtMTEuNjM0LTUuMjA4LTExLjYzNC0xMS42MzQgYzAtNi40MjUsNS4yMDktMTEuNjM0LDExLjYzNC0xMS42MzRjNi40MjUsMCwxMS42MzMsNS4yMDksMTEuNjMzLDExLjYzNEMzMS44MzQsMjYuNTQxLDI2LjYyNiwzMS43NDksMjAuMjAxLDMxLjc0OXonLz4KPHBhdGggZmlsbD0nIzNFQTRFRicgZD0nTTI2LjAxMywxMC4wNDdsMS42NTQtMi44NjZjLTIuMTk4LTEuMjcyLTQuNzQzLTIuMDEyLTcuNDY2LTIuMDEyaDB2My4zMTJoMCBDMjIuMzIsOC40ODEsMjQuMzAxLDkuMDU3LDI2LjAxMywxMC4wNDd6Jz4KPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlVHlwZT0neG1sJyBhdHRyaWJ1dGVOYW1lPSd0cmFuc2Zvcm0nIHR5cGU9J3JvdGF0ZScgZnJvbT0nMCAyMCAyMCcgdG89JzM2MCAyMCAyMCcgZHVyPScxLjI1cycgcmVwZWF0Q291bnQ9J2luZGVmaW5pdGUnLz4KPC9wYXRoPjwvc3ZnPg=="
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Placeholder loader 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: "
+        class="emotion-4 emotion-5"
+        src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPScxLjEnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycgeG1sbnM6eGxpbms9J2h0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsnIHg9JzBweCcgeT0nMHB4JyB3aWR0aD0nMzBweCcgaGVpZ2h0PSczMHB4JyB2aWV3Qm94PScwIDAgNDAgNDAnIGVuYWJsZS1iYWNrZ3JvdW5kPSduZXcgMCAwIDQwIDQwJyB4bWw6c3BhY2U9J3ByZXNlcnZlJz4KPHBhdGggb3BhY2l0eT0nMC4yJyBmaWxsPScjOURBMUE1JyBkPSdNMjAuMjAxLDUuMTY5Yy04LjI1NCwwLTE0Ljk0Niw2LjY5Mi0xNC45NDYsMTQuOTQ2YzAsOC4yNTUsNi42OTIsMTQuOTQ2LDE0Ljk0NiwxNC45NDYgczE0Ljk0Ni02LjY5MSwxNC45NDYtMTQuOTQ2QzM1LjE0NiwxMS44NjEsMjguNDU1LDUuMTY5LDIwLjIwMSw1LjE2OXogTTIwLjIwMSwzMS43NDljLTYuNDI1LDAtMTEuNjM0LTUuMjA4LTExLjYzNC0xMS42MzQgYzAtNi40MjUsNS4yMDktMTEuNjM0LDExLjYzNC0xMS42MzRjNi40MjUsMCwxMS42MzMsNS4yMDksMTEuNjMzLDExLjYzNEMzMS44MzQsMjYuNTQxLDI2LjYyNiwzMS43NDksMjAuMjAxLDMxLjc0OXonLz4KPHBhdGggZmlsbD0nIzNFQTRFRicgZD0nTTI2LjAxMywxMC4wNDdsMS42NTQtMi44NjZjLTIuMTk4LTEuMjcyLTQuNzQzLTIuMDEyLTcuNDY2LTIuMDEyaDB2My4zMTJoMCBDMjIuMzIsOC40ODEsMjQuMzAxLDkuMDU3LDI2LjAxMywxMC4wNDd6Jz4KPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlVHlwZT0neG1sJyBhdHRyaWJ1dGVOYW1lPSd0cmFuc2Zvcm0nIHR5cGU9J3JvdGF0ZScgZnJvbT0nMCAyMCAyMCcgdG89JzM2MCAyMCAyMCcgZHVyPScxLjI1cycgcmVwZWF0Q291bnQ9J2luZGVmaW5pdGUnLz4KPC9wYXRoPjwvc3ZnPg=="
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Placeholder person 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: Test Image"
+        class="emotion-4 emotion-5"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDE3IDE3IiBmaWxsPSJub25lIj48Y2lyY2xlIGN4PSI4LjUiIGN5PSI4LjUiIHI9IjcuNSIgc3Ryb2tlPSIjQkFDQUQwIiBzdHJva2Utd2lkdGg9IjAuOCIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjguNSIgY3k9IjYuMiIgcj0iMi4zIiBmaWxsPSIjQkFDQUQwIi8+PHBhdGggZD0iTTQuMiAxNS4yQzQuMiAxMi4wIDYuMSA5LjUgOC41IDkuNUMxMC45IDkuNSAxMi44IDEyLjAgMTIuOCAxNS4yIiBmaWxsPSIjQkFDQUQwIi8+PC9zdmc+"
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Placeholder person 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: "
+        class="emotion-4 emotion-5"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDE3IDE3IiBmaWxsPSJub25lIj48Y2lyY2xlIGN4PSI4LjUiIGN5PSI4LjUiIHI9IjcuNSIgc3Ryb2tlPSIjQkFDQUQwIiBzdHJva2Utd2lkdGg9IjAuOCIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjguNSIgY3k9IjYuMiIgcj0iMi4zIiBmaWxsPSIjQkFDQUQwIi8+PHBhdGggZD0iTTQuMiAxNS4yQzQuMiAxMi4wIDYuMSA5LjUgOC41IDkuNUMxMC45IDkuNSAxMi44IDEyLjAgMTIuOCAxNS4yIiBmaWxsPSIjQkFDQUQwIi8+PC9zdmc+"
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: Test Image"
+        class="emotion-4 emotion-5"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: "
+        class="emotion-4 emotion-5"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile Avatar 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #91A2FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Test Image with initials, NL"
+      class="emotion-2 emotion-3"
+      color="#91A2FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NL
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile Avatar 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #91A2FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Image with initials, NL"
+      class="emotion-2 emotion-3"
+      color="#91A2FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NL
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile Avatar default 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #91A2FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Test Image with initials, NL"
+      class="emotion-2 emotion-3"
+      color="#91A2FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NL
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile Avatar default 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #91A2FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Image with initials, NL"
+      class="emotion-2 emotion-3"
+      color="#91A2FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NL
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile Avatar text size 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128;
+  height: 128;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #91A2FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Test Image with initials, NL"
+      class="emotion-2 emotion-3"
+      color="#91A2FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NL
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile Avatar text size 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128;
+  height: 128;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #91A2FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Image with initials, NL"
+      class="emotion-2 emotion-3"
+      color="#91A2FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NL
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile Defaults 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: Test Image"
+        class="emotion-4 emotion-5"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile Defaults 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: "
+        class="emotion-4 emotion-5"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Mobile with caption 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  color: #0F1B31;
+  box-sizing: border-box;
+  margin-bottom: 10px!important;
+  cursor: auto!important;
+}
+
+.emotion-4 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-4 focus {
+  outline: none;
+}
+
+.emotion-6 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-8 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      for=""
+      id="test-Caption"
+    >
+      Test Image
+    </div>
+    <div
+      class="emotion-4 emotion-5"
+      id="test-ImageWidget"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-6 emotion-7"
+      >
+        <img
+          alt="image: Test Image"
+          class="emotion-8 emotion-9"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+          tabindex="-1"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Tablet 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: Test Image"
+        class="emotion-4 emotion-5"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Tablet 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: "
+        class="emotion-4 emotion-5"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Tablet Defaults 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: Test Image"
+        class="emotion-4 emotion-5"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive Tablet Defaults 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: "
+        class="emotion-4 emotion-5"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive size 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: Test Image"
+        class="emotion-4 emotion-5"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive size 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 {
+  width: 100%;
+  height: auto;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <img
+        alt="image: "
+        class="emotion-4 emotion-5"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/1024px-Juvenile_Ragdoll.jpg"
+        tabindex="-1"
+        title=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive size Avatar 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Test Image with initials, NR"
+      class="emotion-2 emotion-3"
+      color="#84F3FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NR
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive size Avatar 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128px;
+  height: 128px;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Image with initials, NR"
+      class="emotion-2 emotion-3"
+      color="#84F3FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NR
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive size Avatar deafult 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Test Image with initials, NR"
+      class="emotion-2 emotion-3"
+      color="#84F3FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NR
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive size Avatar deafult 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Image with initials, NR"
+      class="emotion-2 emotion-3"
+      color="#84F3FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NR
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive size Avatar text size 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128;
+  height: 128;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Test Image with initials, NR"
+      class="emotion-2 emotion-3"
+      color="#84F3FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NR
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive size Avatar text size 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 128;
+  height: 128;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Image with initials, NR"
+      class="emotion-2 emotion-3"
+      color="#84F3FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NR
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive size Avatar text size other 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Test Image with initials, NR"
+      class="emotion-2 emotion-3"
+      color="#84F3FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NR
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots Responsive size Avatar text size other 2`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: undefinedpx;
+  font-size: NaNpx;
+  background-color: #84F3FF;
+  border-radius: 3px;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      aria-label="Image with initials, NR"
+      class="emotion-2 emotion-3"
+      color="#84F3FF"
+      height="auto"
+      role="img"
+      width="100%"
+    >
+      NR
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots RoundImage Default 1`] = `
+.emotion-0 {
+  width: 24px;
+  height: auto;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-background-position: center;
+  background-position: center;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+  background-image: url();
+}
+
+<div>
+  <div
+    aria-label="Image: ML"
+    class="emotion-0 emotion-1"
+    height="auto"
+    role="img"
+    style="background-image: url();"
+    width="24px"
+  />
+</div>
+`;
+
+exports[`Image Snapshots RoundImage Default with caption 1`] = `
+.emotion-0 {
+  width: 24px;
+  height: auto;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-background-position: center;
+  background-position: center;
+  border-radius: 50%;
+  outline: none;
+  cursor: default;
+  background-image: url();
+}
+
+<div>
+  <div
+    aria-label="Image: ML"
+    class="emotion-0 emotion-1"
+    height="auto"
+    role="img"
+    style="background-image: url();"
+    width="24px"
+  />
+</div>
+`;
+
+exports[`Image Snapshots TIFF Image  with caption 1`] = `
+.emotion-0 {
+  position: relative;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.emotion-0 focus {
+  outline: none;
+}
+
+.emotion-2 {
+  display: inline-block;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.emotion-4 canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    id="test-ImageWidget"
+    tabindex="-1"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <div
+        class="emotion-4 emotion-5"
+      >
+        <div
+          class="_1Lxpd"
+          id="tiff-container"
+          tabindex="-1"
+          title=""
+        >
+          <div
+            class="_35l6Q"
+          >
+            <div
+              class="_1oXyH"
+              id="tiff-inner-container"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots TextAvatar Default  with caption 1`] = `
+.emotion-0 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: 24px;
+  font-size: 12px;
+  background-color: green;
+  border-radius: 3px;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    aria-label="ML with initials, ML"
+    class="emotion-0 emotion-1"
+    color="green"
+    height="auto"
+    role="img"
+    width="100%"
+  >
+    ML
+  </div>
+</div>
+`;
+
+exports[`Image Snapshots TextAvatar Default 1`] = `
+.emotion-0 {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  color: #0F1B31;
+  text-align: center;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important;
+  line-height: 24px;
+  font-size: 12px;
+  background-color: green;
+  border-radius: 3px;
+  outline: none;
+  cursor: default;
+}
+
+<div>
+  <div
+    aria-label="ML with initials, ML"
+    class="emotion-0 emotion-1"
+    color="green"
+    height="auto"
+    role="img"
+    width="100%"
+  >
+    ML
+  </div>
+</div>
+`;

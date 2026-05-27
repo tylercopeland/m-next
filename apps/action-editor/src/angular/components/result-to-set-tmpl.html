@@ -1,0 +1,54 @@
+<!-- Store In -->
+<div class="mi-ae-row">
+    <div class="mi-ae-col-{{ columnWidths[0] }}" data-ng-if="hideLabel===null || !hideLabel">
+        <label class="mi-ae-label" data-ng-class="{'not-bold' : thinLabel}">{{ config.label }}</label>
+    </div>
+    <!-- Store Value In -->
+    <div data-ng-class="{'mi-ae-col-{{ secondaryCol }}': config.storeIn.selected.category !== 'Screen Controls', 'mi-ae-col-{{ columnWidths[1] }}': config.storeIn.selected.category === 'Screen Controls'}" data-ng-if="config.storeIn.visible">
+        <ui-select data-ng-model="config.storeIn.selected" theme="selectize" ng-disabled="isReadOnly" on-select="storeSelected($select.selected)">
+            <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+            <ui-select-choices group-by="'category'" repeat="store in config.storeIn.options | filter: $select.search | orderBy: 'label'">
+                <span ng-bind-html="store.label | highlight: $select.search"></span>
+            </ui-select-choices>
+        </ui-select>
+    </div>
+    <!--/ Store Value In -->
+    <!-- Name It -->
+    <div class="mi-ae-col-{{ secondaryCol }}" data-ng-class="{'mi-ae-select-error': error.hasError}" data-ng-if="config.storeIn.selected.category !== 'Screen Controls' && !isReadOnly" mi-validation-class="item.ValidationMessages" error-property="'ActionResultName'">
+        <angucomplete-alt id="autocomplete"
+                          placeholder="Enter a meaningful name (e.g. CustomerBalance)"
+                          pause="100"
+                          selected-object="selectedItem"
+                          local-data="config.nameIt.options"
+                          local-search="searchList"
+                          search-fields="label"
+                          title-field="label"
+                          minlength="1"
+                          initial-value="item.ActionResultName"
+                          focus-out="validateInput()"
+                          input-changed="inputChanged"
+                          focus-first="true"
+                          ng-disabled="isReadOnly"
+                          ></angucomplete-alt>
+    </div>
+    <div class="mi-ae-col-{{ secondaryCol }}" data-ng-class="{'mi-ae-select-error': error.hasError}" data-ng-if="config.storeIn.selected.category !== 'Screen Controls' && isReadOnly" mi-validation-class="item.ValidationMessages" error-property="'ActionResultName'">
+        <input type="text" ng-disabled="isReadOnly" data-ng-model="item.ActionResultName">
+    </div>
+
+    <!--/ Name It -->
+</div>
+<div class="mi-ae-row" data-ng-if="error.hasError">
+    <div class="mi-ae-col-offset-{{ columnWidths[0] }} mi-ae-col-{{ columnWidths[1] }}">
+        <span class="mi-ae-error-label">{{ error.message }}</span>
+    </div>
+</div>
+<!--
+<div class="mi-ae-row" data-ng-if="dropdown.selected.category !== dropdown.controlCategory">
+  <div class="mi-ae-col-{{ columnWidths[0] }}">
+    <label class="mi-ae-label">{{ config.nameIt.label }}</label>
+  </div>
+  <div class="mi-ae-col-{{ columnWidths[1] }}">
+    <input type="text" data-ng-model="item.ResultToSet.ActionResultName">
+  </div>
+</div>
+-->

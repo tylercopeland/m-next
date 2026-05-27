@@ -1,0 +1,39 @@
+<div id="componentModal" class="mi-ae-framework component-modal" base-path="{{basePath}}">
+  <!-- Top Header -->
+  <header class="mi-ae-framework-header-v4">
+    <div style="display:flex; align-items: center;">
+    <div class="header-title">{{ layout.title }}</div>
+    <div  class ="pill-wrapper" data-ng-class="{ 'pill-color-grey' : layout.archived,'pill-color-green' : !layout.archived && layout.readonly , 'pill-color-blue' : !layout.archived && !layout.readonly }">
+      <span
+         class = "pill-lead-icon-dot "
+         data-ng-class="{ 'pill-dot-color-grey' : layout.archived,'pill-dot-color-green' : (!layout.archived && layout.readonly) , 'pill-dot-color-blue' : (!layout.archived && !layout.readonly )}"
+         role='presentation'
+         aria-labelledby="#pill-text"
+         >  </span>
+      <span id="pill-text" class='pill-text' >
+      {{layout.pillMessage}}
+      </span>
+   </div>
+  </div>
+    <div class="mi-ae-autosave">
+      <div class="is-saving" data-ng-if="layout.saving && !layout.readonly">Saving <i class="mi-icon">
+        <svg-icon name="'cloud-refresh'" ng-attr-style="svgIconStyle" size="14"> </svg-icon>
+      </i></div>
+      <div data-ng-if="!layout.saving && !layout.readonly">Saved <i class="mi-icon">
+        <svg-icon name="'circle-checkmark'" ng-attr-style="svgIconStyle" size="14"> </svg-icon>
+      </i></div>
+      <div data-ng-if="layout.readonly">Read Only <i class="mi-icon">
+        <svg-icon name="'eye-open'" ng-attr-style="svgIconStyle" size="14"> </svg-icon>
+      </i></div>
+    </div>
+    <div class="button-group">
+        <button class="mi-button ghost" data-ng-click="closeModal()" data-ng-disabled="layout.saving && !layout.readonly">{{ layout.buttonLabel }}</button>
+    </div>
+</header>
+  <!--/ Top Header -->
+
+  <!-- Lower Content Area -->
+  <div class="mi-ae-framework-wrapper" id="componentModalContent"></div>
+  <!--/ Lower Content Area -->
+</div>
+

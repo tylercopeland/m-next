@@ -1,0 +1,52 @@
+<div data-ng-controller="RetrieveValuesFromEmailCtrl">
+    <mi-action-description info="action"></mi-action-description>
+
+    <!-- Main Content Area -->
+    <div class="mi-ae-main-content">
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-5">
+                <label class="mi-ae-label mi-ae-margin-b-0">Value(s) to retrieve</label>
+            </div>
+            <div class="mi-ae-col-9">
+                <label class="mi-ae-label mi-ae-margin-b-0 ">Place the value here</label>
+            </div>
+        </div>
+        <!-- Values List -->
+        <div class="mi-ae-row table-row" data-ng-class="{'alt-row': $odd}" data-ng-repeat="item in action.Bindings">
+            <div class="mi-ae-col-5" mi-validation-class="item.ValidationMessages" error-property="'ValueName'">
+                <ui-select data-ng-model="item.ValueName" theme="selectize" on-select="updateValidation(item)" ng-disabled="action.isReadOnly">
+                  <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+                  <ui-select-choices repeat="valueType.value as valueType in action.valueTypes | filter: usedValues(item) | filter: { label: $select.search } | orderBy: 'label'">
+                    <span ng-bind-html="valueType.label | highlight: $select.search"></span>
+                  </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="mi-ae-col-9">
+                <mi-result-to-set action="action"
+                                  include-controls="true"
+                                  control-model="item.ControlToUpdate"
+                                  controls-ignore="['SEC']"
+                                  col-widths="[4,16]"
+                                  hide-label="true"
+                                  hide-store-in="false"
+                                  item="item.ResultToSet" is-read-only ="action.isReadOnly"></mi-result-to-set>
+            </div>
+
+            <div class="mi-ae-col-2" data-ng-if="action.Bindings.length > 1 && !action.isReadOnly">
+                <miae-button 
+                    button-class="'ghost mi-button-clear mi-ae-margin-0'" 
+                    clickevent="removeItem($index)"
+                    svg-icon-type="'delete'" 
+                    svg-icon-size="14"></miae-button>
+            </div>
+        </div>
+        <!--/ Field List -->
+        <miae-button name="' Add another value'" data-ng-if="action.Bindings.length !== action.valueTypes.length && !action.isReadOnly"
+                   button-class="'ghost mi-button-clear mi-ae-margin-l-0'"
+                   clickevent="addItem()"
+                   svg-icon-type="'circle-plus'" 
+                   svg-icon-size="14"></miae-button>
+    </div>
+    <!--/ Main Content Area -->
+     <mi-action-notes  is-read-only ="action.isReadOnly"></mi-action-notes>
+</div>

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gallery should render correctly when has items with different size 1`] = `""`;
+
+exports[`Gallery should render correctly when has items with urls 1`] = `""`;
+
+exports[`Gallery should render correctly when has items with urls and with captions 1`] = `""`;
+
+exports[`Gallery should render correctly when has items without urls 1`] = `""`;
+
+exports[`Gallery should render correctly when has items without urls and with modified empty image text 1`] = `""`;
+
+exports[`Gallery should render correctly when is empty 1`] = `""`;
+
+exports[`Gallery should render correctly when is loading 1`] = `""`;
+
+exports[`Gallery should render correctly when is loading with custom skeleton item count 1`] = `""`;
+
+exports[`Gallery should render correctly when with tiff files 1`] = `""`;

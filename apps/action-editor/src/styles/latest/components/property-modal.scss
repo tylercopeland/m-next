@@ -1,0 +1,204 @@
+.mi-property-modal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 3000;
+
+    &.is-active {
+      display: flex;
+    }
+    .property-modal-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba($black, 0.86);
+      z-index: 0;
+    }
+    .property-modal-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: calc(100% - 20px);
+      height: calc(100vh - 20px);
+      max-height: calc(100vh - 20px);
+      background-color: $white;
+      overflow: hidden;
+      border-radius: $radius;
+      z-index: 1;
+
+      .property-modal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-shrink: 0;
+        background-color: $white;
+        border-radius: $radius $radius 0 0;
+        border-bottom: $border-light;
+        padding: 10px;
+        overflow: hidden;
+
+        .property-modal-header-title {
+          color: $blue-darkest;
+          font-size: 18px;
+
+          strong {
+            color: $blue;
+            font-weight: 600;
+          }
+        }
+        .property-modal-header-actions {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+
+          .save-info {
+            display: flex;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: $grey;
+            padding: 0 10px 0 0;
+
+            &.is-saving {
+              color: $blue;
+            }
+            i {
+              margin-left: 4px;
+            }
+          }
+          button {
+            margin: 0;
+          }
+        }
+      }
+      .property-modal-content-wrapper {
+        flex: 1;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: $white;
+        overflow: hidden;
+      }
+      .property-modal-tab-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        overflow: hidden;
+
+        .tabs {
+          flex: 0 1 auto;
+        }
+      }
+      .property-modal-body {
+        position: relative;
+        flex: 1;
+        display: block;
+        width: 100%;
+        background-color: $white;
+        padding: 10px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        @include scrollbar;
+
+        &.is-hidden {
+          display: none;
+        }
+        &.has-columns {
+          overflow: hidden;
+          height: 100vh;
+          padding: 0;
+        }
+        .property-modal-title {
+          display: block;
+          width: 100%;
+          font-size: 20px;
+          font-weight: 600;
+          color: #0F1B31;
+          padding: 10px 0 15px;
+
+          span {
+            font-weight: 100;
+            font-size: 16px;
+            color: $blue-dark;
+          }
+        }
+        .property-modal-subtitle {
+          display: block;
+          width: 100%;
+          font-size: 16px;
+          font-weight: 600;
+          color: $blue-darker;
+          padding: 10px 0 15px;
+        }
+      }
+    }
+
+    .pill-wrapper {
+        display: inline-flex;
+        flex-flow: row nowrap;
+        -webkit-box-align: center;
+        align-items: center;
+        color: rgb(15, 27, 49);
+        max-width: 100%;
+        background-color: rgb(231, 245, 240);
+        padding: 0px 8px;
+        border-radius: 8px;
+        height: 16px;
+        margin-left: 16px;
+
+        .pill-color-blue {
+          background-color: #e5f7ff;
+        }
+
+        .pill-color-green {
+          background-color: #e7f5f0;
+        }
+
+        .pill-color-grey {
+          background-color: #0f1b31;
+        }
+
+        .pill-dot-color-blue {
+          background-color: #0d71c8;
+        }
+
+        .pill-dot-color-green {
+          background-color: #007b4a;
+        }
+
+        .pill-dot-color-grey {
+          background-color: #545f67;
+        }
+
+        .pill-lead-icon-dot {
+          display: inline-block;
+          flex-shrink: 0;
+          margin: 0px 4px 0px 0px;
+          width: 8px;
+          height: 8px;
+          border-radius: 100%;
+        }
+
+        .pill-text {
+          font-weight: 600;
+          flex-shrink: 1;
+          -webkit-box-flex: 1;
+          flex-grow: 1;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          font-size: 12px;
+          line-height: 16px;
+          padding: 0px 2px;
+        }
+      }
+  }

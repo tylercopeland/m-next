@@ -1,0 +1,38 @@
+.angucomplete-holder {
+  position: relative;
+  width: 100%;
+
+  input[type=text] {
+    margin-bottom: 0;
+  }
+
+  .angucomplete-dropdown {
+    position: absolute;
+    z-index: 10;
+    // margin: -12px 0 0 0;
+    margin: 0;
+    background: #ffffff;
+    border: 1px solid #d0d0d0;
+    border-top: 0 none;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    width: 100%;
+    overflow-y: auto;
+    max-height: 150px; // your preference
+
+    .angucomplete-row {
+      padding: 5px 8px;
+      overflow: hidden;
+      cursor: pointer;
+
+      &.angucomplete-selected-row {
+        background-color: #f5fafd;
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+}

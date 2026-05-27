@@ -1,0 +1,75 @@
+<div data-ng-controller="MergeEntitiesCtrl">
+  <mi-action-description info="action" show-back="criteriaBuilder" back-button="toggleCriteriaBuilder()"> </mi-action-description>
+
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content">
+    <div class="mi-ae-padding-b-20">
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-10">
+          <ul class="mi-radiobutton-group">
+            <li class="rad-horizontal">
+              <label class="mi-radio-checkbox mi-radio">
+                <span data-ng-if="!isQbo">Merge Entity</span>
+                <span data-ng-if="isQbo">Merge Lead</span>
+                <input type="radio" name="MergeOptions" data-ng-model="action.MergeType" data-ng-value="0" ng-disabled="action.isReadOnly" />
+                <div class="mi-radio-checkbox-indicator"></div>
+              </label>
+            </li>
+            <li class="rad-horizontal">
+              <label class="mi-radio-checkbox mi-radio">
+                <span>Merge Contact</span>
+                <input type="radio" name="MergeOptions" data-ng-model="action.MergeType" data-ng-value="1" ng-disabled="action.isReadOnly" />
+                <div class="mi-radio-checkbox-indicator"></div>
+              </label>
+            </li>
+            <li data-ng-if="!isQbo" class="rad-horizontal">
+              <label class="mi-radio-checkbox mi-radio">
+                <span>Swap Contact Type</span>
+                <input type="radio" name="MergeOptions" data-ng-model="action.MergeType" data-ng-value="2" ng-disabled="action.isReadOnly" />
+                <div class="mi-radio-checkbox-indicator"></div>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mi-ae-padding-t-20">
+      <div class="mi-ae-row">
+        <div data-ng-if="action.MergeType === 0" class="mi-ae-col-4">
+          <label class="mi-ae-label" data-ng-bind-html="fromLabel"></label>
+        </div>
+        <div data-ng-if="action.MergeType > 0" class="mi-ae-col-4">
+          <label class="mi-ae-label" data-ng-bind-html="fromContactLabel"></label>
+        </div>
+        <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'From'">
+          <mi-complex-value action="action" model="action.FromRecordID" allow="allow" is-read-only="action.isReadOnly"></mi-complex-value>
+        </div>
+      </div>
+    </div>
+    <div class="mi-ae-padding-t-20">
+      <div class="mi-ae-row">
+        <div data-ng-if="action.MergeType === 0" class="mi-ae-col-4">
+          <label class="mi-ae-label" data-ng-bind-html="toLabel"></label>
+        </div>
+        <div data-ng-if="action.MergeType > 0" class="mi-ae-col-4">
+          <label class="mi-ae-label" data-ng-bind-html="toContactLabel"></label>
+        </div>
+        <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'To'">
+          <mi-complex-value action="action" model="action.ToRecordID" allow="allow" is-read-only="action.isReadOnly"></mi-complex-value>
+        </div>
+      </div>
+    </div>
+    <div class="mi-ae-padding-t-20">
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-10">
+          <p data-ng-if="action.MergeType === 0 && !isQbo" data-ng-bind-html="entityInfo"></p>
+          <p data-ng-if="action.MergeType === 0 && isQbo" data-ng-bind-html="entityInfoQbo"></p>
+          <p data-ng-if="action.MergeType === 1" data-ng-bind-html="contactInfo"></p>
+          <p data-ng-if="action.MergeType === 2" data-ng-bind-html="swapInfo"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mi-action-notes is-read-only="action.isReadOnly"></mi-action-notes>
+</div>

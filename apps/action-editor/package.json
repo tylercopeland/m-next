@@ -1,0 +1,85 @@
+{
+  "name": "@m-next/action-editor",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Action Editor",
+  "keywords": [
+    "action",
+    "editor"
+  ],
+  "author": "",
+  "license": "ISC",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./src": "./src/index.ts"
+  },
+  "directories": {
+    "src": "src",
+    "dist": "dist"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "@types/angular": "^1.8.9",
+    "@types/eslint__js": "^8.42.3",
+    "@types/jquery": "^3.5.30",
+    "@types/ngstorage": "^0.3.39",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
+    "babel-loader": "^9.1.3",
+    "css-loader": "^7.1.2",
+    "eslint": "^8.57.0",
+    "globals": "^15.9.0",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.0",
+    "sass": "^1.77.8",
+    "sass-loader": "^16.0.1",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.3.0",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  },
+  "dependencies": {
+    "@m-next/svg-icon": "^1.0.0",
+    "angular": "1.5.8",
+    "jquery": "2.2.0",
+    "jquery-datetimepicker": "2.5.21",
+    "moment": "2.30.1",
+    "ngstorage": "0.3.11",
+    "react2angular": "4.0.6",
+    "stream-browserify": "^3.0.0",
+    "underscore": "^1.8.3"
+  },
+  "peerDependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "scripts": {
+    "test": "jest --passWithNoTests",
+    "watch": "webpack --watch  --mode development",
+    "build": "webpack --mode production",
+    "build:legacy": "webpack --mode production --config-name for-legacy",
+    "build:react": "webpack --mode production --config-name react-action-editor-wrapper",
+    "dev": "webpack --mode development",
+    "start": "webpack serve --mode development --config-name react-wrapper --port 4747",
+    "prettify": "npx prettier \"**/*.*(js|jsx)\" --ignore-path=.prettierignore --write --log-level=error",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --cache --report-unused-disable-directives --max-warnings=0",
+    "lint-fix": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix --cache --report-unused-disable-directives --max-warnings=0"
+  }
+}

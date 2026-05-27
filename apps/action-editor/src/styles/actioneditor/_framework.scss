@@ -1,0 +1,310 @@
+@import 'framework/mention';
+
+.mi-ae-framework {
+  display: block;
+  position: fixed;
+  top: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $gray-alt;
+  z-index: $z-index + 5;
+  -webkit-transition: top 0.3s ease-in-out;
+  -moz-transition: top 0.3s ease-in-out;
+  -o-transition: top 0.3s ease-in-out;
+  transition: top 0.3s ease-in-out;
+
+  &.component-modal {
+    z-index: $z-index;
+  }
+
+  &.open-above-ae {
+    z-index: $z-index + 10;
+  }
+
+  &.calendar-expression {
+    position: unset;
+    top: 0;
+  }
+  .sortable-ghost {
+    overflow: hidden;
+    height: 1px !important;
+    background-color: $aqua;
+    opacity: 0.6;
+  }
+
+  .mi-ae-simple-list {
+    .sortable-ghost {
+      height: 30px !important;
+    }
+  }
+
+  &.mi-ae-framework-open {
+    top: 0;
+  }
+
+  .mi-ae-fullheight {
+    height: 100%;
+  }
+
+  // Main Action Editor Content
+  .mi-ae-main-content {
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 75px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0 10px;
+
+    &.show-scrollbar {
+      &::-webkit-scrollbar {
+        width: 6px;
+        background-color: rgba(0,0,0,0);
+        -webkit-border-radius: 100px;
+      }
+      
+      /* hover effect for both scrollbar area, and scrollbar 'thumb' */
+      &::-webkit-scrollbar:hover {
+        background-color: rgba(0, 0, 0, 0.09);
+      }
+      
+      /* The scrollbar 'thumb' ...that marque oval shape in a scrollbar */
+      &::-webkit-scrollbar-thumb:vertical {
+        background: rgba(0,0,0,0.5);
+        -webkit-border-radius: 100px;
+      }
+      
+      &::-webkit-scrollbar-thumb:vertical:active {
+        background: rgba(0,0,0,0.61);
+        -webkit-border-radius: 100px;
+      }      
+    }
+
+    &.mi-ae-main-content-full {
+      bottom: 10px;
+    }
+
+    &.mi-ae-main-content-with-footer {
+      top: 0;
+    }
+  }
+
+  .mi-ae-content-footer {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    padding: 0 10px;
+  }
+
+  .mi-ae-simple-list {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    list-style-type: none;
+
+    li {
+      display: block;
+      padding: 5px 6px;
+      border-bottom: 1px solid $light-grey;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+
+      &:first-child {
+        border-top: 1px solid $light-grey;
+      }
+
+      &:hover {
+        background-color: rgba($lightest-blue, 0.1);
+      }
+
+      &.selected {
+        background-color: rgba($green, 0.1) !important;
+      }
+
+      span {
+        flex: 1;
+        min-width: 30px;
+
+        &:first-child {
+          padding: 0 10px 0 5px;
+          margin-right: 10px; 
+          border-right: 1px solid $light-grey; 
+        }
+
+        &:nth-child(2) { 
+          font-weight: 600; 
+          flex: 100; 
+        }
+
+        &:last-child { 
+          padding: 0 5px 0 10px;
+          margin-left: 10px; 
+        }
+      }
+    }
+  }
+
+  .mi-ae-nosort-list {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    list-style-type: none;
+
+    li {
+      display: block;
+      padding: 5px 6px;
+      border-bottom: 1px solid $light-grey;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+
+      &:first-child {
+        border-top: 1px solid $light-grey;
+      }
+
+      &:hover {
+        background-color: rgba($lightest-blue, 0.1);
+      }
+
+      &.selected {
+        background-color: rgba($green, 0.1) !important;
+      }
+
+      span {
+        flex: 1;
+        font-weight: 600;
+
+        &:nth-child(2) { 
+          padding: 0 5px 0 10px;
+          flex: 0;
+        }
+      }
+    }
+  }
+  .mi-ae-box-list {
+    display: block;
+    margin: 10px 0 0;
+    padding: 0;
+    list-style-type: none;
+    list-style: none;
+
+    &.no-space {
+      li {
+        margin-bottom: 0;
+        border-bottom: 0;
+
+        &:last-child {
+          border-bottom: 1px solid $light-grey;
+        }
+      }
+    }
+
+    li {
+      display: flex;
+      border-width: 1px;
+      border-style: solid;
+      border-color: $light-grey;
+      padding: 5px;
+      margin-bottom: 6px;
+      cursor: pointer;
+
+      &.is-flex-column {
+        flex-direction: column;
+      }
+
+      &:hover {
+        background-color: rgba($green, 0.1) !important;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &.is-checkbox {
+        &:before {
+          font-family: 'method-font','method-icon','method-icon-solid','Source Sans Pro';
+          display: inline-block;
+          content: "\e7d7";
+          color: $light-grey;
+        }
+
+        &.is-checkbox-active {
+          &:before {
+            color: $blue;
+            content: "\e80e";
+          }
+        }
+      }
+
+      label {
+        margin: -2px 3px 0 0;
+      }
+
+      > span {
+        margin-right: 5px;
+        padding: 0 5px;
+
+        &:last-child {
+          font-weight: 600;
+          margin-right: 0;
+          padding: 0;
+        }
+      }
+
+      .description {
+        display: block;
+        font-size: 12px;
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .mi-ae-autosave {
+    display: block;
+    position: absolute;
+    white-space: nowrap;
+    right: 92px;
+    top: 16px;
+    color: $grey;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    div {
+      display: block;
+
+      i {
+        position: relative;
+        top: 1px;
+        margin-left: 5px;
+      }
+
+      &.is-saving {
+        color: $blue;
+      }
+    }
+  }
+
+  @import "partials/tooltip",
+          "framework/autocomplete",
+          "framework/errors",
+          "framework/forms",
+          "framework/header",
+          "framework/helper",
+          "framework/notes-box",
+          "framework/radio-buttons",
+          "framework/search-box",
+          "framework/sidebar",
+          "framework/typography",
+          "framework/wrapper";
+}

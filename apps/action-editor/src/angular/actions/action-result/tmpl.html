@@ -1,0 +1,41 @@
+<div data-ng-controller="ActionResultCtrl">
+  <mi-action-description info="action"></mi-action-description>
+
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content">
+    <div class="mi-ae-section mi-ae-border-bottom mi-ae-margin-b-10" data-ng-repeat="item in action.AssignValueToActions">
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Assign the value</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value action="action" model="item.Source" allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+        </div>
+        <div  class="mi-ae-col-2" data-ng-if="action.AssignValueToActions.length > 1">
+          <miae-button 
+            data-ng-if="!action.isReadOnly" 
+            button-class="'ghost mi-button-clear'" 
+            clickevent="removeItem($index, item)"
+            svg-icon-type="'delete'" 
+            svg-icon-size="14"></miae-button>
+        </div>
+      </div>
+      <mi-result-to-set 
+        label="'Give it a name'" 
+        hide-store-in="true" 
+        action="action" 
+        item="item"
+        is-read-only ="action.isReadOnly"
+        ></mi-result-to-set>
+    </div>
+
+    <miae-button data-ng-if="!action.isReadOnly" name="' Add another action result'" 
+      button-class="'ghost mi-button-clear'" 
+      clickevent="addItem()"
+      svg-icon-type="'circle-plus'" 
+      svg-icon-size="14"></miae-button>
+  </div>
+  <!--/ Main Content Area -->
+
+  <mi-action-notes  is-read-only ="action.isReadOnly"></mi-action-notes>
+</div>

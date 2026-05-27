@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "target": "ES2020", /* Emit ES2020 — preserves native for-of/spread on Map/Set so Symbol.iterator is used natively by the browser, not via __values/__spreadArray helpers that rely on a polyfill. Must be ES2015+ to avoid TypeScript downcompiling iterators. */
+    "lib": ["ES2020", "DOM"], /* Match target so TypeScript knows which built-ins are available. */
+    "jsx": "react", /* Specify what JSX code is generated. */
+    "module": "nodenext", /* Specify what module code is generated. */
+    "moduleResolution": "nodenext",
+    "allowJs": true, /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
+    "checkJs": false, /* Report errors in .js files. */
+    "esModuleInterop": true, /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
+    "forceConsistentCasingInFileNames": true, /* Ensure that casing is correct in imports. */
+    "skipLibCheck": true, /* Skip type checking all .d.ts files. */
+    "skipDefaultLibCheck": true, /* Skip type checking of default library declaration files. */
+    "resolveJsonModule": true,
+    "noEmitOnError": false, /* Do not emit outputs if any type checking errors were reported. */
+    "noResolve": false, /* Do not add triple-slash references or module imports to the list of compiled files. */
+    "paths": {
+      "@m-next/svg-icon": ["./types/svg-icon-override.d.ts"]
+    },
+
+    /* TYPE CHECKING RULES */
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "useUnknownInCatchVariables": true,
+    "noUncheckedIndexedAccess": true // TLDR - Checking an indexed value (array[0]) now forces type <T | undefined> as there is no confirmation that index exists
+    // THE BELOW ARE EXTRA STRICT OPTIONS THAT SHOULD ONLY BY CONSIDERED IN VERY SAFE PROJECTS
+    // "exactOptionalPropertyTypes": true, // TLDR - Setting to undefined is not the same as a property not being defined at all
+    // "noPropertyAccessFromIndexSignature": true, // TLDR - Use dot notation for objects if youre sure it exists, use ['index'] notaion if unsure
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "coverage",
+    "**/*.test.tsx",
+    "**/*.config.js", // Exclude all config files
+    "*.config.js", // Exclude root-level config files
+    "**/svg-icon/**/*", // I can't deal with this right now - exclude entire svg-icon directory
+    "../svg-icon/**/*", // Also exclude svg-icon from parent directory
+    "../svg-icon/src/icons/**/*.ts",
+    "../svg-icon/src/icons/**/*.tsx",
+    "../svg-icon/src/icons/**/*.jsx",
+    "../html-editor/**/*" // Also exclude html-editor issues
+  ]
+}

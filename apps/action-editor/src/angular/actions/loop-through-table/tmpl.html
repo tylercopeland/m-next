@@ -1,0 +1,107 @@
+<div data-ng-controller="LoopThroughTableCtrl">
+    <mi-action-description info="action" show-back="criteriaBuilder" back-button="toggleCriteriaBuilder()"></mi-action-description>
+    <!-- Main Content Area -->
+    <div class="mi-ae-main-content" data-ng-show="!criteriaBuilder">
+        <!-- Table Selection -->
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-4">
+                <label class="mi-ae-label">Select a table</label>
+            </div>
+            <div class="mi-ae-col-8" mi-validation-class="action.ValidationMessages" error-property="'ViewNameFriendly'">
+                <ui-select data-ng-model="action.ViewNameFriendly" theme="selectize" ng-disabled="action.isReadOnly" >
+                    <ui-select-match placeholder="Select a table...">{{$select.selected.value}}</ui-select-match>
+                    <ui-select-choices repeat="table.value as table in tables | filter: $select.search">
+                        <span ng-bind-html="table.value | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+        <!--/ Table Selection -->
+        <!-- Loader -->
+        <div class="mi-ae-row" data-ng-if="isLoading">
+            <div class="mi-ae-col-8 mi-ae-col-push-4 mi-ae-padding-5">
+                <label class="mi-ae-label">Please wait loading...</label>
+            </div>
+        </div>
+        <!--/ Loader -->
+        <!-- Step 2 -->
+        <div data-ng-if="canContinue">
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-4">
+                    <label class="mi-ae-label">Where</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-criteria-string where-clause="action.WhereClause"></mi-criteria-string>
+                    <miae-button 
+                        button-class="'ghost mi-button-clear mi-ae-margin-l-0 mi-ae-padding-t-3 mi-ae-padding-l-0'" 
+                        clickevent="toggleCriteriaBuilder()" 
+                        name="criteriaButton"></miae-button>
+                </div>
+            </div>
+            <div class="mi-ae-row">
+                <div class="mi-ae-col-4">
+                    <label class="mi-ae-label">Only distinct values from</label>
+                </div>
+                <div class="mi-ae-col-8">
+                    <mi-field-select value="action.DistinctColumn" table-name="action.ViewNameFriendly" allow-clear="true"  disable-select="action.isReadOnly"></mi-field-select>
+                </div>
+            </div>
+            <div class="mi-ae-row table-row " data-ng-class="{'alt-row': $odd}" data-ng-repeat="item in action.Sorting">
+                <div class="mi-ae-col-4">
+                    <label class="mi-ae-label mi-ae-margin-0">{{ ($index === 0) ? 'Order by' : 'Then order by' }}</label>
+                </div>
+                <div class="mi-ae-col-10">
+                    <div class="mi-ae-row ">
+                        <div class="mi-ae-col-8" mi-validation-class="item.ValidationMessage" error-property="'105'">
+                            <mi-field-select value="item.Field" on-select="setUsedFields()" used-fields="usedFields" disable-select="hasDistinct || action.isReadOnly" table-name="action.ViewNameFriendly"></mi-field-select>
+                        </div>
+
+                        <div class="mi-ae-col-8">
+                            <ul class="mi-radiobutton-group">
+                                <li class="rad-horizontal">
+                                    <label class="mi-radio-checkbox mi-radio">
+                                        <span>Ascending</span>
+                                        <input type="radio" data-ng-model="item.IsAscending" data-ng-value="true" ng-disabled="action.isReadOnly">
+                                        <div class="mi-radio-checkbox-indicator"></div>
+                                    </label>
+                                </li>
+                                <li class="rad-horizontal">
+                                    <label class="mi-radio-checkbox mi-radio">
+                                        <span>Descending</span>
+                                        <input type="radio" data-ng-model="item.IsAscending" data-ng-value="false" ng-disabled="action.isReadOnly">
+                                        <div class="mi-radio-checkbox-indicator"></div>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-mi-ae-2">
+                    <miae-button 
+                        button-class="'ghost mi-button-clear mi-ae-margin-0'" 
+                        clickevent="removeSortingItem($index)" 
+                        data-ng-if="$index > 0 || !action.isReadOnly"
+                        svg-icon-type="'delete'" 
+                        svg-icon-size="14"></miae-button>
+                </div>
+            </div>
+            <miae-button name="' Add another order'" 
+                       data-ng-if="totalfields > action.Sorting.length && !hasDistinct && !action.isReadOnly"
+                       button-class="'ghost mi-button-clear mi-ae-margin-l-0'"
+                       clickevent="addSortingItem()"
+                       svg-icon-type="'circle-plus'" 
+                       svg-icon-size="14"></miae-button>
+        </div>
+        <!--/ Step 2 -->
+    </div>
+    <!--/ Main Content Area -->
+
+    <div class="mi-ae-main-content" data-ng-if="criteriaBuilder">
+        <miae-criteria-builder 
+            action="action" 
+            fields-only="true" 
+            where-clause="action.WhereClause" 
+            table-name="action.ViewNameFriendly" is-read-only ="action.isReadOnly"></miae-criteria-builder>
+    </div>
+     <mi-action-notes  is-read-only ="action.isReadOnly"></mi-action-notes>
+</div>

@@ -1,0 +1,108 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import * as React from 'react';
+
+export interface InputProps {
+  className?: string;
+  disabled?: boolean;
+  hideCaption?: boolean;
+  forwardRef?: React.Ref<any>;
+  id: string;
+  label?: string | null;
+  name?: string | null;
+  readonly?: boolean;
+  required?: boolean;
+  autoComplete?: string;
+  placeholder?: string;
+  style?: React.CSSProperties;
+  inputStyle?: React.CSSProperties;
+  tabIndex?: number;
+  type?: string;
+  value?: string | number | object | null;
+  width?: string;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  onKeyUp?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  validationMessage?: string | React.ReactNode;
+  displayAuto?: boolean;
+  legacyClass?: string;
+  isV4Design?: boolean;
+  isMobile?: boolean;
+  hidden?: boolean;
+  ariaDescribedby?: string;
+  prefixIcon?: string;
+  useValidation?: boolean;
+  minLength?: number;
+  maxLength?: number;
+  compactStyle?: boolean;
+  onValidation?: (e: any) => void;
+  background?: string;
+  minValue?: number;
+  maxValue?: number;
+  selectOnFocus?: boolean;
+  isLabelBolded?: boolean;
+  innerStyle?: React.CSSProperties;
+  autoFocus?: boolean;
+  suffixText?: string;
+}
+
+export interface DebouncedInputProps {
+  caption?: string;
+  onRawChange?: (value: string | number | object) => void;
+  onBlur?: (value: string | number | object) => void;
+  onChange?: (value: string | number | object) => void;
+  ariaLabelledBy?: string;
+  ariaLabel?: string;
+  resetOnBlank?: boolean;
+  updateRawValue?: boolean;
+  infoMessage?: string;
+  initialValue?: string | number | object;
+  truncate?: boolean;
+
+  className?: string;
+  disabled?: boolean;
+  hideCaption?: boolean;
+  forwardRef?: React.Ref<any>;
+  id: string;
+  name?: string | null;
+  readonly?: boolean;
+  required?: boolean;
+  autoComplete?: string;
+  placeholder?: string;
+  style?: React.CSSProperties;
+  inputStyle?: React.CSSProperties;
+  tabIndex?: number;
+  type?: string;
+  value?: string | number | object | null;
+  width?: string;
+  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  onKeyUp?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  validationMessage?: string | React.ReactNode;
+  displayAuto?: boolean;
+  legacyClass?: string;
+  isV4Design?: boolean;
+  isMobile?: boolean;
+  hidden?: boolean;
+  ariaDescribedby?: string;
+  prefixIcon?: string;
+  useValidation?: boolean;
+  minLength?: number;
+  maxLength?: number;
+  compactStyle?: boolean;
+  onValidation?: (e: any) => void;
+  background?: string;
+  minValue?: number;
+  maxValue?: number;
+  selectOnFocus?: boolean;
+  isLabelBolded?: boolean;
+  innerStyle?: React.CSSProperties;
+  autoFocus?: boolean;
+  suffixText?: string;
+  onLengthValid?: (isValid: boolean) => void;
+}
+
+export declare const DebouncedInput: React.FC<DebouncedInputProps>;
+export declare const Input: React.FC<InputProps>;
+export default Input;

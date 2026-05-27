@@ -1,0 +1,32 @@
+{
+  "name": "@m-next/example-templates",
+  "private": true,
+  "version": "1.0.0",
+  "description": "example-templates",
+  "keywords": [
+    "example",
+    "templates"
+  ],
+  "author": "Alexander Ballard <a.ballard@method.me>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "./src/index.js",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "index"
+  ],
+  "scripts": {
+    "test-storybook": "npx nx run-many -t  test-storybook || exit 0",
+    "storybook": "npm run test-storybook && storybook dev -p 6007",
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_acc89d8a70834f5 --exit-zero-on-changes --only-changed --ci"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^4.13.3"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}

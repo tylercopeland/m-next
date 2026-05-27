@@ -1,0 +1,281 @@
+componentName: Accordion
+description: A collapsible content container with expandable/collapsible sections. Features drag-and-drop support, selection states, validation indicators, beta pills, and customizable header layouts. Supports both left and right chevron positioning and can include action buttons.
+
+dependencies:
+  - React
+  - '@m-next/svg-icon' # SvgIcon component
+  - '@m-next/pill' # Pill component for beta indicators
+  - '@m-next/utilities' # interactions utility
+  - '@m-next/styles' # colors, lightTheme
+  - '@m-next/typeography' # Text component
+  - './Accordion.styles' # Styled components
+
+props:
+  required:
+    id:
+      type: string
+      description: Unique identifier for the accordion component
+    
+    caption:
+      type: string
+      description: Main header text displayed in the accordion header
+
+  optional:
+    index:
+      type: number
+      description: Index position for drag-and-drop operations
+      default: null
+    
+    onDisableDragging:
+      type: function
+      description: Callback to disable dragging during interactions
+      default: null
+    
+    onSelect:
+      type: function
+      description: Callback when accordion is selected (not opened/closed)
+      default: null
+    
+    onClose:
+      type: function
+      description: Callback when accordion is closed
+      default: null
+    
+    open:
+      type: boolean
+      description: Initial open/closed state
+      default: false
+    
+    isSelected:
+      type: boolean
+      description: Whether the accordion is in selected state
+      default: false
+    
+    children:
+      type: node
+      description: Content to display inside the accordion when expanded
+      default: null
+    
+    subTitle:
+      type: string
+      description: Secondary text displayed below the main caption
+      default: null
+    
+    isDragable:
+      type: boolean
+      description: Whether the accordion can be dragged for reordering
+      default: false
+    
+    isValid:
+      type: boolean
+      description: Validation state, shows warning icon when false
+      default: true
+    
+    contentStyle:
+      type: object
+      description: Custom styles for the content area
+      default: null
+    
+    tooltip:
+      type: string
+      description: Tooltip text for the accordion header
+      default: null
+    
+    tooltipId:
+      type: string
+      description: ID for tooltip element
+      default: null
+    
+    onAdd:
+      type: function
+      description: Callback for add button click, displays add button when provided
+      default: null
+    
+    variant:
+      type: string
+      description: Position of the expand/collapse chevron
+      default: "right"
+      options: ["right", "left"]
+    
+    addButtonRef:
+      type: object
+      description: React ref for the add button element
+      default: null
+    
+    borderless:
+      type: boolean
+      description: Whether to remove border styling
+      default: false
+    
+    hasBetaPill:
+      type: boolean
+      description: Whether to display a "Beta" pill next to the caption
+      default: false
+    
+    allowHtml:
+      type: boolean
+      description: Whether to allow HTML content in subtitle (uses dangerouslySetInnerHTML)
+      default: false
+    
+    suppressSubTitleIcon:
+      type: boolean
+      description: Whether to hide the chevron icon in subtitle row
+      default: false
+
+behavior:
+  - Toggles open/closed state when header is clicked
+  - Supports keyboard interaction with Enter key
+  - Automatically scrolls into view when selected
+  - Handles drag-and-drop interactions for reordering
+  - Prevents event propagation for nested interactive elements
+  - Maintains separate click handlers for selection vs toggle
+  - Shows validation warnings with warning icon
+
+sections:
+  header:
+    components:
+      - Optional drag handle icon (when isDragable)
+      - Main caption with optional tooltip
+      - Optional beta pill indicator
+      - Optional subtitle with HTML support
+      - Optional validation warning icon
+      - Optional add button
+      - Expand/collapse chevron (left or right)
+    
+  content:
+    features:
+      - Collapsible content area
+      - Custom styling support
+      - Drag interaction handling
+      - Proper ARIA labeling
+
+styling:
+  variants:
+    right: "Chevron positioned on the right side (default)"
+    left: "Chevron positioned on the left side"
+  states:
+    open: "Expanded with content visible"
+    closed: "Collapsed with content hidden"
+    selected: "Visual selection state"
+    invalid: "Shows warning icon when validation fails"
+  layout: "Flexible header layout with proper spacing"
+
+usage_scenarios:
+  - Configuration panels with collapsible sections
+  - FAQ or help documentation
+  - Settings interfaces with grouped options
+  - Form sections with validation
+  - Dashboard widgets with expandable details
+  - Navigation menus with sub-sections
+  - Content organization in admin interfaces
+
+example_usage:
+  basic_accordion:
+    code: |
+      <Accordion
+        id="basic-section"
+        caption="Basic Settings"
+        open={true}
+      >
+        <div>Content goes here</div>
+      </Accordion>
+  
+  accordion_with_subtitle:
+    code: |
+      <Accordion
+        id="advanced-section"
+        caption="Advanced Configuration"
+        subTitle="Configure advanced options and settings"
+        isValid={isValidConfiguration}
+        variant="left"
+      >
+        <ConfigurationForm />
+      </Accordion>
+  
+  accordion_with_actions:
+    code: |
+      <Accordion
+        id="filters-section"
+        caption="Filters"
+        subTitle="Add and manage filters"
+        onAdd={handleAddFilter}
+        tooltip="Add new filter"
+        tooltipId="filter-tooltip"
+        hasBetaPill={true}
+      >
+        <FilterList />
+      </Accordion>
+  
+  draggable_accordion:
+    code: |
+      <Accordion
+        id={`section-${index}`}
+        caption="Draggable Section"
+        isDragable={true}
+        index={index}
+        onDisableDragging={handleDisableDragging}
+        onSelect={() => setSelectedSection(index)}
+        isSelected={selectedSection === index}
+      >
+        <SectionContent />
+      </Accordion>
+  
+  validation_accordion:
+    code: |
+      <Accordion
+        id="form-section"
+        caption="Form Validation"
+        subTitle="Check all required fields"
+        isValid={formIsValid}
+        onClose={handleSectionClose}
+        borderless={true}
+      >
+        <FormFields />
+      </Accordion>
+  
+  html_subtitle:
+    code: |
+      <Accordion
+        id="rich-content"
+        caption="Rich Content"
+        subTitle="<strong>Important:</strong> Review <a href='#'>documentation</a>"
+        allowHtml={true}
+        suppressSubTitleIcon={true}
+      >
+        <RichContentEditor />
+      </Accordion>
+
+interaction_patterns:
+  header_click: "Toggles open/closed state"
+  wrapper_click: "Triggers selection (separate from toggle)"
+  keyboard_navigation: "Enter key support for toggle and add actions"
+  drag_operations: "Mouse enter/leave handling for drag disable"
+  add_button: "Stops propagation to prevent accordion toggle"
+
+accessibility:
+  - ARIA expanded state on wrapper
+  - ARIA region roles for sections
+  - ARIA labelledby relationship between header and content
+  - Keyboard navigation support
+  - Focus management with tabIndex
+  - Screen reader compatible structure
+
+performance_considerations:
+  - Efficient event handler cleanup for subtitle links
+  - Conditional rendering of optional elements
+  - Smooth scroll behavior for selection
+  - Ref-based DOM manipulation for scroll positioning
+
+security_considerations:
+  html_content:
+    description: "The allowHtml prop enables dangerouslySetInnerHTML"
+    warning: "Only use allowHtml with trusted content to prevent XSS attacks"
+    use_case: "Rich text subtitles with safe, controlled HTML content"
+
+implementation_details:
+  - Uses styled-components for theming and animations
+  - Separate components for header elements (CaptionSection, HeaderIcon, AddButton)
+  - Event propagation management for nested interactions
+  - Ref forwarding for external control
+  - Cleanup of event listeners in useEffect
+  - Smooth scrolling with behavior controls

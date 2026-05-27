@@ -1,0 +1,115 @@
+<div data-ng-controller="ComponentGridViewsCtrl" class="mi-ae-fullheight">
+  <!-- Left Panel -->
+  <div class="mi-ae-framework-left-panel collapsed" data-ng-if="layout.collapsedList">
+    <button class="mi-button-icon mi-icon-box-plus" data-ng-click="layout.collapsedList = !layout.collapsedList"></button>
+  </div>
+
+  <div class="mi-ae-framework-left-panel" data-ng-if="!layout.collapsedList">
+      <div class="mi-ae-header-block">
+          <h2>View Options</h2>
+          <button class="mi-button-icon mi-icon-box-minus" tooltip-placement="left" uib-tooltip="Collapse Action List" data-ng-click="layout.collapsedList = !layout.collapsedList"></button>
+      </div>
+
+      <div class="mi-ae-main-content mi-ae-main-content-full">
+        <ul class="mi-ae-simple-list" ng-sortable="layout.sortableConfig">
+          <li data-ng-repeat="filter in filterDef" data-ng-class="{'selected' : $index === selectedIdx }">
+            <span><i class="mi-icon">
+              <svg-icon name="'move'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+            </i></span>
+            <span data-ng-click="loadProperties($index)">{{ filter.filterName }}</span>
+            <span class="text-center" data-ng-if="filter.isDefault"><i class="mi-icon">
+              <svg-icon name="'star-solid'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+            </i></span>
+            <span data-ng-click="setAsDefault($index)" class="text-center" data-ng-if="!filter.isDefault"><i class="mi-icon">
+              <svg-icon name="'star-outline'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+            </i></span>
+            <span class="text-center" data-ng-click="copy($index)" tooltip-placement="left" uib-tooltip="Duplicate"><i class="mi-icon">
+              <svg-icon name="'copy'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+            </i>/span>
+            <span data-ng-click="deleteFilter($index)" class="mi-ae-margin-l-0 mi-ae-padding-l-5 text-center"><i class="mi-icon">
+              <svg-icon name="'delete'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+            </i></span>
+          </li>
+        </ul>
+        <div class="mi-ae-padding-t-15 mi-ae-padding-l-10">
+          <a data-ng-click="addView()"><i class="mi-icon">
+            <svg-icon name="'circle-plus'" ng-attr-style="svgIconStyle" size="14"></svg-icon>
+          </i> {{ addViewLabel }}</a>
+        </div>
+      </div>
+  </div>
+  <!--/ Left Panel -->
+
+  <!-- Right Panel For Sorting -->
+  <div class="mi-ae-framework-right-panel" data-ng-class="{'expanded' : layout.collapsedList}">
+    <div data-ng-if="selectedIdx !== null">
+      <div class="mi-ae-header-block">
+        <h2>View Properties</h2>
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="mi-ae-main-content mi-ae-main-content-full">
+        <div class="mi-ae-row">
+          <div class="mi-ae-col-4">
+            <label class="mi-ae-label">View name</label>
+          </div>
+          <div class="mi-ae-col-10">
+            <input type="text" data-ng-model="filterDef[selectedIdx].filterName">
+          </div>
+        </div>
+
+        <div class="mi-ae-row">
+          <div class="mi-ae-col-10 mi-ae-col-offset-4">
+            <label data-ng-click="setAsDefault(selectedIdx)" class="mi-radio-checkbox mi-checkbox">
+              <span>Set as default</span>
+              <input type="checkbox" data-ng-model="filterDef[selectedIdx].isDefault"> 
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </div>
+        </div>
+
+        <h3>Sorting</h3>
+
+        <mi-sorting filter-def="filterDef[selectedIdx]" view-name="control.model.viewName"></mi-sorting>
+
+        <h3>Selection Criteria</h3>
+
+        <mi-criteria-builder 
+          action="layout.action" 
+          fields-only="true" 
+          where-clause="filterDef[selectedIdx].expression" 
+          table-name="control.model.viewName"></mi-criteria-builder>
+
+        <h3>Advanced</h3>
+        <p class="mi-ae-margin-b-10">Force the following hidden columns to be visible when this view is selected:</p>
+
+        <div class="mi-ae-row" data-ng-repeat="item in hiddenArray">
+          <div class="mi-ae-col-4">
+            <label class="mi-ae-label">Column name</label>
+          </div>
+          <div class="mi-ae-col-8">
+            <ui-select data-ng-model="item.value" theme="selectize">
+                <ui-select-match placeholder="Select a column...">{{$select.selected.key}}</ui-select-match>
+                <ui-select-choices repeat="opt.key as opt in fields | filter: $select.search | filter: selectedColumns(item.value)">
+                    <span ng-bind-html="opt.key | highlight: $select.search"></span>
+                </ui-select-choices>
+            </ui-select>
+          </div>
+          <div class="mi-ae-col-2">
+            <mi-button button-class="'ghost mi-button-clear mi-icon-delete'" clickevent="removeHidden($index, item)"></mi-button>
+          </div>
+        </div>        
+
+        <div class="mi-ae-row">
+          <div class="mi-ae-col-16">
+             <mi-button name="buttonName" 
+                button-class="'ghost mi-button-clear mi-icon-circle-plus mi-ae-padding-l-0  mi-ae-margin-l-0'" 
+                clickevent="addHidden()"></mi-button>
+          </div>
+        </div>
+      </div>
+      <!--/ Main Content Area -->
+    </div>
+  </div>
+  <!--/ Right Panel -->
+</div>

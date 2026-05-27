@@ -1,0 +1,210 @@
+<div data-ng-controller="OpenPopUpCtrl">
+  <mi-action-description info="action"></mi-action-description>
+
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content">
+
+      <div class="mi-ae-row mi-ae-margin-t-3">
+        <div class="mi-ae-col-12">
+          <span>{{action.config.description.short}}</span>
+        </div>
+      </div>
+
+    <!-- Pop-up Size -->
+    <div class="mi-ae-row" style="margin-top: 18px;">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Pop-Up Size</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <ul class="mi-radiobutton-group">
+          <li class="rad-horizontal mi-ae-padding-r-20">
+            <label class="mi-radio-checkbox mi-radio">
+              <span>Small</span>
+              <input type="radio" data-ng-model="dropdowns.popupSize" data-ng-value="'small'" ng-disabled="action.isReadOnly">
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </li>
+          <li class="rad-horizontal mi-ae-padding-r-20">
+            <label class="mi-radio-checkbox mi-radio">
+              <span>Medium</span>
+              <input type="radio" data-ng-model="dropdowns.popupSize" data-ng-value="'medium'" ng-disabled="action.isReadOnly">
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </li>
+          <li class="rad-horizontal mi-ae-padding-r-20">
+            <label class="mi-radio-checkbox mi-radio">
+              <span>Large</span>
+              <input type="radio" data-ng-model="dropdowns.popupSize" data-ng-value="'large'" ng-disabled="action.isReadOnly">
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- NAVIGATE TO -->
+    <div class="mi-ae-row mi-ae-margin-b-2">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Navigate to</label>
+      </div>
+      <div class="mi-ae-col-5">
+        <ui-select ng-model="dropdowns.appSelection" theme="selectize" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices group-by="'category'" repeat="opt.value as opt in dropdowns.appList | filter: $select.search">
+            <span ng-bind-html="opt.label"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+
+      <div 
+        class="mi-ae-col-5"
+        ng-if="dropdowns.appSelection !== 'back' && dropdowns.appSelection !== 'dashboard'"
+        mi-validation-class="action.ValidationMessages"
+        error-property="'ScreenId'">
+        <ui-select ng-model="dropdowns.appScreenSelection" theme="selectize" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select A Screen...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices repeat="opt.value as opt in dropdowns.screenList | filter: $select.search">
+            <span ng-bind-html="opt.label"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+
+    <!-- Pop-up Header -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Pop-up header</label>
+      </div>
+      <div class="mi-ae-col-5"
+        mi-validation-class="action.ValidationMessages"
+        error-property="'PopUpHeader'">
+        <input type="text"
+               class="mi-textbox"
+               data-ng-model="action.PopUpHeader"
+               ng-disabled="action.isReadOnly"
+               ng-change="action.validate()"
+               ng-blur="truncateAndValidatePopUpHeader()">
+      </div>
+    </div>
+
+    <!-- Set a screen Active RecordID -->
+    <div class="mi-ae-row" data-ng-if="isAppScreen() && dropdowns.appScreenSelection">
+      <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Set a screen Active RecordID</label>
+      </div>
+      <div class="mi-ae-col-10">
+          <ul class="mi-radiobutton-group">
+              <li class="rad-horizontal mi-ae-padding-r-20"  ng-click="clearParams()">
+                  <label class="mi-radio-checkbox mi-radio">
+                      <span>Set Active RecordID</span>
+                      <input type="radio" data-ng-model="dropdowns.activeRecordType" data-ng-value="0" ng-disabled="action.isReadOnly">
+                      <div class="mi-radio-checkbox-indicator"></div>
+                  </label>
+              </li>
+              <li class="rad-horizontal mi-ae-padding-r-20" ng-click="ensureHasParams()">
+                  <label class="mi-radio-checkbox mi-radio">
+                      <span>Clear screen</span>
+                      <input type="radio" data-ng-model="dropdowns.activeRecordType" data-ng-value="1" ng-disabled="action.isReadOnly">
+                      <div class="mi-radio-checkbox-indicator"></div>
+                  </label>
+              </li>
+          </ul>
+      </div>
+    </div>
+
+    <!-- Use This Record ID -->
+    <div class="mi-ae-row" data-ng-if="isAppScreen() && dropdowns.appScreenSelection && dropdowns.activeRecordType === 0">
+      <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Use this Active RecordID</label>
+      </div>
+      <div class="mi-ae-col-10">
+        <mi-complex-value action="action" model="action.ActiveRecordId" allow="allow" is-read-only ="action.isReadOnly"></mi-complex-value>
+      </div>
+    </div>
+
+    <!-- Parameters -->
+    <div data-ng-if="showParameters && dropdowns.appSelection !== 'back' && dropdowns.appSelection !== 'dashboard' && dropdowns.appSelection && dropdowns.appScreenSelection  && dropdowns.activeRecordType === 1 && tableFields.length > 0">
+      <h3>Parameters</h3>
+      <i>Choose fields on the destination screen you want to prepopulate</i>
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-5">
+          <label class="mi-ae-label mi-ae-margin-b-0">Field</label>
+        </div>
+        <div class="mi-ae-col-9">
+          <label class="mi-ae-label mi-ae-margin-b-0">Populate using this value</label>
+        </div>
+        <div class="mi-ae-col-2">
+        </div>
+      </div>
+
+      <div class="mi-ae-row table-row" data-ng-class="{'alt-row': $odd}" data-ng-repeat="item in action.Params">
+        <div class="mi-ae-col-5" mi-validation-class="item.ValidationMessages" error-property="'Param'">
+            <mi-field-select value="item.Key"
+                             hide-required="false"
+                             enable-search="true"
+                             required-only="false"
+                             on-select="onSelect(item)"
+                             used-fields="usedFields" 
+                             table-name="viewFriendlyName" 
+                             ignore-linked="true"
+                             ignore-fields="['RecordID']" 
+                             is-read-only ="action.isReadOnly"
+                            >
+                            </mi-field-select>
+        </div>
+        <div class="mi-ae-col-9">
+          <mi-complex-value action="action"
+                                      model="item.Value"
+                                      allow="allowParams"
+                                      included-types="item.includedTypes" 
+                                      force-allow="[0,2]"
+                                      placeholder="'e.g. MyAccountName'" 
+                                      allowed-control-types="[2]"
+                                      is-read-only ="action.isReadOnly"
+                                      ></mi-complex-value>
+        </div>
+        <div class="mi-ae-col-2">
+            <miae-button 
+              button-class="'ghost mi-button-clear mi-ae-margin-0'" 
+              clickevent="removeItem($index)" 
+              data-ng-if="!action.isReadOnly"
+              svg-icon-type="'delete'" 
+              svg-icon-size="14"></miae-button>
+        </div>
+    </div>
+  
+      <miae-button name="' Add another parameter'" 
+        button-class="'ghost mi-button-clear'" 
+        clickevent="action.addParam()"
+        data-ng-if="!action.isReadOnly"
+        svg-icon-type="'circle-plus'"
+        svg-icon-size="14"></miae-button>
+    </div>
+
+    <!-- Store pop up result in -->
+    <div class="mi-ae-row mi-ae-margin-t-3" data-ng-if="isAppScreen() && dropdowns.appScreenSelection">
+      <div class="mi-ae-col-16">
+        <mi-result-to-set 
+          item="action.ResultToSet" 
+          label="action.resultLabel"
+          is-read-only="action.isReadOnly">
+        </mi-result-to-set>
+      </div>
+    </div>
+
+    <!-- Store Pop-Up Status in -->
+    <div class="mi-ae-row mi-ae-margin-t-3" data-ng-if="isAppScreen() && dropdowns.appScreenSelection">
+      <div class="mi-ae-col-16">
+        <mi-result-to-set 
+          item="action.ModalStatusResult" 
+          label="'Store Pop-Up Status in'"
+          is-read-only="action.isReadOnly">
+        </mi-result-to-set>
+      </div>
+    </div>
+
+  </div>
+  <!--/ Main Content Area -->
+
+  <mi-action-notes is-read-only="action.isReadOnly"></mi-action-notes>
+</div>

@@ -1,0 +1,92 @@
+/**
+ * Colors
+ */
+//  Grey's
+$grey:            #BACAD0 !default;
+$light-grey:      #E4EAF0 !default;
+$lightest-grey:   #EEF5F7 !default;
+$dark-grey:       #545F67 !default;
+$gray-alt:        #E4E7EB !default;
+$gray-border:     #EEF5F7 !default;
+
+//  Blue's
+$blue:            #0D71C8 !default;
+$light-blue:      #2B3E51 !default;
+$lightest-blue:   #0D71C8 !default;
+$dark-blue:       #022266 !default;
+$darkest-blue:    #162A3D !default;
+
+//  Other Colors
+$pink:            #D81F47 !default;
+$aqua:            #2EC9E8 !default;
+$purple:          #3B4AED !default;
+$green:           #007B4A !default;
+$red:             #DA211E !default;
+$yellow:          #FDCB2E !default;
+$orange:          #E05D2A !default;
+$white:           #FFFFFF !default;
+$black:           #000000 !default;
+$nav-hover:       #0D71C8 !default;
+$light-purple:    #E5F7FF !default;
+
+// Z-index
+$z-index:         4000 !default;
+
+// Side bar
+$sidebar-width:   250px;
+$sidebar-color:   $dark-blue;
+
+// Content Panels
+$panel-left-width:    40%;
+$panel-right-width:   60%;
+
+// Header
+$header-height:       50px;
+$header-border:       2px;
+$header-font-size:    16px;
+$header-border-color: $grey;
+
+// Extra small screen / phone
+//** Deprecated `$mi-screen-xs` as of v3.0.1
+$mi-screen-xs:                  480px !default;
+//** Deprecated `$mi-screen-xs-min` as of v3.2.0
+$mi-screen-xs-min:              $mi-screen-xs !default;
+//** Deprecated `$mi-screen-phone` as of v3.0.1
+$mi-screen-phone:               $mi-screen-xs-min !default;
+
+// Small screen / tablet
+//** Deprecated `$mi-screen-sm` as of v3.0.1
+$mi-screen-sm:                  768px !default;
+$mi-screen-sm-min:              $mi-screen-sm !default;
+//** Deprecated `$mi-screen-tablet` as of v3.0.1
+$mi-screen-tablet:              $mi-screen-sm-min !default;
+
+// Medium screen / desktop
+//** Deprecated `$mi-screen-md` as of v3.0.1
+$mi-screen-md:                  992px !default;
+$mi-screen-md-min:              $mi-screen-md !default;
+//** Deprecated `$mi-screen-desktop` as of v3.0.1
+$mi-screen-desktop:             $mi-screen-md-min !default;
+
+// Large screen / wide desktop
+//** Deprecated `$mi-screen-lg` as of v3.0.1
+$mi-screen-lg:                  1200px !default;
+$mi-screen-lg-min:              $mi-screen-lg !default;
+//** Deprecated `$mi-screen-lg-desktop` as of v3.0.1
+$mi-screen-lg-desktop:          $mi-screen-lg-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$mi-screen-xs-max:              ($mi-screen-sm-min - 1) !default;
+$mi-screen-sm-max:              ($mi-screen-md-min - 1) !default;
+$mi-screen-md-max:              ($mi-screen-lg-min - 1) !default;
+
+// Grid system
+//** Number of columns in the grid.
+$grid-columns:              16 !default;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         15px !default;
+
+// Code Block Indentation
+$max-iterations:    20;
+
+

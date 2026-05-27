@@ -1,0 +1,46 @@
+<div data-ng-controller="SendSmsCtrl">
+    <mi-action-description info="action"></mi-action-description>
+    <!-- Main Content Area -->
+    <div class="mi-ae-main-content">
+  
+  
+  
+      <!-- User -->
+      <div>
+  
+        <div class="mi-ae-row">
+          <div class="mi-ae-col-4">
+            <label class="mi-ae-label">Recipient's phone number</label>
+          </div>
+  
+          <div class="mi-ae-col-8">
+            <mi-complex-value action="action" model="action.PhoneTo" allow="allow" number-min-value="0" placeholder="'+1 234 567 8910'"  is-read-only="action.isReadOnly"></mi-complex-value>
+          </div>
+  
+        </div>
+  
+        <p style="font-size: 11px; font-style: italic; color: #545F67; margin-bottom: 1rem;">
+          Define the phone number which will receive this SMS in E.164 format.
+        </p>
+  
+      </div>
+      <!-- User -->
+  
+      <!-- Message -->
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Message</label>
+        </div>
+  
+        <div class="mi-ae-col-8">
+          <mi-complex-value action="action" model="action.Message" allow="allow" is-read-only="action.isReadOnly"></mi-complex-value>
+        </div>
+  
+      </div>      
+      <!-- Message -->
+  
+    </div>
+    <!--/ Main Content Area -->
+    <mi-action-notes is-read-only="action.isReadOnly"></mi-action-notes>
+  </div>
+  

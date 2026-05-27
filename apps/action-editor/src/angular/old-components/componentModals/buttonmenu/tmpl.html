@@ -1,0 +1,93 @@
+<div data-ng-controller="ComponentButtonMenuCtrl" class="mi-ae-fullheight">
+  <!-- Left Panel -->
+  <div class="mi-ae-framework-left-panel collapsed" data-ng-if="layout.collapsedList">
+    <button class="mi-button-icon mi-icon-box-plus" data-ng-click="layout.collapsedList = !layout.collapsedList"></button>
+  </div>
+
+  <div class="mi-ae-framework-left-panel" data-ng-if="!layout.collapsedList">
+      <div class="mi-ae-header-block">
+          <h2>Menu Items</h2>
+      </div>
+
+      <div class="mi-ae-main-content mi-ae-main-content-full">
+        <ul class="mi-ae-simple-list" ng-sortable="layout.sortableConfig">
+          <li data-ng-repeat="button in control.buttons" data-ng-class="{'selected' : button === selectedBtn }">
+            <span><i class="mi-icon">
+              <svg-icon name="'move'" ng-attr-style="svgIconStyle" size="14"> </svg-icon>
+            </i></span>
+            <span data-ng-click="loadButton(button, $index)">{{ button.caption }}</span>
+            <span data-ng-click="deleteButton($index)" data-ng-if="control.buttons.length > 1"><i class="mi-icon">
+              <svg-icon name="'delete'" ng-attr-style="svgIconStyle" size="14"> </svg-icon>
+            </i></span>
+            <span data-ng-if="control.buttons.length === 1"></span>
+          </li>
+        </ul>
+        <div class="mi-ae-padding-t-15 mi-ae-padding-l-10" data-ng-if="control.buttons.length < 10">
+          <a data-ng-click="addNewButton()"><i class="mi-icon">
+            <svg-icon name="'circle-plus'" ng-attr-style="svgIconStyle" size="14"> </svg-icon>
+          </i> Add menu item</a>
+        </div>
+      </div>
+  </div>
+  <!--/ Left Panel -->
+
+  <!-- Right Panel For Sorting -->
+  <div class="mi-ae-framework-right-panel">
+    <div class="mi-ae-header-block">
+      <h2>Properties for {{ selectedBtn.caption }}</h2>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="mi-ae-main-content mi-ae-main-content-full">
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Caption</label>
+        </div>
+        <div class="mi-ae-col-6">
+          <input type="text" data-ng-model="selectedBtn.caption" id="buttonName" tabindex="1">
+        </div>
+      </div>
+
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Click Actions</label>
+        </div>
+        <div class="mi-ae-col-6">
+          <mi-button 
+            name="buttonLabel" 
+            button-class="'ghost mi-button-clear mi-ae-margin-0 mi-ae-padding-l-0'" 
+            clickevent="openActionEditor()" tabindex="2"></mi-button>
+        </div>
+      </div>
+
+      <div class="mi-ae-row" data-ng-if="control.Type != 'CAL'">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">Additional Options</label>
+        </div>
+        <div class="mi-ae-col-6">
+          <div class="mi-ae-row mi-ae-margin-t-10">
+            <div class="mi-ae-col-16">
+              <label tabindex="3" class="mi-radio-checkbox mi-checkbox">
+                <span>Is visible</span>
+                <input type="checkbox" data-ng-model="selectedBtn.visible"> 
+                <div class="mi-radio-checkbox-indicator"></div>
+              </label>
+            </div>
+          </div>
+
+          <div class="mi-ae-row">
+              <div class="mi-ae-col-16">
+                <label tabindex="4" class="mi-radio-checkbox mi-checkbox">
+                  <span>Is disabled</span>
+                  <input type="checkbox" data-ng-model="selectedBtn.disabled"> 
+                  <div class="mi-radio-checkbox-indicator"></div>
+                </label>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Main Content Area -->
+  </div>
+  <!--/ Right Panel -->
+</div>

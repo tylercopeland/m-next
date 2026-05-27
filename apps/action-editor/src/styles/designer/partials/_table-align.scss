@@ -1,0 +1,79 @@
+table {
+  &.tblAlign {
+    padding: 0;
+    height: 89px;
+    width: 91px;
+    background-color: $white !important;
+    margin-bottom: 10px;
+
+    td {
+      padding: 0;
+      background: transparent !important;
+      border: none !important;
+      text-align:center;
+      width: 33.3333%;
+    
+      &:first-of-type {
+        padding: 0;
+      }
+
+      i {
+        padding: 8px;
+        cursor: pointer;
+        display: inline-block;
+
+        &:before {
+          display: inline-block;
+        }
+        
+        &.selectedAlignment {
+          background-color: $blue;
+          color: $white;
+        }
+
+        &.icon-rotate-90:before {
+          -webkit-transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          -o-transform: rotate(90deg);
+          transform: rotate(90deg);
+          filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+        }
+
+        &.icon-rotate-180:before {
+          -webkit-transform: rotate(180deg);
+          -moz-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+          -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+          filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+        }
+
+        &.icon-rotate-270:before {
+          -webkit-transform: rotate(270deg);
+          -moz-transform: rotate(270deg);
+          -ms-transform: rotate(270deg);
+          -o-transform: rotate(270deg);
+          transform: rotate(270deg);
+          filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+        }
+
+        &.icon-flip-horizontal:before {
+          -webkit-transform: scale(-1, 1);
+          -moz-transform: scale(-1, 1);
+          -ms-transform: scale(-1, 1);
+          -o-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+        }
+
+        &.icon-flip-vertical:before {
+          -webkit-transform: scale(1, -1);
+          -moz-transform: scale(1, -1);
+          -ms-transform: scale(1, -1);
+          -o-transform: scale(1, -1);
+          transform: scale(1, -1);
+        }
+      }
+    }
+  }
+}

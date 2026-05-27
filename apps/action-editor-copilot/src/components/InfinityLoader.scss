@@ -1,0 +1,85 @@
+action-editor-copilot {
+
+    $size: 16px;
+    $time: 1.5s;
+
+    .infinityLoaderWrapper {
+        width: 100%;
+        overflow: visible;
+    }
+
+    .ringContainer {
+        width: $size;
+        height: $size;
+        overflow: hidden;
+        position: relative;
+        left: calc(50% - $size);
+    }
+
+    .ringContainer.left {
+        left: 50%;
+        margin-top: -$size;
+    }
+
+    .ring {
+        width: $size*2; // double width, so we can offset
+        height: $size;
+        position: absolute;
+
+        mask-image: var(--mask);
+        -webkit-mask-image: var(--mask);
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+        mask-size: contain;
+        -webkit-mask-size: contain;
+        mask-position: center;
+        -webkit-mask-position: center;
+
+        background: transparent;
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: $size*2;
+            width: $size*2;
+            margin-top: -($size/2);
+            inset: 0;
+            background: conic-gradient(#E05D2A 0deg,
+                    #3B4AED 90deg,
+                    #3B4AED 270deg,
+                    #E05D2A 360deg);
+            animation: clock $time linear infinite;
+            z-index: 0;
+        }
+    }
+
+    .ring.left {
+        width: $size*2; // double width, so we can offset
+        left: -$size; // shift left to only show the right half
+
+        &::before {
+            animation: counterclock $time linear infinite;
+            animation-delay: -($time/2);
+        }
+    }
+
+    @keyframes clock {
+        from {
+            transform: rotate(360deg);
+        }
+
+        to {
+            transform: rotate(0deg);
+        }
+    }
+
+    @keyframes counterclock {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}

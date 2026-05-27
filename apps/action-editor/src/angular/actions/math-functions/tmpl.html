@@ -1,0 +1,87 @@
+<div data-ng-controller="MathFunctionsCtrl">
+  <mi-action-description info="action"></mi-action-description>
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content">
+    <!-- Function -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-5">
+        <label class="mi-ae-label">Select a function</label>
+      </div>
+      <div class="mi-ae-col-8">
+        <ui-select data-ng-model="action.MathFunctionType" theme="selectize" search-enabled="false" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices repeat="opt.value as opt in functionTypes">
+            <span ng-bind-html="opt.label"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+    <!--/ Function -->
+    <h3>Evaluate the Following</h3>
+    <!-- Options -->
+    <div data-ng-repeat="value in action.Values">
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-5">
+          <label class="mi-ae-label">{{ ($index === 0) ? labelOptions.required1 : ($index === 1) ? labelOptions.required2 : labelOptions.allOthers }}</label>
+        </div>
+        <div class="mi-ae-col-8">
+          <mi-complex-value action="action" model="value" allow="allow" is-read-only="action.isReadOnly"></mi-complex-value>
+        </div>
+        <div class="mi-ae-col-2" data-ng-show="($index !== 0 && $index !== 1)">
+          <miae-button 
+            button-class="'ghost mi-button-clear'" 
+            clickevent="removeValue($index)" 
+            data-ng-if="!action.isReadOnly"
+            svg-icon-type="'delete'" 
+            svg-icon-size="14"></miae-button>
+        </div>
+      </div>
+    </div>
+    <!--/ Options -->
+    <miae-button
+      name="' Add another '+  labelOptions.addLabel"
+      button-class="'ghost mi-button-clear mi-ae-margin-l-0 mi-ae-padding-l-0'"
+      clickevent="addValue()"
+      data-ng-if="canAddMore && !action.isReadOnly"
+      svg-icon-type="'circle-plus'" 
+      svg-icon-size="14"
+    ></miae-button>
+    <!-- More Options -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-5">
+        <label class="mi-ae-label">Rounding</label>
+      </div>
+      <div class="mi-ae-col-4">
+        <ui-select data-ng-model="action.Rounding" theme="selectize" search-enabled="false" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices repeat="opt.value as opt in roundingOptions">
+            <span ng-bind-html="opt.label"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+    <div class="mi-ae-row" data-ng-if="action.Rounding !== 0">
+      <div class="mi-ae-col-5">
+        <label class="mi-ae-label">Number of decimal places</label>
+      </div>
+      <div class="mi-ae-col-4">
+        <input type="number" data-ng-model="action.DecimalPlaces" min="0" ng-disabled="action.isReadOnly" />
+      </div>
+    </div>
+    <!--/ More Options -->
+    <!-- Results -->
+    <mi-result-to-set
+      action="action"
+      include-controls="true"
+      control-model="action.ControlToUpdate"
+      controls-ignore="['SEC', 'DOC']"
+      col-widths="[5,8]"
+      label="'Store result in'"
+      item="action.ResultToSet"
+      is-read-only="action.isReadOnly"
+    ></mi-result-to-set>
+    <!--/ Results -->
+  </div>
+  <!--/ Main Content Area -->
+  <mi-action-notes is-read-only="action.isReadOnly"></mi-action-notes>
+</div>

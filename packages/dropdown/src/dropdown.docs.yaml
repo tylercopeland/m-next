@@ -1,0 +1,348 @@
+componentName: Dropdown
+description: A comprehensive dropdown/select component built on react-select. Supports single/multi-select, creatable options, icons, custom styling, validation, and multiple display modes. Features advanced search, filtering, and accessibility support.
+
+dependencies:
+  - React
+  - react-select # Select and CreatableSelect
+  - '@mui/material' # useTheme
+  - '@m-next/styles' # colors, lightTheme
+  - '@m-next/caption' # Caption component
+  - '@m-next/svg-icon' # SvgIcon component
+  - '@m-next/button' # Button component
+  - '@m-next/validation' # ValidationMessage component
+  - '@m-next/loading-skeleton' # LoadingSkeleton component
+
+props:
+  required:
+    options:
+      type: array
+      description: Array of option objects for the dropdown
+      structure: |
+        [{
+          label: string,
+          value: string | number | boolean,
+          secondary?: string,
+          icon?: string,
+          color?: string,
+          size?: number,
+          lines?: object[]
+        }]
+
+  optional:
+    id:
+      type: string
+      description: Unique identifier for the dropdown component
+      default: null
+    
+    displayAuto:
+      type: boolean
+      description: Automatically adjust display based on content
+      default: false
+    
+    width:
+      type: number | string
+      description: Width of the dropdown component
+      default: null
+    
+    validationMessage:
+      type: string
+      description: Validation error message to display
+      default: null
+    
+    isV4Design:
+      type: boolean
+      description: Use version 4 design styling
+      default: false
+    
+    caption:
+      type: string
+      description: Label/caption text for the dropdown
+      default: null
+    
+    required:
+      type: boolean
+      description: Whether the dropdown is required for form validation
+      default: false
+    
+    legacyClass:
+      type: string
+      description: Legacy CSS class for backwards compatibility
+      default: null
+    
+    isMobile:
+      type: boolean
+      description: Mobile-optimized styling and behavior
+      default: false
+    
+    placeholder:
+      type: string
+      description: Placeholder text when no option is selected
+      default: null
+    
+    disabled:
+      type: boolean
+      description: Whether the dropdown is disabled
+      default: false
+    
+    value:
+      type: object | array
+      description: Currently selected value(s)
+      default: null
+    
+    onChange:
+      type: function
+      description: Callback function when selection changes
+      default: null
+    
+    onBlur:
+      type: function
+      description: Callback function when dropdown loses focus
+      default: null
+    
+    hasValidation:
+      type: boolean
+      description: Whether validation styling should be applied
+      default: false
+    
+    dropdownStyle:
+      type: string
+      description: Visual style variant for dropdown options
+      default: "single"
+      options: ["single", "icon", "multi", "multi-icon"]
+    
+    onMenuOpen:
+      type: function
+      description: Callback when dropdown menu opens
+      default: null
+    
+    style:
+      type: object
+      description: Custom styles for the wrapper
+      default: {}
+    
+    background:
+      type: string
+      description: Background color override
+      default: null
+    
+    isMultiSelect:
+      type: boolean
+      description: Enable multiple selection
+      default: false
+    
+    isCreateable:
+      type: boolean
+      description: Allow creating new options
+      default: false
+    
+    isSearchable:
+      type: boolean
+      description: Enable search/filter functionality
+      default: true
+    
+    onCreate:
+      type: function
+      description: Callback when new option is created
+      default: null
+    
+    actionButtonText:
+      type: string
+      description: Text for optional action button in dropdown
+      default: null
+    
+    isPortal:
+      type: boolean
+      description: Render dropdown menu in portal
+      default: false
+    
+    onActionButtonClick:
+      type: function
+      description: Callback for action button click
+      default: null
+    
+    forwardRef:
+      type: object
+      description: React ref to forward to the select component
+      default: null
+    
+    openMenuOnFocus:
+      type: boolean
+      description: Open menu when dropdown gains focus
+      default: false
+    
+    breakout:
+      type: boolean
+      description: Allow menu to break out of container width
+      default: false
+    
+    isLoading:
+      type: boolean
+      description: Show loading skeleton instead of dropdown
+      default: false
+    
+    hasDividersInsteadOfHeaders:
+      type: boolean
+      description: Use dividers instead of group headers
+      default: false
+    
+    isClearable:
+      type: boolean
+      description: Show clear button to reset selection
+      default: false
+    
+    maxMenuHeight:
+      type: number | string
+      description: Maximum height of dropdown menu
+      default: null
+    
+    onInputChange:
+      type: function
+      description: Callback when search input changes
+      default: null
+    
+    menuPlacement:
+      type: string
+      description: Placement of dropdown menu
+      default: "auto"
+      options: ["auto", "bottom", "top"]
+    
+    ariaLabel:
+      type: string
+      description: ARIA label for accessibility
+      default: null
+    
+    open:
+      type: boolean
+      description: Force dropdown menu to be open initially
+      default: false
+    
+    autoFocus:
+      type: boolean
+      description: Automatically focus dropdown on mount
+      default: false
+
+behavior:
+  - Supports both single and multi-select modes
+  - Advanced search and filtering with highlight matching
+  - Creatable mode allows users to add new options
+  - Loading state shows skeleton placeholder
+  - Validation integration with error styling and messages
+  - Theme-aware styling with light/dark mode support
+  - Keyboard navigation and accessibility features
+  - Portal rendering for complex layouts
+  - Custom option formatting with icons and secondary text
+
+styling:
+  themes: Supports light/dark themes via MUI theme provider
+  variants:
+    single: Simple text options
+    icon: Options with icons
+    multi: Multi-line options with additional details
+    multi-icon: Multi-line options with icons
+  customization: Extensive style overrides via react-select styling system
+  responsive: Mobile-optimized layouts and sizing
+
+usage_scenarios:
+  - Form select inputs with validation
+  - Multi-select tag inputs
+  - Searchable dropdowns with large option sets
+  - User-creatable option lists
+  - Complex option displays with icons and descriptions
+  - Grouped options with headers or dividers
+  - Loading states during async data fetching
+
+example_usage:
+  basic_dropdown:
+    code: |
+      <Dropdown
+        id="country-select"
+        caption="Select Country"
+        options={[
+          { label: "United States", value: "US" },
+          { label: "Canada", value: "CA" },
+          { label: "Mexico", value: "MX" }
+        ]}
+        value={selectedCountry}
+        onChange={setSelectedCountry}
+        placeholder="Choose a country"
+        required
+      />
+  
+  multi_select_with_icons:
+    code: |
+      <Dropdown
+        id="features-select"
+        caption="Select Features"
+        options={[
+          { label: "Analytics", value: "analytics", icon: "chart", color: "blue" },
+          { label: "Security", value: "security", icon: "shield", color: "green" },
+          { label: "Storage", value: "storage", icon: "database", color: "purple" }
+        ]}
+        value={selectedFeatures}
+        onChange={setSelectedFeatures}
+        isMultiSelect={true}
+        dropdownStyle="icon"
+        isClearable={true}
+      />
+  
+  creatable_with_validation:
+    code: |
+      <Dropdown
+        id="tags-input"
+        caption="Tags"
+        options={existingTags}
+        value={selectedTags}
+        onChange={setSelectedTags}
+        onCreate={handleCreateTag}
+        isCreateable={true}
+        isMultiSelect={true}
+        validationMessage={tagError}
+        hasValidation={!!tagError}
+        placeholder="Select or create tags"
+      />
+  
+  complex_options:
+    code: |
+      <Dropdown
+        id="user-select"
+        caption="Assign User"
+        options={[
+          {
+            label: "John Doe",
+            value: "john",
+            secondary: "Senior Developer",
+            icon: "user",
+            lines: [
+              { department: "Engineering" },
+              { email: "john@company.com" }
+            ]
+          }
+        ]}
+        value={assignedUser}
+        onChange={setAssignedUser}
+        dropdownStyle="multi-icon"
+        isSearchable={true}
+      />
+  
+  loading_state:
+    code: |
+      <Dropdown
+        id="async-dropdown"
+        caption="Select Option"
+        options={asyncOptions}
+        value={selectedOption}
+        onChange={setSelectedOption}
+        isLoading={isLoadingOptions}
+        placeholder="Loading options..."
+      />
+
+implementation_details:
+  - Built on react-select with extensive customization
+  - Custom option rendering for different display styles
+  - Search highlighting with regex-based matching
+  - Theme integration with MUI theme provider
+  - Accessibility features including ARIA labels and keyboard navigation
+  - Portal support for complex z-index scenarios
+  - Custom styled components for consistent theming
+  - Validation message integration
+  - Loading skeleton for async states

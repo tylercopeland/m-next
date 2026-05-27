@@ -1,0 +1,91 @@
+.mapMarkerStyle {
+  background-color: red;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  left: -0.5rem;
+  top: -0.5rem;
+  position: relative;
+  border-radius: 1.5rem 1.5rem 0;
+  transform: rotate(45deg);
+  /* border: 1px solid #FFFFFF; */
+  /* margin: -10px -10px; */
+}
+
+.mapMarkerStyle::after {
+  position: 'absolute';
+  content: '';
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin-left: -4px;
+  margin-top: -4px;
+  background-color: #fff;
+}
+
+
+.map-pin1 {
+    margin: -20px -10px;
+    border-radius: 50% 50% 50% 0;
+    border: 6px solid #da1313;
+    width: 30px;
+    height: 30px;
+    transform: rotate(-45deg);
+    position: relative;
+  }
+
+  .map-pin1:hover {
+      cursor: pointer;
+  }
+
+  .map-pin1 p{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    transform: rotate(45deg);
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    font-weight: bold;
+  }
+
+  .map-pin1 span{
+    text-align: center;
+    display: block;
+    margin: -2px;
+  }
+/* 
+.mapMarkerStyle {
+    margin: -10px -10px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: #3887be;
+    pointer-events: none;
+  } */
+
+  .map-pin {
+    margin: -10px -10px;
+    pointer-events: none;
+  }
+
+  #map-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    visibility: hidden;
+    opacity: 1;
+  }

@@ -1,0 +1,12 @@
+<div data-ng-controller="ConditionalStatementCtrl">
+  <mi-action-description info="action"></mi-action-description>
+
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content">
+    <miae-criteria-builder action="action" where-clause="action.ExpressionList"
+      is-read-only="action.isReadOnly"></miae-criteria-builder>
+  </div>
+  <!--/ Main Content Area -->
+
+  <mi-action-notes is-read-only="action.isReadOnly"></mi-action-notes>
+</div>

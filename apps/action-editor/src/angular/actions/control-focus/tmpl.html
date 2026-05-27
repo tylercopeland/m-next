@@ -1,0 +1,21 @@
+<div data-ng-controller="SetControlFocusCtrl">
+  <mi-action-description info="action"></mi-action-description>
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content">
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Set focus to this control</label>
+      </div>
+      <div class="mi-ae-col-8" mi-validation-class="action.ValidationMessages" error-property="'ControlId'">
+        <ui-select data-ng-model="action.ControlId" theme="selectize" on-select="itemSelection($select.selected, item)" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select a control...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices group-by="'typeLabel'" repeat="opt.value as opt in controlList | orderBy: 'typeLabel+label'  | filter: controlFilter(action) | filter: $select.search ">
+            <span ng-bind-html="opt.label"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+  </div>
+  <!--/ Main Content Area -->
+  <mi-action-notes is-read-only="action.isReadOnly"></mi-action-notes>
+</div>

@@ -1,0 +1,87 @@
+#fullControlList {
+  .controlGroupTitle {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 4px 10px;
+    border-bottom: 1px solid $app-header;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    color: #0F1B31 !important;
+    background-color: $m-grey;
+    left: 0 !important;
+    top: 0 !important;
+
+    i {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      color: $white!important;
+      font-size: 14px;
+    }
+  }
+
+  .menucontrol {
+    position: relative;
+    padding: 10px;
+    background-color: $app-header;
+    min-width: 100%;
+    display: flex;
+    cursor: move;
+    margin-bottom: 1px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    left: 0 !important;
+    top: 0 !important;
+
+    &.filterHide,
+    &.FieldListHideCtrl {
+      display: none;
+    }
+
+    &.bound, &.null {
+      // border-left: 4px solid $blue;
+    }
+
+    &.required {
+      color: $m-red;
+      padding-right: 48px;
+
+      &:after {
+        content: "required";
+        color: $m-red;
+        right: 5px;
+        top: 11px;
+        position: absolute;
+        font-size: 10px;
+        opacity: 0.7;
+      }
+
+      &:hover {
+        color: $white;
+        background-color: rgba($m-red, 0.3);
+
+        &:after {
+          color: $white;
+        }
+      }
+    }
+
+    &:hover {
+      background-color: rgba($blue, 0.3);
+    }
+
+    i {
+      margin-right: 4px;
+    }
+  }
+}

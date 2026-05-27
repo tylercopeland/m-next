@@ -1,0 +1,21 @@
+.mi-ae-editable-textarea {
+  display: block;
+  border-radius: 1px;
+  border: 1px solid #BACAD0;
+  color: #2A394A;
+  height: 196px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.5em;
+  margin-bottom: 1rem;
+  line-height: 18px;
+
+  .atwho-inserted,
+  .inserted-value {
+    color: $blue;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

@@ -1,0 +1,49 @@
+{
+    "name": "@m-next/action-editor-copilot",
+    "type": "module",
+    "private": true,
+    "version": "1.0.0",
+    "description": "Interactive friend",
+    "keywords": [
+        "Form"
+    ],
+    "author": "Christin Scarlett Milloy <c.milloy@method.me>",
+    "homepage": "",
+    "license": "ISC",
+    "main": "src/index.jsx",
+    "directories": {
+        "src": "src"
+    },
+    "files": [
+        "index"
+    ],
+    "peerDependencies": {
+        "react": ">=17.0.2",
+        "react-dom": ">=17.0.2"
+    },
+    "devDependencies": {
+        "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
+        "css-loader": "^7.1.2",
+        "html-webpack-plugin": "^5.6.3",
+        "path": "^0.12.7",
+        "postcss": "^8.5.3",
+        "postcss-loader": "^8.1.1",
+        "postcss-preset-env": "^10.1.5",
+        "react-refresh": "^0.16.0",
+        "sass": "^1.85.1",
+        "sass-loader": "^16.0.5",
+        "style-loader": "^4.0.0",
+        "url": "^0.11.4",
+        "webpack-dev-server": "^5.2.0"
+    },
+    "scripts": {
+        "build": "npm run prod",
+        "dev": "set NODE_ENV=development&& webpack serve --config webpack.config.mjs",
+        "prod": "set NODE_ENV=production&& webpack --mode production --config webpack.config.mjs"
+    },
+    "dependencies": {
+        "@m-next/ai-prompt": "1.0.0",
+        "@m-next/api-interface": "1.0.0",
+        "@m-next/svg-icon": "^1.0.0"
+    }
+}

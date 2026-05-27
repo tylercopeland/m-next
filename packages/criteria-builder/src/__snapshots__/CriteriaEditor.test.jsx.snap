@@ -1,0 +1,3076 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CriteriaBuilder Snapshots No controls 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.emotion-4 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #EEF5F7;
+  max-width: 100%;
+  padding: 4px 8px;
+  border-radius: 16px;
+  height: 24px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-6:hover {
+  background-color: #EEF5F7;
+}
+
+.emotion-8 {
+  font-weight: 600;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0 4px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.emotion-10 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0D71C8;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-20 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #3B4AED;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-22 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F7999;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-24 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-24:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-24:focus {
+  outline: none;
+}
+
+.emotion-86 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 16px;
+  margin-left: 9px;
+  visibility: visible;
+}
+
+.emotion-88 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #545F67;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-88:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-88:focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    style="gap: 8px; padding: 0px; flex-direction: column; flex-wrap: wrap; align-items: flex-start;"
+    width="100%"
+  >
+    <div
+      style="padding: 0px 16px;"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        id="0-group-header"
+      >
+        <span
+          class="emotion-4 emotion-5"
+          opacity="1"
+        >
+          If
+        </span>
+        <div
+          class="emotion-6 emotion-7"
+          id="0-group-type"
+        >
+          <span
+            class="pill-text emotion-8 emotion-9"
+            data-testid="pill-text-0-group-type"
+            id="pill-text-0-group-type"
+          >
+            <span
+              class="emotion-10 emotion-5"
+              color="#0D71C8"
+              opacity="1"
+            >
+              ALL
+            </span>
+          </span>
+        </div>
+        <span
+          class="emotion-4 emotion-5"
+          opacity="1"
+        >
+          of the following are true:
+        </span>
+      </div>
+      <div
+        class="emotion-14 emotion-1"
+        height="unset"
+        style="gap: 8px; padding: 0px 0px 0px 8px; flex-direction: column; flex-wrap: wrap; align-items: flex-start; border-left: 2px solid #91A2FF; margin-top: 8px;"
+        width="100%"
+      >
+        <div
+          class="emotion-6 emotion-7"
+          id="0-0-readonly-predicate"
+          style="white-space: break-spaces; height: auto;"
+        >
+          <span
+            class="pill-text emotion-8 emotion-9"
+            data-testid="pill-text-0-0-readonly-predicate"
+            id="pill-text-0-0-readonly-predicate"
+            style="white-space: break-spaces;"
+          >
+            <span
+              class="emotion-20 emotion-5"
+              color="#3B4AED"
+              opacity="1"
+            >
+              Actual completed date
+            </span>
+             
+            Is on or after
+             
+            <span
+              class="emotion-22 emotion-5"
+              color="#0F7999"
+              opacity="1"
+            >
+              Feb-01-2023 12:00 AM
+            </span>
+          </span>
+          <div
+            class=""
+            style="margin-left: 8px;"
+          >
+            <span
+              class="emotion-24 emotion-25"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-close-V4"
+              id="pill-remove-0-0-readonly-predicate"
+              tabindex="0"
+            >
+              <svg
+                aria-label="close-V4 icon"
+                data-testid="svg-icon-svg-close-V4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
+          class="emotion-6 emotion-7"
+          id="0-1-readonly-predicate"
+          style="white-space: break-spaces; height: auto;"
+        >
+          <span
+            class="pill-text emotion-8 emotion-9"
+            data-testid="pill-text-0-1-readonly-predicate"
+            id="pill-text-0-1-readonly-predicate"
+            style="white-space: break-spaces;"
+          >
+            <span
+              class="emotion-20 emotion-5"
+              color="#3B4AED"
+              opacity="1"
+            >
+              Actual duration
+            </span>
+             
+            Is not
+             
+            <span
+              class="emotion-22 emotion-5"
+              color="#0F7999"
+              opacity="1"
+            >
+              Unkown control
+            </span>
+          </span>
+          <div
+            class=""
+            style="margin-left: 8px;"
+          >
+            <span
+              class="emotion-24 emotion-25"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-close-V4"
+              id="pill-remove-0-1-readonly-predicate"
+              tabindex="0"
+            >
+              <svg
+                aria-label="close-V4 icon"
+                data-testid="svg-icon-svg-close-V4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
+          class="emotion-6 emotion-7"
+          id="0-2-readonly-predicate"
+          style="white-space: break-spaces; height: auto;"
+        >
+          <span
+            class="pill-text emotion-8 emotion-9"
+            data-testid="pill-text-0-2-readonly-predicate"
+            id="pill-text-0-2-readonly-predicate"
+            style="white-space: break-spaces;"
+          >
+            <span
+              class="emotion-20 emotion-5"
+              color="#3B4AED"
+              opacity="1"
+            >
+              Comments
+            </span>
+             
+            Contains
+             
+            <span
+              class="emotion-22 emotion-5"
+              color="#0F7999"
+              opacity="1"
+            >
+              gggg
+            </span>
+          </span>
+          <div
+            class=""
+            style="margin-left: 8px;"
+          >
+            <span
+              class="emotion-24 emotion-25"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-close-V4"
+              id="pill-remove-0-2-readonly-predicate"
+              tabindex="0"
+            >
+              <svg
+                aria-label="close-V4 icon"
+                data-testid="svg-icon-svg-close-V4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
+          class="emotion-6 emotion-7"
+          id="0-3-readonly-predicate"
+          style="white-space: break-spaces; height: auto;"
+        >
+          <span
+            class="pill-text emotion-8 emotion-9"
+            data-testid="pill-text-0-3-readonly-predicate"
+            id="pill-text-0-3-readonly-predicate"
+            style="white-space: break-spaces;"
+          >
+            <span
+              class="emotion-20 emotion-5"
+              color="#3B4AED"
+              opacity="1"
+            >
+              Follow up from activity no - Display
+            </span>
+             
+            Greater than
+             
+            <span
+              class="emotion-22 emotion-5"
+              color="#0F7999"
+              opacity="1"
+            >
+              Entity name
+            </span>
+          </span>
+          <div
+            class=""
+            style="margin-left: 8px;"
+          >
+            <span
+              class="emotion-24 emotion-25"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-close-V4"
+              id="pill-remove-0-3-readonly-predicate"
+              tabindex="0"
+            >
+              <svg
+                aria-label="close-V4 icon"
+                data-testid="svg-icon-svg-close-V4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
+          class="emotion-6 emotion-7"
+          id="0-4-readonly-predicate"
+          style="white-space: break-spaces; height: auto;"
+        >
+          <span
+            class="pill-text emotion-8 emotion-9"
+            data-testid="pill-text-0-4-readonly-predicate"
+            id="pill-text-0-4-readonly-predicate"
+            style="white-space: break-spaces;"
+          >
+            <span
+              class="emotion-20 emotion-5"
+              color="#3B4AED"
+              opacity="1"
+            >
+              Is all day appointment
+            </span>
+             
+            Is
+             
+            <span
+              class="emotion-22 emotion-5"
+              color="#0F7999"
+              opacity="1"
+            >
+              True
+            </span>
+          </span>
+          <div
+            class=""
+            style="margin-left: 8px;"
+          >
+            <span
+              class="emotion-24 emotion-25"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-close-V4"
+              id="pill-remove-0-4-readonly-predicate"
+              tabindex="0"
+            >
+              <svg
+                aria-label="close-V4 icon"
+                data-testid="svg-icon-svg-close-V4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
+          class="emotion-6 emotion-7"
+          id="0-5-readonly-predicate"
+          style="white-space: break-spaces; height: auto;"
+        >
+          <span
+            class="pill-text emotion-8 emotion-9"
+            data-testid="pill-text-0-5-readonly-predicate"
+            id="pill-text-0-5-readonly-predicate"
+            style="white-space: break-spaces;"
+          >
+            <span
+              class="emotion-20 emotion-5"
+              color="#3B4AED"
+              opacity="1"
+            >
+              Saa sphalt markup dollars
+            </span>
+             
+            Less than
+             
+            <span
+              class="emotion-22 emotion-5"
+              color="#0F7999"
+              opacity="1"
+            >
+              1001
+            </span>
+          </span>
+          <div
+            class=""
+            style="margin-left: 8px;"
+          >
+            <span
+              class="emotion-24 emotion-25"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-close-V4"
+              id="pill-remove-0-5-readonly-predicate"
+              tabindex="0"
+            >
+              <svg
+                aria-label="close-V4 icon"
+                data-testid="svg-icon-svg-close-V4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
+          class="emotion-6 emotion-7"
+          id="0-6-readonly-predicate"
+          style="white-space: break-spaces; height: auto;"
+        >
+          <span
+            class="pill-text emotion-8 emotion-9"
+            data-testid="pill-text-0-6-readonly-predicate"
+            id="pill-text-0-6-readonly-predicate"
+            style="white-space: break-spaces;"
+          >
+            <span
+              class="emotion-20 emotion-5"
+              color="#3B4AED"
+              opacity="1"
+            >
+              Contacts assigned to
+            </span>
+             
+            Is not empty
+             
+            <span
+              class="emotion-22 emotion-5"
+              color="#0F7999"
+              opacity="1"
+            />
+          </span>
+          <div
+            class=""
+            style="margin-left: 8px;"
+          >
+            <span
+              class="emotion-24 emotion-25"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-close-V4"
+              id="pill-remove-0-6-readonly-predicate"
+              tabindex="0"
+            >
+              <svg
+                aria-label="close-V4 icon"
+                data-testid="svg-icon-svg-close-V4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="emotion-86 emotion-87"
+    >
+      <div
+        class=""
+      >
+        <span
+          class="emotion-88 emotion-25"
+          color="#545F67"
+          data-testid="svg-icon-wrapper-circle-plus-V4"
+          id="undefined-add-filter"
+          tabindex="0"
+        >
+          <svg
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="nc-icon-wrapper"
+              fill="none"
+              stroke="#545F67"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+            >
+              <path
+                class="a"
+                d="M8 5v6M5 8h6m4.5 0A7.5 7.5 0 0 1 8 15.5 7.5 7.5 0 0 1 .5 8a7.5 7.5 0 0 1 15 0z"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+      <div
+        class=""
+      >
+        <span
+          class="emotion-88 emotion-25"
+          color="#545F67"
+          data-testid="svg-icon-wrapper-settings"
+          id="undefined-advanced-edit"
+          tabindex="0"
+        >
+          <svg
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="nc-icon-wrapper"
+              fill="none"
+              stroke="#545F67"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+            >
+              <path
+                class="a"
+                d="M1.501 0.5H14.501A1 1 0 0 1 15.501 1.5V14.5A1 1 0 0 1 14.501 15.5H1.501A1 1 0 0 1 0.501 14.5V1.5A1 1 0 0 1 1.501 0.5z"
+                height="22.5"
+                rx="1.5"
+                ry="1.5"
+                width="22.5"
+                x="0.751"
+                y="0.75"
+              />
+              <path
+                class="a"
+                d="M8.501 10.5h4m-9 0h2"
+              />
+              <path
+                class="b"
+                d="M8.501 10.5A1.5 1.5 0 1 1 7 9a1.5 1.5 0 0 1 1.501 1.5z"
+              />
+              <path
+                class="a"
+                d="M9.501 5.5h-6"
+              />
+              <path
+                class="b"
+                d="M12.501 5.5A1.5 1.5 0 1 0 11 7a1.501 1.501 0 0 0 1.501 -1.5z"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CriteriaBuilder Snapshots No expression 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.emotion-4 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-6 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-8 {
+  background-color: rgba(0, 0, 0, 0);
+  color: #0D71C8;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.emotion-8:hover {
+  border: none;
+  color: #064499;
+  cursor: pointer;
+}
+
+.emotion-8:active {
+  background-color: #E5F7FF;
+  color: #000000;
+}
+
+.emotion-8:focus {
+  border: none;
+  color: #064499;
+}
+
+.emotion-8:disabled {
+  opacity: 0.5;
+}
+
+.emotion-8:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+.emotion-8>svg {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+.emotion-12 {
+  display: none;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 16px;
+  margin-left: 9px;
+  visibility: hidden;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #545F67;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-14:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-14:focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    style="gap: 8px; padding: 0px; flex-direction: column; flex-wrap: wrap; align-items: flex-start;"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <svg
+        fill="none"
+        height="80"
+        width="120"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <g
+          clip-path="url(#clip0_5077_223273)"
+        >
+          <path
+            d="M96 0H56V40H96V0Z"
+            fill="url(#pattern0)"
+            opacity="0.25"
+          />
+          <path
+            d="M48 72C65.6731 72 80 57.6731 80 40C80 22.3269 65.6731 8 48 8C30.3269 8 16 22.3269 16 40C16 57.6731 30.3269 72 48 72Z"
+            fill="#E6F1FA"
+          />
+          <g
+            clip-path="url(#clip1_5077_223273)"
+          >
+            <g
+              clip-path="url(#clip2_5077_223273)"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M40 75.25C40 74.2835 40.7835 73.5 41.75 73.5H94.25C95.2165 73.5 96 74.2835 96 75.25C96 76.2165 95.2165 77 94.25 77H41.75C40.7835 77 40 76.2165 40 75.25Z"
+                fill="#022266"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M44.5251 60.5251C45.1815 59.8687 46.0717 59.5 47 59.5H54C54.9283 59.5 55.8185 59.8687 56.4749 60.5251C57.1313 61.1815 57.5 62.0717 57.5 63V75.25C57.5 76.2165 56.7165 77 55.75 77H45.25C44.2835 77 43.5 76.2165 43.5 75.25V63C43.5 62.0717 43.8687 61.1815 44.5251 60.5251ZM54 63H47V73.5H54V63Z"
+                fill="#022266"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M62.0251 43.0251C62.6815 42.3688 63.5717 42 64.5 42H71.5C72.4283 42 73.3185 42.3688 73.9749 43.0251C74.6312 43.6815 75 44.5717 75 45.5V75.25C75 76.2165 74.2165 77 73.25 77H62.75C61.7835 77 61 76.2165 61 75.25V45.5C61 44.5717 61.3688 43.6815 62.0251 43.0251ZM71.5 45.5L64.5 45.5L64.5 73.5H71.5V45.5Z"
+                fill="#022266"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M79.5251 53.5251C80.1815 52.8688 81.0717 52.5 82 52.5H89C89.9283 52.5 90.8185 52.8688 91.4749 53.5251C92.1313 54.1815 92.5 55.0717 92.5 56V75.25C92.5 76.2165 91.7165 77 90.75 77H80.25C79.2835 77 78.5 76.2165 78.5 75.25V56C78.5 55.0717 78.8687 54.1815 79.5251 53.5251ZM89 56L82 56V73.5H89L89 56Z"
+                fill="#022266"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M45.25 43.75C44.2835 43.75 43.5 44.5335 43.5 45.5C43.5 46.4665 44.2835 47.25 45.25 47.25C46.2165 47.25 47 46.4665 47 45.5C47 44.5335 46.2165 43.75 45.25 43.75ZM40 45.5C40 42.6005 42.3505 40.25 45.25 40.25C48.1495 40.25 50.5 42.6005 50.5 45.5C50.5 48.3995 48.1495 50.75 45.25 50.75C42.3505 50.75 40 48.3995 40 45.5Z"
+                fill="#0D71C8"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M61 24.5C60.0335 24.5 59.25 25.2835 59.25 26.25C59.25 27.2165 60.0335 28 61 28C61.9665 28 62.75 27.2165 62.75 26.25C62.75 25.2835 61.9665 24.5 61 24.5ZM55.75 26.25C55.75 23.3505 58.1005 21 61 21C63.8995 21 66.25 23.3505 66.25 26.25C66.25 29.1495 63.8995 31.5 61 31.5C58.1005 31.5 55.75 29.1495 55.75 26.25Z"
+                fill="#0D71C8"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M90.75 33.25C89.7835 33.25 89 34.0335 89 35C89 35.9665 89.7835 36.75 90.75 36.75C91.7165 36.75 92.5 35.9665 92.5 35C92.5 34.0335 91.7165 33.25 90.75 33.25ZM85.5 35C85.5 32.1005 87.8505 29.75 90.75 29.75C93.6495 29.75 96 32.1005 96 35C96 37.8995 93.6495 40.25 90.75 40.25C87.8505 40.25 85.5 37.8995 85.5 35Z"
+                fill="#0D71C8"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M59.8917 27.6046C60.6397 28.2166 60.75 29.3191 60.138 30.0672L48.8213 43.8992C48.2093 44.6472 47.1067 44.7575 46.3587 44.1455C45.6107 43.5335 45.5004 42.4309 46.1124 41.6829L57.4291 27.8509C58.0411 27.1029 59.1436 26.9926 59.8917 27.6046Z"
+                fill="#0D71C8"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M62.6785 26.7431C62.9511 25.8158 63.9239 25.2852 64.8511 25.5579L87.8858 32.3315C88.813 32.6042 89.3436 33.5769 89.071 34.5042C88.7983 35.4314 87.8256 35.962 86.8984 35.6894L63.8637 28.9157C62.9364 28.643 62.4058 27.6703 62.6785 26.7431Z"
+                fill="#0D71C8"
+                fill-rule="evenodd"
+              />
+            </g>
+          </g>
+        </g>
+        <defs>
+          <pattern
+            height="0.24"
+            id="pattern0"
+            patternContentUnits="objectBoundingBox"
+            width="0.24"
+          >
+            <use
+              transform="scale(0.005)"
+              xlink:href="#image0_5077_223273"
+            />
+          </pattern>
+          <clippath
+            id="clip0_5077_223273"
+          >
+            <rect
+              fill="white"
+              height="80"
+              width="112"
+            />
+          </clippath>
+          <clippath
+            id="clip1_5077_223273"
+          >
+            <rect
+              fill="white"
+              height="56"
+              transform="translate(40 21)"
+              width="56"
+            />
+          </clippath>
+          <clippath
+            id="clip2_5077_223273"
+          >
+            <rect
+              fill="white"
+              height="56"
+              transform="translate(40 21)"
+              width="56"
+            />
+          </clippath>
+          <image
+            height="48"
+            id="image0_5077_223273"
+            width="48"
+            xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAMKADAAQAAAABAAAAMAAAAADbN2wMAAAAwUlEQVRoBe2XQQ6AIAwEifFXPl//pXCoIR4ICD1sMyQEFVjbKQVNidIkcOTeUt3K5qaMMASWECAHlmBERJgAOSAcPExfQoAcWIIREWECV7b9FLY/3dn4Ut2K/A8NDritjU7hMBH4npij92WnsYStW+NYP7Prencafd87Xj4CRsirNdpe+kk+AjjgtjY6heUjsHc6+ndY+ZijQGCCwHtiTmg0p8oncdM7OgMQIAcCBBEXpgiQA1P4mByAADkQIIhtFx6JtxlMUx/tlQAAAABJRU5ErkJggg=="
+          />
+        </defs>
+      </svg>
+      <p
+        class="emotion-4 emotion-5"
+        opacity="1"
+      >
+        No filters applied
+      </p>
+      <p
+        class="emotion-6 emotion-5"
+        opacity="1"
+      >
+        Filters allow you to customize the data display on your charts.
+      </p>
+      <button
+        class="emotion-8 emotion-9"
+        data-testid="undefined-add-filter"
+        id="undefined-add-filter"
+        style="font-weight: 400;"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class=""
+        >
+          <span
+            class="emotion-10 emotion-11"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-plus-V4"
+          >
+            <svg
+              fill="none"
+              height="10"
+              viewBox="0 0 16 16"
+              width="10"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8.005 15.68a.48.48 0 0 1-.48-.48V8.48H.805a.48.48 0 0 1 0-.96h6.72V.8a.48.48 0 1 1 .96 0v6.72h6.72a.48.48 0 1 1 0 .96h-6.72v6.72a.48.48 0 0 1-.48.48"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+        </div>
+        Add filter
+      </button>
+    </div>
+    <div
+      class="emotion-12 emotion-13"
+    >
+      <div
+        class=""
+      >
+        <span
+          class="emotion-14 emotion-11"
+          color="#545F67"
+          data-testid="svg-icon-wrapper-circle-plus-V4"
+          id="undefined-add-filter"
+          tabindex="0"
+        >
+          <svg
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="nc-icon-wrapper"
+              fill="none"
+              stroke="#545F67"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+            >
+              <path
+                class="a"
+                d="M8 5v6M5 8h6m4.5 0A7.5 7.5 0 0 1 8 15.5 7.5 7.5 0 0 1 .5 8a7.5 7.5 0 0 1 15 0z"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+      <div
+        class=""
+      >
+        <span
+          class="emotion-14 emotion-11"
+          color="#545F67"
+          data-testid="svg-icon-wrapper-settings"
+          id="undefined-advanced-edit"
+          tabindex="0"
+        >
+          <svg
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="nc-icon-wrapper"
+              fill="none"
+              stroke="#545F67"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+            >
+              <path
+                class="a"
+                d="M1.501 0.5H14.501A1 1 0 0 1 15.501 1.5V14.5A1 1 0 0 1 14.501 15.5H1.501A1 1 0 0 1 0.501 14.5V1.5A1 1 0 0 1 1.501 0.5z"
+                height="22.5"
+                rx="1.5"
+                ry="1.5"
+                width="22.5"
+                x="0.751"
+                y="0.75"
+              />
+              <path
+                class="a"
+                d="M8.501 10.5h4m-9 0h2"
+              />
+              <path
+                class="b"
+                d="M8.501 10.5A1.5 1.5 0 1 1 7 9a1.5 1.5 0 0 1 1.501 1.5z"
+              />
+              <path
+                class="a"
+                d="M9.501 5.5h-6"
+              />
+              <path
+                class="b"
+                d="M12.501 5.5A1.5 1.5 0 1 0 11 7a1.501 1.501 0 0 0 1.501 -1.5z"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CriteriaBuilder Snapshots No fields 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: none;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 16px;
+  margin-left: 9px;
+  visibility: hidden;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #545F67;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-4:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-4:focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    style="gap: 8px; padding: 0px; flex-direction: column; flex-wrap: wrap; align-items: flex-start;"
+    width="100%"
+  >
+    <span
+      aria-busy="true"
+      aria-live="polite"
+    >
+      <span
+        class="react-loading-skeleton"
+        style="--animation-duration: 1.4s; width: 320px; height: 60px;"
+      >
+        ‌
+      </span>
+      <br />
+    </span>
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <div
+        class=""
+      >
+        <span
+          class="emotion-4 emotion-5"
+          color="#545F67"
+          data-testid="svg-icon-wrapper-circle-plus-V4"
+          id="undefined-add-filter"
+          tabindex="0"
+        >
+          <svg
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="nc-icon-wrapper"
+              fill="none"
+              stroke="#545F67"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+            >
+              <path
+                class="a"
+                d="M8 5v6M5 8h6m4.5 0A7.5 7.5 0 0 1 8 15.5 7.5 7.5 0 0 1 .5 8a7.5 7.5 0 0 1 15 0z"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+      <div
+        class=""
+      >
+        <span
+          class="emotion-4 emotion-5"
+          color="#545F67"
+          data-testid="svg-icon-wrapper-settings"
+          id="undefined-advanced-edit"
+          tabindex="0"
+        >
+          <svg
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="nc-icon-wrapper"
+              fill="none"
+              stroke="#545F67"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+            >
+              <path
+                class="a"
+                d="M1.501 0.5H14.501A1 1 0 0 1 15.501 1.5V14.5A1 1 0 0 1 14.501 15.5H1.501A1 1 0 0 1 0.501 14.5V1.5A1 1 0 0 1 1.501 0.5z"
+                height="22.5"
+                rx="1.5"
+                ry="1.5"
+                width="22.5"
+                x="0.751"
+                y="0.75"
+              />
+              <path
+                class="a"
+                d="M8.501 10.5h4m-9 0h2"
+              />
+              <path
+                class="b"
+                d="M8.501 10.5A1.5 1.5 0 1 1 7 9a1.5 1.5 0 0 1 1.501 1.5z"
+              />
+              <path
+                class="a"
+                d="M9.501 5.5h-6"
+              />
+              <path
+                class="b"
+                d="M12.501 5.5A1.5 1.5 0 1 0 11 7a1.501 1.501 0 0 0 1.501 -1.5z"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CriteriaBuilder Snapshots Not supported expression 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.emotion-4 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-6 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-8 {
+  background-color: rgba(0, 0, 0, 0);
+  color: #0D71C8;
+  min-height: 32px;
+  padding: 6px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 17px!important;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 600;
+  width: auto;
+  line-height: 18px;
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.emotion-8:hover {
+  border: none;
+  color: #064499;
+  cursor: pointer;
+}
+
+.emotion-8:active {
+  background-color: #E5F7FF;
+  color: #000000;
+}
+
+.emotion-8:focus {
+  border: none;
+  color: #064499;
+}
+
+.emotion-8:disabled {
+  opacity: 0.5;
+}
+
+.emotion-8:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0.75pt 1.5pt #0D71C8;
+  border-color: #FFFFFF!important;
+}
+
+.emotion-8>svg {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+}
+
+.emotion-10:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-10:focus {
+  outline: none;
+}
+
+.emotion-12 {
+  display: none;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 16px;
+  margin-left: 9px;
+  visibility: hidden;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #545F67;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-14:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-14:focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    style="gap: 8px; padding: 0px; flex-direction: column; flex-wrap: wrap; align-items: flex-start;"
+    width="100%"
+  >
+    <div
+      class="emotion-2 emotion-3"
+    >
+      <svg
+        fill="none"
+        height="80"
+        width="120"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <g
+          clip-path="url(#clip0_5077_223273)"
+        >
+          <path
+            d="M96 0H56V40H96V0Z"
+            fill="url(#pattern0)"
+            opacity="0.25"
+          />
+          <path
+            d="M48 72C65.6731 72 80 57.6731 80 40C80 22.3269 65.6731 8 48 8C30.3269 8 16 22.3269 16 40C16 57.6731 30.3269 72 48 72Z"
+            fill="#E6F1FA"
+          />
+          <g
+            clip-path="url(#clip1_5077_223273)"
+          >
+            <g
+              clip-path="url(#clip2_5077_223273)"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M40 75.25C40 74.2835 40.7835 73.5 41.75 73.5H94.25C95.2165 73.5 96 74.2835 96 75.25C96 76.2165 95.2165 77 94.25 77H41.75C40.7835 77 40 76.2165 40 75.25Z"
+                fill="#022266"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M44.5251 60.5251C45.1815 59.8687 46.0717 59.5 47 59.5H54C54.9283 59.5 55.8185 59.8687 56.4749 60.5251C57.1313 61.1815 57.5 62.0717 57.5 63V75.25C57.5 76.2165 56.7165 77 55.75 77H45.25C44.2835 77 43.5 76.2165 43.5 75.25V63C43.5 62.0717 43.8687 61.1815 44.5251 60.5251ZM54 63H47V73.5H54V63Z"
+                fill="#022266"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M62.0251 43.0251C62.6815 42.3688 63.5717 42 64.5 42H71.5C72.4283 42 73.3185 42.3688 73.9749 43.0251C74.6312 43.6815 75 44.5717 75 45.5V75.25C75 76.2165 74.2165 77 73.25 77H62.75C61.7835 77 61 76.2165 61 75.25V45.5C61 44.5717 61.3688 43.6815 62.0251 43.0251ZM71.5 45.5L64.5 45.5L64.5 73.5H71.5V45.5Z"
+                fill="#022266"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M79.5251 53.5251C80.1815 52.8688 81.0717 52.5 82 52.5H89C89.9283 52.5 90.8185 52.8688 91.4749 53.5251C92.1313 54.1815 92.5 55.0717 92.5 56V75.25C92.5 76.2165 91.7165 77 90.75 77H80.25C79.2835 77 78.5 76.2165 78.5 75.25V56C78.5 55.0717 78.8687 54.1815 79.5251 53.5251ZM89 56L82 56V73.5H89L89 56Z"
+                fill="#022266"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M45.25 43.75C44.2835 43.75 43.5 44.5335 43.5 45.5C43.5 46.4665 44.2835 47.25 45.25 47.25C46.2165 47.25 47 46.4665 47 45.5C47 44.5335 46.2165 43.75 45.25 43.75ZM40 45.5C40 42.6005 42.3505 40.25 45.25 40.25C48.1495 40.25 50.5 42.6005 50.5 45.5C50.5 48.3995 48.1495 50.75 45.25 50.75C42.3505 50.75 40 48.3995 40 45.5Z"
+                fill="#0D71C8"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M61 24.5C60.0335 24.5 59.25 25.2835 59.25 26.25C59.25 27.2165 60.0335 28 61 28C61.9665 28 62.75 27.2165 62.75 26.25C62.75 25.2835 61.9665 24.5 61 24.5ZM55.75 26.25C55.75 23.3505 58.1005 21 61 21C63.8995 21 66.25 23.3505 66.25 26.25C66.25 29.1495 63.8995 31.5 61 31.5C58.1005 31.5 55.75 29.1495 55.75 26.25Z"
+                fill="#0D71C8"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M90.75 33.25C89.7835 33.25 89 34.0335 89 35C89 35.9665 89.7835 36.75 90.75 36.75C91.7165 36.75 92.5 35.9665 92.5 35C92.5 34.0335 91.7165 33.25 90.75 33.25ZM85.5 35C85.5 32.1005 87.8505 29.75 90.75 29.75C93.6495 29.75 96 32.1005 96 35C96 37.8995 93.6495 40.25 90.75 40.25C87.8505 40.25 85.5 37.8995 85.5 35Z"
+                fill="#0D71C8"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M59.8917 27.6046C60.6397 28.2166 60.75 29.3191 60.138 30.0672L48.8213 43.8992C48.2093 44.6472 47.1067 44.7575 46.3587 44.1455C45.6107 43.5335 45.5004 42.4309 46.1124 41.6829L57.4291 27.8509C58.0411 27.1029 59.1436 26.9926 59.8917 27.6046Z"
+                fill="#0D71C8"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M62.6785 26.7431C62.9511 25.8158 63.9239 25.2852 64.8511 25.5579L87.8858 32.3315C88.813 32.6042 89.3436 33.5769 89.071 34.5042C88.7983 35.4314 87.8256 35.962 86.8984 35.6894L63.8637 28.9157C62.9364 28.643 62.4058 27.6703 62.6785 26.7431Z"
+                fill="#0D71C8"
+                fill-rule="evenodd"
+              />
+            </g>
+          </g>
+        </g>
+        <defs>
+          <pattern
+            height="0.24"
+            id="pattern0"
+            patternContentUnits="objectBoundingBox"
+            width="0.24"
+          >
+            <use
+              transform="scale(0.005)"
+              xlink:href="#image0_5077_223273"
+            />
+          </pattern>
+          <clippath
+            id="clip0_5077_223273"
+          >
+            <rect
+              fill="white"
+              height="80"
+              width="112"
+            />
+          </clippath>
+          <clippath
+            id="clip1_5077_223273"
+          >
+            <rect
+              fill="white"
+              height="56"
+              transform="translate(40 21)"
+              width="56"
+            />
+          </clippath>
+          <clippath
+            id="clip2_5077_223273"
+          >
+            <rect
+              fill="white"
+              height="56"
+              transform="translate(40 21)"
+              width="56"
+            />
+          </clippath>
+          <image
+            height="48"
+            id="image0_5077_223273"
+            width="48"
+            xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAMKADAAQAAAABAAAAMAAAAADbN2wMAAAAwUlEQVRoBe2XQQ6AIAwEifFXPl//pXCoIR4ICD1sMyQEFVjbKQVNidIkcOTeUt3K5qaMMASWECAHlmBERJgAOSAcPExfQoAcWIIREWECV7b9FLY/3dn4Ut2K/A8NDritjU7hMBH4npij92WnsYStW+NYP7Prencafd87Xj4CRsirNdpe+kk+AjjgtjY6heUjsHc6+ndY+ZijQGCCwHtiTmg0p8oncdM7OgMQIAcCBBEXpgiQA1P4mByAADkQIIhtFx6JtxlMUx/tlQAAAABJRU5ErkJggg=="
+          />
+        </defs>
+      </svg>
+      <p
+        class="emotion-4 emotion-5"
+        opacity="1"
+      >
+        No filters applied
+      </p>
+      <p
+        class="emotion-6 emotion-5"
+        opacity="1"
+      >
+        Filters allow you to customize the data display on your charts.
+      </p>
+      <button
+        class="emotion-8 emotion-9"
+        data-testid="undefined-add-filter"
+        id="undefined-add-filter"
+        style="font-weight: 400;"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class=""
+        >
+          <span
+            class="emotion-10 emotion-11"
+            color="currentColor"
+            data-testid="svg-icon-wrapper-plus-V4"
+          >
+            <svg
+              fill="none"
+              height="10"
+              viewBox="0 0 16 16"
+              width="10"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8.005 15.68a.48.48 0 0 1-.48-.48V8.48H.805a.48.48 0 0 1 0-.96h6.72V.8a.48.48 0 1 1 .96 0v6.72h6.72a.48.48 0 1 1 0 .96h-6.72v6.72a.48.48 0 0 1-.48.48"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+        </div>
+        Add filter
+      </button>
+    </div>
+    <div
+      class="emotion-12 emotion-13"
+    >
+      <div
+        class=""
+      >
+        <span
+          class="emotion-14 emotion-11"
+          color="#545F67"
+          data-testid="svg-icon-wrapper-circle-plus-V4"
+          id="undefined-add-filter"
+          tabindex="0"
+        >
+          <svg
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="nc-icon-wrapper"
+              fill="none"
+              stroke="#545F67"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+            >
+              <path
+                class="a"
+                d="M8 5v6M5 8h6m4.5 0A7.5 7.5 0 0 1 8 15.5 7.5 7.5 0 0 1 .5 8a7.5 7.5 0 0 1 15 0z"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+      <div
+        class=""
+      >
+        <span
+          class="emotion-14 emotion-11"
+          color="#545F67"
+          data-testid="svg-icon-wrapper-settings"
+          id="undefined-advanced-edit"
+          tabindex="0"
+        >
+          <svg
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="nc-icon-wrapper"
+              fill="none"
+              stroke="#545F67"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+            >
+              <path
+                class="a"
+                d="M1.501 0.5H14.501A1 1 0 0 1 15.501 1.5V14.5A1 1 0 0 1 14.501 15.5H1.501A1 1 0 0 1 0.501 14.5V1.5A1 1 0 0 1 1.501 0.5z"
+                height="22.5"
+                rx="1.5"
+                ry="1.5"
+                width="22.5"
+                x="0.751"
+                y="0.75"
+              />
+              <path
+                class="a"
+                d="M8.501 10.5h4m-9 0h2"
+              />
+              <path
+                class="b"
+                d="M8.501 10.5A1.5 1.5 0 1 1 7 9a1.5 1.5 0 0 1 1.501 1.5z"
+              />
+              <path
+                class="a"
+                d="M9.501 5.5h-6"
+              />
+              <path
+                class="b"
+                d="M12.501 5.5A1.5 1.5 0 1 0 11 7a1.501 1.501 0 0 0 1.501 -1.5z"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CriteriaBuilder Snapshots Supported expression 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.emotion-4 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #EEF5F7;
+  max-width: 100%;
+  padding: 4px 8px;
+  border-radius: 16px;
+  height: 24px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-6:hover {
+  background-color: #EEF5F7;
+}
+
+.emotion-8 {
+  font-weight: 600;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0 4px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.emotion-10 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0D71C8;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-20 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #3B4AED;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-22 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F7999;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-24 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-24:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-24:focus {
+  outline: none;
+}
+
+.emotion-86 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 16px;
+  margin-left: 9px;
+  visibility: visible;
+}
+
+.emotion-88 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #545F67;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-88:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-88:focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    style="gap: 8px; padding: 0px; flex-direction: column; flex-wrap: wrap; align-items: flex-start;"
+    width="100%"
+  >
+    <div
+      style="padding: 0px 16px;"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        id="0-group-header"
+      >
+        <span
+          class="emotion-4 emotion-5"
+          opacity="1"
+        >
+          If
+        </span>
+        <div
+          class="emotion-6 emotion-7"
+          id="0-group-type"
+        >
+          <span
+            class="pill-text emotion-8 emotion-9"
+            data-testid="pill-text-0-group-type"
+            id="pill-text-0-group-type"
+          >
+            <span
+              class="emotion-10 emotion-5"
+              color="#0D71C8"
+              opacity="1"
+            >
+              ALL
+            </span>
+          </span>
+        </div>
+        <span
+          class="emotion-4 emotion-5"
+          opacity="1"
+        >
+          of the following are true:
+        </span>
+      </div>
+      <div
+        class="emotion-14 emotion-1"
+        height="unset"
+        style="gap: 8px; padding: 0px 0px 0px 8px; flex-direction: column; flex-wrap: wrap; align-items: flex-start; border-left: 2px solid #91A2FF; margin-top: 8px;"
+        width="100%"
+      >
+        <div
+          class="emotion-6 emotion-7"
+          id="0-0-readonly-predicate"
+          style="white-space: break-spaces; height: auto;"
+        >
+          <span
+            class="pill-text emotion-8 emotion-9"
+            data-testid="pill-text-0-0-readonly-predicate"
+            id="pill-text-0-0-readonly-predicate"
+            style="white-space: break-spaces;"
+          >
+            <span
+              class="emotion-20 emotion-5"
+              color="#3B4AED"
+              opacity="1"
+            >
+              Actual completed date
+            </span>
+             
+            Is on or after
+             
+            <span
+              class="emotion-22 emotion-5"
+              color="#0F7999"
+              opacity="1"
+            >
+              Feb-01-2023 12:00 AM
+            </span>
+          </span>
+          <div
+            class=""
+            style="margin-left: 8px;"
+          >
+            <span
+              class="emotion-24 emotion-25"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-close-V4"
+              id="pill-remove-0-0-readonly-predicate"
+              tabindex="0"
+            >
+              <svg
+                aria-label="close-V4 icon"
+                data-testid="svg-icon-svg-close-V4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
+          class="emotion-6 emotion-7"
+          id="0-1-readonly-predicate"
+          style="white-space: break-spaces; height: auto;"
+        >
+          <span
+            class="pill-text emotion-8 emotion-9"
+            data-testid="pill-text-0-1-readonly-predicate"
+            id="pill-text-0-1-readonly-predicate"
+            style="white-space: break-spaces;"
+          >
+            <span
+              class="emotion-20 emotion-5"
+              color="#3B4AED"
+              opacity="1"
+            >
+              Actual duration
+            </span>
+             
+            Is not
+             
+            <span
+              class="emotion-22 emotion-5"
+              color="#0F7999"
+              opacity="1"
+            >
+              Assigned To
+            </span>
+          </span>
+          <div
+            class=""
+            style="margin-left: 8px;"
+          >
+            <span
+              class="emotion-24 emotion-25"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-close-V4"
+              id="pill-remove-0-1-readonly-predicate"
+              tabindex="0"
+            >
+              <svg
+                aria-label="close-V4 icon"
+                data-testid="svg-icon-svg-close-V4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
+          class="emotion-6 emotion-7"
+          id="0-2-readonly-predicate"
+          style="white-space: break-spaces; height: auto;"
+        >
+          <span
+            class="pill-text emotion-8 emotion-9"
+            data-testid="pill-text-0-2-readonly-predicate"
+            id="pill-text-0-2-readonly-predicate"
+            style="white-space: break-spaces;"
+          >
+            <span
+              class="emotion-20 emotion-5"
+              color="#3B4AED"
+              opacity="1"
+            >
+              Comments
+            </span>
+             
+            Contains
+             
+            <span
+              class="emotion-22 emotion-5"
+              color="#0F7999"
+              opacity="1"
+            >
+              gggg
+            </span>
+          </span>
+          <div
+            class=""
+            style="margin-left: 8px;"
+          >
+            <span
+              class="emotion-24 emotion-25"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-close-V4"
+              id="pill-remove-0-2-readonly-predicate"
+              tabindex="0"
+            >
+              <svg
+                aria-label="close-V4 icon"
+                data-testid="svg-icon-svg-close-V4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
+          class="emotion-6 emotion-7"
+          id="0-3-readonly-predicate"
+          style="white-space: break-spaces; height: auto;"
+        >
+          <span
+            class="pill-text emotion-8 emotion-9"
+            data-testid="pill-text-0-3-readonly-predicate"
+            id="pill-text-0-3-readonly-predicate"
+            style="white-space: break-spaces;"
+          >
+            <span
+              class="emotion-20 emotion-5"
+              color="#3B4AED"
+              opacity="1"
+            >
+              Follow up from activity no - Display
+            </span>
+             
+            Greater than
+             
+            <span
+              class="emotion-22 emotion-5"
+              color="#0F7999"
+              opacity="1"
+            >
+              Entity name
+            </span>
+          </span>
+          <div
+            class=""
+            style="margin-left: 8px;"
+          >
+            <span
+              class="emotion-24 emotion-25"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-close-V4"
+              id="pill-remove-0-3-readonly-predicate"
+              tabindex="0"
+            >
+              <svg
+                aria-label="close-V4 icon"
+                data-testid="svg-icon-svg-close-V4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
+          class="emotion-6 emotion-7"
+          id="0-4-readonly-predicate"
+          style="white-space: break-spaces; height: auto;"
+        >
+          <span
+            class="pill-text emotion-8 emotion-9"
+            data-testid="pill-text-0-4-readonly-predicate"
+            id="pill-text-0-4-readonly-predicate"
+            style="white-space: break-spaces;"
+          >
+            <span
+              class="emotion-20 emotion-5"
+              color="#3B4AED"
+              opacity="1"
+            >
+              Is all day appointment
+            </span>
+             
+            Is
+             
+            <span
+              class="emotion-22 emotion-5"
+              color="#0F7999"
+              opacity="1"
+            >
+              True
+            </span>
+          </span>
+          <div
+            class=""
+            style="margin-left: 8px;"
+          >
+            <span
+              class="emotion-24 emotion-25"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-close-V4"
+              id="pill-remove-0-4-readonly-predicate"
+              tabindex="0"
+            >
+              <svg
+                aria-label="close-V4 icon"
+                data-testid="svg-icon-svg-close-V4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
+          class="emotion-6 emotion-7"
+          id="0-5-readonly-predicate"
+          style="white-space: break-spaces; height: auto;"
+        >
+          <span
+            class="pill-text emotion-8 emotion-9"
+            data-testid="pill-text-0-5-readonly-predicate"
+            id="pill-text-0-5-readonly-predicate"
+            style="white-space: break-spaces;"
+          >
+            <span
+              class="emotion-20 emotion-5"
+              color="#3B4AED"
+              opacity="1"
+            >
+              Saa sphalt markup dollars
+            </span>
+             
+            Less than
+             
+            <span
+              class="emotion-22 emotion-5"
+              color="#0F7999"
+              opacity="1"
+            >
+              1001
+            </span>
+          </span>
+          <div
+            class=""
+            style="margin-left: 8px;"
+          >
+            <span
+              class="emotion-24 emotion-25"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-close-V4"
+              id="pill-remove-0-5-readonly-predicate"
+              tabindex="0"
+            >
+              <svg
+                aria-label="close-V4 icon"
+                data-testid="svg-icon-svg-close-V4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
+          class="emotion-6 emotion-7"
+          id="0-6-readonly-predicate"
+          style="white-space: break-spaces; height: auto;"
+        >
+          <span
+            class="pill-text emotion-8 emotion-9"
+            data-testid="pill-text-0-6-readonly-predicate"
+            id="pill-text-0-6-readonly-predicate"
+            style="white-space: break-spaces;"
+          >
+            <span
+              class="emotion-20 emotion-5"
+              color="#3B4AED"
+              opacity="1"
+            >
+              Contacts assigned to
+            </span>
+             
+            Is not empty
+             
+            <span
+              class="emotion-22 emotion-5"
+              color="#0F7999"
+              opacity="1"
+            />
+          </span>
+          <div
+            class=""
+            style="margin-left: 8px;"
+          >
+            <span
+              class="emotion-24 emotion-25"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-close-V4"
+              id="pill-remove-0-6-readonly-predicate"
+              tabindex="0"
+            >
+              <svg
+                aria-label="close-V4 icon"
+                data-testid="svg-icon-svg-close-V4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="emotion-86 emotion-87"
+    >
+      <div
+        class=""
+      >
+        <span
+          class="emotion-88 emotion-25"
+          color="#545F67"
+          data-testid="svg-icon-wrapper-circle-plus-V4"
+          id="undefined-add-filter"
+          tabindex="0"
+        >
+          <svg
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="nc-icon-wrapper"
+              fill="none"
+              stroke="#545F67"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+            >
+              <path
+                class="a"
+                d="M8 5v6M5 8h6m4.5 0A7.5 7.5 0 0 1 8 15.5 7.5 7.5 0 0 1 .5 8a7.5 7.5 0 0 1 15 0z"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+      <div
+        class=""
+      >
+        <span
+          class="emotion-88 emotion-25"
+          color="#545F67"
+          data-testid="svg-icon-wrapper-settings"
+          id="undefined-advanced-edit"
+          tabindex="0"
+        >
+          <svg
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="nc-icon-wrapper"
+              fill="none"
+              stroke="#545F67"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+            >
+              <path
+                class="a"
+                d="M1.501 0.5H14.501A1 1 0 0 1 15.501 1.5V14.5A1 1 0 0 1 14.501 15.5H1.501A1 1 0 0 1 0.501 14.5V1.5A1 1 0 0 1 1.501 0.5z"
+                height="22.5"
+                rx="1.5"
+                ry="1.5"
+                width="22.5"
+                x="0.751"
+                y="0.75"
+              />
+              <path
+                class="a"
+                d="M8.501 10.5h4m-9 0h2"
+              />
+              <path
+                class="b"
+                d="M8.501 10.5A1.5 1.5 0 1 1 7 9a1.5 1.5 0 0 1 1.501 1.5z"
+              />
+              <path
+                class="a"
+                d="M9.501 5.5h-6"
+              />
+              <path
+                class="b"
+                d="M12.501 5.5A1.5 1.5 0 1 0 11 7a1.501 1.501 0 0 0 1.501 -1.5z"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CriteriaBuilder Snapshots Unmatched control 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.emotion-4 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #2A394A;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0F1B31;
+  background-color: #EEF5F7;
+  max-width: 100%;
+  padding: 4px 8px;
+  border-radius: 16px;
+  height: 24px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-6:hover {
+  background-color: #EEF5F7;
+}
+
+.emotion-8 {
+  font-weight: 600;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0 4px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.emotion-10 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0D71C8;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+.emotion-20 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #3B4AED;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-22 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+  color: #0F7999;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 16px;
+  cursor: text;
+  opacity: 1;
+}
+
+.emotion-24 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: currentColor;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-24:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-24:focus {
+  outline: none;
+}
+
+.emotion-26 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 16px;
+  margin-left: 9px;
+  visibility: visible;
+}
+
+.emotion-28 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  color: #545F67;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.emotion-28:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1pt #0D71C8;
+}
+
+.emotion-28:focus {
+  outline: none;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    style="gap: 8px; padding: 0px; flex-direction: column; flex-wrap: wrap; align-items: flex-start;"
+    width="100%"
+  >
+    <div
+      style="padding: 0px 16px;"
+    >
+      <div
+        class="emotion-2 emotion-3"
+        id="0-group-header"
+      >
+        <span
+          class="emotion-4 emotion-5"
+          opacity="1"
+        >
+          If
+        </span>
+        <div
+          class="emotion-6 emotion-7"
+          id="0-group-type"
+        >
+          <span
+            class="pill-text emotion-8 emotion-9"
+            data-testid="pill-text-0-group-type"
+            id="pill-text-0-group-type"
+          >
+            <span
+              class="emotion-10 emotion-5"
+              color="#0D71C8"
+              opacity="1"
+            >
+              ALL
+            </span>
+          </span>
+        </div>
+        <span
+          class="emotion-4 emotion-5"
+          opacity="1"
+        >
+          of the following are true:
+        </span>
+      </div>
+      <div
+        class="emotion-14 emotion-1"
+        height="unset"
+        style="gap: 8px; padding: 0px 0px 0px 8px; flex-direction: column; flex-wrap: wrap; align-items: flex-start; border-left: 2px solid #91A2FF; margin-top: 8px;"
+        width="100%"
+      >
+        <div
+          class="emotion-6 emotion-7"
+          id="0-0-readonly-predicate"
+          style="white-space: break-spaces; height: auto;"
+        >
+          <span
+            class="pill-text emotion-8 emotion-9"
+            data-testid="pill-text-0-0-readonly-predicate"
+            id="pill-text-0-0-readonly-predicate"
+            style="white-space: break-spaces;"
+          >
+            <span
+              class="emotion-20 emotion-5"
+              color="#3B4AED"
+              opacity="1"
+            >
+              Actual start date
+            </span>
+             
+            Is
+             
+            <span
+              class="emotion-22 emotion-5"
+              color="#0F7999"
+              opacity="1"
+            >
+              Unkown control
+            </span>
+          </span>
+          <div
+            class=""
+            style="margin-left: 8px;"
+          >
+            <span
+              class="emotion-24 emotion-25"
+              color="currentColor"
+              data-testid="svg-icon-wrapper-close-V4"
+              id="pill-remove-0-0-readonly-predicate"
+              tabindex="0"
+            >
+              <svg
+                aria-label="close-V4 icon"
+                data-testid="svg-icon-svg-close-V4"
+                fill="currentColor"
+                height="8px"
+                preserveAspectRatio="none"
+                role="img"
+                viewBox="0 0 1024 1024"
+                width="8px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M992-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001-960 960c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l-0-0c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001 960-960c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l0 0c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z M32-0.083c-8.857 0.001-16.873 3.601-22.666 9.416l-0.001 0.001c-5.789 5.791-9.37 13.79-9.37 22.625s3.581 16.834 9.37 22.625l960 960c5.795 5.814 13.811 9.412 22.667 9.412s16.872-3.598 22.666-9.411l0.001-0.001c5.789-5.791 9.37-13.79 9.37-22.625s-3.581-16.834-9.37-22.625l-960-960c-5.794-5.816-13.81-9.415-22.666-9.417l-0-0z"
+                  stroke="inherit"
+                  stroke-width=""
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="emotion-26 emotion-27"
+    >
+      <div
+        class=""
+      >
+        <span
+          class="emotion-28 emotion-25"
+          color="#545F67"
+          data-testid="svg-icon-wrapper-circle-plus-V4"
+          id="undefined-add-filter"
+          tabindex="0"
+        >
+          <svg
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="nc-icon-wrapper"
+              fill="none"
+              stroke="#545F67"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+            >
+              <path
+                class="a"
+                d="M8 5v6M5 8h6m4.5 0A7.5 7.5 0 0 1 8 15.5 7.5 7.5 0 0 1 .5 8a7.5 7.5 0 0 1 15 0z"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+      <div
+        class=""
+      >
+        <span
+          class="emotion-28 emotion-25"
+          color="#545F67"
+          data-testid="svg-icon-wrapper-settings"
+          id="undefined-advanced-edit"
+          tabindex="0"
+        >
+          <svg
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="nc-icon-wrapper"
+              fill="none"
+              stroke="#545F67"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+            >
+              <path
+                class="a"
+                d="M1.501 0.5H14.501A1 1 0 0 1 15.501 1.5V14.5A1 1 0 0 1 14.501 15.5H1.501A1 1 0 0 1 0.501 14.5V1.5A1 1 0 0 1 1.501 0.5z"
+                height="22.5"
+                rx="1.5"
+                ry="1.5"
+                width="22.5"
+                x="0.751"
+                y="0.75"
+              />
+              <path
+                class="a"
+                d="M8.501 10.5h4m-9 0h2"
+              />
+              <path
+                class="b"
+                d="M8.501 10.5A1.5 1.5 0 1 1 7 9a1.5 1.5 0 0 1 1.501 1.5z"
+              />
+              <path
+                class="a"
+                d="M9.501 5.5h-6"
+              />
+              <path
+                class="b"
+                d="M12.501 5.5A1.5 1.5 0 1 0 11 7a1.501 1.501 0 0 0 1.501 -1.5z"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

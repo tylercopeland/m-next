@@ -1,0 +1,483 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container Snapshots Child Node 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-container"
+    width="100%"
+  >
+    <img
+      alt="cat"
+      src="catpic.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`Container Snapshots Click Event 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: pointer;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-container"
+    width="100%"
+  >
+    <img
+      alt="cat"
+      src="catpic.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`Container Snapshots Dark Theme 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #2E2E2E;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-container"
+    width="100%"
+  >
+    <img
+      alt="cat"
+      src="catpic.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`Container Snapshots Is hidden 1`] = `
+.emotion-0 {
+  display: none;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-container"
+    width="100%"
+  />
+</div>
+`;
+
+exports[`Container Snapshots Is loading 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-container"
+    width="100%"
+  >
+    <span
+      aria-busy="true"
+      aria-live="polite"
+    >
+      <span
+        class="react-loading-skeleton"
+        style="--animation-duration: 1.4s; width: 100%; height: 100%;"
+      >
+        ‌
+      </span>
+      <br />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Container Snapshots Is loading scrollable 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  cursor: default;
+}
+
+<div>
+  <div
+    data-simplebar="init"
+    style="height: auto; width: 100%; overflow-x: hidden; overflow-y: hidden;"
+  >
+    <div
+      class="simplebar-wrapper"
+    >
+      <div
+        class="simplebar-height-auto-observer-wrapper"
+      >
+        <div
+          class="simplebar-height-auto-observer"
+        />
+      </div>
+      <div
+        class="simplebar-mask"
+      >
+        <div
+          class="simplebar-offset"
+          style="right: 0px; bottom: 0px;"
+        >
+          <div
+            aria-label="scrollable content"
+            class="simplebar-content-wrapper"
+            role="region"
+            tabindex="0"
+          >
+            <div
+              class="simplebar-content"
+            >
+              <div
+                class="emotion-0 emotion-1"
+                id="test-container"
+                width="100%"
+              >
+                <span
+                  aria-busy="true"
+                  aria-live="polite"
+                >
+                  <span
+                    class="react-loading-skeleton"
+                    style="--animation-duration: 1.4s; width: 100%; height: 100%;"
+                  >
+                    ‌
+                  </span>
+                  <br />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="simplebar-placeholder"
+        style="width: 0px; height: 0px;"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-horizontal"
+      style="visibility: hidden;"
+    >
+      <div
+        class="simplebar-scrollbar"
+        style="width: 0px; display: none;"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-vertical"
+      style="visibility: hidden;"
+    >
+      <div
+        class="simplebar-scrollbar"
+        style="height: 0px; display: none;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Container Snapshots Set width 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 500px;
+  height: unset;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-container"
+    width="500px"
+  >
+    <img
+      alt="cat"
+      src="catpic.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`Container Snapshots borderless 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-container"
+    width="100%"
+  >
+    <img
+      alt="cat"
+      src="catpic.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`Container Snapshots isRound 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-container"
+    width="100%"
+  >
+    <img
+      alt="cat"
+      src="catpic.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`Container Snapshots not isRound 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: unset;
+  cursor: default;
+}
+
+<div>
+  <div
+    class="emotion-0 emotion-1"
+    height="unset"
+    id="test-container"
+    width="100%"
+  >
+    <img
+      alt="cat"
+      src="catpic.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`Container Snapshots scrollable 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  cursor: default;
+}
+
+<div>
+  <div
+    data-simplebar="init"
+    style="height: auto; width: 100%; overflow-x: hidden; overflow-y: hidden;"
+  >
+    <div
+      class="simplebar-wrapper"
+    >
+      <div
+        class="simplebar-height-auto-observer-wrapper"
+      >
+        <div
+          class="simplebar-height-auto-observer"
+        />
+      </div>
+      <div
+        class="simplebar-mask"
+      >
+        <div
+          class="simplebar-offset"
+          style="right: 0px; bottom: 0px;"
+        >
+          <div
+            aria-label="scrollable content"
+            class="simplebar-content-wrapper"
+            role="region"
+            tabindex="0"
+          >
+            <div
+              class="simplebar-content"
+            >
+              <div
+                class="emotion-0 emotion-1"
+                id="test-container"
+                width="100%"
+              >
+                <img
+                  alt="cat"
+                  src="catpic.jpg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="simplebar-placeholder"
+        style="width: 0px; height: 0px;"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-horizontal"
+      style="visibility: hidden;"
+    >
+      <div
+        class="simplebar-scrollbar"
+        style="width: 0px; display: none;"
+      />
+    </div>
+    <div
+      class="simplebar-track simplebar-vertical"
+      style="visibility: hidden;"
+    >
+      <div
+        class="simplebar-scrollbar"
+        style="height: 0px; display: none;"
+      />
+    </div>
+  </div>
+</div>
+`;

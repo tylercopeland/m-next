@@ -1,0 +1,9 @@
+ls:
+  .jsx: regex:[A-Za-z][\w]+(\.stories)?(\.styles)?(\.test)?
+  .js: regex:[a-z][\w\.\-]+
+  .mdx: regex:[A-Za-z][\w\.\-]+
+ignore:
+  - node_modules
+  - dist
+  - coverage
+  - public

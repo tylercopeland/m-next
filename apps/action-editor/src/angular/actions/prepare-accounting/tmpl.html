@@ -1,0 +1,55 @@
+<div data-ng-controller="PrepareAccountingCtrl">
+  <mi-action-description info="action" show-back="criteriaBuilder" back-button="toggleCriteriaBuilder()"></mi-action-description>
+
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content" data-ng-show="!criteriaBuilder">
+    <!-- Table -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Select a table</label>
+      </div>
+      <div class="mi-ae-col-8" mi-validation-class="action.ValidationMessages" error-property="'ViewNameFriendly'">
+        <ui-select data-ng-model="action.ViewNameFriendly" theme="selectize" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select...">{{$select.selected.value}}</ui-select-match>
+          <ui-select-choices repeat="table.value as table in tables | filter: $select.search">
+            <span ng-bind-html="table.value | highlight: $select.search"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+    <!--/ Table -->
+
+    <!-- Where -->
+    <div class="mi-ae-row" data-ng-show="canContinue">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Prepare records where</label>
+      </div>
+      <div class="mi-ae-col-8" mi-validation-class="action.ValidationMessages" error-property="'WhereClause'">
+        <mi-criteria-string where-clause="action.WhereClause"></mi-criteria-string>
+        <miae-button button-class="'ghost mi-button-clear mi-ae-margin-0 mi-ae-padding-l-0 mi-ae-padding-t-3'" clickevent="toggleCriteriaBuilder()" name="'Edit criteria'"></miae-button>
+      </div>
+    </div>
+    <!--/ Where -->
+
+    <h3 data-ng-show="canContinue">Sync Options</h3>
+
+    <!-- Sync Override -->
+    <div class="mi-ae-row" data-ng-show="canContinue">
+      <div class="mi-ae-col-12">
+        <label class="mi-radio-checkbox mi-checkbox">
+          <span>&nbsp;Attempt to sync this record with my accounting software</span>
+          <input type="checkbox" data-ng-model="action.SyncOverride" ng-disabled="action.isReadOnly" />
+          <div class="mi-radio-checkbox-indicator"></div>
+        </label>
+      </div>
+    </div>
+    <!--/ Sync Override -->
+  </div>
+  <!--/ Main Content Area -->
+
+  <div class="mi-ae-main-content" data-ng-if="criteriaBuilder">
+    <miae-criteria-builder action="action" fields-only="true" where-clause="action.WhereClause" table-name="action.ViewNameFriendly" is-read-only="action.isReadOnly"></miae-criteria-builder>
+  </div>
+
+  <mi-action-notes is-read-only="action.isReadOnly"></mi-action-notes>
+</div>

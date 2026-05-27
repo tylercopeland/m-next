@@ -1,0 +1,175 @@
+@mixin groupColors($name, $color) {
+    &.mi-button-group-#{$name} {
+        @if $name == "secondary" {
+            .mi-button { 
+                background-color: $color; 
+                border-color: $blue; 
+                color: $blue;
+            }
+            .mi-button.mi-icon-caret-down { 
+                color: $blue;
+                border: 1px solid $blue;
+                border-left-width: 0 !important;
+            }
+            .mi-button-group-menu li a:hover {
+                background-color: $blue; 
+            }
+        } 
+        @else if $name == "white" {
+            .mi-button { 
+                background-color: $color; 
+                border-color: $blue; 
+                color: $blue;
+            }
+            .mi-button.mi-icon-caret-down { 
+                color: $blue;
+                border: 1px solid $blue;
+                border-left-width: 0 !important;
+            }
+            .mi-button-group-menu li a:hover {
+                color: $blue;
+                background-color: $white; 
+            }
+        } 
+        @else {
+            .mi-button { background-color: $color; }
+            .mi-button-group-menu li a:hover {
+                background-color: $color; 
+            }
+        }
+    }
+    &.mi-button-group-text-#{$name} {
+        .mi-button {
+            color: $color !important;
+        }
+        .mi-button-group-menu li a:hover {
+            color: $color !important; 
+        }
+    }
+}
+
+.mi-button-group {
+    position: relative;
+    display: flex;
+    vertical-align: middle;
+    margin: 0 5px 10px;
+
+    @include groupColors('grey', $m-grey);
+    @include groupColors('dark-grey', $m-dark-grey);
+    @include groupColors('navigation', $m-darkest-blue);
+    @include groupColors('alert', $m-red);
+    @include groupColors('pink', $pink );
+    @include groupColors('purple', $purple);
+    @include groupColors('primary', $blue);
+    @include groupColors('secondary', $white);
+    @include groupColors('aqua', $aqua);
+    @include groupColors('success', $green);
+    @include groupColors('yellow', $yellow);
+    @include groupColors('caution', $m-orange);
+    @include groupColors('black', $black);
+    @include groupColors('white', $white);
+
+    .mi-button {
+        margin: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-color: $grey;
+        color: $white;
+
+        &:first-child {
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            height: 32px;
+        }
+        &:last-child {
+            border-top-right-radius: 16px;
+            border-bottom-right-radius: 16px;
+        }
+    }
+
+    .mi-icon-caret-down {
+        font-size: 8px;
+        border: 0;
+        min-height: 32px;
+        height: 100%;
+        float: right;
+        border-left: 1px solid $white !important;
+        border-radius: 0 16px 16px 0 !important;
+    }
+
+    &.has-menu-right {
+        .mi-button-group-menu {
+            right: 0;
+            left: auto;
+        }
+    }
+
+    &.is-active {
+        .mi-button-group-menu {
+            visibility: visible;
+        }
+    }
+
+    .mi-button-group-menu {
+        position: absolute;
+        z-index: 2;
+        display: block;
+        visibility: hidden;
+        float: left;
+        width: auto;
+        max-width: 280px;
+        width: auto;
+        margin: 0;
+        font-size: 14px;
+        text-align: left;
+        list-style: none;
+        background-color: $white;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        border: 1px solid $card-border;
+        box-shadow: 1px 1px 2px rgba($black, 0.1);
+        box-sizing: border-box;
+        @include borderRadius(3px);
+
+        li {
+            display: block;
+
+            a {
+                display: block;
+                padding: 6px 10px;
+                color: $black;
+                white-space: nowrap;
+                cursor: pointer;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+
+                &[disabled="true"],
+                &[disabled="disabled"],
+                &.disabled {
+                    opacity: 0.3;
+                }
+
+                &:hover {
+                    color: $white;
+                    background-color: $grey;
+                }
+            }
+        }
+    }
+}
+
+.transparent-border {
+    button{
+        border-color: #0D71C8 !important;
+    }
+}

@@ -1,0 +1,28 @@
+export const basicOperationId = {
+  OpenBracket: 0,
+  CloseBracket: 1,
+  And: 2,
+  Or: 3,
+  Is: 4,
+  IsNot: 5,
+  Greater: 6,
+  GreaterEqual: 7,
+  Less: 8,
+  LessEqual: 9,
+  IsEmpty: 10,
+  IsNotEmpty: 11,
+  Contains: 12,
+  DoesNotContain: 13,
+  StartsWith: 14,
+  EndsWith: 15,
+  InList: 17,
+  NotInList: 18,
+  DoesNotStartWith: 19,
+  IsTrue: 20,
+  IsFalse: 21,
+  DoesNotEndWith: 26,
+  Between: 27,
+  AllInList: 28,
+};
+
+export default basicOperationId;

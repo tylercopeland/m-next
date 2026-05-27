@@ -1,0 +1,43 @@
+.mi-property-modal-column
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    background-color: $white
+    overflow-x: hidden
+    overflow-y: auto
+    -webkit-overflow-scrolling: touch
+    z-index: 1
+    box-sizing: border-box
+    padding: 10px
+    +scrollbar
+
+    &.is-first
+        width: $columnWidth
+        background-color: $blue-darkest
+
+    &.is-second
+        left: $columnWidth
+        width: $columnWidth
+        background-color: $blue-light
+
+    &.is-third
+        left: $columnWidth * 2
+        width: $columnWidth
+        background-color: $white
+        border-right: $border-light
+
+    &.is-content
+        left: $columnWidth
+        right: 0
+        background-color: $white
+
+        &.is-offset-two
+            left: $columnWidth * 2
+
+        &.is-offset-three
+            left: $columnWidth * 3
+
+    // Radio Buttons
+    .mi-radiobutton-group
+        +radiobuttonGroup

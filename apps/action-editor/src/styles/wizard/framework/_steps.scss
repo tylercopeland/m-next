@@ -1,0 +1,118 @@
+﻿@import "../../_variables.scss", 
+        "../../designer/media-queries";
+
+.mi-wiz-framework-steps {
+    display: block;
+    height: 120px;
+    background-color: $white;
+    margin: 10px;
+}
+
+.mi-wiz-steps-wrapper {
+    display: block;
+    padding: 0 10px 10px;
+    margin: 0 0 20px 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.mi-wiz-steps-block {
+    display: block;
+    height: 100%;
+    text-align: center;
+    padding: 15px;
+    color: $dark-blue;
+    font-size: $header-font-size;
+
+    @include mobile-medium() {
+        display: none;
+    }
+
+    &.is-mobile {
+        display: none;
+    }
+
+    .mi-wiz-button-block {
+        display: inline-block;
+
+        div {
+            position: relative;
+
+            a {
+                position: absolute;
+                display: block;
+                height: 100%;
+                width: 100%;
+                z-index: 1;
+
+                &.is-off {
+                    cursor: default;
+                }
+            }
+        }
+    }
+
+    .mi-wiz-button-title {
+        font-size: 22px;
+        color: black;
+        text-align: center;
+        margin: 0;
+        padding-top: 5px;
+
+        &.mi-wiz-button-title-off {
+            font-size: 18px;
+            line-height: 27px;
+        }
+    }
+
+    .mi-wiz-button-icon {
+        width: 60px;
+        height: 60px;
+        display: inline-block;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 60px;
+        border: 7px solid $blue;
+        color: $blue;
+        margin: 0;
+
+        &.mi-wiz-button-icon-off {
+            width: 50px;
+            height: 50px;
+            border: 5px solid $gray-border;
+        }
+
+        &.mi-wiz-button-icon-complete {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border: 5px solid $green;
+        }
+
+        i {
+            font-size: 28px;
+            color: $blue;
+
+            &.mi-wiz-step-complete {
+                font-size: 26px;
+                color: $green;
+            }
+        }
+
+        span {
+            line-height: 40px;
+            font-size: 26px;
+            font-weight: 600;
+            display: block;
+            color: $gray-border;
+        }
+    }
+
+    .mi-wiz-bar {
+        display: inline-block;
+        border-top: 5px solid $gray-border;
+        width: 150px;
+        height: 50px;
+        margin: 0 10px;
+    }
+}

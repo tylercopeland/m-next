@@ -1,0 +1,84 @@
+<div data-ng-controller="CheckPermissionCtrl">
+  <mi-action-description info="action"></mi-action-description>
+  <div class="mi-ae-main-content">
+    <!-- App Selection -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Select an app</label>
+      </div>
+      <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'AppId'">
+        <ui-select data-ng-model="action.AppId" theme="selectize" on-select="appSwitch()" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select...">{{$select.selected.label}}</ui-select-match>
+          <ui-select-choices repeat="opt.value as opt in appSelection | orderBy: 'label'| filter: $select.search">
+            <span ng-bind-html="opt.label | highlight: $select.search"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+
+    <!-- Check Permission -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Select a permission</label>
+      </div>
+      <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'Permission'">
+        <ui-select data-ng-model="action.Permission" theme="selectize" on-select="permissionSwitch()" ng-disabled="action.isReadOnly">
+          <ui-select-match placeholder="Select...">{{$select.selected.value}}</ui-select-match>
+          <ui-select-choices repeat="opt.key as opt in permissionOptions">
+            <span ng-bind-html="opt.value | highlight: $select.search"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+
+    <!-- Select User to Check Permission -->
+    <div>
+      <div class="mi-ae-row">
+        <div class="mi-ae-col-4">
+          <label class="mi-ae-label">User Record ID</label>
+        </div>
+        <div class="mi-ae-col-10">
+          <mi-complex-value action="action" model="action.User" allow="allow" number-min-value="0" is-read-only="action.isReadOnly"></mi-complex-value>
+        </div>
+      </div>
+    </div>
+
+    <!-- Denial Message -->
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-14">
+        <label class="mi-ae-label mi-ae-margin-b-0">What would you like to do with the result of the permission check?</label>
+        <ul class="mi-radiobutton-group mi-ae-margin-b-15">
+          <li>
+            <label class="mi-radio-checkbox mi-radio">
+              <span>Store the result of the permission check</span>
+              <input type="radio" data-ng-model="action.ShowMessage" data-ng-value="false" ng-disabled="action.isReadOnly" />
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </li>
+          <li>
+            <label class="mi-radio-checkbox mi-radio">
+              <span>Show a 'Denial" message if the permission check fails</span>
+              <input type="radio" data-ng-model="action.ShowMessage" data-ng-value="true" ng-disabled="action.isReadOnly" />
+              <div class="mi-radio-checkbox-indicator"></div>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="mi-ae-row" data-ng-show="action.ShowMessage">
+      <div class="mi-ae-col-4">
+        <label class="mi-ae-label">Denial message to display</label>
+      </div>
+      <div class="mi-ae-col-10" mi-validation-class="action.ValidationMessages" error-property="'DenialMessage'">
+        <textarea data-ng-model="action.DenialMessage" rows="6" placeholder="Type your message here" ng-disabled="action.isReadOnly"></textarea>
+      </div>
+    </div>
+
+    <div class="mi-ae-row" data-ng-show="!action.ShowMessage">
+      <div class="mi-ae-col-16">
+        <mi-result-to-set item="action.ResultToSet" is-read-only="action.isReadOnly"></mi-result-to-set>
+      </div>
+    </div>
+  </div>
+  <mi-action-notes is-read-only="action.isReadOnly"></mi-action-notes>
+</div>

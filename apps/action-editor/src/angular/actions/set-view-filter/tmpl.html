@@ -1,0 +1,47 @@
+<div data-ng-controller="SetViewFilterCtrl">
+    <mi-action-description info="action"></mi-action-description>
+    <!-- Main Content Area -->
+    <div class="mi-ae-main-content">
+        <div class="mi-ae-row">
+            <div class="mi-ae-col-7">
+                <label class="mi-ae-label mi-ae-margin-b-0">Select a control</label>
+            </div>
+            <div class="mi-ae-col-7">
+                <label class="mi-ae-label mi-ae-margin-b-0">Set this view filter</label>
+            </div>
+        </div>
+        <div class="mi-ae-row table-row" data-ng-class="{'alt-row': $odd}" data-ng-repeat="item in action.ViewFilters">
+            <div class="mi-ae-col-7" mi-validation-class="item.ValidationMessages" error-property="'ControlId'">
+                <ui-select data-ng-model="item.ControlId" theme="selectize" on-select="onSelect(item)" ng-disabled="action.isReadOnly" >
+                    <ui-select-match placeholder="Select a control...">{{$select.selected.label}}</ui-select-match>
+                    <ui-select-choices group-by="'typeLabel'" repeat="opt.value as opt in controlList | orderBy: 'typeLabel+label'  | filter: controlFilter(item) | filter: $select.search">
+                        <span ng-bind-html="opt.label"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="mi-ae-col-7" mi-validation-class="item.ValidationMessages" error-property="'ViewFilterId'">
+                <ui-select data-ng-model="item.ViewFilterId" theme="selectize" on-select="validateAction()" ng-disabled="action.isReadOnly" >
+                    <ui-select-match placeholder="Select a filter...">{{$select.selected.label}}</ui-select-match>
+                    <ui-select-choices repeat="opt.value as opt in item.filterList">
+                        <span ng-bind-html="opt.label"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="mi-ae-col-1" data-ng-if="action.ViewFilters.length>1 && !action.isReadOnly">
+                <miae-button 
+                    button-class="'ghost mi-button-clear mi-ae-margin-0'" 
+                    clickevent="removeItem($index)"
+                    svg-icon-type="'delete'" 
+                    svg-icon-size="14"></miae-button>
+            </div>
+        </div>
+        <miae-button name="' Add another control'" 
+                   data-ng-if="action.ViewFilters.length < controlTotal && !action.isReadOnly"
+                   button-class="'ghost mi-button-clear'"
+                   clickevent="addItem()"
+                   svg-icon-type="'circle-plus'" 
+                   svg-icon-size="14"></miae-button>
+    </div>
+    <!--/ Main Content Area -->
+     <mi-action-notes  is-read-only ="action.isReadOnly"></mi-action-notes>
+</div>

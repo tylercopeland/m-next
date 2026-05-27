@@ -1,0 +1,10 @@
+ls:
+  .jsx: regex:[A-Za-z][\w]+(\.stories)?(\.styles)?(\.test)?
+  .js: regex:[\w\.\-]+
+  .mdx: regex:[A-Za-z][\w\.\-]+
+ignore:
+  - node_modules
+  - dist
+  - coverage
+  - public
+  - .eslintrc.js

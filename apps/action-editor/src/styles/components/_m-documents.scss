@@ -1,0 +1,365 @@
+.documents {
+    display: block;
+    width: 100%;
+    margin: 0 0 1rem 0;
+    text-align: left;
+    position: relative;
+
+    .tooltip {
+        display: none;
+        right: 80px;
+        max-width: 220px;
+        margin-top: -5px;
+
+        &.is-active {
+            display: block;
+        }
+
+        .tooltip-arrow {
+            display: block;
+        }
+
+        .tooltip-inner {
+            padding: 5px;
+            font-size: 11px;
+        }
+    }
+
+    &.is-mobile {
+        .documents-item {
+            @media only screen and (min-device-width: 320px) and (orientation: portrait) {
+                .file-info { max-width: 160px; }
+            }
+            @media only screen and (min-device-width: 375px) and (orientation: portrait) {
+                .file-info { max-width: 220px; }
+            }
+            @media only screen and (min-device-width: 414px) and (orientation: portrait) {
+                .file-info { max-width: 100% !important; }
+            }
+            @media only screen and (min-device-width: 320px) and (orientation: landscape) {
+                .file-info { max-width: 100% !important; }
+            }
+            .file-delete span {
+                display: block;
+            }
+        }
+        .documents-drop {
+            height: 60px;
+        }
+    }
+
+    .documents-preview {
+        display: none;
+        width: 100%;
+        max-height: 225px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin-bottom: 10px;
+
+        // &::-webkit-scrollbar {
+        //         -webkit-appearance: none;
+        //         width: 7px;
+        // }
+        // &::-webkit-scrollbar-thumb {
+        //     border-radius: 4px;
+        //     background-color: rgba(0,0,0,.5);
+        //     -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+        // }
+    }
+
+    .documents-loading,
+    .documents-empty {
+        display: none;
+        width: 100%;
+        height: 40px;
+        text-align: center;
+
+        span {
+            display: block;
+            text-align: center;
+            line-height: 40px;
+        }
+    }
+
+    .documents-title {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-bottom: 10px;
+
+        span {
+            font-size: 14px;
+            font-weight: 600;
+
+            &.document-caption {
+                flex: auto;
+            }
+
+            &.document-email {
+                display: none;
+                text-align: center;
+                min-width: 60px;
+                max-width: 60px;
+                width: 60px;
+                flex: 0 1;
+            }
+
+            &.document-remove {
+                text-align: center;
+                min-width: 20px;
+                max-width: 20px;
+                width: 20px;
+                flex: 0 1;
+            }
+        }
+    }
+
+    .documents-item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+        position: relative;
+
+        &.is-uploaded {
+            cursor: pointer;
+        }
+
+        &:hover {
+            .file-delete span {
+                display: block;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.dz-processing {
+            .file-email,
+            .file-delete {
+                display: none;
+            }
+
+            .file-info {
+                .file-progress {
+                    display: block;
+                }
+                .file-note,
+                .file-pending {
+                    display: none;
+                }
+            }
+        }
+
+        &.dz-success.dz-complete {
+            .file-email,
+            .file-delete {
+                display: flex;
+            }
+
+            &.no-email-attachment {
+                .file-email {
+                    display: none !important;
+                }
+            }
+
+            .file-extension {
+                cursor: pointer;
+            }
+
+            .file-info {
+                .file-progress,
+                .file-pending{
+                    display: none;
+                }
+
+                .file-note {
+                    display: block;
+                }
+            }
+        }
+
+        &.is-deleting {
+            &:hover {
+                .file-delete span {
+                    display: none;
+                }
+            }
+
+            .file-overlay {
+                display: block;
+            }
+        }
+
+        &.dz-error {
+            .file-extension,
+            .file-info,
+            .file-email,
+            .file-delete,
+            .file-pending {
+                display: none;
+            }
+
+            .file-error {
+                display: block;
+            }
+        }
+
+        .file-overlay {
+            position: absolute;
+            display: none;
+            background-color: $white;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+            z-index: 1;
+        }
+
+        .file-extension {
+            display: block;
+            background-color: #F7F7F7;
+            min-width: 40px;
+            max-width: 40px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: $darkGrey;
+            flex: 0 1;
+        }
+
+        .file-info {
+            display: flex;
+            flex: auto;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+            padding-left: 10px;
+            overflow: hidden;
+
+            .file-title {
+                display: block;
+                width: 100%;
+                color: $blue;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                line-height: 18px;
+                cursor: pointer
+            }
+
+            .file-note,
+            .file-pending {
+                display: none;
+                width: 100%;
+                font-size: 11px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+            .file-note {
+                line-height: 13px;
+            }
+
+            .file-pending {
+                display: block;
+            }
+
+            .file-progress {
+                display: none;
+                background-color: #F7F7F7;
+                width: 100%;
+                height: 6px;
+                margin-top: 2px;
+
+                .progress-bar {
+                    display: block;
+                    background-color: $aqua;
+                    height: 6px;
+                }
+            }
+        }
+
+        .file-email {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            min-width: 60px;
+            max-width: 60px;
+            width: 60px;
+            flex: 0 1;
+        }
+
+        .file-delete {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            min-width: 20px;
+            max-width: 20px;
+            width: 20px;
+            flex: 0 1;
+
+            span {
+                display: none;
+                color: $blue;
+                font-size: 14px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+        }
+
+        .file-error {
+            display: none;
+            font-size: 13px;
+            color: $red;
+            flex: 1;
+            text-align: center;
+            padding: 10px 0;
+            line-height: 17px;
+
+            span {
+                font-weight: 600;
+            }
+        }
+    }
+
+    .documents-drop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: 1px dashed $blue;
+        height: 85px;
+        padding: 20px;
+        cursor: pointer;
+
+        &:hover,
+        &.dz-drag-hover {
+            background-color: #E5F7FF;
+        }
+
+        .documents-click {
+            display: block;
+            color: $darkGrey;
+            font-size: 14px;
+            padding-bottom: 10px;
+
+            span {
+                color: $blue;
+                font-weight: 600;
+            }
+        }
+
+        .documents-note {
+            display: block;
+            font-size: 12px;
+            font-style: italic;
+            color: $darkGrey;
+        }
+    }
+}

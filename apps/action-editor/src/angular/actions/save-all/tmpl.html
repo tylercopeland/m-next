@@ -1,0 +1,30 @@
+<div data-ng-controller="SaveAllCtrl">
+  <mi-action-description info="action"></mi-action-description>
+
+  <!-- Main Content Area -->
+  <div class="mi-ae-main-content">
+    <p class="mi-ae-margin-b-10">Saves all values on the screen.</p>
+
+    <p class="mi-ae-margin-b-10">
+      If the validation option is enabled, this action will validate all controls on screen prior to saving to ensure validation rules (if any) have passed. If validation fails, action processing will
+      stop and values will not be saved. Controls failing validation will be highlighted in red.
+    </p>
+
+    <p class="mi-ae-margin-b-20">If the screen is based on an accounting table, this action notifies Method PUSH&trade; to perform a real-time synchronization with your accounting software.</p>
+
+    <h3 class="mi-ae-margin-b-10">Save Options</h3>
+
+    <div class="mi-ae-row">
+      <div class="mi-ae-col-10">
+        <label class="mi-radio-checkbox mi-checkbox">
+          <span>Validate all screen controls prior to saving</span>
+          <input type="checkbox" data-ng-model="action.ValidateControlsOnScreen" ng-disabled="action.isReadOnly" />
+          <div class="mi-radio-checkbox-indicator"></div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--/ Main Content Area -->
+
+  <mi-action-notes is-read-only="action.isReadOnly"></mi-action-notes>
+</div>

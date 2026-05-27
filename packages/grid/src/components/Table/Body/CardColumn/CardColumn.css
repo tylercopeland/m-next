@@ -1,0 +1,9 @@
+.e-drag-helper {
+  width: 300px;
+  height: 85px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #bacad0;
+  opacity: 0.8;
+  z-index: 150;
+}

@@ -1,0 +1,42 @@
+.mi-table {
+	@extend %basic-table;
+	width: 100%;
+
+	thead {
+		@extend %basic-table-thead;
+
+		th {
+			padding: 20px;
+			text-align: center;
+			border-bottom: 1px solid $card-border;
+
+			&:first-of-type {
+				padding-right:0;
+				text-align: left;
+			}
+
+			&:last-of-type {
+				padding-left: 0;
+			}
+		}
+	}
+
+	td {
+		@extend %basic-table-td;
+		text-align: center;
+
+		&:first-of-type {
+			text-align: left;
+		}
+
+		p {
+			color: $black !important;
+		}
+
+		&.table-message {
+			font-weight: 600;
+			text-align: left;
+			padding-left: 62px;
+		}
+	}
+}

@@ -1,0 +1,32 @@
+.mi-sort-list
+    display: block
+    width: 100%
+    margin: 0
+    padding: 0
+    list-style: none
+    list-style-type: none
+
+    &.is-divided
+        li
+            margin: 0 0 5px 0
+
+    li
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        padding: 5px
+        font-weight: 600
+        width: 100%
+        margin: -1px 0 0 -1px
+        cursor: pointer
+        border: $border-light
+        min-height: 32px
+        max-height: 32px
+        height: 32px
+
+        span
+            flex: 1
+            padding: 0 6px
+
+        &:hover
+            background: $blue-light

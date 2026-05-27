@@ -1,0 +1,47 @@
+{
+  "name": "@m-next/insight-card",
+  "version": "1.0.0",
+  "description": "A reusable card component for displaying metrics and KPIs",
+  "main": "src/index.js",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "index"
+  ],
+  "scripts": {
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "build": "npm run prettify && npm run lint && npm run test &&  webpack --mode production",
+    "prettify": "npx prettier \"**/*.*(js|jsx)\" --ignore-path=.prettierignore --write --log-level=error",
+    "release": "npm build && npm publish build --tag next",
+    "test": "jest --passWithNoTests",
+    "test-snapshot-update": "npm run test -- -u",
+    "test-storybook": "jest --passWithNoTests --json --outputFile=.jest-test-results.json",
+    "lint-js": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --cache --report-unused-disable-directives --max-warnings=0",
+    "lint": "npm run lint-js",
+    "lint-fix": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix --cache --report-unused-disable-directives --max-warnings=0"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "insight",
+    "card",
+    "metric",
+    "kpi"
+  ],
+  "author": "Method",
+  "license": "UNLICENSED",
+  "peerDependencies": {
+    "@emotion/react": ">=11.10.5",
+    "@emotion/styled": ">=11.10.5",
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2",
+    "prop-types": ">=15.8.1"
+  },
+  "dependencies": {
+    "react-loading-skeleton": "^3.3.1",
+    "react-tooltip": "^5.26.3",
+    "@m-next/svg-icon": "1.0.0"
+  }
+}

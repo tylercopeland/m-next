@@ -1,0 +1,436 @@
+.mi-data-table-selectable-column 
+    display: block
+    width: 100%
+    margin: 0
+    padding: 0
+    list-style: none
+    list-style-type: none
+
+    li 
+        display: inline-flex
+        align-items: center
+        justify-content: flex-start
+        padding: 5px
+        font-weight: 600
+        width: 33.3333%
+        margin: -1px 0 0 -1px
+        cursor: pointer
+        border: 1px solid $grey-alt
+        min-height: 32px
+        max-height: 32px
+        height: 32px
+
+        span 
+            flex: 1
+            padding: 0 6px
+        &:hover 
+            background: $blue-light
+
+.is-hidden-field 
+    opacity: 0.3
+
+.mi-grid-tbl-wrapper
+    &[disabled="disabled"]
+
+        .mi-grid-tbl-filter,
+        .mi-button,
+        .mi-data-table-pager,
+        .pagination,
+        .mi-data-table,
+        .mi-textbox
+            cursor: default
+            pointer-events: none
+            opacity: 0.6
+
+        .mi-data-table
+            thead, 
+            tbody
+                input,
+                label
+                    pointer-events: none
+
+            thead, 
+            tbody
+                tr,
+                tr td
+                    cursor: default
+                    pointer-events: none
+
+.mi-data-table-button
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 34px
+    height: 34px
+    border: 1px solid $grey-alt
+    cursor: pointer
+    @include borderRadius(3px)
+
+    i
+        color: $grey
+
+.mi-data-table 
+    min-width: 100%
+    border: 0
+    // border-left: 1px solid $grey-light
+    // border-right 1px solid $grey-light
+    //-1px 4px 0 1px white, 1px 4px 0 1px white
+    margin-bottom: 10px
+    table-layout: fixed
+    // overflow: hidden
+
+    &.is-loading 
+        opacity: 0.6
+
+    &.has-dividers 
+        thead, tbody 
+            tr 
+                th, td 
+                    border-right: 1px solid $grey-light
+                    background-clip: padding-box
+                    
+    &.has-no-records 
+        thead,
+        tbody 
+            tr 
+                th, 
+                td 
+                    width: 100%
+
+    &.has-zebra-stripes 
+        tbody 
+            tr:nth-child(even) 
+                // td:not(:last-child) 
+                td
+                    background-color: $dtZebra
+
+        tbody:not(.is-read-only) 
+            tr:nth-child(even)
+                &:hover
+                    td
+                        background-color: $dtHover
+
+    thead,
+    tbody,
+    tfoot 
+        padding: 0
+
+    thead,
+    tbody,
+    tfoot 
+        tr 
+            &.has-chevron 
+                td:last-child:after 
+                    font-family: 'method-font','method-icon','method-icon-solid','Source Sans Pro'
+                    content: "\e718"
+                    position: absolute
+                    top: 50%
+                    right: 5px
+                    margin-top: -6px
+
+            th,
+            td 
+                position: relative
+                text-align: left
+                padding: 10px
+                border-bottom: 1px solid $grey-light
+                background-clip: padding-box
+                // white-space: nowrap
+                // overflow: hidden
+                // width: auto
+
+                &.is-hidden
+                    display: none
+
+                &.is-checkbox-column
+                    min-width: 50px
+                    max-width: 50px
+                    width: 50px
+
+                    > .mi-grid-tbl-multi-checkbox
+                        padding-left: 0
+
+                &.is-left  
+                    text-align: left
+
+                    .mi-grid-tbl-header-title  
+                        justify-content: flex-start 
+
+                    .tag-box 
+                        justify-content: flex-start
+
+                &.is-center 
+                    text-align: center
+
+                    .mi-grid-tbl-header-title  
+                        justify-content: center 
+                        padding-left: 17px 
+
+                    .tag-box 
+                        justify-content: center
+
+                    .mi-checkbox 
+                        margin: 0 auto
+
+                &.is-right 
+                    text-align: right
+
+                    .mi-grid-tbl-header-title  
+                        justify-content: flex-end 
+
+                    .tag-box 
+                        justify-content: flex-end
+
+                    .mi-checkbox 
+                        margin: 0 0 0 auto
+
+                &.has-border-right 
+                    border-right: 1px solid $grey-light
+
+                &.action-icon-column 
+                    width: 40px
+                    max-width: 40px
+                    min-width: 40px
+                    padding: 0 !important
+                    background-clip: padding-box
+
+                &.cell-has-error
+                    color: $red
+
+                    p 
+                        color: $red !important
+
+                        a
+                            color: $blue
+
+                .child-field 
+                    display: inline-block
+                    margin-left: 14px
+
+                .is-edit-trigger
+                    width: 1px
+                    height: 1px
+                    border: 0
+                    background: transparent
+                    position: absolute
+                    opacity: 0
+                    bottom: 0
+                    right: 0
+                    padding: 0
+
+                .mi-button
+                    margin: 0
+                
+    thead 
+        tr 
+            th 
+                color: $blue
+                background: $dtHeader                        
+                padding: 10px
+                font-size: 14px
+                font-weight: 600
+                border-top: 1px solid $grey-light
+
+                .mi-grid-tbl-header-title 
+                    display: flex
+                    align-items: center
+
+                    i 
+                        display: inline-block
+                        width: 7px
+                        height: 7px
+                        font-size: 7px
+                        margin: 0 5px
+
+                &.is-first-column
+                    border-left: 1px solid $grey-light
+
+                &:last-child
+                    border-right: 1px solid $grey-light
+
+    tbody
+        tr 
+            min-height: 35px
+            height: 35px
+
+            &.row-has-error
+                vertical-align: top
+                
+            &.row-is-deleted
+                cursor: default !important
+
+                td
+                    cursor: default !important
+                    color: #D6D6D6
+                    text-decoration: line-through
+
+                    &.action-icon-column
+                        button
+                            display: none
+            td
+                min-height: 35px
+                height: 35px
+
+                &.action-icon-column
+                    background-color: $blue-light
+                    text-align: center
+                    background-clip: padding-box
+
+                .has-error
+                    border-color: $red
+
+                &.is-edited-value
+                    // color: $orange
+                    // font-weight: bold
+                    // font-style: italic
+
+                .has-validation-error
+                    margin: 0
+                    padding: 3px 0 0
+                    text-align: left
+
+                &.is-first-column
+                    border-left: 1px solid $grey-light
+
+                &:last-child
+                    border-right: 1px solid $grey-light
+
+    tbody:not(.is-read-only) 
+        tr 
+            cursor: pointer
+
+            &:hover,
+            &:hover td
+                background-color: $dtHover
+
+                &:last-child
+                    background-color: $dtHover
+
+            td
+                cursor: pointer
+
+    tfoot
+        tr
+            td
+                border-bottom: 0
+                border-top: 3px solid $grey-light
+                height: 36px
+                font-weight: bold
+
+    .mi-textbox, 
+    .mi-autocomplete, 
+    .mi-datetimepicker input,
+    label 
+        margin-bottom: 0
+
+    // .datepickerbutton
+    //     &:focus i
+    //         color: $blue
+
+    .mi-checkbox 
+        max-width: 16px
+
+    .showLessText p, 
+    .showMoreText p 
+        font-size: 14px
+        line-height: 18px
+
+    .showMoreText p 
+        margin-bottom: 10px
+
+    .action-icon 
+        display: inline-block
+        padding: 10px 5px
+        border: 1px solid transparent
+        background-color: transparent
+        cursor: pointer
+        box-sizing: border-box
+        width: 26px
+        margin: 0
+
+        &:focus 
+            border: 1px dotted rgba($black, 0.5)
+
+.mi-data-table-editing
+
+    .mi-data-table
+        tbody 
+            tr
+                &.is-editing-row,
+                &.is-editing-row:hover
+                    background-color: $dtEditing
+
+                    td
+                        border-top: 1px solid $grey-light
+                        background-color: $dtEditing
+                        box-shadow: 1px 1px 1px $grey-light
+                        border-bottom: 2px solid $grey-light
+                        box-shadow: 1px 1px 1px $grey-light
+
+.mi-data-table-pager 
+    display: block
+    position: relative
+    margin-left: 5px
+
+    &:first-child 
+        margin-left: 10px
+
+    .mi-data-table-pager-button 
+        display: flex
+        align-items: center
+        justify-content: center
+        width: auto
+        height: 34px
+        border: 1px solid $grey-light
+        cursor: pointer
+        padding-right: 10px
+        +borderRadius(3px)
+
+        i 
+            color: $grey
+            font-size: 8px
+
+        span
+            font-size: 14px
+            padding: 0 10px
+
+    .mi-grid-tbl-sub-menu
+        min-width: 100px
+
+        .mi-data-table-page-opts
+            div
+                display: block
+                font-size: 14px
+                line-height: 18px
+                padding-bottom: 5px
+                color: $black
+                cursor: pointer
+                text-decoration: none
+
+                &:hover,
+                &.is-active
+                    color: $blue
+
+                &:last-child
+                    padding-bottom: 0
+
+.mi-data-table-gotopage
+    display: flex
+    align-items: center
+    justify-content: flex-start
+
+    span
+        margin-right: 5px
+
+    input
+        width: 65px
+
+.mi-data-table-config-error
+    display: block
+    width: 100%
+    padding: 20px
+    text-align: center
+    line-height: 22px
+    border: 1px solid $grey-light
+    background-color: $blue-light
+    +borderRadius

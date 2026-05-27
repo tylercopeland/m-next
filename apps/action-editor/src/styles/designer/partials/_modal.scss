@@ -1,0 +1,7 @@
+.m-modal {
+  &.designer-message-modal {
+    &.mi-dialog-visible {
+      visibility: visible !important;
+    }
+  }
+}

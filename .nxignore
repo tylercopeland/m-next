@@ -1,0 +1,40 @@
+# Build outputs
+dist/
+build/
+coverage/
+
+# Dependencies
+node_modules/
+
+# Cache files
+.nx/cache
+.nx/workspace-data
+*.eslintcache
+
+# Test artifacts
+__snapshots__/
+.jest-test-results.json
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Storybook build
+storybook-static/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+
+# Source maps (large files that slow down graph)
+*.map
+
+# Lock files (handled by npm/yarn)
+package-lock.json
+yarn.lock

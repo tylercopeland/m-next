@@ -1,0 +1,52 @@
+$radio: (
+    ("xxx-small", "16px", "5px", "6px"),
+    ("xx-small", "16px", "5px", "6px"),
+    ("x-small", "16px", "5px", "6px"),
+    ("small", "16px", "5px", "6px"),
+    ("regular", "16px", "5px", "6px"),
+    ("large", "16px", "5px", "6px"),
+    ("x-large", "16px", "5px", "6px"),
+    ("xx-large", "16px", "5px", "6px"),
+    ("xxx-large", "16px", "5px", "6px"),
+);
+
+.mi-radio {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-weight: normal;
+  line-height: 17px;
+  height: 17px;
+
+  span {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 17px;
+    height: 17px;
+    order: 2;
+    flex: 1;    
+  }
+
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    margin: 0 !important;
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  .mi-indicator {
+    &:after {
+
+    }
+  }
+
+  // Radio sizes
+  // Radio Colors
+}

@@ -1,0 +1,94 @@
+{
+  "features": {
+    "app-builder": {
+      "description": "WYSIWYG screen designer",
+      "playwright": ["tests/app-builder/"],
+      "m-one": ["@m-next/app-builder-core", "@m-next/layout-canvas"],
+      "patterns": ["--testPathPattern=\"control-classes\"", "--testPathPattern=\"editors\"", "--testPathPattern=\"screenLayoutSlice\""]
+    },
+    "account-settings": {
+      "description": "User management and account configuration",
+      "playwright": ["tests/common/accont-settings/"],
+      "m-one": [],
+      "patterns": []
+    },
+    "accounts": {
+      "description": "Accounts app (CRM)",
+      "playwright": ["tests/accounts/"],
+      "m-one": ["@m-next/grid", "@m-next/input", "@m-next/dropdown"],
+      "patterns": []
+    },
+    "activities": {
+      "description": "Activity management and scheduling",
+      "playwright": ["tests/activities/"],
+      "m-one": ["@m-next/calendar", "@m-next/datepicker", "@m-next/grid"],
+      "patterns": []
+    },
+    "work-orders": {
+      "description": "Work order management",
+      "playwright": ["tests/001-work-orders/"],
+      "m-one": ["@m-next/calendar", "@m-next/datepicker", "@m-next/grid"],
+      "patterns": []
+    },
+    "grids": {
+      "description": "Data grids and editable grids",
+      "playwright": ["tests/app-builder/"],
+      "m-one": ["@m-next/grid"],
+      "patterns": ["--testPathPattern=\"gridControl\"", "--testPathPattern=\"grid-block-editor\""],
+      "grep": ["-g \"Editable Grids\"", "-g \"Grids\""]
+    },
+    "invoices": {
+      "description": "Invoice management",
+      "playwright": ["tests/006-invoices/"],
+      "m-one": ["@m-next/grid"],
+      "patterns": []
+    },
+    "customers": {
+      "description": "Customers and leads",
+      "playwright": ["tests/004-customers-leads/"],
+      "m-one": ["@m-next/grid", "@m-next/input"],
+      "patterns": []
+    },
+    "purchase-orders": {
+      "description": "Purchase order management",
+      "playwright": ["tests/003-purchase-orders/"],
+      "m-one": ["@m-next/grid"],
+      "patterns": []
+    },
+    "sales-orders": {
+      "description": "Sales order management",
+      "playwright": ["tests/005-sales-order/"],
+      "m-one": ["@m-next/grid"],
+      "patterns": []
+    },
+    "portal": {
+      "description": "Customer portal",
+      "playwright": ["tests/007-portal/"],
+      "m-one": [],
+      "patterns": []
+    },
+    "dashboard": {
+      "description": "Dashboard and insights",
+      "playwright": ["tests/dashboard/"],
+      "m-one": ["@m-next/chart", "@m-next/insight-card"],
+      "patterns": []
+    }
+  },
+  "critical-packages": {
+    "runtime-interface": {
+      "warning": "CRITICAL - Core translation layer",
+      "sequence": [
+        "npx nx test @m-next/runtime-interface",
+        "npm run affected-test",
+        "npx playwright test tests/app-builder/"
+      ]
+    },
+    "types": {
+      "warning": "CRITICAL - Widget type definitions",
+      "sequence": [
+        "npx nx test @m-next/types",
+        "npm run affected-test"
+      ]
+    }
+  }
+}

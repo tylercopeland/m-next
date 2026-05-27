@@ -1,0 +1,49 @@
+{
+  "name": "@m-next/pill-tab",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Segmented control component with pill-style tabs",
+  "keywords": [],
+  "author": "Manan Kukreti <m.kukreti@method.me>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "src/index.ts",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "index"
+  ],
+  "dependencies": {
+    "@m-next/styles": "^1.0.0",
+    "@m-next/utilities": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
+    "@testing-library/react": "^12.1.5",
+    "@testing-library/jest-dom": "^5.16.5"
+  },
+  "peerDependencies": {
+    "@emotion/react": ">=11.10.5",
+    "@emotion/styled": ">=11.10.5",
+    "prop-types": ">=15.8.1",
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2"
+  },
+  "scripts": {
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "build": "npm run lint && npm test && webpack --mode production",
+    "prettify": "npx prettier \"**/*.*(js|jsx)\" --ignore-path=.prettierignore --write --log-level=error",
+    "release": "npm run build && npm publish build --tag next",
+    "test": "jest",
+    "test-storybook": "jest --json --outputFile=.jest-test-results.json",
+    "lint-js": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --cache --report-unused-disable-directives --max-warnings=0",
+    "lint-ls": "npx ls-lint",
+    "lint": "npm run lint-js && npm run lint-ls",
+    "lint-fix": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix --cache --report-unused-disable-directives --max-warnings=0",
+    "check-types": "tsc --noemit",
+    "test-snapshot-update": "npm run test -- -u"
+  }
+}

@@ -1,0 +1,8 @@
+__snapshots__/
+node_modules/
+dist/
+coverage/
+*.css
+*.json
+.eslintrc.js
+*.d.ts
