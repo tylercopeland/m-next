@@ -1,0 +1,132 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as BannerStories from './banner.stories';
+
+<Meta of={BannerStories} />
+
+# Banner
+
+A page-level message strip with optional icon, action buttons, and close affordance. Used for system announcements, post-action confirmations, and inline calls to action.
+
+## When to use it
+
+- A persistent (not dismissed-on-timer) status message about the current screen, document, or workflow.
+- Confirmation of a recent state change ("12 records are ready for import").
+- Inline calls to action that need to coexist with the main content ("You're on a draft — Manage").
+
+## When NOT to use it
+
+- Transient feedback after a user action — use `Toast` (snackbar pattern).
+- Inline form validation — use the `errorMessage` prop on `Input` / form controls.
+- Modal confirmation — use `Dialog`.
+- Tooltip / hover hints — use `Tooltip`.
+- A persistent badge or chip next to a value — use `Pill`.
+
+## Anatomy
+
+A horizontal flex row containing:
+
+1. **Icon** (optional) — themed background circle holding an `SvgIcon`.
+2. **Message** — the `children` of the Banner.
+3. **Secondary action** (optional) — text button, low emphasis.
+4. **Primary action** (optional) — text button, higher emphasis.
+5. **Close button** (optional) — real `<button aria-label="Close">` wrapping a close icon.
+
+## Status (replaces `severity`)
+
+The `status` prop drives both the color theme and the ARIA `role`:
+
+| Status | Role | Use for |
+|--------|------|---------|
+| `info` (default) | `status` | Informational messages, drafts, neutral announcements |
+| `success` | `status` | Post-action confirmations |
+| `warning` | `status` | Soft warnings (trial expiring, deprecated feature) |
+| `error` | `alert` | Blocking errors, conflicts, failures |
+
+`error` and `warning` get `role="alert"` so assistive tech announces them immediately. The other statuses use `role="status"` (polite).
+
+## Variant (replaces `bannerStyle`)
+
+| Variant | Layout |
+|---------|--------|
+| `full` (default) | Message grows to fill the row; actions sit at the end. |
+| `trailing` | Message stays tight against the actions. |
+
+## Tokens consumed
+
+- `lightTheme.informative.*` / `negative.*` / `positive.*` / `warning.*` for backgrounds, text, and icon colors.
+- `colors.grey.base` for the close icon glyph.
+- `colors.blue.base` for the close button focus ring.
+
+## Basic
+
+<Canvas of={BannerStories.Basic} />
+
+## Statuses
+
+<Canvas of={BannerStories.Statuses} />
+
+## With actions
+
+<Canvas of={BannerStories.WithActions} />
+
+## Closeable
+
+<Canvas of={BannerStories.Closeable} />
+
+## With icon
+
+<Canvas of={BannerStories.WithIcon} />
+
+## Variants
+
+<Canvas of={BannerStories.Variants} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `children` | ReactNode | Banner content — replaces the legacy `message` prop |
+| `status` | `'info' \| 'success' \| 'warning' \| 'error'` | Visual + ARIA role |
+| `variant` | `'full' \| 'trailing'` | Layout |
+| `icon` | string | SvgIcon name |
+| `primaryButton`, `secondaryButton` | string | Action button labels |
+| `hasClose` + `onClose` | boolean, function | Real `<button>` with `aria-label="Close"` |
+
+## Accessibility
+
+- The root sets `role="alert"` for `error` / `warning` (announced immediately) or `role="status"` (polite).
+- The close affordance is a real `<button type="button" aria-label="Close">` — keyboard-focusable, Enter / Space activate it. A focus ring is rendered via `:focus-visible`.
+- Action buttons render as native `<button type="button">`, so they participate in the tab order and Enter / Space activate them.
+- `aria-*` props pass through to the root.
+- `id` is auto-generated if not provided; downstream element IDs (`banner-content-message-${id}`, etc.) remain stable for a given Banner instance.
+
+## Migration from `@m-one/banner`
+
+Banner was cleaned up in m-next's Phase 3 API normalization alongside Dialog, Pill, Tabs, and Card. Migration is mostly mechanical — see the README's "What changed" table.
+
+<Canvas of={BannerStories.LegacyAPIStillWorks} />
+
+Each deprecated prop emits a one-time `console.warn` and silently translates:
+
+- `message` → `children`
+- `severity` (`'informational'` / `'clear'` / `'loading'` / `'success'` / `'warning'` / `'error'`) → `status` (`'info'` / `'success'` / `'warning'` / `'error'`). The three legacy "neutral" values all fold into `info`.
+- `bannerStyle` → `variant`
+- `forwardRef` prop → React `ref`
+
+Legacy ghosts (`isV4Design`, `isMobile`, `legacyClass`) accept their value but do nothing.
+
+## Edge cases
+
+- **Both `message` and `children` passed** — `children` wins; no warn fires for `message`.
+- **`severity="clear"` or `"loading"`** — folded into `status="info"`. A proper loading banner with spinner is a follow-up.
+- **No icon, no actions, no close** — Banner still renders as a single-line message strip with themed background.
+- **Refs** — `ref` forwards to the root `<div>`. Useful for scroll-into-view on a fresh error.
+
+## Related components
+
+- `Alert` — inline message inside a form / dialog (smaller surface).
+- `Toast` — transient, auto-dismissing feedback.
+- `Dialog` — modal confirmations.
+- `Pill` — single-value badge / chip.

@@ -1,0 +1,117 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as DialogStories from './dialog.stories';
+
+<Meta of={DialogStories} />
+
+# Dialog
+
+A modal dialog. Use it to focus the user on a single decision, a confirm step, or a quick task that's tightly coupled to whatever they were already doing.
+
+## When to use it
+
+- Confirm a destructive action ("Delete account?", "Discard changes?").
+- Capture a small, atomic decision before continuing ("Verify your email", "Choose a template").
+- Show short-form content that needs the user's attention right now (alerts, license agreements, version upgrade notes).
+
+## When NOT to use it
+
+- Long forms or multi-step flows — use a Drawer or a full page.
+- Background information / help — use a Tooltip or inline disclosure.
+- Toasts / non-blocking notifications — use Banner / Toast.
+- Mounting persistent content — Dialog disappears when `isOpen` flips, including its state.
+
+## Anatomy
+
+A portaled overlay containing:
+
+1. **Backdrop** — dims the rest of the page (`lightTheme.content.emphasize` at ~50% opacity).
+2. **Content** — a centered card. Default width 612px.
+3. **Header** (optional) — title on the left, optional extra content in the middle, dismiss button on the right.
+4. **Body** — scrollable region; honors `maxHeight`.
+5. **Footer** (optional) — right-aligned primary + secondary buttons.
+
+Composition is driven by props (`title`, `footer`, etc.) — render whatever you want in `children`, or set `hideDefaultHeader` / `hideDefaultBody` / `hideDefaultFooter` to drop the chrome and DIY.
+
+## Tokens consumed
+
+- `colors.white` — content background
+- `colors.grey.lighter` — footer background
+- `colors.grey.darkest` — dismiss icon, focus outline base
+- `colors.blue.base` — focus ring on the dismiss button
+- `lightTheme.content.emphasize` — header title color and backdrop tint
+- `lightTheme.content.border` — header/footer borders
+- `lightTheme.background.primary` — body and header background
+
+## Basic
+
+<Canvas of={DialogStories.Basic} />
+
+## With footer buttons
+
+<Canvas of={DialogStories.WithFooter} />
+
+## Alert dialog
+
+For destructive actions, set `role="alertdialog"`. Screen readers treat it as more urgent.
+
+<Canvas of={DialogStories.AlertDialog} />
+
+## Hiding the dismiss button
+
+<Canvas of={DialogStories.HideDismissButton} />
+
+## Width and scrolling body
+
+<Canvas of={DialogStories.SizingOptions} />
+
+## Fully custom composition
+
+<Canvas of={DialogStories.CustomComposition} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `isOpen` | boolean | Controls visibility |
+| `title` | string | Drives `aria-labelledby` |
+| `role` | `'dialog' \| 'alertdialog'` | Use `alertdialog` for destructive confirms |
+| `footer` | object | `{ primaryButtonLabel, secondaryButtonLabel, onPrimaryButtonClick, onSecondaryButtonClick, primaryVariant, secondaryVariant }` |
+| `hideDefaultHeader` / `Body` / `Footer` | boolean | Escape hatches for custom layout |
+| `customStyles` | `{ overlay, content }` | CSS overrides merged on top of defaults |
+
+## Accessibility
+
+- `role="dialog"` (or `alertdialog`) is always present on the dialog content element.
+- `aria-modal="true"` is applied by `react-modal`.
+- `aria-labelledby` is automatically associated with the title element when `title` is provided. Pass `aria={{ labelledby: '...' }}` to override.
+- `aria-describedby` is auto-resolved to the body wrapper id.
+- The dismiss button is a real `<button>` with `aria-label="Close dialog"` — keyboard focusable, screen-reader announced.
+- `react-modal` provides initial focus, return-focus on close, and a tab trap inside the dialog.
+
+### Known gaps
+
+- **Custom layouts without focusables.** If you `hideDefaultHeader` and render a fully static custom layout, ensure at least one focusable element exists inside the dialog body — the tab trap needs something to land on.
+- **ESC closes** by default via `react-modal`. Wire `onClose` to drive whatever state controls `isOpen`.
+
+## Migration from `@m-one/dialog`
+
+Most consumers won't need to change anything; the prop surface is the same. The audit-flagged accessibility fixes are silent: the dialog now exposes a proper `aria-labelledby` to its title element, the dismiss button is now keyboard-focusable, and the content background is filled in. See the README's "What changed" table for the full diff. Live demo of the soft shim and silently-ignored ghosts:
+
+<Canvas of={DialogStories.LegacyAPIStillWorks} />
+
+`forwardRef` emits a one-time `console.warn`. Legacy ghosts (`isV4Design`, `isMobile`, `legacyClass`, `displayAuto`) accept their value but do nothing.
+
+## Edge cases
+
+- **`hideDefaultBody` + nothing else** — children render directly inside the modal content element, with no padding, no scroll, and no background. Wrap your own.
+- **`customStyles.content.background`** — defaults to `colors.white`. If you previously relied on the transparent default (from `@m-one/dialog`), pass `customStyles={{ content: { background: 'transparent' } }}`.
+- **Stacked dialogs** — `react-modal` handles z-index via its own layer. If you stack two dialogs, the topmost one owns the focus trap; closing it returns focus to the next dialog down.
+- **Programmatic close** — flip `isOpen` to false. Don't try to drive close via a ref; refs to a portaled dialog aren't supported.
+
+## Related components
+
+- `Drawer` — the slide-in panel sibling for longer-form or side-rail content. Same accessibility patterns.
+- `Banner` — non-blocking inline notifications.
+- `Button` — what the footer's `primaryButtonLabel` / `secondaryButtonLabel` renders.

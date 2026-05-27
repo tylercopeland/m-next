@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { colors, lightTheme } from '@m-next/styles';
+import { lightTheme } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 
 export const DialogHeaderWrapper = styled.div(({ theme }) => {
   const { content, background } = theme;
@@ -17,10 +18,23 @@ export const DialogHeaderWrapper = styled.div(({ theme }) => {
   ];
 });
 
-export const DialogHeaderDismissButton = styled.div(() => [
+// Real <button> so it's keyboard-focusable and screen-reader-announced.
+export const DialogHeaderDismissButton = styled.button(() => [
   {
     margin: 16,
     cursor: 'pointer',
+    background: 'transparent',
+    border: 'none',
+    padding: 4,
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 4,
+    color: colors.grey.darkest,
+    ':focus-visible': {
+      outline: `2px solid ${colors.blue.base}`,
+      outlineOffset: 2,
+    },
   },
 ]);
 
@@ -56,7 +70,7 @@ export const DialogFooterWrapper = styled.div(({ theme }) => [
     gap: 16,
     alignItems: 'center',
     flexShrink: 0,
-    backgroundColor: colors['grey-lighter'],
+    backgroundColor: colors.grey.lighter,
     borderBottom: `1px solid ${theme.content ? theme.content.border : lightTheme.content.border}`,
     minHeight: 56,
     padding: 8,

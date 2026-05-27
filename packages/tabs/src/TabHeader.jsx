@@ -4,7 +4,7 @@ import SvgIcon from '@m-next/svg-icon';
 import { ClickOutside } from '@m-next/utilities';
 import { useResizeDetector } from 'react-resize-detector';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
-import { colors } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 import * as s from './Tabs.styles';
 
 const queryAttr = 'data-rbd-drag-handle-draggable-id';
@@ -329,7 +329,7 @@ function TabHeader(props) {
     // some basic styles to make the items look a bit nicer
     ...draggableStyle,
     borderRadius: isDragging ? 4 : 0,
-    background: isDragging ? colors['grey-lighter'] : null,
+    background: isDragging ? colors.grey.lighter : null,
     boxShadow: isDragging ? '0px 10px 10px 0px rgba(0, 0, 0, 0.25)' : null,
     padding: isDragging ? '8px 4px' : null,
     cursor: 'default',
@@ -466,7 +466,7 @@ function TabHeader(props) {
               <div
                 style={{
                   position: 'absolute',
-                  background: colors['grey-light'],
+                  background: colors.grey.light,
                   borderRadius: 4,
                   top: placeholderProps.clientY,
                   left: placeholderProps.clientX,

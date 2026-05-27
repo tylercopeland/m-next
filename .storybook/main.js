@@ -10,8 +10,8 @@ const config = {
   // pre-existing ENOENT errors from per-package nested node_modules that didn't
   // survive the workspace hoist. Add new packages to this list as Phase 2+ ships.
   stories: [
-    '../packages/@(tokens|theme|layout|spinner|badge|tooltip|empty-state|link|alert|button|input|checkbox|toggle|radio-button|dropdown|multi-select|select|toast|drawer|form-field)/stories/**/*.stories.@(js|jsx|ts|tsx)',
-    '../packages/@(tokens|theme|layout|spinner|badge|tooltip|empty-state|link|alert|button|input|checkbox|toggle|radio-button|dropdown|multi-select|select|toast|drawer|form-field)/stories/**/*.mdx',
+    '../packages/@(tokens|theme|layout|spinner|badge|tooltip|empty-state|link|alert|button|input|checkbox|toggle|radio-button|dropdown|multi-select|select|toast|drawer|form-field|banner|dialog|pill|tabs|card)/stories/**/*.stories.@(js|jsx|ts|tsx)',
+    '../packages/@(tokens|theme|layout|spinner|badge|tooltip|empty-state|link|alert|button|input|checkbox|toggle|radio-button|dropdown|multi-select|select|toast|drawer|form-field|banner|dialog|pill|tabs|card)/stories/**/*.mdx',
   ],
 
   addons: [

@@ -1,20 +1,17 @@
 import styled from '@emotion/styled';
 import { lightTheme } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 
 export const BannerRoot = styled.div`
   padding: 16px;
   background: ${(p) => {
-    switch (p.severity) {
+    switch (p.status) {
       case 'error':
         return lightTheme.negative.background;
       case 'success':
         return lightTheme.positive.background;
       case 'warning':
         return lightTheme.warning.background;
-      case 'clear':
-        return 'transparent';
-      case 'loading':
-        return '#EEF5F7';
       default:
         return lightTheme.informative.background;
     }
@@ -47,7 +44,7 @@ export const BannerActionButton = styled.button`
   font-size: 14px;
   line-height: 16px;
   color: ${(p) => {
-    switch (p.severity) {
+    switch (p.status) {
       case 'error':
         return lightTheme.negative.secondary;
       case 'success':
@@ -65,17 +62,33 @@ export const BannerActionButton = styled.button`
   justify-content: center;
   position: relative;
   box-sizing: border-box;
-  background-color: transparent; // Reset default value
+  background-color: transparent;
   outline: 0;
   border: 0;
-  margin: 0; // Remove the margin in Safari
+  margin: 0;
   border-radius: 0;
-  padding: 0; // Remove the padding in Firefox
+  padding: 0;
   cursor: pointer;
   user-select: none;
   vertical-align: middle;
   text-decoration: none;
   order-style: none;
+`;
+
+export const BannerCloseButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 0;
+  margin: 8px 0;
+  padding: 0;
+  cursor: pointer;
+  color: ${colors.grey.base};
+  &:focus-visible {
+    outline: 2px solid ${colors.blue.base};
+    outline-offset: 2px;
+  }
 `;
 
 export const BannerContentActionBlock = styled.div``;
@@ -95,7 +108,7 @@ export const BannerContentMessage = styled.div`
   font-size: 14px;
   line-height: 16px;
   color: ${(p) => {
-    switch (p.severity) {
+    switch (p.status) {
       case 'error':
         return lightTheme.negative.primary;
       case 'success':
@@ -107,21 +120,19 @@ export const BannerContentMessage = styled.div`
     }
   }};
   order: 0;
-  flex-grow: ${(p) => (p.bannerStyle === 'full' ? 1 : null)};
+  flex-grow: ${(p) => (p.variant === 'full' ? 1 : null)};
 `;
 
 export const BannerContentIcon = styled.div`
   display: inline-flex;
   background-color: ${(p) => {
-    switch (p.severity) {
+    switch (p.status) {
       case 'error':
         return lightTheme.negative.iconBackground;
       case 'success':
         return lightTheme.positive.iconBackground;
       case 'warning':
         return lightTheme.warning.iconBackground;
-      case 'clear':
-        return 'transparent';
       default:
         return lightTheme.informative.iconBackground;
     }

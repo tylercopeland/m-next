@@ -1,0 +1,127 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as TabsStories from './tabs.stories';
+
+<Meta of={TabsStories} />
+
+# Tabs
+
+A horizontal tab bar with an associated panel. The default pattern for switching between sibling views inside a single screen — settings sections, record sub-pages, multi-step editor views.
+
+## When to use it
+
+- Switching between sibling views in a single context (record detail, settings page, editor pane).
+- Up to a dozen or so peers — extra tabs collapse into a More-menu.
+- When the views are equivalent in importance and only one is on-screen at a time.
+
+## When NOT to use it
+
+- Top-level navigation across an app — use a sidebar or nav rail.
+- Wizards or forced ordering — use a stepper.
+- Just two views with strong visual distinction — use a Toggle / SegmentedControl.
+- Sparse content where you'd rather see all panels at once — use stacked sections.
+- A mobile-only layout — render a different control (bottom tab bar, accordion). The legacy `isMobile={true}` branch is no longer supported.
+
+## Anatomy
+
+1. **Tab list** (`role="tablist"`) — the horizontal bar of tab buttons.
+2. **Tab button** (`role="tab"`) — one per `tabList` entry. The active button has `aria-selected="true"`.
+3. **More-menu** — when tabs overflow the bar, the remaining tabs collapse into a dropdown. Drag-reordering is preserved.
+4. **Tab panel** (`role="tabpanel"`) — the content slot. Rendered via `onRenderTabContent`. The active panel is `aria-labelledby` the active tab button.
+5. **Right icon slot** (optional) — trailing action area, rendered via `onRenderTabHeaderRightIcon`.
+
+## States
+
+- **Default** — neutral text color, baseline border at the bottom of the bar.
+- **Selected** — accent text, 4px underline.
+- **Hover** — accent text color.
+- **Disabled** — 50% opacity, `aria-disabled`, click intercepted.
+- **Dragging** (when `onTabOrderChange` is set) — grey-lighter background, drop shadow, drop placeholder rendered in `colors.grey.light`.
+
+## Tokens consumed
+
+- `colors.grey.lighter` — More-menu hover background, drag preview background
+- `colors.grey.light` — drag placeholder background
+- `colors.grey.darkest` — fallback disabled text color
+- `colors.white` — More-menu surface
+- Theme context (`theme.content.*`, `theme.background.*`) — the bar picks up your active named theme via `@m-next/theme`'s `<ThemeProvider>`. Falls back to `lightTheme`.
+
+## Basic
+
+<Canvas of={TabsStories.Basic} />
+
+## Full-width distribution
+
+<Canvas of={TabsStories.FullWidth} />
+
+## Overflow into More-menu
+
+<Canvas of={TabsStories.Overflow} />
+
+## Disabled tab
+
+<Canvas of={TabsStories.DisabledTab} />
+
+## Drag to reorder
+
+<Canvas of={TabsStories.Draggable} />
+
+## Custom header rendering
+
+<Canvas of={TabsStories.CustomRenderHeader} />
+
+## Trailing action slot
+
+<Canvas of={TabsStories.RightIcon} />
+
+## Borderless panel
+
+<Canvas of={TabsStories.Borderless} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `tabList` | `{ id, caption, disabled? }[]` | Required. Order = display order. |
+| `selectedTab` | string | Controlled active id. |
+| `onChange` | `(id, index, e) => void` | Activation handler. |
+| `onRenderTabContent` | `() => ReactNode` | Panel slot. |
+| `onRenderTabHeader` | `(tab) => ReactNode` | Custom button content. |
+| `onTabOrderChange` | `(newTabs, src, dest) => void` | Opt in to drag-reordering. |
+| `fullWidthTabs` | boolean | Distribute evenly, no More-menu. |
+| `id` | string | Optional. Auto-generated if absent. |
+| `ref` | ref | Forwarded to the outer container. |
+
+## Accessibility
+
+Tabs implements the [WAI-ARIA tabs pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/):
+
+- `role="tablist"` on the header container.
+- `role="tab"` on each button, with `aria-selected`, `aria-controls`, and `aria-disabled`.
+- `role="tabpanel"` on the panel, with `aria-labelledby` pointing at the active button.
+- Roving `tabIndex` — the active button is `tabIndex=0`, others `tabIndex=-1`.
+- Arrow keys (Left / Up / Right / Down), Home, and End move between tabs. Enter / Space activates a focused More-menu entry. See the README's Keyboard table for the full map.
+
+## Migration from `@m-one/tabs`
+
+The most important change is the ARIA fix:
+
+- Previously the tab buttons were rendered with `role="option"` and there was no `role="tablist"` or `role="tabpanel"`. This is now the proper `tablist` / `tab` / `tabpanel` triad. **The DOM has changed** — if you had CSS selectors or test queries targeting `role="option"`, they need to be updated to `role="tab"`.
+- `isMobile={true}` previously swapped to a separate ribbon-style render. That branch is gone — render a different control beneath a media query if you need a mobile variant. The `isMobile`, `onRenderTabHeaderMobile`, `isV4Design`, `legacyClass`, and `displayAuto` props are silently accepted but have no effect.
+- The legacy `forwardRef` prop is soft-shimmed: it still works, but emits a one-time `console.warn`. Use the React `ref` argument instead.
+
+Live demo of the soft shim:
+
+<Canvas of={TabsStories.LegacyAPIStillWorks} />
+
+## Edge cases
+
+- **Empty `tabList`** — no header, no panel. The `<Tooltip>` host is still rendered so any external tooltip targets continue to work.
+- **`fullWidthTabs={true}`** — disables overflow handling. If your tabs don't fit, they'll just be cramped — switch back to the default mode for large tab counts.
+- **`onTabOrderChange` and `selectedTab`** — reordering preserves the active tab. Your `onTabOrderChange` callback receives the full new list, so update your store and re-pass `tabList`.
+- **`refreshId`** — bump this number to force the tab bar to re-measure its tab widths and re-call `onRenderTabHeader` / `onRenderTabHeaderMenuItem`. Useful when a tab's rendered width changes (badge appears, count updates).
+
+## Related components
+
+- `@m-next/tabs-v2` — an architectural rewrite. Not API-compatible. Out of scope for the Phase 3 cleanup; both packages exist in parallel for now.

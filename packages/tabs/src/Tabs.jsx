@@ -1,73 +1,77 @@
-/* eslint-disable jsx-a11y/interactive-supports-focus */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React, { forwardRef, useRef } from 'react';
 import { Tooltip } from 'react-tooltip';
 import * as s from './Tabs.styles';
 import TabHeader from './TabHeader';
 import TabHeaderFixed from './TabHeaderFull';
 
-const propTypes = {
-  id: PropTypes.string.isRequired,
-  tabList: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      caption: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-  width: PropTypes.string,
-  onChange: PropTypes.func,
-  onRenderTabContent: PropTypes.func,
-  selectedTab: PropTypes.string,
-  onRenderTabHeader: PropTypes.func,
-  onRenderTabHeaderMenuItem: PropTypes.func,
-  onRenderTabHeaderMobile: PropTypes.func,
-  onRenderTabHeaderRightIcon: PropTypes.func,
-  refreshId: PropTypes.number,
-  isMobile: PropTypes.bool,
-  containerMargin: PropTypes.string,
-  tabPadding: PropTypes.number,
-  borderless: PropTypes.bool,
-  dyanmicHeight: PropTypes.bool,
-  contentStyle: PropTypes.instanceOf(Object),
-  headerStyle: PropTypes.instanceOf(Object),
-  containerStyle: PropTypes.instanceOf(Object),
-  legacyPadding: PropTypes.bool,
-  fullHeight: PropTypes.bool,
-  calMenuHeight: PropTypes.bool,
-  fullWidthTabs: PropTypes.bool,
-  collapsible: PropTypes.bool,
-  onTabOrderChange: PropTypes.func,
-};
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
 
-function Tabs({
-  id,
-  width = '100%',
-  tabList,
-  onChange = null,
-  onRenderTabContent = null,
-  selectedTab = null,
-  onRenderTabHeader = null,
-  onRenderTabHeaderMenuItem = null,
-  onRenderTabHeaderMobile = null,
-  onRenderTabHeaderRightIcon = null,
+let autoIdCounter = 0;
 
-  refreshId = 0,
-  isMobile = false,
-  containerMargin,
-  tabPadding = 0,
-  borderless = false,
-  dyanmicHeight = false,
-  contentStyle,
-  headerStyle,
-  containerStyle,
-  legacyPadding = false,
-  fullHeight = false,
-  calMenuHeight = false,
-  fullWidthTabs = false,
-  collapsible = false,
-  onTabOrderChange = null,
-}) {
+const Tabs = forwardRef(function Tabs(props, ref) {
+  const {
+    id: idProp,
+    width = '100%',
+    tabList,
+    onChange = null,
+    onRenderTabContent = null,
+    selectedTab = null,
+    onRenderTabHeader = null,
+    onRenderTabHeaderMenuItem = null,
+    onRenderTabHeaderRightIcon = null,
+
+    refreshId = 0,
+    containerMargin,
+    tabPadding = 0,
+    borderless = false,
+    dyanmicHeight = false,
+    contentStyle,
+    headerStyle,
+    containerStyle,
+    legacyPadding = false,
+    fullHeight = false,
+    calMenuHeight = false,
+    fullWidthTabs = false,
+    collapsible = false,
+    onTabOrderChange = null,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    onRenderTabHeaderMobile: _onRenderTabHeaderMobile,
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-tabs-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  // ============ Backwards-compat translation ============
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'tabs-forwardRef-prop',
+      '@m-next/tabs: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
   const renderTabContent = () => {
     if (onRenderTabContent) {
       return onRenderTabContent();
@@ -75,47 +79,13 @@ function Tabs({
     return null;
   };
 
-  const handleChange = (headerId, index, e) => {
-    if (onChange) {
-      onChange(headerId, index, e);
-    }
-  };
+  // The active tab's panel uses aria-labelledby that matches the active tab button id.
+  const activeTabButtonId = selectedTab ? `tab-${id}-${selectedTab}` : undefined;
+  const tabPanelId = `tab-panel-${id}`;
 
-  const renderItems = () =>
-    tabList.map((item, index) => (
-      <Fragment key={`tab-${id}-${item.id}`}>
-        <div
-          role='option'
-          aria-selected={selectedTab === item.id}
-          key={`tab-${id}-${item.id}`}
-          id={`tab-${id}-${item.id}`}
-          onClick={() => handleChange(item.id, index)}
-        >
-          {onRenderTabHeaderMobile && onRenderTabHeaderMobile(item, refreshId)}
-          {!onRenderTabHeaderMobile && item.caption}
-        </div>
-        {selectedTab === item.id && (
-          <s.TabPanel
-            id={`tab-panel-${id}`}
-            borderless={borderless}
-            dyanmicHeight={dyanmicHeight}
-            calMenuHeight={calMenuHeight}
-          >
-            {renderTabContent()}
-          </s.TabPanel>
-        )}
-      </Fragment>
-    ));
-
-  const renderMobile = () => (
-    <>
-      <s.RibbonDivider />
-      <s.RibbonListMobile hasItems={tabList.length > 0}>{renderItems() /* Visible Apps */}</s.RibbonListMobile>
-    </>
-  );
-
-  const renderDesktop = () => (
+  return (
     <s.TabContainer
+      ref={ref ?? legacyForwardRef}
       id={`tabs-${id}`}
       width={width}
       fullHeight={fullHeight}
@@ -159,7 +129,9 @@ function Tabs({
 
       {onRenderTabContent && (
         <s.TabPanel
-          id={`tab-panel-${id}`}
+          role='tabpanel'
+          id={tabPanelId}
+          aria-labelledby={activeTabButtonId}
           borderless={borderless}
           dyanmicHeight={dyanmicHeight}
           calMenuHeight={calMenuHeight}
@@ -171,10 +143,8 @@ function Tabs({
       <Tooltip id='tab-header-tooltip' />
     </s.TabContainer>
   );
+});
 
-  return isMobile ? renderMobile() : renderDesktop();
-}
-
-Tabs.propTypes = propTypes;
+Tabs.displayName = 'Tabs';
 
 export default Tabs;

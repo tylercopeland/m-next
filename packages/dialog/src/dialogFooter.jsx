@@ -30,7 +30,7 @@ function DialogFooter(props) {
   } = props;
 
   return (
-    <s.DialogFooterWrapper id={id ? `${id}-footer` : null}>
+    <s.DialogFooterWrapper id={id ? `${id}-footer` : undefined}>
       {!content?.children && (
         <>
           {content?.secondaryButtonLabel && (

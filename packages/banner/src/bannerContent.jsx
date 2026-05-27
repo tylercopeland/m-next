@@ -4,41 +4,35 @@ import SvgIcon from '@m-next/svg-icon';
 import { lightTheme } from '@m-next/styles';
 import * as s from './banner.styles';
 
-// types
 const propTypes = {
-  message: PropTypes.node,
+  id: PropTypes.string,
   primaryAction: PropTypes.node,
   secondaryAction: PropTypes.node,
-  id: PropTypes.string,
-  bannerStyle: PropTypes.oneOf(['full', 'trailing']),
-  severity: PropTypes.oneOf(['informational', 'success', 'error', 'warning', 'clear', 'loading']),
+  variant: PropTypes.oneOf(['full', 'trailing']),
+  status: PropTypes.oneOf(['info', 'success', 'warning', 'error']),
   icon: PropTypes.string,
   children: PropTypes.node,
 };
 
-/**
- * Wrapper component around
- */
 function BannerContent({
   id = '',
-  message = '',
   primaryAction = null,
   secondaryAction = null,
-  bannerStyle = 'full',
-  severity = 'informational',
+  variant = 'full',
+  status = 'info',
   icon = null,
   children,
 }) {
   return (
     <s.BannerContentWrapper>
       {icon && (
-        <s.BannerContentIcon severity={severity}>
+        <s.BannerContentIcon status={status}>
           <SvgIcon
             id={`banner-content-icon-${id}`}
             name={icon}
             size={16}
             color={(() => {
-              switch (severity) {
+              switch (status) {
                 case 'error':
                   return lightTheme.negative.icon;
                 case 'success':
@@ -54,18 +48,18 @@ function BannerContent({
       )}
 
       <s.BannerContent id={`banner-content-${id}`}>
-        <s.BannerContentMessage id={`banner-content-message-${id}`} bannerStyle={bannerStyle} severity={severity}>
-          {children ?? message}
+        <s.BannerContentMessage id={`banner-content-message-${id}`} variant={variant} status={status}>
+          {children}
         </s.BannerContentMessage>
         <s.BannerContentActionBlock>
           {secondaryAction ? (
-            <s.BannerContentSectionAction id={`banner-content-secondary-${id}`} severity={severity}>
+            <s.BannerContentSectionAction id={`banner-content-secondary-${id}`} status={status}>
               {secondaryAction}
             </s.BannerContentSectionAction>
           ) : null}
 
           {primaryAction ? (
-            <s.BannerContentPrimaryAction id={`banner-content-primary-${id}`} severity={severity}>
+            <s.BannerContentPrimaryAction id={`banner-content-primary-${id}`} status={status}>
               {primaryAction}
             </s.BannerContentPrimaryAction>
           ) : null}

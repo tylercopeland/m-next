@@ -1,0 +1,124 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as CardStories from './Card.stories';
+
+<Meta of={CardStories} />
+
+# Card
+
+A record-display card. The default compact summary of a single record — used in list views, search results, related-record sections, and anywhere a row-of-fields treatment is needed.
+
+## When to use it
+
+- Summarizing a single record (contact, invoice, opportunity, etc.) in a list / grid.
+- "Related records" sections inside a parent record view.
+- Search-result rows where each hit is one entity.
+
+## When NOT to use it
+
+- Free-form content with a title + body + actions — that's `@m-next/content-card` (ActionCard).
+- Dashboard / KPI tiles — that's `@m-next/insight-card`.
+- Editable form layouts — Card is read-only. Use Inputs in a Container.
+- More than ~6 fields per record — Card's two-column / three-row grid caps at six. For richer records, link to a full record view.
+
+## Anatomy
+
+A horizontal Container holding:
+
+1. **Avatar** (optional) — a circular `<Image>` slot on the left, sized by `size` (small=56px, medium=88px). Set via `hasAvatar` + `avatar`.
+2. **Column 1** — three field/value lines: `field1` (header, bold), `field2`, `field3`.
+3. **Column 2** — three field/value lines: `field4` (header), `field5`, `field6`.
+
+Each line renders through `CardLine`, which chooses a renderer based on the field shape:
+- `field.type === 'Tags'` → `@m-next/tag-widget`
+- `field.type === 'Picture' | 'ProfileImage'` → inline `<Image>`
+- `field.displayAs === 'pill' | 'dot-pill'` → `@m-next/pill`
+- Otherwise → ellipsing text via `@m-next/typeography`'s `TextDiv`
+
+## States
+
+- **Default** — values rendered in their type-appropriate display.
+- **Loading** — `isLoading={true}` renders skeleton lines (`@m-next/loading-skeleton`).
+- **No data** — `data={null}` renders empty column wrappers. Useful as a placeholder while a record loads.
+- **Empty values** — when `hideEmptyFields={true}`, mapped fields with empty values render an em-dash. Trailing all-empty rows collapse.
+- **Clickable** — pass `onClick`. The card root is a `<div>`; consumers add their own keyboard handling if needed.
+
+## Tokens consumed
+
+Card itself doesn't render any color literals — its surface comes from `@m-next/container` and its child line renderers (`Pill`, `TagWidget`, `TextDiv`) consume tokens from `@m-next/tokens` directly.
+
+## Basic
+
+<Canvas of={CardStories.Basic} />
+
+## Without avatar
+
+<Canvas of={CardStories.NoAvatar} />
+
+## Small size
+
+<Canvas of={CardStories.SmallSize} />
+
+## Loading
+
+<Canvas of={CardStories.Loading} />
+
+## No data bound
+
+<Canvas of={CardStories.NoData} />
+
+## hideEmptyFields (grid embed)
+
+<Canvas of={CardStories.HideEmptyFields} />
+
+## Clickable
+
+<Canvas of={CardStories.Clickable} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `data` | object | Record object — field values resolved by `data[field.name]` |
+| `field1`…`field6` | Field | Six slots → 3×2 grid |
+| `hasAvatar` / `avatar` | boolean / string | Optional leading image |
+| `size` | `'small' \| 'medium'` | Compact or default font scale |
+| `hideEmptyFields` | boolean | Grid-embed mode: collapse empty rows, show placeholders |
+| `isLoading` | boolean | Skeleton lines |
+| `onClick` | function | Card-level click |
+
+## Accessibility
+
+- The card root is a Container `<div>` from `@m-next/container`. There is no implicit `role`.
+- `onClick` does not add a `role="button"` or `tabIndex` — consumers should wrap in a `<Link>` for navigation, or pass `role` / `tabIndex` / `onKeyDown` through the rest-spread for ad-hoc interactive cards.
+- Field text that overflows is ellipsed and gets a tooltip (`@m-next/typeography` ellipsis detection). Tooltip linkage is via `tooltipId`.
+
+## Migration from `@m-one/card`
+
+Card is one of the lighter cleanups under m-next's API normalization. Mostly hygiene:
+
+| Was | Now | Status |
+|-----|-----|--------|
+| `id` required | optional, auto-generated | Backwards-compatible |
+| `forwardRef` prop | React forwardRef API (`ref={…}`) | Soft shim — warns once |
+| `isV4Design`, `isMobile`, `legacyClass`, `displayAuto`, `compactStyle`, `hidden` | — | Silently ignored |
+| `isMobile`-driven `padding: '0px 8px'` | gone — use `style={{ padding }}` if you need a mobile override | Behavior removed |
+
+Live demo:
+
+<Canvas of={CardStories.LegacyAPIStillWorks} />
+
+## Edge cases
+
+- **`hasAvatar={true}` with `avatar={null}`** — falls through to `Image`'s `unsetImage='person'` placeholder.
+- **No columns rendered** — when every `fieldN` is null and `data` is set, both column wrappers return null. The avatar (if any) is rendered alone.
+- **`hideEmptyFields` + `data={null}`** — column wrappers render empty (no skeleton, no dashes). The mode is intended for embedded grid rendering where the parent owns the loading state.
+- **Long values** — `CardLine`'s `TextDiv` ellipses single-line. If you need multi-line wrap, that's not currently configurable — open a follow-up.
+
+## Related components
+
+- `@m-next/content-card` — title/body/actions card (audit calls out a `ContentCard → ActionCard` rename in its own cleanup pass).
+- `@m-next/insight-card` — dashboard / KPI tile.
+- `@m-next/container` — the underlying wrapper element; gives the card its surface, padding, and shadow tokens.
+- `@m-next/pill`, `@m-next/tag-widget`, `@m-next/image` — the line-level renderers.

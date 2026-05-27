@@ -2,23 +2,28 @@
   "name": "@m-next/tabs",
   "private": true,
   "version": "1.0.0",
-  "description": "Tabs widget",
-  "keywords": [],
+  "description": "Tabs — horizontal navigation with overflow More-menu, drag reordering, and keyboard support.",
+  "keywords": [
+    "tabs",
+    "navigation",
+    "tablist"
+  ],
   "author": "Alexander Ballard <a.ballard@method.me>",
   "homepage": "",
   "license": "ISC",
   "main": "src/index.js",
-  "types": "src/Tabs.d.ts",
+  "types": "src/index.d.ts",
   "directories": {
     "src": "src"
   },
   "files": [
-    "index",
-    "Tabs.d.ts"
+    "src",
+    "index.d.ts"
   ],
   "dependencies": {
     "@m-next/styles": "1.0.0",
     "@m-next/svg-icon": "1.0.0",
+    "@m-next/tokens": "1.0.0",
     "@m-next/utilities": "1.0.0",
     "react-tooltip": "^5.26.3",
     "react-resize-detector": "^9.1.0",

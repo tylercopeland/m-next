@@ -1,0 +1,122 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as PillStories from './pill.stories';
+
+<Meta of={PillStories} />
+
+# Pill
+
+A compact, slot-aware label. Pill is Badge's bigger sibling — same pill shape, but with leading/trailing icon slots, an avatar slot, click handling, and a delete affordance.
+
+## When to use it
+
+- Tag-like UI where users can dismiss the tag (e.g. selected filters, applied labels).
+- Status labels that pair a dot or icon with a short word ("Active", "Pending", "Synced").
+- Person chips — a `profileIcon` with a name beside it.
+- Lightweight inline actions like "Add filter" with a trailing plus.
+
+## When NOT to use it
+
+- Pure visual chrome with no affordances. Use `@m-next/badge` — Pill carries more weight visually and architecturally.
+- A real action button. Use `@m-next/button` — Pill is a `<div>`, not a `<button>`, and its keyboard semantics are nonexistent by default.
+- A toggle or radio. Use `@m-next/checkbox` / `@m-next/radio-button` / `@m-next/toggle`.
+- Multi-line content. Pill is `white-space: nowrap` and will overflow into `maxWidth` truncation.
+
+## Anatomy
+
+A horizontal flex row inside a pill-shaped wrapper:
+
+1. **Leading slot** (optional) — one of: `leadIcon` (icon or dot) or `profileIcon` (avatar).
+2. **Text** — the `children`. Truncates with ellipsis once `maxWidth` is hit.
+3. **Trailing icon** (optional) — `trailIcon`.
+4. **Delete handle** (optional) — when `onDelete` is wired, a trailing × renders.
+
+Height is fixed: 16px (`sm`) or 24px (`md`). Border-radius scales to keep the pill shape.
+
+## Variants
+
+- **subtle** — pale background tint of the color scheme. Default. Use when many pills sit together (filter chips, tag lists).
+- **solid** — light background of the color scheme. Higher emphasis.
+- **ghost** — transparent or `${scheme}-light` background with a 1px grey-light border. Use for actionable pills ("Add filter") and avatar chips.
+
+## ColorSchemes
+
+`blue`, `green`, `fuchsia`, `grey`, `yellow`, `red`, `purple`, `orange`, `teal`, `transparent`.
+
+`transparent` skips the background fill entirely — useful with `variant="ghost"` for action pills.
+
+## Basic
+
+<Canvas of={PillStories.Basic} />
+
+## Variants
+
+<Canvas of={PillStories.Variants} />
+
+## Color schemes
+
+<Canvas of={PillStories.Colors} />
+
+## Sizes
+
+<Canvas of={PillStories.Sizes} />
+
+## With a leading dot (status pattern)
+
+<Canvas of={PillStories.WithLeadingDot} />
+
+## Deletable
+
+<Canvas of={PillStories.Deletable} />
+
+## Clickable ghost pill
+
+<Canvas of={PillStories.Clickable} />
+
+## Truncating long content
+
+<Canvas of={PillStories.TruncatesLongText} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `size` | `'sm' \| 'md'` | 16px or 24px tall |
+| `variant` | `'subtle' \| 'solid' \| 'ghost'` | Visual treatment |
+| `colorScheme` | 10 named hues + `transparent` | Semantic color |
+| `leadIcon` | `{ name, label?, ... }` | `{ name: 'dot' }` renders a colored dot |
+| `profileIcon` | `{ name, label?, size? }` | Leading avatar via `AvatarImage` |
+| `onClick` / `onDelete` | function | Wire affordances |
+
+## Accessibility
+
+- Pill is a `<div>` — *not* a button. If you wire `onClick`, also wire keyboard semantics at the consumer (or reach for `@m-next/button` instead).
+- The `dot` lead icon has `role="presentation"` — color is never the sole signal.
+- `leadIcon.label`, `trailIcon.label`, `profileIcon.label` become accessible captions / aria-labels on their slots.
+
+## Migration from `@m-one/pill`
+
+The biggest change is the size token rename — `narrow` → `sm` and `regular` → `md` — to match the rest of the cleaned components (Badge, Button, Input).
+
+The `v4-*` colorScheme aliases (`v4-blue`, `v4-red`, ...) collapse back into the base palette: they were a parallel V4-only path that's no longer needed now that V4 styling is the default.
+
+<Canvas of={PillStories.LegacyAPIStillWorks} />
+
+Each deprecated prop emits a one-time `console.warn` and silently translates. The shim covers: `size: 'narrow' | 'regular'`, `colorScheme: 'v4-*'`, `forwardRef` prop. Legacy ghosts (`isV4Design`, `isMobile`, `legacyClass`) accept their value but do nothing.
+
+Invalid `size` / `variant` / `colorScheme` values previously threw — they now warn once and fall back to the default. This matches Badge / Button / Input.
+
+## Edge cases
+
+- **Disabled with `onDelete`** — the × is suppressed (click handler returns `null`), text dims to 65% opacity. The pill stays in the DOM and is still readable.
+- **`transparent` colorScheme + `variant="ghost"`** — the recommended combo for actionable pills. Hover fills with `colors.concrete`, active with `colors.grey.light`.
+- **`leadIcon.name === 'dot'`** — renders a colored circle whose hue is `colors[colorScheme].base`. The dot does not respect `leadIcon.color`.
+- **Long children + no `maxWidth`** — the pill grows to its content. Set `maxWidth` to force truncation.
+- **`profileIcon` + `leadIcon`** — both render, profile first, lead after. Usually pick one.
+
+## Related components
+
+- `@m-next/badge` — non-interactive sibling. Pure decoration.
+- `@m-next/button` — when the element is actually an action.
+- `@m-next/image/AvatarImage` — the avatar renderer Pill uses for `profileIcon`.

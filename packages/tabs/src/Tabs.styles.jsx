@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { colors, lightTheme } from '@m-next/styles';
+import { lightTheme } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 
 export const TabContainer = styled.div(({ width, containerMargin, fullHeight }) => [
   {
@@ -50,7 +51,7 @@ export const TabHeader = styled.div(({ theme, fullWidthTabs, selected, isDraggin
   const { content } = theme;
   const defaultColor = content ? content.secondary : lightTheme.content.secondary;
   const primaryColor = content ? content.primary : lightTheme.content.primary;
-  const disabledColor = content ? content.disabled : colors['grey-darkest'];
+  const disabledColor = content ? content.disabled : colors.grey.darkest;
 
   // Determine color based on state
   let textColor = primaryColor;
@@ -141,7 +142,7 @@ export const IconHolder = styled.div(({ theme, disabled }) => {
 export const MenuList = styled.div(({ legacyPadding }) => [
   {
     position: 'absolute',
-    background: '#fff',
+    background: colors.white,
     boxShadow: '0 2px 5px 0 rgba(0, 0, 0, 0.15)',
     borderRadius: '4px',
     padding: '8px',
@@ -155,7 +156,7 @@ export const MenuList = styled.div(({ legacyPadding }) => [
 export const MenuItem = styled.div(({ theme, disabled }) => {
   const { content } = theme;
   const defaultColor = content ? content.secondary : lightTheme.content.secondary;
-  const disabledColor = content ? content.disabled : colors['grey-darkest'];
+  const disabledColor = content ? content.disabled : colors.grey.darkest;
 
   return [
     {
@@ -170,7 +171,7 @@ export const MenuItem = styled.div(({ theme, disabled }) => {
       pointerEvents: disabled ? 'none' : 'auto',
       '&:hover': {
         cursor: disabled ? 'not-allowed' : 'pointer',
-        backgroundColor: disabled ? 'transparent' : colors['grey-lightest'],
+        backgroundColor: disabled ? 'transparent' : colors.grey.lighter,
         color: disabled ? disabledColor : defaultColor,
       },
     },
@@ -178,7 +179,7 @@ export const MenuItem = styled.div(({ theme, disabled }) => {
 });
 
 export const TabPanel = styled.div(({ theme, borderless, dyanmicHeight, calMenuHeight }) => {
-  let border = `1px solid  ${colors['grey-lighter']}`;
+  let border = `1px solid  ${colors.grey.lighter}`;
   if (borderless) border = null;
   const { background } = theme;
   const defaultColor = background ? background.primary : lightTheme.background.primary;
@@ -194,7 +195,7 @@ export const TabPanel = styled.div(({ theme, borderless, dyanmicHeight, calMenuH
 });
 
 export const RibbonDivider = styled.div({
-  borderBottom: `1px ${colors['grey-lighter']} solid`,
+  borderBottom: `1px ${colors.grey.lighter} solid`,
 });
 
 export const RibbonListMobile = styled.div({

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { forwardRef, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Container from '@m-next/container';
 import Image from '@m-next/image';
@@ -6,6 +6,19 @@ import { Field, Tag } from '@m-next/types';
 import LoadingSkeleton from '@m-next/loading-skeleton';
 import CardLine from './CardLine';
 import * as s from './Card.styles';
+
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
 
 const propTypes = {
   id: PropTypes.string,
@@ -27,34 +40,63 @@ const propTypes = {
   field6: Field,
   tooltipId: PropTypes.string,
   hideEmptyFields: PropTypes.bool,
-  isMobile: PropTypes.bool,
 };
 
 /**
- * Wrapper component around
+ * Card — a record-display widget. Renders an optional avatar plus up to
+ * two columns of formatted field/value pairs. Used in list views, search
+ * results, and other compact summaries of an entity.
  */
-function Card({
-  id,
-  isLoading,
-  displayPreferences,
-  tagsList,
-  onClick,
-  hasAvatar = false,
-  avatar = null,
-  size = 'medium',
-  field1 = null,
-  field2 = null,
-  field3 = null,
-  field4 = null,
-  field5 = null,
-  field6 = null,
-  data = null,
-  showLabels = false,
-  style = null,
-  tooltipId = null,
-  hideEmptyFields = false,
-  isMobile = false,
-}) {
+const Card = forwardRef(function Card(props, ref) {
+  const {
+    id: idProp,
+    isLoading,
+    displayPreferences,
+    tagsList,
+    onClick,
+    hasAvatar = false,
+    avatar = null,
+    size = 'medium',
+    field1 = null,
+    field2 = null,
+    field3 = null,
+    field4 = null,
+    field5 = null,
+    field6 = null,
+    data = null,
+    showLabels = false,
+    style = null,
+    tooltipId = null,
+    hideEmptyFields = false,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+    hidden: _hidden,
+    ...rest
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-card-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'card-forwardRef-prop',
+      '@m-next/card: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
   const imageSizes = {
     small: 56,
     medium: 88,
@@ -168,18 +210,20 @@ function Card({
     <Container
       id={`${id}-card`}
       isRound={false}
+      forwardRef={ref ?? legacyForwardRef}
       style={{
         ...{
           flexDirection: 'row',
           alignItems: 'center',
           ...(hideEmptyFields ? { gap: '8px' } : { gap: '0px' }),
-          ...(isMobile ? { padding: '0px 8px' } : { padding: '0px' }),
+          padding: '0px',
         },
         ...style,
       }}
       hasChildLoading
       onClick={onClick}
       borderless
+      {...rest}
     >
       {hasAvatar && (
         <Image
@@ -199,7 +243,9 @@ function Card({
       {renderColumn(2, visibleFields.col2)}
     </Container>
   );
-}
+});
 
+Card.displayName = 'Card';
 Card.propTypes = propTypes;
+
 export default Card;

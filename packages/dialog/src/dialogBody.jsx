@@ -21,7 +21,7 @@ function DialogBody(props) {
   } = props;
 
   return (
-    <s.DialogBodyWrapper id={id ? `${id}-body` : null} maxHeight={maxHeight}>
+    <s.DialogBodyWrapper id={id ? `${id}-body` : undefined} maxHeight={maxHeight}>
       {children}
     </s.DialogBodyWrapper>
   );

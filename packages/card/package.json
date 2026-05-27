@@ -2,30 +2,35 @@
   "name": "@m-next/card",
   "private": true,
   "version": "1.0.0",
-  "description": "Card widget",
+  "description": "Record-display card — avatar + two columns of formatted field/value pairs.",
   "keywords": [
+    "card",
+    "record",
     "informational"
   ],
   "author": "Alexander Ballard <a.ballard@method.me>",
   "homepage": "",
   "license": "ISC",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "directories": {
     "src": "src"
   },
   "files": [
-    "index"
+    "src",
+    "index.d.ts"
   ],
   "dependencies": {
-    "@m-next/styles": "1.0.0",
-    "@m-next/utilities": "1.0.0",
     "@m-next/container": "1.0.0",
-    "@m-next/typeography": "1.0.0",
     "@m-next/image": "1.0.0",
-    "@m-next/types": "1.0.0",
-    "@m-next/tag-widget": "1.0.0",
     "@m-next/loading-skeleton": "1.0.0",
-    "@m-next/pill": "1.0.0"
+    "@m-next/pill": "1.0.0",
+    "@m-next/styles": "1.0.0",
+    "@m-next/tag-widget": "1.0.0",
+    "@m-next/tokens": "1.0.0",
+    "@m-next/types": "1.0.0",
+    "@m-next/typeography": "1.0.0",
+    "@m-next/utilities": "1.0.0"
   },
   "peerDependencies": {
     "@emotion/react": ">=11.10.5",

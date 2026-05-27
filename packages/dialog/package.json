@@ -2,9 +2,11 @@
   "name": "@m-next/dialog",
   "private": true,
   "version": "1.0.0",
-  "description": "Dialog widget",
+  "description": "Modal dialog — accessible, themed, with header / body / footer composition.",
   "keywords": [
-    "informational"
+    "dialog",
+    "modal",
+    "overlay"
   ],
   "author": "Alexander Ballard <a.ballard@method.me>",
   "homepage": "",
@@ -15,13 +17,14 @@
     "src": "src"
   },
   "files": [
-    "index",
+    "src",
     "dialog.d.ts"
   ],
   "dependencies": {
+    "@m-next/button": "1.0.0",
     "@m-next/styles": "1.0.0",
     "@m-next/svg-icon": "1.0.0",
-    "@m-next/button": "1.0.0",
+    "@m-next/tokens": "1.0.0",
     "react-modal": "^3.16.1"
   },
   "peerDependencies": {
