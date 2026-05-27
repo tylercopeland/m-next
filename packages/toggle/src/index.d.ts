@@ -1,11 +1,12 @@
 /**
- * Declaration file so the default export is typed as ComponentType<ToggleProps>.
- * Without this, TypeScript infers the default as the whole module when named exports exist.
+ * Declaration file so the default export is typed as a ForwardRef component
+ * over ToggleProps. Without this, TypeScript infers the default as the whole
+ * module when named exports exist.
  */
-import type { ComponentType } from 'react';
+import type { ForwardRefExoticComponent, RefAttributes } from 'react';
 import type { ToggleProps, ToggleTextOpt, ToggleSize } from './types';
 
-declare const Toggle: ComponentType<ToggleProps>;
+declare const Toggle: ForwardRefExoticComponent<ToggleProps & RefAttributes<HTMLInputElement>>;
 
 export default Toggle;
 export type { ToggleProps, ToggleTextOpt, ToggleSize };

@@ -2,23 +2,31 @@
   "name": "@m-next/select",
   "private": true,
   "version": "1.0.0",
+  "description": "Radio-card chooser (one-of-N selection). NOTE: not a <select> dropdown despite the name — use @m-next/dropdown for that.",
   "keywords": [
+    "select",
+    "radio",
+    "card",
+    "chooser",
     "informational"
   ],
   "author": "Brendan Farrell <b.farrell@method.me>",
   "homepage": "",
   "license": "ISC",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "directories": {
     "src": "src"
   },
   "files": [
-    "index"
+    "src",
+    "index.d.ts"
   ],
   "dependencies": {
     "@emotion/jest": "^11.11.0",
     "@m-next/styles": "1.0.0",
     "@m-next/svg-icon": "1.0.0",
+    "@m-next/tokens": "1.0.0",
     "@m-next/typeography": "1.0.0",
     "@m-next/utilities": "^1.0.0",
     "@testing-library/jest-dom": "^5.16.5",

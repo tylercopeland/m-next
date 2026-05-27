@@ -1,52 +1,36 @@
-import React, { useRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React, { useRef, useEffect, forwardRef } from 'react';
 import { Tooltip } from 'react-tooltip';
+import { colors } from '@m-next/tokens';
 import * as s from './RadioButton.styles';
 
-const propTypes = {
-  ariaChecked: PropTypes.bool,
-  isV4Design: PropTypes.bool,
-  id: PropTypes.string.isRequired,
-  direction: PropTypes.oneOf(['row', 'column']),
-  widthType: PropTypes.string,
-  rowItemWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  label: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-  checked: PropTypes.bool.isRequired,
-  isMobile: PropTypes.bool,
-  isFocused: PropTypes.bool,
-  onChange: PropTypes.func,
-  disabled: PropTypes.bool,
-  tabIndex: PropTypes.number,
-  customColor: PropTypes.string,
-  customFontSize: PropTypes.string,
-  narrow: PropTypes.bool,
-  style: PropTypes.shape({}),
-  hint: PropTypes.string,
-  labelStyle: PropTypes.instanceOf(Object),
-  bold: PropTypes.bool,
-  marginBottom: PropTypes.number,
-};
+// One-time deprecation warner — fires once per key, mirrors @m-next/button.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
 
-function RadioButton(props) {
+let autoIdCounter = 0;
+
+const RadioButton = forwardRef(function RadioButton(props, ref) {
   const {
-    id,
+    id: idProp,
     label,
     name,
     value,
-    checked,
+    checked = false,
     direction,
-    ariaChecked,
-    isV4Design,
-    disabled,
-    isMobile,
+    disabled = false,
     isFocused,
     widthType,
     rowItemWidth,
     onChange,
-    tabIndex,
-    customColor,
+    tabIndex = 0,
+    color: colorProp,
     customFontSize = null,
     style,
     narrow,
@@ -54,21 +38,92 @@ function RadioButton(props) {
     hint,
     bold,
     marginBottom,
+
+    // Standard ARIA pass-through
+    'aria-checked': ariaCheckedAttr,
+    'aria-labelledby': ariaLabelledByAttr,
+
+    // Soft-shimmed legacy props
+    ariaChecked: legacyAriaChecked,
+    forwardRef: legacyForwardRef,
+    customColor: legacyCustomColor,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+
+    ...rest
   } = props;
 
-  // If an option needs (Recommended) text appended at the end of the label, add value of the option to the array
-  const recommendedOptions = ['CurrentPanel'];
-  const isRecommended = recommendedOptions.indexOf(value) > -1;
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-radio-button-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  // ============ Backwards-compat translation ============
+
+  let color = colorProp;
+  if (legacyCustomColor != null && color == null) {
+    warnOnce(
+      'radio-button-customColor',
+      '@m-next/radio-button: `customColor` is deprecated. Use `color`.',
+    );
+    color = legacyCustomColor;
+  }
+  if (color == null) color = colors.blue.base;
+
+  let ariaChecked = ariaCheckedAttr;
+  if (legacyAriaChecked !== undefined && ariaChecked === undefined) {
+    warnOnce(
+      'radio-button-ariaChecked',
+      '@m-next/radio-button: `ariaChecked` is deprecated. Use the standard `aria-checked` attribute.',
+    );
+    ariaChecked = legacyAriaChecked;
+  }
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'radio-button-forwardRef-prop',
+      '@m-next/radio-button: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // ============ Refs ============
+
   const buttonRef = useRef();
+
+  // Merge external ref (forwardRef API + legacy forwardRef prop) with internal.
+  useEffect(() => {
+    const targetRef = ref ?? legacyForwardRef;
+    if (!targetRef) return;
+    if (typeof targetRef === 'function') {
+      targetRef(buttonRef.current);
+    } else {
+      // eslint-disable-next-line no-param-reassign
+      targetRef.current = buttonRef.current;
+    }
+  }, [ref, legacyForwardRef]);
 
   useEffect(() => {
     if (isFocused && checked) buttonRef.current?.focus();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [buttonRef.current, isFocused]);
 
+  // If an option needs (Recommended) text appended at the end of the label, add value of the option to the array
+  const recommendedOptions = ['CurrentPanel'];
+  const isRecommended = recommendedOptions.indexOf(value) > -1;
+
+  // V4 styling is always on — pin isV4Design=true at the style boundary so legacy
+  // styled components keep their V4 branches without exposing the flag to consumers.
   return (
     <s.RadioButtonWrapper
-      customColor={customColor}
+      customColor={color}
       direction={direction}
       widthType={widthType}
       width={rowItemWidth}
@@ -76,9 +131,8 @@ function RadioButton(props) {
       checked={checked}
       aria-checked={ariaChecked}
       tabIndex={-1}
-      aria-labelledby={`${id}-lbl`}
-      isV4Design={isV4Design}
-      isMobile={isMobile}
+      aria-labelledby={ariaLabelledByAttr ?? `${id}-lbl`}
+      isV4Design
       narrow={narrow}
       marginBottom={marginBottom}
     >
@@ -93,32 +147,30 @@ function RadioButton(props) {
         checked={checked}
         aria-checked={ariaChecked}
         tabIndex={tabIndex}
-        aria-labelledby={`${id}-lbl`}
-        isMobile={isMobile}
-        isV4Design={isV4Design}
-        customColor={customColor}
+        aria-labelledby={ariaLabelledByAttr ?? `${id}-lbl`}
+        isV4Design
+        customColor={color}
         style={style}
+        {...rest}
       />
       <>
         <div className='radio-btn-indicator-container' style={{ position: 'relative' }}>
           <s.StyledIndicator
             className='radio-btn-indicator'
-            isMobile={isMobile}
-            customColor={customColor}
+            customColor={color}
             disabled={disabled}
-            isV4Design={isV4Design}
+            isV4Design
             style={style}
             narrow={narrow}
           />
         </div>
         <s.Text
           id={`${id}-lbl`}
-          isMobile={isMobile}
           isRecommended={isRecommended}
           direction={direction}
-          customColor={customColor}
+          customColor={color}
           customFontSize={customFontSize}
-          isV4Design={isV4Design}
+          isV4Design
           narrow={narrow}
           style={labelStyle}
           bold={bold}
@@ -135,7 +187,8 @@ function RadioButton(props) {
       )}
     </s.RadioButtonWrapper>
   );
-}
+});
 
-RadioButton.propTypes = propTypes;
+RadioButton.displayName = 'RadioButton';
+
 export default RadioButton;

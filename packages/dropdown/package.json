@@ -2,19 +2,24 @@
   "name": "@m-next/dropdown",
   "private": true,
   "version": "1.0.0",
-  "description": "Dropdown widget",
+  "description": "Dropdown — labeled, searchable, accessible single/multi select built on react-select.",
   "keywords": [
-    "Form"
+    "dropdown",
+    "select",
+    "form",
+    "control"
   ],
   "author": "Alexander Ballard <a.ballard@method.me>",
   "homepage": "",
   "license": "ISC",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "directories": {
     "src": "src"
   },
   "files": [
-    "index"
+    "src",
+    "index.d.ts"
   ],
   "dependencies": {
     "@m-next/button": "1.0.0",
@@ -23,6 +28,7 @@
     "@m-next/pill": "1.0.0",
     "@m-next/styles": "1.0.0",
     "@m-next/svg-icon": "1.0.0",
+    "@m-next/tokens": "1.0.0",
     "@m-next/typeography": "1.0.0",
     "@m-next/utilities": "1.0.0",
     "@m-next/validation": "1.0.0",

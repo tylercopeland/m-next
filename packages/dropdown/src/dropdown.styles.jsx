@@ -1,26 +1,20 @@
 import styled from '@emotion/styled';
-import { colors, lightTheme } from '@m-next/styles';
+import { lightTheme } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 
 export const ContainerWrapper = styled.div((props) => {
-  const { width, isValid, displayAuto, isV4Design, disabled } = props;
+  const { width, isValid, disabled } = props;
 
-  const style = [
-    {
-      width,
-      display: 'inline-block',
-      marginBottom: 0,
-      verticalAlign: 'top',
-      maxWidth: displayAuto ? '100%' : null,
-      cursor: disabled ? 'not-allowed' : null,
-    },
-
-    isV4Design && {
-      position: 'relative',
-      marginBottom: 0,
-      border: !isValid ? colors.red : null,
-    },
-  ];
-  return style;
+  return {
+    width,
+    display: 'inline-block',
+    verticalAlign: 'top',
+    maxWidth: '100%',
+    cursor: disabled ? 'not-allowed' : null,
+    position: 'relative',
+    marginBottom: 0,
+    border: !isValid ? colors.red.base : null,
+  };
 });
 
 export const IconOption = styled.div(() => [
@@ -135,8 +129,10 @@ export const SecondaryOption = styled.div(() => ({
   whiteSpace: 'nowrap',
 }));
 
+// #71828F sits between grey.base (#545F67) and grey.light (#BACAD0).
+// Mapping to grey.base — closest token; muted-but-readable secondary label.
 export const SecondaryLabel = styled.div(() => ({
-  color: '#71828F',
+  color: colors.grey.base,
 }));
 
 export const Square = styled.div(({ color, size }) => ({

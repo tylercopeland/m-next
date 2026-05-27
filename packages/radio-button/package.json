@@ -2,23 +2,30 @@
   "name": "@m-next/radio-button",
   "private": true,
   "version": "1.0.0",
-  "description": "Radio button widget",
-  "keywords": [],
+  "description": "Radio button — labeled, accessible, single radio control.",
+  "keywords": [
+    "radio",
+    "form",
+    "control"
+  ],
   "author": "Alexander Ballard <a.ballard@method.me>",
   "homepage": "",
   "license": "ISC",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "directories": {
     "src": "src"
   },
   "files": [
-    "index"
+    "src",
+    "index.d.ts"
   ],
   "dependencies": {
     "@m-next/button": "1.0.0",
     "@m-next/caption": "1.0.0",
     "@m-next/styles": "1.0.0",
     "@m-next/svg-icon": "1.0.0",
+    "@m-next/tokens": "1.0.0",
     "@m-next/typeography": "1.0.0",
     "react-tooltip": "^5.18.0"
   },

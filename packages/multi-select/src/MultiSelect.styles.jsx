@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import styled from '@emotion/styled';
-import { colors } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 import SvgIcon from '@m-next/svg-icon';
 
 export const MultiSelectParentWrapper = styled.div`
@@ -12,7 +12,7 @@ export const MultiSelectParentWrapper = styled.div`
 `;
 
 export const SingleChipWrapper = styled.span`
-  background-color: ${(p) => (p ? p.color : '#5d18ceff')};
+  background-color: ${(p) => (p ? p.color : colors.purple.base)};
   color: ${colors.white};
   font-size: 12px;
   font-weight: 100;
@@ -25,7 +25,7 @@ export const SingleChipWrapper = styled.span`
 `;
 
 export const ChipName = styled.span`
-  color: ${colors['grey-darker']};
+  color: ${colors.grey.darker};
   font-weight: 600;
   word-wrap: break-word;
   width: max-content;
@@ -54,7 +54,7 @@ export const CloseIcon = styled(SvgIcon)`
       border-radius: 50%;
       height: ${(props) => props.bgCircleDiameter || '16px'};
       width: ${(props) => props.bgCircleDiameter || '16px'};
-      background-color: #b3e5ff;
+      background-color: ${colors.blue.light};
       opacity: 0;
       transition: all 150ms ease-out;
     }
@@ -79,14 +79,14 @@ export const OptionsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
-  border: 1px solid ${colors['grey-light']};
+  border: 1px solid ${colors.grey.light};
   border-radius: 2px;
   height: ${(props) => props.height};
   padding: ${(props) => (props.isDropdown ? '8px 4px' : '8px')};
   overflow-y: auto;
 
   &:focus-within {
-    border: 1px solid ${colors.blue};
+    border: 1px solid ${colors.blue.base};
   }
 
   input:placeholder-shown,
@@ -163,7 +163,7 @@ export const DropdownWrapper = styled.div`
   align-self: stretch;
   width: ${(props) => (props.isMobile ? '100%' : '360px')};
   border-radius: 4px;
-  background: ${colors['white']};
+  background: ${colors.white};
   ${(props) =>
     !props.hasOptions &&
     `
@@ -184,8 +184,8 @@ export const DropdownOption = styled.div`
     props.hasOptions &&
     `
     &:hover {
-      background-color: ${colors['grey-lighter']};
-      color: ${colors['blue']};
+      background-color: ${colors.grey.lighter};
+      color: ${colors.blue.base};
       cursor: pointer;
     }
   `};
@@ -194,7 +194,7 @@ export const DropdownOption = styled.div`
     props.selected &&
     props.hasOptions &&
     `
-    color: ${colors['blue']};
-    background: ${colors['grey-lighter']};
+    color: ${colors.blue.base};
+    background: ${colors.grey.lighter};
   `};
 `;

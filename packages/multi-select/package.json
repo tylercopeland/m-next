@@ -2,24 +2,32 @@
   "name": "@m-next/multi-select",
   "private": true,
   "version": "1.0.0",
+  "description": "Multi-value pill input. Free-text or dropdown-driven, with optional email validation.",
   "keywords": [
-    "informational"
+    "input",
+    "form",
+    "control",
+    "pill",
+    "multi-select"
   ],
   "author": "Brendan Farrell <b.farrell@method.me>",
   "homepage": "",
   "license": "ISC",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "directories": {
     "src": "src"
   },
   "files": [
-    "index"
+    "src",
+    "index.d.ts"
   ],
   "dependencies": {
     "@emotion/jest": "^11.11.0",
     "@m-next/pill": "1.0.0",
     "@m-next/styles": "1.0.0",
     "@m-next/svg-icon": "1.0.0",
+    "@m-next/tokens": "1.0.0",
     "@m-next/typeography": "1.0.0",
     "@m-next/utilities": "^1.0.0",
     "@testing-library/jest-dom": "^5.16.5",

@@ -1,0 +1,118 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as RadioButtonStories from './radio-button.stories';
+
+<Meta of={RadioButtonStories} />
+
+# RadioButton
+
+A single radio button. Use it inside a group of mutually-exclusive options where exactly one selection is expected.
+
+## When to use it
+
+- Picking one option from a small, fixed list (2–6 items).
+- Settings with mutually exclusive choices (plan, size, billing cadence).
+- When all options should be visible at once (no overflow / no scroll).
+
+## When NOT to use it
+
+- More than ~6 options — use a Dropdown.
+- Multi-select — use Checkbox or MultiSelect.
+- Boolean on/off — use Toggle.
+- Hidden until interaction — use a Dropdown / Combobox.
+
+## Composing a group
+
+This package exports a single `<RadioButton>`. There is no group wrapper API in the clean surface — render multiple radios inside your own `<fieldset role="radiogroup">` and manage `checked` state yourself. The legacy `RadioGroup` / `IconRadioGroup` / `ButtonRadioGroup` exports still exist but are not part of this cleanup.
+
+## Anatomy
+
+A horizontal label holding:
+
+1. **NativeRadioButton** — the actual `<input type="radio">`, visually hidden but focusable.
+2. **StyledIndicator** — the visible circle that fills with `color` when checked.
+3. **Text** — the visible label, connected via `aria-labelledby`.
+4. **Hint** (optional) — info icon with a `react-tooltip` popover.
+
+## States
+
+- **Default** — neutral grey border, white fill.
+- **Checked** — filled with `color` (default `colors.blue.base`).
+- **Hover** — 1px box-shadow ring in the current color.
+- **Focus** — 1px box-shadow ring + `colors.blue.lighter` border.
+- **Disabled** — opacity reduced, `cursor: not-allowed`, fill switches to grey when checked.
+
+## Tokens consumed
+
+- `colors.blue.base` — default indicator color
+- `colors.grey.base` — disabled indicator and focus border
+- `colors.blue.lighter` — focus ring border
+- `colors.white` — indicator center dot
+
+## Basic
+
+<Canvas of={RadioButtonStories.Basic} />
+
+## Group composition
+
+<Canvas of={RadioButtonStories.Group_Column} />
+
+## With hint tooltip
+
+<Canvas of={RadioButtonStories.WithHint} />
+
+## Custom color
+
+<Canvas of={RadioButtonStories.CustomColor} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `label` | string | Visible label, drives accessible name |
+| `name` | string | Native radio name (group multiple radios with the same value) |
+| `value` | string \| number | Native input value |
+| `checked` | boolean | Whether the radio is selected |
+| `onChange` | function | Standard React change handler |
+| `color` | string | Indicator color (default `colors.blue.base`) |
+| `hint` | string | Tooltip help text |
+| `disabled` | boolean | Disables the input |
+| `ref` | ref | Forwarded to the native `<input>` |
+
+## Accessibility
+
+- Native `<input type="radio">` underneath — keyboard semantics inherited.
+- Label is rendered in a sibling `<span>` and connected via `aria-labelledby`.
+- `aria-checked` / `aria-labelledby` / `aria-label` / `aria-describedby` all pass through.
+- Within a group, use `<fieldset role="radiogroup">` so screen readers announce the grouping.
+- Radios sharing a `name` form a tab-stop group — only the checked one is tabbable.
+
+## Examples
+
+### A realistic form
+
+<Canvas of={RadioButtonStories.RealWorldForm} />
+
+## Migration from `@m-one/radio-button`
+
+RadioButton's clean surface only covers the single radio. Group composites (`RadioGroup`, `IconRadioGroup`, `ButtonRadioGroup`) still ship from this package but use the legacy API — migrating those is a separate pass.
+
+Live demo of the soft shim:
+
+<Canvas of={RadioButtonStories.LegacyAPIStillWorks} />
+
+Each deprecated prop emits a one-time `console.warn` and silently translates. The shim covers: `customColor`, `ariaChecked`, `forwardRef`. Legacy ghosts (`isV4Design`, `isMobile`, `legacyClass`, `displayAuto`, `compactStyle`) accept their value but do nothing.
+
+## Edge cases
+
+- **Multiple radios sharing a `name`** — the browser enforces single-selection. Each `<RadioButton>` is independent; you wire `checked` from state.
+- **Auto-generated `id`** — when `id` is omitted, an internal counter assigns `m-next-radio-button-N`. This drives the `aria-labelledby` connection. Pass an explicit `id` if you need a stable test selector.
+- **Refs** — `ref` forwards to the native `<input>`. Useful for programmatic focus inside complex forms.
+- **`hint` tooltip** — uses `react-tooltip` and positions to the right. The tooltip ID is derived from the radio's `id` (`${id}-tooltip`).
+
+## Related components
+
+- `Checkbox` — multi-select alternative.
+- `Toggle` — boolean on/off.
+- `Dropdown` — single-select from a longer list.

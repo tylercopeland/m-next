@@ -1,0 +1,110 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as SelectStories from './Select.stories';
+
+<Meta of={SelectStories} />
+
+# Select
+
+> **Heads up — the name is misleading.** Despite being called `Select`, this component is **not** a `<select>` dropdown. It is a **radio-card chooser**: a horizontal row of large icon + title + description cards where exactly one is "checked." If you want a standard form-select (labeled control that opens a list of options), reach for `Dropdown` instead. The package name is preserved for now to keep the Phase 3 production diff minimal; renaming is a separate, later pass.
+
+A one-of-N radio-card chooser. Each option is a card with an icon, a title, and an optional description. Selection is single, mutually-exclusive, and announced as a `radiogroup`.
+
+## When to use it
+
+- A high-visibility "choose your path" picker at the start of an onboarding flow ("Explore / Organize / Download").
+- A small set (2–5) of mutually-exclusive options where the icon + description actually help disambiguate the choices.
+- Settings screens where each option is a discoverable mode, not a column value.
+
+## When NOT to use it
+
+- **A regular form dropdown.** Use `Dropdown`.
+- **More than ~5 options.** The horizontal row stops fitting and the icon-heavy treatment becomes noisy. Use Dropdown or a `RadioButton` group.
+- **Tightly-packed forms.** The card padding is generous; in a dense settings table use `RadioButton` instead.
+- **Multi-select.** Use `MultiSelect` or a Checkbox group.
+- **Just a yes/no.** Use `Toggle` or `Checkbox`.
+
+## Anatomy
+
+A horizontal `SelectWrapper` (the `role="radiogroup"`) holding N `SelectOptionWrapper` cards. Each card stacks:
+
+1. **SelectIcon** — circular tinted background containing an `@m-next/svg-icon`.
+2. **Title** — `@m-next/typeography` `h3`.
+3. **Description** (optional) — `@m-next/typeography` `body1`.
+
+A selected card switches its border to `colors.blue.base` and its background to `colors.blue.lighter`. Hover and keyboard focus apply a blue shadow halo.
+
+## Sizes
+
+- `size="lg"` (default) — 80px icon, 24px vertical padding, 20px title.
+- `size="sm"` — 40px icon, 16px vertical padding, 14px title.
+
+The legacy `'small' / 'large'` values still work — they emit a one-time `console.warn` and map to `sm` / `lg`.
+
+## Tokens consumed
+
+- `colors.blue.base` — selected border, icon stroke
+- `colors.blue.light` — selected icon background tint
+- `colors.blue.lighter` — selected card background, unselected icon background
+- `colors.grey.light` — unselected card border
+- `colors.white` — unselected card background
+
+## Basic
+
+<Canvas of={SelectStories.Basic} />
+
+## Sizes
+
+<Canvas of={SelectStories.Sizes} />
+
+## Without description / without title
+
+<Canvas of={SelectStories.OptionVariants} />
+
+## Disabled options
+
+<Canvas of={SelectStories.DisabledOption} />
+
+## Controlled selection
+
+<Canvas of={SelectStories.Controlled} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `options` | `{ icon, title, description, disabled }[]` | `title` is the selection identifier |
+| `selectedValue` | string \| number | Currently-selected option's `title` |
+| `onChange` | `(option) => void` | Fires with the full option object |
+| `size` | `'sm' \| 'lg'` | Card scale |
+| `label` | string | Accessible name for the radiogroup |
+
+## Accessibility
+
+- The outer wrapper is `role="radiogroup"` with `aria-label` taken from `label`.
+- Each card is `role="radio"` with `aria-checked` reflecting selection.
+- Disabled cards: `tabIndex={-1}`, `aria-disabled="true"`.
+- Cards respond to **Space** and **Enter**.
+- Arrow-key navigation between cards is not yet implemented — see Open follow-ups in the README.
+
+## Migration from `@m-one/select`
+
+Select is the third component cleaned up under m-next's API normalization (after Button and Input). Migration is mostly mechanical — see the README's "What changed" table. Live demo of the soft shim:
+
+<Canvas of={SelectStories.LegacyAPIStillWorks} />
+
+Each deprecated prop emits a one-time `console.warn` and silently translates. The shim covers: `caption`, `size="small" / "large"`, `forwardRef` prop. Legacy ghosts (`isV4Design`, `isMobile`, `legacyClass`, `displayAuto`) accept their value but do nothing.
+
+## Edge cases
+
+- **`title` collisions.** Selection is identified by `title`. Two options with the same `title` will both highlight when either is clicked. Give every option a unique title.
+- **No `selectedValue`.** The component is internally controlled — the first click sets the selection. Pass `selectedValue` to drive it from outside.
+- **Refs.** `ref` forwards to the outer radiogroup `<div>`, not to any individual card.
+
+## Related components
+
+- `Dropdown` — the actual form-select pattern you probably wanted.
+- `RadioButton` — single-of-N selection in tight form layouts.
+- `MultiSelect` — N-of-M selection.
+- `Checkbox` — boolean toggles.

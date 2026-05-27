@@ -1,0 +1,114 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as CheckboxStories from './checkbox.stories';
+
+<Meta of={CheckboxStories} />
+
+# Checkbox
+
+A native `<input type="checkbox">` with a label, an indeterminate (tri-state) visual, and the keyboard semantics you'd expect.
+
+## When to use it
+
+- Boolean toggles inside a form: terms of service, marketing opt-in, beta enrollment.
+- Multi-select within a list — render a `Checkbox` per row.
+- A "select all" master that controls a list of checkboxes — set `halfChecked` when the selection is partial.
+
+## When NOT to use it
+
+- Single on/off setting that takes effect immediately — use `Toggle`.
+- Mutually exclusive choice — use `RadioButton`.
+- Selection from a long list of options — use a Dropdown / MultiSelect.
+- Standalone "agree" call to action — use a `Button` (a checkbox alone with no surrounding form is rarely the right control).
+
+## Anatomy
+
+A row Container holding:
+
+1. **`<input type="checkbox">`** — the actual native element. Visually hidden; the styled `Checkbox` box sits next to it.
+2. **Label** — text or ReactNode rendered to the left or right of the box (`align` prop).
+3. **Checkbox box** — a 16×16 styled square (or 8px-radius rounded square when `rounded`). Tinted blue when checked or indeterminate.
+4. **Indicator** — a checkmark (`✓`-shaped CSS rotation) when checked, or a horizontal bar when `halfChecked`.
+
+## States
+
+- **Default** — neutral light-grey border, white fill.
+- **Checked** — blue fill, white check.
+- **Indeterminate (`halfChecked`)** — blue fill, white horizontal bar. Useful for parent rows in a tree.
+- **Disabled** — 50% opacity, `pointer-events: none`, `aria-disabled`.
+- **Focus** — soft blue ring via `:focus-visible` (keyboard-only).
+- **Hover** — light blue glow around the box (suppressed when disabled).
+
+## Tokens consumed
+
+- `colors.blue.base` — checked-state fill, focus ring
+- `colors.blue.light` — hover glow
+- `colors.grey.light` — default border
+- `colors.white` — check / bar indicator
+
+## Basic
+
+<Canvas of={CheckboxStories.Basic} />
+
+## States
+
+<Canvas of={CheckboxStories.States} />
+
+## Alignment
+
+<Canvas of={CheckboxStories.Alignment} />
+
+## Group
+
+<Canvas of={CheckboxStories.Group} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `checked` | boolean | Controlled checked state |
+| `halfChecked` | boolean | Indeterminate / tri-state visual |
+| `onChange` | `(checked: boolean) => void` | Receives the new boolean, not the event |
+| `label` | string \| ReactNode | Visible label, also drives accessible name |
+| `hideLabel` | boolean | Hides the label visually (keeps a11y) |
+| `align` | `'left' \| 'center' \| 'right'` | Box vs label position |
+| `rounded` | boolean | 8px corner radius |
+
+## Accessibility
+
+- Native `<input type="checkbox">` underneath — keyboard semantics inherited.
+- Space and Enter toggle the checked state.
+- `disabled` automatically mirrors to `aria-disabled`.
+- The wrapper `<label>` uses `htmlFor={id}`, so clicking anywhere on the label toggles the box.
+- When `hideLabel` is set (or no label is provided), the box itself carries `aria-labelledby` / `aria-checked` so screen readers still announce the state.
+- `id` is auto-generated when omitted — no more required-prop errors when a quick checkbox is dropped into a flow.
+
+## Examples
+
+### A realistic form
+
+<Canvas of={CheckboxStories.RealWorldForm} />
+
+## Migration from `@m-one/checkbox`
+
+Checkbox follows the same playbook as Button and Input: the API surface is renamed and the obvious legacy ghosts go silent. Migration is mostly mechanical — see the README's "What changed" table. Live demo of the soft shim:
+
+<Canvas of={CheckboxStories.LegacyAPIStillWorks} />
+
+Each deprecated prop emits a one-time `console.warn` and silently translates. The shim covers: `forwardRef` (prop), `hideCaption`, `controlId`. Legacy ghosts (`isMobile`, `hidden`, `legacyClasses`, `isV4Design`, `displayAuto`, `legacyClass`) accept their value but do nothing.
+
+The `onChange` signature — `(checked: boolean) => void` — is unchanged from `@m-one/checkbox`. We considered moving to `(e: ChangeEvent) => void` for consistency with Input, but the boolean-payload convention is too entrenched in the consuming app code to be worth the migration cost in this pass.
+
+## Edge cases
+
+- **Indeterminate state** — `halfChecked` toggles the native `indeterminate` property on the underlying input via `useEffect`. The DOM attribute can't be set declaratively; this is the standard React workaround.
+- **`disabled` + label opacity** — by default, the label also dims when the box is disabled. Set `disableLabel={false}` to keep label opacity at 100%.
+- **`controlId`** — legacy prop that named the label element. Still accepted; new code should rely on the auto-derived `${id}Lbl`.
+- **Refs** — `ref` forwards to the underlying `<input>`. The legacy `forwardRef` prop receives an imperative handle (`{ blur, focus, select }`); both can coexist.
+
+## Related components
+
+- `Toggle` — the immediate-effect cousin (not yet cleaned up).
+- `RadioButton` — mutually exclusive option (not yet cleaned up).
+- `MultiSelect` — many-of-many selection from a long list (not yet cleaned up).

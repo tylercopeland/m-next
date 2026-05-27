@@ -1,24 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Typeography from '@m-next/typeography';
 import SvgIcon from '@m-next/svg-icon';
-import { colors } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 import * as s from './Select.styles';
 
-// types
-const propTypes = {
-  id: PropTypes.string,
-  icon: PropTypes.string,
-  title: PropTypes.string,
-  description: PropTypes.string,
-  selected: PropTypes.bool,
-  onSelection: PropTypes.func,
-  disabled: PropTypes.bool,
-  isMobile: PropTypes.bool,
-  size: PropTypes.oneOf(['small', 'large']),
-};
+function SelectOption({
+  id,
+  icon,
+  title,
+  description,
+  selected,
+  onSelection,
+  disabled,
+  size = 'lg',
+}) {
+  // size is normalized at the parent (`sm`/`lg`); guard here too for direct consumers.
+  const resolvedSize = size === 'small' ? 'sm' : size === 'large' ? 'lg' : size;
 
-function SelectOption({ id, icon, title, description, selected, onSelection, disabled, isMobile, size = 'large' }) {
   const handleSelection = () => {
     if (onSelection) {
       onSelection({ icon, title, description });
@@ -28,7 +26,6 @@ function SelectOption({ id, icon, title, description, selected, onSelection, dis
   const handleKeyDown = (event) => {
     if (event.key === ' ' || event.key === 'Enter') {
       event.preventDefault();
-
       if (onSelection) {
         onSelection({ icon, title, description });
       }
@@ -38,24 +35,31 @@ function SelectOption({ id, icon, title, description, selected, onSelection, dis
   return (
     <s.SelectOptionWrapper
       id={`${id}-${title}-option-wrapper`}
-      size={size}
+      size={resolvedSize}
       selected={selected}
       onClick={disabled ? null : handleSelection}
       onKeyDown={disabled ? null : handleKeyDown}
-      tabIndex={0}
+      tabIndex={disabled ? -1 : 0}
+      role="radio"
+      aria-checked={Boolean(selected)}
+      aria-disabled={disabled || undefined}
     >
-      <s.SelectIcon size={size} selected={selected} style={{ display: 'inherit' }}>
+      <s.SelectIcon size={resolvedSize} selected={selected} style={{ display: 'inherit' }}>
         <SvgIcon
           id={`${id}-${title}-icon`}
           className='select-option-icon'
           name={icon}
-          size={size === 'large' ? 40 : 20}
-          color={colors['blue']}
+          size={resolvedSize === 'lg' ? 40 : 20}
+          color={colors.blue.base}
         />
       </s.SelectIcon>
-      <s.ContentContainer size={size} isMobile={isMobile}>
+      <s.ContentContainer size={resolvedSize}>
         {title && (
-          <Typeography id={`${id}-${title}-title`} variant='h3' style={{ marginTop: size === 'large' ? 16 : 8 }}>
+          <Typeography
+            id={`${id}-${title}-title`}
+            variant='h3'
+            style={{ marginTop: resolvedSize === 'lg' ? 16 : 8 }}
+          >
             {title}
           </Typeography>
         )}
@@ -69,5 +73,4 @@ function SelectOption({ id, icon, title, description, selected, onSelection, dis
   );
 }
 
-SelectOption.propTypes = propTypes;
 export default SelectOption;

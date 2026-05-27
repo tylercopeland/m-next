@@ -1,17 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Button from '@m-next/button';
 import { ButtonRadioButtonWrapper } from './ButtonRadioButton.styles';
-
-const propTypes = {
-  id: PropTypes.string,
-  label: PropTypes.string,
-  selected: PropTypes.bool,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  onChange: PropTypes.func,
-  disabled: PropTypes.bool,
-};
 
 function ButtonRadioButton({ id, label, value, selected, onChange, width, disabled }) {
   const handleOnClick = () => {
@@ -27,10 +16,12 @@ function ButtonRadioButton({ id, label, value, selected, onChange, width, disabl
         width={width}
         onClick={handleOnClick}
         disabled={disabled}
+        aria-pressed={selected}
+        role='radio'
+        aria-checked={selected}
       />
     </ButtonRadioButtonWrapper>
   );
 }
 
-ButtonRadioButton.propTypes = propTypes;
 export default ButtonRadioButton;

@@ -1,10 +1,10 @@
 /* eslint-disable react/no-array-index-key */
-import React, { useState, useMemo, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useMemo, useEffect, useRef, forwardRef } from 'react';
 import Select, { components } from 'react-select';
 import CreatableSelect from 'react-select/creatable';
 import { useTheme } from '@mui/material';
-import { colors, lightTheme } from '@m-next/styles';
+import { lightTheme } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 import Caption from '@m-next/caption';
 import SvgIcon from '@m-next/svg-icon';
 import Button from '@m-next/button';
@@ -13,154 +13,170 @@ import LoadingSkeleton from '@m-next/loading-skeleton';
 import * as s from './dropdown.styles';
 import CustomMultiValueRemove from './CustomMultiValueRemove';
 
-// types
-const propTypes = {
-  id: PropTypes.string,
-  displayAuto: PropTypes.bool,
-  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  validationMessage: PropTypes.string,
-  isV4Design: PropTypes.bool,
-  caption: PropTypes.string,
-  required: PropTypes.bool,
-  legacyClass: PropTypes.string,
-  isMobile: PropTypes.bool,
-  placeholder: PropTypes.string,
-  disabled: PropTypes.bool,
-  options: PropTypes.arrayOf(
-    PropTypes.oneOfType([
-      PropTypes.shape({
-        label: PropTypes.string,
-        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]),
-        lines: PropTypes.arrayOf(PropTypes.instanceOf(Object)),
-        secondary: PropTypes.string,
-      }),
-      PropTypes.shape({
-        label: PropTypes.string,
-        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]),
-        secondary: PropTypes.string,
-      }),
-      PropTypes.shape({
-        label: PropTypes.string,
-        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]),
-        icon: PropTypes.string,
-        color: PropTypes.string,
-        size: PropTypes.number,
-        secondary: PropTypes.string,
-      }),
-      PropTypes.shape({
-        label: PropTypes.string,
-        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]),
-        lines: PropTypes.arrayOf(PropTypes.instanceOf(Object)),
-        icon: PropTypes.string,
-        color: PropTypes.string,
-        size: PropTypes.number,
-        secondary: PropTypes.string,
-      }),
-    ]),
-  ),
-  value: PropTypes.instanceOf(Object),
-  onChange: PropTypes.func,
-  onBlur: PropTypes.func,
-  hasValidation: PropTypes.bool,
-  dropdownStyle: PropTypes.oneOf(['single', 'icon', 'multi', 'multi-icon']),
-  onMenuOpen: PropTypes.func,
-  onMenuClose: PropTypes.func,
-  style: PropTypes.instanceOf(Object),
-  background: PropTypes.string,
-  isMultiSelect: PropTypes.bool,
-  isCreateable: PropTypes.bool,
-  isSearchable: PropTypes.bool,
-  onCreate: PropTypes.func,
-  actionButtonText: PropTypes.string,
-  isPortal: PropTypes.bool,
-  onActionButtonClick: PropTypes.func,
-  forwardRef: PropTypes.instanceOf(Object),
-  openMenuOnFocus: PropTypes.bool,
-  breakout: PropTypes.bool,
-  isLoading: PropTypes.bool,
-  hasDividersInsteadOfHeaders: PropTypes.bool,
-  isClearable: PropTypes.bool,
-  maxMenuHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  onInputChange: PropTypes.func,
-  menuPlacement: PropTypes.oneOf(['auto', 'bottom', 'top']),
-  ariaLabel: PropTypes.string,
-  open: PropTypes.bool,
-  menuIsOpen: PropTypes.bool,
-  autoFocus: PropTypes.bool,
-  clearOnSelect: PropTypes.bool,
-  formatCreateLabel: PropTypes.func,
-  disableSearchHighlight: PropTypes.bool,
-  menuMinWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  hideBorderWhenNotActive: PropTypes.bool,
-  onMenuScrollToBottom: PropTypes.func,
-  filterOption: PropTypes.func,
+// One-time deprecation warner — fires once per key, mirrors @m-next/button.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
+const ACTION_BUTTON = '__action-button__';
+
+// Map a colour-family name on a multi-value option to the legacy "{family}-light" / "-dark" shades.
+// Keeps prior runtime behavior — options use { colour: 'blue' | 'green' | ... } and we resolve token shades.
+const familyShade = (family, shade) => {
+  if (!family) return undefined;
+  const palette = colors[family];
+  if (palette && typeof palette === 'object') return palette[shade];
+  return undefined;
 };
-/**
- * Wrapper component around
- */
-function Dropdown({
-  id,
-  displayAuto,
-  width,
-  validationMessage,
-  isV4Design,
-  caption,
-  required,
-  legacyClass,
-  isMobile,
-  placeholder,
-  disabled,
-  options,
-  value,
-  onChange,
-  hasValidation,
-  dropdownStyle = 'single',
-  onMenuOpen = null,
-  onMenuClose = null,
-  style = {},
-  background,
-  isMultiSelect = false,
-  onBlur = null,
-  isCreateable = false,
-  isSearchable = true,
-  onCreate = null,
-  actionButtonText = null,
-  onActionButtonClick = null,
-  isPortal,
-  forwardRef,
-  openMenuOnFocus = false,
-  breakout = false,
-  isLoading = false,
-  hasDividersInsteadOfHeaders = false,
-  isClearable = false,
-  maxMenuHeight,
-  onInputChange,
-  menuPlacement = 'auto',
-  ariaLabel,
-  open = false,
-  menuIsOpen,
-  autoFocus = false,
-  clearOnSelect = false,
-  formatCreateLabel,
-  disableSearchHighlight = false,
-  menuMinWidth,
-  hideBorderWhenNotActive = false,
-  onMenuScrollToBottom,
-  filterOption: filterOptionProp,
-}) {
+
+const Dropdown = forwardRef(function Dropdown(props, ref) {
+  const {
+    id: idProp,
+    width,
+    required,
+    placeholder,
+    disabled,
+    options,
+    value,
+    onChange,
+    onBlur = null,
+    onMenuOpen = null,
+    onMenuClose = null,
+    style = {},
+    isMultiSelect = false,
+    isSearchable = true,
+    onCreate = null,
+    actionButtonText = null,
+    onActionButtonClick = null,
+    isPortal,
+    openMenuOnFocus = false,
+    breakout = false,
+    isLoading = false,
+    hasDividersInsteadOfHeaders = false,
+    isClearable = false,
+    maxMenuHeight,
+    onInputChange,
+    menuPlacement = 'auto',
+    open = false,
+    menuIsOpen,
+    autoFocus = false,
+    clearOnSelect = false,
+    formatCreateLabel,
+    disableSearchHighlight = false,
+    menuMinWidth,
+    hideBorderWhenNotActive = false,
+    onMenuScrollToBottom,
+    filterOption: filterOptionProp,
+    hasValidation,
+
+    // Clean API
+    label: labelProp,
+    variant: variantProp,
+    errorMessage: errorMessageProp,
+    isCreatable: isCreatableProp,
+
+    // Standard ARIA pass-through
+    'aria-label': ariaLabel,
+
+    // Soft-shimmed legacy props
+    caption,
+    dropdownStyle,
+    validationMessage,
+    isCreateable,
+    forwardRef: legacyForwardRef,
+    ariaLabel: legacyAriaLabel,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    background: _background,
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-dropdown-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  // ============ Backwards-compat translation ============
+
+  let label = labelProp;
+  if (caption !== undefined && label === undefined) {
+    warnOnce('dropdown-caption', '@m-next/dropdown: `caption` is deprecated. Use `label`.');
+    label = caption;
+  }
+
+  let variant = variantProp;
+  if (dropdownStyle !== undefined && variant === undefined) {
+    warnOnce(
+      'dropdown-dropdownStyle',
+      '@m-next/dropdown: `dropdownStyle` is deprecated. Use `variant` (\'single\' | \'icon\' | \'multi\' | \'multi-icon\').',
+    );
+    variant = dropdownStyle;
+  }
+  if (variant == null) variant = 'single';
+
+  let errorMessage = errorMessageProp;
+  if (validationMessage != null && errorMessage == null) {
+    warnOnce(
+      'dropdown-validationMessage',
+      '@m-next/dropdown: `validationMessage` is deprecated. Use `errorMessage`.',
+    );
+    errorMessage = validationMessage;
+  }
+
+  let isCreatable = isCreatableProp;
+  if (isCreateable !== undefined && isCreatable === undefined) {
+    warnOnce(
+      'dropdown-isCreateable',
+      '@m-next/dropdown: `isCreateable` is deprecated (typo). Use `isCreatable`.',
+    );
+    isCreatable = isCreateable;
+  }
+  if (isCreatable == null) isCreatable = false;
+
+  let resolvedAriaLabel = ariaLabel;
+  if (legacyAriaLabel && !resolvedAriaLabel) {
+    warnOnce(
+      'dropdown-ariaLabel',
+      '@m-next/dropdown: `ariaLabel` is deprecated. Use `aria-label` (standard React attr).',
+    );
+    resolvedAriaLabel = legacyAriaLabel;
+  }
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'dropdown-forwardRef-prop',
+      '@m-next/dropdown: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // ============ State ============
+
   const theme = useTheme();
   const currentTheme = !theme || !theme.content ? lightTheme : theme;
 
-  const ACTION_BUTTON = '__action-button__';
   const [focused, setFocus] = useState(false);
   const [touched, setTouched] = useState(false);
   const [currentValue, setCurrentValue] = useState(value);
-  const [isValid, setIsValid] = useState(!validationMessage);
+  const [isValid, setIsValid] = useState(!errorMessage);
 
   const focusRef = useRef(null);
 
-  // Dynamically decide which ref to use
-  const selectRef = forwardRef || focusRef;
+  // Dynamically decide which ref to use: forwardRef API > legacy forwardRef prop > internal.
+  const selectRef = ref || legacyForwardRef || focusRef;
 
   useEffect(() => {
     if (autoFocus && selectRef.current) {
@@ -173,12 +189,12 @@ function Dropdown({
   }, [value]);
 
   useEffect(() => {
-    setIsValid(!validationMessage);
-  }, [validationMessage]);
+    setIsValid(!errorMessage);
+  }, [errorMessage]);
 
   const internalOptions = useMemo(() => {
     if (actionButtonText) {
-      const updated = [...options];
+      const updated = [...(options || [])];
       updated.unshift({
         value: ACTION_BUTTON,
         label: actionButtonText,
@@ -207,14 +223,13 @@ function Dropdown({
         borderColor = 'transparent';
       }
 
-      let backgroundColor = disabled ? currentTheme.background.page : currentTheme.background.primary;
-      if (isV4Design) backgroundColor = currentTheme.background.primary;
+      const backgroundColor = disabled ? currentTheme.background.page : currentTheme.background.primary;
       return {
         ...styles,
         backgroundColor,
-        color: disabled ? colors['grey-light'] : currentTheme.content.primary,
+        color: disabled ? colors.grey.light : currentTheme.content.primary,
         border: `1px solid  ${isValid ? borderColor : currentTheme.negative.secondary}`,
-        borderRadius: `${isV4Design ? '4px' : '1px'}`,
+        borderRadius: '4px',
         outline: 'none',
         boxShadow: null,
         minHeight: isMultiSelect ? 32 : null,
@@ -239,23 +254,16 @@ function Dropdown({
       const isCreateOption = data?.__isNew__;
 
       if (isSelected) {
-        backgroundColor = colors['grey-lighter'];
-        color = colors.white;
-        if (isV4Design) {
-          backgroundColor = colors['grey-lightest'];
-          color = colors.blue;
-        }
+        backgroundColor = colors.grey.lighter;
+        color = colors.blue.base;
       } else if (isFocused) {
-        backgroundColor = colors['grey-lighter'];
-        if (isV4Design) {
-          backgroundColor = colors['grey-lightest'];
-          color = colors.blue;
-        }
+        backgroundColor = colors.grey.lighter;
+        color = colors.blue.base;
       }
 
       // Apply distinct styling for create option in CreatableSelect
       if (isCreateOption) {
-        color = colors.blue;
+        color = colors.blue.base;
       }
 
       return {
@@ -266,8 +274,8 @@ function Dropdown({
         padding: 8,
         ':active': {
           ...styles[':active'],
-          backgroundColor: colors['grey-lighter'],
-          color: isCreateOption ? colors.blue : lightTheme.content.primary,
+          backgroundColor: colors.grey.lighter,
+          color: isCreateOption ? colors.blue.base : lightTheme.content.primary,
         },
       };
     },
@@ -276,11 +284,9 @@ function Dropdown({
       color: `${currentTheme.content.primary}${disabled ? '80' : 'FF'}`,
       lineHeight: '18px',
       marginLeft: 0,
-      //    backgroundColor: disabled ? colors['grey-lighter'] : null,
     }),
     menu: (styles) => ({
       ...styles,
-      //  backgroundColor: disabled ? colors['grey-lighter'] : lightTheme.background.primary,
       boxShadow: 'rgb(0 0 0 / 20%) 0px 2px 4px 0px',
       borderRadius: 4,
       zIndex: '99999',
@@ -290,30 +296,28 @@ function Dropdown({
     }),
     menuList: (styles) => ({
       ...styles,
-      //    backgroundColor: lightTheme.background.primary,
       boxShadow: 'rgb(0 0 0 / 20%) 0px 2px 4px 0px',
       borderRadius: 4,
-      //    position:'absolute'
     }),
     multiValue: (styles, { data }) => ({
       ...styles,
       color: currentTheme.content.emphasize,
-      backgroundColor: colors[`${data.colour || 'blue'}-light`],
+      backgroundColor: familyShade(data.colour || 'blue', 'light') || colors.blue.light,
       borderRadius: '16px',
       margin: '9px 2px',
     }),
     multiValueLabel: (styles, { data }) => ({
       ...styles,
-      padding: `${isMobile ? '0px 8px' : '0px 6px'} !important`,
+      padding: '0px 6px !important',
       maxWidth: '100%',
       display: 'inline-flex',
       flexFlow: 'row nowrap',
       alignItems: 'center',
       color: currentTheme.content.emphasize,
-      lineHeight: isMobile ? '24px' : '16px',
-      fontSize: isMobile ? '14px' : '12px',
+      lineHeight: '16px',
+      fontSize: '12px',
       fontWeight: '600',
-      borderRight: data?.isFixed !== true && '1px solid white',
+      borderRight: data?.isFixed !== true && `1px solid ${colors.white}`,
       opacity: disabled ? 0.5 : 1,
     }),
     multiValueRemove: (styles, { data }) => ({
@@ -322,8 +326,8 @@ function Dropdown({
       color: currentTheme.content.emphasize,
       borderRadius: '0px 16px 16px 0px',
       ':hover': {
-        backgroundColor: colors[`${data.colour}-dark`],
-        color: 'white',
+        backgroundColor: familyShade(data.colour, 'dark') || colors.blue.dark,
+        color: colors.white,
       },
     }),
     group: (styles) => ({
@@ -351,7 +355,7 @@ function Dropdown({
     }),
     placeholder: (styles) => ({
       ...styles,
-      color: colors['grey-dark'],
+      color: colors.grey.dark,
       opacity: 0.6,
     }),
   };
@@ -360,7 +364,7 @@ function Dropdown({
     if (actionMeta && actionMeta.option && actionMeta.option.value === ACTION_BUTTON) {
       return;
     }
-    if (isCreateable) {
+    if (isCreatable) {
       if (actionMeta?.action === 'create-option') {
         if (onCreate) {
           onCreate(actionMeta.option.value);
@@ -462,18 +466,19 @@ function Dropdown({
         <s.ButtonOption>
           <Button
             id={`${id}-dropdown-action-button`}
-            value={actionButtonText}
             onClick={onActionButtonClick}
-            buttonStyle='link'
+            variant='link'
             style={{ textAlign: 'right', width: '100%' }}
-          />
+          >
+            {actionButtonText}
+          </Button>
         </s.ButtonOption>
       );
     }
 
     if (
-      dropdownStyle === 'single' ||
-      (dropdownStyle === 'multi' && (meta.context === 'value' || !option.lines || option.lines.length === 0))
+      variant === 'single' ||
+      (variant === 'multi' && (meta.context === 'value' || !option.lines || option.lines.length === 0))
     ) {
       return (
         <s.SingleOption>
@@ -482,7 +487,7 @@ function Dropdown({
       );
     }
 
-    if (dropdownStyle === 'icon') {
+    if (variant === 'icon') {
       return (
         <s.IconOption>
           {option.icon &&
@@ -501,7 +506,7 @@ function Dropdown({
       );
     }
 
-    if (dropdownStyle === 'multi' && meta.context === 'menu') {
+    if (variant === 'multi' && meta.context === 'menu') {
       return (
         <s.MultiOption>
           <s.MultiOptionHeader>{getOptionLabelHeader(option, meta)}</s.MultiOptionHeader>
@@ -516,7 +521,7 @@ function Dropdown({
       );
     }
 
-    if (dropdownStyle === 'multi-icon') {
+    if (variant === 'multi-icon') {
       if (meta.context === 'value' || !option.lines || option.lines.length === 0) {
         return (
           <s.IconOption>
@@ -598,29 +603,24 @@ function Dropdown({
 
   return (
     <s.ContainerWrapper
-      displayAuto={displayAuto}
       width={width}
       isValid={isValid}
       hasValidation={hasValidation}
-      isV4Design={isV4Design}
-      aria-labelledby={caption ? `${id}-dropdown-caption-Caption` : ''}
+      aria-labelledby={label ? `${id}-dropdown-caption-Caption` : ''}
       disabled={disabled}
       style={{ ...style, opacity: disabled ? 0.5 : 1 }}
-      data-testid={`${id}-dropdown-list${isCreateable ? '-creatable' : ''}`}
+      data-testid={`${id}-dropdown-list${isCreatable ? '-creatable' : ''}`}
     >
-      {((!isV4Design && caption) || (isV4Design && !isLoading && caption)) && (
+      {!isLoading && label && (
         <Caption
           id={`${id}-dropdown-caption`}
           required={required}
-          label={caption}
-          legacyClass={legacyClass}
-          isV4Design={isV4Design}
-          isMobile={isMobile}
+          label={label}
+          isV4Design
           float={Boolean(placeholder) || Boolean(currentValue) || focused}
           elFor={`${id}-Input`}
           isValid={isValid}
           disabled={disabled}
-          background={background}
           focused={focused}
           style={{ opacity: disabled ? 0.5 : 1 }}
         />
@@ -630,10 +630,10 @@ function Dropdown({
           <LoadingSkeleton count={1} height='36px' />
         </div>
       )}
-      {!isLoading && !isCreateable && (
+      {!isLoading && !isCreatable && (
         <Select
-          aria-labelledby={caption ? `${id}-dropdown-caption` : null}
-          aria-label={!caption ? ariaLabel : null}
+          aria-labelledby={label ? `${id}-dropdown-caption` : null}
+          aria-label={!label ? resolvedAriaLabel : null}
           id={`${id}-dropdown-list`}
           name={`${id}-dropdown-list`}
           inputId={`${id}-dropdown-list-input`}
@@ -672,10 +672,10 @@ function Dropdown({
           onMenuScrollToBottom={onMenuScrollToBottom}
         />
       )}
-      {!isLoading && isCreateable && (
+      {!isLoading && isCreatable && (
         <CreatableSelect
-          aria-labelledby={caption ? `${id}-dropdown-caption` : null}
-          aria-label={!caption ? ariaLabel : null}
+          aria-labelledby={label ? `${id}-dropdown-caption` : null}
+          aria-label={!label ? resolvedAriaLabel : null}
           id={`${id}-dropdown-list`}
           name={`${id}-dropdown-list`}
           inputId={`${id}-dropdown-list-input`}
@@ -714,10 +714,11 @@ function Dropdown({
           onMenuScrollToBottom={onMenuScrollToBottom}
         />
       )}
-      <ValidationMessage id={`${id}-input-validation`} message={validationMessage} isV4Design={isV4Design} />
+      <ValidationMessage id={`${id}-input-validation`} message={errorMessage} isV4Design />
     </s.ContainerWrapper>
   );
-}
+});
 
-Dropdown.propTypes = propTypes;
+Dropdown.displayName = 'Dropdown';
+
 export default Dropdown;

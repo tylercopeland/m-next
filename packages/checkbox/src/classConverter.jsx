@@ -1,3 +1,5 @@
+import { colors } from '@m-next/tokens';
+
 export const checkboxColor = (classes) => {
   const style = {};
 
@@ -6,36 +8,36 @@ export const checkboxColor = (classes) => {
       switch (item) {
         // Checkbox Colors
         case 'mi-checkbox-alert':
-          style.backgroundColor = '#DA211E';
-          style.borderColor = '#DA211E';
+          style.backgroundColor = colors.red.base;
+          style.borderColor = colors.red.base;
           break;
         case 'mi-checkbox-primary':
-          style.backgroundColor = '#0D71C8';
-          style.borderColor = '#0D71C8';
+          style.backgroundColor = colors.blue.base;
+          style.borderColor = colors.blue.base;
           break;
         case 'mi-checkbox-navigation':
-          style.backgroundColor = '#022266';
-          style.borderColor = '#022266';
+          style.backgroundColor = colors.method.base;
+          style.borderColor = colors.method.base;
           break;
         case 'mi-checkbox-caution':
-          style.backgroundColor = '#E05D2A';
-          style.borderColor = '#E05D2A';
+          style.backgroundColor = colors.orange.base;
+          style.borderColor = colors.orange.base;
           break;
         case 'mi-checkbox-success':
-          style.backgroundColor = '#007B4A';
-          style.borderColor = '#007B4A';
+          style.backgroundColor = colors.green.base;
+          style.borderColor = colors.green.base;
           break;
         case 'mi-checkbox-grey':
-          style.backgroundColor = '#BACAD0';
-          style.borderColor = '#BACAD0';
+          style.backgroundColor = colors.grey.light;
+          style.borderColor = colors.grey.light;
           break;
         case 'mi-checkbox-dark-grey':
-          style.backgroundColor = '#545F67';
-          style.borderColor = '#545F67';
+          style.backgroundColor = colors.grey.base;
+          style.borderColor = colors.grey.base;
           break;
         case 'mi-checkbox-silver':
-          style.backgroundColor = '#EEF5F7';
-          style.borderColor = '#EEF5F7';
+          style.backgroundColor = colors.grey.lighter;
+          style.borderColor = colors.grey.lighter;
           break;
         default:
           return null;
@@ -54,34 +56,34 @@ export const captionStyle = (classes) => {
       switch (item) {
         // Caption Colors
         case 'mi-checkbox-label-alert':
-          style.color = '#DA211E';
+          style.color = colors.red.base;
           break;
         case 'mi-checkbox-label-primary':
-          style.color = '#0D71C8';
+          style.color = colors.blue.base;
           break;
         case 'mi-checkbox-label-navigation':
-          style.color = '#022266';
+          style.color = colors.method.base;
           break;
         case 'mi-checkbox-label-caution':
-          style.color = '#E05D2A';
+          style.color = colors.orange.base;
           break;
         case 'mi-checkbox-label-success':
-          style.color = '#007B4A';
+          style.color = colors.green.base;
           break;
         case 'mi-checkbox-label-grey':
-          style.color = '#BACAD0';
+          style.color = colors.grey.light;
           break;
         case 'mi-checkbox-label-gunmetal':
-          style.color = '#545F67';
+          style.color = colors.grey.base;
           break;
         case 'mi-checkbox-label-silver':
-          style.color = '#EEF5F7';
+          style.color = colors.grey.lighter;
           break;
         case 'mi-checkbox-label-black':
-          style.color = '#000000';
+          style.color = colors.black;
           break;
         case 'mi-checkbox-label-white':
-          style.color = '#FFFFFF';
+          style.color = colors.white;
           break;
 
         // Caption Align

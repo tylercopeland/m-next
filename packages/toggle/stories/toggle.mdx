@@ -1,0 +1,122 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as ToggleStories from './toggle.stories';
+
+<Meta of={ToggleStories} />
+
+# Toggle
+
+A two-state switch for boolean settings. Visually emphasizes the on/off transition more than a checkbox — use it for "is this thing turned on?" decisions, not for selection from a set.
+
+## When to use it
+
+- Boolean settings: notifications on/off, dark mode, feature flags.
+- Anywhere the value applies immediately (no Save button required).
+- App-builder runtime fields where the control needs an inline Yes/No, On/Off, True/False indicator.
+
+## When NOT to use it
+
+- Selecting one item from a multi-item list — use a RadioButton group.
+- Multiple independent options in a form that's submitted together — use Checkbox.
+- A short single boolean inside a long form with a Save button — Checkbox is often clearer there too.
+- Anything tri-state. Toggle is strictly two-state.
+
+## Anatomy
+
+A horizontal row containing:
+
+1. **Label** (optional) — text identifier for the control. In design-time mode it lives outside the track; in runtime mode it floats above via `@m-next/caption`.
+2. **Track** — the rounded pill background. Tints to the brand colour when checked.
+3. **Circle** — the thumb. Slides between two positions; the focused state adds a translucent halo.
+4. **Inline text** (runtime mode only) — Yes/No, On/Off, True/False rendered inside the track.
+
+## States
+
+- **Off** — grey track, circle at left.
+- **On** — coloured track, circle at right.
+- **Focused** — halo around the circle (keyboard focus only — `:focus-visible`).
+- **Hover** — halo around the circle.
+- **Disabled** — 50% opacity, no pointer events, no halo.
+
+## Tokens consumed
+
+- `colors.blue.base` — default checked colour for track + circle.
+- `colors.grey.base` — circle colour when unchecked.
+- `colors.grey.light` — track colour when unchecked.
+- Theme context (via Emotion) for `theme.content.primary` — label colour. Falls back to `lightTheme` from `@m-next/styles`.
+
+The translucent focus halo (`rgba(93, 157, 213, 0.1)`) and the unchecked-default track tint (`rgba(93, 157, 213, 0.3)`) are alpha colours with no token equivalent today. They are isolated as constants in `toggle.styles.ts`.
+
+## Basic
+
+<Canvas of={ToggleStories.Basic} />
+
+## States
+
+<Canvas of={ToggleStories.States} />
+
+## Sizes
+
+<Canvas of={ToggleStories.Sizes} />
+
+## Alignment
+
+<Canvas of={ToggleStories.Alignment} />
+
+## Runtime mode
+
+App-builder runtime forms can render the toggle with the textOpt inline inside the track. The label floats above via `@m-next/caption`.
+
+<Canvas of={ToggleStories.RuntimeMode} />
+
+## Custom colour
+
+<Canvas of={ToggleStories.Color} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `checked` | boolean | Controlled state |
+| `onChange` | `(checked: boolean) => void` | Receives the next value |
+| `label` | string | Visible label |
+| `size` | `'small' \| 'medium' \| 'large'` | Track + circle scale |
+| `textOpt` | `'Blank' \| 'Yes/No' \| 'On/Off' \| 'True/False'` | Inline text (runtime mode) |
+| `isRuntime` | boolean | Inline-text / caption rendering |
+| `color` | string | Custom checked-state colour |
+
+## Accessibility
+
+- Underlying element is a native `<input type="checkbox" role="switch">` — keyboard semantics inherited.
+- `aria-checked` mirrors the checked state.
+- `label` is rendered as a real `<label htmlFor>` via `@m-next/caption` (runtime) or styled markup (design-time), connected to the input via `htmlFor` / `id`.
+- `disabled` flips the native `disabled` attribute on the input.
+- Focus halo is `:focus-visible` only — mouse interaction does not show it.
+
+## Examples
+
+### A realistic settings list
+
+<Canvas of={ToggleStories.RealWorldForm} />
+
+## Migration from `@m-one/toggle`
+
+Toggle's API was already mostly aligned with m-next conventions — `label`, `checked`, `onChange`, `size`, `disabled` are all idiomatic. The cleanup is small:
+
+<Canvas of={ToggleStories.LegacyAPIStillWorks} />
+
+The one soft shim is the legacy `forwardRef` prop, which is now superseded by the React forwardRef API (`<Toggle ref={inputRef} />`). It still works and emits a single `console.warn` at first use. Legacy ghosts (`isV4Design`, `isMobile`, `legacyClass`, `compactStyle`, `displayAuto`) accept their value but have no behavioural effect — V4 styling is now always on.
+
+## Edge cases
+
+- **No label, no labelStyle** — the entire label container is omitted (design-time mode).
+- **Custom `color`** — the track uses the same hex with `4C` alpha appended for the unchecked / mid-transition state. Pass a hex string for predictable results.
+- **`isRuntime` + `textOpt='Blank'`** — the inline text positions are still reserved (rendered as zero-width spaces) to keep the track's geometry stable.
+- **Refs** — `ref` forwards to the underlying `<input type="checkbox">`. Use `inputRef.current.focus()` to programmatically focus.
+
+## Related components
+
+- `Checkbox` — independent on/off in a list of options (not yet cleaned up).
+- `RadioButton` — pick one of N (not yet cleaned up).
+- `Caption` — the label used internally in runtime mode (not yet cleaned up).

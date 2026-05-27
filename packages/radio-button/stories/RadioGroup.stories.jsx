@@ -1,89 +1,173 @@
-import React from 'react';
-import RadioGroup from '../src';
+import React, { useState } from 'react';
+import RadioGroup from '../src/RadioGroup';
 
 export default {
+  title: 'm-next/Components/RadioGroup',
   component: RadioGroup,
-  title: 'm-one/RadioGroup',
-  argTypes: {},
-  parameters: {
-    cssresources: [
-      {
-        id: `Method Styles`,
-        code: `<link rel="stylesheet" type="text/css" href="https://alocetsystem.method.me/apps/public/styles/styles.min.css"></link>`,
-        picked: true,
-      },
-    ],
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/xnh6ZMW6oZ1pwWgKzfROqJ/Version-Managment?node-id=11%3A4',
-    },
+  parameters: { layout: 'padded' },
+};
+
+const fontFamily = "'Source Sans Pro', Helvetica, Arial, sans-serif";
+
+const Section = ({ title, children }) => (
+  <section style={{ marginBottom: 32, fontFamily }}>
+    <h3
+      style={{
+        fontSize: 13,
+        fontWeight: 600,
+        textTransform: 'uppercase',
+        letterSpacing: 1,
+        color: '#374151',
+        marginBottom: 8,
+      }}
+    >
+      {title}
+    </h3>
+    {children}
+  </section>
+);
+
+const sizeOptions = [
+  { label: 'Small', value: 'sm' },
+  { label: 'Medium', value: 'md' },
+  { label: 'Large', value: 'lg' },
+  { label: 'Extra Large', value: 'xl', disabled: true },
+];
+
+const planOptions = [
+  { label: 'Free', value: 'free' },
+  { label: 'Pro', value: 'pro', hint: 'Best for individuals.' },
+  { label: 'Team', value: 'team', hint: 'Includes 5 seats.' },
+];
+
+const systemOptions = [
+  {
+    label: 'Compact list',
+    value: 'one',
+    subtext: 'A dense layout that minimizes vertical space — best when scanning many rows.',
   },
+  { label: 'Roomy list', value: 'two' },
+  {
+    label: 'Cards',
+    value: 'three',
+    subtext: 'Visual emphasis on each row, more screen real estate per item.',
+  },
+];
+
+export const Basic = () => {
+  const [value, setValue] = useState('md');
+  return (
+    <Section title='Column layout (default)'>
+      <RadioGroup
+        name='size'
+        label='Size'
+        options={sizeOptions}
+        selectedValue={value}
+        onChange={(_, v) => setValue(v)}
+      />
+    </Section>
+  );
 };
 
-function Template(args) {
-  return <RadioGroup {...args} />;
-}
-
-export const Default = Template.bind({});
-Default.args = {
-  caption: 'Select an Option',
-  hideCaption: false,
-  options: [
-    {
-      label: 'one',
-      value: 'one',
-      hint: 'help',
-    },
-    {
-      label: 'two',
-      value: 'two',
-    },
-    {
-      label: 'three',
-      value: 'three',
-    },
-  ],
+export const Row = () => {
+  const [value, setValue] = useState('md');
+  return (
+    <Section title='Row layout'>
+      <RadioGroup
+        name='size-row'
+        label='Size'
+        direction='row'
+        options={sizeOptions}
+        selectedValue={value}
+        onChange={(_, v) => setValue(v)}
+      />
+    </Section>
+  );
 };
 
-export const SystemPagesWithSubtext = Template.bind({});
-SystemPagesWithSubtext.args = {
-  options: [
-    {
-      label: 'one',
-      value: 'one',
-      hint: 'help',
-      subtext:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    },
-    {
-      label: 'two',
-      value: 'two',
-    },
-    {
-      label: 'three',
-      value: 'three',
-      subtext: 'The end of the subtext',
-    },
-  ],
+export const WithHint = () => {
+  const [value, setValue] = useState('pro');
+  return (
+    <Section title='Options with tooltip hints'>
+      <RadioGroup
+        name='plan'
+        label='Plan'
+        options={planOptions}
+        selectedValue={value}
+        onChange={(_, v) => setValue(v)}
+      />
+    </Section>
+  );
 };
 
-export const RunTime = Template.bind({});
-RunTime.args = {
-  isV4Design: false,
-  isRuntime: true,
-  options: [
-    {
-      label: 'one',
-      value: 'one',
-      hint: 'help',
-    },
-    {
-      label: 'two',
-      value: 'two',
-    },
-    {
-      label: 'three',
-      value: 'three',
-    },
-  ],
+export const WithSubtext = () => {
+  const [value, setValue] = useState('one');
+  return (
+    <Section title='Options with subtext'>
+      <RadioGroup
+        name='layout'
+        label='Layout style'
+        options={systemOptions}
+        selectedValue={value}
+        onChange={(_, v) => setValue(v)}
+      />
+    </Section>
+  );
+};
+
+export const CustomColor = () => {
+  const [value, setValue] = useState('confirm');
+  return (
+    <Section title='Custom indicator color'>
+      <RadioGroup
+        name='action'
+        label='Action'
+        color='#137E58'
+        options={[
+          { label: 'Confirm', value: 'confirm' },
+          { label: 'Cancel', value: 'cancel' },
+        ]}
+        selectedValue={value}
+        onChange={(_, v) => setValue(v)}
+      />
+    </Section>
+  );
+};
+
+export const NoLabel = () => {
+  const [value, setValue] = useState('md');
+  return (
+    <Section title='Without a Caption (provide an aria-label instead)'>
+      <RadioGroup
+        name='size-nolabel'
+        aria-label='Size'
+        options={sizeOptions}
+        selectedValue={value}
+        onChange={(_, v) => setValue(v)}
+      />
+    </Section>
+  );
+};
+
+export const LegacyAPIStillWorks = () => {
+  const [value, setValue] = useState('md');
+  return (
+    <Section title='Backwards-compat shim (each fires one console.warn at first use)'>
+      {/* `caption` is the legacy name for `label`. `customColor` is the legacy name for `color`.
+          `isV4Design`, `isRuntime`, `hideCaption` etc. silently no-op. */}
+      <RadioGroup
+        id='legacy-radio-group'
+        name='legacy'
+        caption='Legacy caption prop'
+        customColor='#137E58'
+        customFontSize='14px'
+        isV4Design
+        isRuntime
+        hideCaption={false}
+        options={sizeOptions}
+        selectedValue={value}
+        onChange={(_, v) => setValue(v)}
+      />
+    </Section>
+  );
 };

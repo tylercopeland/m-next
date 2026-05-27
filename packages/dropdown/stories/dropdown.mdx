@@ -1,0 +1,120 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as DropdownStories from './dropdown.stories';
+
+<Meta of={DropdownStories} />
+
+# Dropdown
+
+A labeled single- or multi-select. The default control for choosing one (or several) values from a known list.
+
+## When to use it
+
+- Choose one value from a known list of options (single select).
+- Choose multiple values from a known list (multi-select).
+- Free-text entry that also offers a list — use `isCreatable`.
+- Type-to-filter long lists — `isSearchable` is on by default.
+
+## When NOT to use it
+
+- Free-text entry with no fixed list — use Input.
+- Boolean toggles — use Checkbox or Toggle.
+- Two-to-five mutually-exclusive options — use a RadioButton group or SegmentedControl.
+- Date / time entry — use DatePicker.
+- Cascading async search over a large server-side dataset — use DropdownAsync (not yet cleaned up).
+
+## Anatomy
+
+A vertical Container holding:
+
+1. **Label** (optional) — rendered via `@m-next/caption`, floats above the control.
+2. **react-select control** — the focus ring, border, value display, and chevron.
+3. **Menu** — the popover list, optionally rendered into a portal via `isPortal`.
+4. **Option rows** — laid out per the `variant` prop (single / icon / multi / multi-icon).
+5. **Validation message** — rendered below when `errorMessage` is set.
+
+## Variants
+
+`variant` controls how each option row renders:
+
+- `single` (default) — just the label.
+- `icon` — leading icon + label. If `icon === 'square'`, renders a colored swatch instead.
+- `multi` — primary label + zero-or-more secondary `lines` underneath.
+- `multi-icon` — `multi` plus a leading icon on the header row.
+
+<Canvas of={DropdownStories.Variants} />
+
+## Tokens consumed
+
+- `colors.grey.lighter` — option hover/selected background
+- `colors.blue.base` — option hover/selected text color, create-new color
+- `colors.grey.dark` — placeholder text
+- `colors.grey.base` — secondary label color
+- Multi-value pill colors resolve via `option.colour` against the nested palette: `colors[family].light` for the background, `colors[family].dark` on hover-remove.
+- Theme context (via Emotion / MUI) for `theme.content.*`, `theme.background.*`, `theme.negative.*`. Falls back to `lightTheme` from `@m-next/styles` when no theme is present.
+
+## Basic
+
+<Canvas of={DropdownStories.Basic} />
+
+## States
+
+<Canvas of={DropdownStories.States} />
+
+## Multi-select
+
+<Canvas of={DropdownStories.MultiSelect} />
+
+## Creatable + custom action button
+
+<Canvas of={DropdownStories.CreatableAndActions} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `label` | string | Visible label, also drives accessible name |
+| `options` | DropdownOption[] \| group[] | Required — the choices |
+| `value` | DropdownOption \| DropdownOption[] | Controlled value (array if `isMultiSelect`) |
+| `variant` | `'single' \| 'icon' \| 'multi' \| 'multi-icon'` | Row layout |
+| `errorMessage` | string | When set, switches to error state |
+| `isMultiSelect` / `isCreatable` / `isSearchable` / `isClearable` | boolean | Mode flags |
+
+## Accessibility
+
+- Underlying react-select provides keyboard semantics: arrow keys, Enter to select, Esc to close, Home/End, type-ahead filter.
+- `label` props through to `@m-next/caption` which connects to the control via `aria-labelledby`.
+- `aria-label` is used when no visible label is set.
+- `errorMessage` switches the border to the negative-secondary content color.
+- `disabled` maps to `isDisabled` on the underlying control.
+
+## Examples
+
+### A realistic form
+
+<Canvas of={DropdownStories.RealWorldForm} />
+
+## Migration from `@m-one/dropdown`
+
+Dropdown is part of the Phase 3 API normalization. Migration is mostly mechanical — see the README's "What changed" table. Live demo of the soft shim:
+
+<Canvas of={DropdownStories.LegacyAPIStillWorks} />
+
+Each deprecated prop emits a one-time `console.warn` and silently translates. The shim covers: `caption`, `dropdownStyle`, `validationMessage`, `isCreateable`, `ariaLabel`, `forwardRef`. Legacy ghosts (`isV4Design`, `isMobile`, `legacyClass`, `displayAuto`, `background`) accept their value but do nothing.
+
+## Edge cases
+
+- **`value` shape** — for `isMultiSelect`, pass an array of options; otherwise pass a single option object or `null`.
+- **`option.colour`** — multi-value pills use this family name to resolve `colors[family].light` (chip bg) and `colors[family].dark` (hover remove). Defaults to `'blue'` when unset.
+- **`option.isFixed`** — pinned chips: the remove (×) is hidden.
+- **Portal'd menus** — set `isPortal` if the menu is being clipped by a parent's `overflow: hidden` / transformed ancestor.
+- **`actionButtonText`** — prepends a row to the menu rendered as a `@m-next/button` link. Selecting it doesn't change the value; it calls `onActionButtonClick`.
+- **Refs** — `ref` forwards to the underlying react-select instance. Call `ref.current.focus()` to programmatically focus.
+
+## Related components
+
+- `DropdownAsync` — server-side searched dropdown (not yet cleaned up).
+- `ClickToEditDropdown` — inline-editable variant (not yet cleaned up).
+- `MultiSelect` — separate package (also under Phase 3 cleanup).
+- `Select` — separate package (also under Phase 3 cleanup).

@@ -1,81 +1,111 @@
-import React, { useRef, useEffect, useImperativeHandle } from 'react';
-import PropTypes from 'prop-types';
+import React, { useRef, useEffect, useImperativeHandle, forwardRef } from 'react';
 import * as s from './checkBox.styles';
-import { checkboxColor, captionStyle, checkboxDark } from './classConverter';
 
-const propTypes = {
-  align: PropTypes.oneOf(['left', 'center', 'right']),
-  autoFocus: PropTypes.bool,
-  checked: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  className: PropTypes.string,
-  controlId: PropTypes.string,
-  disabled: PropTypes.bool,
-  forwardRef: PropTypes.instanceOf(Object),
-  halfChecked: PropTypes.bool,
-  hideCaption: PropTypes.bool,
-  hidden: PropTypes.bool,
-  id: PropTypes.string.isRequired,
-  isMobile: PropTypes.bool,
-  label: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Object)]),
-  legacyClasses: PropTypes.string,
-  name: PropTypes.string,
-  rounded: PropTypes.bool,
-  style: PropTypes.instanceOf(Object),
-  tabIndex: PropTypes.number,
-  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  disableLabel: PropTypes.bool,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  onFocus: PropTypes.func,
-  onKeyDown: PropTypes.func,
-  narrow: PropTypes.bool,
-  testId: PropTypes.string,
-  fullWidth: PropTypes.bool,
-  bold: PropTypes.bool,
-};
-function Checkbox({
-  align = 'left',
-  autoFocus = false,
-  className,
-  checked = false,
-  controlId,
-  disabled = null,
-  forwardRef = null,
-  halfChecked = false,
-  hideCaption,
-  hidden = false,
-  id,
-  isMobile,
-  label = null,
-  disableLabel = true,
-  legacyClasses = null,
-  name = null,
-  rounded = false,
-  style = null,
-  tabIndex = 0,
-  width = '100%',
-  onBlur = null,
-  onChange = null,
-  onFocus = null,
-  onKeyDown = null,
-  narrow = false,
-  testId = null,
-  fullWidth = false,
-  bold = false,
-}) {
-  const checkboxRef = useRef();
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
 
-  useImperativeHandle(forwardRef, () => ({
-    blur: () => {
-      checkboxRef.current.blur();
-    },
-    focus: () => {
-      checkboxRef.current.focus();
-    },
-    select: () => {
-      checkboxRef.current.select();
-    },
+let autoIdCounter = 0;
+
+const Checkbox = forwardRef(function Checkbox(props, ref) {
+  const {
+    id: idProp,
+    name = null,
+    label = null,
+    checked = false,
+    halfChecked = false,
+    disabled = false,
+    autoFocus = false,
+    tabIndex = 0,
+
+    // Clean API
+    align = 'left',
+    rounded = false,
+    narrow = false,
+    fullWidth = false,
+    bold = false,
+    hideLabel: hideLabelProp,
+    disableLabel = true,
+    width = '100%',
+    className,
+    style,
+    testId = null,
+
+    onChange,
+    onBlur,
+    onFocus,
+    onKeyDown,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+    hideCaption,
+    controlId,
+
+    // Silently ignored legacy ghosts
+    isMobile: _isMobile,
+    hidden: _hidden,
+    legacyClasses: _legacyClasses,
+    isV4Design: _isV4Design,
+    displayAuto: _displayAuto,
+    legacyClass: _legacyClass,
+
+    ...rest
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-checkbox-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  // ============ Backwards-compat translation ============
+
+  let hideLabel = hideLabelProp;
+  if (hideCaption !== undefined && hideLabel === undefined) {
+    warnOnce(
+      'checkbox-hideCaption',
+      '@m-next/checkbox: `hideCaption` is deprecated. Use `hideLabel`.',
+    );
+    hideLabel = hideCaption;
+  }
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'checkbox-forwardRef-prop',
+      '@m-next/checkbox: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // ============ Refs ============
+
+  const checkboxRef = useRef(null);
+
+  // Bridge the legacy `forwardRef` prop (imperative handle with blur/focus/select).
+  useImperativeHandle(legacyForwardRef, () => ({
+    blur: () => checkboxRef.current?.blur(),
+    focus: () => checkboxRef.current?.focus(),
+    select: () => checkboxRef.current?.select?.(),
   }));
+
+  // Bridge the React forwardRef API ref to the underlying <input>.
+  useEffect(() => {
+    if (!ref) return;
+    if (typeof ref === 'function') {
+      ref(checkboxRef.current);
+    } else {
+      // eslint-disable-next-line no-param-reassign
+      ref.current = checkboxRef.current;
+    }
+  }, [ref]);
 
   useEffect(() => {
     if (checkboxRef.current) {
@@ -84,55 +114,51 @@ function Checkbox({
   }, [halfChecked]);
 
   useEffect(() => {
-    if (autoFocus) return checkboxRef?.current.focus();
+    if (autoFocus && checkboxRef.current) {
+      checkboxRef.current.focus();
+    }
   }, [autoFocus]);
 
+  // ============ Handlers ============
+
   const handleOnChange = (e) => {
-    if (onChange) {
-      onChange(e.target.checked);
-    }
+    if (onChange) onChange(e.target.checked);
   };
 
   const handleKeyDown = (e) => {
-    if (onKeyDown) {
-      onKeyDown(e);
-    }
-    // Toggle checkbox on Enter or Space
+    if (onKeyDown) onKeyDown(e);
     if (e.key === ' ' || e.key === 'Enter') {
       e.preventDefault();
-
-      if (onChange) {
-        onChange(!checked);
-      }
+      if (onChange) onChange(!checked);
     }
   };
 
+  // ============ Render ============
+
+  const labelId = controlId || `${id}Lbl`;
+  const hideLabelEffective = hideLabel || !label;
+
   return (
-    <s.ControlContainer id={`${controlId || id}-wrapper`} isHidden={hidden} className={className} fullWidth={fullWidth}>
+    <s.ControlContainer id={`${controlId || id}-wrapper`} className={className} fullWidth={fullWidth}>
       <s.Wrapper
         htmlFor={id}
         align={align}
         rounded={rounded}
         style={style}
-        isHidden={hidden}
         width={width}
-        dark={checkboxDark(legacyClasses)}
-        aria-labelledby={hideCaption || !label ? null : controlId || `${id}Lbl`}
-        isMobile={isMobile}
+        aria-labelledby={hideLabelEffective ? null : labelId}
         narrow={narrow}
       >
         {label && (
           <s.Label
-            id={controlId || `${id}Lbl`}
+            id={labelId}
             align={align}
             disabled={disabled ? true : null}
-            style={captionStyle(legacyClasses)}
-            aria-checked={hideCaption || !label ? null : checked}
+            aria-checked={hideLabelEffective ? null : checked}
             tabIndex={-1}
-            className={hideCaption || !label ? 'aoda-visually-hidden' : ''}
+            className={hideLabelEffective ? 'aoda-visually-hidden' : ''}
             disableLabel={disableLabel}
-            hideCaption={hideCaption}
-            isMobile={isMobile}
+            hideLabel={hideLabelEffective}
             fullWidth={fullWidth}
             bold={bold}
           >
@@ -144,7 +170,7 @@ function Checkbox({
           autoFocus={autoFocus}
           id={id}
           name={name}
-          type='checkbox'
+          type="checkbox"
           disabled={disabled ? true : null}
           checked={checked}
           onChange={handleOnChange}
@@ -153,23 +179,22 @@ function Checkbox({
           onBlur={onBlur}
           tabIndex={tabIndex}
           data-testid={testId}
+          aria-disabled={disabled || undefined}
+          {...rest}
         />
-
         <s.Checkbox
           align={align}
           rounded={rounded}
           disabled={disabled ? true : null}
-          style={checked ? checkboxColor(legacyClasses) : null}
-          aria-checked={hideCaption || !label ? checked : null}
-          aria-labelledby={hideCaption || !label ? controlId || `${id}Lbl` : null}
+          aria-checked={hideLabelEffective ? checked : null}
+          aria-labelledby={hideLabelEffective ? labelId : null}
           tabIndex={-1}
-          isMobile={isMobile}
         />
       </s.Wrapper>
     </s.ControlContainer>
   );
-}
+});
 
-Checkbox.propTypes = propTypes;
+Checkbox.displayName = 'Checkbox';
 
 export default Checkbox;

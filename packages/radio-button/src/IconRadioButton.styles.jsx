@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 
 export const IconWrapper = styled.div((props) => {
   const { selected } = props;
@@ -8,19 +8,19 @@ export const IconWrapper = styled.div((props) => {
       display: 'flex',
       gap: 8,
       alignItems: 'center',
-      border: `1px solid ${colors['grey-light']}`,
+      border: `1px solid ${colors.grey.light}`,
       width: 72,
       height: 72,
       justifyContent: 'center',
       borderRadius: 2,
       ':hover': {
-        border: `2px solid ${colors.blue}`,
+        border: `2px solid ${colors.blue.base}`,
       },
     },
   ];
   if (selected) {
     style.push({
-      border: `2px solid ${colors.blue}`,
+      border: `2px solid ${colors.blue.base}`,
       backgroundColor: colors.concrete,
     });
   }

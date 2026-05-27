@@ -1,0 +1,120 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as MultiSelectStories from './MultiSelect.stories';
+
+<Meta of={MultiSelectStories} />
+
+# MultiSelect
+
+A multi-value pill input. Users enter values one at a time; each becomes a pill. Two flavors: free-text entry (with optional email validation) or a fixed dropdown picker.
+
+## When to use it
+
+- Tag-style input: skills, labels, categories.
+- Email invitations: deduping + validation against existing users / tenants.
+- Picking many values from a known list — when the count is small enough that a typeahead suffices.
+
+## When NOT to use it
+
+- Single-value selection — use a Dropdown or Select.
+- Free-text comma-list with no de-dup / validation — a plain Input is enough.
+- A search-with-results pattern — use SearchInput (not yet cleaned up).
+- Large pickers (hundreds of options) — use a typeahead/combobox with async paging.
+
+## Anatomy
+
+1. **OptionsWrapper** — bordered row that contains all pills and the inline input.
+2. **Pill** (per value) — uses `@m-next/pill`. First pill is locked by default; pass `areAllPillsDeletable` to allow deleting it.
+3. **Inline `<input>`** — accepts Enter / comma to commit, Backspace at empty to delete the last pill.
+4. **DropdownCaret** — only in `isDropdown` mode; opens / closes the option list.
+5. **DropdownWrapper** — floating panel; filters as the user types.
+
+## Modes
+
+- **Free-text** — default. `onChange(value)` fires per added value. With `type="email"`, addresses are validated and tagged.
+- **Dropdown** — `isDropdown` + `dropdownOptions`. Typing filters the list; Enter commits the highlighted option.
+
+## States
+
+- **Default** — neutral border.
+- **Focus-within** — accent border.
+- **Email invalid** — red border on the pill, error icon, `onError` fires.
+- **Disabled / read-only** — not currently supported as first-class props (open follow-up).
+
+## Tokens consumed
+
+- `colors.grey.light` — default border
+- `colors.blue.base` — focus / hover accent
+- `colors.grey.lighter` — dropdown hover background
+- `colors.red.base` — email validation error tinting
+- `colors.white` — dropdown surface
+- `colors.grey.base` — caret icon
+
+## Basic
+
+<Canvas of={MultiSelectStories.Basic} />
+
+## Email mode
+
+<Canvas of={MultiSelectStories.EmailMode} />
+
+## Dropdown mode
+
+<Canvas of={MultiSelectStories.DropdownMode} />
+
+## Heights
+
+<Canvas of={MultiSelectStories.ControlledHeight} />
+
+## Callbacks
+
+<Canvas of={MultiSelectStories.Callbacks} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `type` | `'text' \| 'email'` | Email mode runs validation + de-dup |
+| `options` | string[] | Initial pills |
+| `isDropdown` | boolean | Switches into picker mode |
+| `dropdownOptions` | string[] | Options for picker mode |
+| `existingEmails` / `tenantEmails` | string[] | Conflict lists for email mode |
+| `onChange` / `onDelete` / `onError` | function | Callbacks |
+| `areAllPillsDeletable` | boolean | Unlock the first pill |
+
+## Accessibility
+
+- The inline `<input>` is native — keyboard semantics inherited.
+- Enter and comma both commit; Backspace at empty removes the previous pill.
+- Pills use `@m-next/pill`; delete buttons are real buttons.
+- Validation errors are emitted via `onError` so consumers can wire them to a labeled error region (`aria-live="polite"`).
+
+## Migration from `@m-one/multi-select`
+
+| Was | Now |
+|-----|-----|
+| `inputType` | `type` (soft-shimmed) |
+| `onSelect` | `onChange` (soft-shimmed) |
+| `forwardRef` prop | `ref` (React forwardRef API) |
+| `isMobile`, `fullSize` | Silently ignored — use `height` / wrap in your own container |
+| `isV4Design`, `legacyClass`, `displayAuto` | Silently ignored |
+
+Live demo of the soft shim:
+
+<Canvas of={MultiSelectStories.LegacyAPIStillWorks} />
+
+Each deprecated prop emits a one-time `console.warn` and silently translates.
+
+## Edge cases
+
+- **Email mode**: `processEntries` splits on commas, so `paste@example.com, other@example.com` adds two pills in one go.
+- **First pill locked**: by default `areAllPillsDeletable={false}` reserves the first entry as canonical (used in tenant-list scenarios where the current tenant is shown but can't be removed).
+- **Dropdown empty state**: if the typed filter yields no matches, the panel renders "No Records Found".
+- **Backspace deletion**: only fires when the inline input is empty — so the user has to clear their typing first.
+
+## Related components
+
+- `Pill` — used internally for each value.
+- `Dropdown` — for single-value selection (cleanup in progress).
+- `Input` — for single-line text capture without de-dup / pills.

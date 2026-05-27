@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { colors, customOffsetFocusOutline } from '@m-next/styles';
+import { customOffsetFocusOutline } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 import SvgIcon from '@m-next/svg-icon';
 
 const sizes = {
@@ -19,7 +20,7 @@ const sizes = {
 const tabUserStyle = (props) => `
   outline: none !important;
   ${customOffsetFocusOutline}
-  border: 1px solid  ${props.isV4Design ? colors.grey : props.customColor} !important;
+  border: 1px solid  ${props.isV4Design ? colors.grey.base : props.customColor} !important;
 `;
 
 export const RadioGroupWrapper = styled.div((props) => {
@@ -140,7 +141,7 @@ export const RadioButtonWrapper = styled.label((props) => {
       margin-bottom: ${marginBottom}px;
 
       & input:checked ~ div .radio-btn-indicator {
-        background-color: ${disabled && !isV4Design ? colors['grey-lighter'] : customColor};
+        background-color: ${disabled && !isV4Design ? colors.grey.lighter : customColor};
         border-color: ${customColor};
         box-shadow: 0 0 0 ${colors.white};
       }
@@ -153,7 +154,7 @@ export const RadioButtonWrapper = styled.label((props) => {
         transform: translate(-50%, -50%);
         width: ${wdth};
         height: ${hght};
-        background-color: ${disabled ? colors.grey : colors.white} !important;
+        background-color: ${disabled ? colors.grey.base : colors.white} !important;
         border-radius: 100%;
       }
 
@@ -165,7 +166,7 @@ export const RadioButtonWrapper = styled.label((props) => {
 
       & input:focus ~ div .radio-btn-indicator {
         box-shadow: 0 0 0 1px ${customColor};
-        border-color: ${isV4Design ? colors['blue-lighter'] : 'inherit'};
+        border-color: ${isV4Design ? colors.blue.lighter : 'inherit'};
       }
 
       @media screen and (-ms-high-contrast: active) {
@@ -199,7 +200,7 @@ export const RadioButtonWrapper = styled.label((props) => {
         }
 
         & input ~ div .radio-btn-indicator {
-          border-color: ${colors.grey};
+          border-color: ${colors.grey.base};
           background-color: ${colors.white};
           box-shadow: 0 0 0 ${colors.white};
         }
@@ -209,8 +210,8 @@ export const RadioButtonWrapper = styled.label((props) => {
         }
 
         & input:checked ~ div .radio-btn-indicator {
-          background-color: ${colors.grey};
-          border-color: ${colors.grey};
+          background-color: ${colors.grey.base};
+          border-color: ${colors.grey.base};
         }
       `,
   ];
@@ -246,11 +247,11 @@ export const StyledIndicator = styled.div((props) => {
     },
 
     isV4Design && {
-      border: `1px solid ${colors.grey}`,
+      border: `1px solid ${colors.grey.base}`,
     },
 
     disabled && {
-      backgroundColor: colors['grey-lighter'],
+      backgroundColor: colors.grey.lighter,
       opacity: '0.6',
     },
 
@@ -264,7 +265,7 @@ export const StyledIndicator = styled.div((props) => {
       // eslint-disable-next-line no-useless-computed-key
       [' &:hover ']: {
         boxShadow: `0 0 0 1px ${customColor}`,
-        borderColor: isV4Design ? colors['blue-lighter'] : 'inherit',
+        borderColor: isV4Design ? colors.blue.lighter : 'inherit',
       },
     },
   ];
@@ -317,7 +318,7 @@ export const Text = styled.span((props) => {
 export const ValidationIcon = styled(SvgIcon)`
   padding-left: 8px;
   padding-right: 4px;
-  color: ${colors['grey']};
+  color: ${colors.grey.base};
 `;
 
 export const Subtext = styled.div(({ last, gap }) => [

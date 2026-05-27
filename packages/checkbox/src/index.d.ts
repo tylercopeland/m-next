@@ -1,64 +1,79 @@
-import { RefObject } from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import * as React from 'react';
 
-export interface CheckboxProps {
-  /** Alignment of the checkbox and label */
-  align?: 'left' | 'center' | 'right';
-  /** Whether the checkbox should be focused on mount */
-  autoFocus?: boolean;
-  /** Whether the checkbox is checked */
+export interface CheckboxProps
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'onChange' | 'onBlur' | 'onFocus' | 'onKeyDown'> {
+  /** Auto-generated if not supplied. */
+  id?: string;
+  name?: string | null;
+  label?: string | React.ReactNode | null;
   checked?: boolean | string;
-  /** Additional CSS class name */
-  className?: string;
-  /** ID for the label element */
-  controlId?: string;
-  /** Whether the checkbox is disabled */
-  disabled?: boolean;
-  /** Ref to be forwarded to the checkbox input */
-  forwardRef?: RefObject<HTMLInputElement>;
-  /** Whether the checkbox is in an indeterminate state */
+  /** Indeterminate / tri-state visual. */
   halfChecked?: boolean;
-  /** Whether to hide the caption/label */
-  hideCaption?: boolean;
-  /** Whether the checkbox is hidden */
-  hidden?: boolean;
-  /** Unique identifier for the checkbox */
-  id: string;
-  /** Whether the checkbox is being rendered on mobile */
-  isMobile?: boolean;
-  /** Label text or element */
-  label?: string | React.ReactNode;
-  /** Legacy CSS classes */
-  legacyClasses?: string;
-  /** Name attribute for the checkbox input */
-  name?: string;
-  /** Whether the checkbox has rounded corners */
-  rounded?: boolean;
-  /** Additional inline styles */
-  style?: React.CSSProperties;
-  /** Tab index for keyboard navigation */
+  disabled?: boolean;
+  autoFocus?: boolean;
   tabIndex?: number;
-  /** Width of the checkbox container */
-  width?: number | string;
-  /** Whether the label is disabled */
-  disableLabel?: boolean;
-  /** Blur event handler */
-  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
-  /** Change event handler */
-  onChange?: (checked: boolean) => void;
-  /** Focus event handler */
-  onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
-  /** Key down event handler */
-  onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
-  /** Whether the checkbox has narrow spacing */
+
+  /** Layout alignment of the box vs its label. */
+  align?: 'left' | 'center' | 'right';
+  /** Rounded square (8px radius) instead of the default 4px. */
+  rounded?: boolean;
+  /** Removes the default 14px bottom margin. */
   narrow?: boolean;
-  /** Test ID for testing purposes */
-  testId?: string;
-  /** Whether the checkbox should take full width */
+  /** Stretch the label to fill remaining horizontal space. */
   fullWidth?: boolean;
-  /** Whether the label should be bold */
+  /** Bold label text. */
   bold?: boolean;
+  /** Hide the label visually (still announced via aria). */
+  hideLabel?: boolean;
+  /** When true (default), the label dims to 50% opacity when disabled. */
+  disableLabel?: boolean;
+  width?: string | number;
+  className?: string;
+  style?: React.CSSProperties;
+  testId?: string;
+
+  /** Receives the new boolean state. */
+  onChange?: (checked: boolean) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+
+  // ============ Deprecated — soft-shimmed ============
+  /** @deprecated Use the React forwardRef API — pass `ref` directly. Still receives an imperative handle of `{ blur, focus, select }`. */
+  forwardRef?: React.Ref<any>;
+  /** @deprecated Use `hideLabel`. */
+  hideCaption?: boolean;
+  /** @deprecated Use `id`. Was used to give the label its own id; now derived from `id`. */
+  controlId?: string;
+
+  // ============ Silently ignored ============
+  /** @deprecated No longer has any effect — use CSS media queries / responsive containers. */
+  isMobile?: boolean;
+  /** @deprecated No longer has any effect — don't render the component instead. */
+  hidden?: boolean;
+  /** @deprecated No longer has any effect. Color/font variants previously toggled via class names should be expressed via theme or props. */
+  legacyClasses?: string;
+  /** @deprecated No longer has any effect. */
+  isV4Design?: boolean;
+  /** @deprecated No longer has any effect. */
+  displayAuto?: boolean;
+  /** @deprecated Use `className`. */
+  legacyClass?: string;
 }
 
-declare const Checkbox: React.FC<CheckboxProps>;
+export interface CheckboxGroupItem extends CheckboxProps {
+  id: string;
+}
 
-export default Checkbox; 
+export interface CheckboxGroupProps {
+  align?: 'vertical' | 'horizontal';
+  items?: CheckboxGroupItem[];
+  name?: string;
+}
+
+export const Checkbox: React.ForwardRefExoticComponent<
+  CheckboxProps & React.RefAttributes<HTMLInputElement>
+>;
+export const CheckboxGroup: React.FC<CheckboxGroupProps>;
+export default Checkbox;

@@ -1,0 +1,122 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as RadioGroupStories from './RadioGroup.stories';
+import * as ButtonGroupStories from './ButtonGroup.stories';
+import * as IconGroupStories from './IconGroup.stories';
+
+<Meta of={RadioGroupStories} />
+
+# Radio group composites
+
+Three prebuilt groups ship from `@m-next/radio-button`. All three share the same conventions:
+
+- A required `options` array with `label` + `value`.
+- A `selectedValue` for the current selection.
+- An `onChange` callback (RadioGroup mirrors a synthetic event for form-manager compatibility; ButtonRadioGroup and IconRadioGroup pass the selected option object directly).
+- An optional `label` that renders a `<Caption>` above the group and wires `aria-labelledby` for screen readers.
+- Optional `id` — auto-generated if absent.
+- A React `ref` forwards to the group's root element.
+- The same backwards-compat shim: `caption` → `label`, `customColor` → `color`, `customFontSize` → `fontSize`, `forwardRef` prop → `ref`, plus silently-ignored `isV4Design`, `isMobile`, etc.
+
+## RadioGroup — the canonical group
+
+A column (or row) of native-radio rows, with optional Caption, subtext, and per-option hint tooltips.
+
+### Basic
+
+<Canvas of={RadioGroupStories.Basic} />
+
+### Row layout
+
+<Canvas of={RadioGroupStories.Row} />
+
+### With hint tooltips
+
+<Canvas of={RadioGroupStories.WithHint} />
+
+### With subtext under each option
+
+<Canvas of={RadioGroupStories.WithSubtext} />
+
+### Custom indicator color
+
+<Canvas of={RadioGroupStories.CustomColor} />
+
+### Without a Caption
+
+Pass `aria-label` instead of `label` when you don't want a visible group caption.
+
+<Canvas of={RadioGroupStories.NoLabel} />
+
+### Legacy API still works
+
+<Canvas of={RadioGroupStories.LegacyAPIStillWorks} />
+
+## ButtonRadioGroup — segmented buttons
+
+A row of buttons. Selecting one swaps it to a "selected" button style. Best for short choices that read more like a toolbar than a list — aggregation type, alignment, sort order.
+
+### Basic
+
+<Canvas of={ButtonGroupStories.Basic} />
+
+### Force-fit on one line
+
+<Canvas of={ButtonGroupStories.OneLine} />
+
+### Fixed button width
+
+<Canvas of={ButtonGroupStories.FixedButtonWidth} />
+
+### Disabled
+
+<Canvas of={ButtonGroupStories.Disabled} />
+
+### Without a Caption
+
+<Canvas of={ButtonGroupStories.NoLabel} />
+
+### Legacy API still works
+
+<Canvas of={ButtonGroupStories.LegacyAPIStillWorks} />
+
+## IconRadioGroup — icon tiles
+
+A row of icon tiles with a small label under each. Best for visual choices — chart type, layout style, theme.
+
+### Basic
+
+<Canvas of={IconGroupStories.Basic} />
+
+### Disabled
+
+<Canvas of={IconGroupStories.Disabled} />
+
+### Without a Caption
+
+<Canvas of={IconGroupStories.NoLabel} />
+
+### Legacy API still works
+
+<Canvas of={IconGroupStories.LegacyAPIStillWorks} />
+
+## Accessibility
+
+Each group renders `role="radiogroup"` on its root with an `aria-label` or `aria-labelledby` (wired to the rendered Caption when `label` is provided).
+
+- `<RadioGroup>` uses real `<input type="radio">` elements via `<RadioButton>`. Arrow-key navigation between options is handled natively by the browser. Only the currently-checked radio is in the tab order.
+- `<ButtonRadioGroup>` and `<IconRadioGroup>` mark each tile with `role="radio"` + `aria-checked`. They do **not** yet wire up arrow-key navigation — Tab is the only key-based traversal between tiles. Track that as a follow-up.
+
+## Migration from `@m-one/radio-button`
+
+Same playbook as `<RadioButton>` — old prop names continue to work with a single `console.warn` at first use. The shimmed translations across the three groups:
+
+| Was | Now |
+|-----|-----|
+| `caption` | `label` |
+| `customColor` (RadioGroup only) | `color` |
+| `customFontSize` (RadioGroup only) | `fontSize` |
+| `legacyClass` (RadioGroup only) | `className` / `style` |
+| `forwardRef` prop | `ref` (React forwardRef API) |
+| `isV4Design`, `isMobile`, `isRuntime`, `hideCaption`, `displayAuto`, `compactStyle`, `controlId` | Silently ignored — no behavioral effect |
+
+See the README for full prop tables.

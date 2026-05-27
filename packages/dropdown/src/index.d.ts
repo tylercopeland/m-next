@@ -1,5 +1,7 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as React from 'react';
+
+export type DropdownVariant = 'single' | 'icon' | 'multi' | 'multi-icon';
 
 export interface DropdownOption {
   label: string;
@@ -9,64 +11,100 @@ export interface DropdownOption {
   icon?: string;
   color?: string;
   size?: number;
+  /** Family name used to colour multi-value pills (blue, green, red, etc.). */
+  colour?: string;
+  /** Pin the value so the remove (×) is hidden. */
+  isFixed?: boolean;
 }
 
 export interface DropdownOptionGroup {
   label: string;
   options: DropdownOption[];
+  icon?: string;
+  color?: string;
+  size?: number;
 }
 
 export interface DropdownProps {
   id?: string;
-  displayAuto?: boolean;
-  width?: number | string;
-  validationMessage?: string;
-  isV4Design?: boolean;
-  caption?: string;
+  label?: string;
   required?: boolean;
-  legacyClass?: string;
-  isMobile?: boolean;
   placeholder?: string;
   disabled?: boolean;
+  width?: number | string;
   options: DropdownOption[] | DropdownOptionGroup[];
-  value?: DropdownOption | null;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  onChange?: (value: DropdownOption, actionMeta: any) => void;
+  value?: DropdownOption | DropdownOption[] | null;
+
+  /** When set, the dropdown shows an error state and renders this as a validation message. */
+  errorMessage?: string | null;
+
+  /** Visual layout variant. */
+  variant?: DropdownVariant;
+
+  onChange?: (value: DropdownOption | DropdownOption[] | null, actionMeta?: any) => void;
   onBlur?: () => void;
-  hasValidation?: boolean;
-  dropdownStyle?: 'single' | 'icon' | 'multi' | 'multi-icon';
   onMenuOpen?: () => void;
   onMenuClose?: () => void;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  style?: Record<string, any>;
-  background?: string;
+  onInputChange?: (value: string, actionMeta?: any) => void;
+  onMenuScrollToBottom?: () => void;
+
   isMultiSelect?: boolean;
-  isCreateable?: boolean;
+  isCreatable?: boolean;
   isSearchable?: boolean;
+  isClearable?: boolean;
+  isLoading?: boolean;
+
   onCreate?: (value: string) => void;
   actionButtonText?: string;
-  isPortal?: boolean;
   onActionButtonClick?: () => void;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  forwardRef?: React.RefObject<any>;
+
+  isPortal?: boolean;
   openMenuOnFocus?: boolean;
   breakout?: boolean;
-  isLoading?: boolean;
   hasDividersInsteadOfHeaders?: boolean;
-  isClearable?: boolean;
   maxMenuHeight?: number | string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  onInputChange?: (value: string, actionMeta?: any) => void;
   menuPlacement?: 'auto' | 'bottom' | 'top';
   menuIsOpen?: boolean;
-  ariaLabel?: string;
   open?: boolean;
   autoFocus?: boolean;
+  clearOnSelect?: boolean;
+  formatCreateLabel?: (input: string) => React.ReactNode;
+  disableSearchHighlight?: boolean;
   menuMinWidth?: number | string;
   hideBorderWhenNotActive?: boolean;
-  onMenuScrollToBottom?: () => void;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   filterOption?: (option: any, inputValue: string) => boolean;
+  hasValidation?: boolean;
+
+  style?: React.CSSProperties;
+
+  /** Standard accessible name when no visible label is rendered. */
+  'aria-label'?: string;
+
+  // ============ Deprecated — soft-shimmed ============
+  /** @deprecated Use `label`. */
+  caption?: string;
+  /** @deprecated Use `variant`. */
+  dropdownStyle?: DropdownVariant;
+  /** @deprecated Use `errorMessage`. */
+  validationMessage?: string;
+  /** @deprecated Typo. Use `isCreatable`. */
+  isCreateable?: boolean;
+  /** @deprecated Use the React forwardRef API — pass `ref` directly. */
+  forwardRef?: React.RefObject<any>;
+  /** @deprecated Use `aria-label` (standard React attr). */
+  ariaLabel?: string;
+
+  // ============ Silently ignored ============
+  /** @deprecated No longer has any effect — V4 styling is always on. */
+  isV4Design?: boolean;
+  /** @deprecated No longer has any effect — use CSS media queries. */
+  isMobile?: boolean;
+  /** @deprecated Use `className`. */
+  legacyClass?: string;
+  /** @deprecated No longer has any effect. */
+  displayAuto?: boolean;
+  /** @deprecated No longer has any effect. */
+  background?: string;
 }
 
 export interface ClickToEditDropdownProps {
@@ -77,10 +115,8 @@ export interface ClickToEditDropdownProps {
   disabled?: boolean;
   placeholder?: string;
   color?: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   style?: Record<string, any>;
   dropdownStyle?: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   styleDropdownComponent?: Record<string, any>;
   labelPlaceholder?: string;
   bold?: boolean;
@@ -91,7 +127,9 @@ export interface DropdownAsyncProps extends Omit<DropdownProps, 'onLoadData'> {
   onLoadData: (inputValue: string) => Promise<DropdownOption[]>;
 }
 
-export const Dropdown: React.FC<DropdownProps>;
+export const Dropdown: React.ForwardRefExoticComponent<
+  DropdownProps & React.RefAttributes<any>
+>;
 export const ClickToEditDropdown: React.FC<ClickToEditDropdownProps>;
 export const DropdownAsync: React.FC<DropdownAsyncProps>;
 

@@ -1,51 +1,100 @@
 /* eslint-disable react/no-array-index-key */
-/* eslint-disable no-unused-expressions */
-import React, { useState, useRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { colors } from '@m-next/styles';
+import React, { useState, useRef, useEffect, forwardRef } from 'react';
 import Pill from '@m-next/pill';
 import SvgIcon from '@m-next/svg-icon';
+import { colors } from '@m-next/tokens';
 import validator from 'validator';
 import * as s from './MultiSelect.styles';
-// types
-const propTypes = {
-  className: PropTypes.string,
-  placeholder: PropTypes.string,
-  options: PropTypes.instanceOf(Array),
-  inputType: PropTypes.oneOf(['text', 'email']),
-  existingEmails: PropTypes.instanceOf(Array),
-  tenantEmails: PropTypes.instanceOf(Array),
-  fullSize: PropTypes.bool,
-  height: PropTypes.string,
-  isMobile: PropTypes.bool,
-  isDropdown: PropTypes.bool,
-  dropdownOptions: PropTypes.instanceOf(Array),
-  onSelect: PropTypes.func,
-  onDelete: PropTypes.func,
-  onError: PropTypes.func,
-  areAllPillsDeletable: PropTypes.bool,
-};
 
-const emailValidationErrors = ['_isInvalid', '_isDuplicate', '_isExisting', '_isTenant'];
-const tagsToRemove = emailValidationErrors.concat('_isValid', '_valid');
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
 
-function MultiSelect({
-  className,
-  placeholder,
-  options,
-  inputType = 'text',
-  existingEmails,
-  tenantEmails,
-  fullSize,
-  height,
-  isMobile,
-  isDropdown = false,
-  dropdownOptions,
-  onSelect,
-  onDelete,
-  onError,
-  areAllPillsDeletable = false,
-}) {
+let autoIdCounter = 0;
+
+const EMAIL_VALIDATION_ERRORS = ['_isInvalid', '_isDuplicate', '_isExisting', '_isTenant'];
+const TAGS_TO_REMOVE = EMAIL_VALIDATION_ERRORS.concat('_isValid', '_valid');
+
+const MultiSelect = forwardRef(function MultiSelect(props, ref) {
+  const {
+    id: idProp,
+    className,
+    placeholder,
+    options,
+
+    // Clean API
+    type: typeProp,
+    onChange: onChangeProp,
+
+    existingEmails,
+    tenantEmails,
+    height,
+    isDropdown = false,
+    dropdownOptions,
+    onDelete,
+    onError,
+    areAllPillsDeletable = false,
+
+    // Soft-shimmed legacy props
+    inputType: legacyInputType,
+    onSelect: legacyOnSelect,
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    fullSize: _fullSize,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+
+    ...rest
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-multi-select-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  // ============ Backwards-compat translation ============
+
+  let type = typeProp;
+  if (legacyInputType != null && type == null) {
+    warnOnce(
+      'multi-select-inputType',
+      '@m-next/multi-select: `inputType` is deprecated. Use `type` ("text" | "email").',
+    );
+    type = legacyInputType;
+  }
+  if (type == null) type = 'text';
+
+  let onChange = onChangeProp;
+  if (legacyOnSelect && !onChange) {
+    warnOnce(
+      'multi-select-onSelect',
+      '@m-next/multi-select: `onSelect` is deprecated. Use `onChange` (same signature — receives the selected value).',
+    );
+    onChange = legacyOnSelect;
+  }
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'multi-select-forwardRef-prop',
+      '@m-next/multi-select: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // ============ State ============
+
   const [values, setValues] = useState(options || []);
   const [filteredDropdownOptions, setFilteredDropdownOptions] = useState(
     dropdownOptions?.filter((option) => !values.includes(option)) || [],
@@ -55,6 +104,18 @@ function MultiSelect({
   const [inputFocused, setInputFocused] = useState(false);
   const inputRef = useRef(null);
   const dropdownRef = useRef(null);
+
+  // Merge external ref (forwardRef API + legacy forwardRef prop) with internal input ref.
+  useEffect(() => {
+    const targetRef = ref ?? legacyForwardRef;
+    if (!targetRef) return;
+    if (typeof targetRef === 'function') {
+      targetRef(inputRef.current);
+    } else {
+      // eslint-disable-next-line no-param-reassign
+      targetRef.current = inputRef.current;
+    }
+  }, [ref, legacyForwardRef]);
 
   useEffect(() => {
     if (isDropdown && dropdownOpen) {
@@ -87,7 +148,7 @@ function MultiSelect({
       setDropdownOpen(false);
       setInputFocused(true);
 
-      if (onSelect) onSelect(option);
+      if (onChange) onChange(option);
     }
 
     if (inputRef.current) {
@@ -98,7 +159,7 @@ function MultiSelect({
 
   const getEmailValidationErrors = (emails) => {
     let errorMessage = '';
-    if (emailValidationErrors.some((error) => emails.some((email) => email.includes(error)))) {
+    if (EMAIL_VALIDATION_ERRORS.some((error) => emails.some((email) => email.includes(error)))) {
       errorMessage =
         'One or more email addresses are invalid or already associated with an existing user. Please remove the invalid addresses to proceed.\n';
     }
@@ -107,14 +168,14 @@ function MultiSelect({
 
   const updateErrorMessage = (errorMessage) => {
     if (errorMessage) {
-      onError && onError(errorMessage);
-    } else {
-      onError && onError('');
+      if (onError) onError(errorMessage);
+    } else if (onError) {
+      onError('');
     }
   };
 
   const trimEmailValidation = (untrimmedEmail) =>
-    tagsToRemove.reduce((result, tag) => result.replace(tag, ''), untrimmedEmail);
+    TAGS_TO_REMOVE.reduce((result, tag) => result.replace(tag, ''), untrimmedEmail);
 
   const getEntries = (value) => value.split(',').filter((entry) => entry.trim() !== '');
 
@@ -125,16 +186,16 @@ function MultiSelect({
       let processedEmail = email.trim();
       if (!validator.isEmail(processedEmail)) {
         processedEmail += '_isInvalid';
-        onError && onError('One or more of the email addresses was invalid.\n');
+        if (onError) onError('One or more of the email addresses was invalid.\n');
       } else if (allEmails.includes(processedEmail.toLowerCase())) {
         processedEmail += '_isDuplicate';
-        onError && onError('One or more of the email addresses has already been added.\n');
+        if (onError) onError('One or more of the email addresses has already been added.\n');
       } else if (existingEmails && existingEmails.includes(processedEmail.toLowerCase())) {
         processedEmail += '_isExisting';
-        onError && onError('One or more of the email addresses belongs to an existing user.\n');
+        if (onError) onError('One or more of the email addresses belongs to an existing user.\n');
       } else if (tenantEmails && tenantEmails.includes(processedEmail.toLowerCase())) {
         processedEmail += '_isTenant';
-        onError && onError('One or more of the email addresses belongs to an existing tenant.\n');
+        if (onError) onError('One or more of the email addresses belongs to an existing tenant.\n');
       } else {
         processedEmail += '_isValid';
       }
@@ -144,7 +205,7 @@ function MultiSelect({
 
   const getValidEmails = (emails) =>
     emails
-      .filter((email) => email.includes('_isValid') && !emailValidationErrors.some((error) => email.includes(error)))
+      .filter((email) => email.includes('_isValid') && !EMAIL_VALIDATION_ERRORS.some((error) => email.includes(error)))
       .map((email) => email.replace('_isValid', '_valid'));
 
   const handleProcessedEmails = (emails, validEmails) => {
@@ -156,7 +217,9 @@ function MultiSelect({
       updateErrorMessage(errorMessage);
 
       // save all valid emails
-      validEmails.forEach((email) => onSelect && onSelect(email.replace('_valid', '')));
+      if (onChange) {
+        validEmails.forEach((email) => onChange(email.replace('_valid', '')));
+      }
     }
   };
 
@@ -189,29 +252,29 @@ function MultiSelect({
   };
 
   const updateValuesAndHandleDelete = (newValues, value) => {
-    const revalidatedValues = inputType === 'email' ? revalidateEmails(newValues) : newValues;
+    const revalidatedValues = type === 'email' ? revalidateEmails(newValues) : newValues;
 
     setValues(revalidatedValues);
     let isValid = false;
+    let deletedValue = value;
 
-    if (inputType === 'email') {
-      isValid = !emailValidationErrors.some((error) => value.includes(error));
+    if (type === 'email') {
+      isValid = !EMAIL_VALIDATION_ERRORS.some((error) => value.includes(error));
 
       const errorMessage = getEmailValidationErrors(revalidatedValues);
       updateErrorMessage(errorMessage);
 
-      // eslint-disable-next-line no-param-reassign
-      value = trimEmailValidation(value);
+      deletedValue = trimEmailValidation(value);
 
       // update newly validated emails
       revalidatedValues.forEach((email, index) => {
         if (email.includes('_isValid') && newValues[index]?.includes('_isDuplicate')) {
-          onSelect && onSelect(trimEmailValidation(email));
+          if (onChange) onChange(trimEmailValidation(email));
         }
       });
     }
 
-    if (onDelete) onDelete(value, isValid);
+    if (onDelete) onDelete(deletedValue, isValid);
   };
 
   const isEnterOrBlur = (e, isBlur) => e.key === 'Enter' || e.keyCode === 13 || isBlur;
@@ -221,16 +284,16 @@ function MultiSelect({
   const isBackspacePressed = (e) => e.key === 'Backspace' || e.keyCode === 8;
 
   const handleValueInput = (value) => {
-    if (inputType === 'email') {
+    if (type === 'email') {
       processEmails(value);
     } else {
       setValues([...values, value]);
-      onSelect && onSelect(value);
+      if (onChange) onChange(value);
     }
   };
 
   const handleCommaInput = (e, value) => {
-    if (inputType === 'email') {
+    if (type === 'email') {
       processEmails(value);
       e.target.value = '';
       e.preventDefault();
@@ -265,6 +328,7 @@ function MultiSelect({
       if (direction === 'down') {
         return prevIndex < filteredDropdownOptions.length - 1 ? prevIndex + 1 : 0;
       }
+      return prevIndex;
     });
   };
 
@@ -331,41 +395,35 @@ function MultiSelect({
     setInputFocused(true);
   };
 
-  // eslint-disable-next-line no-nested-ternary
-  const wrapperHeight = height || (isMobile ? '340px' : fullSize ? '200px' : '100px');
+  const wrapperHeight = height || '100px';
 
   const determineLeadIcon = (value, displayVaidationPill) => {
-    if (displayVaidationPill) {
-      if (value) {
-        if (value.includes('_isInvalid')) {
-          return { name: 'warning-sign', label: 'Invalid email', color: colors['red'] };
-        }
-        if (value.includes('_isExisting')) {
-          return { name: 'warning-sign', label: 'User already exists', color: colors['red'] };
-        }
-        if (value.includes('_isDuplicate')) {
-          return { name: 'warning-sign', label: 'Duplicate email entry', color: colors['red'] };
-        }
-        if (value.includes('_isTenant')) {
-          return { name: 'warning-sign', label: 'User already exists in another tenant', color: colors['red'] };
-        }
-        return null;
+    if (displayVaidationPill && value) {
+      if (value.includes('_isInvalid')) {
+        return { name: 'warning-sign', label: 'Invalid email', color: colors.red.base };
+      }
+      if (value.includes('_isExisting')) {
+        return { name: 'warning-sign', label: 'User already exists', color: colors.red.base };
+      }
+      if (value.includes('_isDuplicate')) {
+        return { name: 'warning-sign', label: 'Duplicate email entry', color: colors.red.base };
+      }
+      if (value.includes('_isTenant')) {
+        return { name: 'warning-sign', label: 'User already exists in another tenant', color: colors.red.base };
       }
     }
     return null;
   };
 
   const determineBorderStyle = (value, showValidation) => {
-    if (showValidation) {
-      if (emailValidationErrors.some((error) => value.includes(error))) {
-        return { border: `1px solid ${colors['red']}` };
-      }
+    if (showValidation && EMAIL_VALIDATION_ERRORS.some((error) => value.includes(error))) {
+      return { border: `1px solid ${colors.red.base}` };
     }
     return null;
   };
 
   const determineColorScheme = (value, index, deletable) => {
-    if (emailValidationErrors.some((error) => value.includes(error))) {
+    if (EMAIL_VALIDATION_ERRORS.some((error) => value.includes(error))) {
       return 'red';
     }
     if (index === 0 && !deletable) {
@@ -374,14 +432,15 @@ function MultiSelect({
     return 'blue';
   };
 
+  const classPrefix = className ?? '';
+
   return (
-    <s.MultiSelectWrapper isDropdown={isDropdown} isMobile={isMobile}>
+    <s.MultiSelectWrapper id={`${id}-MultiSelect`} isDropdown={isDropdown} {...rest}>
       <s.OptionsWrapper
-        className={`${className}-multi-select`}
-        id='multi-select-wrapper'
+        className={`${classPrefix}-multi-select`}
+        id={`${id}-multi-select-wrapper`}
         height={wrapperHeight}
         isDropdown={isDropdown}
-        isMobile={isMobile}
         onClick={handleContainerClick}
       >
         {values.map((value, index) => {
@@ -389,16 +448,14 @@ function MultiSelect({
           return (
             <s.PillWrapper
               key={`pill-wrapper-${index}`}
-              className={`${className}-input-pill-wrapper`}
-              id='input-pill-wrapper'
-              isMobile={isMobile}
+              className={`${classPrefix}-input-pill-wrapper`}
+              id={`${id}-input-pill-wrapper-${index}`}
               isDropdown={isDropdown}
             >
               <Pill
                 key={`multi-select-pill-${index}`}
-                className={`${className}-input-pill`}
-                id='input-pill'
-                isMobile={isMobile}
+                className={`${classPrefix}-input-pill`}
+                id={`${id}-input-pill-${index}`}
                 colorScheme={determineColorScheme(value, index, areAllPillsDeletable)}
                 onDelete={
                   (values.length === 1 && !areAllPillsDeletable) || (index === 0 && !areAllPillsDeletable)
@@ -415,25 +472,24 @@ function MultiSelect({
         })}
         {(!isDropdown || (isDropdown && (dropdownOpen || inputFocused))) && (
           <s.MultiSelectInput
-            className={`${className}-multi-select-input`}
-            id='multi-select-input'
+            className={`${classPrefix}-multi-select-input`}
+            id={`${id}-multi-select-input`}
             ref={inputRef}
-            type='text'
+            type="text"
             placeholder={values.length === 0 ? placeholder : ''}
             onKeyUp={isDropdown ? handleInputChange : null}
             onKeyDown={isDropdown ? handleDropdownChange : handleInputChange}
             onBlur={!isDropdown ? (e) => handleInputChange(e, true) : null}
-            isMobile={isMobile}
             isDropdown={isDropdown}
             autoComplete={isDropdown ? 'off' : 'on'}
           />
         )}
         {isDropdown && (
-          <s.DropdownCaret isMobile={isMobile}>
+          <s.DropdownCaret>
             <SvgIcon
-              className={`${className}-dropdown-icon`}
+              className={`${classPrefix}-dropdown-icon`}
               name={dropdownOpen ? 'chevron-up' : 'chevron-down'}
-              color={colors['grey']}
+              color={colors.grey.base}
               size={8}
             />
           </s.DropdownCaret>
@@ -441,11 +497,10 @@ function MultiSelect({
       </s.OptionsWrapper>
       {isDropdown && dropdownOpen && (
         <s.DropdownWrapper
-          className={`${className}-dropdown-wrapper`}
-          id='dropdown-wrapper'
+          className={`${classPrefix}-dropdown-wrapper`}
+          id={`${id}-dropdown-wrapper`}
           ref={dropdownRef}
           hasOptions={filteredDropdownOptions.length > 0}
-          isMobile={isMobile}
         >
           {filteredDropdownOptions.length > 0 ? (
             filteredDropdownOptions.map((option, index) => {
@@ -453,7 +508,7 @@ function MultiSelect({
               return (
                 <s.DropdownOption
                   key={optionKey}
-                  id='dropdown-option'
+                  id={`${id}-dropdown-option-${index}`}
                   onClick={() => handleDropdownClick(option)}
                   selected={index === selectedDropdownOption}
                   hasOptions={filteredDropdownOptions.length > 0}
@@ -469,7 +524,8 @@ function MultiSelect({
       )}
     </s.MultiSelectWrapper>
   );
-}
+});
 
-MultiSelect.propTypes = propTypes;
+MultiSelect.displayName = 'MultiSelect';
+
 export default MultiSelect;
