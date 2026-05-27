@@ -1,0 +1,118 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as InputStories from './input.stories';
+
+<Meta of={InputStories} />
+
+# Input
+
+A labeled text field. The default control for any single-line text entry.
+
+## When to use it
+
+- Single-line text capture: name, email, search, password, account ID, etc.
+- Numeric entry where min/max constraints aren't strict (`type="number"`).
+- Any form field where the value is a string or number.
+
+## When NOT to use it
+
+- Multi-line text — use `InputArea` / Textarea.
+- Selection from a known list — use a Dropdown.
+- Boolean toggles — use Checkbox or Toggle.
+- Date / time entry — use DatePicker.
+- Search-with-results — use a SearchInput pattern (not yet cleaned up in m-next).
+- Hidden form fields — render `<input type="hidden">` directly. Input adds label / validation chrome you don't want.
+
+## Anatomy
+
+A vertical Container holding:
+
+1. **Label** (optional) — rendered via `@m-next/caption`, floats above the input when focused or filled.
+2. **InnerWrapper** — a 1px-bordered row that contains the native `<input>`. Border shifts to focus / error states.
+3. **leftIcon** (optional) — leading slot, typically a search / mail / lock icon.
+4. **`<input>`** — the actual native element. All standard input attributes pass through.
+5. **rightContent** (optional) — trailing slot for text suffix, badges, action buttons.
+6. **Validation message** — rendered below when `errorMessage` is set.
+
+## States
+
+- **Default** — neutral border, label below baseline (or floated if value present).
+- **Focused** — accent border color, label floated, ring-free (native focus only).
+- **Hover** — slightly darker border.
+- **Disabled** — 50% opacity, `pointer-events: none`, `aria-disabled`.
+- **Read-only** — same as disabled visually but cursor remains text, value is selectable.
+- **Error** — red border, error message rendered below, `aria-invalid="true"`.
+
+## Tokens consumed
+
+- `colors.grey.dark` for placeholder text
+- `colors.grey.base` for prefix icon color, suffix text, info messages
+- Theme context (via Emotion) for `theme.content.*` and `theme.negative.*` — when rendered inside `<ThemeProvider>` from `@m-next/theme`, picks up the active named theme. Falls back to `lightTheme` from `@m-next/styles`.
+
+## Basic
+
+<Canvas of={InputStories.Basic} />
+
+## States
+
+<Canvas of={InputStories.States} />
+
+## Icons and trailing content
+
+<Canvas of={InputStories.WithIcons} />
+
+## Error and validation
+
+<Canvas of={InputStories.ErrorStates} />
+
+## Label options
+
+<Canvas of={InputStories.LabelOptions} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `label` | string | Visible label, also drives accessible name |
+| `errorMessage` | string \| ReactNode | When set, switches to error state |
+| `leftIcon` / `rightContent` | ReactNode | Optional slots |
+| `intent` | `'error' \| 'warning' \| 'informative'` | Visual treatment of the message |
+| `hideLabel` | boolean | Hides the label visually (keeps a11y) |
+
+## Accessibility
+
+- Native `<input>` underneath — keyboard semantics inherited.
+- `label` props through to `@m-next/caption` which renders a real `<label htmlFor>`.
+- `aria-label` provided when `hideLabel` is true (still readable to screen readers).
+- `errorMessage` flips `aria-invalid="true"` on the input.
+- `disabled` automatically mirrors to `aria-disabled`.
+- `aria-describedby` passes through; legacy `ariaDescribedby` is shimmed.
+
+## Examples
+
+### A realistic form
+
+<Canvas of={InputStories.RealWorldForm} />
+
+## Migration from `@m-one/input`
+
+Input was the second component cleaned up under m-next's API normalization (Button was the first). Migration is mostly mechanical — see the README's "What changed" table. Live demo of the soft shim:
+
+<Canvas of={InputStories.LegacyAPIStillWorks} />
+
+Each deprecated prop emits a one-time `console.warn` and silently translates. The shim covers: `prefixIcon`, `suffixText`, `validationMessage`, `infoLevel`, `hideCaption`, `ariaDescribedby`, `readonly`, `forwardRef`. Legacy ghosts (`isV4Design`, `isMobile`, etc.) accept their value but do nothing.
+
+## Edge cases
+
+- **Input with both `value=""` and a floating-label** — Caption floats based on focus, value, placeholder, or leftIcon. If none of those are true, the label sits inline.
+- **`useValidation={true}`** — still functional but discouraged. It uses `@m-next/validation`'s rule engine (`isRequired`, `isValidEmail`, `isValidLength`, `isValidRange`). Prefer consumer-driven `errorMessage`.
+- **Number inputs with `minValue`/`maxValue`** — these pass through to native `min`/`max` attributes. They don't block invalid entry (HTML5 behavior); browser flags them at submit.
+- **Refs** — `ref` forwards to the underlying `<input>`. Use `inputRef.current.focus()` to programmatically focus.
+
+## Related components
+
+- `InputArea` — multi-line text (not yet cleaned up).
+- `Dropdown` — choose-one from a list (not yet cleaned up).
+- `Caption` — the label/caption used internally (also not yet cleaned up).
+- `Validation` — the optional rule engine (still functional, will be deprecated long-term).

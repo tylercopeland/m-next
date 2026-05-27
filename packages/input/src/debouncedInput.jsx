@@ -7,7 +7,7 @@ import Caption from '@m-next/caption';
 import { ValidationMessage, Validation } from '@m-next/validation';
 import { colors, convertClass } from '@m-next/styles';
 import { useDebounce } from '@m-next/utilities/src/hooks';
-import * as s from './input.styles';
+import * as s from './Input.styles';
 import OutroAnimation from './outroAnimation';
 // components
 /* --------------------------------------------------*/
