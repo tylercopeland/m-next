@@ -1,0 +1,110 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as EmptyStateStories from './empty-state.stories';
+
+<Meta of={EmptyStateStories} />
+
+# EmptyState
+
+The placeholder shown when a list, table, or section has no data to display.
+
+## When to use it
+
+- An empty list or table — the query succeeded but returned zero rows.
+- No search results — the user's filters or search term match nothing.
+- First-time use of a feature — the user hasn't created the thing yet, and the next step should be obvious.
+- Content hidden by permissions — explain why the section is empty and (if possible) what to do about it.
+
+## When NOT to use it
+
+- For **loading** states — the data is on its way but not here yet. Use `@m-next/spinner` or `@m-next/loading-skeleton`. An EmptyState during loading tells the user there's nothing here when there might be.
+- For **errors** — the request failed. Use `@m-next/alert`. Errors are actionable in different ways (retry, contact support) than emptiness (create the thing).
+- For **successful actions** — "Invoice saved" is a transient confirmation, not an empty state. Use a toast.
+- As a **404 page** substitute. Page-level "not found" needs its own routing-aware pattern; EmptyState is for sections within a layout.
+
+Empty, loading, error, unauthorized — these are four distinct states for the same slot. Don't conflate them.
+
+## Anatomy
+
+A centered vertical Stack:
+
+1. Optional **icon** — decorative, `aria-hidden`.
+2. **Title** — required `<h3>`, also used as the region's `aria-label`.
+3. Optional **description** — `<p>` with a max-width of 480px so long copy stays readable.
+4. Optional **action** — a real, focusable element (button or link) for the next step.
+
+The `variant` prop controls the container treatment around that Stack — padding, background, border.
+
+## States
+
+EmptyState has no internal state. All variability comes from which slots are filled and which `variant` is selected.
+
+**Variants**
+
+- `subtle` (default) — no border, no background, 32px padding. Use inline inside an existing card or panel.
+- `bordered` — dashed border on a near-white background, 48px padding, 12px radius. Use as the sole content of a panel where the empty state needs its own frame.
+- `banner` — solid soft-gray background, no border, 32px padding, 8px radius. Use as a notice within a larger layout.
+
+**Slot combinations**
+
+- title only — minimal, useful inside dense lists.
+- title + description — adds context without pushing for an action.
+- title + action — short and directive.
+- title + description + action — the standard case.
+- icon + any of the above — adds visual weight for empty-by-default sections.
+
+## Tokens consumed
+
+Uses `@m-next/layout` (`Stack`) for vertical rhythm. Colors, font, and spacing inside the component are hardcoded — same rationale as Spinner: empty states often render on first paint, on lazy routes, or inside error boundaries where a `ThemeProvider` may not be mounted. Hardcoding the visual defaults keeps the component from throwing in those moments.
+
+## Variants
+
+<Canvas of={EmptyStateStories.AllVariants} />
+
+## API
+
+| Prop | Type | Default | Notes |
+|------|------|---------|-------|
+| `title` | `string` | — | **Required.** Rendered as an `<h3>`. Also used as `aria-label` on the root region. |
+| `icon` | `ReactNode` | — | Optional. SVG, emoji, or any node. Wrapped in `aria-hidden` — decorative only. |
+| `description` | `ReactNode` | — | Optional body text. Rendered as `<p>` with `max-width: 480px`. |
+| `action` | `ReactNode` | — | Optional. Usually a button or link. Pass a real focusable element. |
+| `variant` | `'subtle' \| 'bordered' \| 'banner'` | `'subtle'` | Container treatment. |
+| Any other prop | — | — | Spread onto the root `<div>` (e.g. `style`, `className`, `data-*`). |
+
+## Accessibility
+
+- The root has `role="region"` with `aria-label={title}` — screen-reader users can navigate to or skip the empty state via landmark navigation.
+- The title is a semantic `<h3>`; the description is a semantic `<p>`. Headings nest correctly inside the surrounding page structure (place EmptyState below an `<h1>`/`<h2>` for the section).
+- `icon` is wrapped in `aria-hidden="true"`. Don't put meaning in the icon alone — the title must stand on its own.
+- `action` is rendered as-is. Pass a real `<button>` or `<a>` so it's natively focusable and keyboard-operable. Do not pass a styled `<div>`.
+
+## Examples
+
+### With an icon
+
+<Canvas of={EmptyStateStories.WithIcon} />
+
+### Without an action
+
+<Canvas of={EmptyStateStories.WithoutAction} />
+
+### Search — no results
+
+<Canvas of={EmptyStateStories.SearchNoResults} />
+
+### Minimal — title only
+
+<Canvas of={EmptyStateStories.Minimal} />
+
+## Edge cases
+
+- **Very long descriptions** — `description` has a `max-width: 480px` so copy wraps rather than running edge-to-edge. Beyond a paragraph or two, reconsider whether the empty state is the right surface.
+- **Action as link vs button** — a button when the next step is an action in the app ("New invoice"); a link when it's navigation ("Learn more"). Both are valid; pass the right element.
+- **No description** — title-only empty states are fine for dense lists or repeated sections where context is already established by the surrounding UI.
+- **Nested inside small containers** — the `bordered` variant's 48px padding gets cramped below ~320px wide. Drop to `subtle` for tight spaces.
+
+## Related components
+
+- `@m-next/alert` — use for non-empty messaging (errors, warnings, info) where the data path didn't reach an empty result.
+- `@m-next/spinner` — use while data is still loading. Swap to EmptyState only after the load resolves to zero results.
+- `@m-next/banner` — page-level announcements that aren't tied to a specific data section.

@@ -1,0 +1,104 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as AlertStories from './alert.stories';
+
+<Meta of={AlertStories} />
+
+# Alert
+
+An inline message box. Status-tinted, persistent, embedded inside a form, panel, or content section — distinct from the page-level Banner.
+
+## When to use it
+
+- Form validation errors that sit next to or above the offending fields.
+- Success confirmations inside a panel after a save, import, or update.
+- Contextual warnings near a specific control — e.g. "this action can't be undone" above a destructive button.
+- Inline informational notices that explain the state of the surrounding content.
+
+## When NOT to use it
+
+- For transient confirmations that should fade on their own — use Toast (not yet built).
+- For page-level system messages that apply to the entire screen — use Banner (m-one's existing full-bleed page banner).
+- For an empty result set or zero-state — use EmptyState.
+- For ephemeral hints tied to a hovered or focused control — use Tooltip.
+
+The distinction matters:
+
+- **Alert** — inline, inside a panel or form, persistent until the user or system dismisses it.
+- **Banner** — page-level, full-bleed, persistent system message above the page chrome.
+- **Toast** — transient overlay, auto-dismisses on a timer (not yet built).
+
+## Anatomy
+
+A horizontal row inside a status-tinted background with a 4px left-border accent:
+
+1. **Status icon** — a single glyph (`ℹ`, `✓`, `⚠`, `✕`) in the accent color, `aria-hidden`.
+2. **Content** — an optional bold title, the body (`children`), and an optional `action` element rendered beneath the body.
+3. **Dismiss button** — absolutely positioned top-right, rendered only when `onDismiss` is supplied. Carries `aria-label="Dismiss"`.
+
+The content column reserves right padding when a dismiss button is present so long text doesn't collide with the × glyph.
+
+## States
+
+Alert has no internal state. What changes is the combination of props:
+
+- **Status** — one of `info`, `success`, `warning`, `error`. Drives background, accent color, icon, and ARIA role.
+- **With or without title** — `title` is optional; the body renders alone when omitted.
+- **With or without action** — `action` is any ReactNode (typically a button or link) shown below the body.
+- **Dismissible vs persistent** — supplying `onDismiss` renders the × button. Visibility itself is the consumer's responsibility — Alert does not unmount itself.
+
+## Tokens consumed
+
+None. Alert is deliberately decoupled from `@m-next/theme` and `@m-next/tokens` — status colors are hardcoded in a `status → { background, accent, icon }` map. The rationale: alerts often render in code paths that run *before* a `ThemeProvider` has mounted — error-boundary fallbacks, hydration mismatches, initial form validation, pre-mount auth states. Coupling to theme would throw in exactly the moments Alert is most needed. Status color is part of Alert's semantic contract, not a theming concern.
+
+## Statuses
+
+<Canvas of={AlertStories.AllStatuses} />
+
+## API
+
+| Prop | Type | Default | Notes |
+|------|------|---------|-------|
+| `status` | `'info' \| 'success' \| 'warning' \| 'error'` | `'info'` | Drives background, accent border, icon glyph, and ARIA role. |
+| `title` | ReactNode | — | Optional bold heading rendered above the body. |
+| `children` | ReactNode | — | The message body. |
+| `action` | ReactNode | — | Optional element (typically a button or link) rendered under the body. |
+| `onDismiss` | `() => void` | — | When provided, a × dismiss button is rendered top-right. |
+| Any other prop | — | — | Spread onto the root `<div>` (e.g. `style`, `className`, `data-*`). |
+
+## Accessibility
+
+- `status="error"` renders with `role="alert"` — screen readers announce it immediately and interrupt any in-progress speech. Use only for errors the user needs to act on now.
+- `info`, `success`, and `warning` render with `role="status"` — announced politely, after the current utterance finishes. Appropriate for confirmations and ambient information.
+- The status icon carries `aria-hidden="true"` — it's decorative; the role plus visible text carry the meaning.
+- The dismiss button has `aria-label="Dismiss"` so screen reader users hear a meaningful name rather than the literal `×` glyph.
+- Implication: errors will preempt other announcements, success/info/warning will wait their turn. Choose `status` accordingly — don't escalate a confirmation to `error` just to draw the eye.
+
+## Examples
+
+### Without a title
+
+<Canvas of={AlertStories.WithoutTitle} />
+
+### Dismissible
+
+<Canvas of={AlertStories.WithDismiss} />
+
+### With an action
+
+<Canvas of={AlertStories.WithAction} />
+
+### Long content
+
+<Canvas of={AlertStories.LongContent} />
+
+## Edge cases
+
+- **Very long titles** — `title` wraps naturally. There's no truncation; treat the title as a sentence, not a chip.
+- **Visibility is the consumer's job** — Alert does not remove itself when the dismiss button is clicked. The consumer must hold `open` state and conditionally render the Alert. If you render the Alert unconditionally and rely on `onDismiss` alone, it will re-mount on every parent render.
+- **Action + dismiss together** — both render simultaneously; the dismiss × sits absolutely positioned in the top-right while the action sits beneath the body. They don't visually collide, but if your action is wide, leave room for the × — the content column reserves 24px of right padding when `onDismiss` is set.
+
+## Related components
+
+- **Banner** — page-level, full-bleed system message. Use for messages that apply to the entire screen, not a specific panel or form.
+- **Toast** — transient overlay that auto-dismisses (not yet built). Use for confirmations that don't need to persist.
+- **EmptyState** — for empty content, not for messages. Use when a list, table, or section has no data to show.

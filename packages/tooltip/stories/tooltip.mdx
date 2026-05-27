@@ -1,0 +1,104 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as TooltipStories from './tooltip.stories';
+
+<Meta of={TooltipStories} />
+
+# Tooltip
+
+A hover- or focus-triggered descriptive label that floats next to its trigger element.
+
+## When to use it
+
+- Naming an icon-only button — the gear, the trash can, the kebab menu — so a sighted user can confirm what it does before clicking.
+- Revealing the full text of a value that has been truncated with an ellipsis (long customer names in a grid cell, long file names in a list).
+- Surfacing a keyboard shortcut hint on a toolbar action (`Save (Ctrl+S)`).
+- Clarifying terminology on an inline link or dotted-underline word where the rest of the sentence stays uninterrupted.
+
+## When NOT to use it
+
+- For information the user cannot complete the task without. Tooltips are hover-gated and invisible by default — put critical info in inline text or a permanent helper.
+- On non-interactive elements (plain text, decorative icons). Tooltips need a focusable trigger; attaching one to a `<span>` of body copy creates an interaction that keyboard users can't discover.
+- As a substitute for a label on a form field. Form fields need a real `<label>` — a tooltip is supplementary, not primary.
+- On surfaces that are primarily touch / mobile. There is no hover on touch; the tooltip will never appear for most of those users.
+- For anything longer than a sentence or two. If you need a paragraph, use an `Alert`, a popover, or a help drawer.
+
+## Anatomy
+
+Three pieces, all inline DOM, no portal:
+
+1. A wrapper `<span style="position: relative; display: inline-block">` that hosts the trigger.
+2. The trigger — your `children`, cloned to receive `onMouseEnter` / `onMouseLeave` / `onFocus` / `onBlur` plus `aria-describedby` while visible.
+3. An absolutely positioned bubble (`<span role="tooltip">`) with a CSS-triangle arrow pointing back at the trigger. Dark slab background (`#1f2937`), white 12px text, 6px corner radius, soft drop shadow. Fades in over 120ms.
+
+The bubble is only in the DOM while visible — there is no hidden tooltip sitting around.
+
+## States
+
+- **Hidden** (default) — no bubble rendered. The trigger has no `aria-describedby` from the tooltip.
+- **Pending** — the user has hovered but `delay` (300ms by default) has not yet elapsed. Leaving the trigger during this window cancels the show.
+- **Showing** — bubble is rendered, fade-in animation runs, `aria-describedby` is attached to the trigger.
+- **Positioning** — the bubble is anchored to one of four sides of the trigger: `top` (default), `bottom`, `left`, `right`.
+
+Focus from the keyboard skips the delay — `onFocus` shows immediately, `onBlur` hides immediately. Mouse hover honors the delay so the UI doesn't twitch as the cursor passes over.
+
+## Tokens consumed
+
+None. Like `@m-next/spinner`, Tooltip is deliberately decoupled from `@m-next/theme` and `@m-next/tokens`. Tooltips show up in places where a `ThemeProvider` may not be mounted yet (early app load, error boundaries, splash screens, dev tools, ad-hoc utility UI), and the dark slab style is intentionally fixed so it reads as a system overlay rather than themed chrome.
+
+If a future variant needs themed surfaces, that becomes a separate prop — it does not become a hard dependency on theme.
+
+## Placements
+
+<Canvas of={TooltipStories.Placements} />
+
+## API
+
+| Prop | Type | Default | Notes |
+|------|------|---------|-------|
+| `content` | `ReactNode` | — | **Required.** What goes inside the bubble. Text, or any inline node. |
+| `placement` | `'top' \| 'bottom' \| 'left' \| 'right'` | `'top'` | Which side of the trigger the bubble sits on. |
+| `delay` | `number` | `300` | ms to wait before showing on hover. Set to `0` for instant. Focus always shows immediately regardless of this value. |
+| `children` | `ReactElement` | — | **Required.** Exactly one trigger element. Cloned to receive handlers and `aria-describedby`. |
+| Any other prop | — | — | Spread onto the wrapper `<span>` (e.g. `style`, `className`, `data-*`). |
+
+## Accessibility
+
+- The bubble carries `role="tooltip"` and a stable, unique `id` (`m-next-tooltip-<n>`).
+- While the bubble is visible, the trigger receives `aria-describedby="<that id>"` via `cloneElement`. Screen readers announce the tooltip content as a description of the trigger, not as a separate region.
+- If the consumer already passed `aria-describedby` on their trigger, Tooltip **chains** them — both ids are joined with a space (`"consumer-id m-next-tooltip-3"`) so existing descriptions are preserved.
+- Keyboard support is built in: `onFocus` shows the tooltip, `onBlur` hides it. A keyboard user tabbing through the page sees the same content a mouse user does.
+- The arrow `<span>` is marked `aria-hidden="true"` — it's a decorative CSS triangle, not announced.
+- No `Escape` to dismiss yet — the tooltip hides on blur/mouseleave only. If the trigger keeps focus, the tooltip stays up. Worth knowing for forms where focus dwells.
+
+## Examples
+
+### On an icon-style button
+
+<Canvas of={TooltipStories.OnButton} />
+
+### On an inline link inside body copy
+
+<Canvas of={TooltipStories.OnInlineLink} />
+
+### Longer content (wraps at 240px max-width)
+
+<Canvas of={TooltipStories.LongContent} />
+
+### Zero delay — instant on hover
+
+<Canvas of={TooltipStories.ZeroDelay} />
+
+## Edge cases
+
+- **Trigger already has `aria-describedby`** — Tooltip joins both ids rather than overwriting, so existing descriptions (a form error message, for example) keep working.
+- **Trigger already has hover/focus handlers** — `onMouseEnter`, `onMouseLeave`, `onFocus`, `onBlur` on the child are chained. Your handler runs first, then Tooltip's. You will not lose click analytics or focus tracking.
+- **Single child required** — `children` must be a single React element. Tooltip clones it. Passing a fragment, an array, or a string will not work — the clone has nothing to attach handlers to.
+- **No portal, no floating-ui** — the bubble is absolutely positioned relative to the wrapper `<span>`. Inside a small container with `overflow: hidden` (a grid cell, a narrow card), the bubble can clip. Workarounds: give the container room, flip placement, or wrap the cell with `overflow: visible`. A future variant could portal into `document.body` if clipping becomes a recurring issue.
+- **SSR** — the keyframes injection is guarded with a `typeof document === 'undefined'` check and is idempotent, so multiple Tooltips share the same `<style>` block.
+- **Touch devices** — there is no hover on touch. Focus works (long-press focuses some elements), but don't rely on tooltip-only content for primary task flows on tablet/phone.
+
+## Related components
+
+- `@m-next/alert` — for persistent inline messages that need to stay visible while the user reads them. Tooltips disappear on blur; alerts don't.
+- Popover-style components — none in m-next yet. When richer, click-anchored content is needed (forms, menus, multi-line help with links), that's a popover, not a tooltip.
+- `@m-next/button` — the most common tooltip trigger. Pair when the button is icon-only or has a non-obvious keyboard shortcut.

@@ -1,0 +1,267 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as ButtonStories from './button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+A clickable trigger for actions — the primary way users tell the app to do something.
+
+## When to use it
+
+- Submitting a form (Save, Send, Apply).
+- Triggering an action — running a workflow, recalculating a total, refreshing a list.
+- Opening a dialog, drawer, or menu.
+- Confirming or cancelling inside a modal.
+- Anything that *does something* in the current page, rather than taking the user elsewhere.
+
+## When NOT to use it
+
+- **For navigation.** Use a `Link` — anchors with `href` give users real browser affordances (open in new tab, copy URL, status bar preview).
+- **For showing state.** Use a `Badge` or status pill. Buttons imply interaction.
+- **For radio-like selection.** Use a `SegmentedControl` or `RadioGroup`. The legacy `buttonStyle="radio"` / `"radio-selected"` is intentionally not supported here.
+- **As a fake link styled with `variant="link"`.** `variant="link"` exists for inline button-shaped triggers (an "Undo" action inside a toast, a "Reset filters" affordance). It still produces a `<button>` — it will not navigate, will not show a URL, will not work with right-click. If the user is going somewhere, use `Link`.
+
+## Anatomy
+
+A real `<button>` element containing, in order:
+
+1. An optional `leftIcon` (any ReactNode).
+2. `children` — the label.
+3. An optional `rightIcon` (any ReactNode).
+
+The three are laid out with an inline-flex row, `gap: 8px`, vertically centered. Per-variant styling (`primary`, `secondary`, `ghost`, `link`) is applied to the same root element. Sizes (`sm` / `md` / `lg`) are 24 / 32 / 40 px tall with a pill-ish border-radius (half the height) that matches Method's existing visual identity.
+
+## States
+
+- **Default** — variant background, border, text color.
+- **Hover** — slightly darker fill (primary) or tinted background (secondary, ghost). Suppressed when `:disabled`.
+- **Active** — darker still, for the moment the press is held. Suppressed when `:disabled`.
+- **Focus-visible** — 2px blue outline at 2px offset, only when the user focuses via keyboard (`:focus-visible`, not `:focus`). Mouse clicks don't draw the ring.
+- **Disabled** — `opacity: 0.5`, `cursor: not-allowed`, all hover/active suppressed. `disabled` on the element and `aria-disabled` on the ARIA layer are both set.
+
+## Tokens consumed
+
+None yet — colors and sizes are intentionally hardcoded in `Button.styles.jsx`:
+
+- `#0D71C8` (Method blue) for primary fill and link/secondary accent.
+- `#0a5a9c` / `#084680` for hover and active.
+- `#d1d5db` / `#f3f4f6` / `#374151` for secondary borders, ghost hover, and ghost text.
+
+This follows the theme-decoupled pattern set by `Spinner`: a component that renders outside a `ThemeProvider` (initial app load, error boundaries) should not throw. A future pass will integrate `@m-next/tokens` for spacing and radius once token usage stabilizes across the library.
+
+## Variants
+
+<Canvas of={ButtonStories.Variants} />
+
+## API
+
+| Prop | Type | Default | Notes |
+|------|------|---------|-------|
+| `children` | ReactNode | — | Button label. Use ReactNode children, not strings of HTML. |
+| `variant` | `'primary' \| 'secondary' \| 'ghost' \| 'link'` | `'primary'` | Visual treatment. |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | 24 / 32 / 40 px height. |
+| `leftIcon` | ReactNode | — | Rendered before `children`. |
+| `rightIcon` | ReactNode | — | Rendered after `children`. |
+| `fullWidth` | boolean | `false` | Fills the parent's width. |
+| `disabled` | boolean | `false` | Sets `disabled` and `aria-disabled`. |
+| `type` | `'button' \| 'submit' \| 'reset'` | `'button'` | Native button type. Defaults to `'button'` so it won't accidentally submit a form. |
+| `onClick` | function | — | Click handler. |
+| `ref` | `Ref<HTMLButtonElement>` | — | Forwarded to the underlying `<button>` via React's `forwardRef` API. |
+| Any `aria-*`, `data-*`, native `<button>` attrs | — | — | Spread to the root `<button>`. |
+
+## Accessibility
+
+- The root is a real `<button>` element. Keyboard semantics (Space, Enter, Tab order, focus) are native — no manual wiring.
+- All `aria-*` and `data-*` props pass through to the root. `aria-label`, `aria-pressed`, `aria-expanded`, `aria-controls` all work out of the box.
+- `disabled` automatically mirrors to `aria-disabled` — assistive tech announces the disabled state correctly.
+- The focus ring is drawn on `:focus-visible` only, so mouse clicks don't show a ring but keyboard users always see one.
+- Icon-only buttons (e.g. a `×` close button) **must** receive an `aria-label` — see Edge cases.
+
+## Examples
+
+### Sizes
+
+<Canvas of={ButtonStories.Sizes} />
+
+### With icons
+
+<Canvas of={ButtonStories.WithIcons} />
+
+### States
+
+<Canvas of={ButtonStories.States} />
+
+### Full width
+
+<Canvas of={ButtonStories.FullWidth} />
+
+### Accessibility passthrough
+
+<Canvas of={ButtonStories.Accessibility} />
+
+### Real-world action rows
+
+<Canvas of={ButtonStories.RealWorldRow} />
+
+## Migration from `@m-one/button`
+
+`@m-next/button` is the first component cleaned up under the m-next API normalization. Old code keeps working — the component ships with a soft shim that warns once in the browser console and then translates the legacy prop. A few props are hard-broken with rationale.
+
+### Soft-shimmed props (still work, log a one-time warning)
+
+Each warning fires the first time the prop is encountered, then never again for that prop — so a noisy migration period doesn't drown the console.
+
+#### `value` → `children`
+
+```jsx
+// Before (deprecated, still works with a warning)
+<Button id="save" value="Save" />
+
+// After
+<Button>Save</Button>
+```
+
+#### `buttonStyle` → `variant`
+
+```jsx
+// Before
+<Button buttonStyle="primary" value="Save" />
+<Button buttonStyle="plain" value="Cancel" />
+<Button buttonStyle="v4-primary" value="Apply" />
+
+// After
+<Button variant="primary">Save</Button>
+<Button variant="ghost">Cancel</Button>     {/* plain → ghost */}
+<Button variant="primary">Apply</Button>    {/* v4-primary → primary */}
+```
+
+`buttonStyle="radio"` and `"radio-selected"` are **not** translated. Radio-like behavior belongs in a `SegmentedControl` or `RadioGroup`, not in a button-with-state.
+
+#### `size="small" | "medium"` → `size="sm" | "md"`
+
+```jsx
+// Before
+<Button size="small" value="Small" />
+<Button size="medium" value="Medium" />
+
+// After
+<Button size="sm">Small</Button>
+<Button size="md">Medium</Button>
+{/* "lg" is new — no legacy equivalent */}
+```
+
+#### `icon={{ name, size, color, position }}` → `leftIcon` / `rightIcon`
+
+```jsx
+// Before
+<Button
+  icon={{ name: 'email', size: 16, color: 'white', position: 'left' }}
+  value="Send"
+/>
+
+// After
+import SvgIcon from '@m-next/svg-icon';
+
+<Button leftIcon={<SvgIcon name="email" size={16} color="white" />}>
+  Send
+</Button>
+```
+
+The shim renders the legacy `icon` object via `@m-next/svg-icon` and places it in `leftIcon` (or `rightIcon` if `position: 'right'`).
+
+#### `forwardRef` prop → React `ref`
+
+```jsx
+// Before
+<Button forwardRef={myRef} value="Save" />
+
+// After
+<Button ref={myRef}>Save</Button>
+```
+
+`Button` now uses the standard React `forwardRef` API — pass `ref` directly.
+
+#### Silently ignored (no warning, no effect)
+
+`isV4Design`, `isMobile`, `visible`, `classes`, `widthType`, `width` — these had no meaningful behavior left to preserve. They're accepted and dropped so existing call sites don't crash. Clean them up at your leisure.
+
+### Hard-broken props (warn, do nothing)
+
+Three groups of props were removed deliberately. The component warns when they're passed so you know to migrate, but it does **not** try to emulate their old behavior.
+
+#### `isDangerous` — removed for security
+
+```jsx
+// Before — rendered the value as raw HTML via dangerouslySetInnerHTML
+<Button isDangerous value="<strong>Save</strong>" />
+
+// After — pass ReactNode children, no HTML strings
+<Button><strong>Save</strong></Button>
+```
+
+`dangerouslySetInnerHTML` on a button was an XSS vector waiting to fire. There is no equivalent. If you need formatted content, compose it as JSX.
+
+#### `tooltip` / `tooltipId` — moved to composition
+
+```jsx
+// Before
+<Button tooltip="Save the current invoice" value="Save" />
+
+// After
+import Tooltip from '@m-next/tooltip';
+
+<Tooltip content="Save the current invoice">
+  <Button>Save</Button>
+</Tooltip>
+```
+
+A tooltip is a separate component with its own positioning, delay, and accessibility concerns. Bundling it into `Button` made both worse. Compose explicitly.
+
+#### Per-prop color overrides — use `variant` (or `style` for true one-offs)
+
+```jsx
+// Before
+<Button
+  backgroundColor="#0D71C8"
+  borderColor="#0D71C8"
+  borderRadius="20px"
+  fontSize="14px"
+  color="#fff"
+  value="Save"
+/>
+
+// After
+<Button variant="primary">Save</Button>
+
+// Escape hatch for true one-offs
+<Button style={{ borderRadius: 0 }}>Square corner</Button>
+```
+
+The whole point of `variant` is that the design system, not the call site, owns visual decisions. Per-prop overrides defeated that. `style` and `className` remain available as escape hatches for legitimate one-offs.
+
+### See it run
+
+<Canvas of={ButtonStories.LegacyAPIStillWorks} />
+
+### One-time `console.warn` behavior
+
+The first time a deprecated prop appears in your app, you'll see a single `console.warn` describing what to change. Subsequent uses of the same prop are silent — the warner is keyed per-prop, not per-instance, so a hundred legacy buttons produce at most a handful of lines in the console. Watch the dev console during a normal session to build your migration list.
+
+## Edge cases
+
+- **`variant="link"` has no padding and no fixed height.** It renders inline (`height: auto`, `padding: 0`, `borderRadius: 0`) so it can sit inside a paragraph. It's still a `<button>` — for navigation, use `Link`.
+- **`fullWidth` inside a flex container.** `fullWidth` sets `width: 100%`. Inside a `display: flex` parent, that may collapse to content width unless the button has `flex: 1` or the parent has `align-items: stretch`. If you want the button to fill a flex row, give it `flex: 1` via `style`.
+- **Very long labels.** Buttons don't wrap by default — `inline-flex` plus `align-items: center` keeps the label on one line and lets it overflow horizontally. For long, user-supplied strings, set `max-width` and `text-overflow: ellipsis` via `style`, or shorten the label.
+- **Icon-only buttons need `aria-label`.** A button containing only an icon has no accessible name. Always provide `aria-label`: `<Button aria-label="Close dialog" variant="ghost">×</Button>`.
+
+## Open follow-ups
+
+- `button.test.jsx` and `__snapshots__/` still reference the legacy API. They will fail until rewritten — flagged as a separate task.
+- A `destructive` variant (red primary) is not in this pass. Add when the first consumer needs it.
+
+## Related components
+
+- `@m-next/link` — for navigation. Anchors with `href`, real browser semantics.
+- `IconButton` — when an icon-only pattern emerges often enough to deserve a dedicated component. For now, use `Button` with `aria-label` and an icon child.
+- `SegmentedControl` — for radio-like toggles between a small fixed set of options. Replaces the legacy `buttonStyle="radio"` / `"radio-selected"`. Not yet built.

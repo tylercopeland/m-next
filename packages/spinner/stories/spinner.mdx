@@ -1,0 +1,95 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as SpinnerStories from './spinner.stories';
+
+<Meta of={SpinnerStories} />
+
+# Spinner
+
+A loading indicator. Visual stand-in for the brief moments when work is being done but content can't yet be shown.
+
+## When to use it
+
+- Inline indication that an action is in flight — a button submitting, a save pending.
+- Block-level indication that a section or page is loading data.
+- Inside cells of a data grid while individual rows refresh.
+
+## When NOT to use it
+
+- For loads under ~200ms. Most operations resolve faster than the spinner is perceptible — adding it just makes the UI feel slower.
+- For long-running operations (more than 3 seconds) with knowable progress. Use a progress bar instead.
+- For progressive content loading where individual blocks can render as they arrive. Use `@m-next/loading-skeleton` instead.
+- Decoratively. A spinner without an actual loading state misleads the user.
+
+## Anatomy
+
+A single SVG circle — a 270° arc stroked with `currentColor`, rotated continuously at 0.8s/cycle. Default size is 24×24px. The animation keyframes are injected once into `document.head` when the first Spinner mounts; every Spinner shares the same keyframes block.
+
+## States
+
+The component itself has no internal state — it animates continuously while mounted. Its visibility is the consumer's responsibility:
+
+- **Mounted** — animates. Render this only while the loading condition is true.
+- **Unmounted** — animation stops with the component. Remove when loading completes.
+- **In-button** — the parent button typically holds `disabled` while the spinner is rendered alongside its label.
+
+## Tokens consumed
+
+None. Spinner is deliberately decoupled from `@m-next/theme` and `@m-next/tokens` — color is an explicit prop with a default. The rationale: spinners often render before a `ThemeProvider` has mounted (initial app load, error boundaries, lazy-route fallbacks). Coupling to theme would throw in those moments. Consumers who want theme-aware color pass it explicitly:
+
+```jsx
+const theme = useTheme();
+<Spinner color={theme.content.secondary} />
+```
+
+## Sizes
+
+<Canvas of={SpinnerStories.Sizes} />
+
+## API
+
+| Prop | Type | Default | Notes |
+|------|------|---------|-------|
+| `size` | `'sm' \| 'md' \| 'lg' \| number` | `'md'` | `sm`=16, `md`=24, `lg`=32. Numbers pass through as px. |
+| `color` | string | `'#0D71C8'` | Any CSS color. |
+| `thickness` | number | `2.5` | Stroke width in SVG units (viewBox is 24×24). |
+| `label` | string | `'Loading'` | Visually hidden, announced by screen readers. |
+| Any other prop | — | — | Spread onto the wrapper `<span>` (e.g. `style`, `className`, `data-*`). |
+
+## Accessibility
+
+- The wrapper has `role="status"` and `aria-live="polite"` — screen readers announce the loading state without interrupting the user.
+- The visible SVG carries `aria-hidden="true"` — decorative, not announced separately.
+- The `label` prop is the accessible text. Default is `"Loading"`. Override for specificity: `<Spinner label="Saving invoice" />`.
+- No keyboard interaction — Spinner is informational, not interactive.
+
+## Examples
+
+### Inside a button
+
+<Canvas of={SpinnerStories.InsideButton} />
+
+### Inline with text
+
+<Canvas of={SpinnerStories.InlineWithText} />
+
+### Block — page or section loading
+
+<Canvas of={SpinnerStories.Block} />
+
+### Custom thickness and color
+
+<Canvas of={SpinnerStories.CustomThickness} />
+
+<Canvas of={SpinnerStories.Colors} />
+
+## Edge cases
+
+- **Reduced motion** — the spinner still animates regardless of `prefers-reduced-motion`. If a consumer needs to honor that preference, swap in a static placeholder at the consumer level.
+- **SSR** — `document` is guarded; the keyframes injection skips when `document` is undefined.
+- **Stacked spinners** — multiple Spinners share the same keyframes block (idempotent injection), so there's no penalty for rendering many at once.
+
+## Related components
+
+- `@m-next/loading-skeleton` — use instead for progressive content loading (rows, cards) where the shape of content is known.
+- `@m-next/button` — combine with a button to convey in-flight state. Disable the button while loading.
+- `@m-next/empty-state` — render when a load resolves to no results, not while still loading.

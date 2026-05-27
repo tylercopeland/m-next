@@ -1,0 +1,112 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as BadgeStories from './badge.stories';
+
+<Meta of={BadgeStories} />
+
+# Badge
+
+A small inline label that classifies, counts, or signals status next to other content.
+
+## When to use it
+
+- Status next to a row, card, or header — "Active", "Pending", "Suspended", "Draft".
+- Counts next to a label — "Inbox 3", "Comments 12".
+- Category or taxonomy tags — "Internal", "Beta", "Admin".
+- Lightweight metadata that needs to read as one glance, not as a sentence.
+
+## When NOT to use it
+
+- For an action the user can click. Use `@m-next/button` instead — a badge looks tappable but isn't.
+- For a message the user needs to read. Use `@m-next/alert` — badges are too small to carry explanatory copy.
+- For long content. Badge enforces `white-space: nowrap`; a wrapping badge looks broken.
+- As decorative chrome. If it doesn't classify, count, or signal status, it's noise.
+- For form input — multi-select tags that are dismissible aren't badges. A future `Chip` (or `@m-next/dropdown` with tags) belongs there.
+
+## Anatomy
+
+A single `<span>` rendered as an inline-flex pill:
+
+- **Pill shape** — `border-radius: 9999px`, always.
+- **Optional dot** — a 6×6px circle before the children when `dot` is true. Dot color matches the badge's text color.
+- **Text** — the `children`. Font is Source Sans Pro, weight 600, sized per the `size` prop.
+- **Padding** — `2px 6px` at `sm`, `3px 8px` at `md`. No `lg`.
+- **Border** — 1px transparent (solid/subtle) or 1px colored (outline), so vertical rhythm stays constant across variants.
+
+## States
+
+Badge is non-interactive — no hover, focus, or pressed states. The visual treatments are configuration, not state:
+
+- **solid** — filled background in the colorScheme hue, white text. Highest emphasis. Use for counts and primary status.
+- **subtle** — pale tint of the hue (~12%) as background, dark hue as text. Lowest emphasis. Use when many badges sit together in a list or table.
+- **outline** — transparent background, 1px border and text in the colorScheme hue. Mid emphasis. Use when the badge sits over a colored surface where solid would clash.
+
+The `dot` prop adds a leading 6px circle and 4px gap; it shifts the badge's intrinsic width but not its height.
+
+## Tokens consumed
+
+None. Badge is deliberately decoupled from `@m-next/theme` and `@m-next/tokens` — colors are hardcoded per `colorScheme`. The rationale: badges often render before a `ThemeProvider` has mounted (initial app load, error boundaries, empty states). Coupling to theme would throw in those moments. Consumers who want fully theme-tied color override via `style`:
+
+```jsx
+const theme = useTheme();
+<Badge style={{ background: theme.surface.accent, color: theme.content.onAccent }}>
+  Custom
+</Badge>
+```
+
+## Variants
+
+<Canvas of={BadgeStories.AllVariants} />
+
+## API
+
+| Prop | Type | Default | Notes |
+|------|------|---------|-------|
+| `variant` | `'solid' \| 'subtle' \| 'outline'` | `'solid'` | Visual treatment. |
+| `colorScheme` | `'neutral' \| 'blue' \| 'green' \| 'yellow' \| 'red'` | `'neutral'` | Semantic color. No arbitrary hex — pick the closest meaning. |
+| `size` | `'sm' \| 'md'` | `'md'` | `sm`=10px font, `md`=12px font. No `lg` — badges are inherently small. |
+| `dot` | `boolean` | `false` | If true, renders a 6px circle before children. The dot is `aria-hidden`. |
+| `children` | `ReactNode` | — | The badge content. Keep it short — one or two words, or a number. |
+| `style` | `CSSProperties` | — | Merged after the computed variant/size styles, so it can override anything. |
+| Any other prop | — | — | Spread onto the wrapper `<span>` (e.g. `className`, `aria-*`, `data-*`, `onClick`). |
+
+## Accessibility
+
+- Badge is a plain `<span>` with no implicit role — it's treated as decorative inline text by screen readers. That's intentional: most badges duplicate information that's already in the surrounding label.
+- The leading dot carries `aria-hidden="true"` — color is never the sole signal, the text is.
+- If a badge value can change after page load (e.g., unread count), wrap the surrounding region in `aria-live` at the consumer level:
+
+```jsx
+<div aria-live="polite">
+  Inbox <Badge colorScheme="blue">{unreadCount}</Badge>
+</div>
+```
+
+- Color contrast: solid variants are designed against white surfaces. The yellow `subtle` and yellow `outline` variants use a darker text shade (`#92400E`) to keep contrast on pale backgrounds — don't override the text color without re-checking contrast.
+- No keyboard interaction. If you find yourself wiring `onClick` onto a Badge, reach for `@m-next/button` instead.
+
+## Examples
+
+### Sizes
+
+<Canvas of={BadgeStories.Sizes} />
+
+### With a leading dot
+
+<Canvas of={BadgeStories.WithDot} />
+
+### In context — nav counts, table status, card tags
+
+<Canvas of={BadgeStories.InContext} />
+
+## Edge cases
+
+- **Long text** — Badge sets `white-space: nowrap`, so long content will overflow its container rather than wrap. Keep labels to one or two words; truncate at the consumer level if you can't bound the input.
+- **Dot color on subtle yellow** — the dot inherits the badge's text color, which on yellow `subtle` is the darker `#92400E`. The dot reads as brown, not yellow. That's intentional for contrast; if it looks wrong in your context, pick a different colorScheme.
+- **Outline on colored surfaces** — the outline variant assumes a roughly white background. Over a tinted card, the 1px border can disappear into the surface; switch to `subtle` or `solid`.
+- **Numbers as children** — fine, but very large counts (`9999+`) widen the badge. Cap at the consumer level (`count > 99 ? '99+' : count`).
+
+## Related components
+
+- `@m-next/button` — use when the element is an action, not a label.
+- `@m-next/alert` — use when the message needs more than a word or two of explanation.
+- `@m-next/spinner` — combine with a badge if status is "loading" rather than a settled value.

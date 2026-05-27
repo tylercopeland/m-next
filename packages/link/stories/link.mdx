@@ -1,0 +1,87 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as LinkStories from './link.stories';
+
+<Meta of={LinkStories} />
+
+# Link
+
+A styled anchor element. Takes the user somewhere — a route, a page, an external resource.
+
+## When to use it
+
+- Navigating between pages or routes within the app.
+- Opening external resources (docs, marketing pages, third-party tools).
+- Inline references inside body copy, where the surrounding sentence gives the link its meaning.
+
+## When NOT to use it
+
+- **For actions.** If the control *does* something (submit, delete, toggle, open a dialog), use `@m-next/button`. Links navigate; buttons act. This is the single most important distinction — get it wrong and assistive tech, keyboard users, and the back button all behave wrong.
+- **For showing the user's *current* location.** A breadcrumb or nav item that represents the page you're already on is just text, not a link.
+- **As the primary CTA of a page.** Use `<Button variant="primary">`. Even the `button` variant of Link is still an anchor underneath — it shouldn't carry the weight of the page's main action.
+- **Inside a form submit.** Use `<Button type="submit">`. An anchor styled as a button cannot submit a form.
+
+## Anatomy
+
+A single `<a>` element with variant-specific styling. When `external` is true, two extra children render inside the anchor: a decorative `↗` glyph (`aria-hidden`) and a visually-hidden `(opens in new tab)` span for screen readers. A single `<style id="m-next-link-styles">` block is injected into `document.head` on first mount (idempotent) to carry the `:hover`, `:visited`, and `:focus-visible` rules that can't live on inline `style`.
+
+## States
+
+- **Default** — variant-specific color and underline treatment.
+- **Hover** — `primary` darkens to `#0a5a9c`; `subtle` gains an underline and shifts to Method blue; `button` fills with a light grey background and gains a border.
+- **Visited** — `primary` deliberately stays Method blue (not browser purple) so navigation history doesn't leak into UI styling. `subtle` and `button` inherit normal browser behavior because their default color is already neutral.
+- **Focused (`:focus-visible`)** — a 2px `#0D71C8` outline with 2px offset. Outline (not box-shadow) so it remains visible on any background, including transparent ones.
+
+## Tokens consumed
+
+None. Link is deliberately decoupled from `@m-next/theme` and `@m-next/tokens` — colors are hardcoded to Method blue (`#0D71C8`) and neutral greys. The rationale: links render in error pages, marketing surfaces, and unauthenticated flows where no `ThemeProvider` has mounted. Coupling to theme would throw in those moments. Consumers who want a custom palette override via `style` or wrap with their own className.
+
+## Variants
+
+<Canvas of={LinkStories.Variants} />
+
+## API
+
+| Prop | Type | Default | Notes |
+|------|------|---------|-------|
+| `href` | string | — | Required. |
+| `variant` | `'primary' \| 'subtle' \| 'button'` | `'primary'` | Visual treatment. |
+| `external` | boolean | `false` | Adds `target="_blank"`, `rel="noopener noreferrer"`, the `↗` glyph, and a visually-hidden "(opens in new tab)" hint. |
+| `children` | ReactNode | — | Link content. |
+| `target` | string | — | Passes through. Overrides the `_blank` set by `external`. |
+| `rel` | string | — | Passes through. Overrides the `noopener noreferrer` set by `external`. |
+| Any other anchor attr | — | — | Forwarded to `<a>` (`download`, `aria-*`, `onClick`, etc.). |
+
+## Accessibility
+
+- **Semantic `<a>`.** Renders a real anchor, so the browser, assistive tech, and the keyboard all treat it like a link — `Enter` to follow, right-click to open in new tab, back-button history, the whole anchor contract.
+- **External links announce themselves.** When `external` is true, a visually-hidden span renders the text `(opens in new tab)` next to the visible label. The hidden-span approach was chosen over `aria-label` so the link's visible text remains the accessible name — `aria-label` would clobber it.
+- **Focus is always visible.** The `:focus-visible` outline is not suppressed and the underline on the `primary` variant is intentional — don't override it to "clean up" the design. Keyboard users need it.
+- **`aria-*` passthrough.** Any anchor attribute (`aria-current`, `aria-describedby`, `download`, etc.) forwards to the underlying `<a>`.
+
+## Examples
+
+### External
+
+<Canvas of={LinkStories.External} />
+
+### Inline with text
+
+<Canvas of={LinkStories.InlineWithText} />
+
+### Standalone CTA
+
+<Canvas of={LinkStories.StandaloneCTA} />
+
+### On dark backgrounds
+
+<Canvas of={LinkStories.OnDarkBackground} />
+
+## Edge cases
+
+- **`button` variant looks like a button but is still an anchor.** It cannot submit a form, cannot carry an `onClick` that prevents navigation cleanly, and is announced as "link" by screen readers. If you need a real button, use `@m-next/button` — this variant is for styling, not semantics.
+- **`subtle` variant on dark backgrounds needs explicit color.** `subtle` uses `color: inherit`, so on a dark surface it picks up the parent's light foreground — but the hover state shifts to Method blue (`#0D71C8`), which may not have enough contrast on dark backgrounds. Set color explicitly via `style` if you need a lighter hover.
+
+## Related components
+
+- `@m-next/button` — use for actions, not navigation. If clicking it *does* something instead of *going* somewhere, it's a button.
+- `@m-next/tooltip` — use to add an explanation on hover when the link's purpose isn't obvious from its text alone.

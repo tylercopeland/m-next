@@ -10,22 +10,16 @@ const config = {
   // pre-existing ENOENT errors from per-package nested node_modules that didn't
   // survive the workspace hoist. Add new packages to this list as Phase 2+ ships.
   stories: [
-    '../packages/tokens/stories/**/*.stories.@(js|jsx|ts|tsx)',
-    '../packages/theme/stories/**/*.stories.@(js|jsx|ts|tsx)',
-    '../packages/layout/stories/**/*.stories.@(js|jsx|ts|tsx)',
-    '../packages/spinner/stories/**/*.stories.@(js|jsx|ts|tsx)',
-    '../packages/badge/stories/**/*.stories.@(js|jsx|ts|tsx)',
-    '../packages/tooltip/stories/**/*.stories.@(js|jsx|ts|tsx)',
-    '../packages/empty-state/stories/**/*.stories.@(js|jsx|ts|tsx)',
-    '../packages/link/stories/**/*.stories.@(js|jsx|ts|tsx)',
-    '../packages/alert/stories/**/*.stories.@(js|jsx|ts|tsx)',
+    '../packages/@(tokens|theme|layout|spinner|badge|tooltip|empty-state|link|alert|button)/stories/**/*.stories.@(js|jsx|ts|tsx)',
+    '../packages/@(tokens|theme|layout|spinner|badge|tooltip|empty-state|link|alert|button)/stories/**/*.mdx',
   ],
 
   addons: [
     getAbsolutePath("@storybook/addon-webpack5-compiler-babel"),
     getAbsolutePath("@storybook/addon-a11y"),
     getAbsolutePath("@chromatic-com/storybook"),
-    getAbsolutePath("@storybook/addon-themes")
+    getAbsolutePath("@storybook/addon-themes"),
+    getAbsolutePath("@storybook/addon-docs")
   ],
 
   docs: {
