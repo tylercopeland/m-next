@@ -2,7 +2,7 @@ import React from 'react';
 import { Spinner } from '../src';
 
 export default {
-  title: 'm-next/Components/Spinner',
+  title: 'm-next/Components/Feedback/Spinner',
   component: Spinner,
   parameters: { layout: 'padded' },
 };

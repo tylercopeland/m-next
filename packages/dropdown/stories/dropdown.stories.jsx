@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Dropdown from '../src';
 
 export default {
-  title: 'm-next/Components/Dropdown',
+  title: 'm-next/Components/Form/Dropdown',
   component: Dropdown,
   parameters: { layout: 'padded' },
 };

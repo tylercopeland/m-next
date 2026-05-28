@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Input from '../src';
 
 export default {
-  title: 'm-next/Components/Input',
+  title: 'm-next/Components/Form/Input',
   component: Input,
   parameters: { layout: 'padded' },
 };

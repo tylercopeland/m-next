@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Toggle from '../src';
 
 export default {
-  title: 'm-next/Components/Toggle',
+  title: 'm-next/Components/Form/Toggle',
   component: Toggle,
   parameters: { layout: 'padded' },
 };

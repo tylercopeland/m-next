@@ -2,7 +2,7 @@ import React from 'react';
 import Card from '../src';
 
 export default {
-  title: 'm-next/Components/Card',
+  title: 'm-next/Components/Display/Card',
   component: Card,
   parameters: { layout: 'padded' },
 };

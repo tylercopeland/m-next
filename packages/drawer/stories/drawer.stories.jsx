@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Drawer } from '../src';
 
 export default {
-  title: 'm-next/Components/Drawer',
+  title: 'm-next/Components/Overlay/Drawer',
   component: Drawer,
   parameters: { layout: 'padded' },
 };

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IconRadioGroup } from '../src';
 
 export default {
-  title: 'm-next/Components/IconRadioGroup',
+  title: 'm-next/Components/Form/IconRadioGroup',
   component: IconRadioGroup,
   parameters: { layout: 'padded' },
 };

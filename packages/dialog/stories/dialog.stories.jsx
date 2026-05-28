@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Dialog from '../src';
 
 export default {
-  title: 'm-next/Components/Dialog',
+  title: 'm-next/Components/Overlay/Dialog',
   component: Dialog,
   parameters: { layout: 'fullscreen' },
 };

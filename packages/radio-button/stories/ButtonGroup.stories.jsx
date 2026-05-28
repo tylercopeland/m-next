@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ButtonRadioGroup } from '../src';
 
 export default {
-  title: 'm-next/Components/ButtonRadioGroup',
+  title: 'm-next/Components/Form/ButtonRadioGroup',
   component: ButtonRadioGroup,
   parameters: { layout: 'padded' },
 };

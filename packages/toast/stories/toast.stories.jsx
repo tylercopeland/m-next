@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ToastProvider, useToast } from '../src';
 
 export default {
-  title: 'm-next/Components/Toast',
+  title: 'm-next/Components/Feedback/Toast',
   component: ToastProvider,
   parameters: { layout: 'padded' },
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from '../src';
 
 export default {
-  title: 'm-next/Components/Link',
+  title: 'm-next/Components/Action/Link',
   component: Link,
   parameters: { layout: 'padded' },
 };

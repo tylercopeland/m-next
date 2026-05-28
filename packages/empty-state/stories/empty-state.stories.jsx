@@ -2,7 +2,7 @@ import React from 'react';
 import { EmptyState } from '../src';
 
 export default {
-  title: 'm-next/Components/EmptyState',
+  title: 'm-next/Components/Feedback/EmptyState',
   component: EmptyState,
   parameters: { layout: 'padded' },
 };

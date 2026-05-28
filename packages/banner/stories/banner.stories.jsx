@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Banner from '../src';
 
 export default {
-  title: 'm-next/Components/Banner',
+  title: 'm-next/Components/Feedback/Banner',
   component: Banner,
   parameters: { layout: 'padded' },
 };

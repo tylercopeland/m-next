@@ -2,7 +2,7 @@ import React from 'react';
 import { Badge } from '../src';
 
 export default {
-  title: 'm-next/Components/Badge',
+  title: 'm-next/Components/Display/Badge',
   component: Badge,
   parameters: { layout: 'padded' },
 };

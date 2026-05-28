@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Alert } from '../src';
 
 export default {
-  title: 'm-next/Components/Alert',
+  title: 'm-next/Components/Feedback/Alert',
   component: Alert,
   parameters: { layout: 'padded' },
 };

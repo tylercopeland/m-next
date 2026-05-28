@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Select from '../src';
 
 export default {
-  title: 'm-next/Components/Select',
+  title: 'm-next/Components/Form/Select',
   component: Select,
   parameters: { layout: 'padded' },
 };

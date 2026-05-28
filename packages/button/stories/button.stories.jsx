@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from '../src';
 
 export default {
-  title: 'm-next/Components/Button',
+  title: 'm-next/Components/Action/Button',
   component: Button,
   parameters: { layout: 'padded' },
 };

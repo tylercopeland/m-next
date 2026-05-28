@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Tabs from '../src';
 
 export default {
-  title: 'm-next/Components/Tabs',
+  title: 'm-next/Components/Navigation/Tabs',
   component: Tabs,
   parameters: { layout: 'padded' },
 };

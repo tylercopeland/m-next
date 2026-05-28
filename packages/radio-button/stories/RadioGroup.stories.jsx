@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import RadioGroup from '../src/RadioGroup';
 
 export default {
-  title: 'm-next/Components/RadioGroup',
+  title: 'm-next/Components/Form/RadioGroup',
   component: RadioGroup,
   parameters: { layout: 'padded' },
 };

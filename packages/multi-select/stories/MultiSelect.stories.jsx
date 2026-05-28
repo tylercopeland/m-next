@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import MultiSelect from '../src';
 
 export default {
-  title: 'm-next/Components/MultiSelect',
+  title: 'm-next/Components/Form/MultiSelect',
   component: MultiSelect,
   parameters: { layout: 'padded' },
 };

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Checkbox, { CheckboxGroup } from '../src';
 
 export default {
-  title: 'm-next/Components/Checkbox',
+  title: 'm-next/Components/Form/Checkbox',
   component: Checkbox,
   parameters: { layout: 'padded' },
 };

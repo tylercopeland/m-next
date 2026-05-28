@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FormField } from '../src';
 
 export default {
-  title: 'm-next/Components/FormField',
+  title: 'm-next/Components/Form/FormField',
   component: FormField,
   parameters: { layout: 'padded' },
 };

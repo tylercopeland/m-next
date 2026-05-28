@@ -2,7 +2,7 @@ import React from 'react';
 import Pill from '../src';
 
 export default {
-  title: 'm-next/Components/Pill',
+  title: 'm-next/Components/Display/Pill',
   component: Pill,
   parameters: { layout: 'padded' },
 };

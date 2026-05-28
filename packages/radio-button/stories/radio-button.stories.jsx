@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { RadioButton } from '../src';
 
 export default {
-  title: 'm-next/Components/RadioButton',
+  title: 'm-next/Components/Form/RadioButton',
   component: RadioButton,
   parameters: { layout: 'padded' },
 };

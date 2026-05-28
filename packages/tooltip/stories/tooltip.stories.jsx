@@ -2,7 +2,7 @@ import React from 'react';
 import { Tooltip } from '../src';
 
 export default {
-  title: 'm-next/Components/Tooltip',
+  title: 'm-next/Components/Feedback/Tooltip',
   component: Tooltip,
   parameters: { layout: 'padded' },
 };
