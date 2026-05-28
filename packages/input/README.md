@@ -83,6 +83,5 @@ Legacy ghosts (`isV4Design`, etc.) accept their prop but have no behavioral effe
 ## Open follow-ups
 
 - `input.test.jsx`, `debouncedInput.test.jsx`, and `__snapshots__/` still reference the legacy API. They will fail until rewritten — same situation as Button.
-- `@m-next/caption` still has its own legacy API surface (`isV4Design`, `legacyClass`, `float`, etc.). Cleaning Caption is a separate pass.
-- `@m-next/validation` rule engine (`useValidation`) is still supported via shim. The longer-term move is consumer-driven validation; Validation package becomes the deprecated path.
-- `DebouncedInput` and `OutroAnimation` siblings still use the legacy API of `@m-next/caption` and `@m-next/styles`. Cleanup pass deferred.
+- `@m-next/validation` rule engine (`useValidation`) is still supported via shim. The longer-term move is consumer-driven validation that sets `errorMessage` directly; the Validation rule engine becomes the deprecated path.
+- `DebouncedInput` and `OutroAnimation` siblings still use the legacy API of `@m-next/styles`. Cleanup pass deferred.

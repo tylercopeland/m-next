@@ -60,5 +60,4 @@ Legacy ghosts (`isV4Design`, `isMobile`, `legacyClass`, `compactStyle`, `display
 ## Open follow-ups
 
 - `Toggle.test.tsx` and `__snapshots__/` still reference the legacy API surface. They will need updating to match the new defaults (auto-id, no `isV4Design`) — same situation as Button and Input.
-- `@m-next/caption` still has its own legacy API surface. Cleaning Caption is a separate pass.
 - The translucent halo / track colours (`rgba(93, 157, 213, 0.x)`) don't have direct token equivalents. They're isolated as named constants in `toggle.styles.ts` and can be promoted to translucent token variants when those land.

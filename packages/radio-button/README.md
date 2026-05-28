@@ -234,4 +234,3 @@ Same shim style as `<RadioButton>` — old names work with a one-time `console.w
 
 - `RadioButton.test.jsx` and `__snapshots__/` still reference the legacy API — they will fail until rewritten (same pattern as Button / Input).
 - `<ButtonRadioGroup>` and `<IconRadioGroup>` don't yet implement arrow-key navigation between tiles.
-- `@m-next/caption` still has its own legacy surface (consumed by all three groups). Cleaning it is a separate pass.

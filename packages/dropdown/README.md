@@ -115,5 +115,4 @@ Legacy ghosts (`isV4Design`, `isMobile`, `legacyClass`, `displayAuto`, `backgrou
 
 - `dropdown.test.jsx` and `__snapshots__/` still reference the legacy API. They will fail until rewritten — same situation as Button / Input.
 - `DropdownAsync` and `ClickToEditDropdown` siblings still use the legacy API surface (`caption`, `dropdownStyle`, `isCreateable`, etc.). Cleanup pass deferred.
-- `@m-next/caption` and `@m-next/validation` still have their own legacy API surfaces; cleaning each is a separate pass.
 - The `option.colour` family-name lookup still resolves against the nested token palette (`colors.blue.light`, `.dark`). If a non-palette family is passed it falls back to `colors.blue.*`.
