@@ -1,0 +1,116 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as StepperStories from './stepper.stories';
+
+<Meta of={StepperStories} />
+
+# Stepper
+
+A multi-step progress indicator. The default control for showing position in a linear sequence — wizards, checkout flows, signup, onboarding, multi-page forms.
+
+## When to use it
+
+- Linear flows where the user moves through a known set of steps (3–7 is the sweet spot).
+- Forms broken into chunks where the user benefits from seeing total scope.
+- Checkout / signup / onboarding where progress reassurance matters.
+
+## When NOT to use it
+
+- Switching between sibling, equivalent views — use Tabs.
+- Top-level app navigation — use a sidebar or nav rail.
+- Non-linear flows where steps can be skipped freely in any order — use Tabs or a sidebar with checkmarks.
+- Loading / processing progress — use Spinner or a progress bar.
+- A single yes/no question or short list — just show the questions inline.
+
+## Anatomy
+
+1. **Wrapper** (`role="group"`, accessible name `'Progress'` by default) — the outer container.
+2. **Step indicator** — circular badge per step. Inactive steps show their number; the active step is highlighted and slightly larger; completed steps show a checkmark icon.
+3. **Connector** — dashed line between steps when not yet reached, solid colored line when completed.
+4. **Label** (optional, via `showLabels`) — text below or beside each indicator.
+
+## States
+
+- **Future** (`index > activeStep`) — neutral border, dashed connector leading in, `aria-disabled="true"`.
+- **Active** (`index === activeStep`) — accent border, larger indicator, `aria-current="step"`.
+- **Completed** (`index < activeStep`) — accent fill with checkmark icon, solid connector leading in.
+
+## Tokens consumed
+
+- `colors.grey.light` — inactive label color, inactive indicator border, dashed connector
+- `colors.grey.base` — inactive indicator number text fill
+- `colors.blue.base` — active / completed indicator border, active label, solid connector, completed icon background, focus ring
+- `colors.white` — inactive indicator fill, checkmark color
+
+## Basic
+
+<Canvas of={StepperStories.Basic} />
+
+## With labels
+
+<Canvas of={StepperStories.WithLabels} />
+
+## Alternative label layout
+
+<Canvas of={StepperStories.AlternateLabel} />
+
+## No labels
+
+<Canvas of={StepperStories.NoLabels} />
+
+## Custom completed-step icon
+
+<Canvas of={StepperStories.CustomIcon} />
+
+## Clickable navigation
+
+<Canvas of={StepperStories.Clickable} />
+
+## Interactive wizard
+
+<Canvas of={StepperStories.InteractiveWizard} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `steps` | number \| `(StepDescriptor \| string)[]` | Required. Number = `N` generic steps; array = explicit labels. |
+| `activeStep` | number | Zero-based current step. |
+| `showLabels` | boolean | Render label text below each indicator. |
+| `orientation` | `'horizontal' \| 'vertical'` | Layout direction. |
+| `onStepClick` | `(index, stepDef, e) => void` | Opt-in to clickable navigation. |
+| `alternativeLabel` | boolean | MUI mode — labels under the indicators instead of beside. |
+| `iconName` | string | Override the completed-step checkmark icon. |
+| `id` | string | Optional. Auto-generated if absent. |
+| `ref` | ref | Forwarded to the outer container. |
+
+## Accessibility
+
+- Wrapper carries `role="group"` with `aria-label="Progress"` by default (override with `aria-label` or `aria-labelledby`).
+- Active step has `aria-current="step"` — screen readers announce it as the user's current position in the sequence.
+- Future (not-yet-reached) steps carry `aria-disabled="true"`.
+- Each step has a fully-formed accessible label (e.g. `"Billing (current step)"`, `"Account (completed)"`) so the state is announced even when visible labels are hidden.
+- When `onStepClick` is provided, completed + active steps become `role="button"`, `tabIndex={0}`, support Enter / Space activation, and gain a visible focus ring. Future steps are not in the tab order.
+
+## Migration from `@m-one/stepper`
+
+The Phase 3 cleanup makes `id` optional, adds full ARIA, accepts an array for `steps`, and introduces optional click navigation. Soft shims keep old code running:
+
+- `displayLabel` → `showLabels` (warns once)
+- `forwardRef={ref}` prop → React `ref` argument (warns once)
+- `isV4Design`, `isMobile`, `legacyClass`, `displayAuto`, `compactStyle` are silently accepted.
+
+<Canvas of={StepperStories.LegacyAPIStillWorks} />
+
+## Edge cases
+
+- **`steps={0}`** — renders an empty progress region. The wrapper's `role="group"` is still present.
+- **`activeStep` out of bounds** — passed through to MUI as-is; underlying renderer clamps visually.
+- **`onStepClick` + future step** — future steps stay `aria-disabled` and unclickable. This is intentional: stepper communicates forward progress; backward / sideways navigation is the only safe direction.
+- **Vertical orientation** — `orientation="vertical"` is passed through to MUI. Visual styling targets `horizontal` first; vertical layouts may need consumer-side spacing.
+
+## Related components
+
+- `@m-next/tabs` — non-linear navigation between sibling views.
+- `@m-next/spinner` — loading / processing indicator.

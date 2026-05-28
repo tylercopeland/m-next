@@ -1,5 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
-import PropTypes from 'prop-types';
+import React, { forwardRef, useEffect, useCallback, useRef, useState } from 'react';
 import LoadingSkeleton from '@m-next/loading-skeleton';
 import SimpleBar from 'simplebar-react';
 import { interactions } from '@m-next/utilities';
@@ -7,60 +6,81 @@ import { interactions } from '@m-next/utilities';
 import * as s from './container.styles';
 import 'simplebar-react/dist/simplebar.min.css';
 
-// types
-const propTypes = {
-  id: PropTypes.string,
-  className: PropTypes.string,
-  style: PropTypes.instanceOf(Object),
-  hoverStyle: PropTypes.instanceOf(Object),
-  isLoading: PropTypes.bool,
-  children: PropTypes.node,
-  isVisible: PropTypes.bool,
-  hasChildLoading: PropTypes.bool,
-  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  onClick: PropTypes.func,
-  onMouseEnter: PropTypes.func,
-  onMouseLeave: PropTypes.func,
-  onScroll: PropTypes.func,
-  isRound: PropTypes.bool,
-  forwardRef: PropTypes.instanceOf(Object),
-  scrollable: PropTypes.bool,
-  scrollableRef: PropTypes.instanceOf(Object),
-  borderless: PropTypes.bool,
-  padding: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  maxHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-};
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
 
 /**
- * Wrapper component around
+ * Container — a surface wrapper. Renders a padded, optionally bordered/elevated
+ * `<div>` with optional scroll behavior, hover styling, and a skeleton loading
+ * state. The base surface for Card, Insight cards, ContentCard, and any panel
+ * that needs the m-next surface treatment.
  */
-const Container = ({
-  id,
-  className,
-  style = {},
-  hoverStyle = {},
-  isLoading = false,
-  children,
-  isVisible = true,
-  hasChildLoading,
-  width = '100%',
-  onClick = null,
-  onMouseEnter = null,
-  onMouseLeave = null,
-  onScroll = null,
-  isRound = true,
-  forwardRef = null,
-  scrollable = false,
-  scrollableRef = null,
-  borderless = true,
-  padding = null,
-  height = 'unset',
-  maxHeight,
-}) => {
-  const internalSimpleBarRef = React.useRef(null);
+const Container = forwardRef(function Container(props, ref) {
+  const {
+    id: idProp,
+    className,
+    style = {},
+    hoverStyle = {},
+    isLoading = false,
+    children,
+    isVisible = true,
+    hasChildLoading,
+    width = '100%',
+    onClick = null,
+    onMouseEnter = null,
+    onMouseLeave = null,
+    onScroll = null,
+    isRound = true,
+    scrollable = false,
+    scrollableRef = null,
+    borderless = true,
+    padding = null,
+    height = 'unset',
+    maxHeight,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+    hidden: _hidden,
+    ...rest
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-container-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'container-forwardRef-prop',
+      '@m-next/container: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+  // The effective ref chains the modern ref API and the legacy forwardRef prop.
+  const effectiveRef = ref ?? legacyForwardRef;
+
+  const internalSimpleBarRef = useRef(null);
   const simpleBarRef = scrollableRef || internalSimpleBarRef;
-  const [recalcTimer, setRecalcTimer] = React.useState(null);
+  const [recalcTimer, setRecalcTimer] = useState(null);
 
   const handleResize = useCallback(() => {
     // Queue a command to recalculate the scrolling needs; Placed to the end of the execution stack (timeout).
@@ -107,13 +127,14 @@ const Container = ({
           onClick={onClick}
           onKeyDown={interactions.handleEnterKey(onClick)}
           isRound={isRound}
-          ref={forwardRef}
+          ref={effectiveRef}
           borderless={borderless}
           padding={padding}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           hoverStyle={hoverStyle}
           maxHeight={maxHeight}
+          {...rest}
         >
           {isVisible && (!isLoading || hasChildLoading) && children}
           {isVisible && isLoading && !hasChildLoading && (
@@ -135,13 +156,14 @@ const Container = ({
       onClick={onClick}
       onKeyDown={interactions.handleEnterKey(onClick)}
       isRound={isRound}
-      ref={forwardRef}
+      ref={effectiveRef}
       borderless={borderless}
       padding={padding}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       hoverStyle={hoverStyle}
       maxHeight={maxHeight}
+      {...rest}
     >
       {isVisible && (!isLoading || hasChildLoading) && children}
       {isVisible && isLoading && !hasChildLoading && (
@@ -149,7 +171,8 @@ const Container = ({
       )}
     </s.Container>
   );
-};
+});
 
-Container.propTypes = propTypes;
+Container.displayName = 'Container';
+
 export default Container;

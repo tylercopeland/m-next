@@ -1,0 +1,132 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as ContainerStories from './container.stories';
+
+<Meta of={ContainerStories} />
+
+# Container
+
+A surface wrapper. Renders a padded `<div>` with optional border-radius, shadow, hover styling, scroll behavior, and a skeleton loading state. The base surface used by Card, ContentCard, InsightCard, and any panel that needs the m-next surface treatment.
+
+The package also exports `InfiniteScrollContainer` — the same surface plus an IntersectionObserver-driven `fetchData` callback that fires when a sentinel at the bottom of the scroll area becomes visible.
+
+## When to use it
+
+- Any panel / surface that needs the m-next padded, optionally elevated treatment.
+- Group of related fields, summary blocks, list-of-cards regions, sidebar sections.
+- A scrollable region that should show m-next's branded scrollbar (`simplebar-react`).
+- Building block for higher-level surface components — `Card`, `ContentCard`, `InsightCard` all wrap Container.
+
+## When NOT to use it
+
+- A dashboard tile with title / metric / footer — use `@m-next/insight-card`.
+- A record-summary card (avatar + field grid) — use `@m-next/card`.
+- A free-form content card with title + body + actions — use `@m-next/content-card`.
+- The whole-page layout shell — that's a grid / page-layout concern, not a surface.
+
+## Anatomy
+
+A single `<div>` (Emotion-styled `s.Container`) with:
+
+1. **Padding** — `16px` default, override via `padding`.
+2. **Surface color** — `theme.background.primary` (or `lightTheme.background.primary` fallback).
+3. **Text color** — `theme.content.color`.
+4. **Border radius** — `4px` when `isRound={true}` (default).
+5. **Shadow** — `0px 2px 4px rgba(0,0,0,0.1)` when `borderless={false}`. Default is `borderless={true}` (no shadow).
+
+When `scrollable` is true the surface is wrapped in `simplebar-react`'s scroll container; the resize hook recalculates scrollbar geometry on window resize.
+
+## States
+
+- **Default** — `borderless` surface, no shadow, 4px radius.
+- **Elevated** — `borderless={false}` enables the drop shadow.
+- **Hover** — `hoverStyle={{ ... }}` applies the given CSS on `:hover` (works with or without `onClick`).
+- **Loading** — `isLoading={true}` replaces children with a `LoadingSkeleton`. Set `hasChildLoading={true}` if the children own their loading visuals.
+- **Hidden** — `isVisible={false}` sets `display: none`.
+- **Scrollable** — `scrollable={true}` wraps in SimpleBar; `onScroll` binds to the scroll element.
+- **Clickable** — `onClick` flips the cursor to pointer and wires Enter-key activation. (You still need to add `role="button"` + `tabIndex={0}` for keyboard reachability — see Accessibility.)
+
+## Tokens consumed
+
+- Surface color comes from the active Emotion theme (`theme.background.primary`) via `@m-next/styles`. Falls back to `lightTheme.background.primary` when there's no `<ThemeProvider>`.
+- No direct color literals are rendered by Container — the only literal `rgba(0,0,0,0.1)` is in the shadow recipe, which has no nested-token equivalent.
+
+## Basic
+
+<Canvas of={ContainerStories.Basic} />
+
+## Sizing
+
+<Canvas of={ContainerStories.Sizing} />
+
+## Loading
+
+<Canvas of={ContainerStories.Loading} />
+
+## Interactive
+
+<Canvas of={ContainerStories.Interactive} />
+
+## Scrollable
+
+<Canvas of={ContainerStories.Scrollable} />
+
+## Ref forwarding
+
+<Canvas of={ContainerStories.WithRef} />
+
+## InfiniteScrollContainer
+
+<Canvas of={ContainerStories.InfiniteScroll} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `isLoading` | boolean | Switches to skeleton render |
+| `isVisible` | boolean | `display: none` when false |
+| `borderless` | boolean | Default `true`. Set false for the elevated/shadowed look |
+| `isRound` | boolean | Default `true`. 4px radius |
+| `scrollable` | boolean | Wraps children in simplebar-react |
+| `hoverStyle` | object | CSS applied on `:hover` |
+| `width`, `height`, `maxHeight`, `padding` | string \| number | Sizing knobs |
+| `ref` | ref | Forwarded to the underlying surface `<div>` |
+
+## Accessibility
+
+- The Container root is a plain `<div>` — there's no implicit `role`.
+- When `onClick` is set, Container wires `onKeyDown` for Enter-key activation but does **not** add `tabIndex` or `role`. For keyboard-reachable clickable surfaces, pass `role="button"` and `tabIndex={0}` (or wrap in a `<Link>`).
+- `isVisible={false}` uses `display: none` — the element is removed from the AOM as well.
+- Scrollable mode uses `simplebar-react`'s custom scrollbar painted on top of native overflow. Keyboard scrolling still works natively.
+
+## Migration from `@m-one/container`
+
+Container is one of the lighter cleanups under m-next's API normalization. The surface treatment, scroll behavior, loading skeleton, and `simplebar-react` integration are all unchanged. Only the API surface was touched:
+
+| Was | Now | Status |
+|-----|-----|--------|
+| `id="..."` required | optional — auto-generated if absent | Backwards-compatible |
+| `forwardRef={ref}` prop | `ref={ref}` (React forwardRef API) | Soft shim — warns once |
+| `isV4Design`, `isMobile`, `legacyClass`, `displayAuto`, `compactStyle`, `hidden` | — | Silently ignored |
+
+Live demo of the soft shim:
+
+<Canvas of={ContainerStories.LegacyAPIStillWorks} />
+
+Each deprecated prop emits a one-time `console.warn` at first use. Legacy ghosts (`isV4Design`, etc.) accept their value but have no behavioral effect.
+
+## Edge cases
+
+- **`scrollable={true}` with `height='unset'`** — the SimpleBar wrapper falls back to `100%` height. Make sure the parent has a fixed height, or pass `maxHeight`.
+- **`onScroll` without `scrollable`** — the handler is never bound. `onScroll` is opt-in to the SimpleBar scroll element.
+- **`scrollableRef`** — external ref to the SimpleBar instance, useful for calling `.recalculate()` after async content loads. (Different from `ref`, which goes to the inner surface div.)
+- **`InfiniteScrollContainer` + an empty list** — the sentinel is rendered below the list; with no items, it's visible immediately and `fetchData` fires once on mount.
+
+## Related components
+
+- `@m-next/card` — record-display card built on Container.
+- `@m-next/content-card` — title/body/actions card.
+- `@m-next/insight-card` — dashboard / KPI tile.
+- `@m-next/loading-skeleton` — the placeholder rendered during `isLoading`.
+- `simplebar-react` — the underlying scrollbar component (third-party).

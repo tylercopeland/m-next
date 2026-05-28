@@ -1,0 +1,128 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as FormSectionStories from './fieldBlock.stories';
+
+<Meta of={FormSectionStories} />
+
+# FormSection
+
+A multi-control form group wrapper. Renders a list of typed fields with optional title / description, edit / save controls, and a collapse-empty toggle.
+
+> **Naming note.** The audit-driven canonical component name is **`FormSection`**. The legacy default export is still called `FieldBlock` for backwards compatibility, and the package name remains `@m-next/field-block`. Both names refer to the same component.
+
+```jsx
+// Canonical name (preferred for new code)
+import { FormSection } from '@m-next/field-block';
+
+// Legacy default export (still works)
+import FieldBlock from '@m-next/field-block';
+```
+
+## When to use it
+
+- Grouping several form controls under a shared heading + description.
+- Rendering a data-driven form from a `fields` array (Field types from `@m-next/types`).
+- Inline edit-mode toggle with Save / Clear footer actions.
+
+## When NOT to use it
+
+- A single labeled input — use `@m-next/form-field` + `@m-next/input` directly.
+- A free-form layout without typed fields — compose `FormField` instances yourself.
+- A purely decorative wrapper — just use `@m-next/container`.
+
+## Anatomy
+
+A region landmark holding:
+
+1. **Heading** (optional) — an `<h2>` rendered when `title` is set, wired to the region via `aria-labelledby`.
+2. **Description** (optional) — supporting copy below the title.
+3. **Field rows** — each typed field renders through one of the per-type renderers (`TextField`, `DropdownField`, `ImageField`, etc.).
+4. **Edit toggle** (optional) — `showEdit` renders an inline icon to flip into edit mode.
+5. **Collapse toggle** (optional) — `collapseEmpty` hides blank fields behind a "Show more" button.
+6. **Footer actions** — Save / Clear buttons rendered in edit mode.
+
+## States
+
+- **Read-only** — `mode={0}`. Default. Field rows render their values inline.
+- **Edit** — `mode={1}` or after toggling `showEdit`. Field rows render their editable controls.
+- **Loading** — `isLoading` renders skeletons in place of fields.
+- **Error** — `error` replaces the field list with a retry CTA.
+- **CollapseEmpty** — `collapseEmpty` hides empty fields behind a "Show more / Show less" toggle.
+
+## Tokens consumed
+
+- `colors.blue.base` for the row-selection ring + edit-icon color
+- `colors.concrete` for the row-selection flash background
+- Theme context (via Emotion) for `theme.content.primary` — falls back to `lightTheme` from `@m-next/styles`.
+
+## Basic
+
+<Canvas of={FormSectionStories.Basic} />
+
+## Editable
+
+<Canvas of={FormSectionStories.Editable} />
+
+## Collapse empty
+
+<Canvas of={FormSectionStories.CollapseEmpty} />
+
+## Loading
+
+<Canvas of={FormSectionStories.Loading} />
+
+## Error
+
+<Canvas of={FormSectionStories.ErrorState} />
+
+## Without a title
+
+<Canvas of={FormSectionStories.NoTitle} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `title` | string | FormSection heading. Renders `<h2>` and wires `aria-labelledby`. |
+| `description` | ReactNode | Supporting copy below the title. |
+| `fields` | `Field[]` | Drives the per-row renderers. |
+| `data` | object | `{ [field.name]: value }` map. |
+| `mode` | `0 \| 1` | Read-only vs. edit. |
+| `collapseEmpty` | boolean | Hide empty fields behind a toggle. |
+| `error`, `isLoading` | — | Block-level states. |
+
+## Accessibility
+
+- Outer wrapper renders `role="region"` when a `title` is set.
+- `title` renders an `<h2>` with a stable id; the region's `aria-labelledby` points at it.
+- `description` renders in normal flow so screen readers announce it after the section name.
+- Field rows inherit their own a11y semantics from each per-type renderer.
+- Save / Clear / Edit / Show-more controls are real `<button>` elements via `@m-next/button`.
+
+## Migration from `@m-one/field-block`
+
+FormSection was renamed from `FieldBlock` under the m-next audit. The legacy default export, package name, and existing prop set all still work. Migration is mostly mechanical:
+
+- `heading` → `title`
+- `caption` (as section title) → `title`
+- `hint` → `description`
+- `help` → `description`
+- `forwardRef={ref}` prop → `ref={ref}` (React forwardRef API)
+
+Each emits a one-time `console.warn` and silently translates. Legacy ghosts (`isV4Design`, `isMobile`, `legacyClass`, `displayAuto`, `compactStyle`) accept their value but do nothing.
+
+<Canvas of={FormSectionStories.LegacyAPIStillWorks} />
+
+## Edge cases
+
+- **`title` not set** — no `role="region"` and no `aria-labelledby` is emitted. Useful when the section is already wrapped by an outer landmark.
+- **Per-row `caption`** — the `fields[].caption` property is the per-row label from `@m-next/types`. It is unrelated to the component-level (now-deprecated) `caption` prop renamed to `title`.
+- **`forceOpen`** — clears the `collapseEmpty` collapsed state on next render. One-way; flipping it back to `false` does not re-collapse.
+- **Refs** — `ref` forwards to the outer wrapper for adoption by consumers. The underlying `Container` doesn't currently surface the ref to its DOM node; this is a shim point for future plumbing.
+
+## Related components
+
+- `@m-next/form-field` — single-control wrapper (label + description + error). FormSection is the multi-control group wrapper.
+- `@m-next/container` — the underlying box; FormSection adds heading / description / region semantics.
+- `@m-next/types` — the `Field` and `Tag` shapes that drive each row.

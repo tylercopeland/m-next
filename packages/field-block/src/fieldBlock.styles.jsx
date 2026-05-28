@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { colors, lightTheme } from '@m-next/styles';
+import { lightTheme } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 
 export const Line = styled.div(() => [
   {
@@ -25,7 +26,7 @@ export const ReadOnlyLine = styled.div(({ theme, selected, initial }) => {
   ];
   if (selected) {
     style.push({
-      border: `1px solid ${colors.blue}`,
+      border: `1px solid ${colors.blue.base}`,
       borderRadius: '2px',
       transition: initial ? null : 'background-color .5s linear',
       background: initial ? colors.concrete : null,
@@ -84,5 +85,27 @@ export const ButtonFooter = styled.div(() => [
     justifyContent: 'flex-end',
     gap: 8,
     flexDirection: 'row',
+  },
+]);
+
+export const SectionHeader = styled.h2(({ theme }) => [
+  {
+    margin: 0,
+    padding: '4px 0 8px',
+    fontSize: 16,
+    fontWeight: 600,
+    lineHeight: 1.4,
+    color: theme.content ? theme.content.primary : lightTheme.content.primary,
+  },
+]);
+
+export const SectionDescription = styled.div(() => [
+  {
+    margin: 0,
+    padding: '0 0 8px',
+    fontSize: 13,
+    fontWeight: 400,
+    lineHeight: 1.4,
+    color: colors.grey.base,
   },
 ]);

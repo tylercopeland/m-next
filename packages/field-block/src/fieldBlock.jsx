@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import Container from '@m-next/container';
 import Button from '@m-next/button';
@@ -6,9 +6,22 @@ import { ErrorBoundary } from '@m-next/utilities';
 import { Field, Tag } from '@m-next/types';
 import LoadingSkeleton from '@m-next/loading-skeleton';
 import SvgIcon from '@m-next/svg-icon';
-import { colors } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 import FieldBlockLine from './fieldBlockLine';
 import * as s from './fieldBlock.styles';
+
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
 
 const propTypes = {
   id: PropTypes.string,
@@ -42,41 +55,143 @@ const propTypes = {
   onImageUpload: PropTypes.func,
   onDownloadImage: PropTypes.func,
   metadata: PropTypes.instanceOf(Object),
+
+  // Clean API — FormSection-style heading + description
+  title: PropTypes.string,
+  description: PropTypes.node,
+
+  // ============ Deprecated — soft-shimmed ============
+  /** @deprecated Use `title` (FormSection heading text). */
+  caption: PropTypes.string,
+  /** @deprecated Use `title`. */
+  heading: PropTypes.string,
+  /** @deprecated Use `description`. */
+  hint: PropTypes.node,
+  /** @deprecated Use `description`. */
+  help: PropTypes.node,
+  /** @deprecated Use the React forwardRef API — pass `ref` directly. */
+  forwardRef: PropTypes.oneOfType([PropTypes.func, PropTypes.instanceOf(Object)]),
 };
 
-function FieldBlock({
-  id = '',
-  fields,
-  collapseEmpty = false,
-  isLoading = false,
-  style = {},
-  data,
-  validationErrors = null,
-  error,
-  onRefetch,
-  forceOpen = false,
-  width,
-  displayPreferences,
-  tagsList,
-  onMoreClick = null,
-  showMoreRef = null,
-  onSelect = null,
-  selectedField = null,
-  mode = 0,
-  showSave = false,
-  showClearAndNew = false,
-  showEdit = false,
-  saveLabel = 'Save',
-  clearLabel = 'Clear and new',
-  onSaveClick,
-  onClearClick,
-  isWorking = false,
-  onLoadDropdownData,
-  dropdownLists,
-  onImageUpload,
-  onDownloadImage,
-  metadata,
-}) {
+const FieldBlock = forwardRef(function FieldBlock(props, ref) {
+  const {
+    id: idProp,
+    fields,
+    collapseEmpty = false,
+    isLoading = false,
+    style = {},
+    data,
+    validationErrors = null,
+    error,
+    onRefetch,
+    forceOpen = false,
+    width,
+    displayPreferences,
+    tagsList,
+    onMoreClick = null,
+    showMoreRef = null,
+    onSelect = null,
+    selectedField = null,
+    mode = 0,
+    showSave = false,
+    showClearAndNew = false,
+    showEdit = false,
+    saveLabel = 'Save',
+    clearLabel = 'Clear and new',
+    onSaveClick,
+    onClearClick,
+    isWorking = false,
+    onLoadDropdownData,
+    dropdownLists,
+    onImageUpload,
+    onDownloadImage,
+    metadata,
+
+    // Clean API — FormSection heading + description.
+    title: titleProp,
+    description: descriptionProp,
+
+    // Soft-shimmed legacy props
+    caption: legacyCaption,
+    heading: legacyHeading,
+    hint: legacyHint,
+    help: legacyHelp,
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-field-block-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  // ============ Backwards-compat translation ============
+
+  let title = titleProp;
+  if (legacyHeading != null && title == null) {
+    warnOnce(
+      'field-block-heading',
+      '@m-next/field-block: `heading` is deprecated. Use `title`.',
+    );
+    title = legacyHeading;
+  }
+  if (legacyCaption != null && title == null) {
+    warnOnce(
+      'field-block-caption',
+      '@m-next/field-block: `caption` is deprecated. Use `title`.',
+    );
+    title = legacyCaption;
+  }
+
+  let description = descriptionProp;
+  if (legacyHint != null && description == null) {
+    warnOnce(
+      'field-block-hint',
+      '@m-next/field-block: `hint` is deprecated. Use `description`.',
+    );
+    description = legacyHint;
+  }
+  if (legacyHelp != null && description == null) {
+    warnOnce(
+      'field-block-help',
+      '@m-next/field-block: `help` is deprecated. Use `description`.',
+    );
+    description = legacyHelp;
+  }
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'field-block-forwardRef-prop',
+      '@m-next/field-block: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // Merge external ref (forwardRef API + legacy forwardRef prop) — only a no-op
+  // for compatibility, since the underlying Container doesn't currently accept a ref.
+  // Held here so consumers can adopt the standard `ref={}` shape ahead of internal plumbing.
+  const internalContainerRef = useRef(null);
+  useEffect(() => {
+    const targetRef = ref ?? legacyForwardRef;
+    if (!targetRef) return;
+    if (typeof targetRef === 'function') {
+      targetRef(internalContainerRef.current);
+    } else {
+      // eslint-disable-next-line no-param-reassign
+      targetRef.current = internalContainerRef.current;
+    }
+  }, [ref, legacyForwardRef]);
+
+  // ============ State ============
+
   const [isCollapsed, setIsCollapsed] = useState(true);
   const [enableEditMode, setEnableEditMode] = useState(false);
   const [internalMode, setInternalMode] = useState(mode);
@@ -107,7 +222,6 @@ function FieldBlock({
   };
 
   const handleSave = () => {
-    // if (enableEditMode) handleToggleEditMode();
     if (onSaveClick) onSaveClick(internalData);
   };
   const handleClear = () => {
@@ -169,6 +283,10 @@ function FieldBlock({
     setInternalData(update);
   };
 
+  // ============ Render ============
+
+  const titleId = title ? `${id}-field-block-title` : undefined;
+
   const renderContent = () => {
     if (!fields || fields.length === 0) {
       return (
@@ -200,7 +318,7 @@ function FieldBlock({
               testId={`${id}-edit`}
               size={16}
               name='edit'
-              color={colors.blue}
+              color={colors.blue.base}
               onClick={handleToggleEditMode}
               disabled={isWorking}
             />
@@ -265,12 +383,29 @@ function FieldBlock({
 
   return (
     <ErrorBoundary fallback={errorFallback()}>
-      <Container id={`${id}-field-block`} style={{ ...style }} isRound={false} borderless width={width} padding={8}>
+      <Container
+        id={`${id}-field-block`}
+        style={{ ...style }}
+        isRound={false}
+        borderless
+        width={width}
+        padding={8}
+        role='region'
+        aria-labelledby={titleId}
+      >
+        {title && (
+          <s.SectionHeader id={titleId}>{title}</s.SectionHeader>
+        )}
+        {description && (
+          <s.SectionDescription id={`${id}-field-block-description`}>{description}</s.SectionDescription>
+        )}
         {renderContent()}
       </Container>
     </ErrorBoundary>
   );
-}
+});
 
+FieldBlock.displayName = 'FieldBlock';
 FieldBlock.propTypes = propTypes;
+
 export default FieldBlock;

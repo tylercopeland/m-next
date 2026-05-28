@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { colors } from '@m-next/tokens';
 
 export const ContentCardWrapper = styled.div`
   display: flex;
@@ -6,8 +7,8 @@ export const ContentCardWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   border-radius: 8px;
-  border: 1px solid var(--Grey-Grey-Light, #bacad0);
-  background: #fff;
+  border: 1px solid ${colors.grey.light};
+  background: ${colors.white};
 `;
 
 export const Thumbnail = styled.div`
@@ -15,7 +16,7 @@ export const Thumbnail = styled.div`
   align-self: stretch;
   aspect-ratio: 16/9;
   border-radius: 8px 8px 0 0;
-  background: var(--Grey-Grey-Lighter, #eef5f7);
+  background: ${colors.grey.lighter};
 `;
 
 export const ThumbnailImage = styled.img`
@@ -37,7 +38,7 @@ export const BottomSection = styled.div`
 `;
 
 export const HeaderText = styled.span`
-  color: var(--Grey-Grey-Darker, #0f1b31);
+  color: ${colors.grey.darkest};
   font-feature-settings:
     'liga' off,
     'clig' off;
@@ -56,7 +57,7 @@ export const HeaderText = styled.span`
 `;
 
 export const Description = styled.div`
-  color: var(--Grey-Grey-Primary, #545f67);
+  color: ${colors.grey.base};
   font-feature-settings:
     'liga' off,
     'clig' off;
@@ -86,7 +87,7 @@ export const CompletionIcon = styled.div`
   top: 10px;
   right: 9px;
   z-index: 2;
-  background: white;
+  background: ${colors.white};
   border-radius: 50%;
   overflow: hidden;
 `;

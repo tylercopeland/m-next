@@ -1,0 +1,93 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as BreadcrumbsStories from './BreadCrumbsHeader.stories';
+
+<Meta of={BreadcrumbsStories} />
+
+# Breadcrumbs
+
+An accessible navigation trail that shows where the user is in a hierarchy and lets them jump back up the path. Optionally pairs with a kebab overflow menu for page-level actions.
+
+> Package note: this lives in `@m-next/bread-crumbs`. The default export is still the original `BreadCrumbsHeader` for backwards compatibility — `Breadcrumbs` is the canonical named export and the name used throughout this doc.
+
+## When to use it
+
+- Multi-level navigation where users need to step back up the tree (Account → Customers → Acme Corp).
+- Page headers in apps with deep object/sub-object navigation.
+- Anywhere the user might want to confirm where they are *and* one tap to return to a parent context.
+
+## When NOT to use it
+
+- Single-level pages — there's no trail to show.
+- Wizard / linear flows — use Stepper instead.
+- Tab-style switching between sibling sections — use Tabs.
+
+## Anatomy
+
+A horizontal `<nav aria-label="Breadcrumbs">` containing:
+
+1. **Leading icon** — context icon (defaults to `screens-V4`).
+2. **Crumb trail** — an `<ol>` of crumbs. Each is a clickable `Text`; non-final crumbs use the theme's secondary color, the final crumb uses the primary color and carries `aria-current="page"`.
+3. **Separators** — `aria-hidden` `/` glyphs between crumbs.
+4. **Overflow menu** *(optional)* — trailing kebab menu rendered via `@m-next/menu`. Keyboard-driven: arrow keys / Home / End to move, Enter / Space to activate, Escape to close.
+
+## States
+
+- **Single crumb** — leading icon uses the primary content color; no separators rendered.
+- **Multiple crumbs** — leading icon uses the secondary content color; the last crumb is highlighted and marked as the current page.
+- **Hover / focus on a crumb** — comes from `@m-next/typeography` Text (`cursor: pointer`; focus-visible ring inherited).
+
+## Basic
+
+<Canvas of={BreadcrumbsStories.Default} />
+
+## With an overflow menu
+
+<Canvas of={BreadcrumbsStories.WithOverflowMenu} />
+
+## Long labels
+
+Crumb `Text` is rendered with `ellipsis`, so long labels truncate inside the available width rather than wrapping or pushing other crumbs off-screen.
+
+<Canvas of={BreadcrumbsStories.LongLabels} />
+
+## Custom landmark name
+
+The `<nav>` defaults to `aria-label="Breadcrumbs"`. Override with `aria-label` when the page already has a generic breadcrumbs landmark and you need to disambiguate.
+
+<Canvas of={BreadcrumbsStories.CustomAriaLabel} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `crumbs` | `{ id, label, onClick?, tooltip? }[]` | Last item rendered as `aria-current="page"` |
+| `showMenu` + `menuItems` | bool + `{ id, label, onClick }[]` | Trailing kebab menu |
+| `tooltipId` | string | Shared portal id for crumb tooltips |
+| `iconName` | string | Override leading icon |
+| `aria-label` | string | Override the nav landmark name |
+| `ref` | ref | Forwarded to the `<nav>` element |
+
+## Accessibility
+
+- Renders a `<nav>` landmark — screen readers can jump straight to it.
+- Crumbs are an `<ol>` of `<li>` items so position-in-trail is announced.
+- The final crumb has `aria-current="page"` — the only crumb so marked.
+- Separators are `aria-hidden="true"` so the trail reads as `Home, Customers, Acme Corp` rather than `Home / Customers / Acme Corp`.
+
+## Migration from `@m-one/bread-crumbs` / pre-cleanup m-next
+
+- **Imports stay the same.** Existing `import BreadCrumbsHeader from '@m-next/bread-crumbs'` continues to work — the audit-flagged rename ships as the additional `Breadcrumbs` named export, not as a breaking change.
+- **`id` is now optional** — auto-generated if absent.
+- **`forwardRef` prop → React `ref`.** Pass `ref` directly via the React forwardRef API. The old prop still works, but emits a one-time `console.warn`.
+- **`ariaLabel` → `aria-label`.** Standard React attribute. Soft-shimmed.
+- **Silently ignored ghosts:** `isV4Design`, `isMobile`, `legacyClass`, `displayAuto`, `compactStyle`. They accept their value but have no behavioral effect.
+
+<Canvas of={BreadcrumbsStories.LegacyAPIStillWorks} />
+
+## Related components
+
+- `Stepper` — linear / wizard navigation (use instead of Breadcrumbs for sequential flows).
+- `Tabs` — sibling section switching.
+- `IconMenuList` — the kebab menu rendered by `showMenu` (from `@m-next/menu`).

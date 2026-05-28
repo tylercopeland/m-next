@@ -1,36 +1,44 @@
 import styled from '@emotion/styled';
-import { colors } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
+
+const backgroundFor = (family) => {
+  switch (family) {
+    case 'orange':
+      return colors.orange.lighter; // #FFFAF0
+    case 'green':
+      return colors.green.lighter; // #E7F5F0
+    case 'red':
+      return colors.red.lighter; // #FFF3F0
+    case 'blue':
+    default:
+      return colors.blue.lighter; // #E5F7FF
+  }
+};
+
+// Mobile breakpoint — switches to vertical stacking, centered image, full-width actions.
+const MOBILE_MAX = '640px';
 
 export const HeroBannerRoot = styled.div`
   position: relative;
-  position: relative;
-  background-color: ${(props) => {
-    switch (props.backgroundColor) {
-      case 'orange-lighter':
-        return colors['orange-lighter']; // #FFFAF0
-      case 'green-lighter':
-        return colors['green-lighter']; // #E7F5F0
-      case 'red-lighter':
-        return colors['red-lighter']; // #FFF3F0
-      case 'blue-lighter':
-      default:
-        return colors['blue-lighter']; // #E5F7FF
-    }
-  }};
+  background-color: ${(props) => backgroundFor(props.backgroundColor)};
   box-sizing: border-box;
   display: flex;
-  flex-direction: ${(props) => (props.isMobile ? 'column' : 'row')};
+  flex-direction: row;
   align-items: flex-start;
   padding: 24px;
   border-radius: 8px;
   width: 100%;
   overflow: hidden;
+
+  @media (max-width: ${MOBILE_MAX}) {
+    flex-direction: column;
+  }
 `;
 
 export const DismissButton = styled.button`
   position: absolute;
-  top: ${(props) => (props.isMobile ? '4px' : '16px')};
-  right: ${(props) => (props.isMobile ? '4px' : '16px')};
+  top: 16px;
+  right: 16px;
   cursor: pointer;
   z-index: 10;
   display: flex;
@@ -40,17 +48,34 @@ export const DismissButton = styled.button`
   height: 24px;
   border-radius: 4px;
   background-color: transparent;
+  border: 0;
+  padding: 0;
+
+  &:focus-visible {
+    outline: 2px solid ${colors.blue.base};
+    outline-offset: 2px;
+  }
+
+  @media (max-width: ${MOBILE_MAX}) {
+    top: 4px;
+    right: 4px;
+  }
 `;
 
 export const HeroBannerContentWrapper = styled.div`
   display: flex;
-  flex-direction: ${(props) => (props.isMobile ? 'column' : 'row')};
-  align-items: ${(props) => (props.isMobile ? 'center' : 'flex-start')};
+  flex-direction: row;
+  align-items: flex-start;
   gap: 24px;
   width: 100%;
   flex: 1;
   min-width: 0;
   min-height: 0;
+
+  @media (max-width: ${MOBILE_MAX}) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const HeroBannerImageContainer = styled.div`
@@ -58,21 +83,15 @@ export const HeroBannerImageContainer = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  width: ${(props) => (props.isMobile ? '100%' : '200px')};
-  max-width: ${(props) => (props.isMobile ? 'none' : '200px')};
+  width: 200px;
+  max-width: 200px;
   flex-shrink: 0;
-  background-color: ${(props) => {
-    switch (props.backgroundColor) {
-      case 'orange-lighter':
-        return colors['orange-lighter'];
-      case 'green-lighter':
-        return colors['green-lighter'];
-      case 'red-lighter':
-        return colors['red-lighter'];
-      default:
-        return colors['blue-lighter'];
-    }
-  }};
+  background-color: ${(props) => backgroundFor(props.backgroundColor)};
+
+  @media (max-width: ${MOBILE_MAX}) {
+    width: 100%;
+    max-width: none;
+  }
 `;
 
 export const HeroBannerImageWrapper = styled.div`
@@ -93,7 +112,10 @@ export const HeroBannerInnerWrapper = styled.div`
   flex: 1;
   min-width: 0;
   min-height: 0;
-  width: ${(props) => (props.isMobile ? '100%' : 'auto')};
+
+  @media (max-width: ${MOBILE_MAX}) {
+    width: 100%;
+  }
 `;
 
 export const HeroBannerTextWrapper = styled.div`
@@ -109,5 +131,8 @@ export const HeroBannerActionsWrapper = styled.div`
   flex-wrap: wrap;
   align-items: flex-start;
   gap: 8px;
-  width: ${(props) => (props.isMobile ? '100%' : 'auto')};
+
+  @media (max-width: ${MOBILE_MAX}) {
+    width: 100%;
+  }
 `;

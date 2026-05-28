@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import styled from '@emotion/styled';
-import { colors } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 
 export const StepperWrapper = styled.div`
   width: 100%;
@@ -10,7 +10,7 @@ export const StepperWrapper = styled.div`
     font-family: inherit;
     font-size: 14px;
     font-weight: 400;
-    color: ${colors['grey-light']};
+    color: ${colors.grey.light};
   }
   .MuiStepLabel-label.MuiStepLabel-alternativeLabel {
     margin-top: 6px;
@@ -20,7 +20,7 @@ export const StepperWrapper = styled.div`
     font-family: inherit;
     font-size: 14px;
     font-weight: 600;
-    color: ${colors['blue']};
+    color: ${colors.blue.base};
   }
 
   /* connector line styles */
@@ -28,11 +28,11 @@ export const StepperWrapper = styled.div`
     display: none;
   }
   .MuiStepConnector-root {
-    border-top: 1px dashed ${colors['grey-light']};
+    border-top: 1px dashed ${colors.grey.light};
   }
   .MuiStepConnector-root.Mui-active,
   .MuiStepConnector-root.Mui-completed {
-    border-top: 1px solid ${colors['blue']};
+    border-top: 1px solid ${colors.blue.base};
   }
   .MuiStepConnector-root.MuiStepConnector-alternativeLabel {
     top: 15px;
@@ -55,38 +55,51 @@ export const StepIcon = styled.div`
 
   /* icon styles */
   .MuiStepIcon-root {
-    color: ${colors['white']};
-    border: 1px solid ${colors['grey-light']};
+    color: ${colors.white};
+    border: 1px solid ${colors.grey.light};
     border-radius: 50%;
     width: 24px;
     height: 24px;
     transform: ${(p) => (p.alternativeLabel ? 'translateY(2px)' : '')};
 
     & text {
-      fill: ${colors['grey']};
+      fill: ${colors.grey.base};
     }
   }
   .MuiStepIcon-root.Mui-active {
     width: 30px;
     height: 30px;
-    border: 1px solid ${colors['blue']};
-    color: ${colors['blue']};
+    border: 1px solid ${colors.blue.base};
+    color: ${colors.blue.base};
     padding: 2px;
     transform: ${(p) => (p.alternativeLabel ? 'translateY(0px)' : '')};
 
     & text {
-      fill: ${colors['white']};
+      fill: ${colors.white};
     }
   }
   .MuiStepLabel-iconContainer {
     padding-right: ${(p) => (!p.displayLabel ? '0' : !p.alternativeLabel ? '6px' : '0')};
   }
+
+  /* Clickable / focus styles when onStepClick is wired */
+  ${(p) =>
+    p.clickable
+      ? `
+        cursor: pointer;
+        &:focus-visible {
+          outline: 2px solid ${colors.blue.base};
+          outline-offset: 2px;
+          border-radius: 4px;
+        }
+      `
+      : ''}
 `;
 
 export const CustomStepIconWrapper = styled.div`
   width: 24px;
   height: 24px;
-  background-color: ${colors['blue']};
+  background-color: ${colors.blue.base};
   border-radius: 50%;
   transform: ${(p) => (p.alternativeLabel ? 'translateY(2px)' : '')};
 

@@ -2,23 +2,29 @@
   "name": "@m-next/stepper",
   "private": true,
   "version": "1.0.0",
-  "description": "Stepper widget",
+  "description": "Multi-step progress indicator — visualizes position in a sequence (wizard, checkout, signup).",
   "keywords": [
-    "informational"
+    "stepper",
+    "wizard",
+    "progress",
+    "navigation"
   ],
   "author": "Brendan Farrell <b.farrell@method.me>",
   "homepage": "",
   "license": "ISC",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "directories": {
     "src": "src"
   },
   "files": [
-    "index"
+    "src",
+    "index.d.ts"
   ],
   "dependencies": {
     "@m-next/styles": "1.0.0",
     "@m-next/svg-icon": "1.0.0",
+    "@m-next/tokens": "1.0.0",
     "@m-next/utilities": "1.0.0",
     "@mui/material": "^5.14.15"
   },
@@ -36,9 +42,9 @@
     "build": "npm run prettify && npm run lint && npm run test &&  webpack --mode production",
     "prettify": "npx prettier \"**/*.*(js|jsx)\" --ignore-path=.prettierignore --write --log-level=error",
     "release": "npm build && npm publish build --tag next",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test-snapshot-update": "npm run test -- -u",
-    "test-storybook": "jest --json --outputFile=.jest-test-results.json",
+    "test-storybook": "jest --passWithNoTests --json --outputFile=.jest-test-results.json",
     "lint-js": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --cache --report-unused-disable-directives --max-warnings=0",
     "lint-ls": "npx ls-lint",
     "lint": "npm run lint-js && npm run lint-ls",

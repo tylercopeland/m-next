@@ -1,76 +1,166 @@
-import React from 'react';
+import React, { useEffect, useRef, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import Image from '@m-next/image';
 import { Text } from '@m-next/typeography';
 import Button from '@m-next/button';
 import SvgIcon from '@m-next/svg-icon';
-import { lightTheme } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 import * as s from './HeroBanner.styles';
 
-const propTypes = {
-  id: PropTypes.string,
-  title: PropTypes.string,
-  description: PropTypes.node,
-  imageSrc: PropTypes.string,
-  primaryButton: PropTypes.string,
-  onPrimaryButtonClick: PropTypes.func,
-  primaryButtonStyle: PropTypes.oneOf(['primary', 'ghost']),
-  primaryButtonColor: PropTypes.string,
-  secondaryButton: PropTypes.string,
-  onSecondaryButtonClick: PropTypes.func,
-  backgroundColor: PropTypes.oneOf(['blue-lighter', 'orange-lighter', 'green-lighter', 'red-lighter']),
-  className: PropTypes.string,
-  style: PropTypes.instanceOf(Object),
-  testId: PropTypes.string,
-  isMobile: PropTypes.bool,
-  canDismiss: PropTypes.bool,
-  onBannerDismiss: PropTypes.func,
-  dismissIconSize: PropTypes.number,
+// One-time deprecation warner — fires once per key, mirrors @m-next/banner.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+// Translate legacy backgroundColor strings (`'blue-lighter'`, etc.) to the new
+// canonical color-family names. The new API accepts both the legacy `-lighter`
+// suffixed values and the clean family names. Anything not recognised falls
+// through to `'blue'`.
+const VALID_BACKGROUNDS = new Set(['blue', 'orange', 'green', 'red']);
+const translateBackground = (value) => {
+  if (value == null) return 'blue';
+  if (VALID_BACKGROUNDS.has(value)) return value;
+  if (typeof value === 'string' && value.endsWith('-lighter')) {
+    const stem = value.slice(0, -'-lighter'.length);
+    if (VALID_BACKGROUNDS.has(stem)) return stem;
+  }
+  return 'blue';
 };
 
-function HeroBanner({
-  id = 'hero-banner',
-  title = '',
-  description = '',
-  imageSrc = '',
-  primaryButton = null,
-  onPrimaryButtonClick = null,
-  primaryButtonStyle = 'primary',
-  primaryButtonColor = null,
-  secondaryButton = null,
-  onSecondaryButtonClick = null,
-  backgroundColor = 'blue-lighter',
-  className = '',
-  style = {},
-  testId = '',
-  isMobile = false,
-  canDismiss = false,
-  onBannerDismiss = null,
-  dismissIconSize = 12,
-}) {
+let autoIdCounter = 0;
+
+const HeroBanner = forwardRef(function HeroBanner(props, ref) {
+  const {
+    id: idProp,
+    title = '',
+    description = '',
+    imageSrc = '',
+    primaryButton = null,
+    onPrimaryButtonClick = null,
+    primaryButtonStyle = 'primary',
+    primaryButtonColor = null,
+    secondaryButton = null,
+    onSecondaryButtonClick = null,
+
+    // Clean API
+    backgroundColor: backgroundColorProp,
+    hasClose: hasCloseProp,
+    onClose: onCloseProp,
+
+    className = '',
+    style = {},
+    testId = '',
+    dismissIconSize = 12,
+
+    // Soft-shimmed legacy props
+    canDismiss: legacyCanDismiss,
+    onBannerDismiss: legacyOnBannerDismiss,
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+
+    ...rest
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-hero-banner-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  // ============ Backwards-compat translation ============
+
+  let backgroundColor = backgroundColorProp;
+  if (
+    typeof backgroundColorProp === 'string' &&
+    backgroundColorProp.endsWith('-lighter')
+  ) {
+    warnOnce(
+      'hero-banner-backgroundColor-lighter',
+      `@m-next/hero-banner: backgroundColor='${backgroundColorProp}' is deprecated. Use '${backgroundColorProp.slice(0, -'-lighter'.length)}' instead.`,
+    );
+  }
+  backgroundColor = translateBackground(backgroundColorProp);
+
+  // hasClose / onClose replaces canDismiss / onBannerDismiss.
+  let hasClose = hasCloseProp;
+  if (hasClose == null && legacyCanDismiss != null) {
+    warnOnce(
+      'hero-banner-canDismiss',
+      '@m-next/hero-banner: `canDismiss` is deprecated. Use `hasClose`.',
+    );
+    hasClose = legacyCanDismiss;
+  }
+  hasClose = Boolean(hasClose);
+
+  let onClose = onCloseProp;
+  if (onClose == null && legacyOnBannerDismiss != null) {
+    warnOnce(
+      'hero-banner-onBannerDismiss',
+      '@m-next/hero-banner: `onBannerDismiss` is deprecated. Use `onClose`.',
+    );
+    onClose = legacyOnBannerDismiss;
+  }
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'hero-banner-forwardRef-prop',
+      '@m-next/hero-banner: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // ============ Ref forwarding ============
+
+  const rootRef = useRef(null);
+  useEffect(() => {
+    const targetRef = ref ?? legacyForwardRef;
+    if (!targetRef) return;
+    if (typeof targetRef === 'function') {
+      targetRef(rootRef.current);
+    } else {
+      // eslint-disable-next-line no-param-reassign
+      targetRef.current = rootRef.current;
+    }
+  }, [ref, legacyForwardRef]);
+
   return (
     <s.HeroBannerRoot
+      ref={rootRef}
       id={`${id}-root`}
       className={className}
       style={style}
       backgroundColor={backgroundColor}
-      isMobile={isMobile}
-      data-testid={testId}
+      data-testid={testId || undefined}
+      role='region'
+      aria-labelledby={title ? `${id}-title` : undefined}
+      {...rest}
     >
-      {canDismiss && onBannerDismiss && (
+      {hasClose && onClose && (
         <s.DismissButton
-          onClick={onBannerDismiss}
+          type='button'
+          onClick={onClose}
           title='Dismiss'
           id={`${id}-dismiss`}
           data-testid={`${id}-dismiss-button`}
           aria-label='Dismiss banner'
-          isMobile={isMobile}
         >
-          <SvgIcon name='close-V4' size={dismissIconSize} color={lightTheme.content.emphasize} />
+          <SvgIcon name='close-V4' size={dismissIconSize} color={colors.grey.darkest} />
         </s.DismissButton>
       )}
-      <s.HeroBannerContentWrapper isMobile={isMobile}>
-        <s.HeroBannerImageContainer backgroundColor={backgroundColor} isMobile={isMobile}>
+      <s.HeroBannerContentWrapper>
+        <s.HeroBannerImageContainer backgroundColor={backgroundColor}>
           {imageSrc && (
             <s.HeroBannerImageWrapper>
               <Image
@@ -87,7 +177,7 @@ function HeroBanner({
           )}
         </s.HeroBannerImageContainer>
 
-        <s.HeroBannerInnerWrapper isMobile={isMobile}>
+        <s.HeroBannerInnerWrapper>
           <s.HeroBannerTextWrapper>
             {title && (
               <Text
@@ -101,7 +191,7 @@ function HeroBanner({
                   lineHeight: '32px',
                   marginBottom: '0px',
                   marginTop: '0px',
-                  color: '#111827',
+                  color: colors.grey.darkest,
                 }}
               >
                 {title}
@@ -118,7 +208,7 @@ function HeroBanner({
                   lineHeight: '24px',
                   marginBottom: '0px',
                   marginTop: '0px',
-                  color: '#4B5563',
+                  color: colors.grey.base,
                   whiteSpace: 'pre-line',
                 }}
               >
@@ -128,7 +218,7 @@ function HeroBanner({
           </s.HeroBannerTextWrapper>
 
           {(primaryButton || secondaryButton) && (
-            <s.HeroBannerActionsWrapper isMobile={isMobile}>
+            <s.HeroBannerActionsWrapper>
               {primaryButton && (
                 <Button
                   id={`${id}-primary-button`}
@@ -136,9 +226,10 @@ function HeroBanner({
                   value={primaryButton}
                   onClick={onPrimaryButtonClick}
                   data-testid={`${id}-primary-button`}
-                  isMobile={isMobile}
                   style={
-                    primaryButtonColor ? { color: primaryButtonColor, borderColor: primaryButtonColor } : undefined
+                    primaryButtonColor
+                      ? { color: primaryButtonColor, borderColor: primaryButtonColor }
+                      : undefined
                   }
                 />
               )}
@@ -149,7 +240,6 @@ function HeroBanner({
                   value={secondaryButton}
                   onClick={onSecondaryButtonClick}
                   data-testid={`${id}-secondary-button`}
-                  isMobile={isMobile}
                 />
               )}
             </s.HeroBannerActionsWrapper>
@@ -158,7 +248,47 @@ function HeroBanner({
       </s.HeroBannerContentWrapper>
     </s.HeroBannerRoot>
   );
-}
+});
 
-HeroBanner.propTypes = propTypes;
+HeroBanner.displayName = 'HeroBanner';
+
+HeroBanner.propTypes = {
+  id: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.node,
+  imageSrc: PropTypes.string,
+  primaryButton: PropTypes.string,
+  onPrimaryButtonClick: PropTypes.func,
+  primaryButtonStyle: PropTypes.oneOf(['primary', 'ghost']),
+  primaryButtonColor: PropTypes.string,
+  secondaryButton: PropTypes.string,
+  onSecondaryButtonClick: PropTypes.func,
+  backgroundColor: PropTypes.oneOf([
+    'blue',
+    'orange',
+    'green',
+    'red',
+    // Legacy:
+    'blue-lighter',
+    'orange-lighter',
+    'green-lighter',
+    'red-lighter',
+  ]),
+  hasClose: PropTypes.bool,
+  onClose: PropTypes.func,
+  className: PropTypes.string,
+  style: PropTypes.instanceOf(Object),
+  testId: PropTypes.string,
+  dismissIconSize: PropTypes.number,
+  // Soft-shimmed legacy:
+  canDismiss: PropTypes.bool,
+  onBannerDismiss: PropTypes.func,
+  forwardRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+  // Silently ignored:
+  isV4Design: PropTypes.bool,
+  isMobile: PropTypes.bool,
+  legacyClass: PropTypes.string,
+  displayAuto: PropTypes.bool,
+};
+
 export default HeroBanner;

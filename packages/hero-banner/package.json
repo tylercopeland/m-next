@@ -2,12 +2,12 @@
   "name": "@m-next/hero-banner",
   "private": true,
   "version": "1.0.0",
-  "description": "Hero banner component with flexible image/icon slot and configurable background colors",
+  "description": "Page-level promotional hero banner with title, description, optional image, and up to two action buttons.",
   "keywords": [
     "hero",
     "banner",
-    "responsive",
-    "configurable"
+    "promotional",
+    "responsive"
   ],
   "author": "Katrina Mehta <k.mehta@method.me>",
   "license": "ISC",
@@ -17,15 +17,16 @@
     "src": "src"
   },
   "files": [
-    "index",
+    "src",
     "index.d.ts"
   ],
   "dependencies": {
-    "@m-next/styles": "1.0.0",
-    "@m-next/image": "1.0.0",
-    "@m-next/typeography": "1.0.0",
     "@m-next/button": "1.0.0",
-    "@m-next/svg-icon": "1.0.0"
+    "@m-next/image": "1.0.0",
+    "@m-next/styles": "1.0.0",
+    "@m-next/svg-icon": "1.0.0",
+    "@m-next/tokens": "1.0.0",
+    "@m-next/typeography": "1.0.0"
   },
   "peerDependencies": {
     "@emotion/react": ">=11.10.5",

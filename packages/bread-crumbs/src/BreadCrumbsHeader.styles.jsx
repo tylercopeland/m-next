@@ -19,7 +19,10 @@ export const CrumbsWrapper = styled.div(() => [
     flex: 1,
     minWidth: 0,
     overflow: 'hidden',
-    '& > div': {
+    listStyle: 'none',
+    margin: 0,
+    padding: 0,
+    '& > *': {
       display: 'flex',
       alignItems: 'center',
       minWidth: 0,

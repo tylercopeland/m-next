@@ -1,54 +1,29 @@
 // vendors
-import React from 'react';
+import React, { forwardRef, useEffect, useRef } from 'react';
+
+// internal
 import convertClass from './classConverter';
-
-// components
+import warnOnce from './_warnOnce';
 import * as s from './Text.styles';
+import type { TextProps, TextWrapperType } from './types';
 
-const textWrapperType = {
+const textWrapperType: Record<'div' | 'paragraph' | 'title', TextWrapperType> = {
   div: 'DIV',
-  pargraph: 'P',
+  paragraph: 'P',
   title: 'H1',
-} as const;
+};
 
-// TypeScript interfaces for props
-export type TextWrapperType = (typeof textWrapperType)[keyof typeof textWrapperType];
-
-export interface TextProps {
-  id?: string;
-  as?: TextWrapperType;
-  fontSize?: string; // font-size in px
-  fontColor?: string; // color hex
-  lineHeight?: string; // paragraph line-height
-  fontWeight?: string; // font weight of the text
-  mt?: string; // margin top
-  mb?: string; // margin bottom in px
-  mr?: string; // margin right in px
-  ml?: string; // margin left in px
-  wordBreak?: string; // word-wrap property
-  whiteSpace?: string; // white-space property
-  inlineStyling?: Record<string, unknown> | null; // inline styling
-  overflow?: string; // overflow property
-  forwardRef?: React.Ref<HTMLElement> | null; // forwardRef for Text
-  tabIndex?: number; // tab index
-  overrideFontSize?: boolean;
-  legacyClasses?: string;
-  iconAlign?: string;
-  sx?: Record<string, unknown>;
-  center?: boolean;
-  children?: React.ReactNode;
-  style?: React.CSSProperties;
-  [key: string]: unknown; // for other props
-}
+let autoIdCounter = 0;
 
 /**
- * Text Component -> customizable Paragraph tag with default V4 design properties
+ * Text — typography primitive. Renders one of <p>, <div>, or <h1> with an
+ * inline-style-driven set of typography props (fontSize, fontColor, lineHeight,
+ * margins, etc.). Supports the React forwardRef API.
  */
-const Text = React.forwardRef<HTMLElement, TextProps>((props, ref) => {
+const Text = forwardRef<HTMLElement, TextProps>(function Text(props, ref) {
   const {
-    id,
-    forwardRef = null, // Keep for backward compatibility
-    as = textWrapperType.pargraph,
+    id: idProp,
+    as = textWrapperType.paragraph,
     fontSize,
     fontColor,
     lineHeight = '20px',
@@ -68,17 +43,66 @@ const Text = React.forwardRef<HTMLElement, TextProps>((props, ref) => {
     overrideFontSize,
     legacyClasses = '',
     iconAlign,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+
     ...otherProps
   } = props;
 
-  // Use the explicitly passed ref or fall back to forwardRef for backward compatibility
-  const resolvedRef = ref || forwardRef;
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef<string | null>(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-text-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
 
-  const textStyles = {
+  // ============ Backwards-compat translation ============
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'text-forwardRef-prop',
+      '@m-next/text: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // ============ Ref chaining ============
+  // Expose the rendered element through both the React forwardRef API and the
+  // legacy `forwardRef` prop.
+  const internalElRef = useRef<HTMLElement | null>(null);
+  useEffect(() => {
+    const assign = (target: typeof ref | typeof legacyForwardRef) => {
+      if (!target) return;
+      if (typeof target === 'function') {
+        target(internalElRef.current);
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        (target as React.MutableRefObject<HTMLElement | null>).current = internalElRef.current;
+      }
+    };
+    assign(ref);
+    assign(legacyForwardRef);
+  }, [ref, legacyForwardRef]);
+
+  const setRef = (node: HTMLElement | null) => {
+    internalElRef.current = node;
+  };
+
+  // ============ Style assembly ============
+
+  const textStyles: Record<string, string | number | undefined> = {
     color: fontColor,
-    fontSize: fontSize,
-    lineHeight: lineHeight,
-    fontWeight: fontWeight,
+    fontSize,
+    lineHeight,
+    fontWeight,
     marginTop: mt,
     marginBottom: mb,
     marginLeft: ml,
@@ -87,41 +111,39 @@ const Text = React.forwardRef<HTMLElement, TextProps>((props, ref) => {
     textOverflow: 'ellipsis',
     wordBreak,
     whiteSpace,
-    textAlign: `${center ? 'center' : 'inherit'}`,
+    textAlign: center ? 'center' : 'inherit',
   };
 
-  const textStylesTitle = {
+  const textStylesTitle: Record<string, string | number | undefined> = {
     color: fontColor,
-    lineHeight: lineHeight,
+    lineHeight,
     marginTop: mt,
     marginBottom: mb,
     marginLeft: ml,
     marginRight: mr,
     wordBreak,
     whiteSpace,
-    textAlign: `${center ? 'center' : 'inherit'}`,
+    textAlign: center ? 'center' : 'inherit',
   };
 
-  // Create inline style with !important for font-size
+  // Inline-style builder that handles the overrideFontSize !important escape hatch.
   const createInlineStyle = (
     baseStyles?: Record<string, unknown> | null,
     additionalStyles?: Record<string, unknown>,
-  ) => {
-    // We need to use a string with !important for the test to pass
-    const fontSizeWithImportant = overrideFontSize && fontSize ? `${fontSize}!important` : fontSize;
+  ): Record<string, unknown> => {
+    const fontSizeWithImportant =
+      overrideFontSize && fontSize ? `${fontSize}!important` : fontSize;
 
-    // Create a style object with all the properties
     const styleObj = {
       ...(legacyClasses ? convertClass(legacyClasses) : null),
       ...baseStyles,
       ...additionalStyles,
     };
 
-    // Add the fontSize property directly to the style attribute
     return {
       ...styleObj,
       fontSize: fontSizeWithImportant,
-      // Also add it as a CSS custom property to ensure it's picked up by Emotion's toHaveStyleRule
+      // Also exposed as a CSS custom property so Emotion's toHaveStyleRule picks it up.
       '--fontSize': fontSizeWithImportant,
     };
   };
@@ -132,11 +154,11 @@ const Text = React.forwardRef<HTMLElement, TextProps>((props, ref) => {
         <s.DivText
           id={id}
           data-testid={id ? `text-${id}--div` : undefined}
-          ref={resolvedRef as React.Ref<HTMLDivElement>}
+          ref={(node: HTMLDivElement | null) => setRef(node)}
           textStyles={textStyles}
           tabIndex={tabIndex}
           iconAlign={iconAlign}
-          style={createInlineStyle(inlineStyling, reflexboxSXProp)}
+          style={createInlineStyle(inlineStyling, reflexboxSXProp) as React.CSSProperties}
           {...otherProps}
         >
           {children}
@@ -147,27 +169,37 @@ const Text = React.forwardRef<HTMLElement, TextProps>((props, ref) => {
         <s.TitleText
           id={id}
           data-testid={id ? `text-${id}--title` : undefined}
-          ref={resolvedRef as React.Ref<HTMLHeadingElement>}
+          ref={(node: HTMLHeadingElement | null) => setRef(node)}
           textStyles={textStylesTitle}
           tabIndex={tabIndex}
           iconAlign={iconAlign}
-          style={{ ...(legacyClasses ? convertClass(legacyClasses) : null), ...inlineStyling }}
+          style={
+            {
+              ...(legacyClasses ? convertClass(legacyClasses) : null),
+              ...inlineStyling,
+            } as React.CSSProperties
+          }
           {...otherProps}
         >
           {children}
         </s.TitleText>
       );
-    case textWrapperType.pargraph:
+    case textWrapperType.paragraph:
     default:
       return (
         <s.ParagraphText
           id={id}
-          ref={resolvedRef as React.Ref<HTMLParagraphElement>}
+          ref={(node: HTMLParagraphElement | null) => setRef(node)}
           data-testid={id ? `text-${id}--paragraph` : undefined}
           textStyles={textStyles}
           tabIndex={tabIndex}
           iconAlign={iconAlign}
-          style={{ ...(legacyClasses ? convertClass(legacyClasses) : null), ...inlineStyling }}
+          style={
+            {
+              ...(legacyClasses ? convertClass(legacyClasses) : null),
+              ...inlineStyling,
+            } as React.CSSProperties
+          }
           {...otherProps}
         >
           {children}
@@ -179,3 +211,4 @@ const Text = React.forwardRef<HTMLElement, TextProps>((props, ref) => {
 Text.displayName = 'Text';
 
 export default Text;
+export type { TextProps, TextWrapperType };

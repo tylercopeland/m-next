@@ -1,0 +1,132 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as TextStories from './text.stories';
+
+<Meta of={TextStories} />
+
+# Text
+
+A typography primitive. Renders one of `<p>`, `<div>`, or `<h1>` with an inline-style-driven set of typography props (`fontSize`, `fontColor`, `lineHeight`, `fontWeight`, margins, alignment, wrapping). Forked from `@m-one/text` and normalized to the m-next API conventions.
+
+## When to use it
+
+- Inline body copy, captions, helper text, ad-hoc headings where heavier typography composites are overkill.
+- Anywhere you'd reach for a styled `<p>` or `<div>` but want a single component that survives Method's legacy class names (`mi-caption-font-*`, `font-*`, `mi-color-*`) via the `legacyClasses` translator.
+- Wrapping a single line of styled text inside a Method UI 3 layout where you can't reach for the design tokens directly.
+
+## When NOT to use it
+
+- Multi-paragraph rich content — render plain semantic markup and let typography tokens handle styling.
+- Page or section titles inside a layout system — use a heading element with the typography tokens directly.
+- Form labels — use `@m-next/caption`.
+- Validation messages — use `@m-next/validation` / `<ValidationMessage>`.
+- Anywhere you can drop in `@m-next/typeography`'s `TextDiv` / `TextSpan` instead. Text is the lower-level primitive Method's legacy code depends on; new code should usually prefer the higher-level typeography helpers.
+
+## Anatomy
+
+A single element — `<p>` by default, switchable via `as="DIV"` or `as="H1"`. Styles are applied as an inline `style` attribute composed from:
+
+1. **Base props** — `fontSize`, `fontColor`, `lineHeight`, `fontWeight`, margins, `wordBreak`, `whiteSpace`, `overflow`, `center`.
+2. **`legacyClasses`** — translated to inline styles by the bundled `classConverter`. Handles `mi-caption-font-*`, `font-*`, `mi-background-*`, `mi-color-*`, etc.
+3. **`inlineStyling`** — caller-provided overrides merged on top of base styles.
+4. **`sx`** — reflexbox-shaped overrides; still respected on the DIV variant for backwards-compatibility with legacy callers.
+
+## Tokens consumed
+
+Text doesn't pull tokens internally — colour and font-size are caller-driven. Pass `@m-next/tokens.colors.*` and any sizing tokens explicitly:
+
+```tsx
+import Text from '@m-next/text';
+import { colors } from '@m-next/tokens';
+
+<Text fontColor={colors.grey.darkest} fontSize="14px">
+  Body copy.
+</Text>
+```
+
+## Basic
+
+<Canvas of={TextStories.Basic} />
+
+## Typography
+
+<Canvas of={TextStories.Typography} />
+
+## Color
+
+Colour is applied via the `fontColor` prop. Pass any CSS colour string — token values are recommended.
+
+<Canvas of={TextStories.Colors} />
+
+## Spacing
+
+<Canvas of={TextStories.Spacing} />
+
+## Alignment and wrapping
+
+<Canvas of={TextStories.Alignment} />
+
+## Inline styling and sx
+
+<Canvas of={TextStories.InlineStyling} />
+
+## Legacy classes
+
+The `legacyClasses` prop is kept functional for Method UI 3 markup that pre-dates the design tokens. The bundled `classConverter` translates each known class name to an inline style.
+
+<Canvas of={TextStories.LegacyClasses} />
+
+## Nested Text
+
+`Text` composes — a nested `Text` inside a parent `Text` is fine and inherits cascading styles.
+
+<Canvas of={TextStories.Nested} />
+
+## Refs
+
+`Text` is a `React.forwardRef` component. The `ref` is attached to the rendered element (`<p>`, `<div>`, or `<h1>` depending on `as`).
+
+<Canvas of={TextStories.WithRef} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `as` | `'P' \| 'DIV' \| 'H1'` | Which HTML element to render. Default `'P'`. |
+| `fontSize`, `fontColor`, `lineHeight`, `fontWeight` | string | Typography. Inline `style`. |
+| `mt`, `mb`, `ml`, `mr` | string | Margins (CSS length strings). |
+| `wordBreak`, `whiteSpace`, `overflow` | string | Wrapping / overflow. |
+| `center` | boolean | Sets `text-align: center`. |
+| `inlineStyling` | object | Inline style overrides. |
+| `sx` | object | DIV-variant reflexbox `sx`. |
+| `legacyClasses` | string | Translated Method UI 3 class names. |
+| `id` | string | Auto-generated if omitted. |
+| `ref` | ref | Forwarded to the rendered element. |
+
+## Accessibility
+
+- Renders semantic HTML — `<p>`, `<div>`, or `<h1>`. Pick `as` deliberately.
+- Use `<H1>` only when the content is a real heading; otherwise prefer `<P>` or `<DIV>`.
+- All native `data-*` and `aria-*` attributes pass through.
+
+## Migration from `@m-one/text`
+
+Text's API is mostly identical to the legacy version. The cleanup is small:
+
+<Canvas of={TextStories.LegacyAPIStillWorks} />
+
+The one soft shim is the legacy `forwardRef` prop, which is now superseded by the React forwardRef API (`<Text ref={textRef} />`). It still works and emits a single `console.warn` at first use. Legacy ghosts (`isV4Design`, `isMobile`, `legacyClass`, `displayAuto`, `compactStyle`) accept their value but have no behavioural effect — V4 styling is now always on.
+
+## Edge cases
+
+- **`overrideFontSize={true}`** — emits `fontSize` with `!important` to win specificity battles against legacy CSS. Use sparingly.
+- **`legacyClasses` + `inlineStyling`** — `legacyClasses` translates first, then `inlineStyling` is merged on top. Inline values win.
+- **`as` casing** — the prop accepts `'P'`, `'DIV'`, `'H1'` (uppercase) for backwards-compatibility with the legacy API. The component normalises via `toUpperCase()` before matching.
+- **Refs** — the React `ref` and the legacy `forwardRef` prop are both supported and chained together. The element type matches `as`.
+
+## Related components
+
+- `@m-next/typeography` — `TextDiv`, `TextSpan`, and friends. Higher-level typography helpers that consume design tokens directly. Prefer these in new code.
+- `@m-next/caption` — form-field labels.
+- `@m-next/validation` — `ValidationMessage` for field-level error / warning copy.

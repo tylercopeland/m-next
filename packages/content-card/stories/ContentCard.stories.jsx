@@ -1,68 +1,162 @@
-import ContentCard from '../src/ContentCard';
+import React from 'react';
+import { ActionCard } from '../src';
 
 export default {
-  component: ContentCard,
-  title: 'm-one/ContentCard',
-  argTypes: {},
-  parameters: {
-    cssresources: [
-      {
-        id: `Method Styles`,
-        code: `<link rel="stylesheet" type="text/css" href="https://alocetsystem.method.me/apps/public/styles/styles.min.css"></link>`,
-        picked: true,
-      },
-    ],
-    design: {
-      type: 'figma',
-    },
-  },
+  title: 'm-next/Components/Display/ActionCard',
+  component: ActionCard,
+  parameters: { layout: 'padded' },
 };
 
-function Template(args) {
-  return <ContentCard {...args} />;
-}
+const fontFamily = "'Source Sans Pro', Helvetica, Arial, sans-serif";
 
-export const Complete = Template.bind({});
-Complete.args = {
-  id: 'demo-card-1',
-  title: 'Getting Started',
-  description: 'Preview and launch media within your app using this card.',
-  timeToComplete: '5',
-  buttonText: 'Launch Demo',
-  icon: 'CircleCheck',
-  isComplete: true,
-  iconSize: 16,
-  iconColor: 'green',
-};
+const Section = ({ title, children }) => (
+  <section style={{ marginBottom: 32, fontFamily }}>
+    <h3
+      style={{
+        fontSize: 13,
+        fontWeight: 600,
+        textTransform: 'uppercase',
+        letterSpacing: 1,
+        color: '#374151',
+        marginBottom: 8,
+      }}
+    >
+      {title}
+    </h3>
+    {children}
+  </section>
+);
 
-export const WithLongDescription = Template.bind({});
-WithLongDescription.args = {
-  id: 'demo-card-2',
-  title: 'Advanced Media',
-  description:
-    'This card demonstrates a longer description for advanced media preview and launching. You can use this to showcase more details about the content.',
-  timeToComplete: '10',
-  buttonText: 'Preview Media',
-};
+const Row = ({ children }) => (
+  <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', fontFamily }}>{children}</div>
+);
 
-export const WithoutTime = Template.bind({});
-WithoutTime.args = {
-  id: 'demo-card-3',
-  title: 'No Time Estimate',
-  description: 'A card without a time to complete value.',
-  buttonText: 'Open',
-};
+const thumbnailUrl =
+  'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80';
 
-export const WithThumbnail = Template.bind({});
-WithThumbnail.args = {
-  id: 'demo-card-4',
-  title: 'With Thumbnail',
-  description: 'This card displays a custom thumbnail image.',
-  timeToComplete: '7',
-  buttonText: 'View',
-  thumbnail: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80',
-  icon: 'CircleCheck',
-  iconSize: 16,
-  iconColor: 'green',
-  isComplete: true,
+// ============ Stories ============
+
+export const Basic = () => (
+  <Section title="Default ActionCard">
+    <Row>
+      <ActionCard
+        title="Getting Started"
+        description="Preview and launch media within your app using this card."
+        timeToComplete={5}
+        buttonText="Launch Demo"
+      />
+    </Row>
+  </Section>
+);
+
+export const WithThumbnail = () => (
+  <Section title="With thumbnail image">
+    <Row>
+      <ActionCard
+        title="With Thumbnail"
+        description="This card displays a custom thumbnail image."
+        timeToComplete={7}
+        buttonText="View"
+        thumbnail={thumbnailUrl}
+      />
+    </Row>
+  </Section>
+);
+
+export const Complete = () => (
+  <Section title="Completed state (badge in the corner)">
+    <Row>
+      <ActionCard
+        title="Getting Started"
+        description="Preview and launch media within your app using this card."
+        timeToComplete={5}
+        buttonText="Launch Demo"
+        icon="CircleCheck"
+        isComplete
+      />
+      <ActionCard
+        title="Advanced Media"
+        description="Same completion badge, but with a thumbnail."
+        timeToComplete={10}
+        buttonText="Preview"
+        thumbnail={thumbnailUrl}
+        icon="CircleCheck"
+        isComplete
+      />
+    </Row>
+  </Section>
+);
+
+export const WithLongDescription = () => (
+  <Section title="Long description (two-line clamp)">
+    <Row>
+      <ActionCard
+        title="Advanced Media"
+        description="This card demonstrates a longer description for advanced media preview and launching. You can use this to showcase more details about the content, and watch the text clamp to two lines with an ellipsis."
+        timeToComplete={10}
+        buttonText="Preview Media"
+      />
+    </Row>
+  </Section>
+);
+
+export const WithoutTime = () => (
+  <Section title="No timeToComplete pill">
+    <Row>
+      <ActionCard
+        title="No Time Estimate"
+        description="A card without a time-to-complete value."
+        buttonText="Open"
+      />
+    </Row>
+  </Section>
+);
+
+export const Clickable = () => (
+  <Section title="onClick wires to the primary action button">
+    <Row>
+      <ActionCard
+        title="Click the button"
+        description="onClick fires when the inner button is activated, not the card surface."
+        buttonText="Try it"
+        // eslint-disable-next-line no-alert
+        onClick={() => alert('ActionCard button clicked')}
+      />
+    </Row>
+  </Section>
+);
+
+export const AutoGeneratedId = () => (
+  <Section title="No id prop — auto-generated internally">
+    <Row>
+      <ActionCard title="Auto-id A" description="No id prop set." buttonText="A" />
+      <ActionCard title="Auto-id B" description="Each instance gets a unique id." buttonText="B" />
+    </Row>
+  </Section>
+);
+
+export const LegacyAPIStillWorks = () => {
+  // Demonstrates the forwardRef-prop soft shim. Fires one console.warn at first use.
+  const legacyRef = React.useRef(null);
+  return (
+    <Section title="Backwards-compat shim (fires one console.warn at first use)">
+      <Row>
+        <ActionCard
+          id="legacy-content-card"
+          title="Legacy props accepted"
+          description="forwardRef prop is shimmed; ghost flags accepted but ignored."
+          buttonText="Still works"
+          timeToComplete={3}
+          // eslint-disable-next-line react/no-unknown-property
+          forwardRef={legacyRef}
+          // Silently-ignored ghosts — accepted, no effect:
+          isV4Design
+          isMobile
+          legacyClass="legacy-action-card"
+          displayAuto
+          compactStyle
+        />
+      </Row>
+    </Section>
+  );
 };

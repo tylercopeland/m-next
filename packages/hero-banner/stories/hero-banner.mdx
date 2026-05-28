@@ -1,0 +1,128 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as HeroBannerStories from './HeroBanner.stories';
+
+<Meta of={HeroBannerStories} />
+
+# HeroBanner
+
+A page-level promotional surface — a heading + supporting description, an optional image, and up to two action buttons. Used for onboarding, feature announcements, marketing CTAs, and high-attention navigational prompts.
+
+Not the same as `Banner`. `Banner` is the inline message strip (system status, post-action confirmations). `HeroBanner` is a larger, decorated surface that competes for attention.
+
+## When to use it
+
+- Onboarding hero on an empty / fresh state — "Welcome to Method, here's how to get started".
+- Promotional CTA — "Schedule a demo", "Try Method Pay", "Watch the get-started video".
+- Marketing slot at the top of a configuration screen.
+- Major feature announcement that warrants a dismissible page-level surface.
+
+## When NOT to use it
+
+- Inline status / post-action feedback — use `Banner`.
+- Transient feedback after a user action — use `Toast`.
+- Modal confirmations or destructive actions — use `Dialog`.
+- A simple content block that isn't promotional — use `Card`.
+
+## Anatomy
+
+A row containing:
+
+1. **Image** (optional) — leading slot. Square-ish, capped at 200×200 on desktop, full-width on mobile.
+2. **Title** — H2 heading.
+3. **Description** — supporting paragraph.
+4. **Primary / secondary buttons** (optional) — actions, rendered via `@m-next/button`.
+5. **Close button** (optional, top-right) — real `<button aria-label="Dismiss banner">`.
+
+Below `640px` the layout stacks vertically and centers the image.
+
+## backgroundColor
+
+| Value | Use for |
+|-------|---------|
+| `blue` (default) | Neutral / informational tone |
+| `orange` | Campaigns, marketing, in-progress states |
+| `green` | Success, payment, positive milestones |
+| `red` | Critical announcements (sparing use) |
+
+The legacy `-lighter` suffix (`'blue-lighter'`, etc.) is soft-shimmed — it still renders but logs a one-time `console.warn`.
+
+## Tokens consumed
+
+- `colors.{blue|orange|green|red}.lighter` — themed background tint.
+- `colors.grey.darkest` — title text + close icon glyph.
+- `colors.grey.base` — description text.
+- `colors.blue.base` — focus ring on the close button.
+
+## Basic
+
+<Canvas of={HeroBannerStories.Basic} />
+
+## With actions
+
+<Canvas of={HeroBannerStories.WithPrimaryAction} />
+<Canvas of={HeroBannerStories.WithBothActions} />
+
+## Background colors
+
+<Canvas of={HeroBannerStories.Backgrounds} />
+
+## Closeable
+
+<Canvas of={HeroBannerStories.Closeable} />
+
+## Title only
+
+<Canvas of={HeroBannerStories.TitleOnly} />
+
+## Interactive
+
+<Canvas of={HeroBannerStories.Interactive} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `title` | string | Drives the accessible name via `aria-labelledby` |
+| `description` | ReactNode | Supporting copy |
+| `imageSrc` | string | Leading image (optional) |
+| `primaryButton`, `secondaryButton` | string | Action labels |
+| `backgroundColor` | `'blue' \| 'orange' \| 'green' \| 'red'` | Themed surface tint |
+| `hasClose` + `onClose` | boolean, function | Renders a real `<button aria-label="Dismiss banner">` |
+
+## Accessibility
+
+- The root carries `role="region"` and, when a `title` is set, `aria-labelledby` to that title — so screen-reader users can navigate to and out of the banner as a landmark.
+- Heading is a real `<h2>`. Place HeroBanner below your page H1 and above any subsection H3s.
+- The close button is a real `<button type="button" aria-label="Dismiss banner">` with a `:focus-visible` outline. Enter / Space activate it.
+- Action buttons render as native `<button>` via `@m-next/button`.
+- `aria-*` and native `div` attributes pass through to the root.
+
+## Migration from `@m-one/hero-banner`
+
+HeroBanner was cleaned up in m-next's Phase 3 API normalization alongside Banner. Migration is mostly mechanical — see the README's "What changed" table.
+
+<Canvas of={HeroBannerStories.LegacyAPIStillWorks} />
+
+Each deprecated prop emits a one-time `console.warn` and silently translates:
+
+- `backgroundColor='blue-lighter'` → `'blue'` (and the `orange-lighter` / `green-lighter` / `red-lighter` variants)
+- `canDismiss` → `hasClose`
+- `onBannerDismiss` → `onClose`
+- `forwardRef` prop → React `ref`
+
+Legacy ghosts (`isV4Design`, `isMobile`, `legacyClass`, `displayAuto`) accept their value but have no behavioral effect. `isMobile` in particular is now driven by a CSS `max-width: 640px` media query.
+
+## Edge cases
+
+- **No title, no image, no actions** — HeroBanner still renders as a themed surface. With no title, the `aria-labelledby` link is omitted so screen readers fall back to the description / children for context.
+- **Custom primary-button color** — `primaryButtonColor` overrides both text and border on the primary button. Falls outside the themed palette; use sparingly.
+- **Refs** — `ref` forwards to the root `<div>`. Useful for scroll-into-view.
+
+## Related components
+
+- `Banner` — the inline message strip for system / status messages.
+- `Card` — non-promotional content blocks.
+- `Dialog` — for blocking confirmations.
+- `Toast` — for transient feedback.

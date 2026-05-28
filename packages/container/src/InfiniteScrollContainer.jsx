@@ -1,5 +1,4 @@
-import React, { useRef, useEffect, useState, useCallback } from 'react';
-import PropTypes from 'prop-types';
+import React, { forwardRef, useRef, useEffect, useState, useCallback } from 'react';
 import LoadingSkeleton from '@m-next/loading-skeleton';
 import { interactions } from '@m-next/utilities';
 import SimpleBar from 'simplebar-react';
@@ -7,55 +6,75 @@ import SimpleBar from 'simplebar-react';
 import * as s from './container.styles';
 import 'simplebar-react/dist/simplebar.min.css';
 
-// types
-const propTypes = {
-  id: PropTypes.string,
-  className: PropTypes.string,
-  style: PropTypes.instanceOf(Object),
-  hoverStyle: PropTypes.instanceOf(Object),
-  isLoading: PropTypes.bool,
-  children: PropTypes.node,
-  isVisible: PropTypes.bool,
-  hasChildLoading: PropTypes.bool,
-  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  onClick: PropTypes.func,
-  onMouseEnter: PropTypes.func,
-  onMouseLeave: PropTypes.func,
-  scrollRef: PropTypes.instanceOf(Object),
-  forwardRef: PropTypes.instanceOf(Object),
-  padding: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  fetchData: PropTypes.func,
-  error: PropTypes.string,
-  tabIndex: PropTypes.number,
-  maxHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-};
+// One-time deprecation warner — fires once per key, mirrors @m-next/container.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
 
 /**
- * Wrapper component around
+ * InfiniteScrollContainer — a Container variant that auto-fires a `fetchData`
+ * callback when a sentinel at the bottom of the scroll area becomes visible.
+ * Used in list views to drive page-on-scroll record loading.
  */
-function InfiniteScrollContainer({
-  id,
-  className,
-  style = {},
-  hoverStyle = {},
-  isLoading = false,
-  children,
-  isVisible = true,
-  hasChildLoading,
-  width = '100%',
-  onClick = null,
-  onMouseEnter = null,
-  onMouseLeave = null,
-  forwardRef = null,
-  padding = '0px',
-  height = 'unset',
-  fetchData,
-  error,
-  scrollRef,
-  tabIndex,
-  maxHeight,
-}) {
+const InfiniteScrollContainer = forwardRef(function InfiniteScrollContainer(props, ref) {
+  const {
+    id: idProp,
+    className,
+    style = {},
+    hoverStyle = {},
+    isLoading = false,
+    children,
+    isVisible = true,
+    hasChildLoading,
+    width = '100%',
+    onClick = null,
+    onMouseEnter = null,
+    onMouseLeave = null,
+    padding = '0px',
+    height = 'unset',
+    fetchData,
+    error,
+    scrollRef,
+    tabIndex,
+    maxHeight,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+    hidden: _hidden,
+    ...rest
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-infinite-scroll-container-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'infinite-scroll-container-forwardRef-prop',
+      '@m-next/container (InfiniteScrollContainer): `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+  const effectiveRef = ref ?? legacyForwardRef;
+
   const observerTarget = useRef(null);
   const simpleBarRef = useRef(null);
   const [recalcTimer, setRecalcTimer] = useState(null);
@@ -118,13 +137,14 @@ function InfiniteScrollContainer({
           onClick={onClick}
           onKeyDown={interactions.handleEnterKey(onClick)}
           isRound={false}
-          ref={forwardRef}
+          ref={effectiveRef}
           borderless
           padding={padding}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           hoverStyle={hoverStyle}
           tabIndex={tabIndex}
+          {...rest}
         >
           {isVisible && (!isLoading || hasChildLoading) && children}
           {isVisible && isLoading && !hasChildLoading && (
@@ -136,7 +156,8 @@ function InfiniteScrollContainer({
       </SimpleBar>
     </div>
   );
-}
+});
 
-InfiniteScrollContainer.propTypes = propTypes;
+InfiniteScrollContainer.displayName = 'InfiniteScrollContainer';
+
 export default InfiniteScrollContainer;

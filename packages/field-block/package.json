@@ -2,22 +2,28 @@
   "name": "@m-next/field-block",
   "private": true,
   "version": "1.0.0",
-  "description": "Field Block widget",
+  "description": "FormSection — a multi-control form group wrapper. Renders a list of typed fields with optional title / description, edit / save controls, and collapse-empty toggle. (Legacy default export is named FieldBlock for backwards compatibility.)",
   "keywords": [
+    "form",
+    "form-section",
+    "field-block",
     "V5"
   ],
   "author": "Alexander Ballard <a.ballard@method.me>",
   "homepage": "",
   "license": "ISC",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "directories": {
     "src": "src"
   },
   "files": [
-    "index"
+    "src",
+    "index.d.ts"
   ],
   "dependencies": {
     "@m-next/styles": "1.0.0",
+    "@m-next/tokens": "1.0.0",
     "@m-next/types": "1.0.0",
     "@m-next/input": "1.0.0",
     "@m-next/container": "1.0.0",
@@ -32,8 +38,6 @@
     "@m-next/datepicker": "^1.0.0",
     "@m-next/checkbox": "^1.0.0",
     "@m-next/svg-icon": "^1.0.0"
-
-
   },
   "peerDependencies": {
     "@emotion/react": ">=11.10.5",
@@ -41,9 +45,7 @@
     "react": ">=17.0.2",
     "react-dom": ">=17.0.2",
     "prop-types": ">=15.8.1"
-
   },
-
   "scripts": {
     "dev": "webpack --mode development",
     "prod": "webpack --mode production",
