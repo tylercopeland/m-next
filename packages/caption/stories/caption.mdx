@@ -1,0 +1,130 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as CaptionStories from './caption.stories';
+
+<Meta of={CaptionStories} />
+
+# Caption
+
+The label / text companion that sits above form fields and anchors validation messaging. Used internally by `@m-next/input`, `@m-next/dropdown`, `@m-next/multi-select`, `@m-next/select`, `@m-next/banner`, `@m-next/dialog`, and most other form composites.
+
+## When to use it
+
+- Labeling a form field (Input, Dropdown, MultiSelect, …). Most controls already render Caption internally via their own `label` prop — call Caption directly only when composing a custom field shell.
+- Standalone informational text in a form / settings panel.
+- Section / group headers paired with a `Container`.
+
+## When NOT to use it
+
+- Page or section titles — use a heading element with the typography tokens directly.
+- Validation messages — use `@m-next/validation` / `<ValidationMessage>`.
+- Body copy / long-form paragraphs — use `@m-next/typeography`'s `TextDiv` or a plain `<p>`.
+
+## Anatomy
+
+A single block element holding:
+
+1. **Label text** — string or ReactNode. When a string is passed, the label renders via `dangerouslySetInnerHTML` to preserve backwards-compatibility with legacy callers (Grid headers, etc.) that pass HTML fragments. ReactNode labels render normally.
+2. **Required asterisk** — a red `*` appended when `required={true}`.
+
+Layout is driven by the `float` prop:
+
+- **Inline (`float={false}`)** — block element at the input baseline, normal flow, with a 10px bottom margin (unless `narrow`).
+- **Floating (`float={true}`)** — absolutely positioned, translated up by 4px, font shrunk to 12px. Sits above the input chrome.
+
+## States
+
+- **Default** — semi-bold (`font-weight: 600`), themed `content.emphasize` color.
+- **Required** — appends a red asterisk after the label text.
+- **Disabled** — switches to the themed `content.primary` (dimmer) color.
+- **Invalid (`isValid={false}`)** — switches to the themed `negative.secondary` (red) color.
+- **Focused (in `float` mode)** — affects the rendered color contrast; the visual cue is owned by the caller's wrapper.
+
+## Tokens consumed
+
+- `colors.red.base` — required asterisk and (via theme) the invalid-state color.
+- Theme context (via Emotion) for `theme.content.*`, `theme.negative.*`, `theme.background.*`. Falls back to `lightTheme` from `@m-next/styles` when no `<ThemeProvider>` is in scope.
+
+## Basic
+
+<Canvas of={CaptionStories.Basic} />
+
+## States
+
+<Canvas of={CaptionStories.States} />
+
+## Alignment
+
+<Canvas of={CaptionStories.Alignment} />
+
+## Floating-label mode
+
+The visual mode used inside Input, Dropdown, MultiSelect — Caption is absolutely positioned above the field and shrinks when "floated."
+
+<Canvas of={CaptionStories.FloatingLabel} />
+
+## ReactNode label
+
+<Canvas of={CaptionStories.ReactNodeLabel} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `label` | string \| ReactNode | Label content. Strings render via dangerouslySetInnerHTML |
+| `htmlFor` | string | Form-control id (renders as `for`) |
+| `required` | boolean | Appends a red asterisk |
+| `isValid` | boolean | Toggles between emphasize and negative colors |
+| `float` | boolean | Absolutely-positioned floating-label mode |
+| `floatYPos` / `floatXPosFocus` / `floatXPosUnfocus` | number / string | Fine-tune floating positioning |
+| `disabled` / `readOnly` / `focused` | boolean | Reflect the state of the associated control |
+
+## Accessibility
+
+- When `htmlFor` is set, the element exposes the `for` attribute and is announced as the label for the bound control.
+- `required` appends a literal `*` — screen readers will read it. Pair with `aria-required` on the bound control for semantic completeness.
+- `isValid={false}` only changes the visual color. The semantic invalid signal lives on the bound control (`aria-invalid`).
+- The rendered element is a `<div>`, not a `<label>` — preserved from the legacy implementation. Promoting to a real `<label>` (and the keyboard / screen-reader gains that come with it) is a candidate for a future a11y pass.
+
+## Examples
+
+### As used by Input / Dropdown
+
+Most consumers don't reach for Caption directly — Input and the form-control family render it internally. When composing a custom field shell:
+
+```jsx
+<div style={{ position: 'relative' }}>
+  <Caption
+    label="Email"
+    htmlFor="email"
+    float={Boolean(value || focused)}
+    focused={focused}
+    isValid={!errorMessage}
+    required
+  />
+  <input id="email" value={value} onChange={…} onFocus={…} onBlur={…} />
+  {errorMessage && <ValidationMessage message={errorMessage} />}
+</div>
+```
+
+## Migration from `@m-one/caption`
+
+Caption was the source of the audit's "6 words for label" finding — it was the first place where the legacy API exposed `caption`, `elFor`, `isV4Design`, and friends, then propagated those names up through every consuming form component. Cleaning Caption removes the "still legacy internally" caveat from Input, Dropdown, MultiSelect, Select, Banner, Dialog, and the rest of the form-control family. Live demo of the soft shim:
+
+<Canvas of={CaptionStories.LegacyAPIStillWorks} />
+
+Each deprecated prop emits a one-time `console.warn` and silently translates. The shim covers: `caption`, `elFor`, `readonly`, `forwardRef`, `legacyClass`. Legacy ghosts (`isV4Design`, `isMobile`, `isLabelBolded`, `background`) accept their value but do nothing.
+
+## Edge cases
+
+- **String label with HTML** — `<Caption label="Hello <b>world</b>" />` still renders bold. This is a deliberate backwards-compat path; callers should prefer ReactNode labels.
+- **Required ReactNode label** — the asterisk renders as a separate `<span>` after the children, no `dangerouslySetInnerHTML` involved.
+- **`legacyClass` translation** — values like `mi-caption-primary mi-caption-font-small` are translated to inline `style` via `convertLegacyCaptionStyle` from `@m-next/styles`. That helper is shared with `@m-one` and will be migrated alongside the styles package itself.
+- **No `<ThemeProvider>` in scope** — falls back to `lightTheme` (light-mode tokens).
+
+## Related components
+
+- `@m-next/input`, `@m-next/dropdown`, `@m-next/multi-select`, `@m-next/select`, `@m-next/checkbox`, `@m-next/radio-button` — render Caption internally via their own `label` prop.
+- `@m-next/validation` — renders the validation message below the input. Caption above, ValidationMessage below.
+- `@m-next/typeography` — body / heading typography for non-form text.

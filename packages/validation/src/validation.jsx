@@ -1,74 +1,67 @@
-import React, { useMemo } from 'react';
-import PropTypes from 'prop-types';
+import React, { useMemo, useRef } from 'react';
 import ValidationMessage from './validationMessage';
 import { isRequiredRule, isValidEmailRule, isValidLengthRule, isValidRangeRule } from './rules';
+import warnOnce from './_warnOnce';
 
-const isRequired = 'isRequired';
-const isValidEmail = 'isValidEmail';
-const isValidLength = 'isValidLength';
-const isValidRange = 'isValidRange';
-
-const propTypes = {
-  id: PropTypes.string,
-  message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  isV4Design: PropTypes.bool,
-  compactStyle: PropTypes.bool,
-  onValidation: PropTypes.func,
-  rules: PropTypes.arrayOf(
-    PropTypes.oneOfType([
-      PropTypes.shape({
-        type: PropTypes.oneOf([isRequired, isValidEmail]).isRequired,
-        customMessage: PropTypes.string,
-      }),
-      PropTypes.shape({
-        type: PropTypes.oneOf([isValidLength]).isRequired,
-        customMessage: PropTypes.string,
-        minLength: PropTypes.number,
-        maxLength: PropTypes.number,
-      }),
-      PropTypes.shape({
-        type: PropTypes.oneOf([isValidRange]).isRequired,
-        customMessage: PropTypes.string,
-        minValue: PropTypes.number,
-        maxValue: PropTypes.number,
-      }),
-    ]),
-  ),
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+const RULE_TYPES = {
+  isRequired: 'isRequired',
+  isValidEmail: 'isValidEmail',
+  isValidLength: 'isValidLength',
+  isValidRange: 'isValidRange',
 };
 
-function Validation({
-  message = null,
-  id = null,
-  isV4Design = true,
-  rules = [],
-  value = null,
-  compactStyle = false,
-  onValidation = null,
-}) {
+let autoIdCounter = 0;
+
+function Validation(props) {
+  const {
+    id: idProp,
+    message = null,
+    rules = [],
+    value = null,
+    onValidation = null,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    compactStyle: _compactStyle,
+    isMobile: _isMobile,
+    legacyClass: _legacyClass,
+
+    ...rest
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-validation-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'validation-forwardRef-prop',
+      '@m-next/validation: Validation `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
   const internalMessage = useMemo(() => {
-    if (!rules || rules.length === 0) {
-      return null;
-    }
+    if (!rules || rules.length === 0) return null;
 
     let errorMessage = null;
     rules.forEach((rule) => {
-      if (!errorMessage) {
-        if (rule.type === isRequired) {
-          errorMessage = isRequiredRule(value, rule.customMessage);
-        }
+      if (errorMessage) return;
 
-        if (rule.type === isValidEmail) {
-          errorMessage = isValidEmailRule(value, rule.customMessage);
-        }
-
-        if (rule.type === isValidLength) {
-          errorMessage = isValidLengthRule(value, rule.minLength, rule.maxLength, rule.customMessage);
-        }
-
-        if (rule.type === isValidRange) {
-          errorMessage = isValidRangeRule(value, rule.minValue, rule.maxValue, rule.customMessage);
-        }
+      if (rule.type === RULE_TYPES.isRequired) {
+        errorMessage = isRequiredRule(value, rule.customMessage);
+      } else if (rule.type === RULE_TYPES.isValidEmail) {
+        errorMessage = isValidEmailRule(value, rule.customMessage);
+      } else if (rule.type === RULE_TYPES.isValidLength) {
+        errorMessage = isValidLengthRule(value, rule.minLength, rule.maxLength, rule.customMessage);
+      } else if (rule.type === RULE_TYPES.isValidRange) {
+        errorMessage = isValidRangeRule(value, rule.minValue, rule.maxValue, rule.customMessage);
       }
     });
 
@@ -80,20 +73,10 @@ function Validation({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
-  const render = () => {
-    if (message)
-      return <ValidationMessage id={id} isV4Design={isV4Design} message={message} compactStyle={compactStyle} />;
-    if (internalMessage)
-      return (
-        <ValidationMessage id={id} isV4Design={isV4Design} message={internalMessage} compactStyle={compactStyle} />
-      );
+  const displayMessage = message || internalMessage;
+  if (!displayMessage) return null;
 
-    return null;
-  };
-
-  return render();
+  return <ValidationMessage id={id} message={displayMessage} {...rest} />;
 }
-
-Validation.propTypes = propTypes;
 
 export default Validation;

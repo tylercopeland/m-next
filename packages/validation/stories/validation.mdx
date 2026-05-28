@@ -1,0 +1,141 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as ValidationStories from './validation.stories';
+
+<Meta of={ValidationStories} />
+
+# Validation
+
+`@m-next/validation` exports two things:
+
+1. **`ValidationMessage`** — a tiny presentational component that renders a red warning-sign icon plus error text. Used internally by every form composite (Input, Dropdown, MultiSelect, Select, etc.) and exported for cases where you're building a custom field outside the standard composites.
+2. **`Validation`** — a declarative wrapper around a small built-in rule engine. Pass a `value` and a list of `rules`; the first failing rule produces an error message, which is rendered through `ValidationMessage`.
+
+## When to use it
+
+- **`ValidationMessage`** — directly under any custom field that needs to display an error string. Every form composite already wires this up; you only need it if you're rolling your own.
+- **`Validation`** — when you want declarative, in-package validation against the bundled rules (`isRequired`, `isValidEmail`, `isValidLength`, `isValidRange`) and don't already have an external validation library.
+
+## When NOT to use it
+
+- You already use a validation library (Formik, React Hook Form, Zod, Yup) — pass its error string straight to your field's `errorMessage` prop. Don't double-wrap it in `<Validation>`.
+- You need a custom rule shape (regex, async lookup, cross-field comparison). The bundled rules are intentionally narrow; reach for an external lib.
+- You want a banner-style global error — use `@m-next/banner` instead. `ValidationMessage` is for inline field errors only.
+
+## API surface, not architecture
+
+The rule-engine API (`<Validation rules=… value=… onValidation=… />`) is **legacy** in shape — the modern m-next direction is consumer-driven validation, where the field's parent owns the validity state and passes a plain `errorMessage` down. The shim is in place so existing form composites keep working unchanged; new code should prefer:
+
+```jsx
+<Input
+  label="Email"
+  type="email"
+  value={email}
+  errorMessage={emailError}  // consumer-derived from any library
+  onChange={(e) => setEmail(e.target.value)}
+/>
+```
+
+…instead of wrapping with `<Validation>`. Replacing the rule engine entirely is a separate architectural pass — out of scope for this cleanup.
+
+## ValidationMessage
+
+<Canvas of={ValidationStories.MessageBasic} />
+
+Notes:
+
+- `message` is the primary prop — string or ReactNode. We kept the name because it's the established React form-library convention and is what every form composite already passes.
+- `children` is a convenience alias. If both are set, `message` wins.
+- When `message` is falsy, the component renders `null` (no empty container, no phantom screen-reader announcement).
+
+## Validation — the rule engine
+
+Pass a `value` and `rules`. The first failing rule's message is rendered. The `onValidation` callback fires every render with the overall validity boolean.
+
+### `isRequired`
+
+<Canvas of={ValidationStories.RuleEngine_Required} />
+
+Fails when the value is `null`, `undefined`, or whitespace-only. Default message: `"Field is required."`.
+
+### `isValidEmail`
+
+<Canvas of={ValidationStories.RuleEngine_Email} />
+
+Fails when the value doesn't match `\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+`. Also fails on empty values. Default message: `"Invalid email address."`.
+
+### `isValidLength`
+
+<Canvas of={ValidationStories.RuleEngine_Length} />
+
+Compares against `value.toString().trim().length`. Bounds:
+
+- `minLength` + `maxLength` set → `"Must be between {min} and {max} characters."`
+- `minLength` only → `"Must be at least {min} characters."`
+- `maxLength` only → `"Must be at most {max} characters."`
+
+Zero or undefined for either bound skips that side of the check.
+
+### `isValidRange`
+
+<Canvas of={ValidationStories.RuleEngine_Range} />
+
+Same shape as `isValidLength` but compares `Number(value)` against numeric bounds (without "characters" in the default messages).
+
+### Composing rules
+
+<Canvas of={ValidationStories.RuleEngine_Composed} />
+
+Rules evaluate in declared order; the first failing rule short-circuits. Put cheap / common checks (`isRequired`) first so they surface before more expensive checks.
+
+### `onValidation` callback
+
+<Canvas of={ValidationStories.RuleEngine_OnValidation} />
+
+Fires every render with the overall validity boolean. Use to lift validation state out so you can disable a Submit button, conditionally render summary errors, etc.
+
+### Overriding rule output
+
+<Canvas of={ValidationStories.Override_MessageProp} />
+
+When `message` is passed to `<Validation>`, it bypasses the rule engine entirely. Form composites use this path to surface consumer-supplied error strings (e.g. server-side validation results) without losing the rule engine for client-side checks.
+
+## Tokens consumed
+
+- `colors.red.base` — the warning-sign icon color and (when no ThemeProvider is present) the message text color.
+- Theme context (via Emotion) for `theme.negative.secondary` — when rendered inside `<ThemeProvider>` from `@m-next/theme`, picks up the active theme's negative color. Falls back to `colors.red.base`.
+
+## Accessibility
+
+- The warning-sign icon is decorative — `@m-next/svg-icon` renders it with `aria-hidden`. The message text carries the meaning.
+- `ValidationMessage` is presentational only; it doesn't set `role="alert"` because the surrounding composites wire validity into the field with `aria-invalid` / `aria-describedby`. Adding `role="alert"` here would double-announce inside the form composites that already do it correctly.
+- When `message` is falsy, the component renders `null` — no empty container, no phantom screen-reader announcement.
+
+## Migration from `@m-one/validation`
+
+Soft-shim only. The core props (`message`, `rules`, `value`, `onValidation`) are unchanged.
+
+<Canvas of={ValidationStories.LegacyAPIStillWorks} />
+
+Changes:
+
+| Was | Now | Status |
+|-----|-----|--------|
+| `id="..."` required | optional — auto-generated if absent | Backwards-compatible |
+| `forwardRef={ref}` prop | `ref={ref}` (React forwardRef API) | Soft shim — warns once |
+| `isV4Design` | — | Silently ignored — V4 styling is always on |
+| `compactStyle` | — | Silently ignored |
+| `isMobile`, `legacyClass` | — | Silently ignored |
+| `lightTheme.negative.secondary` Emotion lookup | `colors.red.base` from `@m-next/tokens` | Falls back to `theme.negative.secondary` when a ThemeProvider is in the tree |
+
+## Edge cases
+
+- **Pre-resolved `message` always wins** — `<Validation message="…" rules={[…]} />` renders `message` and skips rule evaluation. This is the path composites use to surface consumer-supplied errors.
+- **`onValidation` fires on every render** — including the initial render. It's not debounced. If you wire it to expensive state updates, consider memoising.
+- **Rules evaluate against `value`** — pass the raw form value, not a pre-trimmed copy. The rules trim internally.
+- **Falsy bounds** — `minLength: 0` and `maxLength: 0` are treated as "no bound". If you genuinely need "exactly zero", that's not the rule engine's job.
+
+## Related components
+
+- `Input` — the canonical text field. Consumes both `Validation` and `ValidationMessage`.
+- `Dropdown`, `MultiSelect`, `Select` — same pattern; pass `errorMessage` to surface inline errors.
+- `Banner` — page-level / global error display; not a replacement for inline field validation.

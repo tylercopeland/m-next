@@ -2,25 +2,29 @@
   "name": "@m-next/validation",
   "private": true,
   "version": "1.0.0",
-  "description": "Validation Message",
+  "description": "Validation rule engine + ValidationMessage component for form composites.",
   "keywords": [
-    "informational"
+    "validation",
+    "form",
+    "error",
+    "message"
   ],
   "author": "Alexander Ballard <a.ballard@method.me>",
   "homepage": "",
   "license": "ISC",
   "main": "src/index.js",
-  "types": "src/validation.d.ts",
+  "types": "src/index.d.ts",
   "directories": {
     "src": "src"
   },
   "files": [
-    "index",
-    "validation.d.ts"
+    "src",
+    "index.d.ts"
   ],
   "dependencies": {
     "@m-next/styles": "1.0.0",
-    "@m-next/svg-icon": "1.0.0"
+    "@m-next/svg-icon": "1.0.0",
+    "@m-next/tokens": "1.0.0"
   },
   "peerDependencies": {
     "@emotion/react": ">=11.10.5",
