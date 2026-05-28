@@ -63,6 +63,7 @@
     "zod": "3.25.76"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.11.3",
     "@babel/core": "7.28.6",
     "@babel/eslint-parser": "7.28.6",
     "@babel/preset-env": "7.28.6",
@@ -75,6 +76,7 @@
     "@emotion/jest": "11.13.0",
     "@ls-lint/ls-lint": "2.3.1",
     "@nrwl/nx-cloud": "19.1.0",
+    "@playwright/test": "^1.60.0",
     "@storybook/addon-a11y": "10.1.11",
     "@storybook/addon-docs": "10.1.11",
     "@storybook/addon-themes": "10.1.11",
@@ -166,6 +168,9 @@
     "test-storybook": "npx nx run-many -t  test-storybook --parallel 14 || exit 0",
     "storybook": "storybook dev -p 6007",
     "build-storybook": "storybook build",
+    "test:e2e": "playwright test",
+    "test:e2e:update": "playwright test --update-snapshots",
+    "test:e2e:ui": "playwright test --ui",
     "lint": "npx nx run-many -t lint --parallel 14",
     "lint-fix": "npx nx run-many -t lint-fix --parallel 14",
     "prettify": "npx nx run-many -t prettify --parallel 14",
