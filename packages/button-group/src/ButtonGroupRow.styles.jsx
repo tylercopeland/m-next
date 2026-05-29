@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 
 export const ButtonGroupRowWrapper = styled.div(({ width }) => ({
   display: 'flex',
@@ -23,20 +23,20 @@ export const ButtonGroupRowButton = styled.div(({ selected, index, length, disab
   borderTopRightRadius: index === length - 1 ? '4px' : '0px',
   borderBottomRightRadius: index === length - 1 ? '4px' : '0px',
   border: '1px solid',
-  borderColor: selected ? colors.blue : colors['grey-light'],
-  background: selected ? colors['blue-lighter'] : colors.white,
+  borderColor: selected ? colors.blue.base : colors.grey.light,
+  background: selected ? colors.blue.lighter : colors.white,
   cursor: disabled ? 'not-allowed' : 'pointer',
   // Remove borderRightWidth override to maintain consistent 1px borders
   // Add z-index to ensure selected button's borders are visible
   zIndex: selected ? 1 : 0,
   position: 'relative', // Required for z-index to work
   marginLeft: index !== 0 ? '-1px' : '0', // Compensate for border overlap
-  color: selected ? colors.blue : colors.grey,
+  color: selected ? colors.blue.base : colors.grey.base,
   ':hover': disabled
     ? null
     : {
-        borderColor: colors.blue,
-        color: colors.blue,
+        borderColor: colors.blue.base,
+        color: colors.blue.base,
       },
   opacity: disabled ? 0.5 : 1,
 }));

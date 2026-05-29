@@ -30,6 +30,8 @@ const M_NEXT_PACKAGES = [
   'search-input', 'tag-widget',
   // Phase 3 cleaned: domain-y
   'address', 'address-lookup', 'phone-input',
+  // Phase 3 cleaned: audit-rename wave
+  'input-area', 'svg-icon', 'loading-skeleton', 'button-group',
 ];
 
 const stories = M_NEXT_PACKAGES.flatMap((pkg) => [

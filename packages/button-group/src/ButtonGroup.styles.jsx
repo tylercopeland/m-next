@@ -1,20 +1,23 @@
 import styled from '@emotion/styled';
-import { colors, customFocusOutline, customOffsetFocusOutline } from '@m-next/styles';
+import { customFocusOutline, customOffsetFocusOutline } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 
-// Hardcoded to old colours
+// Per-variant style helpers. Colors migrated from legacy flat-key palette
+// to @m-next/tokens nested shape during Phase 3 cleanup.
 const getHoverColor = (buttonStyle) => {
   switch (buttonStyle) {
     case 'plain':
-      return `color: ${colors['grey-darkest']}`;
+      return `color: ${colors.grey.darkest}`;
     case 'ghost':
       return `background-color: transparent`;
     case 'link':
-      return `background-color: transparent; color: ${colors['blue-dark']}`;
+      return `background-color: transparent; color: ${colors.blue.dark}`;
     case 'calendarMenu':
-      return `background-color: ${colors.blue}`;
+      return `background-color: ${colors.blue.base}`;
     case 'primary':
     default:
-      return `background-color: ${colors.legacy['blueHover']}`;
+      // Was colors.legacy['blueHover'] — Method's primary hover is blue.dark.
+      return `background-color: ${colors.blue.dark}`;
   }
 };
 
@@ -25,25 +28,25 @@ const getBorderHover = (buttonStyle) => {
       return 'none';
     case 'calendarMenu':
     case 'ghost':
-      return `${colors['blue-dark']}`;
+      return `${colors.blue.dark}`;
     case 'primary':
     default:
-      return `${colors['blue']}`;
+      return `${colors.blue.base}`;
   }
 };
 
 const getBackgroundColor = (buttonStyle) => {
   switch (buttonStyle) {
     case 'plain':
-      return colors['grey'];
+      return colors.grey.base;
     case 'ghost':
     case 'link':
       return 'transparent';
     case 'calendarMenu':
-      return colors.blue;
+      return colors.blue.base;
     case 'primary':
     default:
-      return colors['grey'];
+      return colors.grey.base;
   }
 };
 
@@ -51,7 +54,7 @@ const getTextColor = (buttonStyle) => {
   switch (buttonStyle) {
     case 'ghost':
     case 'link':
-      return colors['blue'];
+      return colors.blue.base;
     case 'calendarMenu':
     case 'plain':
     case 'primary':
@@ -63,21 +66,21 @@ const getTextColor = (buttonStyle) => {
 const getTextColorHover = (buttonStyle) => {
   switch (buttonStyle) {
     case 'plain':
-      return colors['grey-dark'];
+      return colors.grey.dark;
     case 'ghost':
     case 'link':
-      return colors['blue-dark'];
+      return colors.blue.dark;
     case 'calendarMenu':
     case 'primary':
     default:
-      return colors['white'];
+      return colors.white;
   }
 };
 
 const getBorder = (buttonStyle) => {
   switch (buttonStyle) {
     case 'ghost':
-      return `solid  ${colors['blue']}`;
+      return `solid  ${colors.blue.base}`;
     case 'link':
       return 'none';
     case 'plain':
@@ -160,7 +163,7 @@ export const ListWrapper = styled.div`
   margin-top: ${(p) => (p.openUp ? `${(p.containerHeight + 30) * -1 - 8}px` : null)};
   margin-left: ${(p) => (p.openLeft ? `${(p.containerWidth - p.headerWidth) * -1}px` : null)};
   background-clip: padding-box;
-  border: 1px solid ${colors.legacy['greyLight']};
+  border: 1px solid ${colors.grey.lighter};
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   border-radius: 4px;
@@ -283,7 +286,7 @@ export const Button = styled.div`
 export const ButtonRow = styled.div`
     font-size: 14px;
     padding: 8px 16px;
-    color:  ${colors.black}; 
+    color:  ${colors.black};
     background-color: ${colors.white} ;
     cursor: pointer;
     text-overflow: ellipsis;
@@ -293,13 +296,13 @@ export const ButtonRow = styled.div`
     line-height: 16px;
     opacity: ${(p) => (p.disabled ? '.5' : '1')};
     &:hover {
-        color: ${() => colors['blue']};
-        background-color: ${() => colors['grey-lightest']};
+        color: ${() => colors.blue.base};
+        background-color: ${() => colors.grey.lightest};
     }
-    
+
     &:focus {
-        color: ${() => colors['blue']};
-        background-color: ${() => colors['grey-lightest']};
+        color: ${() => colors.blue.base};
+        background-color: ${() => colors.grey.lightest};
         };
     }
     outline:none

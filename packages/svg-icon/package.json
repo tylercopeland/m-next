@@ -11,6 +11,7 @@
   "types": "src/index.ts",
   "exports": {
     ".": {
+      "types": "./src/index.ts",
       "import": "./src/index.ts",
       "require": "./src/index.ts"
     }
@@ -22,7 +23,8 @@
     "src"
   ],
   "dependencies": {
-    "@m-next/styles": "^1.0.0"
+    "@m-next/styles": "^1.0.0",
+    "@m-next/tokens": "1.0.0"
   },
   "peerDependencies": {
     "@emotion/react": ">=11.10.5",

@@ -1,15 +1,32 @@
-import React, { useMemo, useState } from 'react';
+import React, { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 import * as s from './SvgIcon.styles';
 import iconPaths from './icon-paths';
 import { combinedIconMap, combinedIconNames, SvgIconName } from './SvgIconNames';
 
+// One-time deprecation warner — fires once per key, mirrors @m-next/input / @m-next/toggle.
+const warnOnce = (() => {
+  const seen = new Set<string>();
+  return (key: string, message: string) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
 export interface SvgIconProps {
+  /** Optional id — auto-generated if omitted. */
   id?: string | null;
   testId?: string;
+  /** Icon name from the LegacyIcons / v4 / widget icon maps. */
   name?: SvgIconName;
+  /** Icon size in pixels (width and height). */
   size?: number;
   offsetX?: number;
   offsetY?: number;
+  /** Fill color. CSS color string or token (e.g. colors.blue.base). */
   color?: string;
   hoverColor?: string;
   viewBox?: string;
@@ -17,23 +34,52 @@ export interface SvgIconProps {
   style?: React.CSSProperties;
   stroke?: string;
   strokeWidth?: string;
+  /** Caption rendered as <title> inside the SVG and used to build the accessible name. */
   caption?: string | null;
+  /** Ref forwarded to the wrapping <span>. */
   iconRef?: React.LegacyRef<HTMLDivElement>;
-  onClick?: (e: any) => void | null;
-  isV4Design?: boolean;
+  onClick?: (e: React.MouseEvent<HTMLSpanElement> | React.KeyboardEvent<HTMLDivElement>) => void | null;
   rotate?: string | null;
   disabled?: boolean | null;
   tabIndex?: number | null;
   backgroundColor?: string | null;
   backgroundHoverColor?: string | null;
   isRound?: boolean;
-  forwardRef?: React.LegacyRef<HTMLElement>;
   title?: string;
   tooltip?: string;
   tooltipId?: string;
   border?: boolean;
   children?: React.ReactNode;
   onKeyUp?: React.KeyboardEventHandler<HTMLDivElement>;
+
+  /**
+   * Accessible label for the icon. When set, the SVG gets `role="img"` +
+   * `aria-label={label}`. Pass when the icon conveys meaning that isn't
+   * already in adjacent text.
+   */
+  label?: string;
+  /**
+   * Mark the icon as purely decorative — sets `aria-hidden="true"` and
+   * removes it from the accessibility tree. Use when the icon sits next to
+   * a text label that already describes the action.
+   */
+  decorative?: boolean;
+
+  // ============ Deprecated — soft-shimmed ============
+  /** @deprecated Use the React forwardRef API — pass `ref` directly. */
+  forwardRef?: React.LegacyRef<HTMLElement>;
+
+  // ============ Silently ignored ============
+  /** @deprecated No longer has any effect — V4 design is always on. */
+  isV4Design?: boolean;
+  /** @deprecated No longer has any effect — use CSS media queries. */
+  isMobile?: boolean;
+  /** @deprecated No longer has any effect. */
+  legacyClass?: string;
+  /** @deprecated No longer has any effect. */
+  displayAuto?: boolean;
+  /** @deprecated No longer has any effect. */
+  compactStyle?: boolean;
 }
 
 export const TEST_IDS = {
@@ -41,38 +87,80 @@ export const TEST_IDS = {
   ICON_SVG: 'svg-icon-svg',
 };
 
-const SvgIcon: React.FC<SvgIconProps> = ({
-  className = '',
-  color = 'currentColor',
-  hoverColor = 'currentColor',
-  iconRef,
-  style,
-  id,
-  testId,
-  name,
-  offsetX = 0,
-  offsetY = 0,
-  onClick = null,
-  size,
-  stroke = 'inherit',
-  strokeWidth = '',
-  viewBox = '0 0 1024 1024',
-  isV4Design = true,
-  rotate = null,
-  caption = null,
-  disabled = null,
-  tabIndex = null,
-  backgroundColor = null,
-  backgroundHoverColor = null,
-  isRound = false,
-  forwardRef,
-  title,
-  tooltip,
-  tooltipId,
-  border = false,
-  children = null,
-  onKeyUp,
-}) => {
+const SvgIcon = forwardRef<HTMLDivElement, SvgIconProps>(function SvgIcon(props, ref) {
+  const {
+    className = '',
+    color = 'currentColor',
+    hoverColor = 'currentColor',
+    iconRef,
+    style,
+    id: idProp,
+    testId,
+    name,
+    offsetX = 0,
+    offsetY = 0,
+    onClick = null,
+    size,
+    stroke = 'inherit',
+    strokeWidth = '',
+    viewBox = '0 0 1024 1024',
+    rotate = null,
+    caption = null,
+    disabled = null,
+    tabIndex = null,
+    backgroundColor = null,
+    backgroundHoverColor = null,
+    isRound = false,
+    title,
+    tooltip,
+    tooltipId,
+    border = false,
+    children = null,
+    onKeyUp,
+    label,
+    decorative,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts (accepted, no behavior)
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef<string | null>(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-svg-icon-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  // ============ Backwards-compat translation ============
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'svg-icon-forwardRef-prop',
+      '@m-next/svg-icon: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // Chain the legacy `forwardRef` prop with the new React `ref`.
+  const wrapperRef = useRef<HTMLSpanElement | null>(null);
+  useEffect(() => {
+    const targets = [legacyForwardRef].filter(Boolean) as Array<React.LegacyRef<HTMLElement>>;
+    targets.forEach((target) => {
+      if (typeof target === 'function') {
+        target(wrapperRef.current);
+      } else if (target && typeof target === 'object') {
+        (target as React.MutableRefObject<HTMLElement | null>).current = wrapperRef.current;
+      }
+    });
+  }, [legacyForwardRef]);
+
   const [hover, setHover] = useState(false);
   const isClickable = useMemo(() => onClick && !disabled, [onClick, disabled]);
 
@@ -103,6 +191,20 @@ const SvgIcon: React.FC<SvgIconProps> = ({
     if (onClick && isClickable) onClick(e);
   };
 
+  // Resolve a11y semantics. Priority:
+  //   decorative === true     → aria-hidden, no aria-label
+  //   label provided          → aria-label={label}
+  //   caption provided        → aria-label derived from caption
+  //   otherwise (legacy)      → derived label from icon name
+  const isDecorative = decorative === true;
+  const resolvedAriaLabel = isDecorative
+    ? undefined
+    : (label
+        ?? (caption ? String(caption) : undefined)
+        ?? (disabled
+          ? `disabled-${name?.replace('mi-icon-', '')} icon`
+          : `${name?.replace('mi-icon-', '')} icon`));
+
   const renderIconComponent = () => {
     // Some icons have their own custom Components.
     const IconComponent =
@@ -120,10 +222,6 @@ const SvgIcon: React.FC<SvgIconProps> = ({
 
     const icon = getIcon(requestableName ?? '');
 
-    const ariaLabel = disabled
-      ? `disabled-${caption || name?.replace('mi-icon-', '')} icon`
-      : `${caption || name?.replace('mi-icon-', '')} icon`;
-
     // The `<path>` fill value is usually undefined and inherited from the `color` prop on parent `svg` but there are special cases:
     let computedFill;
     if (icon.attrs) {
@@ -135,14 +233,15 @@ const SvgIcon: React.FC<SvgIconProps> = ({
 
     return (
       <svg
-        role='img'
+        role={isDecorative ? undefined : 'img'}
+        aria-hidden={isDecorative || undefined}
+        aria-label={resolvedAriaLabel}
         width={`${size}px`}
         height={`${size}px`}
         viewBox={icon.attrs && !Array.isArray(icon.attrs) && icon.attrs.viewBox ? icon.attrs.viewBox : viewBox}
         preserveAspectRatio='none'
         fill={hover ? hoverColor : color}
         xmlns='http://www.w3.org/2000/svg'
-        aria-label={ariaLabel}
         transform={icon.attrs && !Array.isArray(icon.attrs) ? icon.attrs.transform : undefined}
         data-testid={testId ? `${testId}-svg` : `${TEST_IDS.ICON_SVG}-${name}`}
       >
@@ -188,9 +287,25 @@ const SvgIcon: React.FC<SvgIconProps> = ({
     }
   };
 
+  // Chain wrapper span refs: internal wrapperRef (for legacy forwardRef
+  // bridging) + legacy forwardRef prop happens via the effect above.
+  const setWrapperRef = (node: HTMLSpanElement | null) => {
+    wrapperRef.current = node;
+  };
+
   return (
     <div
-      ref={iconRef}
+      ref={(node) => {
+        // Mirror to iconRef (legacy) and to the new React ref (forwarded).
+        if (typeof iconRef === 'function') iconRef(node);
+        else if (iconRef && typeof iconRef === 'object') {
+          (iconRef as React.MutableRefObject<HTMLDivElement | null>).current = node;
+        }
+        if (typeof ref === 'function') ref(node);
+        else if (ref && typeof ref === 'object') {
+          (ref as React.MutableRefObject<HTMLDivElement | null>).current = node;
+        }
+      }}
       className={className}
       data-testid={testId}
       style={style}
@@ -206,7 +321,7 @@ const SvgIcon: React.FC<SvgIconProps> = ({
         hoverColor={hoverColor}
         onClick={handleClick}
         isClickable={!!isClickable}
-        isV4Design={isV4Design}
+        isV4Design
         size={`${size}px`}
         rotate={rotate}
         disabled={disabled ? 'disabled' : null}
@@ -216,7 +331,7 @@ const SvgIcon: React.FC<SvgIconProps> = ({
         backgroundColor={backgroundColor}
         backgroundHoverColor={backgroundHoverColor}
         isRound={isRound}
-        ref={forwardRef}
+        ref={setWrapperRef}
         tabIndex={tabIndex ?? (onClick ? 0 : undefined)}
         border={border}
         data-testid={testId ? `${testId}-wrapper` : `${TEST_IDS.ICON_WRAPPER}-${name}`}
@@ -225,17 +340,8 @@ const SvgIcon: React.FC<SvgIconProps> = ({
       </s.IconWrapper>
     </div>
   );
-};
+});
 
-SvgIcon.defaultProps = {
-  color: 'currentColor',
-  className: '',
-  viewBox: '0 0 1024 1024',
-  offsetX: 0,
-  offsetY: 0,
-  stroke: 'inherit',
-  strokeWidth: '',
-  caption: null,
-};
+SvgIcon.displayName = 'SvgIcon';
 
 export default SvgIcon;

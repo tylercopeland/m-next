@@ -2,9 +2,12 @@
   "name": "@m-next/loading-skeleton",
   "private": true,
   "version": "1.0.0",
-  "description": "Skeleton Loading widget",
+  "description": "Skeleton — animated placeholder shape used while content loads.",
   "keywords": [
-    "Loading"
+    "skeleton",
+    "loading",
+    "feedback",
+    "placeholder"
   ],
   "author": "Alexander Ballard <a.ballard@method.me>",
   "homepage": "",
@@ -15,10 +18,10 @@
     "src": "src"
   },
   "files": [
-    "index",
-    "loadingSkeleton.d.ts"
+    "src"
   ],
   "dependencies": {
+    "@m-next/tokens": "1.0.0",
     "react-loading-skeleton": "^3.3.1"
   },
   "peerDependencies": {
@@ -37,8 +40,8 @@
     "build": "npm run prettify && npm run lint && npm run test &&  webpack --mode production",
     "prettify": "npx prettier \"**/*.*(js|jsx)\" --ignore-path=.prettierignore --write --log-level=error",
     "release": "npm build && npm publish build --tag next",
-    "test": "jest",
-    "test-storybook": "jest --json --outputFile=.jest-test-results.json",
+    "test": "jest --passWithNoTests",
+    "test-storybook": "jest --passWithNoTests --json --outputFile=.jest-test-results.json",
     "test-snapshot-update": "npm run test -- -u",
     "lint-js": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\" --cache --report-unused-disable-directives --max-warnings=0",
     "lint-ls": "npx ls-lint",

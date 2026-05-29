@@ -1,62 +1,116 @@
-import React, { useState, useRef, useLayoutEffect, useMemo } from 'react';
+import React, { useState, useRef, useLayoutEffect, useMemo, useEffect, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import Caption from '@m-next/caption';
-import { colors, convertLegacyControlStyle } from '@m-next/styles';
+import { convertLegacyControlStyle } from '@m-next/styles';
 import { ClickOutside } from '@m-next/utilities';
 import SvgIcon from '@m-next/svg-icon';
 import { widgets } from '@m-next/types';
 import * as s from './ButtonGroup.styles';
 
+// One-time deprecation warner — fires once per key, mirrors @m-next/button / @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
 const propTypes = {
   buttonStyle: PropTypes.oneOf(['primary', 'ghost', 'plain', 'calendarMenu']),
   data: PropTypes.instanceOf(Array),
   disabled: PropTypes.bool,
-  displayAuto: PropTypes.bool,
   id: PropTypes.string,
   isDropdown: PropTypes.bool,
-  isV4Design: PropTypes.bool,
   label: PropTypes.string,
-  legacyClass: PropTypes.string,
   margin: PropTypes.string,
   onClick: PropTypes.func,
   showCaption: PropTypes.bool,
   width: PropTypes.string,
-  isMobile: PropTypes.bool,
-  backgroundColor: PropTypes.string,
-  color: PropTypes.string,
-  borderColor: PropTypes.string,
-  fontSize: PropTypes.string,
   hasMenuLabel: PropTypes.bool,
   menuLabel: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium']),
   fillWidth: PropTypes.bool,
+  'aria-label': PropTypes.string,
 };
 
-function ButtonGroup({
-  buttonStyle,
-  data,
-  displayAuto,
-  disabled,
-  id,
-  isDropdown,
-  isV4Design = false,
-  label,
-  legacyClass,
-  margin,
-  onClick,
-  showCaption,
-  width,
-  forceOpenUp,
-  isMobile,
-  backgroundColor,
-  color,
-  borderColor,
-  fontSize,
-  hasMenuLabel = false,
-  menuLabel = '',
-  size = 'medium',
-  fillWidth = false,
-}) {
+const ButtonGroup = forwardRef(function ButtonGroup(props, ref) {
+  const {
+    buttonStyle = 'primary',
+    data = [],
+    disabled = false,
+    id: idProp,
+    isDropdown = false,
+    label = '',
+    margin = '0px 5px 10px 5px',
+    onClick = null,
+    showCaption = true,
+    width = 'auto',
+    forceOpenUp,
+    hasMenuLabel = false,
+    menuLabel = '',
+    size = 'medium',
+    fillWidth = false,
+
+    // Standard ARIA
+    'aria-label': ariaLabelProp,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+    legacyClass,
+
+    // Silently ignored legacy ghosts (accepted, no effect)
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+
+    // Per-prop style overrides — soft-shimmed. Previously these did a runtime
+    // lookup against the flat-key palette (colors[backgroundColor]). Now we
+    // pass the user-supplied value through as raw CSS so consumers passing
+    // hex / CSS color names continue to work; legacy flat keys like
+    // 'dark-grey' will need to be replaced with hex / CSS color values.
+    backgroundColor,
+    color,
+    borderColor,
+    fontSize,
+
+    ...rest
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-button-group-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  // ============ Backwards-compat warnings ============
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'button-group-forwardRef-prop',
+      '@m-next/button-group: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+  if (legacyClass) {
+    warnOnce(
+      'button-group-legacyClass',
+      '@m-next/button-group: `legacyClass` is deprecated. Use `style` or compose the variant you need.',
+    );
+  }
+  if (backgroundColor || color || borderColor || fontSize) {
+    warnOnce(
+      'button-group-style-overrides',
+      '@m-next/button-group: per-prop style overrides (backgroundColor, color, borderColor, fontSize) are deprecated. Use `buttonStyle` or pass `style` for one-off escape hatches. Note: legacy flat-key palette names (e.g. `dark-grey`) are no longer translated — pass hex / CSS color names instead.',
+    );
+  }
+
   const containerRef = useRef();
   const [open, setOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -65,33 +119,26 @@ function ButtonGroup({
   const [containerWidth, setContainerWidth] = useState(280);
   const [headerWidth, setHeaderWidth] = useState(280);
 
+  // Merge external ref (forwardRef API + legacy forwardRef prop) with internal containerRef.
+  useEffect(() => {
+    const targetRef = ref ?? legacyForwardRef;
+    if (!targetRef) return;
+    if (typeof targetRef === 'function') {
+      targetRef(containerRef.current);
+    } else {
+      // eslint-disable-next-line no-param-reassign
+      targetRef.current = containerRef.current;
+    }
+  }, [ref, legacyForwardRef]);
+
   const styleOverrides = useMemo(() => {
     if (backgroundColor || color || fontSize) {
-      let mappedBackgroundColor = backgroundColor ? colors[backgroundColor] : null;
-      if (backgroundColor === 'dark-grey') {
-        mappedBackgroundColor = colors['grey-darker'];
-      }
-      if (mappedBackgroundColor === undefined) {
-        mappedBackgroundColor = backgroundColor;
-      }
-      let mappedBorderColor = borderColor ? colors[borderColor] : null;
-      if (borderColor === 'dark-grey') {
-        mappedBorderColor = colors['grey-darker'];
-      }
-      if (mappedBorderColor === undefined) {
-        mappedBorderColor = borderColor;
-      }
-      let mappedColor = color ? colors[color] : null;
-      if (color === 'dark-grey') {
-        mappedColor = colors['grey-darker'];
-      }
-      if (mappedColor === undefined) {
-        mappedColor = color;
-      }
+      // Pass through user-supplied values as raw CSS. Legacy flat-key
+      // translation removed — see the warnOnce above.
       return {
-        backgroundColor: mappedBackgroundColor,
-        borderColor: mappedBorderColor,
-        color: mappedColor,
+        backgroundColor: backgroundColor || undefined,
+        borderColor: borderColor || undefined,
+        color: color || undefined,
         fontSize,
       };
     }
@@ -382,11 +429,22 @@ function ButtonGroup({
     return '';
   }, [data, hasMenuLabel, menuLabel]);
 
+  // A11y: group label — explicit aria-label wins, then visible label, then the
+  // primary button text from the data array, finally a generic fallback.
+  const groupAriaLabel = ariaLabelProp || label || (typeof buttonLabel === 'string' ? buttonLabel : undefined) || 'Button group';
+
   const handleRender = () => {
     if (!data || data.length === 0) return null;
 
     return (
-      <s.ContainerWrapper displayAuto={displayAuto} width={width} id={id} margin={margin} fillWidth={fillWidth}>
+      <s.ContainerWrapper
+        width={width}
+        id={id}
+        margin={margin}
+        fillWidth={fillWidth}
+        role='group'
+        aria-label={groupAriaLabel}
+      >
         {label && showCaption && <Caption id={`${id}-Caption`} label={label} legacyClass={legacyClass} />}
         <ClickOutside parentRef={containerRef} onClickOutsideHandler={handleOutsideClick}>
           <s.Container
@@ -396,6 +454,7 @@ function ButtonGroup({
             onKeyDown={handleKeyDown}
             tabIndex={isDropdown || hasMenuLabel ? 0 : -1}
             fillWidth={fillWidth}
+            {...rest}
           >
             <s.Wrapper
               disabled={disabled}
@@ -422,12 +481,11 @@ function ButtonGroup({
                 }
                 buttonStyle={buttonStyle}
                 isDropdown={isDropdown}
-                isV4Design={isV4Design}
-                isMobile={isMobile}
+                isV4Design
                 size={size}
                 fillWidth={fillWidth}
               >
-                {isV4Design ? <s.ButtonTextStyled>{buttonLabel}</s.ButtonTextStyled> : buttonLabel}
+                <s.ButtonTextStyled>{buttonLabel}</s.ButtonTextStyled>
               </s.Button>
               {data.length > 1 && (
                 <s.IconHolder
@@ -442,8 +500,8 @@ function ButtonGroup({
                     }
                   }
                   buttonStyle={buttonStyle}
-                  isMobile={isMobile}
                   size={size}
+                  aria-label={`${groupAriaLabel} — open menu`}
                 >
                   <SvgIcon
                     caption={`${label} open menu button`}
@@ -465,7 +523,6 @@ function ButtonGroup({
                 containerHeight={containerHeight}
                 containerWidth={containerWidth}
                 headerWidth={headerWidth}
-                isMobile={isMobile}
               >
                 {data.map((item, index) => handleRenderItem(item, index))}
               </s.ListWrapper>
@@ -477,23 +534,9 @@ function ButtonGroup({
   };
 
   return handleRender();
-}
+});
 
-ButtonGroup.defaultProps = {
-  data: [],
-  disabled: false,
-  width: 'auto',
-  onClick: null,
-  legacyClass: null,
-  label: '',
-  id: null,
-  displayAuto: false,
-  buttonStyle: 'primary',
-  isDropdown: false,
-  margin: '0px 5px 10px 5px',
-  showCaption: true,
-};
-
+ButtonGroup.displayName = 'ButtonGroup';
 ButtonGroup.propTypes = propTypes;
 
 export default ButtonGroup;

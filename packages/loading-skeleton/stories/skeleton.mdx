@@ -1,0 +1,115 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as SkeletonStories from './skeleton.stories';
+
+<Meta of={SkeletonStories} />
+
+# Skeleton
+
+A placeholder shape that shimmers while real content loads. The canonical loading affordance for progressive UIs where the shape of what's coming is known ahead of time.
+
+> Package name remains `@m-next/loading-skeleton`. The audit-canonical component name is **Skeleton**; the legacy `LoadingSkeleton` default export still works. Both resolve to the same component.
+
+## When to use it
+
+- Lists, cards, and tables that have a stable layout while their data arrives.
+- Above-the-fold blocks where holding the layout matters more than showing nothing.
+- Detail views where individual fields can be reserved with realistically-sized rectangles.
+
+## When NOT to use it
+
+- For loads under ~200ms. The shimmer is perceptible just long enough to feel like jank.
+- For tiny atomic actions (a button submitting, a save pending). Use `@m-next/spinner` instead.
+- For indeterminate operations with no known final shape. Use Spinner.
+- For long-running operations with knowable progress. Use a progress bar.
+- Decoratively. A skeleton that isn't tied to actual loading state misleads the user.
+
+## Anatomy
+
+A wrapping `<span>` with a11y semantics, containing one or more shimmering placeholder shapes:
+
+1. **Wrapper** — `<span role="status" aria-busy="true" aria-live="polite">`. Holds the accessible label and is the ref target.
+2. **Placeholder shape(s)** — rectangles (default) or circles. `count` controls how many.
+
+The shimmer animation, base/highlight colors, and CSS come from the underlying `react-loading-skeleton`. Defaults pull from `@m-next/tokens` (`colors.grey.lighter` → `colors.white`) so they match the rest of the palette.
+
+## Variants
+
+<Canvas of={SkeletonStories.Variants} />
+
+- `'rect'` (default) — rectangle. Use for blocks of content, list rows, card bodies.
+- `'text'` — same renderer as rect but typically sized like a single line of body copy (no preset height; consumer sizes it).
+- `'circle'` — a round skeleton. Use for avatars and icon placeholders. Provide `width` and `height` (usually equal).
+
+## Tokens consumed
+
+- `colors.grey.lighter` — default base shimmer color.
+- `colors.white` — default highlight shimmer color.
+
+Consumers can override per-instance via `baseColor` / `highlightColor`, or globally via `react-loading-skeleton`'s `SkeletonTheme` if they want app-wide tinting.
+
+## Basic
+
+<Canvas of={SkeletonStories.Basic} />
+
+## Count — multiple shapes
+
+<Canvas of={SkeletonStories.Count} />
+
+## Card placeholder
+
+<Canvas of={SkeletonStories.CardPlaceholder} />
+
+## List rows
+
+<Canvas of={SkeletonStories.ListRows} />
+
+## Custom shimmer colors
+
+<Canvas of={SkeletonStories.CustomColors} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `width` / `height` | string \| number | Size of each placeholder shape |
+| `variant` | `'text' \| 'rect' \| 'circle'` | Shape; `'circle'` for round (avatar) placeholders |
+| `count` | number | Render N shapes stacked |
+| `baseColor` / `highlightColor` | string | Override the shimmer palette |
+| `label` | string | Accessible label, default `'Loading'` |
+
+## Accessibility
+
+- The wrapper has `role="status"` and `aria-live="polite"` — screen readers announce the loading state without interrupting the user.
+- `aria-busy="true"` signals the region is in a busy/loading state.
+- The `label` prop is the accessible text; default is `"Loading"`. Override for specificity: `<Skeleton label="Loading invoices" />`.
+- The visual shimmer is decorative — the underlying `<span>` from `react-loading-skeleton` is reachable but carries no interactive semantics.
+- **Unmount when done.** Once content loads, render the real content instead of toggling a flag inside Skeleton. That way the live region announces only the initial loading state and doesn't re-announce.
+
+## Migration from `@m-one/loading-skeleton`
+
+Skeleton was cleaned up alongside Spinner under m-next's API normalization. Migration is mostly mechanical:
+
+<Canvas of={SkeletonStories.LegacyAPIStillWorks} />
+
+Deprecated props emit a one-time `console.warn` and silently translate:
+
+- `circle` (boolean) → `variant="circle"`
+- `forwardRef` prop → React's `ref` forwarding API
+
+Legacy ghosts (`isV4Design`, `isMobile`, `legacyClass`, `displayAuto`, `compactStyle`) accept their value but do nothing.
+
+The default export remains `LoadingSkeleton`, so `import LoadingSkeleton from '@m-next/loading-skeleton'` keeps working. New code should prefer the named `Skeleton` export.
+
+## Edge cases
+
+- **Reduced motion** — the shimmer still animates regardless of `prefers-reduced-motion`. If a consumer needs to honor that preference, gate the render at the consumer level.
+- **SSR** — the underlying library renders cleanly server-side; the wrapping `<span>` carries no client-only logic.
+- **Stacked skeletons** — use `count` for stacked shapes of the same size; compose with layout primitives for mixed shapes (see the Card and List examples).
+- **Dark backgrounds** — override `baseColor` / `highlightColor` so the shimmer stays visible. The token defaults assume a light surface.
+
+## Related components
+
+- `@m-next/spinner` — use instead for indeterminate, atomic loading (button submitting, save pending).
+- `@m-next/empty-state` — render when a load resolves to no results, not while still loading.

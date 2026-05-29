@@ -1,0 +1,152 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as ButtonGroupStories from './ButtonGroup.stories';
+import * as ButtonGroupRowStories from './ButtonGroupRow.stories';
+
+<Meta of={ButtonGroupStories} />
+
+# ButtonGroup
+
+A row of related actions. Two exports live here:
+
+- **`ButtonGroup`** — a split-button cluster (primary action plus a dropdown of variants). The default export.
+- **`ButtonGroupRow`** — a segmented toggle row for choosing between a small fixed set of options.
+
+## When to use it
+
+- **Split-button** for a primary action with related variants (Save / Save and close / Save and new). The primary button does the most common thing; the dropdown reveals the rest.
+- **Toolbar cluster** when three or four buttons act on the same object and you want them visually grouped.
+- **Segmented switcher** (use `ButtonGroupRow`) for a small fixed set of mutually-exclusive views — List / Grid / Kanban, By day / By week / By month.
+
+## When NOT to use it
+
+- For a single action — use `@m-next/button`.
+- For form input selection that submits a value — use a `RadioGroup` or `SegmentedControl`.
+- For tab navigation between pages or panels — use a `Tabs` component.
+- For a long list of menu items unrelated to a primary action — use a `Menu` / `Dropdown` triggered by a single Button.
+
+## Anatomy
+
+`ButtonGroup` is:
+
+1. **ContainerWrapper** — `role="group"` with `aria-label`. Holds optional `label` via `@m-next/caption`.
+2. **Container** — the focusable hull.
+3. **Wrapper** — `role="button"` with `aria-haspopup` / `aria-expanded` / `aria-controls`. Inline flex.
+4. **Button** — the primary action (or the static menu label when `hasMenuLabel`).
+5. **IconHolder** — the down-chevron that toggles the menu (only when `data.length > 1`).
+6. **ListWrapper** — `role="menu"`. Absolutely positioned, flips up / left near viewport edges. Children are `role="menuitem"`.
+
+`ButtonGroupRow` is a flat row of `role="button"` segments inside a `role="group"`. Selection is tracked internally seeded by the `selected` prop.
+
+## Tokens consumed
+
+- `colors.blue.base`, `colors.blue.dark`, `colors.blue.lighter` — primary, hover, segmented selection background.
+- `colors.grey.base`, `colors.grey.dark`, `colors.grey.darkest`, `colors.grey.light`, `colors.grey.lightest` — neutral fills, borders, hover backgrounds.
+- `colors.white`, `colors.black` — surfaces and dropdown item text.
+
+All migrated from `@m-next/styles`'s legacy flat-key palette (`colors['grey-darkest']`, `colors.legacy['blueHover']`, etc.) during Phase 3.
+
+## Variants
+
+<Canvas of={ButtonGroupStories.Variants} />
+
+## Split-button
+
+<Canvas of={ButtonGroupStories.SplitButton} />
+
+## With a static menu label
+
+<Canvas of={ButtonGroupStories.WithMenuLabel} />
+
+## States
+
+<Canvas of={ButtonGroupStories.States} />
+
+## With a caption label
+
+<Canvas of={ButtonGroupStories.WithLabel} />
+
+## Sizes
+
+<Canvas of={ButtonGroupStories.Sizes} />
+
+## ButtonGroupRow
+
+A segmented toggle row. Use for choosing one option from a small fixed set (typically two or three).
+
+### Two options
+
+<Canvas of={ButtonGroupRowStories.Row_TwoOptions} />
+
+### Three options, controlled
+
+<Canvas of={ButtonGroupRowStories.Row_ThreeOptions} />
+
+### With disabled items
+
+<Canvas of={ButtonGroupRowStories.Row_DisabledOptions} />
+
+## API
+
+See the README for the full prop tables for both components. Highlights:
+
+### `ButtonGroup`
+| Prop | Type | Notes |
+|------|------|-------|
+| `data` | `ButtonGroupDataItem[]` | Items; index 0 is the primary. |
+| `buttonStyle` | `'primary' \| 'ghost' \| 'plain' \| 'calendarMenu'` | Visual treatment. |
+| `isDropdown` | boolean | Split-button mode. |
+| `hasMenuLabel` / `menuLabel` | boolean / string | Static button text instead of first item. |
+| `label` / `showCaption` | string / boolean | Caption above the group. |
+| `disabled`, `size`, `width`, `fillWidth` | — | Standard controls. |
+| `onClick` | `(item, index) => void` | Selection callback. |
+| `aria-label` | string | Accessible name for the group. |
+
+### `ButtonGroupRow`
+| Prop | Type | Notes |
+|------|------|-------|
+| `data` | `ButtonGroupDataItem[]` | Segments. |
+| `selected` | `string \| number \| boolean` | Selected item's `value`. |
+| `onClick` | `(item, index) => void` | Selection callback. |
+| `aria-label` | string | Accessible name for the row. |
+
+## Accessibility
+
+- **`ButtonGroup`** outer wrapper is `role="group"` with `aria-label` (derived from `aria-label` → `label` → primary button text → `'Button group'`).
+- The split-button trigger has `aria-haspopup`, `aria-expanded`, and `aria-controls` wired correctly.
+- The dropdown is `role="menu"` with `aria-labelledby` pointing at the caption (or the trigger id when there is no caption). Each item is `role="menuitem"` with `aria-disabled` mirroring its disabled state.
+- The menu-open chevron is its own button with `aria-label="{group label} — open menu"`.
+- **`ButtonGroupRow`** wrapper is `role="group"`; segments are `role="button"` with `aria-pressed` reflecting selection.
+- Keyboard: Tab / Shift-Tab to focus, Arrow Up / Down to navigate the open menu, Enter / Space to activate.
+
+## Migration from `@m-one/button-group`
+
+Cleanup is mostly mechanical — see the README's "What changed" table. Live demo of the soft shim:
+
+<Canvas of={ButtonGroupStories.LegacyAPIStillWorks} />
+
+Soft-shimmed (warn once, then translate):
+- `forwardRef={ref}` prop → React `ref` API
+- `legacyClass` → still flows through `convertLegacyControlStyle`, but you should migrate to `style` or compose the variant you need
+- `backgroundColor` / `color` / `borderColor` / `fontSize` → user-supplied values pass through as raw CSS. Legacy flat-key palette names (e.g. `'dark-grey'`) are no longer translated — pass hex / CSS color names instead.
+
+Silently ignored ghosts: `isV4Design`, `isMobile`, `displayAuto`, `compactStyle`.
+
+`ButtonGroupRow` has the same shim shape — see `Row_LegacyAPIStillWorks`.
+
+## Edge cases
+
+- **Single-item `data`.** The dropdown chevron is suppressed; the group renders as one rounded button.
+- **`forceOpenUp`.** Forces the menu above the trigger. Use when the parent scroll container has clipping that the auto-flip can't see.
+- **Scrollable parent.** The menu's open-up / open-left flip checks the nearest scrollable ancestor's bounds, not just the window. Menus inside the canvas / layout panes stay legible.
+- **`role="menu"` ARIA pattern.** This is a menu, not a listbox — items are commands, not options. Keyboard arrows move focus, Enter activates and closes.
+
+## Open follow-ups
+
+- The `data`-array shape is architectural. A children-based composition (`<ButtonGroup><ButtonGroup.Item>...</ButtonGroup.Item></ButtonGroup>`) is the long-term move, but out of scope for this API cleanup pass.
+- Tests and snapshots still reference the legacy API — same situation as Button / Input.
+
+## Related components
+
+- `@m-next/button` — single-action.
+- `@m-next/dropdown` — menu-only patterns (not yet cleaned up).
+- `SegmentedControl` / `RadioGroup` — for form-input-style mutually-exclusive selection (not yet built).

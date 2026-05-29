@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { colors, lightTheme } from '@m-next/styles';
+import { lightTheme } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 
 interface IconWrapperProps {
   isV4Design?: boolean;
@@ -73,7 +74,7 @@ export const IconWrapper = styled.span<IconWrapperProps>((props) => {
   }
   if (border) {
     output += `
-    border: 1px solid ${colors['grey-light']};
+    border: 1px solid ${colors.grey.light};
     border-radius: 8px;
     padding: 7px;
   `;

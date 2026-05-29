@@ -1,0 +1,96 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as IconStories from './svgIcon.stories';
+
+<Meta of={IconStories} />
+
+# Icon
+
+A single SVG glyph from Method's curated icon set. Use Icon anywhere you'd reach for a small visual cue — beside button labels, inside form fields, in empty states, as status indicators, in toolbars.
+
+> **Naming:** the cleaned API is `Icon`. The package is still named `@m-next/svg-icon` and the default export is still `SvgIcon` for backwards compatibility. Prefer `import { Icon } from '@m-next/svg-icon'` in new code.
+
+## When to use it
+
+- Visual cue paired with text: button + leading icon, list row + status icon.
+- Standalone affordance: a toolbar action where the icon alone conveys meaning.
+- Status indicator next to a value: success / warning / error inline glyph.
+
+## When NOT to use it
+
+- Decorative photography or illustration — render an `<img>` directly.
+- Custom SVG that isn't part of the catalog — render the SVG inline; Icon's purpose is the catalog.
+- Spinning loaders — use `@m-next/spinner`.
+
+## Anatomy
+
+1. **Wrapper `<div>`** — receives `className` / `style` / `tooltip` attrs.
+2. **`<span>`** — applies `color`, `hoverColor`, `border`, `isRound`, focus ring.
+3. **`<svg>`** — the actual icon. Accessible name is set here based on `label` / `decorative`.
+
+## Basic
+
+<Canvas of={IconStories.Basic} />
+
+## Sizes
+
+<Canvas of={IconStories.Sizes} />
+
+## Colors
+
+Tinting is just a CSS `color` (and `fill` underneath). Pass tokens from `@m-next/tokens` to stay on palette.
+
+<Canvas of={IconStories.Colors} />
+
+## Accessibility
+
+Icons fall into one of three categories:
+
+1. **Decorative** — there's a text label next to the icon, so the icon would be redundant to a screen reader. Pass `decorative` and the SVG renders `aria-hidden="true"`.
+2. **Meaningful, standalone** — the icon is the only label (typical for icon-only buttons). Pass `label="…"` so the SVG gets `role="img"` + `aria-label`.
+3. **Legacy** — when neither prop is set, the component derives an accessible name from the icon's `name` for backwards compatibility. New code should be explicit.
+
+<Canvas of={IconStories.A11yPatterns} />
+
+## States
+
+<Canvas of={IconStories.States} />
+
+## Icon catalog
+
+A scroll list of every icon currently available — both legacy and v4 sets.
+
+<Canvas of={IconStories.IconList} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `name` | `SvgIconName` | Catalog name |
+| `size` | number | Pixel size for width and height |
+| `color` | string | CSS color — pass a `@m-next/tokens.colors.*` value |
+| `label` | string | Sets `role="img"` + `aria-label` |
+| `decorative` | boolean | Sets `aria-hidden="true"` — for icons next to text |
+| `onClick` | function | Makes the icon focusable + Enter/Space activatable |
+| `disabled` | boolean | Dims the icon and disables click |
+| `ref` | ref | Forwarded to the outer wrapper |
+
+## Migration from `@m-one/svg-icon`
+
+Icon was cleaned up alongside the form family. Most consumers don't need to change anything — the default `SvgIcon` export still works, and the icon catalog (`LegacyIcons.ts` / `icon-paths.js`) is unchanged.
+
+| Was | Now | Status |
+|-----|-----|--------|
+| `forwardRef={ref}` prop | `ref={ref}` (React forwardRef API) | Soft shim — warns once |
+| `id` required | optional — auto-generated | Backwards-compatible |
+| `aria-label` always derived from `name` | `label` / `decorative` props control a11y | Backwards-compatible default preserved |
+| `isV4Design`, `isMobile`, `legacyClass`, `displayAuto`, `compactStyle` | — | Silently ignored |
+
+<Canvas of={IconStories.LegacyAPIStillWorks} />
+
+## Related components
+
+- `@m-next/button` — uses Icon internally for `leftIcon` / `rightIcon`.
+- `@m-next/input` — uses Icon internally for the `leftIcon` slot.
+- `@m-next/badge`, `@m-next/banner`, `@m-next/dialog` — also consume Icon.

@@ -1,70 +1,47 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { useDebounce } from '@m-next/utilities/src/hooks';
 import InputArea from './InputArea';
 
-const propTypes = {
-  ariaLabel: PropTypes.string,
-  autoGrow: PropTypes.bool,
-  disabled: PropTypes.bool,
-  disableResize: PropTypes.bool,
-  forwardRef: PropTypes.instanceOf(Object),
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string,
-  maxHeight: PropTypes.number,
-  name: PropTypes.string,
-  placeholder: PropTypes.string,
-  readonly: PropTypes.bool,
-  required: PropTypes.bool,
-  rows: PropTypes.number,
-  style: PropTypes.instanceOf(Object),
-  tabIndex: PropTypes.number,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  width: PropTypes.string,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  onFocus: PropTypes.func,
-  onKeyDown: PropTypes.func,
-  onKeyUp: PropTypes.func,
-  validationMessage: PropTypes.string,
-  displayAuto: PropTypes.bool,
-  legacyClass: PropTypes.string,
-  isV4Design: PropTypes.bool,
-  initialHeight: PropTypes.number,
-  selectOnFocus: PropTypes.bool,
-  navigateGrid: PropTypes.func,
-  isBlurOnSubmit: PropTypes.bool,
-  compactStyle: PropTypes.bool,
-};
+// DebouncedInputArea — buffers user input and emits `onChange` once typing stops.
+// Inherits its prop surface from InputArea (same soft-shim, same clean API).
+//
+// Behavior note: the underlying InputArea's `onChange` now follows the standard
+// React signature and receives the event object. DebouncedInputArea continues
+// to invoke the consumer's `onChange` with the raw debounced *value* — same
+// shape as the legacy API.
 
 const DebouncedInputArea = (props) => {
-  // eslint-disable-next-line react/destructuring-assignment
-  const [rawInput, setRawInput] = useState(props.value === undefined || props.value === null ? '' : props.value);
+  const { value: incomingValue, onChange, ...rest } = props;
+  const cleanIncoming = incomingValue === undefined || incomingValue === null ? '' : incomingValue;
+
+  const [rawInput, setRawInput] = useState(cleanIncoming);
 
   const debouncedInput = useDebounce(rawInput, 1000);
 
   useEffect(
     () => {
-      const { onChange, value } = props;
-      const cleanValue = value === undefined || value === null ? '' : value;
+      const cleanValue = incomingValue === undefined || incomingValue === null ? '' : incomingValue;
       if (debouncedInput !== cleanValue && debouncedInput != null) {
         if (onChange) onChange(debouncedInput);
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [debouncedInput], // Only call effect if debounced search term changes
+    [debouncedInput],
   );
 
   useEffect(() => {
-    const { value } = props;
-    if (value !== rawInput) {
-      setRawInput(value === undefined || value === null ? '' : value);
+    if (incomingValue !== rawInput) {
+      setRawInput(incomingValue === undefined || incomingValue === null ? '' : incomingValue);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps, react/destructuring-assignment
-  }, [props.value]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [incomingValue]);
 
-  return <InputArea {...props} value={rawInput} onChange={setRawInput} isV4Design />;
+  const handleChange = (e) => {
+    // InputArea now forwards the native event; pull the value off it.
+    setRawInput(e?.target?.value ?? '');
+  };
+
+  return <InputArea {...rest} value={rawInput} onChange={handleChange} />;
 };
 
-DebouncedInputArea.propTypes = propTypes;
 export default DebouncedInputArea;

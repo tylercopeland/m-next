@@ -1,0 +1,121 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as TextareaStories from './input.stories';
+
+<Meta of={TextareaStories} />
+
+# Textarea
+
+A labeled multi-line text input. The default control for any long-form text entry.
+
+> Imported from `@m-next/input-area`. The package and default export are still named `InputArea` for backwards compatibility, but the audit-blessed name is **Textarea**. New code should prefer the `Textarea` named export.
+
+## When to use it
+
+- Multi-line text capture: notes, comments, descriptions, addresses.
+- Editable-grid cells that need to expand to fit content.
+- Anywhere `Input` is too short for the content.
+
+## When NOT to use it
+
+- Single-line text — use `Input`.
+- Rich text (bold/italic/lists) — use a rich-text editor, not Textarea.
+- Code editing — use a real editor surface (CodeMirror, Monaco).
+- Hidden form fields — render `<textarea hidden>` directly.
+
+## Anatomy
+
+A vertical Container holding:
+
+1. **Label** (optional) — rendered via `@m-next/caption`.
+2. **`<textarea>`** — the native element. All standard textarea attributes pass through.
+3. **Mirror textarea** (internal) — invisible buffer used by `selectOnFocus` / `navigateGrid` to detect the user's cursor line.
+4. **Validation message** — rendered below when `errorMessage` is set.
+
+## States
+
+- **Default** — neutral border.
+- **Focused** — accent border color.
+- **Hover** — slightly darker border.
+- **Disabled** — 50% opacity, `pointer-events: none`, `aria-disabled`.
+- **Read-only** — same as disabled visually; value remains selectable.
+- **Error** — red border, error message rendered below, `aria-invalid="true"`.
+
+## Tokens consumed
+
+- `colors.grey.dark` for placeholder text
+- Theme context (via Emotion) for `theme.content.*`, `theme.negative.*`, `theme.background.*` — when rendered inside `<ThemeProvider>` from `@m-next/theme`, picks up the active named theme. Falls back to `lightTheme` from `@m-next/styles`.
+
+## Basic
+
+<Canvas of={TextareaStories.Basic} />
+
+## States
+
+<Canvas of={TextareaStories.States} />
+
+## Sizing and resize
+
+<Canvas of={TextareaStories.Sizing} />
+
+## Label options
+
+<Canvas of={TextareaStories.LabelOptions} />
+
+## Imperative ref handle
+
+The `ref` exposes a small imperative API: `focus()`, `blur()`, `select()`.
+
+<Canvas of={TextareaStories.ImperativeRef} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `label` | string | Visible label, also drives accessible name |
+| `errorMessage` | string \| ReactNode | When set, switches to error state |
+| `autoGrow` | boolean | Grow height with content (up to `maxHeight`) |
+| `disableResize` / `resize` | boolean / string | Resize handle control |
+| `selectOnFocus` | boolean | Enables editable-grid cursor tracking |
+| `navigateGrid` | function | Up/down callback for editable-grid wiring |
+
+## Accessibility
+
+- Native `<textarea>` underneath — keyboard semantics inherited.
+- `label` props through to `@m-next/caption` which renders a real `<label htmlFor>`.
+- `aria-label` provided when `hideLabel` is true (still readable to screen readers).
+- `errorMessage` flips `aria-invalid="true"` on the textarea.
+- `disabled` automatically mirrors to `aria-disabled`.
+- `required` mirrors to `aria-required`.
+- `aria-describedby` passes through; legacy `ariaDescribedby` is shimmed.
+
+## Examples
+
+### A realistic form
+
+<Canvas of={TextareaStories.RealWorldForm} />
+
+## Migration from `@m-one/input-area`
+
+Migration is mostly mechanical — see the README's "What changed" table. Live demo of the soft shim:
+
+<Canvas of={TextareaStories.LegacyAPIStillWorks} />
+
+Each deprecated prop emits a one-time `console.warn` and silently translates. The shim covers: `validationMessage`, `infoLevel`, `hideCaption`, `ariaDescribedby`, `ariaLabel`, `readonly`, `forwardRef`. Legacy ghosts (`isV4Design`, `isMobile`, `hidden`, `displayAuto`, `legacyClass`, `compactStyle`) accept their value but do nothing.
+
+The `onChange` signature is now standard React (`onChange(event)`) — pull `value` off `event.target.value`. The sibling `DebouncedInputArea` / `DebouncedTextarea` still emits the raw value to its consumer.
+
+## Edge cases
+
+- **`autoGrow` with a small `maxHeight`** — height grows up to the cap, then the textarea scrolls internally.
+- **`selectOnFocus` in an editable grid** — pair with `navigateGrid` so up/down arrows jump to the cell above/below when the cursor is on the first/last line.
+- **Pasting very large content with `autoGrow`** — first paint may render at the previous height; height re-measures on next change.
+- **Refs** — `ref` exposes an imperative `{ focus, blur, select }` handle. To reach the raw `<textarea>` DOM node, wrap with your own ref outside the component.
+
+## Related components
+
+- `Input` — single-line counterpart.
+- `DebouncedInputArea` / `DebouncedTextarea` — buffers user typing before firing `onChange`.
+- `Caption` — the label used internally.
+- `Validation` — the optional rule engine.

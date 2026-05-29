@@ -1,87 +1,166 @@
-import React, { useRef, useState, useEffect, useImperativeHandle } from 'react';
-import PropTypes from 'prop-types';
+import React, { useRef, useState, useEffect, useImperativeHandle, forwardRef } from 'react';
 import Caption from '@m-next/caption';
 import { ValidationMessage } from '@m-next/validation';
-import { convertLegacyControlStyle } from '@m-next/styles';
 import * as s from './InputArea.styles';
+
+// One-time deprecation warner — fires once per key, mirrors @m-next/button + @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
 
 /* Editable Grid up/down key press logic:
 Textarea in Editable grid is designed in a way that user can jump to above/below textareas on key up/key down
 If a textarea has multiple lines, we should only jump to another line if caret cursor is on first or last line
-We cannot get the line position because of word wrap (we do not have line breaks). Solution: 
+We cannot get the line position because of word wrap (we do not have line breaks). Solution:
     1. Create a mirror of the textarea
     2. Send the content from the beginning of the textarea to the cursor position to the mirror
     3. Number of lines in mirror textarea is the current line in textarea
     4. Blur textarea if user is on first/last line and hits up/down
 * to test in the browser, in TextAreaInputMirror remove position absolute and set visibility to 'visible' */
 
-const propTypes = {
-  ariaLabel: PropTypes.string,
-  autoGrow: PropTypes.bool,
-  disabled: PropTypes.bool,
-  disableResize: PropTypes.bool,
-  forwardRef: PropTypes.instanceOf(Object),
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string,
-  maxHeight: PropTypes.number,
-  name: PropTypes.string,
-  placeholder: PropTypes.string,
-  readonly: PropTypes.bool,
-  required: PropTypes.bool,
-  rows: PropTypes.number,
-  style: PropTypes.instanceOf(Object),
-  tabIndex: PropTypes.number,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  width: PropTypes.string,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  onFocus: PropTypes.func,
-  onKeyDown: PropTypes.func,
-  onKeyUp: PropTypes.func,
-  validationMessage: PropTypes.string,
-  displayAuto: PropTypes.bool,
-  legacyClass: PropTypes.string,
-  isV4Design: PropTypes.bool,
-  initialHeight: PropTypes.number,
-  selectOnFocus: PropTypes.bool,
-  navigateGrid: PropTypes.func,
-  isBlurOnSubmit: PropTypes.bool,
-  compactStyle: PropTypes.bool,
-};
+const InputArea = forwardRef(function InputArea(props, ref) {
+  const {
+    id: idProp,
+    label = null,
+    name = null,
+    value = '',
+    placeholder = null,
+    required = false,
+    disabled = false,
+    autoGrow = false,
+    disableResize = false,
+    maxHeight = 250,
+    initialHeight = null,
+    rows = 3,
+    cols,
+    resize,
+    tabIndex = 0,
 
-function InputArea({
-  id,
-  ariaLabel = '',
-  autoGrow = false,
-  disabled = false,
-  disableResize = false,
-  forwardRef = null,
-  label = null,
-  maxHeight = 250,
-  name = null,
-  placeholder = null,
-  readonly = false,
-  required = false,
-  rows = 3,
-  style = null,
-  tabIndex = 0,
-  value = '',
-  width = '100%',
-  onBlur = null,
-  onChange = null,
-  onFocus = null,
-  onKeyDown = null,
-  onKeyUp = null,
-  isBlurOnSubmit = null,
-  validationMessage = null,
-  displayAuto = false,
-  legacyClass = null,
-  isV4Design = true,
-  initialHeight = null,
-  selectOnFocus = false,
-  navigateGrid = null,
-  compactStyle = false,
-}) {
+    // Clean API
+    errorMessage: errorMessageProp,
+    intent: intentProp,
+    hideLabel: hideLabelProp,
+    readOnly: readOnlyProp,
+
+    width = '100%',
+    style,
+
+    onChange,
+    onBlur,
+    onFocus,
+    onKeyDown,
+    onKeyUp,
+
+    selectOnFocus = false,
+    navigateGrid = null,
+    isBlurOnSubmit = null,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+    readonly: legacyReadonly,
+    ariaDescribedby: legacyAriaDescribedby,
+    hideCaption,
+    infoLevel,
+    validationMessage,
+
+    // Standard ARIA pass-through
+    'aria-describedby': ariaDescribedby,
+    'aria-label': ariaLabel,
+    ariaLabel: legacyAriaLabel,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    hidden: _hidden,
+    displayAuto: _displayAuto,
+    legacyClass: _legacyClass,
+    compactStyle: _compactStyle,
+
+    ...rest
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-input-area-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  // ============ Backwards-compat translation ============
+
+  let hideLabel = hideLabelProp;
+  if (hideCaption !== undefined && hideLabel === undefined) {
+    warnOnce(
+      'input-area-hideCaption',
+      '@m-next/input-area: `hideCaption` is deprecated. Use `hideLabel`.',
+    );
+    hideLabel = hideCaption;
+  }
+
+  let errorMessage = errorMessageProp;
+  if (validationMessage != null && errorMessage == null) {
+    warnOnce(
+      'input-area-validationMessage',
+      '@m-next/input-area: `validationMessage` is deprecated. Use `errorMessage`.',
+    );
+    errorMessage = validationMessage;
+  }
+
+  let intent = intentProp;
+  if (infoLevel != null && intent == null) {
+    warnOnce(
+      'input-area-infoLevel',
+      '@m-next/input-area: `infoLevel` is deprecated. Use `intent`.',
+    );
+    intent = infoLevel;
+  }
+  if (intent == null) intent = 'error';
+
+  let resolvedAriaDescribedby = ariaDescribedby;
+  if (legacyAriaDescribedby && !resolvedAriaDescribedby) {
+    warnOnce(
+      'input-area-ariaDescribedby',
+      '@m-next/input-area: `ariaDescribedby` is deprecated. Use `aria-describedby` (standard React attr).',
+    );
+    resolvedAriaDescribedby = legacyAriaDescribedby;
+  }
+
+  let resolvedAriaLabel = ariaLabel;
+  if (legacyAriaLabel && !resolvedAriaLabel) {
+    warnOnce(
+      'input-area-ariaLabel',
+      '@m-next/input-area: `ariaLabel` is deprecated. Use `aria-label` (standard React attr).',
+    );
+    resolvedAriaLabel = legacyAriaLabel;
+  }
+
+  let readOnly = readOnlyProp ?? false;
+  if (legacyReadonly !== undefined && readOnly === false) {
+    warnOnce(
+      'input-area-readonly',
+      '@m-next/input-area: `readonly` is deprecated. Use `readOnly` (React casing).',
+    );
+    readOnly = legacyReadonly;
+  }
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'input-area-forwardRef-prop',
+      '@m-next/input-area: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // ============ State + refs ============
+
   const inputRef = useRef();
   const mirrorInputRef = useRef();
 
@@ -91,7 +170,30 @@ function InputArea({
   const [keyPressed, setKeyPressed] = useState(null);
   const [focused, setFocused] = useState(false);
 
+  const isValid = !errorMessage;
+
+  // Expose imperative handle via the React forwardRef API. Both `ref` (new) and
+  // the legacy `forwardRef` prop are supported.
+  useImperativeHandle(
+    ref ?? legacyForwardRef,
+    () => ({
+      blur: () => {
+        inputRef.current?.blur();
+      },
+      focus: () => {
+        inputRef.current?.focus();
+      },
+      select: () => {
+        inputRef.current?.select();
+      },
+    }),
+    [ref, legacyForwardRef],
+  );
+
+  // ============ Grid navigation helpers ============
+
   const calculateRowNumber = () => {
+    if (!inputRef.current || !mirrorInputRef.current) return undefined;
     const numOfLines = (inputRef.current.scrollHeight - 16) / 16; // 16 line height / deduct 16 because first line has min-height of 32px
     const numOfMirrorLines = (mirrorInputRef.current.scrollHeight - 16) / 16;
 
@@ -108,12 +210,14 @@ function InputArea({
       }
     }
     setPreviousActiveLine(currentLine);
+    return undefined;
   };
+
   const getMirrorInputValue = (clickEvent) => {
     let selectionStart = inputRef.current?.selectionStart;
     const selectionEnd = inputRef.current?.selectionEnd;
 
-    // When textearea is first focused (and text highlighted) and user clicks on text, selectionStart is not registered
+    // When textarea is first focused (and text highlighted) and user clicks on text, selectionStart is not registered
     // To fix this create a mock selectionStart
     if (clickEvent && selectionEnd > 0 && selectionStart === 0) {
       selectionStart = selectionEnd / 2;
@@ -130,6 +234,7 @@ function InputArea({
   };
 
   const autoGrowInput = () => {
+    if (!inputRef.current) return;
     inputRef.current.style.height = 'inherit';
     const newHeight = inputRef.current.scrollHeight;
     if (newHeight < maxHeight) {
@@ -142,17 +247,6 @@ function InputArea({
       setHeight(maxHeight);
     }
   };
-  useImperativeHandle(forwardRef, () => ({
-    blur: () => {
-      inputRef.current.blur();
-    },
-    focus: () => {
-      inputRef.current.focus();
-    },
-    select: () => {
-      inputRef.current.select();
-    },
-  }));
 
   useEffect(() => {
     if (autoGrow && inputRef.current) {
@@ -176,9 +270,11 @@ function InputArea({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mirrorInputValue]);
 
+  // ============ Handlers ============
+
   const handleOnChange = (e) => {
     if (autoGrow) autoGrowInput();
-    if (onChange) onChange(e.target.value);
+    if (onChange) onChange(e);
   };
 
   const handleFocus = (e) => {
@@ -209,7 +305,7 @@ function InputArea({
 
       if (e.which === 13 && isBlurOnSubmit) {
         inputRef.current.blur();
-        return;
+        return undefined;
       }
 
       setKeyPressed(e.which);
@@ -217,6 +313,7 @@ function InputArea({
     }
 
     if (onKeyUp) onKeyUp(e);
+    return undefined;
   };
 
   const handleOnKeyDown = (e) => {
@@ -226,27 +323,22 @@ function InputArea({
     else if (onKeyDown) onKeyDown(e);
   };
 
+  // ============ Render ============
+
   return (
-    <s.Container
-      width={width}
-      style={style}
-      displayAuto={displayAuto}
-      isValid={!validationMessage}
-      compactStyle={compactStyle}
-    >
-      {label && (
+    <s.Container width={width} style={style} isValid={isValid}>
+      {!hideLabel && label && (
         <Caption
-          id={id}
+          id={`${id}-input-caption`}
           required={required}
           label={label}
-          legacyClass={legacyClass}
-          isValid={!isV4Design || !validationMessage}
-          isV4Design={isV4Design}
-          float={isV4Design ? true : Boolean(placeholder || value)}
-          focused={focused || isV4Design}
+          isValid={isValid}
+          isV4Design
+          float
+          focused
           elFor={`${id}-Input`}
           disabled={disabled}
-          readOnly={readonly}
+          readOnly={readOnly}
         />
       )}
       <s.TextAreaInput
@@ -254,25 +346,31 @@ function InputArea({
         autoGrow={autoGrow}
         ref={inputRef}
         rows={rows}
+        cols={cols}
         tabIndex={tabIndex}
         value={value || ''}
         name={name}
-        isV4Design={isV4Design}
         placeholder={placeholder}
         onChange={handleOnChange}
         disabled={disabled}
-        readOnly={readonly}
-        onFocus={(e) => handleFocus(e)}
-        onBlur={(e) => handleBlur(e)}
-        onKeyDown={(e) => handleOnKeyDown(e)}
-        onKeyUp={(e) => handleOnKeyUp(e)}
-        onClick={() => handleClick()}
+        readOnly={readOnly}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        onKeyDown={handleOnKeyDown}
+        onKeyUp={handleOnKeyUp}
+        onClick={handleClick}
         scrollable={!autoGrow || height >= maxHeight}
-        isValid={!validationMessage}
-        style={{ ...convertLegacyControlStyle(legacyClass), ...style }}
+        isValid={isValid}
         disableResize={disableResize}
-        aria-label={ariaLabel}
+        customResize={resize}
+        aria-label={resolvedAriaLabel ?? (label || name) ?? undefined}
+        aria-describedby={resolvedAriaDescribedby}
+        aria-disabled={disabled || undefined}
+        aria-invalid={!isValid || undefined}
+        aria-required={required || undefined}
+        data-testid={`${id}-Input`}
         height={!autoGrow ? height : null}
+        {...rest}
       />
 
       {selectOnFocus && (
@@ -281,17 +379,16 @@ function InputArea({
           ref={mirrorInputRef}
           rows={rows}
           scrollable={!autoGrow || height >= maxHeight}
-          style={{ ...convertLegacyControlStyle(legacyClass), ...style }}
           value={mirrorInputValue}
           readOnly
         />
       )}
 
-      <ValidationMessage id={id} message={validationMessage} isV4Design={isV4Design} />
+      <ValidationMessage id={`${id}-input-validation`} message={errorMessage} isV4Design />
     </s.Container>
   );
-}
+});
 
-InputArea.propTypes = propTypes;
+InputArea.displayName = 'InputArea';
 
 export default InputArea;
