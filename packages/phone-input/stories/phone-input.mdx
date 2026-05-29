@@ -1,0 +1,113 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as PhoneInputStories from './phoneInput.stories';
+
+<Meta of={PhoneInputStories} />
+
+# PhoneInput
+
+International phone number input with a country dial-code selector. Wraps the third-party `react-phone-input-2` library and normalizes its API to m-next conventions.
+
+## When to use it
+
+- Any form field that captures a phone number where the country code is meaningful.
+- Contact records, lead capture, account profiles, two-factor auth setup.
+
+## When NOT to use it
+
+- Pure local-only number entry (extension, fax with known country) — use `Input` with `type="tel"`.
+- Number entry where the country is fixed and never user-editable — use `Input` with `type="tel"` plus a prefixed dial-code label.
+- Identity verification or carrier lookup — PhoneInput formats and validates shape, not deliverability.
+
+## Anatomy
+
+A vertical Container holding:
+
+1. **Caption** — floating label rendered via `@m-next/caption`. Floats above the field when focused or filled.
+2. **Country selector** — flag + dial code button, opens a searchable country list (provided by `react-phone-input-2`).
+3. **`<input type="tel">`** — the actual native element. Value is auto-formatted per country mask.
+4. **Validation message** — rendered below when `errorMessage` is set, with a warning icon.
+
+## States
+
+- **Default** — neutral border.
+- **Focused** — accent border (`colors.blue.base`), label floated.
+- **Hover** — black border.
+- **Error** — warning icon + red message below.
+
+## Tokens consumed
+
+- `colors.blue.base` — focus border color.
+- `colors.red.base` — error message and icon color.
+- `colors.black` — hover border color.
+
+## Basic
+
+<Canvas of={PhoneInputStories.Basic} />
+
+## Default countries
+
+<Canvas of={PhoneInputStories.Countries} />
+
+## Country search
+
+<Canvas of={PhoneInputStories.Search} />
+
+## Error state
+
+<Canvas of={PhoneInputStories.ErrorState} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `label` | string | Floating label (defaults to `'Phone number'`) |
+| `value` | string | Controlled phone value (E.164-ish) |
+| `defaultCountry` | string | Two-letter country code, e.g. `'ca'`, `'us'` |
+| `onChange` | `(value, data, event, formatted) => void` | See README — `data` includes `rawPhone` |
+| `errorMessage` | string | Renders the error row below the field |
+| `enableSearch` | boolean | Toggle the country-search box |
+
+## Accessibility
+
+PhoneInput delegates input and country-selector semantics to `react-phone-input-2`:
+
+- Underlying input is `<input type="tel">` — keyboard semantics inherited.
+- The country selector is a real `<button>`, with the country list rendered as a `<ul>` (not `role="listbox"`).
+- The floating label is connected to the field via `@m-next/caption`.
+- `errorMessage` renders an inline alert below the input.
+
+Known a11y gaps inherited from `react-phone-input-2`:
+
+- The country list is a `<ul>` of `<li>`s rather than `role="listbox"` + `role="option"`.
+- The flag button does not set `aria-expanded` / `aria-controls` when toggling the country list.
+
+Fixing these requires either patching the dependency or replacing it with a native combobox implementation. Out of scope for this Phase 3 API cleanup; tracked as an open follow-up.
+
+## Examples
+
+### A realistic form
+
+<Canvas of={PhoneInputStories.RealWorldForm} />
+
+## Migration from `@m-one/phone-input`
+
+Migration is mechanical — see the README's "What changed" table. Live demo of the soft shim:
+
+<Canvas of={PhoneInputStories.LegacyAPIStillWorks} />
+
+Each deprecated prop emits a one-time `console.warn` and silently translates. The shim covers: `placeholder` (→ `label`), `validationMessage` (→ `errorMessage`), `handleChange` (→ `onChange`), `country` (→ `defaultCountry`). Legacy ghosts (`isV4Design`, `isMobile`, `legacyClass`, `compactStyle`, `displayAuto`) accept their value but do nothing.
+
+## Edge cases
+
+- **No `value`, no `defaultCountry`** — falls back to Canada (`'ca'`).
+- **`onChange` data argument** — `data.rawPhone` is the dial-code stripped from `value`. Use this when persisting "just the local number" alongside the country code.
+- **`react-phone-input-2` reformatting** — when the user types or pastes, the field re-formats per the country mask. The `formattedValue` argument to `onChange` is the visible string; `value` is the digits-only concat.
+- **Country list is empty / not found** — `react-phone-input-2` controls list filtering; m-next doesn't override.
+
+## Related components
+
+- `Input` — single-line text / email / number / password (already cleaned up).
+- `Caption` — the floating label used internally (not yet cleaned up).
+- `Address` / `AddressLookup` — sibling form controls (Phase 3 in-flight).

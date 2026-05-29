@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, FC } from 'react';
+import React, { useState, useEffect, useMemo, useRef, forwardRef, Ref } from 'react';
 import AsyncSelect from 'react-select/async';
 // Create a wrapper component to fix TypeScript error
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -17,9 +17,23 @@ import {
 import SvgIcon from '@m-next/svg-icon';
 import Caption from '@m-next/caption';
 import { MapboxApi, GeocodingFeature } from '@m-next/map';
+import { colors } from '@m-next/tokens';
 import * as s from './addressLookup.styles';
 
-interface OptionType {
+// One-time deprecation warner — fires once per key, mirrors @m-next/input / @m-next/button.
+const warnOnce = (() => {
+  const seen = new Set<string>();
+  return (key: string, message: string) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
+export interface AddressLookupOption {
   key: number;
   label: string;
   value: number;
@@ -33,6 +47,9 @@ interface OptionType {
   longitude?: number;
   latitude?: number;
 }
+
+// Backwards-compat alias for the original internal type name.
+type OptionType = AddressLookupOption;
 
 // Custom Control to render icon inside the textbox, but outside ValueContainer/input
 const Control = ({ isDisabled, ...props }: ControlProps<OptionType, boolean, GroupBase<OptionType>>) => (
@@ -51,57 +68,158 @@ const Control = ({ isDisabled, ...props }: ControlProps<OptionType, boolean, Gro
         height: 34,
       }}
     >
-      <SvgIcon name='address-lookup' size={16} color='#888' disabled={isDisabled} data-testid='svg-icon' />
+      <SvgIcon name='address-lookup' size={16} color={colors.grey.base} disabled={isDisabled} data-testid='svg-icon' />
     </div>
   </div>
 );
 
-const formatOptionLabel = (option: OptionType, meta: FormatOptionLabelMeta<OptionType>) => (
-  <div
-    style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.2 }}
-    id={meta.context === 'menu' ? `dropdown-AddressLookup-${option.key}` : undefined}
-  >
-    <span>{option.label}</span>
-    {option.streetAddress && <span style={{ fontSize: 12, color: '#888', marginTop: 2 }}>{option.streetAddress}</span>}
-  </div>
-);
+const makeFormatOptionLabel =
+  (id: string) =>
+  (option: OptionType, meta: FormatOptionLabelMeta<OptionType>) => (
+    <div
+      style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.2 }}
+      id={meta.context === 'menu' ? `${id}-option-${option.key}` : undefined}
+      role={meta.context === 'menu' ? 'option' : undefined}
+    >
+      <span>{option.label}</span>
+      {option.streetAddress && (
+        <span style={{ fontSize: 12, color: colors.grey.base, marginTop: 2 }}>{option.streetAddress}</span>
+      )}
+    </div>
+  );
 
-interface AddressLookupCustomProps {
-  id: string;
-  onChange?: (option: OptionType | null) => void;
-  caption?: string;
+export interface AddressLookupProps {
+  /** Optional id; auto-generated if omitted. */
+  id?: string;
+  /** Visible label, rendered via @m-next/caption. */
+  label?: string;
+  /** Fired when a suggestion is selected. */
+  onChange?: (option: AddressLookupOption | null) => void;
+  /** Alias for `onChange` — fires when a suggestion is selected. */
+  onSelect?: (option: AddressLookupOption | null) => void;
+  /** Fires on every keystroke in the search box. */
+  onInputChange?: (value: string) => void;
   width?: string | number;
   placeholder?: string;
   disabled?: boolean;
-  legacyClass?: string;
-  isV4Design?: boolean;
-  displayAuto?: boolean;
   required?: boolean;
-  validationMessage?: string;
-  isValid?: boolean;
+  /** When set, the component shows error styling and renders this message below. */
+  errorMessage?: string | null;
+  /** Mapbox gateway base URL — used for ipgeo lookup to bias suggestions. */
   gatewayUrl: string;
   menuPlacement?: 'auto' | 'top' | 'bottom';
+
+  // ============ Deprecated — soft-shimmed ============
+  /** @deprecated Use `label`. */
+  caption?: string;
+  /** @deprecated Use `errorMessage`. The previous "isValid + validationMessage" pair is folded into a single message. */
+  validationMessage?: string | null;
+  /** @deprecated Use `errorMessage` (a non-null value implies invalid). */
+  isValid?: boolean;
+  /** @deprecated Use the React forwardRef API — pass `ref` directly. */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  forwardRef?: Ref<any>;
+
+  // ============ Silently ignored legacy ghosts ============
+  /** @deprecated No longer has any effect — V4 styling is always on. */
+  isV4Design?: boolean;
+  /** @deprecated No longer has any effect — use CSS media queries. */
+  isMobile?: boolean;
+  /** @deprecated Use `className`. */
+  legacyClass?: string;
+  /** @deprecated No longer has any effect. */
+  displayAuto?: boolean;
+  /** @deprecated No longer has any effect. */
+  compactStyle?: boolean;
 }
 
-const AddressLookupCustom: FC<AddressLookupCustomProps> = ({
-  id,
-  onChange,
-  caption,
-  width = 300,
-  placeholder,
-  disabled,
-  legacyClass,
-  isV4Design,
-  displayAuto = false,
-  required,
-  validationMessage,
-  isValid = true,
-  gatewayUrl,
-  menuPlacement = 'auto',
-}) => {
+const AddressLookup = forwardRef<HTMLDivElement, AddressLookupProps>(function AddressLookup(props, ref) {
+  const {
+    id: idProp,
+    label: labelProp,
+    onChange,
+    onSelect,
+    onInputChange,
+    width = 300,
+    placeholder,
+    disabled,
+    required,
+    errorMessage: errorMessageProp,
+    gatewayUrl,
+    menuPlacement = 'auto',
+
+    // Soft-shimmed legacy
+    caption: legacyCaption,
+    validationMessage,
+    isValid: legacyIsValid,
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+  } = props;
+
+  // ============ Auto-id ============
+  const internalIdRef = useRef<string | null>(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-address-lookup-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  // ============ Backwards-compat translation ============
+  let label = labelProp;
+  if (legacyCaption !== undefined && label === undefined) {
+    warnOnce('address-lookup-caption', '@m-next/address-lookup: `caption` is deprecated. Use `label`.');
+    label = legacyCaption;
+  }
+
+  let errorMessage = errorMessageProp ?? null;
+  if (validationMessage != null && errorMessage == null) {
+    warnOnce(
+      'address-lookup-validationMessage',
+      '@m-next/address-lookup: `validationMessage` is deprecated. Use `errorMessage`.',
+    );
+    errorMessage = validationMessage;
+  }
+  if (legacyIsValid === false && errorMessage == null) {
+    warnOnce(
+      'address-lookup-isValid',
+      '@m-next/address-lookup: `isValid` is deprecated. Set `errorMessage` to convey an invalid state.',
+    );
+  }
+
+  // `isValid` is derived from errorMessage going forward. Legacy `isValid={false}` is honoured for styling.
+  const isValid = legacyIsValid !== undefined ? legacyIsValid : errorMessage == null;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'address-lookup-forwardRef-prop',
+      '@m-next/address-lookup: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // ============ State ============
   const [userGeolocation, setUserGeolocation] = useState<string | null>(null);
   const [inputValue, setInputValue] = useState<string>('');
   const [focused, setFocused] = useState<boolean>(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  // Merge external ref (forwardRef API + legacy forwardRef prop) with internal.
+  useEffect(() => {
+    const targetRef = ref ?? legacyForwardRef;
+    if (!targetRef) return;
+    if (typeof targetRef === 'function') {
+      targetRef(containerRef.current);
+    } else {
+      // eslint-disable-next-line no-param-reassign
+      (targetRef as React.MutableRefObject<HTMLDivElement | null>).current = containerRef.current;
+    }
+  }, [ref, legacyForwardRef]);
 
   const mapboxapi = useMemo(() => {
     return MapboxApi();
@@ -206,15 +324,15 @@ const AddressLookupCustom: FC<AddressLookupCustomProps> = ({
     return option;
   };
 
-  const loadOptions = (inputValue: string, callback: (options: OptionType[]) => void) => {
+  const loadOptions = (rawInputValue: string, callback: (options: OptionType[]) => void) => {
     // Early return for short inputs
-    if (!inputValue || inputValue.length <= 2) {
+    if (!rawInputValue || rawInputValue.length <= 2) {
       callback([]);
       return;
     }
 
     mapboxapi
-      .getAddressSuggestions(inputValue, userGeolocation)
+      .getAddressSuggestions(rawInputValue, userGeolocation)
       .then((data: { data: { features: GeocodingFeature[] } }) => {
         const features = data.data.features || [];
         const options = features.map(featureToOption);
@@ -226,8 +344,14 @@ const AddressLookupCustom: FC<AddressLookupCustomProps> = ({
   const handleChange = (newValue: MultiValue<OptionType> | SingleValue<OptionType>) => {
     const option = newValue as OptionType | null;
     if (onChange) onChange(option);
+    if (onSelect) onSelect(option);
     // Clear the input field after selection
     setInputValue('');
+  };
+
+  const handleInputChange = (newValue: string) => {
+    setInputValue(newValue);
+    if (onInputChange) onInputChange(newValue);
   };
 
   // Styles to mimic dropdown.jsx
@@ -241,15 +365,15 @@ const AddressLookupCustom: FC<AddressLookupCustomProps> = ({
       ...base,
       minHeight: 34,
       height: 34,
-      borderRadius: isV4Design ? 4 : 1,
+      borderRadius: 4,
       borderColor: (() => {
-        if (!isValid) return '#e53935';
-        if (state.isFocused) return '#1976d2';
-        return '#ccc';
+        if (!isValid) return colors.red.base;
+        if (state.isFocused) return colors.blue.base;
+        return colors.grey.light;
       })(),
-      boxShadow: state.isFocused ? '0 0 0 2px #1976d220' : 'none',
+      boxShadow: state.isFocused ? `0 0 0 2px ${colors.blue.lighter}` : 'none',
       fontSize: 14,
-      backgroundColor: disabled ? '#f5f5f5' : '#fff',
+      backgroundColor: disabled ? colors.grey.lighter : colors.white,
       cursor: disabled ? 'not-allowed' : 'text',
       paddingLeft: 24, // space for icon
       paddingRight: 0,
@@ -271,14 +395,14 @@ const AddressLookupCustom: FC<AddressLookupCustomProps> = ({
       margin: 0,
       padding: 0,
       fontSize: 14,
-      color: '#222',
+      color: colors.grey.dark,
       // Make the input position absolute so it can overlay the placeholder
       position: 'relative',
       width: '100%',
     }),
     placeholder: (base: CSSObjectWithLabel, state: { isFocused: boolean; hasValue: boolean }) => ({
       ...base,
-      color: '#888',
+      color: colors.grey.base,
       fontSize: 14,
       marginLeft: 0,
       paddingLeft: 0,
@@ -297,7 +421,7 @@ const AddressLookupCustom: FC<AddressLookupCustomProps> = ({
       ...base,
       fontSize: 14,
       marginLeft: 0,
-      color: '#222',
+      color: colors.grey.dark,
     }),
     menu: (base: CSSObjectWithLabel) => ({
       ...base,
@@ -311,15 +435,15 @@ const AddressLookupCustom: FC<AddressLookupCustomProps> = ({
       ...base,
       fontSize: 14,
       backgroundColor: (() => {
-        if (state.isSelected) return '#f0f4f8';
-        if (state.isFocused) return '#f5faff';
-        return '#fff';
+        if (state.isSelected) return colors.blue.lighter;
+        if (state.isFocused) return colors.grey.lighter;
+        return colors.white;
       })(),
-      color: state.isSelected ? '#1976d2' : '#222',
+      color: state.isSelected ? colors.blue.base : colors.grey.dark,
       cursor: 'pointer',
       padding: 8,
       borderRadius: 0,
-      borderBottom: '1px solid #f0f0f0',
+      borderBottom: `1px solid ${colors.grey.lighter}`,
       ':last-child': {
         borderBottom: 'none',
       },
@@ -340,17 +464,19 @@ const AddressLookupCustom: FC<AddressLookupCustomProps> = ({
     }),
     noOptionsMessage: (base: CSSObjectWithLabel) => ({
       ...base,
-      color: '#888',
+      color: colors.grey.base,
       fontSize: 14,
     }),
   };
 
-  // Custom MenuList component to override the default listbox ID
+  const listboxId = `${id}-List`;
+
+  // Custom MenuList component to override the default listbox ID and role
   const CustomMenuList = (props: MenuListProps<OptionType, boolean, GroupBase<OptionType>>) => {
-    // Override the id in the innerProps
     const customProps = {
       ...props.innerProps,
-      id: `${id}-List`,
+      id: listboxId,
+      role: 'listbox',
     };
 
     return <components.MenuList {...props} innerProps={customProps} />;
@@ -358,27 +484,25 @@ const AddressLookupCustom: FC<AddressLookupCustomProps> = ({
 
   return (
     <s.ContainerWrapper
+      ref={containerRef}
       width={width}
       isValid={isValid}
-      displayAuto={displayAuto}
-      isV4Design={isV4Design}
       disabled={disabled}
       className={legacyClass}
       data-testid={`${id}-address-lookup`}
+      role='combobox'
+      aria-expanded={menuOpen}
+      aria-haspopup='listbox'
+      aria-controls={listboxId}
+      aria-owns={listboxId}
     >
-      {caption && !isV4Design && (
-        <s.Label htmlFor={id}>
-          {caption}
-          {required && <s.RequiredMark>*</s.RequiredMark>}
-        </s.Label>
-      )}
-      {caption && isV4Design && (
+      {label && (
         <Caption
           id={`${id}-address-lookup-caption`}
           required={required}
-          label={caption}
+          label={label}
           isValid={isValid}
-          isV4Design={isV4Design}
+          isV4Design
           float
           focused={focused}
           elFor={id}
@@ -394,10 +518,16 @@ const AddressLookupCustom: FC<AddressLookupCustomProps> = ({
         isDisabled={disabled}
         value={null} // Always keep the input empty to show as an input-only field
         inputValue={inputValue}
-        onInputChange={(newValue: string) => setInputValue(newValue)}
+        onInputChange={handleInputChange}
         onChange={handleChange}
-        onMenuOpen={() => setFocused(true)}
-        onMenuClose={() => setFocused(false)}
+        onMenuOpen={() => {
+          setFocused(true);
+          setMenuOpen(true);
+        }}
+        onMenuClose={() => {
+          setFocused(false);
+          setMenuOpen(false);
+        }}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         styles={customSelectStyles}
@@ -407,13 +537,21 @@ const AddressLookupCustom: FC<AddressLookupCustomProps> = ({
           Control,
           DropdownIndicator: () => null,
           IndicatorSeparator: () => null,
-          MenuList: CustomMenuList, // Add the custom MenuList component
+          MenuList: CustomMenuList,
         }}
-        formatOptionLabel={formatOptionLabel}
+        formatOptionLabel={makeFormatOptionLabel(id)}
+        // ARIA combobox semantics on the underlying input
+        aria-autocomplete='list'
+        aria-controls={listboxId}
+        aria-expanded={menuOpen}
+        aria-invalid={!isValid || undefined}
+        aria-required={required || undefined}
       />
-      {validationMessage && !isValid && <s.ValidationMessage>{validationMessage}</s.ValidationMessage>}
+      {errorMessage && !isValid && <s.ValidationMessage>{errorMessage}</s.ValidationMessage>}
     </s.ContainerWrapper>
   );
-};
+});
 
-export default AddressLookupCustom;
+AddressLookup.displayName = 'AddressLookup';
+
+export default AddressLookup;

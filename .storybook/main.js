@@ -28,6 +28,8 @@ const M_NEXT_PACKAGES = [
   // Phase 3 cleaned: smaller-surface
   'chips-filter', 'pill-tab', 'menu', 'popover',
   'search-input', 'tag-widget',
+  // Phase 3 cleaned: domain-y
+  'address', 'address-lookup', 'phone-input',
 ];
 
 const stories = M_NEXT_PACKAGES.flatMap((pkg) => [

@@ -1,0 +1,120 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as AddressLookupStories from './addresslookupmodern.stories';
+
+<Meta of={AddressLookupStories} />
+
+# AddressLookup
+
+A typeahead for postal addresses. The user starts typing, the component asks Mapbox's geocoding API for suggestions, and on selection the consumer receives a structured `{ streetAddress, city, stateProvince, zipPostalCode, country, longitude, latitude, raw }` object.
+
+## When to use it
+
+- A form field that asks for a real-world address: billing, shipping, service location, customer contact.
+- Any time you want validated structured data instead of a free-text address blob.
+- Workflows where map context matters — coordinates come back with every selection.
+
+## When NOT to use it
+
+- Free-text "where did you hear about us?" — use Input.
+- A list of known internal locations — use Dropdown.
+- A pure search field with no selection model — use SearchInput.
+- Country / region pickers — those are static dropdowns, not geocoded lookups.
+
+## Anatomy
+
+A vertical Container holding:
+
+1. **Label** (optional) — rendered via `@m-next/caption`, floats above the input when focused.
+2. **Search input + leading icon** — single-line text field with the `address-lookup` icon pinned at the left edge.
+3. **Suggestions listbox** — popover beneath the input, populated as the user types (after 3+ characters).
+4. **Validation message** — rendered below when `errorMessage` is set.
+
+The selection model is "input-only": the chosen address never appears as a pill or chip in the input. The consumer is responsible for rendering the selected address however it wants (often as separate read-only fields below).
+
+## States
+
+- **Default** — neutral border.
+- **Focused** — blue accent border and ring.
+- **Disabled** — grey background, `not-allowed` cursor.
+- **Error** — red border and error message rendered below.
+
+## Tokens consumed
+
+- `colors.blue.base` for focus border, selected option text.
+- `colors.blue.lighter` for selected option background and focus ring.
+- `colors.grey.base` for placeholder, icon, and the secondary line of each suggestion.
+- `colors.grey.dark` for entered text and suggestion labels.
+- `colors.grey.light` for the default border.
+- `colors.grey.lighter` for disabled background, hover-state suggestion background, suggestion separators.
+- `colors.red.base` for the invalid border and the validation message.
+- `colors.white` for the default input background and unselected suggestion rows.
+
+## Basic
+
+<Canvas of={AddressLookupStories.Basic} />
+
+## States
+
+<Canvas of={AddressLookupStories.States} />
+
+## Menu placement
+
+<Canvas of={AddressLookupStories.MenuPlacement} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `label` | string | Visible label, also drives accessible name |
+| `gatewayUrl` | string | Required. Method gateway base URL — used for ipgeo bias |
+| `onChange` | `(option \| null) => void` | Fires on selection with a structured address |
+| `onInputChange` | `(value: string) => void` | Fires on every keystroke |
+| `errorMessage` | string | When set, switches to error state |
+| `menuPlacement` | `'auto' \| 'top' \| 'bottom'` | Suggestion popup position |
+
+## Accessibility
+
+This component follows the WAI-ARIA 1.2 combobox pattern.
+
+- The outer container has `role="combobox"`, `aria-haspopup="listbox"`, and `aria-expanded` tracking the menu state.
+- The underlying input carries `aria-autocomplete="list"` (not `"both"` — the input never displays the autocompleted text inline), plus `aria-controls` pointing at the listbox.
+- The suggestions popup has `role="listbox"`. Each row has `role="option"`.
+- `errorMessage` flips `aria-invalid="true"` on the input.
+- `required` mirrors to `aria-required` on the input.
+- `label` is connected to the input via `htmlFor` / `id` (through `@m-next/caption`).
+
+Keyboard semantics are inherited from react-select: arrow up / down navigate suggestions, Enter selects, Escape dismisses the menu.
+
+## Provider
+
+The component is wired to Mapbox via `@m-next/map`'s `MapboxApi()`. The `gatewayUrl` prop is used for an ipgeo lookup so suggestions are biased toward the user's coarse location. Swapping providers (Google Places, Smarty, etc.) would mean replacing the `MapboxApi` call inside `AddressLookup.tsx`; this component's public API does not change.
+
+## Examples
+
+### In a checkout-style form
+
+<Canvas of={AddressLookupStories.RealWorldForm} />
+
+## Migration from `@m-one/address-lookup`
+
+AddressLookup is part of the third wave of API normalization under m-next (after Button, Input, SearchInput). Migration is mostly mechanical — see the README's "What changed" table. Live demo of the soft shim:
+
+<Canvas of={AddressLookupStories.LegacyAPIStillWorks} />
+
+Each deprecated prop emits a one-time `console.warn` and silently translates. The shim covers: `caption`, `validationMessage`, `isValid`, `forwardRef`. Legacy ghosts (`isV4Design`, `isMobile`, `legacyClass`, `displayAuto`, `compactStyle`) accept their value but do nothing.
+
+## Edge cases
+
+- **Short input** — fewer than 3 characters does not hit the geocoding API; the menu shows the "Search for an address..." empty-state instead.
+- **No gateway URL** — without `gatewayUrl` the ipgeo bias step is skipped; geocoding still works but isn't location-biased.
+- **Provider failures** — Mapbox errors fail silently and return no suggestions. The menu shows the empty-state.
+- **Selection clears the input** — by design, the consumer is the source of truth for the selected address. To display the picked address, render it from the `onChange` payload.
+
+## Related components
+
+- `Address` — the form variant that asks for street/city/state separately (also being cleaned up in this wave).
+- `SearchInput` — pure search box without a selection model.
+- `Dropdown` — choose-one from a static list.
+- `Caption` — the label/caption used internally (not yet cleaned up).

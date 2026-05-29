@@ -1,0 +1,118 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as AddressStories from './Address.stories';
+
+<Meta of={AddressStories} />
+
+# Address
+
+A multi-field address widget. Renders either as read-only stacked text or as an
+editable form (`InputArea` for the five free-form street lines, plus four
+`Input`s for city / state / postal code / country).
+
+## When to use it
+
+- Anywhere a contact record carries a single mailing / billing / shipping
+  address that the user can see and edit inline.
+- Form fields that need the canonical Method address shape (`AddressValue`).
+
+## When NOT to use it
+
+- Address typeahead / autocompletion — use `@m-next/address-lookup`.
+- Single free-form text capture of an address — use `@m-next/input-area`.
+- Phone numbers, emails, or other single-line contact fields — use `Input`.
+
+## Anatomy
+
+A `Container` holding (top to bottom):
+
+1. **Section heading** (optional) — rendered when `label` is set; drives
+   `aria-labelledby`.
+2. **Loading skeleton** — when `isLoading`, 7 stacked skeleton rows.
+3. **Read-only stack** — when not editable, one `TextLine` per non-empty
+   field, with the combined `City, State, PostalCode` rendered as a single
+   line.
+4. **Editable form** — when `isEditable`:
+   - `InputArea` (5 rows) for the free-form street lines.
+   - Row of `City` + `State`.
+   - Row of `PostalCode` + `Country`.
+
+## Value shape
+
+```ts
+interface AddressValue {
+  Line1?: string | null;
+  Line2?: string | null;
+  Line3?: string | null;
+  Line4?: string | null;
+  Line5?: string | null;
+  City?: string | null;
+  State?: string | null;
+  PostalCode?: string | null;
+  Country?: string | null;
+}
+```
+
+The shape mirrors Method's CRM contact record so the widget can be a thin
+controlled wrapper over backing data. `onChange` always receives the full
+merged value, never just the delta.
+
+## Tokens consumed
+
+- `colors.grey.darkest` — label color.
+- `colors.red.base` — required asterisk.
+- Layout / typography for sub-fields comes from the child components.
+
+## Read-only
+
+<Canvas of={AddressStories.ReadOnly} />
+
+## Editable
+
+<Canvas of={AddressStories.Editable} />
+
+## States
+
+<Canvas of={AddressStories.States} />
+
+## Label and a11y
+
+<Canvas of={AddressStories.WithLabel} />
+
+## A realistic form
+
+<Canvas of={AddressStories.RealWorldForm} />
+
+## Accessibility
+
+- Editable mode wraps the inputs in `role="group"`.
+- When `label` is set, the group's `aria-labelledby` points at it; otherwise
+  `aria-label="Address"` is supplied.
+- Each sub-field carries its own `<label>` via the underlying `Input` /
+  `InputArea` (no duplication issues — the section heading and per-field
+  labels serve different layers of the a11y tree).
+- The `InputArea` for the street lines also takes an `aria-label` derived
+  from the section heading so it's identifiable even when the heading is
+  shared across siblings.
+- `disabled` flows through to each sub-field's native `disabled` /
+  `aria-disabled`.
+
+## Migration from `@m-one/address`
+
+| Was | Now |
+|-----|-----|
+| Nine separate flat props — `Line1` … `Country` | Single `value={{ Line1, …, Country }}` |
+| `caption` | `label` |
+| `forwardRef` prop | React forwardRef API (`ref`) |
+| `isV4Design`, `isMobile`, `legacyClass`, `displayAuto`, `compactStyle` | Silently ignored |
+
+<Canvas of={AddressStories.LegacyAPIStillWorks} />
+
+Each deprecated prop emits a one-time `console.warn` and silently translates.
+Legacy ghosts accept their value but do nothing.
+
+## Related components
+
+- `@m-next/address-lookup` — typeahead address picker.
+- `@m-next/input` — the underlying control for City / State / PostalCode /
+  Country.
+- `@m-next/input-area` — the underlying control for the five street lines.

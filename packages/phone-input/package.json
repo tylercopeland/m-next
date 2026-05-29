@@ -11,11 +11,13 @@
   "homepage": "",
   "license": "ISC",
   "main": "src/index.ts",
+  "types": "src/index.d.ts",
   "directories": {
     "src": "src"
   },
   "files": [
-    "index"
+    "src",
+    "index.d.ts"
   ],
   "peerDependencies": {
     "@emotion/react": ">=11.10.4",
@@ -28,6 +30,7 @@
     "@m-next/caption": "^1.0.0",
     "@m-next/styles": "^1.0.0",
     "@m-next/svg-icon": "^1.0.0",
+    "@m-next/tokens": "^1.0.0",
     "react-phone-input-2": "^2.15.1"
   },
   "devDependencies": {

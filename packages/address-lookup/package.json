@@ -2,13 +2,22 @@
   "name": "@m-next/address-lookup",
   "private": true,
   "version": "1.0.0",
-  "description": "Address lookup component with Mapbox integration",
+  "description": "Address autocomplete — typeahead backed by Mapbox geocoding, with combobox ARIA semantics.",
+  "keywords": [
+    "address",
+    "autocomplete",
+    "combobox",
+    "form",
+    "control"
+  ],
   "main": "src/index.ts",
+  "types": "src/index.d.ts",
   "directories": {
     "src": "src"
   },
   "files": [
-    "index"
+    "src",
+    "index.d.ts"
   ],
   "scripts": {
     "dev": "webpack --mode development",
@@ -36,6 +45,7 @@
     "@m-next/map": "^1.0.0",
     "@m-next/styles": "^1.0.0",
     "@m-next/svg-icon": "^1.0.0",
+    "@m-next/tokens": "^1.0.0",
     "react-select": "^5.10.1"
   },
   "devDependencies": {

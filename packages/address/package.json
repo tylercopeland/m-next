@@ -10,11 +10,13 @@
   "homepage": "",
   "license": "ISC",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "directories": {
     "src": "src"
   },
   "files": [
-    "index"
+    "src",
+    "index.d.ts"
   ],
   "dependencies": {
     "@m-next/styles": "1.0.0",
@@ -23,7 +25,8 @@
     "@m-next/typeography": "1.0.0",
     "@m-next/input": "1.0.0",
     "@m-next/input-area": "1.0.0",
-    "@m-next/loading-skeleton": "1.0.0"
+    "@m-next/loading-skeleton": "1.0.0",
+    "@m-next/tokens": "1.0.0"
   },
   "peerDependencies": {
     "@emotion/react": ">=11.10.5",
