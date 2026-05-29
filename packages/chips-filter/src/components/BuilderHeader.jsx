@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Field, FieldTypeNames, Predicate } from '@m-next/types';
-import { colors } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 import SvgIcon from '@m-next/svg-icon';
 import { Text } from '@m-next/typeography';
 import OperationSelector from './OperationSelector';
@@ -57,7 +57,7 @@ function BuilderHeader({
         name='settings'
         size={16}
         position='left'
-        color={colors.grey}
+        color={colors.grey.base}
         onClick={onShowAdvancedEdit}
       />
     </div>

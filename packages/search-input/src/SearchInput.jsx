@@ -1,66 +1,133 @@
 // vendors
-import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect, useRef, forwardRef } from 'react';
 
 import SvgIcon from '@m-next/svg-icon';
-import { colors } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 import { useDebounce } from '@m-next/utilities/src/hooks';
 // components
 import * as s from './SearchInput.styles';
 
 /* --------------------------------------------------*/
 
-const propTypes = {
-  disabled: PropTypes.bool,
-  id: PropTypes.string.isRequired,
-  caption: PropTypes.string,
-  name: PropTypes.string,
-  readonly: PropTypes.bool,
-  placeholder: PropTypes.string,
-  style: PropTypes.instanceOf(Object),
-  wrapperStyle: PropTypes.instanceOf(Object),
-  tabIndex: PropTypes.number,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.instanceOf(Object)]),
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  onRawChange: PropTypes.func,
-  onFocus: PropTypes.func,
-  onKeyDown: PropTypes.func,
-  onKeyUp: PropTypes.func,
-  isMobile: PropTypes.bool,
-  ariaDescribedby: PropTypes.string,
-  prefixIcon: PropTypes.string,
-  selectOnFocus: PropTypes.bool,
-  suppressAutoFocus: PropTypes.bool,
-  showClearButton: PropTypes.bool,
-  onClear: PropTypes.func,
-};
+// One-time deprecation warner — fires once per key, mirrors @m-next/input / @m-next/button.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
 
-function SearchInput({
-  id,
-  disabled = false,
-  caption = null,
-  name = null,
-  readonly = false,
-  placeholder = null,
-  style = null,
-  wrapperStyle = null,
-  tabIndex = 0,
-  value = '',
-  onBlur = null,
-  onChange = null,
-  onRawChange,
-  onFocus = null,
-  onKeyDown = null,
-  onKeyUp = null,
-  isMobile = false,
-  ariaDescribedby = null,
-  prefixIcon = '',
-  selectOnFocus = false,
-  suppressAutoFocus = false,
-  showClearButton = false,
-  onClear = null,
-}) {
+let autoIdCounter = 0;
+
+const SearchInput = forwardRef(function SearchInput(props, ref) {
+  const {
+    id: idProp,
+    name = null,
+    placeholder = null,
+    disabled = false,
+    tabIndex = 0,
+    value = '',
+    style = null,
+    wrapperStyle = null,
+
+    // Clean API
+    label: labelProp,
+    leftIcon: leftIconProp,
+    readOnly: readOnlyProp,
+    showClearButton = false,
+
+    selectOnFocus = false,
+    suppressAutoFocus = false,
+
+    onBlur = null,
+    onChange = null,
+    onRawChange,
+    onClear = null,
+    onFocus = null,
+    onKeyDown = null,
+    onKeyUp = null,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+    readonly: legacyReadonly,
+    caption: legacyCaption,
+    prefixIcon: legacyPrefixIcon,
+    ariaDescribedby: legacyAriaDescribedby,
+
+    // Standard ARIA pass-through
+    'aria-describedby': ariaDescribedby,
+    'aria-label': ariaLabel,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    isMobile,
+    hidden: _hidden,
+    displayAuto: _displayAuto,
+    legacyClass: _legacyClass,
+    compactStyle: _compactStyle,
+
+    ...rest
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-search-input-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  // ============ Backwards-compat translation ============
+
+  let label = labelProp;
+  if (legacyCaption !== undefined && label === undefined) {
+    warnOnce('search-input-caption', '@m-next/search-input: `caption` is deprecated. Use `label`.');
+    label = legacyCaption;
+  }
+
+  let leftIcon = leftIconProp;
+  if (legacyPrefixIcon && !leftIcon) {
+    warnOnce(
+      'search-input-prefixIcon',
+      '@m-next/search-input: `prefixIcon` (string icon name) is deprecated. Use `leftIcon` ReactNode.',
+    );
+    leftIcon = <SvgIcon name={legacyPrefixIcon} size={16} color={colors.grey.base} />;
+  }
+  // Default leading icon: a search glyph. Consumers can pass `leftIcon={null}` to suppress.
+  if (leftIcon === undefined) {
+    leftIcon = <SvgIcon name='search' size={16} color={colors.grey.base} />;
+  }
+
+  let resolvedAriaDescribedby = ariaDescribedby;
+  if (legacyAriaDescribedby && !resolvedAriaDescribedby) {
+    warnOnce(
+      'search-input-ariaDescribedby',
+      '@m-next/search-input: `ariaDescribedby` is deprecated. Use `aria-describedby` (standard React attr).',
+    );
+    resolvedAriaDescribedby = legacyAriaDescribedby;
+  }
+
+  let readOnly = readOnlyProp ?? false;
+  if (legacyReadonly !== undefined && readOnly === false) {
+    warnOnce(
+      'search-input-readonly',
+      '@m-next/search-input: `readonly` is deprecated. Use `readOnly` (React casing).',
+    );
+    readOnly = legacyReadonly;
+  }
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'search-input-forwardRef-prop',
+      '@m-next/search-input: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // ============ State ============
+
   const [focused, setFocus] = useState(false);
   const [touched, setTouched] = useState(false);
   const [rawInput, setRawInput] = useState(value === undefined || value === null ? '' : value);
@@ -68,6 +135,19 @@ function SearchInput({
 
   const debouncedInput = useDebounce(rawInput, 200);
   const [focusTimer, setFocusTimer] = useState(null); // used as a fallback only when needed
+
+  // Merge external ref (forwardRef API + legacy forwardRef prop) with internal.
+  useEffect(() => {
+    const targetRef = ref ?? legacyForwardRef;
+    if (!targetRef) return undefined;
+    if (typeof targetRef === 'function') {
+      targetRef(inputRef.current);
+    } else {
+      // eslint-disable-next-line no-param-reassign
+      targetRef.current = inputRef.current;
+    }
+    return undefined;
+  }, [ref, legacyForwardRef]);
 
   useEffect(() => {
     if (!suppressAutoFocus && inputRef.current) {
@@ -77,7 +157,7 @@ function SearchInput({
         setFocusTimer(
           setTimeout(() => {
             // Try again after 100ms
-            inputRef.current.focus(); // This seems to always work (when needed)
+            if (inputRef.current) inputRef.current.focus(); // This seems to always work (when needed)
           }, 100),
         );
       }
@@ -87,6 +167,7 @@ function SearchInput({
         setFocusTimer(null);
       };
     }
+    return undefined;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [suppressAutoFocus, inputRef]);
 
@@ -149,12 +230,10 @@ function SearchInput({
 
   const handleFocus = (e) => {
     if (selectOnFocus) e.target.select();
-    // TODO: See above // if (onFocus) onFocus(e);
     setFocus(true);
   };
 
   const handleBlur = (/* e */) => {
-    // TODO: See above // if (onBlur) onBlur(e);
     setFocus(false);
   };
 
@@ -170,15 +249,13 @@ function SearchInput({
       id={`${id}-search`}
       focused={focused}
       isMobile={isMobile}
-      prefix={prefixIcon}
-      readOnly={readonly}
+      prefix={leftIcon}
+      readOnly={readOnly}
       disabled={disabled}
       showClearButton={showClearButton}
       style={wrapperStyle}
     >
-      <div className='mi-textinput-prefix'>
-        <SvgIcon name='search' size={16} color={colors['grey']} />
-      </div>
+      {leftIcon ? <div className='mi-textinput-prefix'>{leftIcon}</div> : null}
       <input
         id={`${id}-search-input`}
         ref={inputRef}
@@ -189,17 +266,18 @@ function SearchInput({
         placeholder={placeholder}
         onChange={handleChange}
         disabled={disabled}
-        readOnly={readonly}
+        readOnly={readOnly}
         autoComplete='off'
         onFocus={handleFocus}
         onBlur={handleBlur}
         onKeyDown={onKeyDown}
         onKeyUp={onKeyUp}
-        aria-label={caption || name}
-        aria-describedby={ariaDescribedby}
-        aria-disabled={disabled}
+        aria-label={ariaLabel ?? label ?? name ?? 'Search'}
+        aria-describedby={resolvedAriaDescribedby}
+        aria-disabled={disabled || undefined}
         data-testid={`${id}-search-input`}
         style={style}
+        {...rest}
       />
       {showClearButton && rawInput && (
         <s.ClearIconWrapper>
@@ -224,14 +302,14 @@ function SearchInput({
               e.currentTarget.style.opacity = '0.6';
             }}
           >
-            <SvgIcon name='close-V4' size={10} color={colors['grey-dark']} />
+            <SvgIcon name='close-V4' size={10} color={colors.grey.dark} />
           </button>
         </s.ClearIconWrapper>
       )}
     </s.InnerWrapper>
   );
-}
+});
 
-SearchInput.propTypes = propTypes;
+SearchInput.displayName = 'SearchInput';
 
 export default SearchInput;

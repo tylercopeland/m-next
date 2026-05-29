@@ -1,0 +1,109 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as SearchInputStories from './SearchInput.stories';
+
+<Meta of={SearchInputStories} />
+
+# SearchInput
+
+A search-flavored text input. A debounced `<input type="search">` with a built-in leading search icon and an optional clear (×) button.
+
+## When to use it
+
+- A free-text filter / search field on top of a list, table, or grid.
+- A site-wide search box.
+- Any "filter as you type" pattern where you want a 200ms debounce and a clear affordance.
+
+## When NOT to use it
+
+- Plain text capture (name, email, password) — use `Input`.
+- Selection from a known list — use a Dropdown.
+- Multi-line text — use `InputArea` / Textarea.
+- Search-with-async-suggestions — wrap SearchInput in your own combobox; SearchInput is the input primitive, not the full pattern.
+
+## Anatomy
+
+A single horizontal InnerWrapper holding:
+
+1. **leftIcon** — leading slot, defaults to a search glyph. Pass `null` to suppress, or pass any ReactNode to replace.
+2. **`<input type="search">`** — the actual native element with `autoComplete="off"`. Standard input attributes pass through.
+3. **Clear button** (optional) — a real `<button type="button" aria-label="Clear search">` that resets the value and re-focuses the input.
+
+## States
+
+- **Default** — neutral border, search icon visible.
+- **Focused** — accent border color.
+- **Hover** — slightly darker border.
+- **Disabled** — 50% opacity, `pointer-events: none`, `aria-disabled`.
+- **Read-only** — same as disabled visually, but value is selectable.
+
+## Debounce semantics
+
+`onChange` fires with the debounced value (~200ms after the last keystroke). For un-debounced access, use `onRawChange`. This is intentional — SearchInput is built for filter-as-you-type, and the debounce prevents thrashing downstream queries.
+
+## Tokens consumed
+
+- `colors.grey.base` for the default search icon
+- `colors.grey.dark` for the clear button icon
+- Theme context (via Emotion) for `theme.content.*` — when rendered inside `<ThemeProvider>` from `@m-next/theme`, picks up the active named theme. Falls back to `lightTheme` from `@m-next/styles`.
+
+## Basic
+
+<Canvas of={SearchInputStories.Basic} />
+
+## States
+
+<Canvas of={SearchInputStories.States} />
+
+## Clear button
+
+<Canvas of={SearchInputStories.ClearButton} />
+
+## Icon options
+
+<Canvas of={SearchInputStories.IconOptions} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `label` | string | Accessible label (also drives `aria-label` when no visible label) |
+| `leftIcon` | ReactNode | Defaults to a search glyph; pass `null` to suppress |
+| `showClearButton` | boolean | Show a × button when there's a value |
+| `onChange` | (value) => void | Debounced — fires ~200ms after last keystroke |
+| `onRawChange` | (value) => void | Un-debounced, fires immediately |
+| `onClear` | () => void | Fires when the clear button is pressed |
+
+## Accessibility
+
+- Native `<input type="search">` underneath — keyboard semantics inherited.
+- The clear button is a real `<button type="button">` with `aria-label="Clear search"`.
+- `aria-label` resolution order: `aria-label` prop → `label` → `name` → fallback `'Search'`.
+- `disabled` automatically mirrors to `aria-disabled`.
+- `aria-describedby` passes through; legacy `ariaDescribedby` is shimmed.
+
+## Examples
+
+### Filtering a list
+
+<Canvas of={SearchInputStories.RealWorld} />
+
+## Migration from `@m-one/search-input`
+
+Migration is mostly mechanical — see the README's "What changed" table. Live demo of the soft shim:
+
+<Canvas of={SearchInputStories.LegacyAPIStillWorks} />
+
+Each deprecated prop emits a one-time `console.warn` and silently translates. The shim covers: `caption`, `prefixIcon`, `ariaDescribedby`, `readonly`, `forwardRef`. Legacy ghosts (`isV4Design`, `isMobile`, `hidden`, `displayAuto`, `legacyClass`, `compactStyle`) accept their value but do nothing.
+
+## Edge cases
+
+- **Auto-focus on mount** — SearchInput auto-focuses on mount by default. Pass `suppressAutoFocus` to disable. This is a legacy behavior preserved for compat with filter-popovers that auto-open.
+- **Uncontrolled clear** — if `value` is `undefined`/`null` and the user types then clears, `onChange('')` still fires (touched-tracking). This catches the "clear after typing" case even in uncontrolled mode.
+- **Refs** — `ref` forwards to the underlying `<input>`. Use `inputRef.current.focus()` to programmatically focus.
+
+## Related components
+
+- `Input` — general text input (not search-specific).
+- `ChipsFilter` — filter chips, often paired with a SearchInput at the top of a list.

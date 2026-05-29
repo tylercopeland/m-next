@@ -7,7 +7,8 @@ import Image from '@m-next/image';
 import { Text } from '@m-next/typeography';
 import Container from '@m-next/container';
 import { useTheme } from '@emotion/react';
-import { colors, lightTheme } from '@m-next/styles';
+import { lightTheme } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 import Pill from '@m-next/pill';
 import { Tag } from '@m-next/types';
 

@@ -2,28 +2,33 @@
   "name": "@m-next/tag-widget",
   "private": true,
   "version": "1.0.0",
-  "description": "Tag widget",
+  "description": "Tag widget — editable + read-only tag lists.",
   "keywords": [
-    "informational"
+    "tag",
+    "tags",
+    "pill",
+    "form",
+    "control"
   ],
   "author": "Alexander Ballard <a.ballard@method.me>",
   "homepage": "",
   "license": "ISC",
   "main": "src/index.js",
-  "types": "src/TagWidget.d.ts",
+  "types": "src/index.d.ts",
   "directories": {
     "src": "src"
   },
   "files": [
-    "index",
-    "TagWidget.d.ts"
+    "src",
+    "index.d.ts"
   ],
   "dependencies": {
-    "@m-next/styles": "1.0.0",
-    "@m-next/pill": "1.0.0",
-    "@m-next/types": "1.0.0",
+    "@m-next/caption": "1.0.0",
     "@m-next/dropdown": "1.0.0",
-    "@m-next/caption": "1.0.0"
+    "@m-next/pill": "1.0.0",
+    "@m-next/styles": "1.0.0",
+    "@m-next/tokens": "1.0.0",
+    "@m-next/types": "1.0.0"
   },
   "peerDependencies": {
     "@emotion/react": ">=11.10.5",

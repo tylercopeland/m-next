@@ -6,7 +6,7 @@ import { InfiniteScrollContainer } from '@m-next/container';
 import { Field, Predicate, EmptyPredicate, complexValueTypes } from '@m-next/types';
 import SearchInput from '@m-next/search-input';
 import SvgIcon from '@m-next/svg-icon';
-import { colors } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 import ListItem from './ListItem';
 
 const propTypes = {
@@ -38,7 +38,7 @@ const AdvancedWrapper = styled.div(() => [
     gap: 8,
     alignItems: 'center',
     justifyContent: 'center',
-    borderTop: `1px solid ${colors['grey-light']}`,
+    borderTop: `1px solid ${colors.grey.light}`,
     padding: '8px 8px 0px 8px',
     marginTop: 4,
   },
@@ -116,7 +116,7 @@ function FieldListSelector({ id = '', isMobile = false, fieldList, value, onChan
           name='settings'
           size={16}
           position='left'
-          color={colors.grey}
+          color={colors.grey.base}
           onClick={onShowAdvancedEdit}
         />
         <TextLine bold style={{ cursor: 'pointer', flexGrow: 1 }} onClick={onShowAdvancedEdit}>

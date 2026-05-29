@@ -1,0 +1,171 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as FilterChipsStories from './ChipsFilter.stories';
+
+<Meta of={FilterChipsStories} />
+
+# FilterChips
+
+A horizontal row of filter chips. Each chip represents one predicate in a
+criteria-builder expression (`field operator value`). Used as the inline
+filter UI above grids and list views.
+
+The component was historically named `ChipsFilter`. Audit recommendation: rename
+to **FilterChips** for noun-first consistency with the other m-next form
+controls (Input, Dropdown, DatePicker, etc.). The package and the default
+export keep the legacy name; `FilterChips` is exposed as a named export.
+
+```jsx
+import { FilterChips } from '@m-next/chips-filter';
+// equivalently:
+import ChipsFilter from '@m-next/chips-filter';
+```
+
+## When to use it
+
+- Inline filtering above a grid / list view.
+- When the set of filterable fields is large and you want progressive
+  disclosure (pick a field, then an operator, then a value).
+- When you need both a "simple" filter list (AND-joined chips) and an
+  optional escape hatch to an "advanced" expression with groups + OR.
+
+## When NOT to use it
+
+- For a single fixed set of pre-defined filters — use `Tabs` or `SegmentedControl`.
+- For numeric range filtering against a known field — use `Slider` or a paired
+  `Input`.
+- For free-text search — use `SearchInput`.
+
+## Anatomy
+
+A `role="group"` Container holding, in order:
+
+1. **AdvancedChip** (only if an advanced expression exists) — opens the
+   advanced editor when clicked.
+2. **Chip × N** — one per predicate in the simple expression. Each chip
+   reveals a `ChipBuilderPopup` on click for inline editing.
+3. **AddChip** — the primary affordance for adding a new predicate.
+4. **Clear all** link button — visible only when filters are present.
+5. **Save / Reset buttons** (optional) — rendered when
+   `egCustomViewsSaveButtonEnabled` is on; layout differs for mobile vs
+   desktop.
+
+## States
+
+- **Empty** — only AddChip is visible.
+- **One or more chips active** — `Clear all` appears; AddChip stays inline.
+- **Editing a chip** — the chip dims; the popup builder opens; AddChip hides
+  until edit completes.
+- **Advanced mode** — the AdvancedChip replaces individual chip editing.
+- **Disabled** — AddChip becomes inert; existing chips remain visible but
+  cannot be edited.
+
+## Tokens consumed
+
+- `colors.grey.base` — secondary icon colour
+- `colors.grey.light` — field-list divider
+- `colors.concrete` — `ListItem` hover background
+- `colors.white` — value-editor input background
+
+All migrated from the legacy flat-key `@m-next/styles` colours to
+`@m-next/tokens` in this cleanup.
+
+## Basic
+
+<Canvas of={FilterChipsStories.Basic} />
+
+## Empty state
+
+<Canvas of={FilterChipsStories.Empty} />
+
+## Disabled
+
+<Canvas of={FilterChipsStories.Disabled} />
+
+## With a label
+
+The `label` prop becomes the `aria-label` on the `role="group"` root. Use it
+when the filter row's purpose isn't obvious from surrounding context.
+
+<Canvas of={FilterChipsStories.WithLabel} />
+
+## Mobile layout
+
+`isMobile` is marked `@deprecated` — prefer CSS media queries at the consumer
+— but is still honoured internally for legacy callers. When `true`, the row
+flexes to `column` and inline reset buttons appear alongside save buttons.
+
+<Canvas of={FilterChipsStories.Mobile} />
+
+## Save / reset row
+
+Pass `egCustomViewsSaveButtonEnabled` plus `viewResetButtonVisible` to render
+the trailing button row. Which buttons appear depends on `currentViewType`
+(`standard` / `custom` / `shared`) and `canEditSharedView`.
+
+<Canvas of={FilterChipsStories.SaveButtonsRow} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `id` | string | Optional; auto-generated when absent |
+| `label` | string | Sets the accessible group name |
+| `fieldList` | `Field[]` | Available fields, passed through to ChipBuilder |
+| `simpleChipsExpression` / `advancedChipsExpression` | `ExpressionElement[]` | Current filter state |
+| `onExpressionChange` | `({ simple, advanced, allFiltersInvalid? }) => void` | Single change handler |
+| `options` | `{ value, label, avatar }[]` | Value-picker options (async via `onSearch`) |
+| `tagsList` | `Tag[]` | Tag definitions for tag-typed value editors |
+| `egCustomViewsSaveButtonEnabled` | boolean | Toggles the save/reset row |
+| `ref` | ref | Forwards to the root container `<div>` |
+
+## Accessibility
+
+- Root is `role="group"` with `aria-label` derived from `label` or `aria-label`.
+- Each chip is a clickable `@m-next/pill` — keyboard semantics inherited.
+- `AddChip` is a real button and keyboard-focusable.
+- The advanced edit popover renders inside `@m-next/popover` which handles its
+  own focus management.
+- Disabled state mirrors to `aria-disabled` on the AddChip.
+
+## Examples
+
+### Default export still works
+
+<Canvas of={FilterChipsStories.DefaultExportStillWorks} />
+
+## Migration from `@m-one/chips-filter`
+
+| Was | Now | Status |
+|-----|-----|--------|
+| `id` required | optional; auto-generated | Backwards-compatible |
+| `caption` | `label` | Soft shim — warns once |
+| `forwardRef` prop | React `ref` (forwardRef API) | Soft shim — warns once |
+| `isV4Design`, `legacyClass`, `displayAuto`, `compactStyle` | — | Silently ignored |
+| `isMobile` | still functional | Marked `@deprecated`; prefer CSS media queries |
+| `ChipsFilter` default export | `FilterChips` named export | Both work; alias to the same component |
+
+Live demo of the soft shim:
+
+<Canvas of={FilterChipsStories.LegacyAPIStillWorks} />
+
+## Edge cases
+
+- **`forceClear` toggle** — when flipped from `false` to `true`, all filters
+  reset and `onExpressionChange({})` fires.
+- **`resetChipsTriggered` toggle** — resets simple + advanced state in tandem.
+- **`allFiltersInvalid`** — when every active filter returns invalid values
+  (e.g. unfinished numeric input), the change event includes
+  `allFiltersInvalid: true` so the parent can render "no results" without an
+  API round-trip.
+- **`updateInitialValues`** — flip to `true` after a successful save to
+  re-anchor the unsaved-changes comparator.
+
+## Related components
+
+- `Chip` / `AddChip` / `AdvancedChip` — internal sub-components (not yet
+  cleaned up).
+- `criteria-builder` — the underlying advanced expression editor.
+- `Pill` — the visual primitive each chip is rendered with.
+- `SearchInput` — used internally for field search within the ChipBuilder.

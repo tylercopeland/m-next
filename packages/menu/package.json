@@ -2,28 +2,33 @@
   "name": "@m-next/menu",
   "private": true,
   "version": "1.0.0",
-  "description": "Menu widget",
+  "description": "Popover menu of actions — MenuList, MenuItem, and IconMenuList.",
   "keywords": [
+    "menu",
+    "overlay",
+    "popover",
     "informational"
   ],
   "author": "Alexander Ballard <a.ballard@method.me>",
   "homepage": "",
   "license": "ISC",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "directories": {
     "src": "src"
   },
   "files": [
-    "index"
+    "src",
+    "index.d.ts"
   ],
   "dependencies": {
-    "@m-next/styles": "1.0.0",
-    "@m-next/types": "1.0.0",
     "@m-next/container": "1.0.0",
     "@m-next/popover": "1.0.0",
+    "@m-next/styles": "1.0.0",
     "@m-next/svg-icon": "1.0.0",
+    "@m-next/tokens": "1.0.0",
+    "@m-next/types": "1.0.0",
     "@m-next/utilities": "1.0.0"
-
   },
   "peerDependencies": {
     "@emotion/react": ">=11.10.5",

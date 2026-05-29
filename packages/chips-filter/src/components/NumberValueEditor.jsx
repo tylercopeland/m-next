@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import Input from '@m-next/input';
-import { colors } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 import { FieldTypeNames, Predicate } from '@m-next/types';
 
 // Maximum character length for integer fields (matches backend constraint)

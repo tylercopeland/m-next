@@ -12,7 +12,7 @@ import {
   lookupOperationChips,
 } from '@m-next/types';
 import { formatter, useEllipsisDetection } from '@m-next/utilities';
-import { colors } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 import AddChip from './AddChip';
 
 const propTypes = {
@@ -202,7 +202,7 @@ function Chip({
           ? {
               name: 'chevron-down-V4',
               size: 12,
-              color: colors.grey,
+              color: colors.grey.base,
             }
           : null
       }

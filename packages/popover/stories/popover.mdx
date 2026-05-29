@@ -1,0 +1,118 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as PopoverStories from './popover.stories';
+
+<Meta of={PopoverStories} />
+
+# Popover
+
+A floating panel anchored to a trigger element. Used for click-to-open menus, edit panels, contextual pickers, and any UI where some chrome opens next to the thing that summoned it.
+
+## When to use it
+
+- A menu, picker, or form that opens on click and dismisses on click-outside / ESC.
+- A small contextual editor where the content has more affordance than a tooltip warrants.
+- Anywhere you need a positioned overlay that can hold focus.
+
+## When NOT to use it
+
+- Pure hover hints with no interactive content — use `Tooltip`.
+- A blocking, centered modal — use `Dialog`.
+- A side-panel that slides in from the edge — use `Drawer`.
+- Inline floating menus that come with their own positioning — use `Menu`.
+
+## Anatomy
+
+1. **Anchor** — the consumer-owned element (button, icon, cell) the popover positions against.
+2. **Panel** — a portalled (or inline) container holding the content. 1px border, white background by default.
+3. **Click-outside layer** — wraps the children, calls `onClose` when a click lands anywhere outside the panel + anchor.
+
+## States
+
+- **Closed** — nothing in the DOM.
+- **Opening** — panel mounts with `visibility: hidden`, positions itself, then becomes visible (50ms transition window).
+- **Open** — fully positioned and visible.
+- **Edge-shifted** — when the natural anchor position would push the panel off-screen, the popover shifts horizontally / vertically to keep `marginThreshold` (default 16px) of breathing room.
+
+## Tokens consumed
+
+- `colors.grey.light` (`@m-next/tokens`) — the 1px panel border.
+
+## Basic
+
+<Canvas of={PopoverStories.Basic} />
+
+## Placements
+
+`anchorOrigin` is the corner *of the anchor* the popover attaches to. `transformOrigin` is the corner *of the popover* that meets `anchorOrigin`. Mix and match.
+
+<Canvas of={PopoverStories.Placements} />
+
+## Modal-style popover (focus-trapped, role="dialog")
+
+Pass `modal` for dialog semantics + `trapFocus` to keep keyboard navigation inside the panel.
+
+<Canvas of={PopoverStories.ModalWithFocusTrap} />
+
+## Inline (no portal)
+
+By default Popover portals into `document.body`. Pass `inline` to keep it in the React tree where it was rendered — useful when the popover needs to inherit scroll context. Pair with `relativeToParent` so positioning honours the offset parent rather than the viewport.
+
+<Canvas of={PopoverStories.Inline} />
+
+## Custom width and style
+
+The `width` prop sets panel width. `style` merges with the built-in container styles for shadow, radius, padding, etc.
+
+<Canvas of={PopoverStories.WidthAndStyle} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `open` | boolean | Controlled visibility |
+| `onClose` | function | Called on click-outside / ESC |
+| `anchorEl` | HTMLElement \| string \| () => HTMLElement | The element to position against |
+| `anchorOrigin` / `transformOrigin` | `{ vertical, horizontal }` | Positioning corners |
+| `closeOnEsc` / `closeOnOverlayClick` | boolean | Default true |
+| `trapFocus` / `modal` | boolean | A11y opt-ins for modal-style popovers |
+| `inline` | boolean | Render in place instead of via portal |
+
+## Accessibility
+
+- **No explicit role by default.** A popover is just a positioned panel — the *contents* own their semantics (`role="menu"`, a form, plain text).
+- **`modal={true}`** adds `role="dialog"` + `aria-modal="true"`. Pair with `trapFocus` for full modal behaviour.
+- **`closeOnEsc`** (default true) — ESC calls `onClose`.
+- **`closeOnOverlayClick`** (default true) — click-outside calls `onClose`. `disableClickOutside` is the legacy inverse and still works.
+- **`ref`** forwards to the panel container (outer `<div>`). Useful for focusing or measuring.
+
+## Migration from `@m-one/popover`
+
+Popover was cleaned up alongside the rest of the overlay layer (Tooltip, Drawer, Dialog). Soft shim covers:
+
+<Canvas of={PopoverStories.LegacyAPIStillWorks} />
+
+| Was | Now | Status |
+|-----|-----|--------|
+| `id` required | optional — auto-generated | Backwards-compatible |
+| `forwardRef={ref}` prop | `ref={ref}` (React forwardRef API) | Warns once |
+| `triggerRef={ref}` | `anchorEl={el}` | Warns once |
+| `disableClickOutside` | `closeOnOverlayClick={false}` | Both work; new API takes precedence |
+| `colors['grey-light']` border | `colors.grey.light` from `@m-next/tokens` | Internal rewrite |
+| `isV4Design`, `isMobile`, `legacyClass`, `displayAuto`, `compactStyle` | — | Silently ignored |
+
+## Edge cases
+
+- **No `anchorEl`** — falls back to `document.body` as the anchor (positions in the viewport's top-left). Almost always indicates a bug in the consumer.
+- **`anchorReference="anchorPosition"`** — positions against absolute screen coords passed via `anchorPosition`. Used for right-click menus.
+- **`anchorReference="none"`** — skip anchor positioning entirely; consumer provides `top` / `left` via `style`.
+- **Edge-shifted layouts** — when the popover would overflow the viewport, it's shifted back inward; pass `skipShifting` to opt out.
+- **Width transitions** — there's a 50ms visibility delay on open. If the popover seems to flash empty briefly, that's the positioning pass.
+
+## Related components
+
+- `Tooltip` — hover hint, no focus interaction.
+- `Dialog` — blocking centered modal.
+- `Drawer` — slide-in panel from a viewport edge.
+- `Menu` — popover-anchored list of choices, with keyboard navigation built in.

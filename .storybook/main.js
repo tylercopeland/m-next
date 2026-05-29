@@ -25,6 +25,9 @@ const M_NEXT_PACKAGES = [
   // Phase 3 cleaned: typography / structure
   'text', 'container', 'bread-crumbs', 'field-block',
   'hero-banner', 'content-card', 'stepper',
+  // Phase 3 cleaned: smaller-surface
+  'chips-filter', 'pill-tab', 'menu', 'popover',
+  'search-input', 'tag-widget',
 ];
 
 const stories = M_NEXT_PACKAGES.flatMap((pkg) => [

@@ -1,0 +1,97 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as TagWidgetStories from './tag-widget.stories';
+
+<Meta of={TagWidgetStories} />
+
+# TagWidget
+
+A tag-list field. Ships two variants under one package:
+
+- **`ReadOnlyTagWidget`** — colored pills, no interaction. Drop into detail views.
+- **`EditableTagWidget`** — typeahead + creatable dropdown. User types, presses Enter to add, clicks × to remove.
+
+The default export (`TagWidget`) is a thin wrapper that switches between them with `isEditable`.
+
+## When to use it
+
+- Surfacing a small bag of labels attached to a record (deal stage tags, contact segments, invoice categories).
+- Letting users curate that list inline, where each tag is meaningful at a glance.
+- Mixing a fixed dictionary (`tagsList`) with free-form additions — the editable widget is creatable.
+
+## When NOT to use it
+
+- Single-value categorization — use a Dropdown.
+- A large picker (hundreds of tags) — use a paged typeahead.
+- Open free-text without a dictionary — use `MultiSelect` directly. TagWidget is opinionated about colouring tags from a catalog.
+- Per-row tag editing inside a Grid cell — the dropdown panel is too large; build a compact editor.
+
+## Anatomy
+
+1. **Label** (optional) — rendered via `@m-next/caption`.
+2. **Pill row (read-only)** — flexbox row of `@m-next/pill` instances, one per applied tag. Colours come from `tagsList[].colour`, mapped to a token family.
+3. **Dropdown (editable)** — backed by `@m-next/dropdown` in multi-select / creatable mode. Recent / suggested tags appear in a "recent" group; the rest of the catalog in "other".
+4. **Action button** (editable, optional) — "Manage Tags" entry in the dropdown footer when `showManageTags` is on.
+
+## Read-only
+
+<Canvas of={TagWidgetStories.ReadOnly} />
+
+## Editable
+
+<Canvas of={TagWidgetStories.Editable} />
+
+## Wrapper (`<TagWidget isEditable />`)
+
+<Canvas of={TagWidgetStories.Wrapper} />
+
+## Colour mapping
+
+The widget reads the `colour` hex on each entry in `tagsList` and maps it to a `@m-next/tokens` color family (`teal`, `green`, `fuchsia`, `grey`, `yellow`, `red`, `purple`, `orange`). Unknown hexes — and tags with no entry in the catalog — fall back to `blue`.
+
+<Canvas of={TagWidgetStories.ColorMapping} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `label` | string | Visible label (drives accessible name) |
+| `tagsList` | `{ name, colour }[]` | Catalog used for colouring |
+| `value` | string[] | Controlled list of applied tag names |
+| `onChange` | `(commaJoined: string) => void` | Editable variant only |
+| `suggestions` | string[] | Names to surface as "recent" |
+| `showManageTags` | boolean | Renders a "Manage Tags" action button |
+| `size` | `'narrow' \| 'regular'` | Pill size |
+
+## Accessibility
+
+- `label` renders through `@m-next/caption` as a real `<label htmlFor>`.
+- The editable widget's input carries an `aria-label` describing what to type — defaults to "Tag input — type a tag name and press Enter to add" when no `label` is set.
+- Pills with delete affordance are real buttons inside `@m-next/pill` (delegated to the Dropdown's multi-value remove control).
+- The wrapper forwards `ref` to the rendered variant's outer container.
+
+## Migration from `@m-one/tag-widget`
+
+Same playbook as Input / Button. The shim covers two renames:
+
+- `caption` → `label`
+- `forwardRef` prop → React `ref`
+
+Legacy ghosts (`isV4Design`, `isMobile`, `legacyClass`, `displayAuto`, `compactStyle`) accept their prop but do nothing.
+
+<Canvas of={TagWidgetStories.LegacyAPIStillWorks} />
+
+## Edge cases
+
+- **Empty `value`** — read-only renders nothing inside the row; editable shows the placeholder.
+- **Unknown tag in `value`** (not in `tagsList`) — renders blue.
+- **Duplicate / case-mismatch** — the editable widget normalizes case when bucketing into "recent" vs "other". A tag spelled differently than its catalog entry will still match.
+- **Reading `onChange` return shape** — editable's `onChange` returns a *comma-joined* string of names (legacy contract). Split on commas to get the array.
+
+## Related components
+
+- `Pill` — used internally for each tag in the read-only variant.
+- `Dropdown` — the creatable multi-select that powers the editable variant.
+- `MultiSelect` — a more general pill-input for arbitrary string entries.
+- `Caption` — the label primitive.

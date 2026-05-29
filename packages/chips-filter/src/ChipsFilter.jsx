@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, useRef, forwardRef, useImperativeHandle } from 'react';
 import PropTypes from 'prop-types';
 import Container from '@m-next/container';
 import { ExpressionElement, Field, EmptyPredicate, basicOperationId, Tag, FieldTypeNames } from '@m-next/types';
@@ -13,10 +13,22 @@ import ChipBuilderPopup from './components/ChipBuilderPopup';
 import AdvancedChip from './components/AdvancedChip';
 import { hasUnsavedChanges } from './utils/unsaved-changes-helpers';
 
+// One-time deprecation warner — mirrors @m-next/button and @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
 const propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   disabled: PropTypes.bool,
-  isMobile: PropTypes.bool,
   fieldList: PropTypes.arrayOf(Field),
   simpleChipsExpression: PropTypes.arrayOf(ExpressionElement),
   advancedChipsExpression: PropTypes.arrayOf(ExpressionElement),
@@ -52,42 +64,106 @@ const propTypes = {
   hasOtherViewChanges: PropTypes.bool,
   viewType: PropTypes.string, // 'Standard', 'Personal', 'Shared'
   updateInitialValues: PropTypes.bool, // Trigger to update initial values after save
+  // eslint-disable-next-line react/forbid-prop-types
+  label: PropTypes.string,
+  // eslint-disable-next-line react/forbid-prop-types
+  'aria-label': PropTypes.string,
+  // Legacy / deprecated (kept for shim)
+  isMobile: PropTypes.bool,
 };
 
-function ChipsFilter({
-  id = '',
-  disabled = false,
-  isMobile = false,
-  fieldList = [],
-  simpleChipsExpression = [],
-  advancedChipsExpression = [],
-  displayPreferences,
-  onExpressionChange,
-  options,
-  isLoading,
-  onSearch,
-  searchText,
-  tagsList,
-  viewName,
-  forcedTimeZone,
-  disableMaxWidth,
-  forceClear,
-  resetChipsTriggered,
-  egCustomViewsSaveButtonEnabled = false,
-  viewResetButtonVisible = false,
-  currentViewType = 'standard',
-  onUpdateCurrentView = null,
-  canEditSharedView = false,
-  onUpdateSharedView = null,
-  setViewSaveAndResetButtonsVisible = null,
-  hasOtherViewChanges = false,
-  onClickShowSaveGridViewDialog = null,
-  onClickResetButton = null,
-  onChipFilterApplied = null,
-  onChipFilterRemoved = null,
-  viewType = null, // 'Standard', 'Personal', 'Shared'
-  updateInitialValues = false, // Trigger to update initial values after save
-}) {
+const ChipsFilter = forwardRef(function ChipsFilter(props, ref) {
+  const {
+    id: idProp,
+    disabled = false,
+    fieldList = [],
+    simpleChipsExpression = [],
+    advancedChipsExpression = [],
+    displayPreferences,
+    onExpressionChange,
+    options,
+    isLoading,
+    onSearch,
+    searchText,
+    tagsList,
+    viewName,
+    forcedTimeZone,
+    disableMaxWidth,
+    forceClear,
+    resetChipsTriggered,
+    egCustomViewsSaveButtonEnabled = false,
+    viewResetButtonVisible = false,
+    currentViewType = 'standard',
+    onUpdateCurrentView = null,
+    canEditSharedView = false,
+    onUpdateSharedView = null,
+    setViewSaveAndResetButtonsVisible = null,
+    hasOtherViewChanges = false,
+    onClickShowSaveGridViewDialog = null,
+    onClickResetButton = null,
+    onChipFilterApplied = null,
+    onChipFilterRemoved = null,
+    viewType = null, // 'Standard', 'Personal', 'Shared'
+    updateInitialValues = false, // Trigger to update initial values after save
+
+    // Clean API
+    label: labelProp,
+    'aria-label': ariaLabelProp,
+    isMobile = false,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+    caption: legacyCaption,
+
+    // Silently ignored legacy ghosts (no behavioral effect — V4 is always on)
+    isV4Design: _isV4Design,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-filter-chips-${++autoIdCounter}`;
+  }
+  const id = idProp && idProp !== '' ? idProp : internalIdRef.current;
+
+  // ============ Backwards-compat translation ============
+
+  let label = labelProp;
+  if (legacyCaption !== undefined && label === undefined) {
+    warnOnce(
+      'filter-chips-caption',
+      '@m-next/chips-filter: `caption` is deprecated. Use `label` (passed through as the accessible group name).',
+    );
+    label = legacyCaption;
+  }
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'filter-chips-forwardRef-prop',
+      '@m-next/chips-filter: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // Compose accessible name: explicit aria-label wins, then label, then a sensible default.
+  const ariaLabel = ariaLabelProp ?? label ?? 'Filter chips';
+
+  // Expose the root for ref consumers (forwardRef API + legacy forwardRef prop).
+  const rootRef = useRef(null);
+  useImperativeHandle(ref, () => rootRef.current, []);
+  useEffect(() => {
+    if (!legacyForwardRef) return;
+    if (typeof legacyForwardRef === 'function') {
+      legacyForwardRef(rootRef.current);
+    } else {
+      // eslint-disable-next-line no-param-reassign
+      legacyForwardRef.current = rootRef.current;
+    }
+  }, [legacyForwardRef]);
+
   const [open, setOpen] = useState(false);
   const [openChip, setOpenChip] = useState(null);
   const [internalSimpleChipsExpression, setSimpleChipsExpression] = useState([]);
@@ -905,8 +981,12 @@ function ChipsFilter({
   return (
     <>
       <Container
+        ref={rootRef}
+        id={id}
         borderless
         data-view-type={viewType || 'default'}
+        role='group'
+        aria-label={ariaLabel}
         style={{
           position: 'relative',
           flexDirection: isMobile ? 'column' : 'row',
@@ -1042,7 +1122,9 @@ function ChipsFilter({
       )}
     </>
   );
-}
+});
 
+ChipsFilter.displayName = 'ChipsFilter';
 ChipsFilter.propTypes = propTypes;
+
 export default ChipsFilter;

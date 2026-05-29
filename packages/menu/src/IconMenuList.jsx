@@ -1,76 +1,103 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import SvgIcon from '@m-next/svg-icon';
-import { colors } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 import MenuList from './MenuList';
 import * as s from './Menu.styles';
 
-// types
-const propTypes = {
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  onClose: PropTypes.func,
-  relativeToParent: PropTypes.bool,
-  preventAutoClose: PropTypes.bool,
+// One-time deprecation warner — fires once per key, mirrors @m-next/button.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
 
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
-  style: PropTypes.instanceOf(Object),
-  className: PropTypes.string,
-  inline: PropTypes.bool,
-  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  header: PropTypes.string,
-  horizontalAlign: PropTypes.string,
-  icon: PropTypes.string,
-  iconSize: PropTypes.number,
-  iconBorder: PropTypes.bool,
-  onKeyUp: PropTypes.func,
-  disabled: PropTypes.bool,
-  onToggle: PropTypes.func,
-  open: PropTypes.bool,
-  color: PropTypes.string,
-  marginHorizontal: PropTypes.number,
-  popoverStyle: PropTypes.instanceOf(Object),
-  marginThreshold: PropTypes.number,
-  maxHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  iconRotation: PropTypes.string,
-  marginVertical: PropTypes.number,
-  shiftLeft: PropTypes.number,
-};
+let autoIdCounter = 0;
 
-/**
- * Wrapper component around
- */
-function IconMenuList({
-  id,
-  onClose,
-  relativeToParent,
-  preventAutoClose = false,
-  children,
-  style,
-  className,
-  inline = true,
-  width,
-  header,
-  horizontalAlign = 'center',
-  icon = 'chevron-down-V4',
-  iconSize = 16,
-  iconBorder = false,
-  onKeyUp,
-  disabled,
-  onToggle,
-  open,
-  color,
-  marginHorizontal = 0,
-  popoverStyle,
-  marginThreshold = 16,
-  maxHeight,
-  iconRotation,
-  marginVertical = 12,
-  shiftLeft = 0,
-}) {
+const IconMenuList = forwardRef(function IconMenuList(props, ref) {
+  const {
+    id: idProp,
+    children,
+    onClose,
+    onToggle,
+    onKeyUp,
+    open,
+    disabled = false,
+    preventAutoClose = false,
+    relativeToParent,
+
+    // Visual
+    icon = 'chevron-down-V4',
+    iconSize = 16,
+    iconBorder = false,
+    iconRotation,
+    color,
+
+    // MenuList passthrough
+    inline = true,
+    width,
+    maxHeight,
+    header,
+    horizontalAlign = 'center',
+    marginHorizontal = 0,
+    marginVertical = 12,
+    marginThreshold = 16,
+    shiftLeft = 0,
+    popoverStyle,
+    style,
+    className,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    hidden: _hidden,
+    displayAuto: _displayAuto,
+    legacyClass: _legacyClass,
+    compactStyle: _compactStyle,
+
+    ...rest
+  } = props;
+
+  // Auto-generate id.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-icon-menu-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  // Soft-shim legacy `forwardRef` prop.
+  if (legacyForwardRef) {
+    warnOnce(
+      'icon-menu-forwardRef-prop',
+      '@m-next/menu: IconMenuList `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
   const [anchorEl, setAnchorEl] = useState(null);
   const [internalOpen, setOpen] = useState(false);
-  // const [closing, setClosing] = useState(false);
   const iconRef = useRef();
+  const wrapperRef = useRef(null);
+
+  // Merge external ref (forwardRef API + legacy forwardRef prop) onto the wrapper.
+  useEffect(() => {
+    const targetRef = ref ?? legacyForwardRef;
+    if (!targetRef) return;
+    if (typeof targetRef === 'function') {
+      targetRef(wrapperRef.current);
+    } else {
+      // eslint-disable-next-line no-param-reassign
+      targetRef.current = wrapperRef.current;
+    }
+  }, [ref, legacyForwardRef]);
+
   useEffect(() => {
     setAnchorEl(iconRef.current);
   }, []);
@@ -88,6 +115,10 @@ function IconMenuList({
     setOpen(false);
     if (onClose) onClose();
     if (onToggle) onToggle(false);
+    // Return focus to trigger.
+    if (iconRef.current && typeof iconRef.current.focus === 'function') {
+      iconRef.current.focus();
+    }
   };
 
   const forceClose = () => {
@@ -95,6 +126,9 @@ function IconMenuList({
     setOpen(false);
     if (onClose) onClose();
     if (onToggle) onToggle(false);
+    if (iconRef.current && typeof iconRef.current.focus === 'function') {
+      iconRef.current.focus();
+    }
   };
 
   const openMenu = () => {
@@ -108,7 +142,7 @@ function IconMenuList({
   const toggleMenu = () => {
     if (internalOpen) {
       if (preventAutoClose) {
-        forceClose(); // Use forceClose when manually toggling
+        forceClose();
       } else {
         handleClose();
       }
@@ -118,26 +152,20 @@ function IconMenuList({
   };
 
   const handleKeyPress = (e) => {
-    const keyPressed = e.keyCode;
-    // 9 - tab
-    // 13 - enter
-    // 27 - escape
+    const { key, keyCode } = e;
 
-    // 32 - space
-    // 35 - end
-    // 36 - home
-    // 38 - up
-    // 40 - down
-
-    if (keyPressed === 9 || keyPressed === 27) {
+    // ESC / Tab close.
+    if (key === 'Escape' || key === 'Esc' || keyCode === 27 || keyCode === 9) {
       setOpen(false);
     }
 
-    if (!internalOpen && (keyPressed === 13 || keyPressed === 40)) {
+    // Enter / ArrowDown open.
+    if (!internalOpen && (key === 'Enter' || key === 'ArrowDown' || keyCode === 13 || keyCode === 40)) {
       setOpen(true);
     }
 
-    if (internalOpen && keyPressed === 13) {
+    // Enter when open: select (close).
+    if (internalOpen && (key === 'Enter' || keyCode === 13)) {
       setOpen(false);
     }
 
@@ -145,7 +173,12 @@ function IconMenuList({
   };
 
   return (
-    <s.IconMenuWrapper onKeyUp={handleKeyPress} style={style} role='menu'>
+    <s.IconMenuWrapper
+      ref={wrapperRef}
+      onKeyUp={handleKeyPress}
+      style={style}
+      {...rest}
+    >
       <SvgIcon
         id={`${id}-menu-icon`}
         testId={`${id}-menu-icon`}
@@ -159,7 +192,10 @@ function IconMenuList({
         onKeyUp={() => {}}
         rotate={iconRotation}
         backgroundColor={colors.white}
-        backgroundHoverColor={colors['grey-lighter']}
+        backgroundHoverColor={colors.grey.lighter}
+        aria-haspopup='menu'
+        aria-expanded={internalOpen}
+        aria-controls={`${id}-menu-content-menu`}
       />
 
       <MenuList
@@ -184,7 +220,59 @@ function IconMenuList({
       </MenuList>
     </s.IconMenuWrapper>
   );
-}
+});
 
-IconMenuList.propTypes = propTypes;
+IconMenuList.displayName = 'IconMenuList';
+
+IconMenuList.propTypes = {
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
+  onClose: PropTypes.func,
+  onToggle: PropTypes.func,
+  onKeyUp: PropTypes.func,
+  open: PropTypes.bool,
+  disabled: PropTypes.bool,
+  preventAutoClose: PropTypes.bool,
+  relativeToParent: PropTypes.bool,
+
+  icon: PropTypes.string,
+  iconSize: PropTypes.number,
+  iconBorder: PropTypes.bool,
+  iconRotation: PropTypes.string,
+  color: PropTypes.string,
+
+  inline: PropTypes.bool,
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  maxHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  header: PropTypes.string,
+  horizontalAlign: PropTypes.string,
+  marginHorizontal: PropTypes.number,
+  marginVertical: PropTypes.number,
+  marginThreshold: PropTypes.number,
+  shiftLeft: PropTypes.number,
+  popoverStyle: PropTypes.instanceOf(Object),
+  style: PropTypes.instanceOf(Object),
+  className: PropTypes.string,
+
+  // Soft-shimmed legacy
+  forwardRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.any }),
+  ]),
+
+  // Silently ignored
+  // eslint-disable-next-line react/forbid-prop-types
+  isV4Design: PropTypes.any,
+  // eslint-disable-next-line react/forbid-prop-types
+  isMobile: PropTypes.any,
+  // eslint-disable-next-line react/forbid-prop-types
+  hidden: PropTypes.any,
+  // eslint-disable-next-line react/forbid-prop-types
+  displayAuto: PropTypes.any,
+  // eslint-disable-next-line react/forbid-prop-types
+  legacyClass: PropTypes.any,
+  // eslint-disable-next-line react/forbid-prop-types
+  compactStyle: PropTypes.any,
+};
+
 export default IconMenuList;

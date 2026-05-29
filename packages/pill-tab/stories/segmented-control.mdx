@@ -1,0 +1,122 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as PillTabStories from './PillTab.stories';
+
+<Meta of={PillTabStories} />
+
+# SegmentedControl
+
+A horizontal toggle between a small set of mutually-exclusive options. The same visual surface as an iOS-style segmented control.
+
+> The package name is `@m-next/pill-tab` for historical reasons. The default export `PillTab` is preserved as a legacy alias. New code should import `SegmentedControl`.
+
+## When to use it
+
+- 2–4 mutually-exclusive views or modes (Plan / Build / Deploy; List / Grid; Day / Week / Month).
+- Toolbar-level mode switches where all options should be visible at once.
+- When the choices are short labels (≤ ~10 characters each).
+
+## When NOT to use it
+
+- More than 4 options — use a Dropdown or Tabs.
+- Long labels that wrap — use a RadioButton group (`ButtonRadioGroup`) instead.
+- Single boolean — use a Toggle.
+- Pick-many — use a Checkbox group.
+- Page-level navigation with content underneath — use Tabs, not a SegmentedControl.
+
+## Anatomy
+
+A horizontal pill-shaped container holding:
+
+1. **Container** — rounded, slightly-recessed background. Sized by `size`.
+2. **Option pills** — each option, rendered as `role="radio"`. The selected one gets the elevated white background.
+3. **Optional `href`** — an option can render as an `<a>` instead of a `<button>`. Link options navigate via the browser; non-link options call `onChange`.
+
+## States
+
+- **Default** — translucent grey track, no pill elevated.
+- **Selected** — white pill with subtle shadow.
+- **Hover (non-selected)** — option background lifts to `colors.grey.light`.
+- **Disabled (per option)** — 50% opacity, no pointer events.
+- **Focused** — keyboard focus ring on the active option (`:focus-visible`).
+
+## Tokens consumed
+
+- `colors.white` — selected pill background.
+- `colors.grey.dark` — option label colour.
+- `colors.grey.light` — hover background + disabled label colour.
+- `colors.blue.base` / `colors.blue.lighter` — keyboard focus ring.
+
+## Basic
+
+<Canvas of={PillTabStories.Basic} />
+
+## Three options
+
+<Canvas of={PillTabStories.ThreeOptions} />
+
+## Sizes
+
+<Canvas of={PillTabStories.Sizes} />
+
+## Disabled option
+
+<Canvas of={PillTabStories.WithDisabled} />
+
+## Anchor links
+
+When an option provides `href`, it renders as `<a>` and the browser handles navigation. `onChange` is not invoked for link options.
+
+<Canvas of={PillTabStories.AsLinks} />
+
+## Mixed links and buttons
+
+<Canvas of={PillTabStories.MixedLinksAndButtons} />
+
+## API
+
+See the README for the full prop table. Highlights:
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `options` | `{ value, label, disabled?, href?, target?, rel? }[]` | The selectable options |
+| `value` | `T` | Controlled selected value |
+| `onChange` | `(value: T) => void` | Receives the next value |
+| `size` | `'sm' \| 'md'` | Visual size variant |
+| `aria-label` / `aria-labelledby` | string | Accessible name for the radiogroup |
+
+## Accessibility
+
+- Root renders as `role="radiogroup"`. Always provide either `aria-label` or `aria-labelledby`.
+- Each option renders as `role="radio"` with `aria-checked` mirroring the selected state.
+- **Arrow keys** move selection and focus between enabled options (Left/Up = previous, Right/Down = next, with wraparound).
+- **Roving tabindex** — only the currently selected option is in the tab sequence; arrow keys move within.
+- Disabled options receive `aria-disabled="true"` and are skipped by arrow navigation.
+- Link options (`href`) navigate via the browser rather than calling `onChange`.
+
+## Migration from `@m-one/pill-tab`
+
+The component name moves from `PillTab` to `SegmentedControl`. The default export is unchanged for backwards compatibility — `import PillTab from '@m-next/pill-tab'` keeps working.
+
+<Canvas of={PillTabStories.LegacyAPIStillWorks} />
+
+Each deprecated prop emits a one-time `console.warn` and silently translates:
+
+- `items` → `options`
+- `selected` → `value`
+- `size="narrow"` → `size="sm"`, `size="regular"` → `size="md"`
+- `forwardRef` prop → use the React `ref` directly
+
+Legacy ghosts (`isV4Design`, `isMobile`, `legacyClass`, `compactStyle`, `displayAuto`) accept their value but have no behavioural effect.
+
+## Edge cases
+
+- **No `aria-label` provided** — the radiogroup has no accessible name. Always pass either `aria-label` or `aria-labelledby` for the group.
+- **All options disabled** — arrow keys do nothing, selection is unchanged.
+- **`value` doesn't match any option** — no pill is shown as selected; the first arrow-key press still moves focus to the first enabled option.
+- **Refs** — `ref` forwards to the container `<div>`. Useful for `scrollIntoView` or positioning.
+
+## Related components
+
+- `ButtonRadioGroup` (@m-next/radio-button) — the radio-group flavour with rectangular options and per-option labels that wrap.
+- `Toggle` — single boolean switch.
+- `Tabs` (when cleaned up) — page-level navigation between distinct views.

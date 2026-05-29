@@ -2,20 +2,28 @@
   "name": "@m-next/pill-tab",
   "private": true,
   "version": "1.0.0",
-  "description": "Segmented control component with pill-style tabs",
-  "keywords": [],
+  "description": "SegmentedControl (legacy: PillTab) — horizontal toggle between mutually-exclusive options.",
+  "keywords": [
+    "segmented-control",
+    "pill-tab",
+    "tabs",
+    "form",
+    "control"
+  ],
   "author": "Manan Kukreti <m.kukreti@method.me>",
   "homepage": "",
   "license": "ISC",
   "main": "src/index.ts",
+  "types": "src/index.ts",
   "directories": {
     "src": "src"
   },
   "files": [
-    "index"
+    "src"
   ],
   "dependencies": {
     "@m-next/styles": "^1.0.0",
+    "@m-next/tokens": "^1.0.0",
     "@m-next/utilities": "^1.0.0"
   },
   "devDependencies": {

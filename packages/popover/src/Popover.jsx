@@ -1,10 +1,46 @@
-import React, { useEffect, useState, useCallback, useRef } from 'react';
+import React, { forwardRef, useEffect, useState, useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import { HTMLElementType } from '@m-next/types';
 import { ClickOutside, ownerDocument, ownerWindow } from '@m-next/utilities';
 import Container from '@m-next/container';
-import { colors } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
+
+// One-time deprecation warner — fires once per key, mirrors @m-next/input / @m-next/dialog.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
+// Match any focusable element inside the popover. Used for focus trap.
+const FOCUSABLE_SELECTOR = [
+  'a[href]',
+  'area[href]',
+  'button:not([disabled])',
+  'input:not([disabled]):not([type="hidden"])',
+  'select:not([disabled])',
+  'textarea:not([disabled])',
+  'iframe',
+  '[tabindex]:not([tabindex="-1"])',
+  '[contenteditable="true"]',
+].join(',');
+
+const collectFocusable = (root) => {
+  if (!root) return [];
+  return Array.from(root.querySelectorAll(FOCUSABLE_SELECTOR)).filter((el) => {
+    if (el.hasAttribute('disabled')) return false;
+    if (el.getAttribute('aria-hidden') === 'true') return false;
+    if (el.offsetParent === null && el.tagName !== 'BODY') return false;
+    return true;
+  });
+};
 
 export function getOffsetTop(rect, vertical, marginVertical) {
   let offset = 0;
@@ -80,39 +116,108 @@ const propTypes = {
   shiftDown: PropTypes.number,
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   skipShifting: PropTypes.bool,
+  closeOnEsc: PropTypes.bool,
+  closeOnOverlayClick: PropTypes.bool,
+  trapFocus: PropTypes.bool,
+  modal: PropTypes.bool,
 };
 
-function Popover({
-  id,
-  anchorOrigin = {
-    vertical: 'top',
-    horizontal: 'left',
-  },
-  anchorPosition,
-  anchorReference = 'anchorEl',
-  anchorEl,
-  relativeToParent,
-  children,
-  className,
-  open,
-  transformOrigin = {
-    vertical: 'top',
-    horizontal: 'left',
-  },
-  marginThreshold = 16,
-  style = null,
-  height,
-  onClose,
-  marginVertical = 0,
-  marginHorizontal = 0,
-  inline = false,
-  disableClickOutside,
-  shiftLeft = 0,
-  shiftDown = 0,
-  width = 'auto',
-  skipShifting = false,
-}) {
+const Popover = forwardRef(function Popover(props, ref) {
+  const {
+    id: idProp,
+    anchorOrigin = {
+      vertical: 'top',
+      horizontal: 'left',
+    },
+    anchorPosition,
+    anchorReference = 'anchorEl',
+    anchorEl,
+    relativeToParent,
+    children,
+    className,
+    open,
+    transformOrigin = {
+      vertical: 'top',
+      horizontal: 'left',
+    },
+    marginThreshold = 16,
+    style = null,
+    height,
+    onClose,
+    marginVertical = 0,
+    marginHorizontal = 0,
+    inline = false,
+    disableClickOutside,
+    shiftLeft = 0,
+    shiftDown = 0,
+    width = 'auto',
+    skipShifting = false,
+
+    // Clean modal / a11y API additions (opt-in, default off for back-compat).
+    closeOnEsc = true,
+    closeOnOverlayClick: closeOnOverlayClickProp,
+    trapFocus = false,
+    modal = false,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+    triggerRef,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+
+    ...rest
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-popover-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  // ============ Backwards-compat translation ============
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'popover-forwardRef-prop',
+      '@m-next/popover: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // `triggerRef` was an alias some callsites used for `anchorEl`. If anchorEl
+  // is missing but triggerRef is supplied, treat the ref's current as anchor.
+  let effectiveAnchorEl = anchorEl;
+  if (!effectiveAnchorEl && triggerRef) {
+    warnOnce(
+      'popover-triggerRef-prop',
+      '@m-next/popover: `triggerRef` is deprecated. Pass the element (or a ref/string) via `anchorEl`.',
+    );
+    effectiveAnchorEl = triggerRef.current ?? triggerRef;
+  }
+
+  // disableClickOutside is the inverse of closeOnOverlayClick — newer API.
+  const closeOnOverlayClick =
+    closeOnOverlayClickProp !== undefined ? closeOnOverlayClickProp : !disableClickOutside;
+
   const paperRef = useRef();
+
+  // Expose paperRef to forwarded ref (React forwardRef API + legacy forwardRef prop).
+  useEffect(() => {
+    const targetRef = ref ?? legacyForwardRef;
+    if (!targetRef) return;
+    if (typeof targetRef === 'function') {
+      targetRef(paperRef.current);
+    } else {
+      // eslint-disable-next-line no-param-reassign
+      targetRef.current = paperRef.current;
+    }
+  }, [ref, legacyForwardRef, open]);
 
   // Returns the top/left offset of the position
   // to attach to on the anchor element (or body if none is provided)
@@ -129,7 +234,7 @@ function Popover({
       return anchorPosition;
     }
 
-    const resolvedAnchorEl = resolveAnchorEl(anchorEl);
+    const resolvedAnchorEl = resolveAnchorEl(effectiveAnchorEl);
     // If an anchor element wasn't provided, just use the parent body element of this Popover
     const anchorElement =
       resolvedAnchorEl && resolvedAnchorEl.nodeType === 1 ? resolvedAnchorEl : ownerDocument(paperRef.current).body;
@@ -155,7 +260,7 @@ function Popover({
     };
   }, [
     anchorReference,
-    anchorEl,
+    effectiveAnchorEl,
     relativeToParent,
     inline,
     anchorOrigin.vertical,
@@ -202,7 +307,7 @@ function Popover({
       const right = left + elemRect.width;
 
       // Use the parent window of the anchorEl if provided
-      const containerWindow = ownerWindow(resolveAnchorEl(anchorEl));
+      const containerWindow = ownerWindow(resolveAnchorEl(effectiveAnchorEl));
 
       // Window thresholds taking required margin into account
       const heightThreshold = containerWindow.innerHeight - marginThreshold;
@@ -255,7 +360,7 @@ function Popover({
       };
     },
     [
-      anchorEl,
+      effectiveAnchorEl,
       anchorReference,
       getAnchorOffset,
       getTransformOrigin,
@@ -301,13 +406,13 @@ function Popover({
       return undefined;
     }
 
-    const containerWindow = ownerWindow(anchorEl);
+    const containerWindow = ownerWindow(effectiveAnchorEl);
     containerWindow.addEventListener('resize', setPositioningStyles());
     return () => {
       setPositioningStyles();
       containerWindow.removeEventListener('resize', setPositioningStyles());
     };
-  }, [anchorEl, open, setPositioningStyles]);
+  }, [effectiveAnchorEl, open, setPositioningStyles]);
 
   useEffect(() => {
     if (open) {
@@ -326,16 +431,50 @@ function Popover({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
+  // ESC-to-close and optional focus trap. Kept opt-in via `closeOnEsc` / `trapFocus`
+  // so existing callsites (which rely solely on ClickOutside) keep their behaviour.
+  const handleKeyDown = useCallback(
+    (event) => {
+      if (!open) return;
+      if ((event.key === 'Escape' || event.key === 'Esc') && closeOnEsc) {
+        event.stopPropagation();
+        if (onClose) onClose(event);
+        return;
+      }
+      if (!trapFocus || event.key !== 'Tab') return;
+      const focusables = collectFocusable(paperRef.current);
+      if (focusables.length === 0) {
+        event.preventDefault();
+        if (paperRef.current) paperRef.current.focus();
+        return;
+      }
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      const active = typeof document !== 'undefined' ? document.activeElement : null;
+      if (event.shiftKey) {
+        if (active === first || !paperRef.current.contains(active)) {
+          event.preventDefault();
+          last.focus();
+        }
+      } else if (active === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    },
+    [open, closeOnEsc, trapFocus, onClose],
+  );
+
   const handleClose = (e) => {
-    if (anchorEl !== null) {
-      if (e?.srcElement?.id === anchorEl.id || e?.srcElement?.parentElement?.id === anchorEl.id) return;
+    if (effectiveAnchorEl !== null && effectiveAnchorEl !== undefined) {
+      const anchorId = effectiveAnchorEl.id;
+      if (anchorId && (e?.srcElement?.id === anchorId || e?.srcElement?.parentElement?.id === anchorId)) return;
     }
-    if (!disableClickOutside && onClose) onClose(e);
+    if (closeOnOverlayClick && onClose) onClose(e);
   };
 
   const baseStyle = {
     position: 'absolute',
-    border: `1px solid ${colors['grey-light']}`,
+    border: `1px solid ${colors.grey.light}`,
     zIndex: '1000',
     padding: 0,
     width: open ? width : 0,
@@ -343,12 +482,28 @@ function Popover({
     maxHeight: height,
     visibility: isVisible ? 'visible' : 'hidden',
     transition: 'all 0.3s ease-in-out',
+    outline: 'none',
   };
+
+  // A11y: focused floating panel. role="dialog" + aria-modal only when consumer
+  // opted into modal semantics. Otherwise no explicit role — it's just a
+  // positioned panel and the consumer owns labelling of its content.
+  const a11yProps = modal
+    ? { role: 'dialog', 'aria-modal': 'true', tabIndex: -1 }
+    : { tabIndex: trapFocus ? -1 : undefined };
 
   return open ? (
     <>
       {inline && (
-        <Container id={id} className={className} style={{ ...baseStyle, ...style }} forwardRef={paperRef}>
+        <Container
+          id={id}
+          className={className}
+          style={{ ...baseStyle, ...style }}
+          ref={paperRef}
+          onKeyDown={handleKeyDown}
+          {...a11yProps}
+          {...rest}
+        >
           <ClickOutside id={id} parentRef={paperRef} onClickOutsideHandler={handleClose}>
             {children}
           </ClickOutside>
@@ -360,8 +515,11 @@ function Popover({
             id={id}
             className={className}
             style={{ ...baseStyle, ...style }}
-            forwardRef={paperRef}
+            ref={paperRef}
             width={width}
+            onKeyDown={handleKeyDown}
+            {...a11yProps}
+            {...rest}
           >
             <ClickOutside parentRef={paperRef} onClickOutsideHandler={handleClose}>
               {children}
@@ -371,7 +529,9 @@ function Popover({
         )}
     </>
   ) : null;
-}
+});
 
+Popover.displayName = 'Popover';
 Popover.propTypes = propTypes;
+
 export default Popover;

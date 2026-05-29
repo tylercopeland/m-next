@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Pill from '@m-next/pill';
 import { Text } from '@m-next/typeography';
 import { ExpressionElement, basicOperationId } from '@m-next/types';
-import { colors } from '@m-next/styles';
+import { colors } from '@m-next/tokens';
 
 const propTypes = {
   id: PropTypes.string,
@@ -48,7 +48,7 @@ function AdvancedChip({ id, isOpen, onClick, onDelete, expression, index, set })
           ? {
               name: 'chevron-down-V4',
               size: 12,
-              color: colors.grey,
+              color: colors.grey.base,
             }
           : null
       }

@@ -1,0 +1,137 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as MenuStories from './Menu.stories';
+
+<Meta of={MenuStories} />
+
+# Menu
+
+A popover list of actions, triggered from a button or icon. The package exports
+three components that work together: `MenuList`, `MenuItem`, and a composed
+`IconMenuList`.
+
+## When to use it
+
+- Overflow / "more actions" menus on table rows or cards.
+- Action sets that don't fit a primary button row but aren't important enough
+  to permanently occupy screen space.
+- Single-select choices among ~3–15 options (sort options, filter modes,
+  status changes).
+
+## When NOT to use it
+
+- For navigation — use a sidebar / breadcrumbs / tabs.
+- For form selection (a single value bound to a form field) — use a
+  `Dropdown`. Menus fire actions; dropdowns hold values.
+- For very long lists (50+) — use a searchable combobox pattern.
+- For tooltips / hover hints — use `@m-next/tooltip`.
+
+## Anatomy
+
+`MenuList` is the popover container. It positions itself relative to
+`anchorEl` via `@m-next/popover`, renders `MenuItem` children inside a padded
+`Container`, and handles keyboard semantics for the whole menu.
+
+`MenuItem` is one focusable row. It activates on click or on `Enter` / `Space`
+when focused.
+
+`IconMenuList` is a higher-level composite — it wraps an `@m-next/svg-icon`
+trigger and a `MenuList`, manages open state internally, and forwards keyboard
+events so consumers don't have to wire it up by hand. Useful for repeated
+patterns like row-level overflow menus.
+
+## Basic
+
+<Canvas of={MenuStories.Basic} />
+
+## States
+
+<Canvas of={MenuStories.States} />
+
+## Keyboard navigation
+
+<Canvas of={MenuStories.KeyboardNavigation} />
+
+`MenuList` listens for the following on its container:
+
+- `ArrowDown` — move focus to the next non-disabled item (wraps).
+- `ArrowUp` — move focus to the previous non-disabled item (wraps).
+- `Home` — first non-disabled item.
+- `End` — last non-disabled item.
+- `Enter` / `Space` — activate the focused `MenuItem` (fires its `onClick`).
+- `Escape` — fire `onClose`.
+
+When the menu opens, focus moves automatically to the first non-disabled item.
+When the consumer closes it (via `IconMenuList` in particular), focus returns
+to the trigger.
+
+## Scrollable
+
+<Canvas of={MenuStories.Scrollable} />
+
+When 10 or more children are present, the container becomes scrollable. A
+`maxHeight` prop bounds the popover so it doesn't overflow the viewport.
+
+## IconMenuList
+
+<Canvas of={MenuStories.IconMenu} />
+
+`IconMenuList` is the typical row-level pattern: an icon button that opens a
+small menu. It manages open state internally — pass an `open` prop only when
+you need to control it externally. `onToggle` fires for both opens and closes;
+`onClose` fires when the menu closes by selection or outside click.
+
+## API
+
+See the README for the full prop tables for `MenuList`, `MenuItem`, and
+`IconMenuList`.
+
+## Accessibility
+
+- `MenuList`'s container has `role="menu"`. When `header` is set, the
+  container gets `aria-labelledby` pointing at the header.
+- Every `MenuItem` has `role="menuitem"`, `tabIndex={0}` (or `-1` when
+  disabled). `disabled` mirrors to `aria-disabled`; `selected` / `active`
+  mirror to `aria-selected`.
+- Keyboard navigation is handled at the container — see Keyboard navigation
+  above.
+- `IconMenuList`'s trigger icon receives `aria-haspopup="menu"`,
+  `aria-expanded`, and `aria-controls` pointing at the menu.
+- Closing the menu via `IconMenuList` returns focus to the trigger icon.
+
+## Migration from `@m-one/menu`
+
+| Was | Now | Status |
+|-----|-----|--------|
+| `id="..."` required | optional — auto-generated if absent | Backwards-compatible |
+| `forwardRef={ref}` prop | `ref={ref}` (React forwardRef API) | Soft shim — warns once |
+| Container `role="menu"` only on `IconMenuList`'s wrapper, no item roles | `MenuList` → `role="menu"`, each `MenuItem` → `role="menuitem"` | Improved a11y |
+| No arrow-key navigation | Arrow / Home / End / Enter / Space / ESC keyboard handling | New behavior |
+| Hex literal `colors['grey-lighter']` flat-key lookups | `colors.grey.lighter` via `@m-next/tokens` | Migrated |
+| `isV4Design`, `isMobile`, `hidden`, `displayAuto`, `legacyClass`, `compactStyle` | — | Silently ignored |
+
+<Canvas of={MenuStories.LegacyAPIStillWorks} />
+
+The legacy `forwardRef` prop still works — it fires a single `console.warn` at
+first use and is chained with the React `ref`.
+
+## Edge cases
+
+- **Anchor not yet mounted** — `MenuList` accepts a raw `HTMLElement`, a
+  React ref, or a function. Passing `anchorEl={ref.current}` from a parent
+  that re-renders works because the popover re-positions whenever the anchor
+  changes. If your trigger is conditionally rendered, prefer passing the ref
+  directly (`anchorEl={ref}`).
+- **Many items** — `scrollable` is auto-enabled at 10+ children. Set
+  `maxHeight` to bound the popover height.
+- **Disabled items** — receive `tabIndex={-1}` and are skipped by arrow-key
+  navigation. They still render and remain visible (with greyed styling).
+- **Custom children that aren't `MenuItem`** — render fine, but won't be
+  focusable via arrow-key navigation. Stick to `MenuItem` for interactive
+  rows; use plain JSX for separators or labels.
+
+## Related components
+
+- `@m-next/popover` — the positioning engine. `MenuList` is a thin opinionated
+  wrapper.
+- `@m-next/tooltip` — for hover hints, not actions.
+- `@m-next/dropdown` — for single-select form fields (not yet cleaned up).

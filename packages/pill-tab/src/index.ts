@@ -1,4 +1,5 @@
-import PillTab from './PillTab';
+import PillTab, { SegmentedControl } from './PillTab';
 
 export default PillTab;
-export type { PillTabOption } from './types';
+export { SegmentedControl };
+export type { PillTabOption, PillTabProps, PillTabSize } from './types';
