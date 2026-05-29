@@ -32,6 +32,12 @@ const M_NEXT_PACKAGES = [
   'address', 'address-lookup', 'phone-input',
   // Phase 3 cleaned: audit-rename wave
   'input-area', 'svg-icon', 'loading-skeleton', 'button-group',
+  // Used by Foundation prototype but not yet Phase-3 cleaned
+  'insight-card',
+  // Phase 3 cleaned: datepicker wrappers (4 of 5 components).
+  // DatePicker itself deferred — its prop surface needs careful per-prop
+  // assessment, not mechanical soft-shimming.
+  'datepicker',
 ];
 
 const stories = M_NEXT_PACKAGES.flatMap((pkg) => [
