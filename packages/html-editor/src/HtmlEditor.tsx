@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, Suspense } from 'react';
+import React, { forwardRef, useEffect, useRef, Suspense } from 'react';
 import * as s from './HtmlEditor.styles';
 
 import { keys, XS, SM, MD, LG, ToolbarConfig } from './constants';
@@ -11,6 +11,19 @@ import 'froala-editor/css/froala_style.min.css';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
 import 'froala-editor/js/plugins.pkgd.min';
 import LoadingSkeleton from '@m-next/loading-skeleton';
+
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set<string>();
+  return (key: string, message: string) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
 
 export interface AuthContext {
   account?: string;
@@ -29,7 +42,9 @@ interface HtmlEditorProps {
   disabled?: boolean;
   focused?: boolean;
   height?: string;
-  id: string;
+  /** Optional. Auto-generated when not provided. */
+  id?: string;
+  /** Kept as a real prop — controls margin-bottom on the editor wrapper. */
   isV4Design?: boolean;
   placeholder?: string;
   required?: boolean;
@@ -39,9 +54,31 @@ interface HtmlEditorProps {
   onChange?: (content: string) => void;
   onFocus?: () => void;
   onLoad?: (content: string) => void;
+
+  // Soft-shimmed legacy props
+  /** @deprecated Use the React forwardRef API — pass `ref` directly. */
+  forwardRef?: React.Ref<HTMLDivElement> | null;
+
+  // Silently ignored legacy ghosts
+  /** @deprecated No longer has any effect. */
+  legacyClass?: string | null;
+  /** @deprecated No longer has any effect. */
+  displayAuto?: boolean;
+  /** @deprecated No longer has any effect. */
+  compactStyle?: boolean;
+  /** @deprecated No longer has any effect. */
+  hidden?: boolean;
 }
 
-function HtmlEditor(props: HtmlEditorProps) {
+/**
+ * HtmlEditor — Froala-backed WYSIWYG rich-text editor. Renders a toolbar
+ * that adapts to container width (XS/SM/MD/LG breakpoints), an authenticated
+ * image upload path, and optional caption + validation chrome.
+ *
+ * `isV4Design` is kept as a real prop — it toggles the editor wrapper's
+ * margin and is forwarded to the validation message.
+ */
+const HtmlEditor = forwardRef<HTMLDivElement, HtmlEditorProps>(function HtmlEditor(props, ref) {
   const {
     authContext = {},
     caption = '',
@@ -49,7 +86,7 @@ function HtmlEditor(props: HtmlEditorProps) {
     disabled = false,
     focused = false,
     height = '100px',
-    id = '',
+    id: idProp,
     isV4Design,
     required,
     width = '100%',
@@ -58,7 +95,31 @@ function HtmlEditor(props: HtmlEditorProps) {
     onChange,
     onFocus,
     onLoad,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+    hidden: _hidden,
   } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef<string | null>(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-html-editor-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'html-editor-forwardRef-prop',
+      '@m-next/html-editor: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
 
   // State
   // We need to use any here because the editor controller has a complex type structure
@@ -74,6 +135,20 @@ function HtmlEditor(props: HtmlEditorProps) {
   // Refs
   const editorRef = useRef<HTMLDivElement>(null);
   const isMountedRef = useRef(true);
+
+  // Chain modern ref + legacy forwardRef prop onto the editor wrapper element.
+  useEffect(() => {
+    const assign = (target: typeof ref | typeof legacyForwardRef) => {
+      if (!target) return;
+      if (typeof target === 'function') {
+        target(editorRef.current);
+      } else {
+        (target as React.MutableRefObject<HTMLDivElement | null>).current = editorRef.current;
+      }
+    };
+    assign(ref);
+    assign(legacyForwardRef);
+  }, [ref, legacyForwardRef]);
 
   // Init variables
   const { account, authToken, identity, runtimeCoreUrl, secureToken } = authContext as AuthContext;
@@ -348,6 +423,8 @@ function HtmlEditor(props: HtmlEditorProps) {
       />
     </s.EditorWrapper>
   );
-}
+});
+
+HtmlEditor.displayName = 'HtmlEditor';
 
 export default HtmlEditor;

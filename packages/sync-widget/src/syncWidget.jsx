@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { forwardRef, useCallback, useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { SyncWidgetStatus } from './syncWidgetConstants';
 import {
@@ -11,13 +11,99 @@ import {
   SyncWidgetText,
 } from './syncWidget.styles';
 
-function SyncWidget({ status, message, fnSyncWidgetInteractionAnalytics, popupWidth, popupMaxWidth }) {
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
+const propTypes = {
+  /** Optional. Auto-generated when not provided. */
+  id: PropTypes.string,
+  status: PropTypes.oneOf(Object.keys(SyncWidgetStatus).map(Number)).isRequired,
+  message: PropTypes.string,
+  fnSyncWidgetInteractionAnalytics: PropTypes.func,
+  popupWidth: PropTypes.number,
+  popupMaxWidth: PropTypes.string,
+};
+
+/**
+ * SyncWidget — status pill with optional expandable details popup for sync
+ * state messaging. Shows a colored badge with icon + label and, when a
+ * message is provided, a chevron toggle that reveals a popup with the
+ * full message (truncated to a preview, with a "View more" toggle).
+ *
+ * Refs are forwarded to the outer wrapper element.
+ */
+const SyncWidget = forwardRef(function SyncWidget(props, ref) {
+  const {
+    id: idProp,
+    status,
+    message,
+    fnSyncWidgetInteractionAnalytics,
+    popupWidth,
+    popupMaxWidth,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+    hidden: _hidden,
+    ...rest
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-sync-widget-${++autoIdCounter}`;
+  }
+  const id = idProp || internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'sync-widget-forwardRef-prop',
+      '@m-next/sync-widget: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
   const { text, color, icon, title } = SyncWidgetStatus[status] || {};
   const [isChevronCollapsed, setChevronCollapsed] = useState(false);
   const [isMessageExpanded, setMessageExpanded] = useState(false);
   const popupRef = useRef(null);
   const containerRef = useRef(null);
   const [popupPosition, setPopupPosition] = useState({ top: 4 });
+
+  // Chain modern ref + legacy forwardRef prop onto the rendered root element.
+  const internalElRef = useRef(null);
+  useEffect(() => {
+    const assign = (target) => {
+      if (!target) return;
+      if (typeof target === 'function') {
+        target(internalElRef.current);
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        target.current = internalElRef.current;
+      }
+    };
+    assign(ref);
+    assign(legacyForwardRef);
+  }, [ref, legacyForwardRef]);
+
+  const setRef = (node) => {
+    internalElRef.current = node;
+  };
 
   // MAX_TRUNCATE_LENGTH is set to 1000 characters for the message
   // To ensure that the message is not too long for the popup
@@ -82,7 +168,13 @@ function SyncWidget({ status, message, fnSyncWidgetInteractionAnalytics, popupWi
   }, [isMessageExpanded, isChevronCollapsed, updatePopupPosition, handleClickOutside]);
 
   return (
-    <SyncWidgetContainerWrapper className={`sync-widget ${text?.toLowerCase()}`} data-tooltip-id={message}>
+    <SyncWidgetContainerWrapper
+      id={id}
+      ref={setRef}
+      className={`sync-widget ${text?.toLowerCase()}`}
+      data-tooltip-id={message}
+      {...rest}
+    >
       <SyncWidgetContainer backgroundColor={color} ref={containerRef}>
         <span>{icon()}</span>
         <SyncWidgetText>{text}</SyncWidgetText>
@@ -126,14 +218,9 @@ function SyncWidget({ status, message, fnSyncWidgetInteractionAnalytics, popupWi
       ) : null}
     </SyncWidgetContainerWrapper>
   );
-}
+});
 
-SyncWidget.propTypes = {
-  status: PropTypes.oneOf(Object.keys(SyncWidgetStatus).map(Number)).isRequired,
-  message: PropTypes.string,
-  fnSyncWidgetInteractionAnalytics: PropTypes.func,
-  popupWidth: PropTypes.number,
-  popupMaxWidth: PropTypes.string,
-};
+SyncWidget.displayName = 'SyncWidget';
+SyncWidget.propTypes = propTypes;
 
 export default SyncWidget;

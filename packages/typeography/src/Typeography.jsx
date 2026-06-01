@@ -1,6 +1,7 @@
 import React, { forwardRef, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import * as s from './Typeography.styles';
+import { warnTypeographyDeprecated } from './_warnOnce';
 
 // types
 const propTypes = {
@@ -51,6 +52,7 @@ const Typeography = forwardRef(
     },
     forwardedRef, // renamed for clarity
   ) => {
+    warnTypeographyDeprecated();
     // We combine both refs using a callback ref
 
     const commonProps = {

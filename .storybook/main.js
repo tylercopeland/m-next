@@ -42,6 +42,10 @@ const M_NEXT_PACKAGES = [
   'gallery', 'app-activation-banner', 'app-activation-overlay',
   // Phase 3 cleaned: wave 2 (medium)
   'attachments', 'map', 'signature',
+  // Phase 3 cleaned: small follow-ups (4 packages, parallel-agent wave)
+  // - attachments sub-components already covered by 'attachments' above
+  // - typeography is deprecated, fires a one-time console.warn on render
+  'sync-widget', 'html-editor', 'typeography',
 ];
 
 const stories = M_NEXT_PACKAGES.flatMap((pkg) => [
