@@ -41,6 +41,26 @@ describe('Container', () => {
       expect(tree).toMatchSnapshot();
     });
 
+    // Audit finding #3 fix: `bordered` adds a hairline border independent of
+    // the shadow knob.
+    it('bordered', async () => {
+      const tree = render(
+        <Container isVisible id='test' bordered>
+          <img src='catpic.jpg' alt='cat' />
+        </Container>,
+      ).container;
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('bordered + shadow', async () => {
+      const tree = render(
+        <Container isVisible id='test' bordered borderless={false}>
+          <img src='catpic.jpg' alt='cat' />
+        </Container>,
+      ).container;
+      expect(tree).toMatchSnapshot();
+    });
+
     it('isRound', async () => {
       const tree = render(
         <Container isVisible id='test' isRound>

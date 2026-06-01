@@ -51,6 +51,12 @@ export const Basic = () => (
     <Row label="elevated (borderless={false})">
       <Container borderless={false}><SampleContent /></Container>
     </Row>
+    <Row label="bordered (bordered={true})">
+      <Container bordered><SampleContent /></Container>
+    </Row>
+    <Row label="bordered + elevated">
+      <Container bordered borderless={false}><SampleContent /></Container>
+    </Row>
     <Row label="square (isRound={false})">
       <Container isRound={false}><SampleContent /></Container>
     </Row>

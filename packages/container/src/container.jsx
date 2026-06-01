@@ -20,10 +20,17 @@ const warnOnce = (() => {
 let autoIdCounter = 0;
 
 /**
- * Container — a surface wrapper. Renders a padded, optionally bordered/elevated
- * `<div>` with optional scroll behavior, hover styling, and a skeleton loading
- * state. The base surface for Card, Insight cards, ContentCard, and any panel
- * that needs the m-next surface treatment.
+ * Container — a surface wrapper. Renders a padded `<div>` with optional
+ * scroll behavior, hover styling, and a skeleton loading state. The base
+ * surface for Card, Insight cards, ContentCard, and any panel that needs the
+ * m-next surface treatment.
+ *
+ * Surface treatment is controlled by two independent props:
+ *   - `borderless` (default true): when false, adds a soft drop shadow.
+ *   - `bordered` (default false): when true, adds a hairline border.
+ *
+ * The two combine: `bordered + !borderless` gives border + shadow; `bordered`
+ * alone gives a flat hairline-bordered surface (audit-finding-3 fix).
  */
 const Container = forwardRef(function Container(props, ref) {
   const {
@@ -44,6 +51,7 @@ const Container = forwardRef(function Container(props, ref) {
     scrollable = false,
     scrollableRef = null,
     borderless = true,
+    bordered = false,
     padding = null,
     height = 'unset',
     maxHeight,
@@ -129,6 +137,7 @@ const Container = forwardRef(function Container(props, ref) {
           isRound={isRound}
           ref={effectiveRef}
           borderless={borderless}
+          bordered={bordered}
           padding={padding}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
@@ -158,6 +167,7 @@ const Container = forwardRef(function Container(props, ref) {
       isRound={isRound}
       ref={effectiveRef}
       borderless={borderless}
+      bordered={bordered}
       padding={padding}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
