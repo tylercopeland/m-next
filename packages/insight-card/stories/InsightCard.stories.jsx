@@ -152,3 +152,57 @@ WithTooltip.parameters = {
     },
   },
 };
+
+export const WithPositiveDelta = Template.bind({});
+WithPositiveDelta.args = {
+  title: 'Total spent',
+  value: '$24,650',
+  delta: { value: '12%', label: 'from last month' },
+};
+WithPositiveDelta.parameters = {
+  docs: {
+    description: {
+      story:
+        'Delta slot with implicit positive direction. `delta.direction` is inferred from the sign of `delta.value` when omitted — here `"12%"` is parsed as +12 → up → green.',
+    },
+  },
+};
+
+export const WithNegativeDelta = Template.bind({});
+WithNegativeDelta.args = {
+  title: 'Open invoices',
+  value: '8',
+  delta: { value: -3, label: 'fewer than last week' },
+};
+WithNegativeDelta.parameters = {
+  docs: {
+    description: { story: 'Negative delta. Direction inferred from numeric sign.' },
+  },
+};
+
+export const WithNeutralDelta = Template.bind({});
+WithNeutralDelta.args = {
+  title: 'Active accounts',
+  value: '142',
+  delta: { value: '0', label: 'no change' },
+};
+WithNeutralDelta.parameters = {
+  docs: {
+    description: { story: 'Zero value → neutral direction → grey color, em-dash glyph.' },
+  },
+};
+
+export const WithExplicitDirection = Template.bind({});
+WithExplicitDirection.args = {
+  title: 'Conversion rate',
+  value: '23.5%',
+  delta: { value: '2.1pp', label: 'vs target', direction: 'up' },
+};
+WithExplicitDirection.parameters = {
+  docs: {
+    description: {
+      story:
+        'Caller can override direction explicitly — useful when `value` is non-numeric (e.g. "2.1pp") or when "up vs target" doesn\'t correlate with sign.',
+    },
+  },
+};

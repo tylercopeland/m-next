@@ -88,4 +88,51 @@ describe('InsightCard', () => {
     const infoButton = screen.getByRole('button');
     expect(infoButton).toHaveAttribute('data-tooltip-id', 'insight-card-tooltip-Unique Title');
   });
+
+  // Audit finding #2 fix: InsightCard renders an optional trend/delta slot
+  // below the value with direction-aware color and glyph.
+  describe('delta slot', () => {
+    it('renders nothing when delta is not provided', () => {
+      render(<InsightCard {...defaultProps} />);
+      expect(screen.queryByText('↑')).not.toBeInTheDocument();
+      expect(screen.queryByText('↓')).not.toBeInTheDocument();
+    });
+
+    it('renders ↑ glyph when delta.value is positive', () => {
+      render(<InsightCard {...defaultProps} delta={{ value: 12, label: 'from last month' }} />);
+      expect(screen.getByText('↑')).toBeInTheDocument();
+      expect(screen.getByText('12')).toBeInTheDocument();
+      expect(screen.getByText('from last month')).toBeInTheDocument();
+    });
+
+    it('renders ↓ glyph when delta.value is negative', () => {
+      render(<InsightCard {...defaultProps} delta={{ value: -3 }} />);
+      expect(screen.getByText('↓')).toBeInTheDocument();
+      expect(screen.getByText('-3')).toBeInTheDocument();
+    });
+
+    it('renders em-dash glyph when delta.value is zero', () => {
+      render(<InsightCard {...defaultProps} delta={{ value: 0 }} />);
+      expect(screen.getByText('—')).toBeInTheDocument();
+    });
+
+    it('parses numeric sign from string values like "12%" or "-3.5%"', () => {
+      const { rerender } = render(<InsightCard {...defaultProps} delta={{ value: '12%' }} />);
+      expect(screen.getByText('↑')).toBeInTheDocument();
+
+      rerender(<InsightCard {...defaultProps} delta={{ value: '-3.5%' }} />);
+      expect(screen.getByText('↓')).toBeInTheDocument();
+    });
+
+    it('honors explicit delta.direction over inferred sign', () => {
+      render(<InsightCard {...defaultProps} delta={{ value: -5, direction: 'up' }} />);
+      // Caller explicitly says up even though value is negative.
+      expect(screen.getByText('↑')).toBeInTheDocument();
+    });
+
+    it('does not render delta during the loading skeleton state', () => {
+      render(<InsightCard {...defaultProps} isLoading delta={{ value: 12 }} />);
+      expect(screen.queryByText('↑')).not.toBeInTheDocument();
+    });
+  });
 });

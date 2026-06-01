@@ -121,6 +121,29 @@ export const InsightCardCTA = styled.p`
   height: 24px;
 `;
 
+// Trend indicator rendered below InsightCardValue. Color reflects direction:
+// up = positive (green), down = negative (red), neutral = no change (grey).
+// Token references mirror the m-next semantic palette used elsewhere.
+const DELTA_COLOR = {
+  up: '#137E58',
+  down: '#C8102E',
+  neutral: '#5A6B7B',
+};
+
+export const InsightCardDelta = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Source Sans Pro';
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  color: ${(props) => DELTA_COLOR[props.direction] || DELTA_COLOR.neutral};
+  font-feature-settings:
+    'liga' off,
+    'clig' off;
+`;
+
 export const SkeletonWrapper = styled.div`
   flex: 1;
   display: flex;

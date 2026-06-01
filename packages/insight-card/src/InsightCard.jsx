@@ -6,8 +6,33 @@ import { Tooltip } from 'react-tooltip';
 import SvgIcon from '@m-next/svg-icon';
 import * as s from './InsightCard.styles';
 
+// Resolve delta direction. If caller provided `direction`, honor it. Otherwise
+// inspect numeric `value` sign — works for `12`, `-3`, `'12'`, `'-3.5%'`, etc.
+const resolveDirection = (delta) => {
+  if (!delta) return null;
+  if (delta.direction) return delta.direction;
+  const numeric = typeof delta.value === 'number'
+    ? delta.value
+    : parseFloat(String(delta.value).replace(/[^0-9.\-]/g, ''));
+  if (Number.isNaN(numeric) || numeric === 0) return 'neutral';
+  return numeric > 0 ? 'up' : 'down';
+};
+
+const DIRECTION_GLYPH = { up: '↑', down: '↓', neutral: '—' };
+
 /**
- * InsightCard - A reusable card component for displaying metrics and KPIs
+ * InsightCard - A reusable card component for displaying metrics and KPIs.
+ *
+ * Optional `delta` slot renders a trend line below the value (audit-finding-2):
+ *
+ *   <InsightCard title="Total spent" value="$24,650"
+ *                delta={{ value: '12%', label: 'from last month' }} />
+ *   <InsightCard title="Open invoices" value="8"
+ *                delta={{ value: -3, label: 'fewer than last week' }} />
+ *
+ * `delta.direction` ('up' | 'down' | 'neutral') is optional — when omitted, it
+ * is inferred from the sign of `delta.value`. Up = green, down = red,
+ * neutral = grey.
  */
 const InsightCard = ({
   title,
@@ -18,12 +43,15 @@ const InsightCard = ({
   showInfoIcon = false,
   infoTooltipContent,
   isLoading = false,
+  delta = null,
 }) => {
   const handleCardClick = () => {
     if (onCardClick) {
       onCardClick();
     }
   };
+
+  const direction = resolveDirection(delta);
 
   return (
     <s.InsightCardContainer onClick={onCardClick ? handleCardClick : undefined} isClickable={!!onCardClick}>
@@ -74,6 +102,14 @@ const InsightCard = ({
           <>
             <s.InsightCardValue>{value}</s.InsightCardValue>
 
+            {delta && direction && (
+              <s.InsightCardDelta direction={direction}>
+                <span aria-hidden='true'>{DIRECTION_GLYPH[direction]}</span>
+                <span>{delta.value}</span>
+                {delta.label && <span>{delta.label}</span>}
+              </s.InsightCardDelta>
+            )}
+
             {linkText && <s.InsightCardCTA>{linkText}</s.InsightCardCTA>}
           </>
         )}
@@ -91,6 +127,15 @@ InsightCard.propTypes = {
   showInfoIcon: PropTypes.bool,
   infoTooltipContent: PropTypes.string,
   isLoading: PropTypes.bool,
+  /**
+   * Optional trend indicator rendered below the value. Direction defaults to
+   * sign of numeric `value` when omitted. Up = green, down = red, neutral = grey.
+   */
+  delta: PropTypes.shape({
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    label: PropTypes.string,
+    direction: PropTypes.oneOf(['up', 'down', 'neutral']),
+  }),
 };
 
 InsightCard.defaultProps = {
@@ -102,6 +147,7 @@ InsightCard.defaultProps = {
   showInfoIcon: false,
   infoTooltipContent: null,
   isLoading: false,
+  delta: null,
 };
 
 export default InsightCard;
