@@ -3,8 +3,12 @@ import type { CSSProperties, ReactNode, Ref } from 'react';
 /**
  * Which HTML element Text renders as.
  * Accepted uppercase for backwards-compatibility with the legacy API.
+ *
+ * H1-H6 are all supported as of audit-finding-1 (sections previously had to
+ * be rendered as styled <p>). H1-H6 share TitleText styling but differ in
+ * rendered tag, so section headings carry the right semantics.
  */
-export type TextWrapperType = 'P' | 'DIV' | 'H1';
+export type TextWrapperType = 'P' | 'DIV' | 'H1' | 'H2' | 'H3' | 'H4' | 'H5' | 'H6';
 
 export interface TextProps {
   /** Optional. Auto-generated when not provided. */

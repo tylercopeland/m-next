@@ -60,6 +60,21 @@ export const Basic = () => (
     <Row label='as=H1'>
       <Text as='H1'>Rendered as a heading.</Text>
     </Row>
+    <Row label='as=H2'>
+      <Text as='H2'>Section heading.</Text>
+    </Row>
+    <Row label='as=H3'>
+      <Text as='H3'>Sub-section heading.</Text>
+    </Row>
+    <Row label='as=H4'>
+      <Text as='H4'>Fourth-level heading.</Text>
+    </Row>
+    <Row label='as=H5'>
+      <Text as='H5'>Fifth-level heading.</Text>
+    </Row>
+    <Row label='as=H6'>
+      <Text as='H6'>Sixth-level heading.</Text>
+    </Row>
   </Section>
 );
 

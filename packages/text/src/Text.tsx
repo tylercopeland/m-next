@@ -13,6 +13,8 @@ const textWrapperType: Record<'div' | 'paragraph' | 'title', TextWrapperType> = 
   title: 'H1',
 };
 
+const HEADING_TAGS = new Set<TextWrapperType>(['H1', 'H2', 'H3', 'H4', 'H5', 'H6']);
+
 let autoIdCounter = 0;
 
 /**
@@ -148,7 +150,40 @@ const Text = forwardRef<HTMLElement, TextProps>(function Text(props, ref) {
     };
   };
 
-  switch (as?.toUpperCase()) {
+  const asUpper = as?.toUpperCase() as TextWrapperType | undefined;
+
+  if (asUpper && HEADING_TAGS.has(asUpper)) {
+    // H1-H6 all share TitleText styling. Emotion's polymorphic `as` prop
+    // swaps the rendered HTML tag while preserving the styled-component's
+    // CSS rules — so an H3 heading carries H3 semantics with H1's m-next
+    // styling. fontSize/fontWeight/etc. are still inline-style-driven via
+    // textStylesTitle, matching the existing H1 behavior.
+    const tag = asUpper.toLowerCase() as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+    // Preserve the legacy `--title` testid for H1; H2-H6 use the lowercase tag.
+    const testidSuffix = tag === 'h1' ? 'title' : tag;
+    return (
+      <s.TitleText
+        as={tag}
+        id={id}
+        data-testid={id ? `text-${id}--${testidSuffix}` : undefined}
+        ref={(node: HTMLHeadingElement | null) => setRef(node)}
+        textStyles={textStylesTitle}
+        tabIndex={tabIndex}
+        iconAlign={iconAlign}
+        style={
+          {
+            ...(legacyClasses ? convertClass(legacyClasses) : null),
+            ...inlineStyling,
+          } as React.CSSProperties
+        }
+        {...otherProps}
+      >
+        {children}
+      </s.TitleText>
+    );
+  }
+
+  switch (asUpper) {
     case textWrapperType.div:
       return (
         <s.DivText
@@ -163,26 +198,6 @@ const Text = forwardRef<HTMLElement, TextProps>(function Text(props, ref) {
         >
           {children}
         </s.DivText>
-      );
-    case textWrapperType.title:
-      return (
-        <s.TitleText
-          id={id}
-          data-testid={id ? `text-${id}--title` : undefined}
-          ref={(node: HTMLHeadingElement | null) => setRef(node)}
-          textStyles={textStylesTitle}
-          tabIndex={tabIndex}
-          iconAlign={iconAlign}
-          style={
-            {
-              ...(legacyClasses ? convertClass(legacyClasses) : null),
-              ...inlineStyling,
-            } as React.CSSProperties
-          }
-          {...otherProps}
-        >
-          {children}
-        </s.TitleText>
       );
     case textWrapperType.paragraph:
     default:

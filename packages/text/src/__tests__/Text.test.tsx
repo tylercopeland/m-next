@@ -79,6 +79,23 @@ describe('Text Component Backward Compatibility', () => {
     expect(screen.getByTestId('text-test--title')).toBeInTheDocument();
   });
 
+  // Audit finding #1 fix: Text now supports H2-H6 as section-heading semantics.
+  test('should render H2-H6 as the correct HTML tag', () => {
+    const cases: Array<'H2' | 'H3' | 'H4' | 'H5' | 'H6'> = ['H2', 'H3', 'H4', 'H5', 'H6'];
+    cases.forEach((as) => {
+      const { unmount } = render(
+        <Text id={`heading-${as}`} as={as}>
+          {as} heading
+        </Text>,
+      );
+      const lower = as.toLowerCase();
+      const el = screen.getByTestId(`text-heading-${as}--${lower}`);
+      expect(el).toBeInTheDocument();
+      expect(el.tagName.toLowerCase()).toBe(lower);
+      unmount();
+    });
+  });
+
   // Test 3.1: Box Component Styling
   test('should correctly apply styles from both textStyles and reflexboxSXProp for DIV variant', () => {
     render(
