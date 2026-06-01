@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { forwardRef, useState, useMemo, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { ValidationMessage } from '@m-next/validation';
 import Button from '@m-next/button';
@@ -12,7 +12,22 @@ import * as s from './Signature.styles';
 import './signatureStyles.css';
 import { SignatureModalDialog } from './SignatureModalDialog';
 
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set<string>();
+  return (key: string, message: string) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
 const propTypes = {
+  /** Optional. Auto-generated when not provided. */
+  id: PropTypes.string,
   disabled: PropTypes.bool,
   visible: PropTypes.bool,
   data: PropTypes.instanceOf(Object),
@@ -42,6 +57,8 @@ interface SignatureModel {
 }
 
 interface SignatureProps {
+  /** Optional. Auto-generated when not provided. */
+  id?: string;
   disabled: boolean,
   visible?: boolean,
   data?: SignatureModel,
@@ -57,9 +74,91 @@ interface SignatureProps {
   onAccept?: () => void,
   onCancel?: () => void,
   onUpload?: (documentId: string, data: FormData) => Promise<{ data: SignatureModel }>,
+
+  // Soft-shimmed legacy props
+  /** @deprecated Use the React forwardRef API — pass `ref` directly. */
+  forwardRef?: React.Ref<HTMLDivElement> | null;
+
+  // Silently ignored legacy ghosts
+  /** @deprecated No longer has any effect — V4 design is always on. */
+  isV4Design?: boolean;
+  /** @deprecated Use `className`. */
+  legacyClass?: string | null;
+  /** @deprecated No longer has any effect. */
+  displayAuto?: boolean;
+  /** @deprecated No longer has any effect. */
+  compactStyle?: boolean;
+  /** @deprecated No longer has any effect. */
+  hidden?: boolean;
 }
 
-function Signature({ disabled, visible = true, data, acceptCaption, cancelCaption, isMobile = false, hideCancel, displayPreferences, label, placeholder, panelName, isSignable = true, onAccept, onCancel, onUpload }: SignatureProps) {
+/**
+ * Signature — captures a signature via either a draw-on-canvas or
+ * camera-capture flow. Renders a placeholder + open-modal trigger, then
+ * shows the result + sign-again affordance once a signature exists.
+ *
+ * `isMobile` kept as a real prop — load-bearing for the modal capture flow.
+ */
+const Signature = forwardRef<HTMLDivElement, SignatureProps>(function Signature(props, ref) {
+  const {
+    id: idProp,
+    disabled,
+    visible = true,
+    data,
+    acceptCaption,
+    cancelCaption,
+    isMobile = false,
+    hideCancel,
+    displayPreferences,
+    label,
+    placeholder,
+    panelName,
+    isSignable = true,
+    onAccept,
+    onCancel,
+    onUpload,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+    hidden: _hidden,
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef<string | null>(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-signature-${++autoIdCounter}`;
+  }
+  // eslint-disable-next-line no-unused-vars
+  const _autoId = idProp ?? internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'signature-forwardRef-prop',
+      '@m-next/signature: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // Chain modern ref + legacy forwardRef prop. The ref is accepted for API
+  // consistency but is not currently wired to a DOM element — Signature's
+  // root is conditional on `visible` so a stable target doesn't exist.
+  useEffect(() => {
+    const assign = (target: typeof ref | typeof legacyForwardRef) => {
+      if (!target) return;
+      if (typeof target === 'function') {
+        target(null);
+      }
+    };
+    assign(ref);
+    assign(legacyForwardRef);
+  }, [ref, legacyForwardRef]);
+
   const [acceptInProgress, setAcceptInProgress] = useState(false);
   const [signModalOpen, setSignModalOpen] = useState(false);
   const [errorModalOpen, setErrorModalOpen] = useState(false);
@@ -345,7 +444,8 @@ function Signature({ disabled, visible = true, data, acceptCaption, cancelCaptio
       </>
     ) : null
   );
-}
+});
 
-Signature.propTypes = propTypes;
+Signature.displayName = 'Signature';
+(Signature as unknown as { propTypes: typeof propTypes }).propTypes = propTypes;
 export default Signature;

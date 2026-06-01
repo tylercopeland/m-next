@@ -38,6 +38,10 @@ const M_NEXT_PACKAGES = [
   // DatePicker itself deferred — its prop surface needs careful per-prop
   // assessment, not mechanical soft-shimming.
   'datepicker',
+  // Phase 3 cleaned: wave 1 (small)
+  'gallery', 'app-activation-banner', 'app-activation-overlay',
+  // Phase 3 cleaned: wave 2 (medium)
+  'attachments', 'map', 'signature',
 ];
 
 const stories = M_NEXT_PACKAGES.flatMap((pkg) => [

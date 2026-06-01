@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { forwardRef, useState, useEffect, useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import WebMercatorViewport from 'viewport-mercator-project';
 import ReactMapGL, { Marker, Popup, FlyToInterpolator, NavigationControl } from 'react-map-gl';
@@ -11,7 +11,22 @@ import '../mapStyle.css';
 import MapboxApi from './mapbox-api';
 import MapboxAccessToken from './token';
 
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
 const propTypes = {
+  /** Optional. Auto-generated when not provided. */
+  id: PropTypes.string,
   addressList: PropTypes.arrayOf(PropTypes.instanceOf(Object)),
   geometry: PropTypes.instanceOf(Object),
   geocodings: PropTypes.arrayOf(PropTypes.instanceOf(Object)),
@@ -22,16 +37,58 @@ const propTypes = {
   componentVersion: PropTypes.string,
 };
 
-function Mapbox({
-  addressList,
-  geometry,
-  geocodings,
-  size,
-  onError,
-  zoom = 3,
-  showPlaceholder = false,
-  componentVersion = '0.0.0',
-}) {
+/**
+ * Mapbox — react-map-gl-backed interactive map. Plots markers for addresses
+ * in `addressList` and fits the viewport to their bounding box. Optional
+ * placeholder mode for when address data isn't ready.
+ *
+ * The eslint-disables at the top of this file are real a11y findings on
+ * marker/popup click surfaces — flagged for a follow-up wave.
+ *
+ * Note: ref currently is accepted but not wired to a DOM element — ReactMapGL
+ * doesn't forward refs uniformly. The legacy `forwardRef` prop warns once
+ * and is otherwise a no-op.
+ */
+const Mapbox = forwardRef(function Mapbox(props, ref) {
+  const {
+    id: idProp,
+    addressList,
+    geometry,
+    geocodings,
+    size,
+    onError,
+    zoom = 3,
+    showPlaceholder = false,
+    componentVersion = '0.0.0',
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+    hidden: _hidden,
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-mapbox-${++autoIdCounter}`;
+  }
+  // eslint-disable-next-line no-unused-vars
+  const _autoId = idProp ?? internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'mapbox-forwardRef-prop',
+      '@m-next/map: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
   // Early return if required props are missing
   if (!size || (!addressList && !showPlaceholder)) {
     return null;
@@ -611,7 +668,8 @@ function Mapbox({
   );
 
   return mapData.markerCoordinates || showPlaceholder ? map() : null;
-}
+});
 
+Mapbox.displayName = 'Mapbox';
 Mapbox.propTypes = propTypes;
 export default Mapbox;

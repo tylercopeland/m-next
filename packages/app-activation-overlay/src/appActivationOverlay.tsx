@@ -1,8 +1,21 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { forwardRef, useState, useEffect, useRef } from 'react';
 import SvgIcon, { type SvgIconName } from '@m-next/svg-icon';
 import Button from '@m-next/button';
 import CheckWithBackground from './CheckWithBackground';
 import * as s from './appActivationOverlay.styles';
+
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set<string>();
+  return (key: string, message: string) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
 
 export interface AppActivationOverlayCTA {
   id: string;
@@ -16,6 +29,7 @@ export interface AppActivationOverlayBulletPoint {
 }
 
 export interface AppActivationOverlayProps {
+  /** Optional. Auto-generated when not provided. */
   id?: string;
   iconName?: SvgIconName;
   title: string;
@@ -30,164 +44,239 @@ export interface AppActivationOverlayProps {
   onClose?: () => void;
   image?: React.ReactNode;
   topOffset?: number;
+
+  // Soft-shimmed legacy props
+  /** @deprecated Use the React forwardRef API — pass `ref` directly. */
+  forwardRef?: React.Ref<HTMLDivElement> | null;
+
+  // Silently ignored legacy ghosts
+  /** @deprecated No longer has any effect — V4 design is always on. */
+  isV4Design?: boolean;
+  /** @deprecated No longer has any effect — use CSS media queries. */
+  isMobile?: boolean;
+  /** @deprecated Use `className`. */
+  legacyClass?: string | null;
+  /** @deprecated No longer has any effect. */
+  displayAuto?: boolean;
+  /** @deprecated No longer has any effect. */
+  compactStyle?: boolean;
+  /** @deprecated No longer has any effect. */
+  hidden?: boolean;
+
+  [key: string]: unknown;
 }
 
-function AppActivationOverlay({
-  id = 'app-activation-overlay',
-  iconName,
-  title,
-  description,
-  sectionTitle,
-  bulletPoints = [],
-  primaryCTA,
-  secondaryCTA,
-  showPrimaryCTA = true,
-  showSecondaryCTA = true,
-  dismissible = true,
-  onClose,
-  image,
-  topOffset: topOffsetProp,
-}: AppActivationOverlayProps) {
-  const hasPrimary = showPrimaryCTA && primaryCTA;
-  const hasSecondary = showSecondaryCTA && secondaryCTA;
+/**
+ * AppActivationOverlay — modal-style banner for app-activation flows. Renders
+ * a full-viewport backdrop and a centered card with title, description,
+ * bullet points, up to two CTA buttons, and optional right-side illustration.
+ */
+const AppActivationOverlay = forwardRef<HTMLDivElement, AppActivationOverlayProps>(
+  function AppActivationOverlay(props, ref) {
+    const {
+      id: idProp,
+      iconName,
+      title,
+      description,
+      sectionTitle,
+      bulletPoints = [],
+      primaryCTA,
+      secondaryCTA,
+      showPrimaryCTA = true,
+      showSecondaryCTA = true,
+      dismissible = true,
+      onClose,
+      image,
+      topOffset: topOffsetProp,
 
-  const [isMobile, setIsMobile] = useState(false);
-  const [leftOffset, setLeftOffset] = useState(0);
-  const topOffset = topOffsetProp ?? 24;
-  const overlayRef = useRef<HTMLDivElement>(null);
+      // Soft-shimmed legacy props
+      forwardRef: legacyForwardRef,
 
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
+      // Silently ignored legacy ghosts
+      isV4Design: _isV4Design,
+      isMobile: _isMobile,
+      legacyClass: _legacyClass,
+      displayAuto: _displayAuto,
+      compactStyle: _compactStyle,
+      hidden: _hidden,
 
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
+      ...rest
+    } = props;
 
-    return () => window.removeEventListener('resize', checkScreenSize);
-  }, []);
+    // Auto-generate id if not provided.
+    const internalIdRef = useRef<string | null>(null);
+    if (internalIdRef.current === null) {
+      // eslint-disable-next-line no-plusplus
+      internalIdRef.current = `m-next-app-activation-overlay-${++autoIdCounter}`;
+    }
+    const id = idProp ?? internalIdRef.current;
 
-  // Calculate left offset (for left nav)
-  useEffect(() => {
-    const nav = document.getElementById('platform-nav');
-    const updateOffset = () => setLeftOffset(nav ? nav.offsetWidth : 0);
-
-    updateOffset();
-
-    if (nav) {
-      const observer = new ResizeObserver(updateOffset);
-      observer.observe(nav);
-      return () => observer.disconnect();
+    if (legacyForwardRef) {
+      warnOnce(
+        'app-activation-overlay-forwardRef-prop',
+        '@m-next/app-activation-overlay: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+      );
     }
 
-    return undefined;
-  }, []);
+    const hasPrimary = showPrimaryCTA && primaryCTA;
+    const hasSecondary = showSecondaryCTA && secondaryCTA;
 
-  const ctaButtonStyle = {
-    padding: isMobile ? '12px 24px' : '8px 16px',
-    borderRadius: isMobile ? '70px !important' : '38px',
-    fontFamily: 'Source Sans Pro',
-    fontWeight: 600,
-    fontSize: isMobile ? '16px' : '14px',
-    lineHeight: isMobile ? '24px' : '16px',
-  };
+    const [isViewportMobile, setIsViewportMobile] = useState(false);
+    const [leftOffset, setLeftOffset] = useState(0);
+    const topOffset = topOffsetProp ?? 24;
+    const overlayRef = useRef<HTMLDivElement>(null);
 
-  return (
-    <s.OverlayBackdrop
-      ref={overlayRef}
-      id={`${id}-backdrop`}
-      data-testid='overlay-backdrop'
-      role='dialog'
-      aria-modal='true'
-      aria-labelledby={`${id}-title`}
-      aria-describedby={`${id}-description`}
-      style={{ left: leftOffset, width: `calc(100vw - ${leftOffset}px)` }}
-    >
-      <s.BannerCard id={id} data-testid='banner-card' style={{ marginTop: topOffset }}>
-        <s.ContentWrapper>
-          {/* Left Side - Content */}
-          <s.LeftContent>
-            {/* Icon */}
-            {iconName && (
-              <s.IconWrapper data-testid='icon-wrapper'>
-                <SvgIcon name={iconName} size={24} color='#0D71C8' />
-              </s.IconWrapper>
-            )}
+    // Chain modern ref + legacy forwardRef prop onto the rendered backdrop.
+    useEffect(() => {
+      const assign = (target: typeof ref | typeof legacyForwardRef) => {
+        if (!target) return;
+        if (typeof target === 'function') {
+          target(overlayRef.current);
+        } else {
+          // eslint-disable-next-line no-param-reassign
+          (target as React.MutableRefObject<HTMLDivElement | null>).current = overlayRef.current;
+        }
+      };
+      assign(ref);
+      assign(legacyForwardRef);
+    }, [ref, legacyForwardRef]);
 
-            {/* Inner Content */}
-            <s.InnerWrapper>
-              {/* Title and Description */}
-              <s.TextSection>
-                <s.Title id={`${id}-title`} data-testid='title'>
-                  {title}
-                </s.Title>
-                <s.Description id={`${id}-description`} data-testid='description'>
-                  {description}
-                </s.Description>
-              </s.TextSection>
+    useEffect(() => {
+      const checkScreenSize = () => {
+        setIsViewportMobile(window.innerWidth <= 768);
+      };
 
-              {/* Optional Section Title */}
-              {sectionTitle && <s.SectionTitle data-testid='section-title'>{sectionTitle}</s.SectionTitle>}
+      checkScreenSize();
+      window.addEventListener('resize', checkScreenSize);
 
-              {/* Bullet Points */}
-              {bulletPoints && bulletPoints.length > 0 && (
-                <s.BulletPointsContainer data-testid='bullet-points'>
-                  {bulletPoints.map((point) => (
-                    <s.BulletPointRow key={point.id}>
-                      <s.CheckIconWrapper>
-                        <CheckWithBackground />
-                      </s.CheckIconWrapper>
-                      <s.BulletPointText>{point.text}</s.BulletPointText>
-                    </s.BulletPointRow>
-                  ))}
-                </s.BulletPointsContainer>
+      return () => window.removeEventListener('resize', checkScreenSize);
+    }, []);
+
+    // Calculate left offset (for left nav)
+    useEffect(() => {
+      const nav = document.getElementById('platform-nav');
+      const updateOffset = () => setLeftOffset(nav ? nav.offsetWidth : 0);
+
+      updateOffset();
+
+      if (nav) {
+        const observer = new ResizeObserver(updateOffset);
+        observer.observe(nav);
+        return () => observer.disconnect();
+      }
+
+      return undefined;
+    }, []);
+
+    const ctaButtonStyle = {
+      padding: isViewportMobile ? '12px 24px' : '8px 16px',
+      borderRadius: isViewportMobile ? '70px !important' : '38px',
+      fontFamily: 'Source Sans Pro',
+      fontWeight: 600,
+      fontSize: isViewportMobile ? '16px' : '14px',
+      lineHeight: isViewportMobile ? '24px' : '16px',
+    };
+
+    return (
+      <s.OverlayBackdrop
+        ref={overlayRef}
+        id={`${id}-backdrop`}
+        data-testid='overlay-backdrop'
+        role='dialog'
+        aria-modal='true'
+        aria-labelledby={`${id}-title`}
+        aria-describedby={`${id}-description`}
+        style={{ left: leftOffset, width: `calc(100vw - ${leftOffset}px)` }}
+        {...rest}
+      >
+        <s.BannerCard id={id} data-testid='banner-card' style={{ marginTop: topOffset }}>
+          <s.ContentWrapper>
+            {/* Left Side - Content */}
+            <s.LeftContent>
+              {/* Icon */}
+              {iconName && (
+                <s.IconWrapper data-testid='icon-wrapper'>
+                  <SvgIcon name={iconName} size={24} color='#0D71C8' />
+                </s.IconWrapper>
               )}
 
-              {/* Action Buttons */}
-              {(hasPrimary || hasSecondary) && (
-                <s.ButtonsContainer data-testid='buttons-container'>
-                  {hasPrimary && (
-                    <s.PrimaryButtonWrapper>
-                      <Button
-                        id={primaryCTA.id}
-                        value={primaryCTA.text}
-                        buttonStyle='primary'
-                        onClick={primaryCTA.onClick}
-                        style={ctaButtonStyle}
-                        borderRadius={ctaButtonStyle.borderRadius}
-                      />
-                    </s.PrimaryButtonWrapper>
-                  )}
-                  {hasSecondary && (
-                    <s.SecondaryButtonWrapper>
-                      <Button
-                        id={secondaryCTA.id}
-                        value={secondaryCTA.text}
-                        buttonStyle='ghost'
-                        onClick={secondaryCTA.onClick}
-                        style={ctaButtonStyle}
-                        borderRadius={ctaButtonStyle.borderRadius}
-                      />
-                    </s.SecondaryButtonWrapper>
-                  )}
-                </s.ButtonsContainer>
-              )}
-            </s.InnerWrapper>
-          </s.LeftContent>
+              {/* Inner Content */}
+              <s.InnerWrapper>
+                {/* Title and Description */}
+                <s.TextSection>
+                  <s.Title id={`${id}-title`} data-testid='title'>
+                    {title}
+                  </s.Title>
+                  <s.Description id={`${id}-description`} data-testid='description'>
+                    {description}
+                  </s.Description>
+                </s.TextSection>
 
-          {/* Right Side - Mockup/Illustration */}
-          {image && <s.RightContent data-testid='mockup-content'>{image}</s.RightContent>}
-        </s.ContentWrapper>
+                {/* Optional Section Title */}
+                {sectionTitle && <s.SectionTitle data-testid='section-title'>{sectionTitle}</s.SectionTitle>}
 
-        {/* Close Button */}
-        {dismissible && onClose && (
-          <s.CloseButton data-testid='close-button' onClick={onClose} aria-label='Close overlay'>
-            <SvgIcon name='x-icon' size={12} color='grey' />
-          </s.CloseButton>
-        )}
-      </s.BannerCard>
-    </s.OverlayBackdrop>
-  );
-}
+                {/* Bullet Points */}
+                {bulletPoints && bulletPoints.length > 0 && (
+                  <s.BulletPointsContainer data-testid='bullet-points'>
+                    {bulletPoints.map((point) => (
+                      <s.BulletPointRow key={point.id}>
+                        <s.CheckIconWrapper>
+                          <CheckWithBackground />
+                        </s.CheckIconWrapper>
+                        <s.BulletPointText>{point.text}</s.BulletPointText>
+                      </s.BulletPointRow>
+                    ))}
+                  </s.BulletPointsContainer>
+                )}
+
+                {/* Action Buttons */}
+                {(hasPrimary || hasSecondary) && (
+                  <s.ButtonsContainer data-testid='buttons-container'>
+                    {hasPrimary && (
+                      <s.PrimaryButtonWrapper>
+                        <Button
+                          id={primaryCTA.id}
+                          value={primaryCTA.text}
+                          buttonStyle='primary'
+                          onClick={primaryCTA.onClick}
+                          style={ctaButtonStyle}
+                          borderRadius={ctaButtonStyle.borderRadius}
+                        />
+                      </s.PrimaryButtonWrapper>
+                    )}
+                    {hasSecondary && (
+                      <s.SecondaryButtonWrapper>
+                        <Button
+                          id={secondaryCTA.id}
+                          value={secondaryCTA.text}
+                          buttonStyle='ghost'
+                          onClick={secondaryCTA.onClick}
+                          style={ctaButtonStyle}
+                          borderRadius={ctaButtonStyle.borderRadius}
+                        />
+                      </s.SecondaryButtonWrapper>
+                    )}
+                  </s.ButtonsContainer>
+                )}
+              </s.InnerWrapper>
+            </s.LeftContent>
+
+            {/* Right Side - Mockup/Illustration */}
+            {image && <s.RightContent data-testid='mockup-content'>{image}</s.RightContent>}
+          </s.ContentWrapper>
+
+          {/* Close Button */}
+          {dismissible && onClose && (
+            <s.CloseButton data-testid='close-button' onClick={onClose} aria-label='Close overlay'>
+              <SvgIcon name='x-icon' size={12} color='grey' />
+            </s.CloseButton>
+          )}
+        </s.BannerCard>
+      </s.OverlayBackdrop>
+    );
+  },
+);
+
+AppActivationOverlay.displayName = 'AppActivationOverlay';
 
 export default AppActivationOverlay;
