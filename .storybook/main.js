@@ -46,6 +46,8 @@ const M_NEXT_PACKAGES = [
   // - attachments sub-components already covered by 'attachments' above
   // - typeography is deprecated, fires a one-time console.warn on render
   'sync-widget', 'html-editor', 'typeography',
+  // New design-system packages extracted from MethodUI shells
+  'sidebar',
 ];
 
 const stories = M_NEXT_PACKAGES.flatMap((pkg) => [

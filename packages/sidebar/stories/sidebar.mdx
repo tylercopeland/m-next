@@ -1,0 +1,122 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title='m-next/Components/Navigation/Sidebar/Docs' />
+
+# Sidebar
+
+Vertical app navigation. Compound-component API: the consumer composes the
+shell with `Sidebar.Header`, `Sidebar.Body`, `Sidebar.Group`, `Sidebar.Item`,
+and `Sidebar.Footer`.
+
+## Intent contract
+
+**Sidebar is a layout shell, not a navigation engine.** It owns:
+
+- The visual chrome — background, border, width, open/closed transition.
+- Slot containers (Header / Body / Footer) and a Group/Item primitive set.
+- Item appearance: active state, disabled state, hover/focus styling, icon
+  and badge slots, semantic `aria-current="page"` when active.
+
+It explicitly does NOT own:
+
+- Route definitions or routing logic — the consumer wires `Item`'s `onClick`
+  or `href` to whatever router they use.
+- The open/closed state — controlled (`isOpen` + `onToggle`). The consumer
+  decides when and how to toggle.
+- Mobile-responsive behavior — defer to the consumer's CSS media queries in
+  v1. The collapsed state (`isOpen={false}`) is a generic narrow-mode that
+  can be triggered by either user action or viewport-based logic.
+- Persistence of open state between sessions — caller's concern.
+
+## When to reach for Sidebar
+
+- You're building an app shell (workspace, admin panel, dashboard).
+- You need a left rail with grouped navigation items.
+- You want the consumer to compose what's in the header/footer rather than
+  pass props for each piece.
+
+If you want a temporary slide-out panel (modal-ish), use
+[@m-next/drawer](../?path=/docs/m-next-components-overlay-drawer--docs)
+instead. Sidebar is for persistent app navigation; Drawer is for transient
+content.
+
+## Composition
+
+```jsx
+import Sidebar from '@m-next/sidebar';
+
+<Sidebar isOpen={open}>
+  <Sidebar.Header>
+    <Logo />
+  </Sidebar.Header>
+
+  <Sidebar.Body>
+    <Sidebar.Group title='Workspace'>
+      <Sidebar.Item icon={<DashboardIcon />} active onClick={goToDashboard}>
+        Dashboard
+      </Sidebar.Item>
+      <Sidebar.Item icon={<CustomersIcon />} onClick={goToCustomers}>
+        Customers
+      </Sidebar.Item>
+      <Sidebar.Item icon={<PaymentsIcon />} badge='3' onClick={goToPayments}>
+        Payments
+      </Sidebar.Item>
+    </Sidebar.Group>
+
+    <Sidebar.Group title='Tools' collapsible defaultExpanded={false}>
+      <Sidebar.Item icon={<BuilderIcon />} onClick={goToBuilder}>
+        App Builder
+      </Sidebar.Item>
+    </Sidebar.Group>
+  </Sidebar.Body>
+
+  <Sidebar.Footer>
+    <UserMenu />
+  </Sidebar.Footer>
+</Sidebar>
+```
+
+## Why compound components, not a data-driven API
+
+Other m-next components (Tabs, ButtonGroup, InsightCard) use data-driven
+APIs — pass an array of items. For shells, that pattern doesn't scale:
+every consumer wants something different in the header (logo, badge, search,
+breadcrumb), footer (user menu, version string, theme switcher), and even
+inside an item (multi-line, custom badge, secondary text).
+
+A compound API gives the consumer the flexibility of arbitrary JSX inside
+each slot, while the dot-notation exports (`Sidebar.Header`, `Sidebar.Item`)
+make the navigation primitives visually distinct from raw children at the
+call site.
+
+## Polymorphic items
+
+`Sidebar.Item` defaults to `<button>`. Pass `as='a'` (or `as={NextLink}` /
+`as={RouterLink}`) to render as a link.
+
+```jsx
+<Sidebar.Item as='a' href='/dashboard' icon={<DashboardIcon />} active>
+  Dashboard
+</Sidebar.Item>
+```
+
+When `href` is provided without an explicit `as`, the item auto-renders as
+an `<a>`.
+
+## Active state
+
+Set `active={true}` on the current page's item. The component sets
+`aria-current="page"` automatically, which screen readers announce.
+
+## Collapsed state
+
+`isOpen={false}` narrows the sidebar to `collapsedWidth` (default `56px`).
+Labels overflow-hide; icons stay visible. The consumer is responsible for
+deciding when to flip the prop — there's no built-in collapse handle in v1.
+
+## Roadmap
+
+- v2: built-in collapse handle in `Sidebar.Header`.
+- v2: mobile-responsive drawer mode (overlays content rather than pushing it).
+- v2: dark theme variant.
+- v2: keyboard-driven group navigation (arrow keys move between items).
