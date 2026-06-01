@@ -1,0 +1,94 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title='m-next/Components/Navigation/AppBar/Docs' />
+
+# AppBar
+
+Horizontal top chrome for an app shell. Compound-component API: the
+consumer composes the bar with `AppBar.Start`, `AppBar.Center`, and
+`AppBar.End`.
+
+## Intent contract
+
+**AppBar is a layout shell, not a navigation engine.** It owns:
+
+- The visual chrome — background, optional border, height, sticky behavior.
+- Three flex-row slot containers (Start / Center / End) with sane spacing
+  defaults.
+- The `<header>` landmark + `aria-label`.
+
+It explicitly does NOT own:
+
+- Routing, search behavior, notification logic, user-menu UX — every slot
+  takes arbitrary children.
+- A built-in logo, breadcrumb, or search input — the consumer brings its
+  own primitives.
+- Mobile drawer / hamburger logic — consumer wires the toggle button in
+  `AppBar.Start`.
+
+## Composition
+
+```jsx
+import AppBar from '@m-next/app-bar';
+
+<AppBar sticky>
+  <AppBar.Start>
+    <IconButton icon='menu' onClick={toggleSidebar} />
+    <Logo />
+    <Breadcrumbs ... />
+  </AppBar.Start>
+
+  <AppBar.Center>
+    <SearchInput placeholder='Search…' value={q} onChange={setQ} />
+  </AppBar.Center>
+
+  <AppBar.End>
+    <IconButton icon='help' aria-label='Help' />
+    <IconButton icon='bell' aria-label='Notifications' />
+    <UserAvatar onClick={openUserMenu} />
+  </AppBar.End>
+</AppBar>;
+```
+
+## Slot semantics
+
+| Slot | Flex behavior | Typical content |
+|---|---|---|
+| `AppBar.Start` | flex-shrink: 0 | Logo, sidebar-toggle, breadcrumbs |
+| `AppBar.Center` | flex: 1, min-width: 0 | Search input, page title, tab strip |
+| `AppBar.End` | margin-left: auto, flex-shrink: 0 | Help, notifications, user menu |
+
+`AppBar.Center` has `min-width: 0` so its children (typically a search
+input or long page title) shrink under pressure instead of pushing Start/End
+items off-screen.
+
+## Props
+
+- `height` — bar height in pixels. Default `56`.
+- `borderless` — omit the bottom `1px` border. Useful when the bar sits on
+  a layered surface where a border would look doubled.
+- `sticky` — set `position: sticky; top: 0; z-index: 10` so the bar pins
+  to the viewport top while content scrolls underneath.
+- `ariaLabel` — overrides the default `'Top navigation'` landmark label.
+  Override when multiple `<header>` landmarks exist on the page.
+
+## Why compound components, not a `start/center/end` ReactNode prop API
+
+The data-driven alternative (`<AppBar start={...} end={...} />`) would be
+expressive, but the compound form makes the structure visible at the call
+site without expanding props on hover. It also lets future slots
+(`AppBar.Notification`, `AppBar.SkipLink`) be added without surface-level
+breaking changes.
+
+## Pairs well with
+
+- [@m-next/sidebar](../?path=/docs/m-next-components-navigation-sidebar-docs)
+  for the full app-shell pattern: `<Sidebar />` on the left, `<AppBar />`
+  on top, your routed content in the middle.
+
+## Roadmap
+
+- v2: a built-in `AppBar.MobileMenu` slot that hides automatically above a
+  consumer-configurable breakpoint.
+- v2: dark theme variant.
+- v2: optional shadow on scroll (sticky + scrolled-state).
