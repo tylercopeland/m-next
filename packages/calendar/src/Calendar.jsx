@@ -2,7 +2,7 @@
 /*  eslint-disable no-param-reassign */
 /* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable no-console */
-import React, { useEffect, useRef, useState, useMemo, useCallback } from 'react';
+import React, { forwardRef, useEffect, useRef, useState, useMemo, useCallback } from 'react';
 import * as ReactDOM from 'react-dom';
 import {
   ScheduleComponent,
@@ -66,6 +66,19 @@ const RESOURCE_DISPLAY = {
 
 registerLicense('Ngo9BigBOggjHTQxAR8/V1NGaF5cXmdCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdgWXdfeHVdQ2ZdWUx+W0Q=');
 
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
 // Custom hook for persisting values to localStorage
 const usePersistLocalStorage = (userIdentity, id) =>
   useCallback(
@@ -79,9 +92,26 @@ const usePersistLocalStorage = (userIdentity, id) =>
 // Standard views (Day, Week, Month, etc.) don't have lanes, so we deduplicate cloned events.
 const RESOURCE_GROUPED_VIEWS = new Set(['DayVertical', 'WeekVertical', 'DayHorizontal', 'WeekHorizontal']);
 
-function Calendar(props) {
+/**
+ * Calendar — Syncfusion-powered scheduling component with resources, drag/drop,
+ * waitlist sidebar, and persisted view settings. Wraps `@syncfusion/ej2-react-schedule`.
+ *
+ * Note: many props that look legacy are LOAD-BEARING and remain real:
+ *  - `isMobile` drives mobile/adaptive UI, modal positioning, toolbar icons,
+ *    waitlist disabling, and Safari/iOS code paths
+ *  - `schedulerRef` is the established way callers reach the underlying
+ *    Syncfusion scheduler instance; it's a real contract, not a ghost
+ *  - `userIdentity`, `disableInternalPersistence`, `displayOptions`,
+ *    `calendarSettings`, `sidebarVisibility` all drive real config branches
+ *
+ * The `id` prop is now optional — auto-generated as `m-next-calendar-${n}` when
+ * omitted, with the desktop menu button id (`calendar-desktop-open-menu-button-${id}`)
+ * and ScheduleComponent's `id={id}` deriving from the same auto-id so the DOM
+ * tree stays internally consistent.
+ */
+const Calendar = forwardRef(function Calendar(props, ref) {
   const {
-    id = null,
+    id: idProp = null,
     userIdentity = null,
     onAddEvent = null,
     eventCardMenu = [],
@@ -135,7 +165,54 @@ function Calendar(props) {
     version,
     disableInternalPersistence = false,
     height = null,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts (defensive acceptors so callers passing
+    // them don't error). isMobile is NOT a ghost — it's load-bearing above.
+    isV4Design: _isV4Design,
+    legacyClass: _legacyClass,
+    compactStyle: _compactStyle,
+    displayPreferences: _displayPreferences,
+    displayAuto: _displayAuto,
+    hidden: _hidden,
   } = props;
+
+  // Auto-generate id if not provided. The desktop menu button id and the
+  // ScheduleComponent's `id={id}` derive from this, so the DOM tree stays
+  // internally consistent.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-calendar-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'calendar-forwardRef-prop',
+      '@m-next/calendar: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // Chain modern ref + legacy forwardRef prop onto the rendered wrapper div
+  // (the outermost <div> of the return tree).
+  const rootRef = useRef(null);
+  useEffect(() => {
+    const assign = (target) => {
+      if (!target) return;
+      if (typeof target === 'function') {
+        target(rootRef.current);
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        target.current = rootRef.current;
+      }
+    };
+    assign(ref);
+    assign(legacyForwardRef);
+  }, [ref, legacyForwardRef]);
+
   const scheduler = useRef(null);
   const localSettings = useMemo(() => getLocalStorageSettings(id, userIdentity), [id, userIdentity]);
   const persistToLocalStorage = usePersistLocalStorage(userIdentity, id);
@@ -1046,7 +1123,7 @@ function Calendar(props) {
   );
 
   return (
-    <div>
+    <div ref={rootRef}>
       {caption && !hideCaption && (
         <Caption
           id={`${id}-caption`}
@@ -1134,7 +1211,7 @@ function Calendar(props) {
       )}
     </div>
   );
-}
+});
 
 const view = PropTypes.shape({
   horizontal: PropTypes.bool,
@@ -1218,5 +1295,6 @@ const propTypes = {
   height: PropTypes.string,
 };
 
+Calendar.displayName = 'Calendar';
 Calendar.propTypes = propTypes;
 export default Calendar;

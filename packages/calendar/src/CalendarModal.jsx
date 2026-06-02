@@ -1,5 +1,5 @@
 /* eslint-disable react/no-danger */
-import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import React, { forwardRef, useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import SimpleBar from 'simplebar-react';
 import SvgIcon from '@m-next/svg-icon';
@@ -8,24 +8,99 @@ import Button from '@m-next/button';
 import ButtonGroup from '@m-next/button-group';
 import * as s from './Calendar.styles';
 
-function CalendarModal({
-  event,
-  isVisible,
-  isMobile,
-  alignVWith,
-  alignHWith,
-  dateSection,
-  onClose,
-  eventCardMenu,
-  hoverCard,
-  isWaitlistEvent,
-}) {
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
+/**
+ * CalendarModal — quick-info popup for calendar events (header + content +
+ * footer). Positions itself absolutely against a row + the scheduler element.
+ *
+ * Note: many props that look legacy are LOAD-BEARING and remain real:
+ *  - `isMobile` drives header/footer styles, popup height/radius CSS vars,
+ *    and force-open-up behavior of action buttons
+ *  - `alignVWith` / `alignHWith` drive absolute positioning math
+ *
+ * The root is conditional — when `isVisible` is false the component returns
+ * `false` (no DOM). Following the Mapbox no-op pattern, refs are still
+ * accepted but won't be assignable until/unless the modal is open; the
+ * useEffect updates them every render to the current wrapperRef target
+ * (null when closed).
+ */
+const CalendarModal = forwardRef(function CalendarModal(props, ref) {
+  const {
+    event,
+    isVisible,
+    isMobile,
+    alignVWith,
+    alignHWith,
+    dateSection,
+    onClose,
+    eventCardMenu,
+    hoverCard,
+    isWaitlistEvent,
+    id: idProp,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts. isMobile is NOT a ghost — load-bearing above.
+    isV4Design: _isV4Design,
+    legacyClass: _legacyClass,
+    compactStyle: _compactStyle,
+    displayPreferences: _displayPreferences,
+    displayAuto: _displayAuto,
+    hidden: _hidden,
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-calendar-modal-${++autoIdCounter}`;
+  }
+  // eslint-disable-next-line no-unused-vars
+  const id = idProp ?? internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'calendar-modal-forwardRef-prop',
+      '@m-next/calendar: `forwardRef` prop on CalendarModal is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
   document.documentElement.style.setProperty('--popup-radius', '6px');
 
   const [isModalVisible, setIsModalVisible] = useState(isVisible);
   const [wrapperStyle, setWrapperStyle] = useState({ position: 'absolute' });
 
   const wrapperRef = useRef(null);
+
+  // Chain modern ref + legacy forwardRef prop onto wrapperRef. When the modal
+  // is not rendered (isVisible false), wrapperRef.current is null — refs are
+  // updated to null too (Mapbox no-op pattern).
+  useEffect(() => {
+    const assign = (target) => {
+      if (!target) return;
+      if (typeof target === 'function') {
+        target(wrapperRef.current);
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        target.current = wrapperRef.current;
+      }
+    };
+    assign(ref);
+    assign(legacyForwardRef);
+  });
 
   const handleClickOutside = useCallback(
     (evt) => {
@@ -86,7 +161,7 @@ function CalendarModal({
       </div>
     )
   );
-}
+});
 
 function CalendarModalHeader({ event, isMobile, onClose, showTitle }) {
   return showTitle ? (
@@ -306,7 +381,10 @@ CalendarModalFooter.propTypes = {
   closePopup: PropTypes.func,
 };
 
+CalendarModal.displayName = 'CalendarModal';
 CalendarModal.propTypes = {
+  /** Optional. Auto-generated when not provided. */
+  id: PropTypes.string,
   event: PropTypes.instanceOf(Object),
   isMobile: PropTypes.bool,
   isVisible: PropTypes.bool,

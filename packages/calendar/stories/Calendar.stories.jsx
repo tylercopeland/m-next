@@ -4,7 +4,7 @@ import { format, addDays, addHours, subDays } from 'date-fns';
 import { Calendar } from '../src/index';
 
 export default {
-  title: 'Components/Calendar',
+  title: 'm-next/Components/Display/Calendar',
   component: Calendar,
   parameters: {
     layout: 'fullscreen',

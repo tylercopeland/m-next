@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { forwardRef, useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { removeClass, addClass } from '@syncfusion/ej2-base';
 import Grid, { GridEventNames } from '@m-next/grid';
@@ -15,7 +15,22 @@ import * as s from './CalendarWaitlist.styles';
 import WaitlistEmptyStateIcon from './WaitlistEmptyStateIcon';
 import { sendCalendarAnalytics, CalendarAnalyticsActions } from '../calendarServices/CalendarAnalytics';
 
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
 const propTypes = {
+  /** Optional. Auto-generated when not provided. */
+  id: PropTypes.string,
   scheduler: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.shape({ current: PropTypes.elementType }),
@@ -41,8 +56,23 @@ const propTypes = {
   methodIdentity: PropTypes.string,
 };
 
-function CalendarWaitlist(props) {
+/**
+ * CalendarWaitlist — Grid-based waitlist that drag-drops events onto the
+ * parent calendar's Syncfusion ScheduleComponent.
+ *
+ * Note: many props that look legacy are LOAD-BEARING and remain real:
+ *  - `isMobile` propagates to the embedded Grid and CalendarModal for
+ *    mobile-specific layout
+ *  - `scheduler` is the live ref to the parent's Syncfusion instance —
+ *    used for drop targeting and cell-detail lookups
+ *
+ * `id` is auto-generated as `m-next-calendar-waitlist-${n}` if not passed.
+ * The Grid still derives its DOM id from `calendarHelperModel.current.gridModel.id`,
+ * which is unrelated and remains intact.
+ */
+const CalendarWaitlist = forwardRef(function CalendarWaitlist(props, ref) {
   const {
+    id: idProp,
     scheduler = null,
     isMobile = false,
     calendarModel,
@@ -62,7 +92,50 @@ function CalendarWaitlist(props) {
     sendAnalytics = () => {}, // Default to a no-op function if not provided
     calendarId,
     methodIdentity,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts. isMobile is NOT a ghost — load-bearing above.
+    isV4Design: _isV4Design,
+    legacyClass: _legacyClass,
+    compactStyle: _compactStyle,
+    displayPreferences: _displayPreferences,
+    displayAuto: _displayAuto,
+    hidden: _hidden,
   } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-calendar-waitlist-${++autoIdCounter}`;
+  }
+  // eslint-disable-next-line no-unused-vars
+  const id = idProp ?? internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'calendar-waitlist-forwardRef-prop',
+      '@m-next/calendar: `forwardRef` prop on CalendarWaitlist is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // Chain modern ref + legacy forwardRef prop onto the rendered waitlistWrapper root.
+  const rootRef = useRef(null);
+  useEffect(() => {
+    const assign = (target) => {
+      if (!target) return;
+      if (typeof target === 'function') {
+        target(rootRef.current);
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        target.current = rootRef.current;
+      }
+    };
+    assign(ref);
+    assign(legacyForwardRef);
+  }, [ref, legacyForwardRef]);
 
   const previousEventTarget = useRef({});
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -321,7 +394,7 @@ function CalendarWaitlist(props) {
   );
 
   return (
-    <s.waitlistWrapper>
+    <s.waitlistWrapper ref={rootRef}>
       <Grid
         id={getGridElementId}
         isMobile={isMobile}
@@ -385,7 +458,8 @@ function CalendarWaitlist(props) {
       />
     </s.waitlistWrapper>
   );
-}
+});
 
+CalendarWaitlist.displayName = 'CalendarWaitlist';
 CalendarWaitlist.propTypes = propTypes;
 export default CalendarWaitlist;
