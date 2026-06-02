@@ -1,0 +1,159 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import * as AccordionStories from './accordion.stories';
+
+<Meta of={AccordionStories} />
+
+# Accordion
+
+Progressive-disclosure container. Use it when stacked content needs to expand
+and collapse independently — settings panels, FAQ-style lists, checkbox-driven
+nested option groups.
+
+Compound-component API: the consumer composes the panel list with
+`Accordion.Item` rather than passing a data array.
+
+## Intent contract
+
+**Accordion is a standalone disclosure primitive.** It owns:
+
+- The chrome — rounded-card border, white surface, hover/focus styling,
+  chevron rotation.
+- The expanded/collapsed state machine — uncontrolled (`defaultExpanded`)
+  or controlled (`expanded` + `onExpandedChange`).
+- The multi-vs-single semantic (`allowMultiple`) — defaults to radio-style
+  (opening one closes the others), opt into multi for settings-panel
+  patterns where the user wants several open at once.
+- Accessibility — header is a real `<button>` with `aria-expanded` and
+  `aria-controls`; body is a `<div role='region'>` with `aria-labelledby`
+  pointing at its header.
+
+It explicitly does NOT own:
+
+- The content inside an item — caller passes arbitrary JSX as children.
+- The shape of the title — `title` is `ReactNode`, so callers can pass a
+  rich header (icon + label + badge) if needed.
+- Routing, persistence, or analytics — wire `onExpandedChange` to whatever
+  the consumer needs.
+- Arrow-key navigation between items in v1 — native tab order moves between
+  headers, which is the WAI-ARIA recommended minimum. Arrow-key support is
+  on the v2 roadmap.
+
+## Why this exists separately from `Sidebar.Group collapsible`
+
+`@m-next/sidebar` already ships a `Sidebar.Group` with a `collapsible` flag.
+That's a **constrained accordion-like behavior scoped to nav groups** — it
+only renders one collapsing section at a time, inside a navigation rail,
+with the navy app-shell palette.
+
+`@m-next/accordion` is the **standalone primitive** for general content. It:
+
+- lives on white surfaces, not the navy nav rail;
+- accepts multiple items, with cross-item state coordination
+  (`allowMultiple`, controlled `expanded` array);
+- holds arbitrary content bodies, not just nav rows;
+- exists at the same level as Card and Container in the component taxonomy.
+
+They're peers with different intents. Don't reach for `Sidebar.Group` to
+build a settings panel; don't reach for `Accordion` to build a nav rail.
+
+## When to reach for Accordion
+
+- A settings page with several sections (general, security, billing).
+- An FAQ-style page where most users only care about a few questions.
+- A permissions matrix where each app's permission list is opt-in disclosed.
+- Any list-of-panels where the user benefits from collapsing what they're
+  not reading.
+
+If you only need to hide/show a single piece of content based on a toggle,
+use a plain conditional render — Accordion is overkill for a single panel.
+
+## Composition
+
+```jsx
+import Accordion from '@m-next/accordion';
+
+<Accordion allowMultiple defaultExpanded={['general']}>
+  <Accordion.Item id='general' title='General settings'>
+    <p>Workspace name, timezone, locale.</p>
+  </Accordion.Item>
+  <Accordion.Item id='security' title='Security'>
+    <p>Two-factor auth, session length, SSO.</p>
+  </Accordion.Item>
+  <Accordion.Item id='billing' title='Billing' disabled>
+    <p>Contact your admin.</p>
+  </Accordion.Item>
+</Accordion>;
+```
+
+## Controlled vs uncontrolled
+
+**Uncontrolled (default).** Pass `defaultExpanded` to seed initial state.
+The component owns state internally. `onExpandedChange` still fires so the
+consumer can observe.
+
+```jsx
+<Accordion defaultExpanded='general' onExpandedChange={trackAnalytics}>
+  ...
+</Accordion>
+```
+
+**Controlled.** Pass `expanded` and own the state in the parent. Common when
+the open/closed state is part of a wider form, persisted to localStorage, or
+synced to URL state.
+
+```jsx
+const [expanded, setExpanded] = useState(['security']);
+
+<Accordion expanded={expanded} onExpandedChange={setExpanded}>
+  ...
+</Accordion>;
+```
+
+Both `defaultExpanded` and `expanded` accept either a single id string or an
+array. A single string is a shorthand for `[string]` — useful for the
+common "exactly one starts open" case.
+
+## Multi-expand semantics
+
+`allowMultiple={false}` (the default) is **radio-style**: opening one item
+closes the others. Best for settings or FAQ patterns where the user is
+reading one thing at a time.
+
+`allowMultiple={true}` lets several items be open simultaneously. Best for
+checkbox-driven option groups where the user wants to see multiple sections
+of state at once.
+
+When toggling an already-open item:
+- Radio-style: closes it (state goes to `[]`).
+- Multi: removes it from the open set.
+
+## Accessibility
+
+- Each header is a real `<button type='button'>` with `aria-expanded` and
+  `aria-controls` pointing at its body panel id.
+- Each body is `<div role='region' aria-labelledby={headerId}>` — screen
+  readers announce it as a labelled section.
+- `disabled` items set `aria-disabled` and `disabled` on the button, and
+  ignore click handlers.
+- Native browser keyboard handling: `Tab` moves between headers, `Enter`
+  and `Space` toggle the focused header.
+
+## Visual treatment
+
+- Surface: white background with a `colors.grey.light` hairline border on
+  each item card, 6px rounded corners.
+- Header: 12-16px padding, left-aligned title, chevron right-aligned.
+  Chevron rotates 180° on expand with a 120ms ease.
+- Body: 16px padding, 1px `colors.grey.lighter` divider above the body —
+  only visible when expanded (no orphan rules in collapsed state).
+- Hover: very subtle `colors.grey.lightest` background on the header.
+- Disabled: 60% opacity, no hover, no toggle.
+
+## Roadmap
+
+- v2: arrow-key navigation between headers (`Home`, `End`, `ArrowDown`,
+  `ArrowUp`) per the WAI-ARIA Accordion pattern.
+- v2: height-animated expand/collapse.
+- v2: optional `Accordion.Header` / `Accordion.Body` split for callers who
+  need a custom header layout (e.g. a multi-line header with secondary text
+  or a trailing badge).
