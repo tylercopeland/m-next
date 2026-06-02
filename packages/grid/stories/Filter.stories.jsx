@@ -2,7 +2,7 @@ import React from 'react';
 import Filter from '../src/components/Header/Filter/Filter';
 
 export default {
-  title: '@m-next/grid/Filter',
+  title: 'm-next/Components/Display/Grid/Filter',
   component: Filter,
   parameters: {
     docs: {

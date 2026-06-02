@@ -54,6 +54,8 @@ const M_NEXT_PACKAGES = [
   'pagination', 'avatar-pill',
   // Wave 2 (large port + envelope additions)
   'accordion', 'image',
+  // Wave 4 — broken-inherited cluster (Syncfusion + Highcharts heavies)
+  'color-picker', 'chart-drilldown', 'chart', 'calendar', 'grid',
 ];
 
 const stories = M_NEXT_PACKAGES.flatMap((pkg) => [

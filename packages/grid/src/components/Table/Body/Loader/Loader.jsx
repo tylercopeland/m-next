@@ -1,9 +1,88 @@
-import React from 'react';
+import React, { forwardRef, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import * as s from './Loader.styles';
 
-function Loader() {
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
+const propTypes = {
+  /** Optional. Auto-generated when not provided. */
+  id: PropTypes.string,
+};
+
+/**
+ * Loader — animated "Loading content" spinner shown inside the grid body
+ * while data is fetching. Tiny presentational primitive; previously had no
+ * public props.
+ *
+ * Note: this is the public Loader from @m-next/grid. Many props that look
+ * legacy on the Grid family (isV4Design, isMobile, legacyClass, compactStyle)
+ * are load-bearing on the parent Grid component — they are silently ignored
+ * here only because this leaf component never used them.
+ */
+const Loader = forwardRef(function Loader(props, ref) {
+  const {
+    id: idProp,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+    hidden: _hidden,
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-grid-loader-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'grid-loader-forwardRef-prop',
+      '@m-next/grid: `forwardRef` prop is deprecated on <Loader>. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // Chain modern ref + legacy forwardRef prop onto the rendered root element.
+  const internalElRef = useRef(null);
+  useEffect(() => {
+    const assign = (target) => {
+      if (!target) return;
+      if (typeof target === 'function') {
+        target(internalElRef.current);
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        target.current = internalElRef.current;
+      }
+    };
+    assign(ref);
+    assign(legacyForwardRef);
+  }, [ref, legacyForwardRef]);
+
+  const setRef = (node) => {
+    internalElRef.current = node;
+  };
+
   return (
-    <s.Loader>
+    <s.Loader id={id} ref={setRef}>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
         <path
           d='M12,5.247c-0.414,0-0.75-0.336-0.75-0.75v-3.75c0-0.414,0.336-0.75,0.75-0.75s0.75,0.336,0.75,0.75v3.75
@@ -45,6 +124,9 @@ function Loader() {
       <s.LoadingText>Loading content</s.LoadingText>
     </s.Loader>
   );
-}
+});
+
+Loader.displayName = 'Loader';
+Loader.propTypes = propTypes;
 
 export default Loader;

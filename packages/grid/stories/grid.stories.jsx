@@ -18,7 +18,7 @@ import {
 
 export default {
   component: Grid,
-  title: 'm-one/Grid',
+  title: 'm-next/Components/Display/Grid',
   argTypes: {},
   // decorators: [withTests({ results })],
   parameters: {

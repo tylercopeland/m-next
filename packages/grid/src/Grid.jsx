@@ -1,5 +1,5 @@
 /* eslint-disable prefer-destructuring */
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { forwardRef, useState, useEffect, useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { useResizeDetector } from 'react-resize-detector';
 import Caption from '@m-next/caption';
@@ -21,7 +21,21 @@ import SearchHeader from './SearchHeader';
 import Column from './ColumnPropType';
 import { Row, DraggableRow } from './components/Table/Body/Row';
 
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
 const propTypes = {
+  /** Optional. Auto-generated when not provided. */
   id: PropTypes.string,
   disabled: PropTypes.bool,
   editable: PropTypes.bool,
@@ -244,12 +258,28 @@ const getRowCount = (data, rowStatuses) => {
   return count;
 };
 
-function Grid({
-  // ===== Core Identifiers =====
-  id = null,
+/**
+ * Grid — the full data-table surface for @m-next: virtualized rows, sorting,
+ * filtering (advanced chip filter), search, view selector, pagination,
+ * column show/hide + reorder, drag-to-reorder rows, inline editing, custom
+ * cell renderers, and mobile/responsive card-column collapse.
+ *
+ * Note: many props that LOOK legacy are LOAD-BEARING:
+ *   - `isMobile` drives column visibility (visibleOnMobile), card-column
+ *     collapse, pagination footer layout, and is forwarded into every Row.
+ *   - `isV4Design` is forwarded to SearchHeader and shapes the header chrome.
+ *   - `componentVersion` is a real prop passed into the scroller styling.
+ *   - `classes` drives controlStyle via classConverter (legacy class names).
+ *   - `compact` is a real layout flag on the outer Container.
+ * Do NOT treat these as ghosts.
+ */
+const Grid = forwardRef(function Grid(props, ref) {
+  const {
+    // ===== Core Identifiers =====
+    id: idProp = null,
 
-  // ===== Data & Content =====
-  data = null,
+    // ===== Data & Content =====
+    data = null,
   errorData = {},
   columns = [],
   enrichedData,
@@ -440,7 +470,36 @@ function Grid({
 
   // ===== Design Mode/Within App Builder =====
   isDesignMode = false,
-}) {
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts (none of the named legacy-looking props
+    // above are ghosts on Grid — see JSDoc. These are catch-alls for callers
+    // passing extras we don't recognize.)
+    displayAuto: _displayAuto,
+    legacyClass: _legacyClass,
+    compactStyle: _compactStyle,
+    hidden: _hidden,
+  } = props;
+
+  // Auto-generate id if not provided. The Grid threads `id` into dozens of
+  // child element ids (`${id}-TABLE-WRAPPER`, `${id}-SCROLLER`, etc.); auto-id
+  // keeps the DOM tree internally consistent when no id is given.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-grid-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'grid-forwardRef-prop',
+      '@m-next/grid: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
   // ===== Constants =====
   const extraSmallGridSize = 320;
   const queryAttr = 'data-rbd-draggable-id';
@@ -449,6 +508,32 @@ function Grid({
   const tableRef = useRef();
   const scrollerRef = useRef();
   const { width: containerWidth, ref: containerRef } = useResizeDetector();
+  // Track the live root DOM node so we can chain external refs (modern + legacy).
+  const rootElRef = useRef(null);
+  useEffect(() => {
+    const assign = (target) => {
+      if (!target) return;
+      if (typeof target === 'function') {
+        target(rootElRef.current);
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        target.current = rootElRef.current;
+      }
+    };
+    assign(ref);
+    assign(legacyForwardRef);
+  }, [ref, legacyForwardRef]);
+  // Compose useResizeDetector's containerRef (a callback ref) with our own
+  // root-element tracking so we can satisfy both the resize detector and the
+  // external/forwarded refs from a single `ref={...}` on <s.Container>.
+  const setContainerRef = (node) => {
+    rootElRef.current = node;
+    if (typeof containerRef === 'function') {
+      containerRef(node);
+    } else if (containerRef) {
+      containerRef.current = node;
+    }
+  };
 
   // ===== Layout & Styling State =====
   const [internalColumns, setInternalColumns] = useState([]);
@@ -1324,7 +1409,7 @@ function Grid({
         />
       )}
       <s.Container
-        ref={containerRef}
+        ref={setContainerRef}
         id={id}
         width={width}
         height={height}
@@ -1591,7 +1676,8 @@ function Grid({
       </s.Container>
     </DragDropContext>
   );
-}
+});
 
+Grid.displayName = 'Grid';
 Grid.propTypes = propTypes;
 export default Grid;

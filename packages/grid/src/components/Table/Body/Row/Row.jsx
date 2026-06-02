@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { forwardRef, useState, useEffect, useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Checkbox } from '@m-next/checkbox';
 import { Tag } from '@m-next/types';
@@ -9,8 +9,22 @@ import { STATUSES } from '../../../../utilities';
 import Cell from '../Cell';
 import { Column } from '../../../../ColumnPropType';
 
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
 const propTypes = {
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  /** Optional. Auto-generated when not provided. */
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   index: PropTypes.number,
   onMultiSelect: PropTypes.func,
   overflowVisible: PropTypes.bool,
@@ -75,61 +89,116 @@ const propTypes = {
   showVerticalDividers: PropTypes.bool,
 };
 
-function Row({
-  id,
-  index = null,
-  data = {},
-  errorData = null,
-  status = null,
-  isSelected = false,
-  onSelect = null,
-  onMultiSelect = null,
-  overflowVisible = false,
-  style,
-  disabled,
-  columns,
-  canDelete,
-  editingRow,
-  selectable,
-  onSetRowStatus,
-  primaryKeyName,
-  isMobile,
-  activeElement,
-  confirmDeletion,
-  onDeleteConfirmation,
-  onSetEditingRow,
-  setEditingCell,
-  handleDeleteRow,
-  editable,
-  onKeyboardNavigation,
-  totalRows,
-  onRowClick = null,
-  dragAndDrop,
-  displayPreferences,
-  defaultColumnWidth,
-  editingCell,
-  isLoading,
-  outsideClicked,
-  scrollerRef,
-  tagsList,
-  tagsSuggestions,
-  onManageTags,
-  reorderColumns,
-  columnSorting,
-  onShowImageEditor,
-  onUploadImage,
-  onDownloadImage,
-  onDisableClickOutside,
-  onErrorMessageForUser,
-  showMobileCardColumn,
-  enrichedData,
-  menuColumn,
-  tooltipId,
-  highlightColumn,
-  onColumnHover,
-  variant = 'default',
-  showVerticalDividers,
-}) {
+/**
+ * Row — a single table row inside @m-next/grid. Renders selection checkbox,
+ * cells (Cell), optional action menu, and inline delete. Drives editing,
+ * keyboard nav, drag-and-drop integration.
+ *
+ * Note: many props that look legacy (isMobile, isLoading, disabled, editable,
+ * legacyClass-on-parent) are LOAD-BEARING here — they affect cell visibility
+ * (showMobileCardColumn / visibleOnMobile), aria-rowindex, edit gating, and
+ * row click semantics. Do not treat them as ghosts.
+ */
+const Row = forwardRef(function Row(props, ref) {
+  const {
+    id: idProp,
+    index = null,
+    data = {},
+    errorData = null,
+    status = null,
+    isSelected = false,
+    onSelect = null,
+    onMultiSelect = null,
+    overflowVisible = false,
+    style,
+    disabled,
+    columns,
+    canDelete,
+    editingRow,
+    selectable,
+    onSetRowStatus,
+    primaryKeyName,
+    isMobile,
+    activeElement,
+    confirmDeletion,
+    onDeleteConfirmation,
+    onSetEditingRow,
+    setEditingCell,
+    handleDeleteRow,
+    editable,
+    onKeyboardNavigation,
+    totalRows,
+    onRowClick = null,
+    dragAndDrop,
+    displayPreferences,
+    defaultColumnWidth,
+    editingCell,
+    isLoading,
+    outsideClicked,
+    scrollerRef,
+    tagsList,
+    tagsSuggestions,
+    onManageTags,
+    reorderColumns,
+    columnSorting,
+    onShowImageEditor,
+    onUploadImage,
+    onDownloadImage,
+    onDisableClickOutside,
+    onErrorMessageForUser,
+    showMobileCardColumn,
+    enrichedData,
+    menuColumn,
+    tooltipId,
+    highlightColumn,
+    onColumnHover,
+    variant = 'default',
+    showVerticalDividers,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+    hidden: _hidden,
+  } = props;
+
+  // Auto-generate id if not provided. The Grid component always passes one
+  // (e.g. `${gridId}-ROW-${index}`), so this fallback is only for direct
+  // standalone use.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-grid-row-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'grid-row-forwardRef-prop',
+      '@m-next/grid: `forwardRef` prop is deprecated on <Row>. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // Chain modern ref + legacy forwardRef prop onto the rendered <tr> root.
+  const containerRef = useRef(null);
+  useEffect(() => {
+    const assign = (target) => {
+      if (!target) return;
+      if (typeof target === 'function') {
+        target(containerRef.current);
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        target.current = containerRef.current;
+      }
+    };
+    assign(ref);
+    assign(legacyForwardRef);
+  }, [ref, legacyForwardRef]);
+
   // State
   const [primaryKey, setPrimaryKey] = useState(null);
   const [rowData, setRowData] = useState(data);
@@ -263,6 +332,7 @@ function Row({
 
   return (
     <s.TR
+      ref={containerRef}
       tabIndex={isReadOnly ? 0 : null}
       aria-rowindex={index + 1}
       disabled={disabled || status === STATUSES.deleted}
@@ -416,8 +486,9 @@ function Row({
       )}
     </s.TR>
   );
-}
+});
 
+Row.displayName = 'Row';
 Row.propTypes = propTypes;
 
 export default Row;

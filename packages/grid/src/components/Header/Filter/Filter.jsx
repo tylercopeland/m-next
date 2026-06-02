@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { forwardRef, useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { IconMenuList, MenuItem } from '@m-next/menu';
 import { colors } from '@m-next/styles';
@@ -6,23 +6,92 @@ import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import * as s from './Filter.styles';
 import PortalTooltip from './PortalTooltip';
 
-function Filter({
-  disabled,
-  id,
-  options,
-  selected,
-  onSelect,
-  isCustomViewEnabled,
-  isAdminOrCustomizer,
-  onClickShowSaveGridViewDialog,
-  onToggleViewVisibility,
-  defaultViewId,
-  onCustomViewsDragEnd,
-  handleCustomViewsManageDoneClick,
-  isMobile,
-  onSetDefaultView,
-  isDesignMode,
-}) {
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
+/**
+ * Filter — dropdown view-selector with optional categorized groups, drag-to-
+ * reorder, edit mode (show/hide, default-view, edit metadata), and a custom
+ * "Manage views" surface gated on isCustomViewEnabled.
+ *
+ * Note: many props that look legacy on the Grid family (isV4Design,
+ * legacyClass, compactStyle) are LOAD-BEARING on the parent <Grid>. This
+ * subcomponent never used them, so they're treated as silent ghosts here.
+ * `isMobile` is a real prop — it disables drag interactions in the views
+ * list, and is not a ghost.
+ */
+const Filter = forwardRef(function Filter(props, ref) {
+  const {
+    disabled = false,
+    id: idProp,
+    options = [],
+    selected = null,
+    onSelect = null,
+    isCustomViewEnabled = false,
+    isAdminOrCustomizer = false,
+    onClickShowSaveGridViewDialog = null,
+    onToggleViewVisibility = null,
+    defaultViewId = null,
+    onCustomViewsDragEnd,
+    handleCustomViewsManageDoneClick,
+    isMobile,
+    onSetDefaultView,
+    isDesignMode = false,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+    hidden: _hidden,
+  } = props;
+
+  // Auto-generate id if not provided. Note: many internal id derivations
+  // (`${id}-FILTER`, `${id}-FILTER-SELECTED`, droppable ids, menu item ids)
+  // hang off this — auto-id keeps the DOM tree internally consistent.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-grid-filter-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'grid-filter-forwardRef-prop',
+      '@m-next/grid: `forwardRef` prop is deprecated on <Filter>. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // Chain modern ref + legacy forwardRef prop onto the rendered s.Wrapper root.
+  const containerRef = useRef(null);
+  useEffect(() => {
+    const assign = (target) => {
+      if (!target) return;
+      if (typeof target === 'function') {
+        target(containerRef.current);
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        target.current = containerRef.current;
+      }
+    };
+    assign(ref);
+    assign(legacyForwardRef);
+  }, [ref, legacyForwardRef]);
+
   const [title, setTitle] = useState();
   const [active, setActive] = useState();
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -638,31 +707,25 @@ function Filter({
   };
 
   return (
-    <s.Wrapper isCustomViewEnabled={isCustomViewEnabled} backgroundHoverColor={colors['grey-lighter']}>
+    <s.Wrapper
+      ref={containerRef}
+      isCustomViewEnabled={isCustomViewEnabled}
+      backgroundHoverColor={colors['grey-lighter']}
+    >
       <s.FilterName id={`${id}-FILTER-SELECTED`} onClick={handleToggle}>
         {title}
       </s.FilterName>
       {renderIconMenuList()}
     </s.Wrapper>
   );
-}
+});
 
-Filter.defaultProps = {
-  disabled: false,
-  options: [],
-  selected: null,
-  onSelect: null,
-  isAdminOrCustomizer: false,
-  isCustomViewEnabled: false,
-  onClickShowSaveGridViewDialog: null,
-  onToggleViewVisibility: null,
-  defaultViewId: null,
-  isDesignMode: false,
-};
+Filter.displayName = 'Filter';
 
 Filter.propTypes = {
   disabled: PropTypes.bool,
-  id: PropTypes.string.isRequired,
+  /** Optional. Auto-generated when not provided. */
+  id: PropTypes.string,
   options: PropTypes.oneOfType([
     // Flat array of options
     PropTypes.arrayOf(
