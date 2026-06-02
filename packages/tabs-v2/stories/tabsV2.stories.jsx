@@ -4,7 +4,7 @@ import TabsV2 from '../src';
 
 export default {
   component: TabsV2,
-  title: 'm-one/TabsV2',
+  title: 'm-next/Components/Navigation/TabsV2 (deprecated)',
   argTypes: {
     selectedTab: {
       control: 'text',

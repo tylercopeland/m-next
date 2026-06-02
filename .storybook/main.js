@@ -56,6 +56,10 @@ const M_NEXT_PACKAGES = [
   'accordion', 'image',
   // Wave 4 — broken-inherited cluster (Syncfusion + Highcharts heavies)
   'color-picker', 'chart-drilldown', 'chart', 'calendar', 'grid',
+  // tabs-v2: deprecated alias for @m-next/tabs (which absorbed the V2 props
+  // and styling during Phase 3). Listed so callers can see the deprecation
+  // warning fire when rendering its stories.
+  'tabs-v2',
 ];
 
 const stories = M_NEXT_PACKAGES.flatMap((pkg) => [

@@ -6,6 +6,7 @@ import { Tooltip } from 'react-tooltip';
 import * as s from './TabsV2.styles';
 import TabHeaderV2 from './TabHeaderV2';
 import TabHeaderFixedV2 from './TabHeaderFullV2';
+import { warnTabsV2Deprecated } from './_warnOnce';
 
 const propTypes = {
   id: PropTypes.string.isRequired,
@@ -68,6 +69,7 @@ function TabsV2({
   collapsible = false,
   onTabOrderChange = null,
 }) {
+  warnTabsV2Deprecated();
   const renderTabContent = () => {
     if (onRenderTabContent) {
       return onRenderTabContent();
