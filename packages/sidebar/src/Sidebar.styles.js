@@ -1,16 +1,19 @@
 import styled from '@emotion/styled';
 import { colors } from '@m-next/tokens';
 
-// Surface colors used by the sidebar shell. Falls back to safe defaults if
-// the consumer hasn't wired up a theme — sidebar should never look broken
-// out of the box.
-const SURFACE_BG = colors.grey.lighter || '#F7F9FA';
-const SURFACE_BORDER = colors.grey.light || '#D1D5DB';
-const TEXT_PRIMARY = colors.grey.darkest || '#1F2A33';
-const TEXT_SUBTLE = colors.grey.dark || '#5A6B7B';
-const ACTIVE_BG = colors.blue.lighter || '#E5F0FA';
-const ACTIVE_TEXT = colors.blue.base || '#0D71C8';
-const HOVER_BG = colors.grey.lightest || '#EEF5F7';
+// Defaults match Method's production app shell (LeftNav). The surface color
+// is the canonical "method" navy (#022266 — colors.blue.darkest in tokens,
+// 'method' in legacy base colors). Active and hover rows fill full-width
+// in colors.blue.dark with a 4px colors.blue.base accent on the left edge.
+const SURFACE_BG = colors.blue.darkest || '#022266'; // 'method' navy
+const SURFACE_BORDER = colors.blue.dark || '#064499'; // subtle border in the same family
+const TEXT_PRIMARY = colors.white || '#FFFFFF';
+const TEXT_SUBTLE = colors.grey.light || '#BACAD0';
+const ACCENT_BLUE = colors.blue.base || '#0D71C8'; // 4px left-edge accent on active
+const ACTIVE_BG = colors.blue.dark || '#064499'; // full-width row background when active
+const ACTIVE_TEXT = colors.white || '#FFFFFF';
+const HOVER_BG = colors.blue.dark || '#064499'; // same fill as active on hover
+const INACTIVE_LEFT_ACCENT = colors.blue.dark || '#064499'; // subtle stripe so layout doesn't shift
 
 export const SidebarRoot = styled.aside((props) => ({
   display: 'flex',
@@ -20,7 +23,7 @@ export const SidebarRoot = styled.aside((props) => ({
   maxWidth: props.isOpen ? `${props.width}px` : `${props.collapsedWidth}px`,
   height: '100%',
   background: SURFACE_BG,
-  borderRight: `1px solid ${SURFACE_BORDER}`,
+  borderRight: 'none', // production has no right border — sidebar sits flush against the page chrome
   boxSizing: 'border-box',
   overflow: 'hidden',
   transition: 'width 180ms ease, min-width 180ms ease, max-width 180ms ease',
@@ -31,7 +34,6 @@ export const SidebarRoot = styled.aside((props) => ({
 export const SidebarHeader = styled.div({
   flex: '0 0 auto',
   padding: '12px 16px',
-  borderBottom: `1px solid ${SURFACE_BORDER}`,
   display: 'flex',
   alignItems: 'center',
   gap: 8,
@@ -43,7 +45,7 @@ export const SidebarBody = styled.div({
   flex: '1 1 auto',
   overflowY: 'auto',
   overflowX: 'hidden',
-  padding: '8px 0',
+  padding: 0, // items extend edge-to-edge
 });
 
 export const SidebarFooter = styled.div({
@@ -53,15 +55,26 @@ export const SidebarFooter = styled.div({
   boxSizing: 'border-box',
 });
 
+// Sidebar.Divider — explicit horizontal rule, matching Method's
+// <LeftNavDivider />. Slightly darker than the surface so it's visible
+// without being loud.
+export const Divider = styled.div((props) => ({
+  flex: '0 0 auto',
+  height: 1,
+  background: props.color || '#3E5265', // same as production LeftNavDivider
+  margin: 0,
+  border: 'none',
+}));
+
 export const GroupRoot = styled.div({
-  padding: '4px 8px',
+  padding: 0,
 });
 
 export const GroupHeader = styled.div((props) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  padding: '6px 8px',
+  padding: '10px 16px',
   fontSize: 11,
   fontWeight: 600,
   letterSpacing: 0.5,
@@ -90,18 +103,23 @@ export const GroupChevron = styled.span((props) => ({
 export const GroupBody = styled.div({
   display: 'flex',
   flexDirection: 'column',
-  gap: 2,
-  marginTop: 2,
 });
 
+// Items render edge-to-edge. Active state = full-width blue-dark fill +
+// 4px blue-base left border accent (matches LeftNav production HighlightingCSS).
+// Inactive items carry a 4px blue-dark left border so layout doesn't shift
+// between active/inactive states.
 export const Item = styled.button((props) => ({
   display: 'flex',
   alignItems: 'center',
-  gap: 10,
+  gap: 12,
   width: '100%',
-  padding: '8px 10px',
-  borderRadius: 6,
-  border: 'none',
+  padding: '12px 16px 12px 12px', // 12px left because the 4px border-left adds 4 more
+  borderRadius: 0,
+  borderTop: 'none',
+  borderBottom: 'none',
+  borderRight: 'none',
+  borderLeft: `4px solid ${props.active ? ACCENT_BLUE : INACTIVE_LEFT_ACCENT}`,
   background: props.active ? ACTIVE_BG : 'transparent',
   color: props.active ? ACTIVE_TEXT : TEXT_PRIMARY,
   fontSize: 14,
@@ -115,10 +133,10 @@ export const Item = styled.button((props) => ({
   ':hover': props.disabled
     ? undefined
     : {
-        background: props.active ? ACTIVE_BG : HOVER_BG,
+        background: HOVER_BG,
       },
   ':focus-visible': {
-    outline: `2px solid ${ACTIVE_TEXT}`,
+    outline: `2px solid ${ACCENT_BLUE}`,
     outlineOffset: -2,
   },
 }));
@@ -127,9 +145,11 @@ export const ItemIcon = styled.span({
   display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center',
-  width: 18,
-  height: 18,
+  width: 20,
+  height: 20,
   flexShrink: 0,
+  // Icons are caller-supplied (SVGs, glyphs, or @m-next/svg-icon nodes).
+  // They should be white-on-navy in this context.
 });
 
 export const ItemLabel = styled.span({
@@ -144,7 +164,7 @@ export const ItemBadge = styled.span({
   fontWeight: 600,
   padding: '1px 6px',
   borderRadius: 10,
-  background: ACTIVE_BG,
+  background: ACCENT_BLUE,
   color: ACTIVE_TEXT,
   marginLeft: 'auto',
 });

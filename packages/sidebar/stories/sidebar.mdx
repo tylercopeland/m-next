@@ -1,21 +1,33 @@
 import { Meta } from '@storybook/addon-docs/blocks';
+import * as SidebarStories from './sidebar.stories';
 
-<Meta title='m-next/Components/Navigation/Sidebar/Docs' />
+<Meta of={SidebarStories} />
 
 # Sidebar
 
 Vertical app navigation. Compound-component API: the consumer composes the
 shell with `Sidebar.Header`, `Sidebar.Body`, `Sidebar.Group`, `Sidebar.Item`,
-and `Sidebar.Footer`.
+`Sidebar.Divider`, and `Sidebar.Footer`.
+
+## Default visual treatment
+
+Dark navy surface (`colors.grey.darkest` → `#0F1B31`) with white text and
+icons, full-width blue active band (`colors.blue.base` → `#0D71C8`). This
+matches Method's production app shell — the design system's default IS
+the Method aesthetic.
+
+A light-theme variant is on the v2 roadmap. For now, consumers wanting a
+different palette should inline-override the `background` / `color` props
+on the relevant primitives, or wait for the `theme` prop.
 
 ## Intent contract
 
 **Sidebar is a layout shell, not a navigation engine.** It owns:
 
-- The visual chrome — background, border, width, open/closed transition.
-- Slot containers (Header / Body / Footer) and a Group/Item primitive set.
-- Item appearance: active state, disabled state, hover/focus styling, icon
-  and badge slots, semantic `aria-current="page"` when active.
+- The visual chrome — dark navy background, border, width, open/closed transition.
+- Slot containers (Header / Body / Footer / Divider) and a Group/Item primitive set.
+- Item appearance: full-width active band, disabled state, hover/focus styling,
+  icon and badge slots, semantic `aria-current="page"` when active.
 
 It explicitly does NOT own:
 

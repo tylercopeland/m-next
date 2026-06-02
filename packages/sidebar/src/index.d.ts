@@ -44,12 +44,17 @@ export interface SidebarItemProps
   children?: React.ReactNode;
 }
 
+export interface SidebarDividerProps {
+  color?: string;
+}
+
 declare const Sidebar: React.ForwardRefExoticComponent<
   SidebarProps & React.RefAttributes<HTMLElement>
 > & {
   Header: React.FC<{ children?: React.ReactNode }>;
   Body: React.FC<{ children?: React.ReactNode }>;
   Footer: React.FC<{ children?: React.ReactNode }>;
+  Divider: React.FC<SidebarDividerProps>;
   Group: React.FC<SidebarGroupProps>;
   Item: React.ForwardRefExoticComponent<
     SidebarItemProps & React.RefAttributes<HTMLElement>
@@ -59,6 +64,7 @@ declare const Sidebar: React.ForwardRefExoticComponent<
 export declare const Header: React.FC<{ children?: React.ReactNode }>;
 export declare const Body: React.FC<{ children?: React.ReactNode }>;
 export declare const Footer: React.FC<{ children?: React.ReactNode }>;
+export declare const Divider: React.FC<SidebarDividerProps>;
 export declare const Group: React.FC<SidebarGroupProps>;
 export declare const Item: React.ForwardRefExoticComponent<
   SidebarItemProps & React.RefAttributes<HTMLElement>

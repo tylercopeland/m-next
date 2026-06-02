@@ -207,4 +207,19 @@ describe('@m-next/sidebar', () => {
       expect(screen.getByText('3')).toBeInTheDocument();
     });
   });
+
+  describe('Sidebar.Divider', () => {
+    it('renders a horizontal separator', () => {
+      render(
+        <Sidebar>
+          <Sidebar.Item>Home</Sidebar.Item>
+          <Sidebar.Divider />
+          <Sidebar.Item>Settings</Sidebar.Item>
+        </Sidebar>,
+      );
+      const sep = screen.getByRole('separator');
+      expect(sep).toBeInTheDocument();
+      expect(sep).toHaveAttribute('aria-orientation', 'horizontal');
+    });
+  });
 });

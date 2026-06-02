@@ -149,6 +149,21 @@ Footer.displayName = 'Sidebar.Footer';
 Footer.propTypes = { children: PropTypes.node };
 
 // ============================================================================
+// Sidebar.Divider — explicit horizontal rule between sections
+// ============================================================================
+
+const dividerPropTypes = {
+  /** Override the default border color. */
+  color: PropTypes.string,
+};
+
+const Divider = ({ color, ...rest }) => (
+  <s.Divider color={color} role='separator' aria-orientation='horizontal' {...rest} />
+);
+Divider.displayName = 'Sidebar.Divider';
+Divider.propTypes = dividerPropTypes;
+
+// ============================================================================
 // Sidebar.Group — optional titled section, optionally collapsible
 // ============================================================================
 
@@ -270,8 +285,9 @@ Item.propTypes = itemPropTypes;
 Sidebar.Header = Header;
 Sidebar.Body = Body;
 Sidebar.Footer = Footer;
+Sidebar.Divider = Divider;
 Sidebar.Group = Group;
 Sidebar.Item = Item;
 
-export { Header, Body, Footer, Group, Item };
+export { Header, Body, Footer, Divider, Group, Item };
 export default Sidebar;
