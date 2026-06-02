@@ -1,0 +1,89 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import * as ScrollbarStories from './scrollbar.stories';
+
+<Meta of={ScrollbarStories} />
+
+# Scrollbar
+
+Themed scroll container. Thin wrapper over `simplebar-react` with m-next
+track/thumb styling and an offset-aware height.
+
+## Intent contract
+
+**Scrollbar is a scroll mechanism, not a surface.** It owns:
+
+- The track + thumb visual treatment (subtle grey, hover-darken).
+- Translating the `offset` prop into a `calc(100% - <offset>)` max-height so
+  consumers can reserve room for a fixed header above the scrollable region.
+- The `isVisible={false}` opt-out (renders nothing — matches the original
+  MethodUI API).
+
+It explicitly does NOT own:
+
+- Background, padding, or border — wrap with `@m-next/container` if you
+  want the surface treatment.
+- Header content — the consumer renders the header above Scrollbar and
+  tells Scrollbar how much room to reserve via `offset`.
+- A measured layout — SimpleBar requires its parent to have a defined
+  height. The component defaults `height` to `100%`, but it's the
+  consumer's responsibility to put a sized box around it.
+
+## Why SimpleBar (not react-custom-scroll)
+
+The original MethodUI scrollbar used `react-custom-scroll`. We picked
+`simplebar-react` instead because:
+
+1. `@m-next/container` already uses it for its `scrollable` mode — sharing
+   the dep means a page with both Container and Scrollbar pulls in one
+   scroll library, not two.
+2. `simplebar-react` doesn't reimplement scrolling — it keeps native
+   overflow under the hood and just paints a styled track/thumb on top.
+   That means content stays selectable, keyboard navigation works
+   naturally, and mobile fling scrolling Just Works.
+3. `react-custom-scroll`'s `heightRelativeToParent` API is fiddly and the
+   library is unmaintained. The `offset`-to-`maxHeight` translation in
+   `@m-next/scrollbar` is the modern equivalent.
+
+## When to reach for Scrollbar
+
+- You have a region that needs to scroll independently of the page.
+- You want the m-next track/thumb treatment instead of the browser default.
+- You're porting a MethodUI consumer that used `<Scrollbar offset="56px" />`.
+
+If your component is already a surface (a card, a panel, an insight tile),
+use `@m-next/container` with `scrollable` instead — it bundles both the
+surface treatment and the scroll mechanism.
+
+## Composition
+
+```jsx
+import Scrollbar from '@m-next/scrollbar';
+
+<div style={{ height: 400 }}>
+  <Header />
+  <Scrollbar offset={56}>
+    <LongList />
+  </Scrollbar>
+</div>;
+```
+
+## Offset vs. maxHeight
+
+| Prop        | When to use |
+| ----------- | --- |
+| `offset`    | A fixed header sits above the scrollbar inside the same sized parent. The scrollbar's height = `100% - <offset>`. |
+| `maxHeight` | The scrollbar should cap at a specific height regardless of parent. Overrides `offset` if both are set. |
+| `height`    | The parent doesn't have a defined height and you want to lock the scrollbar to a specific value. |
+
+## Ref behavior
+
+The `ref` points at the SimpleBar instance. Useful methods:
+
+- `ref.current.recalculate()` — recompute geometry after content changes.
+- `ref.current.getScrollElement()` — DOM node for attaching `scroll`
+  listeners or imperatively scrolling.
+
+## Roadmap
+
+- v2: a `direction` prop for horizontal-only scroll regions.
+- v2: an `autoHide` toggle (track disappears when idle, matching macOS).
