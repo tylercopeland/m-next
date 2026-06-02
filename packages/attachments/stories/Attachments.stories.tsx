@@ -4,7 +4,7 @@ import { Attachments } from '../src';
 
 export default {
   component: Attachments,
-  title: 'm-one/Attachments',
+  title: 'm-next/Components/Form/Attachments',
   argTypes: {
     className: { control: 'text' },
     testId: { control: 'text' },

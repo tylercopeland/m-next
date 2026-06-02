@@ -4,7 +4,7 @@ import InsightCard from '../src/InsightCard';
 
 export default {
   component: InsightCard,
-  title: 'm-one/InsightCard',
+  title: 'm-next/Components/Display/InsightCard',
   argTypes: {
     title: {
       control: 'text',

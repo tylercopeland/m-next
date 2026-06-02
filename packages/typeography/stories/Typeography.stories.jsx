@@ -3,7 +3,7 @@ import Typeography from '../src';
 
 export default {
   component: Typeography,
-  title: 'm-one/Typeography',
+  title: 'm-next/Foundation/Typeography',
   argTypes: {},
   parameters: {
     cssresources: [

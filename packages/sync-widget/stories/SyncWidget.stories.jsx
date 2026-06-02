@@ -3,7 +3,7 @@ import SyncWidget, { SyncWidgetStatus } from '../src';
 
 export default {
   component: SyncWidget,
-  title: 'm-one/SyncWidget',
+  title: 'm-next/Components/Display/SyncWidget',
   args: {
     status: 0,
   },

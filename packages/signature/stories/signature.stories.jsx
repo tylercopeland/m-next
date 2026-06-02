@@ -3,7 +3,7 @@ import React from 'react';
 import Signature from '../src';
 
 export default {
-  title: 'm-one/Signature',
+  title: 'm-next/Components/Form/Signature',
   component: Signature,
   argTypes: {
     label: { control: 'text' },

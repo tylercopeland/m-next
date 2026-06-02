@@ -6,7 +6,7 @@ import type { AppActivationBannerProps } from '../src/appActivationBanner';
 
 const meta: Meta<typeof AppActivationBanner> = {
   component: AppActivationBanner,
-  title: 'm-one/AppActivationBanner',
+  title: 'm-next/Components/Feedback/AppActivationBanner',
   argTypes: {
     backgroundColor: {
       control: 'select',

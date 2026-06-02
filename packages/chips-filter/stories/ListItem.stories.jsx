@@ -4,7 +4,7 @@ import ListItem from '../src/components/ListItem';
 
 export default {
   component: ListItem,
-  title: 'm-one/ChipsFilter',
+  title: 'm-next/Components/Form/ChipsFilter',
   argTypes: {},
   parameters: {
     cssresources: [

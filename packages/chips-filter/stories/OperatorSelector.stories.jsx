@@ -5,7 +5,7 @@ import OperationSelector from '../src/components/OperationSelector';
 
 export default {
   component: OperationSelector,
-  title: 'm-one/ChipsFilter',
+  title: 'm-next/Components/Form/ChipsFilter',
   argTypes: {},
   parameters: {
     cssresources: [

@@ -4,7 +4,7 @@ import DateRangePickerWrapper from './DateRangePickerWrapper';
 
 export default {
   component: DateRangePicker,
-  title: 'm-one/DatePicker',
+  title: 'm-next/Components/Form/DatePicker',
   argTypes: {},
   parameters: {
     design: {

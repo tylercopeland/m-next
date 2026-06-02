@@ -6,7 +6,7 @@ import fieldList from '../testing/data/fieldListContacts.json';
 
 export default {
   component: Chip,
-  title: 'm-one/ChipsFilter',
+  title: 'm-next/Components/Form/ChipsFilter',
   argTypes: {},
   parameters: {
     cssresources: [

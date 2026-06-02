@@ -3,7 +3,7 @@ import Gallery from '../src';
 
 export default {
   component: Gallery,
-  title: 'm-one/Gallery',
+  title: 'm-next/Components/Display/Gallery',
   argTypes: {},
   parameters: {
     cssresources: [

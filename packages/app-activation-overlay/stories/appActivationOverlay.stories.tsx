@@ -3,7 +3,7 @@ import AppActivationOverlay from '../src/appActivationOverlay';
 
 const meta: Meta<typeof AppActivationOverlay> = {
   component: AppActivationOverlay,
-  title: 'm-one/AppActivationOverlay',
+  title: 'm-next/Components/Overlay/AppActivationOverlay',
   argTypes: {
     iconName: {
       control: { type: 'text' },

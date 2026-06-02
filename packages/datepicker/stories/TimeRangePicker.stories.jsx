@@ -3,7 +3,7 @@ import { TimeRangePicker } from '../src';
 
 export default {
   component: TimeRangePicker,
-  title: 'm-one/DatePicker',
+  title: 'm-next/Components/Form/DatePicker',
   argTypes: {},
   parameters: {
     design: {

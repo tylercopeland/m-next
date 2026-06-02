@@ -2,7 +2,7 @@ import React from 'react';
 import { Mapbox } from '../src/index';
 
 export default {
-  title: 'M-One/Map/Mapbox',
+  title: 'm-next/Components/Display/Map',
   component: Mapbox,
   parameters: {
     layout: 'fullscreen',

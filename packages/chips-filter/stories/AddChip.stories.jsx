@@ -3,7 +3,7 @@ import AddChip from '../src/components/AddChip';
 
 export default {
   component: AddChip,
-  title: 'm-one/ChipsFilter',
+  title: 'm-next/Components/Form/ChipsFilter',
   argTypes: {},
   parameters: {
     cssresources: [
