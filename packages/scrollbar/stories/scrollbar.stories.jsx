@@ -2,7 +2,7 @@ import React from 'react';
 import Scrollbar from '../src';
 
 export default {
-  title: 'm-next/Components/Layout/Scrollbar',
+  title: 'm-next/Components/Display/Scrollbar',
   component: Scrollbar,
   parameters: { layout: 'centered' },
 };

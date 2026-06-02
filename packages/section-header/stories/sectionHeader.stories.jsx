@@ -2,7 +2,7 @@ import React from 'react';
 import SectionHeader from '../src';
 
 export default {
-  title: 'm-next/Components/Typography/SectionHeader',
+  title: 'm-next/Components/Display/SectionHeader',
   component: SectionHeader,
   parameters: { layout: 'padded' },
 };
