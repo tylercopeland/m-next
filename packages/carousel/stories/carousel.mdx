@@ -1,0 +1,96 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import * as CarouselStories from './carousel.stories';
+
+<Meta of={CarouselStories} />
+
+# Carousel
+
+Horizontal slide carousel for paging through a small set of equally-weighted
+items (featured apps, hero cards, onboarding slides). Built on
+[react-multi-carousel](https://www.npmjs.com/package/react-multi-carousel)
+with Method-styled chevron arrows and an optional title.
+
+## Default visual treatment
+
+- **Arrows:** 40px blue circles (`colors.blue.base` → `#0D71C8`) anchored to
+  the vertical center of the slide track at `left: 24px` and `right: 24px`.
+  White chevron glyph, subtle drop shadow. Hover darkens to `colors.blue.dark`
+  (`#064499`); keyboard focus shows the original MethodUI double-ring
+  treatment (white inner ring, blue outer ring).
+- **Title:** centered Source Sans Pro, 14px / 600, `colors.grey.dark`. Omit
+  the prop to hide the heading entirely.
+- **Slide track:** each child is wrapped in a centered flex container with
+  `sideMarginPX` horizontal margin (default `56px`) so the slide content
+  breathes inside the visible viewport.
+
+## Intent contract
+
+**Carousel is a slide pager, not a generic horizontal scroller.** It owns:
+
+- The arrow controls and their styling.
+- The slide wrapper (centered flex, configurable horizontal margin).
+- The optional title slot.
+- Keyboard navigation (delegated to react-multi-carousel).
+
+It explicitly does NOT own:
+
+- The slide content — the consumer passes arbitrary children.
+- Autoplay — disabled by default. Re-enable via a custom wrapper if needed.
+- Dots / pagination indicators — disabled by default; the design uses arrows
+  only.
+- Per-slide layout — wrap your own content to control sizing.
+
+## When to reach for Carousel
+
+- You have 3–10 equally-weighted items to feature (cards, hero panels).
+- You want chevron-based paging with a single item visible at a time, OR a
+  custom responsive config for multi-item display.
+
+If you need a horizontally-scrolling region with momentum (image strip,
+table row peek), use a plain scroll container instead — Carousel is for
+paged content with discrete steps.
+
+## Composition
+
+```jsx
+import Carousel from '@m-next/carousel';
+
+<Carousel title='Featured apps'>
+  <FeatureCard {...a} />
+  <FeatureCard {...b} />
+  <FeatureCard {...c} />
+</Carousel>;
+```
+
+## Multi-item responsive
+
+```jsx
+<Carousel
+  responsive={{
+    desktop: { breakpoint: { max: 3000, min: 1024 }, items: 3 },
+    tablet: { breakpoint: { max: 1024, min: 640 }, items: 2 },
+    mobile: { breakpoint: { max: 640, min: 0 }, items: 1 },
+  }}
+>
+  ...
+</Carousel>
+```
+
+## Custom arrows
+
+Pass any node for `leftArrow` / `rightArrow` and react-multi-carousel will
+inject its `onClick` handler. The defaults are correct for almost every
+consumer; replace them only when the brand context calls for a non-blue
+button.
+
+```jsx
+<Carousel leftArrow={<MyChevronLeft />} rightArrow={<MyChevronRight />}>
+  ...
+</Carousel>
+```
+
+## Roadmap
+
+- v2: optional dots/pagination indicators.
+- v2: built-in autoplay opt-in with pause-on-hover.
+- v2: per-slide aria-roledescription helper for screen readers.

@@ -51,6 +51,8 @@ const M_NEXT_PACKAGES = [
   'sync-widget', 'typeography',
   // New design-system packages extracted from MethodUI shells
   'sidebar', 'app-bar',
+  // New design-system packages ported from MethodUI/shared/ primitives
+  'section-header', 'scrollbar', 'carousel',
 ];
 
 const stories = M_NEXT_PACKAGES.flatMap((pkg) => [
