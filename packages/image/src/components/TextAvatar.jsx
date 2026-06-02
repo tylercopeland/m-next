@@ -1,10 +1,24 @@
-import React, { useMemo } from 'react';
+import React, { forwardRef, useEffect, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { colors, customOffsetFocusOutline } from '@m-next/styles';
 import { interactions } from '@m-next/utilities';
 import styled from '@emotion/styled';
 
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
 const propTypes = {
+  /** Optional. Auto-generated when not provided. */
   id: PropTypes.string,
   initial: PropTypes.string.isRequired,
   size: PropTypes.string.isRequired, // % or px - single value to achieve even sides
@@ -38,19 +52,73 @@ const ImageWrapper = styled.div`
   }
 `;
 
-function TextAvatar({
-  id = null,
-  initial,
-  size,
-  width = '100%',
-  height = 'auto',
-  color,
-  caption,
-  hasClick = false,
-  onClick = null,
-  round = false,
-  tabIndex = '0',
-}) {
+/**
+ * TextAvatar — initials-based avatar used in place of an <img> when an image
+ * URL resolves to an internal `.mci` token. Background color and initials
+ * come from a parsed token. Soft-shim: legacy `forwardRef` prop warns once
+ * and is otherwise wired alongside the modern ref.
+ */
+const TextAvatar = forwardRef(function TextAvatar(props, ref) {
+  const {
+    id: idProp = null,
+    initial,
+    size,
+    width = '100%',
+    height = 'auto',
+    color,
+    caption,
+    hasClick = false,
+    onClick = null,
+    round = false,
+    tabIndex = '0',
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+    hidden: _hidden,
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-text-avatar-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'text-avatar-forwardRef-prop',
+      '@m-next/image: TextAvatar `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // Chain modern ref + legacy forwardRef prop onto the rendered root element.
+  const internalElRef = useRef(null);
+  useEffect(() => {
+    const assign = (target) => {
+      if (!target) return;
+      if (typeof target === 'function') {
+        target(internalElRef.current);
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        target.current = internalElRef.current;
+      }
+    };
+    assign(ref);
+    assign(legacyForwardRef);
+  }, [ref, legacyForwardRef]);
+
+  const setRef = (node) => {
+    internalElRef.current = node;
+  };
+
   /* RENDER ---------------- */
 
   const displayInitials = initial?.toUpperCase() ?? '';
@@ -58,6 +126,7 @@ function TextAvatar({
 
   return (
     <ImageWrapper
+      ref={setRef}
       id={id}
       role='img'
       aria-label={`${caption || 'Image'} with initials, ${displayInitials}`}
@@ -75,7 +144,9 @@ function TextAvatar({
       {displayInitials}
     </ImageWrapper>
   );
-}
+});
+
+TextAvatar.displayName = 'TextAvatar';
 
 const colorsMap = [
   { method: 'blue-light' },

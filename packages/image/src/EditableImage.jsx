@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { forwardRef, useMemo, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { colors } from '@m-next/styles';
 import Dialog from '@m-next/dialog';
@@ -12,8 +12,22 @@ import { motion } from 'framer-motion';
 import * as s from './ImageWidget.styles';
 import Image from './Image';
 
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
 const propTypes = {
-  id: PropTypes.string.isRequired,
+  /** Optional. Auto-generated when not provided. */
+  id: PropTypes.string,
   caption: PropTypes.string, // used as "alt" or additional description for screen readers
   imgType: PropTypes.oneOf(['Fixed', 'Responsive', 'Background', 'Dynamic', 'Fit']), // oneOf [ "Fixed", "Responsive", "Background" ]
   value: PropTypes.string, // image url
@@ -57,50 +71,90 @@ const propTypes = {
   hasImage: PropTypes.bool, // explicit override for blank detection; when provided, used instead of !value
 };
 
-export function EditableImage({
-  id,
-  caption,
-  imgType,
-  value,
-  width,
-  height,
-  minWidth,
-  minWidthTablet,
-  minWidthMobile,
-  maxWidth,
-  maxWidthTablet,
-  maxWidthMobile,
-  disabled,
-  tabIndex,
-  originalName,
-  unsetImage,
-  circle, // new v4 property
-  className,
-  style,
-  uploadStyle,
-  progressStyle,
-  hideCaption,
-  isMobile,
-  isLoading,
-  onDelete,
-  tooltip,
-  onFileReadSuccess,
-  uploading,
-  uploadProgress = 0,
-  uploadingFile,
-  onClose,
-  onClick,
-  onErrorMessageForUser,
-  showSetImage,
-  customSetImageButton,
-  cornerEditing = false,
-  onDownloadImage,
-  fitToContainer = false,
-  placeholderIcon = '',
-  isV4Design = false,
-  onWebUrlChange,
-  hasImage,
-}) {
+/**
+ * EditableImage — an Image surface plus inline editing affordances (upload
+ * dropzone, replace/delete/link-from-web menu, image editor dialog, and
+ * upload progress UI). Wraps `@m-next/image` and adds editor chrome.
+ *
+ * Soft-shim: legacy `forwardRef` prop warns once. Because EditableImage
+ * renders a Fragment of multiple top-level surfaces (wrapper div, setter,
+ * uploader, two dialogs, hidden dropzone), there is no single stable DOM
+ * root to forward a ref to — the modern `ref` and legacy `forwardRef`
+ * props are accepted for API consistency but are a no-op.
+ */
+const EditableImage = forwardRef(function EditableImage(props, ref) {
+  const {
+    id: idProp,
+    caption,
+    imgType,
+    value,
+    width,
+    height,
+    minWidth,
+    minWidthTablet,
+    minWidthMobile,
+    maxWidth,
+    maxWidthTablet,
+    maxWidthMobile,
+    disabled,
+    tabIndex,
+    originalName,
+    unsetImage,
+    circle, // new v4 property
+    className,
+    style,
+    uploadStyle,
+    progressStyle,
+    hideCaption,
+    isMobile,
+    isLoading,
+    onDelete,
+    tooltip,
+    onFileReadSuccess,
+    uploading,
+    uploadProgress = 0,
+    uploadingFile,
+    onClose,
+    onClick,
+    onErrorMessageForUser,
+    showSetImage,
+    customSetImageButton,
+    cornerEditing = false,
+    onDownloadImage,
+    fitToContainer = false,
+    placeholderIcon = '',
+    isV4Design = false,
+    onWebUrlChange,
+    hasImage,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+    hidden: _hidden,
+  } = props;
+
+  // Suppress unused-warning — accepted for API consistency, see JSDoc.
+  void ref;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-editable-image-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'editable-image-forwardRef-prop',
+      '@m-next/image: EditableImage `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
   const showSetter = useMemo(() => showSetImage && !value, [showSetImage, value]);
   const [editMenuOpen, setEditMenuOpen] = useState(false);
   const [showWebLinkDialog, setShowWebLinkDialog] = useState(false);
@@ -454,7 +508,9 @@ export function EditableImage({
       </div>
     </>
   );
-}
+});
 
+EditableImage.displayName = 'EditableImage';
 EditableImage.propTypes = propTypes;
+export { EditableImage };
 export default EditableImage;

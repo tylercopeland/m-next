@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState, useEffect } from 'react';
+import React, { forwardRef, useCallback, useMemo, useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useResizeDetector } from 'react-resize-detector';
 import { TIFFViewer } from 'react-tiff';
@@ -13,8 +13,22 @@ import * as s from './ImageWidget.styles';
 import TextAvatar, { useTextAvatarConfig } from './components/TextAvatar';
 import RoundImage from './components/RoundImage';
 
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
 const TYPES = {
-  id: PropTypes.string.isRequired,
+  /** Optional. Auto-generated when not provided. */
+  id: PropTypes.string,
   caption: PropTypes.string, // used as "alt" or additional description for screen readers
   imgType: PropTypes.oneOf(['Fixed', 'Responsive', 'Background', 'Dynamic', 'Fit']), // oneOf [ "Fixed", "Responsive", "Background" ]
   value: PropTypes.string, // image url
@@ -44,39 +58,103 @@ const TYPES = {
   cornerAction: PropTypes.node, // React element to render at top-right corner of visible image/placeholder
 };
 
-export function Image({
-  id,
-  caption = '',
-  imgType = IMAGE_TYPES.FIXED,
-  value = '',
-  width = '',
-  height = '',
-  minWidth = '',
-  minWidthTablet = '',
-  minWidthMobile = '',
-  maxWidth = '',
-  maxWidthTablet = '',
-  maxWidthMobile = '',
-  disabled = false,
-  tabIndex = '0',
-  originalName = '',
-  unsetImage = 'landscape',
-  circle = false, // new v4 property
-  onClick = null,
-  className = '',
-  style = null,
-  hideCaption = true,
-  isMobile,
-  isLoading = false,
-  alignTop = false,
-  fitToContainer = false,
-  centerAlign = false,
-  placeholderIcon = '',
-  isV4 = false,
-  cornerAction = null,
-}) {
+/**
+ * Image — the core display surface for the Image widget. Renders a TIFF
+ * viewer, a text avatar, a placeholder SvgIcon, a round image, or a plain
+ * <img> depending on the source and props. Wraps in an Image container with
+ * optional Caption.
+ *
+ * Soft-shim: legacy `forwardRef` prop warns once and is wired alongside the
+ * modern ref. Both attach to the root `s.ImageWidgetWrapper` div which is
+ * also used internally by useResizeDetector.
+ */
+const Image = forwardRef(function Image(props, ref) {
+  const {
+    id: idProp,
+    caption = '',
+    imgType = IMAGE_TYPES.FIXED,
+    value = '',
+    width = '',
+    height = '',
+    minWidth = '',
+    minWidthTablet = '',
+    minWidthMobile = '',
+    maxWidth = '',
+    maxWidthTablet = '',
+    maxWidthMobile = '',
+    disabled = false,
+    tabIndex = '0',
+    originalName = '',
+    unsetImage = 'landscape',
+    circle = false, // new v4 property
+    onClick = null,
+    className = '',
+    style = null,
+    hideCaption = true,
+    isMobile,
+    isLoading = false,
+    alignTop = false,
+    fitToContainer = false,
+    centerAlign = false,
+    placeholderIcon = '',
+    isV4 = false,
+    cornerAction = null,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts
+    isV4Design: _isV4Design,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+    hidden: _hidden,
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-image-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'image-forwardRef-prop',
+      '@m-next/image: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
   const { width: containerWidth, height: containerHeight, ref: containerRef } = useResizeDetector();
   const textAvatar = useTextAvatarConfig(value);
+
+  // Chain modern ref + legacy forwardRef prop onto the same node that
+  // useResizeDetector measures.
+  const internalElRef = useRef(null);
+  useEffect(() => {
+    const assign = (target) => {
+      if (!target) return;
+      if (typeof target === 'function') {
+        target(internalElRef.current);
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        target.current = internalElRef.current;
+      }
+    };
+    assign(ref);
+    assign(legacyForwardRef);
+  }, [ref, legacyForwardRef]);
+
+  const setRootRef = (node) => {
+    internalElRef.current = node;
+    // useResizeDetector's ref is a callback-style ref returned via React.useCallback
+    if (typeof containerRef === 'function') {
+      containerRef(node);
+    } else if (containerRef) {
+      containerRef.current = node;
+    }
+  };
 
   /* =========================================
    * @param {string} type - unsetImage type
@@ -411,7 +489,7 @@ export function Image({
             centerAlign={centerAlign}
             disabled={disabled}
             {...(fitToContainer && { fitToContainer })}
-            ref={containerRef}
+            ref={setRootRef}
             id={`${id}-ImageWidget`}
             tabIndex={-1}
           >
@@ -439,7 +517,9 @@ export function Image({
   };
 
   return render();
-}
+});
 
+Image.displayName = 'Image';
 Image.propTypes = TYPES;
+export { Image };
 export default Image;

@@ -3,7 +3,7 @@ import Image from '../src';
 
 export default {
   component: Image,
-  title: 'm-one/Image',
+  title: 'm-next/Components/Display/Image',
   argTypes: {},
   parameters: {
     cssresources: [
