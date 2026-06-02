@@ -45,14 +45,13 @@ const M_NEXT_PACKAGES = [
   // Phase 3 cleaned: small follow-ups (4 packages, parallel-agent wave)
   // - attachments sub-components already covered by 'attachments' above
   // - typeography is deprecated, fires a one-time console.warn on render
-  // - html-editor: cleaned (forwardRef envelope) but has no stories/ dir yet —
-  //   add stories before re-enabling it here, otherwise webpack errors on
-  //   the missing glob target.
-  'sync-widget', 'typeography',
+  'sync-widget', 'typeography', 'html-editor',
   // New design-system packages extracted from MethodUI shells
   'sidebar', 'app-bar',
   // New design-system packages ported from MethodUI/shared/ primitives
   'section-header', 'scrollbar', 'carousel',
+  // MethodUI/shared/ ports wave 2
+  'pagination', 'avatar-pill',
 ];
 
 const stories = M_NEXT_PACKAGES.flatMap((pkg) => [

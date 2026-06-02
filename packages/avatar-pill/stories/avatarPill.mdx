@@ -1,0 +1,117 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import * as AvatarPillStories from './avatarPill.stories';
+
+<Meta of={AvatarPillStories} />
+
+# AvatarPill
+
+Entity-reference chip. Pairs an avatar circle with a label and optional
+lead/trail icons. AvatarPill is the chip you reach for when the entity is
+a USER, CUSTOMER, or any other thing that has a visual identity (initials
+or photo).
+
+## Intent contract
+
+**AvatarPill is a display primitive that explicitly carries an avatar.**
+That distinguishes it from its sibling primitives:
+
+- `@m-next/pill` — text-only chip. Use when the entity has no face: a tag,
+  a status word, a filter chip.
+- `@m-next/badge` — non-interactive count or status. Smaller, denser, no
+  interaction affordance.
+- `@m-next/avatar-pill` (this) — chip with a face. Use for users, customers,
+  contacts, owners, assignees, recipients.
+
+The avatar circle is **always rendered** — even when the consumer doesn't
+supply image/initials, AvatarPill derives initials from the label. An
+AvatarPill without a visible avatar reads as a plain Pill, which is a
+different primitive. We want the avatar slot to always be filled so the
+visual semantics stay legible.
+
+## The `avatar` prop — both forms
+
+```jsx
+// Form 1: config object (common case, data-driven lists)
+<AvatarPill avatar={{ src: '/me.jpg', alt: 'Tyler' }}>Tyler Copeland</AvatarPill>
+<AvatarPill avatar={{ initials: 'TC' }}>Tyler Copeland</AvatarPill>
+
+// Form 2: ReactNode (escape hatch — caller wants a fully-styled avatar
+// from elsewhere, e.g. a future @m-next/avatar component)
+<AvatarPill avatar={<MyCustomAvatar userId={42} />}>Tyler Copeland</AvatarPill>
+
+// Form 3: omitted entirely — initials derived from the label
+<AvatarPill>Tyler Copeland</AvatarPill> // → renders "TC" in the circle
+```
+
+The object form is what 90% of consumers will use — it keeps call sites
+short. The ReactNode form exists because someday we'll have an `@m-next/avatar`
+package with photo cropping, stacking, badging, etc. — AvatarPill should
+accept that node without forcing the caller to also configure the chip.
+
+## Color schemes
+
+Nine families, two variants per family:
+
+- `subtle` (default) — `lighter` shade for background, low-emphasis chip.
+  Best for lists where the chip recurs many times.
+- `solid` — `light` shade for background, higher-emphasis. Best for single
+  isolated chips (e.g. a current selection indicator).
+
+The avatar circle is always the `base` shade of the family — that gives a
+clear color anchor even on the subtle variant.
+
+## Sizes
+
+Three tiers, matching MethodUI's narrow/regular and a new mobile/touch
+size:
+
+| Size | Height | Avatar | Font | Use case                            |
+| ---- | ------ | ------ | ---- | ----------------------------------- |
+| sm   | 20px   | 14px   | 11px | Dense lists, table cells            |
+| md   | 24px   | 18px   | 12px | Default desktop chip                |
+| lg   | 32px   | 24px   | 14px | Mobile/touch, hero/profile contexts |
+
+## Dismissible chips
+
+Pass `onTrailingIconClick` to make the trailing icon a real `<button>` with
+proper keyboard semantics and the supplied `trailingIconLabel` as aria-label.
+The default glyph is a × — supply a custom `trailingIcon` node to override.
+
+The trailing button stops event propagation, so an `onClick` on the chip
+itself won't fire when the user is removing.
+
+```jsx
+<AvatarPill
+  avatar={{ initials: 'TC' }}
+  onTrailingIconClick={() => removeRecipient(id)}
+  trailingIconLabel='Remove Tyler from recipients'
+>
+  Tyler Copeland
+</AvatarPill>
+```
+
+## Clickable chips
+
+Pass `onClick` to make the whole chip interactive. The wrapper gets
+`role='button'`, `tabIndex={0}`, hover, and focus-visible styles. Use this
+for "click chip → open profile" patterns.
+
+## Composition with sibling primitives
+
+AvatarPill lives in `Components/Display` next to Badge and Pill. They share
+the same colorScheme vocabulary so a consumer can mix them in the same row
+without color clashes:
+
+```jsx
+<AvatarPill colorScheme='blue' avatar={{ initials: 'TC' }}>Tyler</AvatarPill>
+<Pill colorScheme='green'>Active</Pill>
+<Badge colorScheme='red'>3</Badge>
+```
+
+## Roadmap
+
+- v2: stacked avatars (`<AvatarPill.Group />`) for "owned by Tyler + 2"
+  patterns.
+- v2: integration with a forthcoming `@m-next/avatar` package — when that
+  ships, the object-form avatar will be delegated to it internally.
+- v2: presence dot in the avatar corner (online/away/offline indicator).
