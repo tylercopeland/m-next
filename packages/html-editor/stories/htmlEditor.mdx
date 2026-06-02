@@ -1,0 +1,117 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as HtmlEditorStories from './htmlEditor.stories';
+
+<Meta of={HtmlEditorStories} />
+
+# HtmlEditor
+
+A Froala-backed WYSIWYG rich-text editor. The default control for any
+free-form HTML content that needs formatting (bold, italics, lists,
+headings, links, images, tables).
+
+## When to use it
+
+- Long-form rich content — descriptions, bios, articles, notes, email bodies.
+- Anywhere the consumer needs the final value to be `HTML`, not plain text.
+- Authenticated image upload — the editor wires its image upload through
+  Method's runtime-core image endpoint via `authContext`.
+
+## When NOT to use it
+
+- Plain multi-line text — use `InputArea` / Textarea. HtmlEditor pulls in
+  Froala (large bundle) and produces HTML markup; if you only want a
+  textarea, you don't want HtmlEditor.
+- Single-line text — use `Input`.
+- Selection from a list — use `Dropdown`.
+- Code editing or syntax highlighting — out of scope for v1.
+
+## Anatomy
+
+A vertical wrapper holding:
+
+1. **Caption** (optional) — rendered via `@m-next/caption` when `caption` is set.
+2. **LoadingSkeleton** — shown while Froala is initializing (the package lazy-loads its toolbar config and assets).
+3. **FroalaEditor** — the WYSIWYG surface with a responsive toolbar (XS / SM / MD / LG breakpoints based on container width).
+4. **ValidationMessage** — rendered below when `validationMessage` is set.
+
+## Key props
+
+| Prop | Type | Notes |
+|------|------|-------|
+| `data` | string | Initial HTML content |
+| `authContext` | `AuthContext` | `{ account, authToken, identity, runtimeCoreUrl, secureToken }` — required for the editor to mount and for image uploads to work |
+| `caption` | string | Optional label rendered via `@m-next/caption` |
+| `disabled` | boolean | Toggles edit on/off on the underlying Froala instance |
+| `focused` | boolean | When true, calls Froala's focus event on mount |
+| `height` / `width` | string | CSS dimensions, e.g. `'200px'`, `'100%'` |
+| `placeholder` | string | Placeholder text |
+| `required` | boolean | Surfaces required-state to the caption |
+| `validationMessage` | string | When set, switches to error state |
+| `isV4Design` | boolean | Kept as a real prop — controls wrapper margin and validation styling |
+| `onChange` | `(content: string) => void` | Fires on model change |
+| `onBlur` | `(content: string \| null) => void` | Fires on blur, with code-view content when applicable |
+| `onFocus` | `() => void` | Fires on focus |
+| `onLoad` | `(content: string) => void` | Fires once the editor has initialized |
+
+## Basic
+
+<Canvas of={HtmlEditorStories.Basic} />
+
+## With pre-populated content
+
+<Canvas of={HtmlEditorStories.WithContent} />
+
+## Disabled and validation
+
+<Canvas of={HtmlEditorStories.DisabledAndValidation} />
+
+## Accessibility
+
+- The editor surface is a Froala-managed contenteditable region. It carries Froala's own keyboard semantics (Ctrl/Cmd-B, Ctrl/Cmd-I, etc.).
+- `caption` props through to `@m-next/caption`, which renders the label and the required marker.
+- `validationMessage` renders inside `@m-next/validation`'s `ValidationMessage`, which carries the appropriate ARIA live-region semantics.
+- The `disabled` state toggles the underlying Froala instance's `edit.off()` — content remains visible and selectable.
+
+## Refs
+
+The component uses `React.forwardRef<HTMLDivElement>`. The `ref` lands on
+the outer wrapper element, the same node Froala mounts inside. The
+existing internal `editorRef` is preserved — it is load-bearing for
+parent-width measurement and toolbar breakpoint logic — and the forwarded
+ref is chained onto it via a small `useEffect`.
+
+## Migration from `@m-one/html-editor`
+
+Cleaned up under m-next's API normalization wave (see commit `c3adb15`).
+Most consumers will not need to change anything. The notable shims:
+
+| Legacy | Status | Behavior |
+|--------|--------|----------|
+| `forwardRef` prop | soft-shim | Still wires through; emits one `console.warn` recommending the React `ref` API. |
+| `legacyClass`, `displayAuto`, `compactStyle`, `hidden` | ignored | Accepted but have no effect. Safe to remove. |
+| `isV4Design` | kept | Not a ghost — toggles wrapper margin and validation row layout. |
+
+Live demo of the soft-shim surface:
+
+<Canvas of={HtmlEditorStories.LegacyAPIStillWorks} />
+
+## Edge cases
+
+- **`authContext` missing** — if `authContext.account` is not set, the
+  Froala editor will not mount (only the caption + loading skeleton will
+  render). This is intentional: image upload requires a real bearer token.
+- **Height resizing** — height changes after mount are applied directly to
+  the Froala instance via its `opts.height` and `$box` / `$el` DOM nodes.
+  The component re-runs this effect whenever `height` changes.
+- **Multiple editors on one page** — the component listens on `window`
+  click events and uses each editor's unique id to bump z-index when
+  clicked, so adjacent editors don't stack popups under each other.
+- **`id` auto-generation** — when `id` is not provided, the component
+  generates `m-next-html-editor-{n}` once per mount. Pass an explicit `id`
+  if you need a stable handle (tests, deep links to validation messages).
+
+## Related components
+
+- `InputArea` — multi-line plain-text input.
+- `Input` — single-line text input.
+- `Caption` / `Validation` — the label and message primitives used internally.
