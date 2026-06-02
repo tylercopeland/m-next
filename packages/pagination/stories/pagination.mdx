@@ -1,0 +1,113 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import * as PaginationStories from './pagination.stories';
+
+<Meta of={PaginationStories} />
+
+# Pagination
+
+Page navigator for paged data views (tables, grids, lists). Renders as a
+rounded pill: `« ‹ 1 … 4 [5] 6 … 10 › »` — first / prev / page window /
+next / last. The active page is filled in `colors.blue.base`.
+
+## Pages are 1-based
+
+`currentPage={1}` is the first page; `onPageChange` is always called with
+a 1-based index. This matches the mental model most APIs and humans use
+("page 1 of 10") and lines up with the existing MethodUI pagination, so
+ports from legacy don't need a +1 offset everywhere.
+
+## Intent contract
+
+**Pagination is a stateless page navigator, not a paged data manager.** It owns:
+
+- The visual chrome — rounded pill of buttons with hairline borders, blue active fill.
+- The sliding window math — `siblingCount` controls how many pages flank the current page.
+- Disabled states for first/prev when on page 1, next/last when on the last page.
+- Semantic markup — `<nav>` landmark with `aria-label`, `aria-current="page"` on the active button.
+
+It explicitly does NOT own:
+
+- The page state itself — it's controlled. Consumer holds `currentPage`
+  and updates it from `onPageChange`.
+- Page-size selection ("10 per page", "25 per page", "50 per page").
+- Record-count text ("12 to 24 of 156 records"). Render that yourself
+  alongside the navigator.
+- Fetching, sorting, or filtering the data.
+- Keyboard shortcuts like PageUp/PageDown — buttons are reachable by
+  Tab; activation is Enter or Space (browser-native).
+
+If you need page-size selection or record counts, render those alongside
+this component — the pagination control should stay focused on the page
+navigation primitive.
+
+## When to reach for Pagination
+
+- You have a data table, grid, or list paged on the server or client.
+- You want the standard "« ‹ 1 2 3 › »" page navigator.
+- The consumer already knows the total page count (or can compute it from
+  total records ÷ page size).
+
+If you instead want infinite scroll or a "Load more" button, this is the
+wrong component — use a custom load-more button.
+
+## Composition
+
+```jsx
+import Pagination from '@m-next/pagination';
+
+function CustomersTable() {
+  const [page, setPage] = useState(1);
+  const { data, totalPages } = useCustomers({ page, perPage: 25 });
+
+  return (
+    <>
+      <Table rows={data} />
+      <Pagination
+        currentPage={page}
+        totalPages={totalPages}
+        onPageChange={setPage}
+      />
+    </>
+  );
+}
+```
+
+## Window sizing — `siblingCount`
+
+`siblingCount` controls the number of page buttons shown on each side of
+the current page. Default is `1` (3-wide window: prev / current / next).
+
+With `siblingCount={1}` and `totalPages={10}`:
+
+| currentPage | window |
+|---|---|
+| `2` | `1 2 3 4 5 … 10` |
+| `5` | `1 … 4 5 6 … 10` |
+| `9` | `1 … 6 7 8 9 10` |
+
+When the current page is near an edge, the ellipsis on that side
+collapses so we never render `1 … 2` (where the gap is a single page).
+
+## First / Last buttons
+
+`showFirstLast` defaults to `true`. Set to `false` to drop the «»
+jump-to-edge buttons and only render prev/next.
+
+```jsx
+<Pagination currentPage={page} totalPages={totalPages} onPageChange={setPage} showFirstLast={false} />
+```
+
+## Accessibility
+
+- The container is a `<nav>` landmark with a default `aria-label` of
+  `'Pagination'` (override with the `ariaLabel` prop when there's more
+  than one navigator on a page — e.g. one per data table).
+- The active page button carries `aria-current="page"`.
+- Each numbered button has an `aria-label` like `"Go to page 5"`.
+- Prev/Next/First/Last buttons have descriptive `aria-label`s and are
+  disabled (not just visually styled) when at the edge of the range.
+
+## Single page
+
+When `totalPages <= 1`, the component renders nothing. You don't need
+to gate it yourself.
