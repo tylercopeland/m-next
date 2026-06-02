@@ -1,0 +1,90 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import * as SectionHeaderStories from './sectionHeader.stories';
+
+<Meta of={SectionHeaderStories} />
+
+# SectionHeader
+
+Title-plus-subtitle stack for grouping form sections, settings panels, or any
+content block that needs a hierarchy break. Ported 1:1 from MethodUI's
+`sectionHeader/SectionHeader.js` — same visual rhythm, same semantic level.
+
+## Intent contract
+
+**SectionHeader is a typography stack, not a layout container.** It owns:
+
+- The visual rhythm: 8px (`spacing.sm`) below the title, 16px (`spacing.lg`)
+  below the subtitle. Preserved verbatim from the MethodUI original.
+- The semantic level: `<h3>`. Matches the original `<Heading type='h3'>`.
+- Auto-IDs and the ref-forwarding envelope that all m-next packages share.
+
+It explicitly does NOT own:
+
+- Section content — render your form fields, table, or panel as a sibling
+  below it. SectionHeader is a sibling-stack neighbour, not a wrapper.
+- Action affordances (edit/expand buttons). Either compose them next to the
+  header in a `Stack`, or pass a `ReactNode` into `title` to render them
+  inline alongside the heading text.
+- The heading level. v1 is locked at H3 to preserve MethodUI behavior. If you
+  need H2 (page-level) or H4/H5 (deep sub-sections), reach for `@m-next/text`
+  directly with `as='H2'` etc. The `level` prop is on the v2 roadmap.
+
+## Composition
+
+```jsx
+import SectionHeader from '@m-next/section-header';
+
+<SectionHeader
+  title='Billing details'
+  subTitle='Used for invoicing and tax purposes.'
+/>
+```
+
+Both props accept `string | ReactNode`, so you can mix in inline icons,
+links, or status badges:
+
+```jsx
+<SectionHeader
+  title={
+    <>
+      Billing details <Badge tone='warning'>Action required</Badge>
+    </>
+  }
+  subTitle={
+    <>
+      Used for invoicing. <a href='/help/billing'>Learn more</a>.
+    </>
+  }
+/>
+```
+
+## Why the visual rhythm matters
+
+The original MethodUI styles used child-selectors:
+
+```css
+& > h3 { padding-bottom: 8px; }
+& > p  { padding-bottom: 16px; }
+```
+
+We preserve that contract verbatim (via `@m-next/tokens` spacing — `spacing.sm`
+and `spacing.lg`). The rhythm communicates "title is tightly bound to the
+subtitle which is loosely bound to the section content below it" — a small
+detail that, in aggregate, makes long forms feel scannable rather than
+monotonous.
+
+## What it does NOT do
+
+- Doesn't render a divider or border above/below itself. If you want one,
+  add a `<hr />` or `@m-next/sidebar`-style `Divider` as a sibling.
+- Doesn't enforce a minimum or maximum width — flows to the parent.
+- Doesn't accept its own children. Use `title` and `subTitle` as the slots;
+  arbitrary `children` are not supported (in part because the child-selector
+  styles would target unintended elements).
+
+## Roadmap
+
+- v2: `level` prop (`h2` | `h3` | `h4`) so sub-sections carry the right
+  semantic depth.
+- v2: optional `actions` slot for trailing buttons (e.g., "Edit", "Add").
+- v2: dense variant with tighter padding for compact admin layouts.
