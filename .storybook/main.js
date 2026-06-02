@@ -52,6 +52,8 @@ const M_NEXT_PACKAGES = [
   'section-header', 'scrollbar', 'carousel',
   // MethodUI/shared/ ports wave 2
   'pagination', 'avatar-pill',
+  // Wave 2 (large port + envelope additions)
+  'accordion', 'image',
 ];
 
 const stories = M_NEXT_PACKAGES.flatMap((pkg) => [

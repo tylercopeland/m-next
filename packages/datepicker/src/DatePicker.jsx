@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useRef, useMemo, useState, useEffect } from 'react';
+import React, { forwardRef, useRef, useMemo, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ReactDatePicker from 'react-datepicker';
 import SvgIcon from '@m-next/svg-icon';
@@ -17,10 +17,24 @@ import * as s from './DatePicker.styles';
 import setFormat, { setPlaceholderFormat } from './util';
 import './DatePicker.css';
 
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
 // types
 const propTypes = {
   block: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  id: PropTypes.string.isRequired,
+  /** Optional. Auto-generated when not provided. */
+  id: PropTypes.string,
   caption: PropTypes.string,
   legacyClass: PropTypes.string,
   disabled: PropTypes.bool,
@@ -72,45 +86,92 @@ const propTypes = {
 /**
  * Wrapper component around
  */
-function DatePicker({
-  id,
-  caption = null,
-  legacyClass = null,
+/**
+ * DatePicker — text-input date/time picker with calendar popover. Supports
+ * multiple format modes (Short Date, Long Date, Time, DateTime, Month-Year,
+ * Year), forced timezone, validation, portal anchoring, and iOS-specific
+ * native input fallback.
+ *
+ * Many props that look legacy (isV4Design, isMobile, legacyClass, compactStyle)
+ * are LOAD-BEARING — they drive styles in HeaderContainer/Container/Caption
+ * and the iOS code paths. They're real props, not ghosts. See JSDoc on each
+ * prop in propTypes for the surface contract.
+ *
+ * The `id` prop is now optional — auto-generated as `m-next-date-picker-${n}`
+ * when omitted, with all internal id-derived ids (DTP-${id}, container,
+ * portal) deriving from the same auto-id so DOM relationships stay stable.
+ */
+const DatePicker = forwardRef(function DatePicker(props, ref) {
+  const {
+    id: idProp,
+    caption = null,
+    legacyClass = null,
 
-  disabled = false,
-  formatType = 'Short Date',
-  hideCaption = false,
-  interval = 15,
-  placeholder = null,
-  useDateFormatPlaceholder = false,
-  readOnly = false,
-  value = null,
-  width = null,
-  onChange = null,
-  onFocus = null,
-  onBlur = null,
-  onKeyDown = null,
-  marginless = false,
-  block = false,
-  isMobile = false,
-  forceOpen,
-  autoFocus = false,
-  isV4Design = false,
-  displayPreferences,
-  containerStyle,
-  compactStyle,
-  fontSize,
-  anchorEl,
-  usePortal = false,
-  forcedTimeZone = null,
-  hideCalendar = false,
-  hideIcon = false,
-  minDate,
-  required = false,
-  validationMessage,
-  largeStyle = false,
-  inputPadding = null,
-}) {
+    disabled = false,
+    formatType = 'Short Date',
+    hideCaption = false,
+    interval = 15,
+    placeholder = null,
+    useDateFormatPlaceholder = false,
+    readOnly = false,
+    value = null,
+    width = null,
+    onChange = null,
+    onFocus = null,
+    onBlur = null,
+    onKeyDown = null,
+    marginless = false,
+    block = false,
+    isMobile = false,
+    forceOpen,
+    autoFocus = false,
+    isV4Design = false,
+    displayPreferences,
+    containerStyle,
+    compactStyle,
+    fontSize,
+    anchorEl,
+    usePortal = false,
+    forcedTimeZone = null,
+    hideCalendar = false,
+    hideIcon = false,
+    minDate,
+    required = false,
+    validationMessage,
+    largeStyle = false,
+    inputPadding = null,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts (the two not currently in the surface
+    // contract — defensive acceptors so callers passing them don't error).
+    // isV4Design, isMobile, legacyClass, compactStyle are NOT ghosts here —
+    // they're load-bearing real props, see JSDoc above.
+    displayAuto: _displayAuto,
+    hidden: _hidden,
+  } = props;
+
+  // Auto-generate id if not provided. All internal id-derived markers
+  // (DTP-${id}, ${id}-container, portal anchors) reuse this so the DOM
+  // tree stays internally consistent.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-date-picker-${++autoIdCounter}`;
+  }
+  const id = idProp ?? internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'date-picker-forwardRef-prop',
+      '@m-next/datepicker: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // Chain modern ref + legacy forwardRef prop onto the rendered s.Container
+  // root via containerRef below. The useEffect runs after the inner ref is
+  // assigned by React, then forwards to both targets.
   const monthRef = useRef(null);
   const yearRef = useRef(null);
   const picker = useRef(null);
@@ -118,6 +179,20 @@ function DatePicker({
   const mobilePicker = useRef(null);
   const valueOnFocusRef = useRef(null);
   const pendingValueRef = useRef(null);
+
+  useEffect(() => {
+    const assign = (target) => {
+      if (!target) return;
+      if (typeof target === 'function') {
+        target(containerRef.current);
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        target.current = containerRef.current;
+      }
+    };
+    assign(ref);
+    assign(legacyForwardRef);
+  }, [ref, legacyForwardRef]);
 
   const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent || navigator.vendor || window.opera);
   const hasTimeComponent = formatType.toLowerCase().includes('time') || formatType.toLowerCase().includes('hour');
@@ -861,7 +936,8 @@ function DatePicker({
       </s.ContainerWrapper>
     </s.Wrapper>
   );
-}
+});
 
+DatePicker.displayName = 'DatePicker';
 DatePicker.propTypes = propTypes;
 export default DatePicker;
