@@ -1,4 +1,5 @@
 import React from 'react';
+import SvgIcon from '@m-next/svg-icon';
 import AppBar from '../src';
 
 export default {
@@ -9,20 +10,13 @@ export default {
 
 const fontFamily = "'Source Sans Pro', system-ui, -apple-system, sans-serif";
 
-const Logo = () => (
-  <span
-    style={{
-      fontWeight: 700,
-      fontSize: 16,
-      color: '#0D71C8',
-      letterSpacing: 0.3,
-    }}
-  >
-    Acme
-  </span>
-);
+// Production navy used for text + icons on the white app-bar surface.
+const METHOD_NAVY = '#022266';
 
-const IconButton = ({ char, label }) => (
+// Small icon button wrapper. Replicates the production NavPanelItem visual
+// (grey-on-white icon, blue on hover/active). Story-local so the AppBar
+// package doesn't depend on a button component.
+const IconButton = ({ iconName, label }) => (
   <button
     type='button'
     aria-label={label}
@@ -30,38 +24,81 @@ const IconButton = ({ char, label }) => (
       background: 'transparent',
       border: 'none',
       cursor: 'pointer',
-      width: 32,
-      height: 32,
-      borderRadius: 6,
-      fontSize: 16,
-      color: '#5A6B7B',
+      width: 40,
+      height: 40,
+      padding: 0,
+      borderRadius: 4,
       display: 'inline-flex',
       alignItems: 'center',
       justifyContent: 'center',
+      color: '#545F67',
     }}
   >
-    {char}
+    <SvgIcon name={iconName} size={20} color='#545F67' />
   </button>
 );
 
-const UserAvatar = ({ initials = 'AC' }) => (
+// Method's TitleDropdown — the left-side "page title + caret" affordance.
+// Renders the current page name in navy with a small chevron next to it.
+const TitleDropdown = ({ title }) => (
+  <button
+    type='button'
+    aria-label={`Configure ${title}`}
+    style={{
+      background: 'transparent',
+      border: 'none',
+      cursor: 'pointer',
+      padding: '4px 8px 4px 0',
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 6,
+      color: METHOD_NAVY,
+      fontFamily,
+      fontSize: 18,
+      fontWeight: 600,
+    }}
+  >
+    {title}
+    <SvgIcon name='chevron-down' size={14} color={METHOD_NAVY} />
+  </button>
+);
+
+// User avatar — circular initials button. Production shows the user's
+// profile photo here; the story uses initials.
+const UserAvatar = ({ initials = 'TC' }) => (
   <button
     type='button'
     aria-label='User menu'
     style={{
       background: '#E5F0FA',
-      color: '#0D71C8',
-      width: 32,
-      height: 32,
-      borderRadius: 16,
+      color: METHOD_NAVY,
+      width: 36,
+      height: 36,
+      borderRadius: 18,
       border: 'none',
       cursor: 'pointer',
+      fontFamily,
       fontWeight: 600,
       fontSize: 12,
     }}
   >
     {initials}
   </button>
+);
+
+// Vertical hairline separator between the icon row and the user avatar
+// (matches s.VerticalDivider in production TopNav.styles.js).
+const VerticalDivider = () => (
+  <span
+    aria-hidden='true'
+    style={{
+      display: 'inline-block',
+      width: 1,
+      height: 24,
+      background: '#BACAD0',
+      margin: '0 4px',
+    }}
+  />
 );
 
 const Frame = ({ children }) => (
@@ -75,150 +112,24 @@ const Frame = ({ children }) => (
 );
 
 // =====================================================================
-// Basic
+// Method-style (matches production TopNav)
 // =====================================================================
+//
+// Left: page-title dropdown (production's <TitleDropdown />). Right: row of
+// action icons (Global Add, Search, Help) + vertical divider + user avatar.
+// White surface, navy text, grey icons that go blue on hover/active.
 
-export const Basic = () => (
+export const MethodStyle = () => (
   <Frame>
     <AppBar>
       <AppBar.Start>
-        <Logo />
+        <TitleDropdown title='Customers' />
       </AppBar.Start>
       <AppBar.End>
-        <IconButton char='?' label='Help' />
-        <IconButton char='🔔' label='Notifications' />
-        <UserAvatar />
-      </AppBar.End>
-    </AppBar>
-  </Frame>
-);
-
-// =====================================================================
-// All three slots
-// =====================================================================
-
-export const AllSlots = () => (
-  <Frame>
-    <AppBar>
-      <AppBar.Start>
-        <Logo />
-        <span style={{ color: '#5A6B7B', fontSize: 13 }}>· Dashboard</span>
-      </AppBar.Start>
-      <AppBar.Center>
-        <input
-          type='text'
-          placeholder='Search…'
-          style={{
-            width: '100%',
-            maxWidth: 480,
-            padding: '6px 10px',
-            fontSize: 13,
-            border: '1px solid #D1D5DB',
-            borderRadius: 6,
-            fontFamily,
-          }}
-        />
-      </AppBar.Center>
-      <AppBar.End>
-        <IconButton char='?' label='Help' />
-        <IconButton char='🔔' label='Notifications' />
-        <UserAvatar />
-      </AppBar.End>
-    </AppBar>
-  </Frame>
-);
-
-// =====================================================================
-// Page title in center
-// =====================================================================
-
-export const PageTitleCenter = () => (
-  <Frame>
-    <AppBar>
-      <AppBar.Start>
-        <IconButton char='☰' label='Toggle sidebar' />
-        <Logo />
-      </AppBar.Start>
-      <AppBar.Center>
-        <span style={{ fontSize: 14, fontWeight: 600 }}>Acme Corp — Customer detail</span>
-      </AppBar.Center>
-      <AppBar.End>
-        <UserAvatar />
-      </AppBar.End>
-    </AppBar>
-  </Frame>
-);
-
-// =====================================================================
-// Borderless variant (for stacked surfaces)
-// =====================================================================
-
-export const Borderless = () => (
-  <Frame>
-    <AppBar borderless>
-      <AppBar.Start>
-        <Logo />
-      </AppBar.Start>
-      <AppBar.End>
-        <UserAvatar />
-      </AppBar.End>
-    </AppBar>
-  </Frame>
-);
-
-// =====================================================================
-// Sticky
-// =====================================================================
-
-export const Sticky = () => (
-  <Frame>
-    <AppBar sticky>
-      <AppBar.Start>
-        <Logo />
-      </AppBar.Start>
-      <AppBar.End>
-        <UserAvatar />
-      </AppBar.End>
-    </AppBar>
-    {/* Long content to make scrolling demonstrate the sticky behavior */}
-    <div style={{ padding: 24, color: '#1F2A33' }}>
-      {Array.from({ length: 40 }).map((_, i) => (
-        <p key={i}>
-          Scroll the storybook iframe to see the app bar pin to the top. Item {i + 1}.
-        </p>
-      ))}
-    </div>
-  </Frame>
-);
-
-// =====================================================================
-// Custom height
-// =====================================================================
-
-export const CustomHeight = () => (
-  <Frame>
-    <AppBar height={72}>
-      <AppBar.Start>
-        <Logo />
-      </AppBar.Start>
-      <AppBar.End>
-        <UserAvatar />
-      </AppBar.End>
-    </AppBar>
-  </Frame>
-);
-
-// =====================================================================
-// Legacy API shim demo
-// =====================================================================
-
-export const LegacyAPIStillWorks = () => (
-  <Frame>
-    <AppBar isV4Design isMobile legacyClass='old-class' displayAuto compactStyle>
-      <AppBar.Start>
-        <Logo />
-      </AppBar.Start>
-      <AppBar.End>
+        <IconButton iconName='circle-plus' label='Global add' />
+        <IconButton iconName='search' label='Search' />
+        <IconButton iconName='question' label='Help and support' />
+        <VerticalDivider />
         <UserAvatar />
       </AppBar.End>
     </AppBar>

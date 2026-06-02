@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
 import { colors } from '@m-next/tokens';
 
-// Surface colors used by the app-bar shell. Falls back to safe defaults if
-// the consumer hasn't wired up a theme — app-bar should never look broken
-// out of the box.
+// Defaults match Method's production app shell (TopNav) — white surface
+// with navy text and a hairline border below. Padding asymmetric (24px left,
+// 16px right) per production. The page-title slot sits flush-left; action
+// icons + user menu sit on the right.
 const SURFACE_BG = colors.white || '#FFFFFF';
-const SURFACE_BORDER = colors.grey.light || '#D1D5DB';
-const TEXT_PRIMARY = colors.grey.darkest || '#1F2A33';
+const SURFACE_BORDER = colors.grey.light || '#BACAD0';
+const TEXT_PRIMARY = colors.blue.darkest || '#022266'; // 'method' navy
 
 export const AppBarRoot = styled.header((props) => ({
   display: 'flex',
@@ -14,7 +15,7 @@ export const AppBarRoot = styled.header((props) => ({
   width: '100%',
   minHeight: `${props.height}px`,
   height: `${props.height}px`,
-  padding: '0 16px',
+  padding: '0 16px 0 24px',
   gap: 16,
   background: SURFACE_BG,
   borderBottom: props.borderless ? 'none' : `1px solid ${SURFACE_BORDER}`,
