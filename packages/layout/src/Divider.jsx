@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { spacing } from '@m-next/tokens';
 
 const toPx = (val) => {
@@ -7,15 +7,20 @@ const toPx = (val) => {
   return spacing[val] ?? 0;
 };
 
-const Divider = ({
-  orientation = 'horizontal',
-  variant = 'solid',
-  color = '#E5E7EB',
-  spacing: spacingProp = 'md',
-  size = 1,
-  style,
-  ...rest
-}) => {
+/**
+ * Divider — horizontal or vertical separator with role="separator" +
+ * aria-orientation. Forwards refs to the rendered <div>.
+ */
+const Divider = forwardRef(function Divider(props, ref) {
+  const {
+    orientation = 'horizontal',
+    variant = 'solid',
+    color = '#E5E7EB',
+    spacing: spacingProp = 'md',
+    size = 1,
+    style,
+    ...rest
+  } = props;
   const spacePx = toPx(spacingProp);
   const isVertical = orientation === 'vertical';
 
@@ -36,12 +41,15 @@ const Divider = ({
 
   return (
     <div
+      ref={ref}
       role="separator"
       aria-orientation={orientation}
       style={{ ...computed, ...style }}
       {...rest}
     />
   );
-};
+});
+
+Divider.displayName = 'Divider';
 
 export default Divider;
