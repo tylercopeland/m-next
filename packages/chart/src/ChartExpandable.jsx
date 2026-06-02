@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { forwardRef, useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { ErrorBoundary } from '@m-next/utilities';
 import { lightTheme } from '@m-next/styles';
@@ -7,8 +7,22 @@ import Modal from 'react-modal';
 import ChartDialog from './ChartDialog';
 import Chart from './chart';
 
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
 // types
 const propTypes = {
+  /** Optional. Auto-generated when not provided. */
   id: PropTypes.string,
   isLoading: PropTypes.bool,
   style: PropTypes.instanceOf(Object),
@@ -49,35 +63,96 @@ const EmptyWrapper = styled.div(() => [
   },
 ]);
 
-function ChartExpandable({
-  id = '',
-  isLoading = false,
-  style = {},
-  data = {},
-  error,
-  onRefetch,
-  height = 200,
-  width = 200,
-  chartType,
-  caption,
-  onPointClick,
-  onClick,
-  onClose,
-  colors,
-  categories,
-  xAxisLabel,
-  yAxisLabel,
-  dataPoints,
-  expanded,
-  anchorEl = 'body',
-  expandedMargin,
-  constrainOverlayToAnchor = false,
-  children,
-  showClose = true,
-  forceSelect = null,
-  yAxisAllowDecimals = true,
-  numberFormat = null,
-}) {
+/**
+ * ChartExpandable — wraps `Chart` and adds an expand-to-modal affordance via
+ * `react-modal`. When `expanded` is true, renders a modal-overlaid larger
+ * `ChartDialog` anchored to `anchorEl` (defaults to `body`).
+ *
+ * The `id` prop is now optional — auto-generated as
+ * `m-next-chart-expandable-${n}` when omitted. The legacy `forwardRef` prop
+ * is soft-shimmed (warns once); the React ref is chained onto the inner
+ * `Chart` component, which exposes its underlying Container.
+ */
+const ChartExpandable = forwardRef(function ChartExpandable(props, ref) {
+  const {
+    id: idProp = '',
+    isLoading = false,
+    style = {},
+    data = {},
+    error,
+    onRefetch,
+    height = 200,
+    width = 200,
+    chartType,
+    caption,
+    onPointClick,
+    onClick,
+    onClose,
+    colors,
+    categories,
+    xAxisLabel,
+    yAxisLabel,
+    dataPoints,
+    expanded,
+    anchorEl = 'body',
+    expandedMargin,
+    constrainOverlayToAnchor = false,
+    children,
+    showClose = true,
+    forceSelect = null,
+    yAxisAllowDecimals = true,
+    numberFormat = null,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts — defensive acceptors so callers passing
+    // them don't error. None of these are referenced in the body below.
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+    hidden: _hidden,
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-chart-expandable-${++autoIdCounter}`;
+  }
+  const id = idProp || internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'chart-expandable-forwardRef-prop',
+      '@m-next/chart (ChartExpandable): `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // Chain modern ref + legacy forwardRef prop onto the inner Chart (which
+  // exposes its underlying Container element). The Modal lives as a sibling
+  // and isn't a useful ref target.
+  const chartRef = useRef(null);
+  useEffect(() => {
+    const assign = (target) => {
+      if (!target) return;
+      if (typeof target === 'function') {
+        target(chartRef.current);
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        target.current = chartRef.current;
+      }
+    };
+    assign(ref);
+    assign(legacyForwardRef);
+  }, [ref, legacyForwardRef]);
+
+  const setChartRef = (node) => {
+    chartRef.current = node;
+  };
+
   const [chartExpanded, setChartExpanded] = useState(expanded);
 
   useEffect(() => {
@@ -93,6 +168,7 @@ function ChartExpandable({
   return (
     <ErrorBoundary fallback={errorFallback()}>
       <Chart
+        ref={setChartRef}
         id={id}
         isLoading={isLoading}
         style={style}
@@ -180,7 +256,8 @@ function ChartExpandable({
       </Modal>
     </ErrorBoundary>
   );
-}
+});
 
+ChartExpandable.displayName = 'ChartExpandable';
 ChartExpandable.propTypes = propTypes;
 export default ChartExpandable;

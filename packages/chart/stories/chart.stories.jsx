@@ -4,7 +4,7 @@ import Chart from '../src';
 
 export default {
   component: Chart,
-  title: 'm-one/Chart',
+  title: 'm-next/Components/Display/Chart',
   argTypes: {},
   parameters: {
     cssresources: [

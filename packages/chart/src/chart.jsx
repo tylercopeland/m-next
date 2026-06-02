@@ -1,5 +1,5 @@
 /* eslint-disable react/no-this-in-sfc */
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { forwardRef, useState, useEffect, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Container from '@m-next/container';
 import Button from '@m-next/button';
@@ -14,8 +14,22 @@ import { EmptyFilterIcon } from '@m-next/svg-icon';
 require('highcharts/modules/no-data-to-display')(Highcharts);
 require('highcharts/modules/accessibility')(Highcharts);
 
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
 // types
 const propTypes = {
+  /** Optional. Auto-generated when not provided. */
   id: PropTypes.string,
   isLoading: PropTypes.bool,
   style: PropTypes.instanceOf(Object),
@@ -57,29 +71,87 @@ const circlularSizes = {
   innerLarge: '45%',
 };
 
-function Chart({
-  id = '',
-  isLoading = false,
-  style = {},
-  data = {},
-  error,
-  onRefetch,
-  height = 200,
-  width = 200,
-  chartType,
-  caption,
-  onPointClick,
-  onClick,
-  colors,
-  categories,
-  xAxisLabel,
-  yAxisLabel,
-  dataPoints,
-  forceSelect,
-  yAxisAllowDecimals = true,
-  numberFormat,
-  accessibilityEnabled = true,
-}) {
+/**
+ * Chart — Highcharts-backed chart with support for bar/column/line/pie/donut/
+ * area variants and their 3D counterparts. Wraps `highcharts-react-official`
+ * and handles selection state, force-select, and an empty/error fallback.
+ *
+ * The `id` prop is now optional — auto-generated as `m-next-chart-${n}` when
+ * omitted. The legacy `forwardRef` prop is soft-shimmed (warns once); use the
+ * React forwardRef API and pass `ref` directly to attach to the root Container.
+ */
+const Chart = forwardRef(function Chart(props, ref) {
+  const {
+    id: idProp = '',
+    isLoading = false,
+    style = {},
+    data = {},
+    error,
+    onRefetch,
+    height = 200,
+    width = 200,
+    chartType,
+    caption,
+    onPointClick,
+    onClick,
+    colors,
+    categories,
+    xAxisLabel,
+    yAxisLabel,
+    dataPoints,
+    forceSelect,
+    yAxisAllowDecimals = true,
+    numberFormat,
+    accessibilityEnabled = true,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts — defensive acceptors so callers passing
+    // them don't error. None of these are referenced in the body below.
+    isV4Design: _isV4Design,
+    isMobile: _isMobile,
+    legacyClass: _legacyClass,
+    displayAuto: _displayAuto,
+    compactStyle: _compactStyle,
+    hidden: _hidden,
+  } = props;
+
+  // Auto-generate id if not provided.
+  const internalIdRef = useRef(null);
+  if (internalIdRef.current === null) {
+    // eslint-disable-next-line no-plusplus
+    internalIdRef.current = `m-next-chart-${++autoIdCounter}`;
+  }
+  const id = idProp || internalIdRef.current;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'chart-forwardRef-prop',
+      '@m-next/chart: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
+  // Chain modern ref + legacy forwardRef prop onto the rendered Container root.
+  const containerRef = useRef(null);
+  useEffect(() => {
+    const assign = (target) => {
+      if (!target) return;
+      if (typeof target === 'function') {
+        target(containerRef.current);
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        target.current = containerRef.current;
+      }
+    };
+    assign(ref);
+    assign(legacyForwardRef);
+  }, [ref, legacyForwardRef]);
+
+  const setRef = (node) => {
+    containerRef.current = node;
+  };
+
   const nonNullcolors = colors || [
     '#0D71C8',
     '#001e56',
@@ -471,6 +543,7 @@ function Chart({
   return (
     <ErrorBoundary fallback={errorFallback()}>
       <Container
+        ref={setRef}
         id={`${id}-chart`}
         style={{ ...style, padding: 0 }}
         css={{
@@ -498,7 +571,8 @@ function Chart({
       </Container>
     </ErrorBoundary>
   );
-}
+});
 
+Chart.displayName = 'Chart';
 Chart.propTypes = propTypes;
 export default Chart;

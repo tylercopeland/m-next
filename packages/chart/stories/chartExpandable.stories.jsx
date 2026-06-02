@@ -4,7 +4,7 @@ import { ChartExpandable } from '../src';
 
 export default {
   component: ChartExpandable,
-  title: 'm-one/Chart',
+  title: 'm-next/Components/Display/ChartExpandable',
   argTypes: {},
   parameters: {
     cssresources: [

@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { forwardRef, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { ErrorBoundary } from '@m-next/utilities';
 import { FieldTypeIds, FieldTypeNames, Projection, Tag, fieldTypeIdLookup } from '@m-next/types';
@@ -8,8 +8,22 @@ import { Text } from '@m-next/typeography';
 import Grid from '@m-next/grid';
 import * as s from './chart.styles';
 
+// One-time deprecation warner — fires once per key, mirrors @m-next/input.
+const warnOnce = (() => {
+  const seen = new Set();
+  return (key, message) => {
+    if (seen.has(key) || typeof console === 'undefined') return;
+    seen.add(key);
+    // eslint-disable-next-line no-console
+    console.warn(message);
+  };
+})();
+
+let autoIdCounter = 0;
+
 // types
 const propTypes = {
+  /** Optional. Auto-generated when not provided. */
   id: PropTypes.string,
   isLoading: PropTypes.bool,
   style: PropTypes.instanceOf(Object),
@@ -70,38 +84,84 @@ const propTypes = {
   ),
 };
 
-function ChartDrilldown({
-  id = '',
-  isLoading = false,
-  style = {},
-  data = {},
-  error,
-  onRefetch,
-  height = 200,
-  width = 200,
-  chartType,
-  caption,
-  onPointClick,
-  onClick,
-  onClose,
-  colors,
-  categories,
-  xAxisLabel,
-  yAxisLabel,
-  dataPoints,
-  expanded,
-  anchorEl = 'body',
-  expandedMargin,
-  constrainOverlayToAnchor = false,
-  drilldown,
-  displayPreferences,
-  showClose = true,
-  enableForceSelect = true,
-  yAxisAllowDecimals = true,
-  numberFormat = null,
-  onFetchChipsData = null,
-  chipsData = null,
-}) {
+/**
+ * ChartDrilldown — composite that renders a `ChartExpandable` and, when
+ * `drilldown.enabled`, an inline `Grid` of drilldown rows derived from
+ * `drilldown.projection.fields`. Manages `forceSelect` highlight state for
+ * the chart and wraps the whole thing in an `ErrorBoundary`.
+ *
+ * The `id` prop is now optional — auto-generated as
+ * `m-next-chart-drilldown-${n}` when omitted. The Grid still derives its id
+ * as `${id}-drilldown` from the same source.
+ *
+ * Soft-shim caveats:
+ *   - `forwardRef` (prop name) is deprecated. Use the React forwardRef API —
+ *     pass `ref` directly. A one-time console.warn fires when the legacy prop
+ *     is passed.
+ *   - The root rendered element is `<ErrorBoundary>` (a class component) whose
+ *     child is `<ChartExpandable>` (a wrapper around Highcharts). Neither
+ *     reliably accepts a DOM ref, so the forwarded `ref` is currently a
+ *     no-op (Mapbox pattern). It is reserved for future use once the inner
+ *     tree exposes a stable root node.
+ */
+const ChartDrilldown = forwardRef(function ChartDrilldown(props, _ref) {
+  const {
+    id: idProp,
+    isLoading = false,
+    style = {},
+    data = {},
+    error,
+    onRefetch,
+    height = 200,
+    width = 200,
+    chartType,
+    caption,
+    onPointClick,
+    onClick,
+    onClose,
+    colors,
+    categories,
+    xAxisLabel,
+    yAxisLabel,
+    dataPoints,
+    expanded,
+    anchorEl = 'body',
+    expandedMargin,
+    constrainOverlayToAnchor = false,
+    drilldown,
+    displayPreferences,
+    showClose = true,
+    enableForceSelect = true,
+    yAxisAllowDecimals = true,
+    numberFormat = null,
+    onFetchChipsData = null,
+    chipsData = null,
+
+    // Soft-shimmed legacy props
+    forwardRef: legacyForwardRef,
+
+    // Silently ignored legacy ghosts — defensive acceptors so callers passing
+    // them don't error. These are NOT part of the current API surface.
+    displayAuto: _displayAuto,
+    hidden: _hidden,
+  } = props;
+
+  // Auto-generate id if not provided. Internal markers (`${id}-drilldown`
+  // on the Grid) reuse this so the DOM tree stays internally consistent.
+  const [internalId] = useState(() => {
+    // eslint-disable-next-line no-plusplus
+    autoIdCounter++;
+    return `m-next-chart-drilldown-${autoIdCounter}`;
+  });
+  const id = idProp || internalId;
+
+  if (legacyForwardRef) {
+    warnOnce(
+      'chart-drilldown-forwardRef-prop',
+      '@m-next/chart-drilldown: `forwardRef` prop is deprecated. Use the React forwardRef API — pass `ref` directly.',
+    );
+  }
+
   const [forceSelect, setForceSelect] = useState(null);
 
   const handleClose = (e) => {
@@ -295,7 +355,8 @@ function ChartDrilldown({
   };
 
   return <ErrorBoundary fallback={errorFallback()}>{render()}</ErrorBoundary>;
-}
+});
 
+ChartDrilldown.displayName = 'ChartDrilldown';
 ChartDrilldown.propTypes = propTypes;
 export default ChartDrilldown;

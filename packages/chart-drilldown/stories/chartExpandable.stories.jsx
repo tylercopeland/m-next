@@ -5,7 +5,7 @@ import ChartDrilldown from '../src';
 
 export default {
   component: ChartDrilldown,
-  title: 'm-one/Chart',
+  title: 'm-next/Components/Display/ChartDrilldown',
   argTypes: {},
   parameters: {
     cssresources: [

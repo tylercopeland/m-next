@@ -3,7 +3,7 @@ import ColorPicker from '../src';
 
 export default {
   component: ColorPicker,
-  title: 'm-one/ColorPicker',
+  title: 'm-next/Components/Form/ColorPicker',
   argTypes: {},
   parameters: {
     cssresources: [
