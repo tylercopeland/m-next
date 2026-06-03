@@ -42,6 +42,9 @@ export const Variants = () => (
     <Row label="secondary">
       <Button variant="secondary">Secondary</Button>
     </Row>
+    <Row label="tertiary">
+      <Button variant="tertiary">Tertiary</Button>
+    </Row>
     <Row label="ghost">
       <Button variant="ghost">Ghost</Button>
     </Row>

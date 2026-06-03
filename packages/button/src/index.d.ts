@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'link';
+export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'link';
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
 export interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'color'> {

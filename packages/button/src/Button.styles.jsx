@@ -38,6 +38,16 @@ const VARIANT_STYLES = {
     ':hover:not(:disabled)': { background: COLORS.greyHover, color: colors.grey.darkest },
     ':active:not(:disabled)': { background: COLORS.greyBorder },
   },
+  // Text-and-icon button used for low-emphasis actions inline with content
+  // (e.g. "Back", "Import contacts"). Blue text, no border, no underline —
+  // matches Method's production tertiary pattern.
+  tertiary: {
+    background: 'transparent',
+    color: COLORS.blue,
+    border: '1px solid transparent',
+    ':hover:not(:disabled)': { background: COLORS.greyHover, color: COLORS.blueDark },
+    ':active:not(:disabled)': { background: COLORS.greyBorder, color: COLORS.blueDarker },
+  },
   link: {
     background: 'transparent',
     color: COLORS.blue,
