@@ -60,6 +60,8 @@ const M_NEXT_PACKAGES = [
   // and styling during Phase 3). Listed so callers can see the deprecation
   // warning fire when rendering its stories.
   'tabs-v2',
+  // Brand assets — Method wordmark wrapper, future variants added here
+  'brand',
 ];
 
 const stories = M_NEXT_PACKAGES.flatMap((pkg) => [

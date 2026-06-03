@@ -1,0 +1,108 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import * as MethodLogoStories from './methodLogo.stories';
+
+<Meta of={MethodLogoStories} />
+
+# MethodLogo
+
+The Method wordmark, wrapped as a m-next component so it carries the
+standard envelope (size, accessibility, ref forwarding) without you
+having to hand-roll an `<img>` tag everywhere the brand appears.
+
+## When to use it
+
+- Chrome surfaces where the Method brand belongs: Sidebar header, AppBar
+  start slot, login splash, marketing landing, empty states.
+- Anywhere a designer would otherwise paste an `<img src="...">` pointing
+  at the canonical asset URL.
+
+## When NOT to use it
+
+- Per-record avatars or user pictures — use a generic image or AvatarPill.
+- Inside email templates / rendered PDFs where the runtime DOM doesn't
+  exist. For those, use the canonical asset URL directly.
+
+## API
+
+| Prop | Type | Default | Notes |
+|---|---|---|---|
+| `src` | string | white-wordmark URL on Method's CDN | Override to swap variants. |
+| `height` | number\|string | `24` | Width derived from natural ratio. |
+| `width` | number\|string | auto | Use either `height` or `width`. |
+| `ariaLabel` | string | `'Method'` | Label for screen readers. |
+| `decorative` | bool | `false` | When true, aria-hidden + role=presentation. |
+| `id` | string | auto-generated | `m-next-method-logo-{n}` when omitted. |
+
+Plus the standard envelope (`forwardRef`, ignored ghosts).
+
+## Sizing
+
+`MethodLogo` preserves the wordmark's natural aspect ratio
+(514.9 : 125.3). Pass only `height` in most cases — the width is
+derived automatically. Pass only `width` if you're fitting the logo
+into a fixed horizontal slot.
+
+```jsx
+<MethodLogo height={24} />   {/* width auto-derived */}
+<MethodLogo width={108} />   {/* height auto-derived */}
+```
+
+## Accessibility
+
+By default the logo renders as `role="img"` with `aria-label="Method"`.
+When the surrounding text already conveys the brand (e.g. a heading that
+says "Welcome to Method"), pass `decorative` to suppress the screen-reader
+announcement.
+
+```jsx
+{/* Standalone — screen reader announces "Method" */}
+<MethodLogo />
+
+{/* Decorative — screen reader skips it */}
+<h1>Welcome to Method</h1>
+<MethodLogo decorative />
+```
+
+## Asset source
+
+The default `src` points at Method's canonical CDN URL:
+
+```
+https://www.method.me/wp-content/uploads/2021/10/Logo-Method-white.svg
+```
+
+This is the white-wordmark variant. Override `src` to swap to a different
+variant when one is published. Asset versioning lives on the CDN, not in
+this package — that's intentional: the component wraps whatever Method
+publishes as canonical, without this package needing to ship updates
+every time the brand asset moves.
+
+## Composition
+
+### In a Sidebar header
+
+```jsx
+<Sidebar>
+  <Sidebar.Header>
+    <MethodLogo height={20} />
+    <button aria-label='Toggle sidebar' style={{ marginLeft: 'auto' }}>☰</button>
+  </Sidebar.Header>
+  {/* ... */}
+</Sidebar>
+```
+
+### In an AppBar.Start slot
+
+```jsx
+<AppBar>
+  <AppBar.Start>
+    <MethodLogo height={20} />
+  </AppBar.Start>
+  <AppBar.End>{/* ... */}</AppBar.End>
+</AppBar>
+```
+
+## Roadmap
+
+- v2: icon-only variant once Method publishes one (the "M" mark)
+- v2: dark-surface variant (navy-on-white) for use on light chrome
