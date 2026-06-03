@@ -1,6 +1,10 @@
-import React, { forwardRef, useEffect, useRef, useState } from 'react';
+import React, { createContext, forwardRef, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import * as s from './Sidebar.styles';
+
+// Internal context so slot children (Header, etc.) can sync their padding
+// with the Sidebar's open/closed state without the caller wiring it twice.
+const SidebarContext = createContext({ isOpen: true });
 
 // One-time deprecation warner — fires once per key, mirrors @m-next/input.
 const warnOnce = (() => {
@@ -61,8 +65,8 @@ const Sidebar = forwardRef(function Sidebar(props, ref) {
     // onToggle is consumer-owned — Sidebar doesn't trigger toggles on its own
     // in v1. Reserved for future hooks (e.g. a built-in collapse handle).
     onToggle: _onToggle,
-    width = 240,
-    collapsedWidth = 56,
+    width = 224,
+    collapsedWidth = 48,
     ariaLabel = 'Sidebar navigation',
     children,
 
@@ -114,18 +118,22 @@ const Sidebar = forwardRef(function Sidebar(props, ref) {
     internalElRef.current = node;
   };
 
+  const ctxValue = useMemo(() => ({ isOpen }), [isOpen]);
+
   return (
-    <s.SidebarRoot
-      ref={setRef}
-      id={id}
-      isOpen={isOpen}
-      width={width}
-      collapsedWidth={collapsedWidth}
-      aria-label={ariaLabel}
-      {...rest}
-    >
-      {children}
-    </s.SidebarRoot>
+    <SidebarContext.Provider value={ctxValue}>
+      <s.SidebarRoot
+        ref={setRef}
+        id={id}
+        isOpen={isOpen}
+        width={width}
+        collapsedWidth={collapsedWidth}
+        aria-label={ariaLabel}
+        {...rest}
+      >
+        {children}
+      </s.SidebarRoot>
+    </SidebarContext.Provider>
   );
 });
 
@@ -136,7 +144,14 @@ Sidebar.propTypes = sidebarPropTypes;
 // Sidebar.Header / Sidebar.Body / Sidebar.Footer — passive slot containers
 // ============================================================================
 
-const Header = ({ children, ...rest }) => <s.SidebarHeader {...rest}>{children}</s.SidebarHeader>;
+const Header = ({ children, ...rest }) => {
+  const { isOpen } = useContext(SidebarContext);
+  return (
+    <s.SidebarHeader isOpen={isOpen} {...rest}>
+      {children}
+    </s.SidebarHeader>
+  );
+};
 Header.displayName = 'Sidebar.Header';
 Header.propTypes = { children: PropTypes.node };
 

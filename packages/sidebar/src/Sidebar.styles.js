@@ -13,7 +13,6 @@ const ACCENT_BLUE = colors.blue.base || '#0D71C8'; // 4px left-edge accent on ac
 const ACTIVE_BG = colors.blue.dark || '#064499'; // full-width row background when active
 const ACTIVE_TEXT = colors.white || '#FFFFFF';
 const HOVER_BG = colors.blue.dark || '#064499'; // same fill as active on hover
-const INACTIVE_LEFT_ACCENT = colors.blue.dark || '#064499'; // subtle stripe so layout doesn't shift
 
 export const SidebarRoot = styled.aside((props) => ({
   display: 'flex',
@@ -31,15 +30,18 @@ export const SidebarRoot = styled.aside((props) => ({
   color: TEXT_PRIMARY,
 }));
 
-export const SidebarHeader = styled.div({
+// Header padding mirrors MethodUI's NavHeaderWrapper — 24px horizontal when
+// the sidebar is open, 16px when collapsed. Vertical padding is 16px so the
+// 20px-tall wordmark/logo lands the header at ~52px, matching production.
+export const SidebarHeader = styled.div((props) => ({
   flex: '0 0 auto',
-  padding: '12px 16px',
+  padding: props.isOpen ? '16px 24px' : '16px',
   display: 'flex',
   alignItems: 'center',
   gap: 8,
   minHeight: 56,
   boxSizing: 'border-box',
-});
+}));
 
 export const SidebarBody = styled.div({
   flex: '1 1 auto',
@@ -62,7 +64,7 @@ export const Divider = styled.div((props) => ({
   flex: '0 0 auto',
   height: 1,
   background: props.color || '#3E5265', // same as production LeftNavDivider
-  margin: 0,
+  margin: '8px 0', // 8px top/bottom matches MethodUI Accordion.styles.js
   border: 'none',
 }));
 
@@ -107,23 +109,23 @@ export const GroupBody = styled.div({
 
 // Items render edge-to-edge. Active state = full-width blue-dark fill +
 // 4px blue-base left border accent (matches LeftNav production HighlightingCSS).
-// Inactive items carry a 4px blue-dark left border so layout doesn't shift
-// between active/inactive states.
+// Inactive items carry a 4px transparent left border so layout stays stable
+// between states — the accent only shows on active rows.
 export const Item = styled.button((props) => ({
   display: 'flex',
   alignItems: 'center',
   gap: 12,
   width: '100%',
-  padding: '12px 16px 12px 12px', // 12px left because the 4px border-left adds 4 more
+  padding: '14px 24px', // 14px vertical → 48px row height (matches MethodUI HighlightingCSS); 24px horizontal padding per design spec
   borderRadius: 0,
   borderTop: 'none',
   borderBottom: 'none',
   borderRight: 'none',
-  borderLeft: `4px solid ${props.active ? ACCENT_BLUE : INACTIVE_LEFT_ACCENT}`,
+  borderLeft: `4px solid ${props.active ? ACCENT_BLUE : 'transparent'}`,
   background: props.active ? ACTIVE_BG : 'transparent',
   color: props.active ? ACTIVE_TEXT : TEXT_PRIMARY,
   fontSize: 14,
-  fontWeight: props.active ? 600 : 500,
+  fontWeight: props.active ? 600 : 400, // inactive items match MethodUI's browser-default weight; only active rows get bolded
   fontFamily: 'inherit',
   textAlign: 'left',
   textDecoration: 'none',
