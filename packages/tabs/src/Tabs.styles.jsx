@@ -189,6 +189,11 @@ export const TabPanel = styled.div(({ theme, borderless, dyanmicHeight, calMenuH
     border,
     display: 'flex',
     width: '100%',
+    // Default content padding so tab content has breathing room out of the
+    // box. Matches Method production layout. Callers that need flush content
+    // (full-bleed grids, embedded chrome) override via `contentStyle={{ padding: 0 }}`.
+    padding: '16px',
+    boxSizing: 'border-box',
     minHeight: dyanmicHeight ? null : '809px',
     height: calMenuHeight ? 'calc(100% - 65px)' : '100%',
   };
