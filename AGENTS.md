@@ -29,6 +29,8 @@ This file is also read by humans pairing with an agent — it's the shared contr
 
 **Goal when building UI:** compose real m-next components. Don't reach for raw HTML + inline styles when an m-next component exists.
 
+**Machine-readable catalog:** [`registry.json`](./registry.json) at the workspace root lists every component (77 of them) with category, summary, variants, canonical Storybook story, and the "use / don't use" decision. Tools and agents should query it once at session start to orient before generating code.
+
 ---
 
 ## The rules (READ THESE FIRST)
@@ -50,6 +52,141 @@ When building a screen, mirror the production shape. One canonical `MethodStyle`
 ### Rule 3: API surface only — don't restructure
 
 This applies inside Phase 3 cleanups. When updating an inherited component, change the API surface (rename props, soft-shim legacy aliases, fix a11y, migrate colors) — don't restructure files, drop deps, or rename packages. Smaller diffs = more credible production PRs.
+
+---
+
+## Selection guide — pick the right component
+
+When choosing between two components, this is the reference. Tables are ordered by category. If a row's "Use" cell points at a variant (e.g., `Button variant="tertiary"`), the variant matters — don't substitute another variant just because the package name matches.
+
+### Action — buttons, links, triggers
+
+| Need | Use | Don't use |
+|---|---|---|
+| Primary action (Save, Submit) | `<Button variant="primary">` | `<button style={...}>` |
+| Secondary action (Cancel, alt path) | `<Button variant="secondary">` | unstyled `<button>` |
+| Low-emphasis text+icon (Back, Import, link-like action) | `<Button variant="tertiary">` | hand-rolled blue-text button |
+| Subtle action that blends with content | `<Button variant="ghost">` | gray-text styled div |
+| Inline underlined text action | `<Button variant="link">` | `<a>` styled as button |
+| Navigation link (anchor semantics) | `<Link href=...>` | bare `<a href>` |
+| Group of related actions | `<ButtonGroup>` | flex container with `<Button>`s |
+
+### Display — content and data presentation
+
+| Need | Use | Don't use |
+|---|---|---|
+| Metric / KPI with optional delta | `<InsightCard>` (delta prop) | `<Card>` with manual layout |
+| Tabular data | `<Grid>` (see Readonly story for canonical args) | `<table>` or div-shaped grid |
+| Small static status tag | `<Badge>` (sm, categorical) | `<span>` styled label |
+| Larger interactive/dismissible tag | `<Pill>` (md, has delete slot) | styled chip div |
+| Person avatar + name combo | `<AvatarPill>` | `<Pill>` + manual `<img>` |
+| Generic content panel | `<Container bordered>` or `<Card>` | `<div>` with border |
+| Section heading with actions | `<SectionHeader>` | flex `<div>` with `<h2>` |
+| Themed typography (H1–H6, P, captions) | `<Text as="H2">` etc. | `<h1>` / `<p>` with style |
+| Accordion sections | `<Accordion>` | manual collapse logic |
+| Image carousel | `<Carousel>` | manual scroll-snap |
+
+### Feedback — communicating state to the user
+
+| Need | Use | Don't use |
+|---|---|---|
+| Transient success/error popup | `useToast()` from `@m-next/toast` | manual snackbar div |
+| Inline contextual warning/info | `<Alert status="warning|info|success|error">` | `<Banner>` |
+| Page-top notification with action | `<Banner status=...>` | `<Alert>` |
+| Empty list / no-results state | `<EmptyState variant="subtle|bordered|banner">` | hand-rolled "no items" div |
+| Loading placeholder (skeleton shape) | `<Skeleton>` | gray box / spinner inline |
+| Inline loading spinner (in button, modal) | `<Spinner>` | CSS animation div |
+| Hover-triggered hint | `<Tooltip>` | `title=""` attribute or custom popover |
+| "Try this feature" splash for empty screens | `<AppActivationBanner>` | custom Container with bullets/CTAs |
+
+### Form — capturing user input
+
+| Need | Use | Don't use |
+|---|---|---|
+| Single-line text | `<Input>` from `@m-next/input` | `<input type="text">` |
+| Multi-line text | `<Textarea>` from `@m-next/input-area` | `<textarea>` |
+| Single checkbox | `<Checkbox>` | `<input type="checkbox">` |
+| Group of checkboxes | `<CheckboxGroup>` | array of `<Checkbox>` in flex |
+| Binary on/off switch | `<Toggle>` | `<Checkbox>` styled as switch |
+| Single-select dropdown | `<Select>` | `<select>` |
+| Multi-select dropdown | `<MultiSelect>` | multiple `<Checkbox>` rows |
+| Async-loaded options | `<Dropdown>` or `<DropdownAsync>` | `<Select>` with manual fetch |
+| Search box | `<SearchInput>` | `<Input>` + manual magnifier icon |
+| 2–4 mutually-exclusive options inline | `<SegmentedControl>` from `@m-next/pill-tab` | `<RadioButton>` group |
+| Radio with icon visuals | `<IconRadioGroup>` from `@m-next/radio-button` | manual `<input type="radio">` |
+| Date picker | `<DatePicker>` / `<DateRangePicker>` | `<input type="date">` |
+| Time picker | `<TimePicker>` / `<TimeRangePicker>` | `<input type="time">` |
+| Phone number | `<PhoneInput>` | `<Input>` |
+| Address (display) | `<Address>` | manual address fields |
+| Address (autocomplete entry) | `<AddressLookup>` | `<Input>` + manual geocode |
+| Field wrapper (label + input + error) | `<FormField>` | manual `<label>` + div |
+| Grouped fields with title/description | `<FormSection>` from `@m-next/field-block` | `<fieldset>` |
+| Inline error message | `<ValidationMessage>` | red `<span>` |
+| Helper text under a field | `<Caption>` | small gray `<span>` |
+| File upload + list | `<Attachments>` | `<input type="file">` |
+| Signature capture | `<Signature>` package | canvas wrapper |
+| Color picker | `<ColorPicker>` | `<input type="color">` |
+| Rich-text WYSIWYG | `<HtmlEditor>` package | `contenteditable` div |
+
+### Navigation — moving between views
+
+| Need | Use | Don't use |
+|---|---|---|
+| Tab strip with content swap | `<Tabs>` (`tabList`, `selectedTab`, `onChange`, `onRenderTabContent`) | custom tab buttons + manual state |
+| Tab strip with no panel content (header-only) | `<Tabs>` without `onRenderTabContent` | rendering an empty panel via `() => null` |
+| Left-side app navigation | `<Sidebar>` + `Sidebar.Header/Body/Item/Divider/Group/Footer` | `<nav>` with manual list |
+| Top app bar | `<AppBar>` + `AppBar.Start/Center/End` | `<header>` flex container |
+| Breadcrumb trail | `<Breadcrumbs>` | manual `›` separators |
+| Pagination controls | `<Pagination>` | custom prev/next buttons |
+| Multi-step workflow indicator | `<Stepper>` | numbered circles in a row |
+| Filter pill row | `<ChipsFilter>` (alias `<FilterChips>`) | `<Checkbox>` row |
+| Dropdown action menu | `<Menu>` | custom popover with items |
+
+### Overlay — floating above content
+
+| Need | Use | Don't use |
+|---|---|---|
+| Modal confirmation / form | `<Dialog>` | fixed div with backdrop |
+| Side-sliding panel | `<Drawer>` (`placement`, `size`) | absolute-positioned div |
+| Hover/click contextual surface | `<Popover>` | manually positioned div |
+| Action menu with items | `<Menu>` | `<Popover>` + manual list |
+| "Try this feature" full-screen splash | `<AppActivationOverlay>` | manual modal |
+
+### Foundation — primitives (use these freely)
+
+These ARE the styled-HTML you should reach for. Don't over-componentize.
+
+| Need | Use |
+|---|---|
+| Vertical stack with gap | `<Stack gap="md">` from `@m-next/layout` |
+| Horizontal row with gap + align | `<Inline gap="sm" align="center">` |
+| Generic flex/block container with spacing props | `<Box padding="md">` |
+| Visual separator line | `<Divider>` from `@m-next/layout` |
+| Brand wordmark | `<MethodLogo height={20} />` from `@m-next/brand` |
+| Icon glyph | `<SvgIcon name="..." size={...} color="...">` |
+
+---
+
+## Forbidden patterns
+
+The highest-frequency mistakes AI makes when generating m-next code. If you find yourself writing one of these, stop and pick from the Selection guide.
+
+| Avoid | Use instead | Why |
+|---|---|---|
+| `<button style={{...}}>` | `<Button variant="...">` | Five canonical variants exist (primary, secondary, tertiary, ghost, link) — pick one |
+| `<input style={{...}}>` | `<Input>` | `@m-next/input` carries the Phase 3 envelope (a11y, ref-forwarding, soft-shims) |
+| `<textarea>` | `<Textarea>` from `@m-next/input-area` | Same envelope; consistent focus/error styling |
+| `<table>` or `<div>` table mock | `<Grid>` | Grid has built-in pagination, sort, filter, view-filter, search, columns toggle |
+| Custom tab buttons + state | `<Tabs>` | Handles a11y, keyboard navigation, focus management |
+| `<Card>` for a metric with delta | `<InsightCard>` | Built-in delta visualization |
+| `<Banner>` for an inline warning | `<Alert>` | Banner = page-top with action; Alert = inline contextual |
+| Manual snackbar / toast div | `useToast()` | Toast provider handles stacking, dismissal, queue |
+| `<h1>` / `<h2>` / `<p>` with inline style | `<Text as="H1|H2|P">` | Text uses theme tokens for typography |
+| `<a href>` with custom underline | `<Link href>` | Link handles external icon, hover state |
+| Hand-rolled empty state | `<EmptyState>` | Has variant + action slot |
+| Building tabs panel content as a sibling instead of inside `onRenderTabContent` | Put real content in `onRenderTabContent={() => <Body />}` | Sibling content lives outside the tab panel's a11y/focus boundary |
+| Building a custom drawer with `position: fixed` + transition | `<Drawer>` | Has placement, size, focus trap, backdrop |
+| Using `@m-next/typeography` or `@m-next/tabs-v2` | `@m-next/text` / `@m-next/tabs` | Deprecated aliases — they fire console warnings |
 
 ---
 

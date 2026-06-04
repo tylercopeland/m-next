@@ -1,0 +1,851 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-06-03",
+  "notes": "Machine-readable catalog of the m-next design system. Intended for AI agents and tooling that need a single-file orientation to the workspace. Each `components` entry tells you: what the component is, when to use it, what to avoid using instead, where the canonical Storybook example lives, and what variants exist. Update this file whenever a component is added, renamed, or has its variant surface changed. The longer-form Selection guide lives in AGENTS.md (workspace root).",
+  "categories": {
+    "Foundation": "Primitives — tokens, theme, layout, text. Used by everything.",
+    "Brand": "Method-branded assets — wordmark logo, etc.",
+    "Action": "Buttons, links, triggers. Things you click.",
+    "Display": "Content presentation — cards, badges, grids, charts.",
+    "Feedback": "State communication — banners, alerts, spinners, toasts, empty states.",
+    "Form": "User input capture — inputs, checkboxes, selects, dates.",
+    "Navigation": "Moving between views — tabs, sidebar, breadcrumbs, pagination.",
+    "Overlay": "Floating above content — dialogs, drawers, popovers, menus.",
+    "Domain": "Domain-specific or specialized — calendar, color picker, signature, html editor."
+  },
+  "components": [
+    {
+      "name": "Box",
+      "package": "@m-next/layout",
+      "category": "Foundation",
+      "summary": "Polymorphic block-level container with spacing/sizing props.",
+      "use": "Generic flex/block container with padding, background, dimensions.",
+      "dontUse": "Don't reach for a styled <div> when Box covers it.",
+      "story": "m-next/Foundation/Layout/Box",
+      "status": "shipped"
+    },
+    {
+      "name": "Stack",
+      "package": "@m-next/layout",
+      "category": "Foundation",
+      "summary": "Vertical flex container with gap.",
+      "use": "Vertical groups of content with consistent spacing.",
+      "dontUse": "Don't use a styled <div> with flex-direction:column.",
+      "story": "m-next/Foundation/Layout/Stack",
+      "status": "shipped"
+    },
+    {
+      "name": "Inline",
+      "package": "@m-next/layout",
+      "category": "Foundation",
+      "summary": "Horizontal flex container with gap, align, justify, wrap.",
+      "use": "Horizontal row of items (toolbar, header strip, inline form row).",
+      "dontUse": "Don't use a styled <div> with flex-direction:row.",
+      "story": "m-next/Foundation/Layout/Inline",
+      "status": "shipped"
+    },
+    {
+      "name": "Flex",
+      "package": "@m-next/layout",
+      "category": "Foundation",
+      "summary": "Lower-level flex primitive — direction, gap, align, justify, wrap props.",
+      "use": "When Stack/Inline don't fit and you need explicit flex direction.",
+      "dontUse": "Prefer Stack or Inline when possible — they're more semantic.",
+      "story": "m-next/Foundation/Layout/Flex",
+      "status": "shipped"
+    },
+    {
+      "name": "Divider",
+      "package": "@m-next/layout",
+      "category": "Foundation",
+      "summary": "Horizontal rule between sections.",
+      "use": "Visual separator between groups of content.",
+      "dontUse": "Don't use border-bottom on a sibling div.",
+      "story": "m-next/Foundation/Layout/Divider",
+      "status": "shipped"
+    },
+    {
+      "name": "Text",
+      "package": "@m-next/text",
+      "category": "Foundation",
+      "summary": "Typography primitive. Renders <p>, <div>, or <h1>–<h6> with theme-token-driven font size, weight, color.",
+      "variants": {
+        "as": ["P", "Div", "Title", "H1", "H2", "H3", "H4", "H5", "H6"]
+      },
+      "use": "All themed typography — headings, paragraphs, helper text.",
+      "dontUse": "Don't use <h1> / <p> with inline style — use <Text as=\"H1\"> for theme-token typography.",
+      "story": "m-next/Foundation/Text",
+      "status": "shipped"
+    },
+    {
+      "name": "ThemeProvider",
+      "package": "@m-next/theme",
+      "category": "Foundation",
+      "summary": "Context provider for theme tokens. Pair with useTheme().",
+      "use": "Wrap your app root (or a story) to enable theme-aware components.",
+      "dontUse": "Don't pass theme objects as props — use the provider.",
+      "story": "m-next/Foundation/Theme",
+      "status": "shipped"
+    },
+    {
+      "name": "MethodLogo",
+      "package": "@m-next/brand",
+      "category": "Brand",
+      "summary": "Method wordmark image wrapper. Defaults to white-on-navy CDN asset.",
+      "use": "Sidebar header, app-bar start, login splash, anywhere the Method mark goes.",
+      "dontUse": "Don't inline the SVG or rebuild the wordmark.",
+      "story": "m-next/Components/Display/MethodLogo",
+      "status": "shipped"
+    },
+    {
+      "name": "Button",
+      "package": "@m-next/button",
+      "category": "Action",
+      "summary": "Clickable action trigger. Five variants for emphasis level.",
+      "variants": {
+        "variant": ["primary", "secondary", "tertiary", "ghost", "link"],
+        "size": ["sm", "md", "lg"]
+      },
+      "use": "Any clickable action — primary form action, cancel, low-emphasis text+icon, etc.",
+      "dontUse": "Don't use <button style={...}> for any variant. Pick a variant.",
+      "story": "m-next/Components/Action/Button",
+      "canonicalExample": "Variants",
+      "status": "shipped"
+    },
+    {
+      "name": "ButtonGroup",
+      "package": "@m-next/button-group",
+      "category": "Action",
+      "summary": "Group of related buttons with shared chrome.",
+      "use": "Grouped actions like \"edit / share / archive\".",
+      "dontUse": "Don't use an Inline of <Button>s when ButtonGroup is the right semantic.",
+      "story": "m-next/Components/Action/ButtonGroup",
+      "status": "shipped"
+    },
+    {
+      "name": "Link",
+      "package": "@m-next/link",
+      "category": "Action",
+      "summary": "Navigation anchor with optional external-link icon.",
+      "use": "Inline navigation links in prose, table cells, etc.",
+      "dontUse": "Don't use bare <a href> with custom underline styling.",
+      "story": "m-next/Components/Action/Link",
+      "status": "shipped"
+    },
+    {
+      "name": "Badge",
+      "package": "@m-next/badge",
+      "category": "Display",
+      "summary": "Small categorical tag.",
+      "variants": {
+        "variant": ["solid", "subtle", "outline"],
+        "colorScheme": ["neutral", "blue", "green", "yellow", "red"],
+        "size": ["sm", "md"]
+      },
+      "use": "Small static status indicators (VIP, NEW, BETA).",
+      "dontUse": "Don't use <Pill> for small categorical tags — Pill is larger and interactive.",
+      "story": "m-next/Components/Display/Badge",
+      "canonicalExample": "AllVariants",
+      "status": "shipped"
+    },
+    {
+      "name": "Pill",
+      "package": "@m-next/pill",
+      "category": "Display",
+      "summary": "Larger tag with optional icons and dismiss action.",
+      "variants": {
+        "variant": ["subtle", "solid", "ghost"],
+        "colorScheme": ["blue", "green", "fuchsia", "grey", "yellow", "red", "purple", "orange", "teal", "transparent"],
+        "size": ["sm", "md"]
+      },
+      "use": "Interactive or dismissible tags (selected filters, removable chips, status with action).",
+      "dontUse": "Don't use <Badge> when you need a dismiss action — Badge is static.",
+      "story": "m-next/Components/Display/Pill",
+      "canonicalExample": "Variants",
+      "status": "shipped"
+    },
+    {
+      "name": "Card",
+      "package": "@m-next/card",
+      "category": "Display",
+      "summary": "Generic content panel.",
+      "use": "Grouped content with a border and padding.",
+      "dontUse": "Don't use <Card> for metric/KPI callouts — use <InsightCard>.",
+      "story": "m-next/Components/Display/Card",
+      "status": "shipped"
+    },
+    {
+      "name": "InsightCard",
+      "package": "@m-next/insight-card",
+      "category": "Display",
+      "summary": "Metric/KPI card with title, value, and optional delta (trend) slot.",
+      "use": "Dashboard KPIs — \"Total revenue $84,250 +12% vs last month\".",
+      "dontUse": "Don't use <Card> with manual metric layout.",
+      "story": "m-next/Components/Display/InsightCard",
+      "status": "shipped"
+    },
+    {
+      "name": "Container",
+      "package": "@m-next/container",
+      "category": "Display",
+      "summary": "Full-width bordered/padded content container.",
+      "use": "Bordered content panel; use the bordered prop for a card-like surface.",
+      "dontUse": "Don't use a styled <div> with border.",
+      "story": "m-next/Components/Display/Container",
+      "status": "shipped"
+    },
+    {
+      "name": "Grid",
+      "package": "@m-next/grid",
+      "category": "Display",
+      "summary": "Tabular data grid with sort, filter, pagination, view filters, columns toggle, inline export, search.",
+      "use": "Any tabular data view. See the Readonly story for canonical wiring.",
+      "dontUse": "Don't build a <table> or div-shaped grid. Don't duplicate Grid's built-in chrome with a custom header.",
+      "story": "m-next/Components/Display/Grid",
+      "canonicalExample": "Readonly",
+      "status": "shipped"
+    },
+    {
+      "name": "Accordion",
+      "package": "@m-next/accordion",
+      "category": "Display",
+      "summary": "Expandable sections.",
+      "use": "Collapsible FAQ-style content or stacked settings panels.",
+      "dontUse": "Don't roll your own collapse logic.",
+      "story": "m-next/Components/Display/Accordion",
+      "status": "shipped"
+    },
+    {
+      "name": "Carousel",
+      "package": "@m-next/carousel",
+      "category": "Display",
+      "summary": "Horizontal scrolling image/card carousel.",
+      "use": "Image galleries, content sliders.",
+      "dontUse": "Don't use scroll-snap on a div.",
+      "story": "m-next/Components/Display/Carousel",
+      "status": "shipped"
+    },
+    {
+      "name": "AvatarPill",
+      "package": "@m-next/avatar-pill",
+      "category": "Display",
+      "summary": "Avatar image plus name in a pill shape.",
+      "use": "Person identification in lists, comment author, assigned-to chips.",
+      "dontUse": "Don't use <Pill> with a manual <img> for person tags.",
+      "story": "m-next/Components/Display/AvatarPill",
+      "status": "shipped"
+    },
+    {
+      "name": "SectionHeader",
+      "package": "@m-next/section-header",
+      "category": "Display",
+      "summary": "Page section heading with optional title, subtitle, and action slot.",
+      "use": "Above content sections — \"Contact Details\" with an Edit action on the right.",
+      "dontUse": "Don't compose <h2> + flex container manually.",
+      "story": "m-next/Components/Display/SectionHeader",
+      "status": "shipped"
+    },
+    {
+      "name": "TagWidget",
+      "package": "@m-next/tag-widget",
+      "category": "Display",
+      "summary": "Read-only tag list display.",
+      "use": "Showing assigned tags on a record in a read-only context.",
+      "dontUse": "Use <ChipsFilter> for interactive tag selection.",
+      "story": "m-next/Components/Display/TagWidget",
+      "status": "shipped"
+    },
+    {
+      "name": "Chart",
+      "package": "@m-next/chart",
+      "category": "Display",
+      "summary": "Multi-series Highcharts wrapper — line, bar, pie, etc.",
+      "use": "Time-series and categorical data visualization.",
+      "dontUse": "Don't roll custom SVG charts.",
+      "story": "m-next/Components/Display/Chart",
+      "status": "shipped"
+    },
+    {
+      "name": "ChartDrilldown",
+      "package": "@m-next/chart-drilldown",
+      "category": "Display",
+      "summary": "Hierarchical drill-down chart.",
+      "use": "Charts where the user can click a category to expand into subcategories.",
+      "dontUse": "Use <Chart> for non-drilldown cases — simpler.",
+      "story": "m-next/Components/Display/ChartDrilldown",
+      "status": "shipped"
+    },
+    {
+      "name": "Image",
+      "package": "@m-next/image",
+      "category": "Display",
+      "summary": "Image display with optional edit overlay.",
+      "use": "Avatar editing, product photo display.",
+      "dontUse": "Use a plain <img> for non-editable static images.",
+      "story": "m-next/Components/Display/Image",
+      "status": "shipped"
+    },
+    {
+      "name": "Scrollbar",
+      "package": "@m-next/scrollbar",
+      "category": "Display",
+      "summary": "Custom scrollbar styling wrapper.",
+      "use": "When you need themed scrollbars in a scrolling container.",
+      "dontUse": "Don't reach for it unless the default scrollbar is visually wrong.",
+      "story": "m-next/Components/Display/Scrollbar",
+      "status": "shipped"
+    },
+    {
+      "name": "Alert",
+      "package": "@m-next/alert",
+      "category": "Feedback",
+      "summary": "Inline contextual alert with status accent and optional title/action.",
+      "variants": {
+        "status": ["info", "success", "warning", "error"]
+      },
+      "use": "Inline contextual feedback within a form or content area.",
+      "dontUse": "Don't use <Banner> for inline alerts — Banner is page-top.",
+      "story": "m-next/Components/Feedback/Alert",
+      "status": "shipped"
+    },
+    {
+      "name": "Banner",
+      "package": "@m-next/banner",
+      "category": "Feedback",
+      "summary": "Full-width page-top notification with optional close and CTAs.",
+      "variants": {
+        "status": ["info", "success", "warning", "error"]
+      },
+      "use": "Page-top notifications — trial expiry, system status, dismissable info.",
+      "dontUse": "Don't use <Banner> for inline contextual feedback — use <Alert>.",
+      "story": "m-next/Components/Feedback/Banner",
+      "status": "shipped"
+    },
+    {
+      "name": "Toast",
+      "package": "@m-next/toast",
+      "category": "Feedback",
+      "summary": "Transient toast notifications managed by ToastProvider + useToast() hook.",
+      "use": "Success confirmations, error notifications, transient feedback.",
+      "dontUse": "Don't render alert divs manually — call useToast().success().",
+      "story": "m-next/Components/Feedback/Toast",
+      "status": "shipped"
+    },
+    {
+      "name": "Spinner",
+      "package": "@m-next/spinner",
+      "category": "Feedback",
+      "summary": "Circular loading spinner.",
+      "use": "Inline loading state (button, small region).",
+      "dontUse": "Don't use a CSS animation div.",
+      "story": "m-next/Components/Feedback/Spinner",
+      "status": "shipped"
+    },
+    {
+      "name": "Skeleton",
+      "package": "@m-next/loading-skeleton",
+      "category": "Feedback",
+      "summary": "Placeholder skeleton for content that's loading.",
+      "use": "Loading state for lists, cards, structured content.",
+      "dontUse": "Don't use a gray <Box> as a manual skeleton.",
+      "story": "m-next/Components/Feedback/Skeleton",
+      "status": "shipped"
+    },
+    {
+      "name": "EmptyState",
+      "package": "@m-next/empty-state",
+      "category": "Feedback",
+      "summary": "Centered empty/no-results state with title, description, and action slot.",
+      "variants": {
+        "variant": ["subtle", "bordered", "banner"]
+      },
+      "use": "When a list is empty, a search returned nothing, or a feature isn't activated.",
+      "dontUse": "Don't hand-roll \"No items found\" markup.",
+      "story": "m-next/Components/Feedback/EmptyState",
+      "status": "shipped"
+    },
+    {
+      "name": "Tooltip",
+      "package": "@m-next/tooltip",
+      "category": "Feedback",
+      "summary": "Hover-triggered info popup.",
+      "use": "Hint text for icon buttons, contextual help on hover.",
+      "dontUse": "Don't use the native title=\"\" attribute or a custom <Popover>.",
+      "story": "m-next/Components/Feedback/Tooltip",
+      "status": "shipped"
+    },
+    {
+      "name": "AppActivationBanner",
+      "package": "@m-next/app-activation-banner",
+      "category": "Feedback",
+      "summary": "\"Try this feature\" splash card with title, description, bullet points, CTA buttons.",
+      "use": "Empty-state promotion of an unactivated feature (e.g. \"Set up Customers & Leads\").",
+      "dontUse": "Don't build a custom <Container> with bullets and CTAs.",
+      "story": "m-next/Components/Feedback/AppActivationBanner",
+      "status": "shipped"
+    },
+    {
+      "name": "HeroBanner",
+      "package": "@m-next/hero-banner",
+      "category": "Feedback",
+      "summary": "Large hero section with title, subtitle, background image slot.",
+      "use": "Top-of-page hero on landing screens.",
+      "dontUse": "Don't use for inline notifications — that's <Banner>.",
+      "story": "m-next/Components/Feedback/HeroBanner",
+      "status": "shipped"
+    },
+    {
+      "name": "Input",
+      "package": "@m-next/input",
+      "category": "Form",
+      "summary": "Single-line text input with leftContent/rightContent slots.",
+      "use": "Standard text entry fields.",
+      "dontUse": "Don't use bare <input type=\"text\"> with custom styling.",
+      "story": "m-next/Components/Form/Input",
+      "status": "shipped"
+    },
+    {
+      "name": "Textarea",
+      "package": "@m-next/input-area",
+      "category": "Form",
+      "summary": "Multi-line text input with rows control.",
+      "use": "Notes, descriptions, longer-form text.",
+      "dontUse": "Don't use bare <textarea>.",
+      "story": "m-next/Components/Form/Textarea",
+      "status": "shipped"
+    },
+    {
+      "name": "Checkbox",
+      "package": "@m-next/checkbox",
+      "category": "Form",
+      "summary": "Single checkbox with label and onChange callback.",
+      "use": "Standalone boolean toggles in a form.",
+      "dontUse": "Don't use <input type=\"checkbox\"> with manual labeling.",
+      "story": "m-next/Components/Form/Checkbox",
+      "status": "shipped"
+    },
+    {
+      "name": "CheckboxGroup",
+      "package": "@m-next/checkbox",
+      "category": "Form",
+      "summary": "Group of checkboxes with shared label.",
+      "use": "Multi-select via checkboxes (\"Select all that apply\").",
+      "dontUse": "Don't compose multiple <Checkbox>s in a flex container.",
+      "story": "m-next/Components/Form/CheckboxGroup",
+      "status": "shipped"
+    },
+    {
+      "name": "RadioButton",
+      "package": "@m-next/radio-button",
+      "category": "Form",
+      "summary": "Single radio with label.",
+      "use": "Mutually exclusive choice within a RadioGroup.",
+      "dontUse": "Use <SegmentedControl> for inline 2–4 choices.",
+      "story": "m-next/Components/Form/RadioButton",
+      "status": "shipped"
+    },
+    {
+      "name": "IconRadioGroup",
+      "package": "@m-next/radio-button",
+      "category": "Form",
+      "summary": "Radio group rendered as icon-based selection tiles.",
+      "use": "Visual mutually-exclusive choice (e.g. layout picker).",
+      "dontUse": "Don't use bare radio buttons when icons better convey meaning.",
+      "story": "m-next/Components/Form/IconRadioGroup",
+      "status": "shipped"
+    },
+    {
+      "name": "Toggle",
+      "package": "@m-next/toggle",
+      "category": "Form",
+      "summary": "On/off switch.",
+      "use": "Binary settings — \"Account is active\", \"Email notifications\".",
+      "dontUse": "Don't style a <Checkbox> to look like a switch.",
+      "story": "m-next/Components/Form/Toggle",
+      "status": "shipped"
+    },
+    {
+      "name": "Select",
+      "package": "@m-next/select",
+      "category": "Form",
+      "summary": "Single-select dropdown.",
+      "use": "Pick-one from a static list.",
+      "dontUse": "Don't use <select> directly.",
+      "story": "m-next/Components/Form/Select",
+      "status": "shipped"
+    },
+    {
+      "name": "MultiSelect",
+      "package": "@m-next/multi-select",
+      "category": "Form",
+      "summary": "Multi-select dropdown with chips for selected values.",
+      "use": "Pick-many from a list (tags, categories, assignees).",
+      "dontUse": "Don't use multiple <Checkbox>s when the list is long.",
+      "story": "m-next/Components/Form/MultiSelect",
+      "status": "shipped"
+    },
+    {
+      "name": "Dropdown",
+      "package": "@m-next/dropdown",
+      "category": "Form",
+      "summary": "Async-capable dropdown. Includes DropdownAsync and ClickToEditDropdown variants.",
+      "use": "Dropdowns with remote-loaded options or click-to-edit cells.",
+      "dontUse": "Use <Select> for static client-side options.",
+      "story": "m-next/Components/Form/Dropdown",
+      "status": "shipped"
+    },
+    {
+      "name": "SearchInput",
+      "package": "@m-next/search-input",
+      "category": "Form",
+      "summary": "Input with built-in search icon and clear control.",
+      "use": "List search, filter search, anywhere with a search affordance.",
+      "dontUse": "Don't use <Input> with manual magnifier icon.",
+      "story": "m-next/Components/Form/SearchInput",
+      "status": "shipped"
+    },
+    {
+      "name": "SegmentedControl",
+      "package": "@m-next/pill-tab",
+      "category": "Form",
+      "summary": "Pill-style segmented toggle for 2–4 mutually exclusive inline options.",
+      "use": "Inline filter switches (\"All / Open / Paid / Overdue\").",
+      "dontUse": "Use <RadioButton> for vertical/labeled groups; <Tabs> for navigating views.",
+      "story": "m-next/Components/Form/SegmentedControl",
+      "status": "shipped"
+    },
+    {
+      "name": "DatePicker",
+      "package": "@m-next/datepicker",
+      "category": "Form",
+      "summary": "Date input with calendar popover. Also exports DateRangePicker, TimePicker, TimeRangePicker, DatePickerCalendar.",
+      "use": "Any date or time input.",
+      "dontUse": "Don't use <input type=\"date\"> — inconsistent across browsers.",
+      "story": "m-next/Components/Form/DatePicker",
+      "status": "shipped"
+    },
+    {
+      "name": "PhoneInput",
+      "package": "@m-next/phone-input",
+      "category": "Form",
+      "summary": "Phone number input with country code selector.",
+      "use": "Phone fields anywhere.",
+      "dontUse": "Don't use <Input> with manual phone formatting.",
+      "story": "m-next/Components/Form/PhoneInput",
+      "status": "shipped"
+    },
+    {
+      "name": "Address",
+      "package": "@m-next/address",
+      "category": "Form",
+      "summary": "Multi-field address display/edit component.",
+      "use": "Read or edit a structured address (street, city, region, postal, country).",
+      "dontUse": "Don't compose separate <Input>s — Address handles the grouping.",
+      "story": "m-next/Components/Form/Address",
+      "status": "shipped"
+    },
+    {
+      "name": "AddressLookup",
+      "package": "@m-next/address-lookup",
+      "category": "Form",
+      "summary": "Autocomplete address field backed by a geocoding service.",
+      "use": "Single-field address entry with autocomplete suggestions.",
+      "dontUse": "Use <Address> for fully manual multi-field entry.",
+      "story": "m-next/Components/Form/AddressLookup",
+      "status": "shipped"
+    },
+    {
+      "name": "FormField",
+      "package": "@m-next/form-field",
+      "category": "Form",
+      "summary": "Wraps a form control with label, description, and validation slots.",
+      "use": "Every form input — labels and errors should go through FormField.",
+      "dontUse": "Don't wrap inputs with custom <label> + <div> + error text.",
+      "story": "m-next/Components/Form/FormField",
+      "status": "shipped"
+    },
+    {
+      "name": "FormSection",
+      "package": "@m-next/field-block",
+      "category": "Form",
+      "summary": "Grouped fields under a section title with optional description.",
+      "use": "Form sections (\"Personal info\", \"Preferences\") that group multiple FormFields.",
+      "dontUse": "Don't use <fieldset> directly.",
+      "story": "m-next/Components/Form/FormSection",
+      "status": "shipped"
+    },
+    {
+      "name": "ValidationMessage",
+      "package": "@m-next/validation",
+      "category": "Form",
+      "summary": "Inline validation message (error, warning, success).",
+      "use": "Below a form field when explaining a validation result.",
+      "dontUse": "Don't use a red <span> manually.",
+      "story": "m-next/Components/Form/ValidationMessage",
+      "status": "shipped"
+    },
+    {
+      "name": "Caption",
+      "package": "@m-next/caption",
+      "category": "Form",
+      "summary": "Small helper text typically rendered below a form field.",
+      "use": "Hint or helper text under inputs.",
+      "dontUse": "Don't use a small gray <span> manually.",
+      "story": "m-next/Components/Form/Caption",
+      "status": "shipped"
+    },
+    {
+      "name": "Attachments",
+      "package": "@m-next/attachments",
+      "category": "Form",
+      "summary": "File upload widget with file list display.",
+      "use": "Document/photo attachment fields on records.",
+      "dontUse": "Don't use <input type=\"file\"> directly.",
+      "story": "m-next/Components/Form/Attachments",
+      "status": "shipped"
+    },
+    {
+      "name": "Tabs",
+      "package": "@m-next/tabs",
+      "category": "Navigation",
+      "summary": "Tab strip with content panel. Pass tabList, selectedTab, onChange, onRenderTabContent.",
+      "use": "Switching between views within a screen (Activities / Opportunities / Invoices).",
+      "dontUse": "Don't build custom tab buttons + state. Don't pass onRenderTabContent={() => null} to suppress the panel — omit the prop entirely.",
+      "story": "m-next/Components/Navigation/Tabs",
+      "canonicalExample": "Variants",
+      "status": "shipped"
+    },
+    {
+      "name": "Breadcrumbs",
+      "package": "@m-next/bread-crumbs",
+      "category": "Navigation",
+      "summary": "Navigation breadcrumb trail with separators.",
+      "use": "Path indicator above page content (Dashboard > Customers > Acme Corp).",
+      "dontUse": "Don't compose <Link>s with manual › separators.",
+      "story": "m-next/Components/Navigation/Breadcrumbs",
+      "status": "shipped"
+    },
+    {
+      "name": "Pagination",
+      "package": "@m-next/pagination",
+      "category": "Navigation",
+      "summary": "Page-of-results navigation. Note: @m-next/grid has built-in pagination — only use this for non-Grid lists.",
+      "use": "Custom paged lists outside of Grid.",
+      "dontUse": "Don't duplicate Grid's built-in pagination chrome.",
+      "story": "m-next/Components/Navigation/Pagination",
+      "status": "shipped"
+    },
+    {
+      "name": "Stepper",
+      "package": "@m-next/stepper",
+      "category": "Navigation",
+      "summary": "Multi-step workflow indicator with steps array and activeStep index.",
+      "use": "Onboarding flows, multi-step setup, progress indication.",
+      "dontUse": "Don't roll numbered circles in a flex row.",
+      "story": "m-next/Components/Navigation/Stepper",
+      "status": "shipped"
+    },
+    {
+      "name": "Sidebar",
+      "package": "@m-next/sidebar",
+      "category": "Navigation",
+      "summary": "Left-side app navigation. Compound: Sidebar.Header / Body / Footer / Divider / Group / Item.",
+      "use": "Primary left-rail navigation for app shells.",
+      "dontUse": "Don't compose <nav> with manual <ul>/<li>. Don't pass a header={...} data prop — use the compound API.",
+      "story": "m-next/Components/Navigation/Sidebar",
+      "status": "shipped"
+    },
+    {
+      "name": "AppBar",
+      "package": "@m-next/app-bar",
+      "category": "Navigation",
+      "summary": "Top app bar with Start, Center, End slots.",
+      "use": "Top chrome of an app shell — page title on Start, utility buttons on End.",
+      "dontUse": "Don't use a <header> flex container.",
+      "story": "m-next/Components/Navigation/AppBar",
+      "status": "shipped"
+    },
+    {
+      "name": "Menu",
+      "package": "@m-next/menu",
+      "category": "Navigation",
+      "summary": "Dropdown menu with list items.",
+      "use": "Action menus, kebab-menus, contextual menu lists.",
+      "dontUse": "Don't compose a <Popover> with manual list items.",
+      "story": "m-next/Components/Navigation/Menu",
+      "status": "shipped"
+    },
+    {
+      "name": "ChipsFilter",
+      "package": "@m-next/chips-filter",
+      "category": "Navigation",
+      "summary": "Horizontal row of filter chips. Also exported as FilterChips alias.",
+      "use": "Filter selector above a list view.",
+      "dontUse": "Don't use a row of <Checkbox>s.",
+      "story": "m-next/Components/Navigation/ChipsFilter",
+      "status": "shipped"
+    },
+    {
+      "name": "Dialog",
+      "package": "@m-next/dialog",
+      "category": "Overlay",
+      "summary": "Modal dialog with backdrop, title, and body.",
+      "use": "Confirmation, form modals, destructive action prompts.",
+      "dontUse": "Don't build a fixed <div> with backdrop.",
+      "story": "m-next/Components/Overlay/Dialog",
+      "status": "shipped"
+    },
+    {
+      "name": "Drawer",
+      "package": "@m-next/drawer",
+      "category": "Overlay",
+      "summary": "Slide-out side panel. Placement (left/right) and size props.",
+      "use": "Side-panel for detail views, settings, multi-step forms.",
+      "dontUse": "Don't build a fixed <div> with a transition.",
+      "story": "m-next/Components/Overlay/Drawer",
+      "status": "shipped"
+    },
+    {
+      "name": "Popover",
+      "package": "@m-next/popover",
+      "category": "Overlay",
+      "summary": "Floating positioned content bubble.",
+      "use": "Custom popovers that aren't menus or tooltips.",
+      "dontUse": "Use <Menu> for action lists, <Tooltip> for hover hints.",
+      "story": "m-next/Components/Overlay/Popover",
+      "status": "shipped"
+    },
+    {
+      "name": "AppActivationOverlay",
+      "package": "@m-next/app-activation-overlay",
+      "category": "Overlay",
+      "summary": "Full-screen \"Try this feature\" splash overlay.",
+      "use": "First-time-feature-use promotion that takes over the screen.",
+      "dontUse": "Use <AppActivationBanner> for inline (non-blocking) promotion.",
+      "story": "m-next/Components/Overlay/AppActivationOverlay",
+      "status": "shipped"
+    },
+    {
+      "name": "Calendar",
+      "package": "@m-next/calendar",
+      "category": "Domain",
+      "summary": "Full calendar widget backed by Syncfusion.",
+      "use": "Month/week/day calendar views with events.",
+      "dontUse": "Use <DatePicker> for simple date entry.",
+      "story": "m-next/Components/Display/Calendar",
+      "status": "shipped"
+    },
+    {
+      "name": "ColorPicker",
+      "package": "@m-next/color-picker",
+      "category": "Domain",
+      "summary": "Color selection widget.",
+      "use": "Theming controls, custom branding pickers.",
+      "dontUse": "Don't use <input type=\"color\">.",
+      "story": "m-next/Components/Form/ColorPicker",
+      "status": "shipped"
+    },
+    {
+      "name": "Signature",
+      "package": "@m-next/signature",
+      "category": "Domain",
+      "summary": "Signature capture canvas.",
+      "use": "E-signatures on contracts, work orders.",
+      "dontUse": "Don't roll a canvas wrapper.",
+      "story": "m-next/Components/Form/Signature",
+      "status": "shipped"
+    },
+    {
+      "name": "HtmlEditor",
+      "package": "@m-next/html-editor",
+      "category": "Domain",
+      "summary": "Rich-text WYSIWYG editor.",
+      "use": "Email composition, rich descriptions, formatted notes.",
+      "dontUse": "Don't use contenteditable directly.",
+      "story": "m-next/Components/Form/HtmlEditor",
+      "status": "shipped"
+    },
+    {
+      "name": "Map",
+      "package": "@m-next/map",
+      "category": "Domain",
+      "summary": "Mapbox integration wrapper. Exports Mapbox + MapboxApi.",
+      "use": "Map displays, location pickers, geo-tagged record visualization.",
+      "dontUse": "Don't embed Mapbox directly.",
+      "story": "m-next/Components/Display/Map",
+      "status": "shipped"
+    },
+    {
+      "name": "SvgIcon",
+      "package": "@m-next/svg-icon",
+      "category": "Foundation",
+      "summary": "Icon sprite wrapper. Takes name, size, color.",
+      "use": "Any iconography. Use color=\"currentColor\" inside Buttons so icon color follows the variant.",
+      "dontUse": "Don't inline custom <svg> markup.",
+      "story": "m-next/Foundation/SvgIcon",
+      "status": "shipped"
+    },
+    {
+      "name": "SyncWidget",
+      "package": "@m-next/sync-widget",
+      "category": "Domain",
+      "summary": "Sync status indicator showing last-sync timestamp and refresh action.",
+      "use": "Header indicator for data that syncs with an external system (e.g. QuickBooks).",
+      "dontUse": "Don't build a custom \"last synced\" string.",
+      "story": "m-next/Components/Display/SyncWidget",
+      "status": "shipped"
+    },
+    {
+      "name": "Typeography",
+      "package": "@m-next/typeography",
+      "category": "Foundation",
+      "summary": "DEPRECATED. Legacy V-prefixed alias for @m-next/text. Fires console.warn on render.",
+      "use": "Don't use. Migrate to @m-next/text.",
+      "dontUse": "Use <Text> from @m-next/text instead.",
+      "story": "m-next/Components/Foundation/Typeography",
+      "status": "deprecated",
+      "replacement": "@m-next/text"
+    },
+    {
+      "name": "TabsV2",
+      "package": "@m-next/tabs-v2",
+      "category": "Navigation",
+      "summary": "DEPRECATED. Alias for @m-next/tabs (V2 features absorbed during Phase 3). Fires console.warn on render.",
+      "use": "Don't use. Migrate to @m-next/tabs.",
+      "dontUse": "Use <Tabs> from @m-next/tabs instead.",
+      "story": "m-next/Components/Navigation/TabsV2",
+      "status": "deprecated",
+      "replacement": "@m-next/tabs"
+    }
+  ],
+  "compositions": [
+    {
+      "name": "CustomersList",
+      "summary": "List view shell: AppBar + Sidebar + activation banner + tabs over a real Grid with view filters.",
+      "story": "m-next/Compositions/CustomersList",
+      "file": "packages/compositions/stories/CustomersList.stories.jsx",
+      "demonstrates": ["AppBar", "Sidebar", "AppActivationBanner", "Tabs", "Grid", "Button (tertiary)"]
+    },
+    {
+      "name": "ContactDetail",
+      "summary": "Split-view detail screen: left rail of FormField + Text fields, right pane with Tabs over an EmptyState.",
+      "story": "m-next/Compositions/ContactDetail",
+      "file": "packages/compositions/stories/ContactDetail.stories.jsx",
+      "demonstrates": ["AppBar", "Sidebar", "FormField", "Input", "Text", "Pill", "Tabs", "EmptyState", "SearchInput", "Container"]
+    },
+    {
+      "name": "Dashboard",
+      "summary": "Overview screen: row of InsightCard KPIs with deltas, two-column 'recent activity + today' panels using bordered Container.",
+      "story": "m-next/Compositions/Dashboard",
+      "file": "packages/compositions/stories/Dashboard.stories.jsx",
+      "demonstrates": ["AppBar", "Sidebar", "InsightCard", "Container", "Pill", "Link", "Text", "Divider"]
+    }
+  ],
+  "conventions": {
+    "packageNaming": "Every component package is @m-next/<kebab-case-name>. Some packages export multiple components (e.g. @m-next/radio-button exports RadioButton + IconRadioGroup + ButtonRadioGroup).",
+    "storyTitles": "All Storybook story titles follow m-next/Components/<Category>/<Name>, or m-next/Foundation/<Name>, or m-next/Compositions/<Name>.",
+    "intentMdx": "Per-component intent contracts live at packages/<name>/stories/<name>.mdx — discoverable by convention, not listed here.",
+    "types": "Public API types live at packages/<name>/src/index.d.ts — discoverable by convention, not listed here.",
+    "envelope": "Every cleaned component forwardRefs, accepts an optional id (auto-generated when omitted), soft-shims a legacy `forwardRef` prop with a one-time console.warn, and silently ignores legacy ghost props (isV4Design, isMobile, legacyClass, displayAuto, compactStyle, hidden)."
+  }
+}
