@@ -1,0 +1,49 @@
+{
+  "name": "@m-next/compositions",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Canonical multi-component screens (shadcn-style 'blocks'). Discovery surface for product designers and PMs: each story is a real Method screen composed of real m-next components. Copy as a starting point for prototypes; not published.",
+  "keywords": [
+    "compositions",
+    "blocks",
+    "templates",
+    "patterns",
+    "examples"
+  ],
+  "author": "Tyler Copeland",
+  "homepage": "",
+  "license": "ISC",
+  "main": "src/index.js",
+  "directories": {
+    "stories": "stories"
+  },
+  "dependencies": {
+    "@m-next/app-activation-banner": "1.0.0",
+    "@m-next/app-bar": "1.0.0",
+    "@m-next/brand": "1.0.0",
+    "@m-next/button": "1.0.0",
+    "@m-next/container": "1.0.0",
+    "@m-next/empty-state": "1.0.0",
+    "@m-next/form-field": "1.0.0",
+    "@m-next/grid": "1.0.0",
+    "@m-next/input": "1.0.0",
+    "@m-next/insight-card": "1.0.0",
+    "@m-next/layout": "1.0.0",
+    "@m-next/search-input": "1.0.0",
+    "@m-next/sidebar": "1.0.0",
+    "@m-next/svg-icon": "1.0.0",
+    "@m-next/tabs": "1.0.0",
+    "@m-next/text": "1.0.0",
+    "@m-next/theme": "1.0.0",
+    "@m-next/tokens": "1.0.0",
+    "@m-next/types": "1.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest --passWithNoTests"
+  }
+}

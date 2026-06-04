@@ -1,0 +1,47 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="m-next/Compositions/Overview" />
+
+# Compositions
+
+Multi-component screens — real Method screens composed of real m-next components.
+
+These are the **shadcn "blocks"** of the Method design system. Use them as starting points when building prototypes, or as canonical references when you (or an AI agent) need to know how a particular pattern is composed.
+
+## When to use a composition
+
+You're prototyping a Method screen and want a working scaffold to adapt. The composition gives you:
+
+- The right shell (Sidebar + AppBar + content frame).
+- The right component choices already made for you (real `<Tabs>`, real `<Grid>`, real `<Button variant="tertiary">` for low-emphasis actions).
+- Mock data that's realistic enough to feel like the real product.
+
+You then copy the JSX, swap the mock data for your own, and iterate.
+
+## When NOT to use a composition
+
+- You only need a single component. Go to the **Components** section — that's where individual primitives live with their full API tables.
+- You're building something the design system doesn't yet cover (a payments flow, an in-app onboarding tour). File a pattern audit instead of forcing a composition to fit.
+
+## Available compositions
+
+| Composition | What it demonstrates |
+|---|---|
+| **Customers list** | List view: AppBar + Sidebar shell, tabs over a real `<Grid>` with view filters, activation banner at the top. |
+| **Contact detail** | Split view: left rail of fields rendered with `<FormField>` + `<Text>`, right pane with `<Tabs>` over an empty action area. |
+| **Dashboard** | Overview screen: row of `<InsightCard>` KPIs with deltas, two-column "recent activity + today" panels using bordered `<Container>`. |
+
+## Rules each composition follows
+
+1. **Real components only.** No styled HTML stand-ins. When a primitive doesn't exist yet (e.g., a circular user-menu avatar in the AppBar), the file marks it as an audit signal with a comment.
+2. **Inline mock data.** Each composition's data lives in its own story file — no shared fixtures. Copy + adapt.
+3. **Single `ThemeProvider`** wrapping the rendered output. Storybook does not provide one globally; compositions own this.
+4. **No business logic.** Buttons no-op. Form fields show static values. The composition is a structure example, not a working app.
+
+## How to adapt one
+
+1. Open the composition's `.stories.jsx` file in `packages/compositions/stories/`.
+2. Copy the JSX inside the rendered `Default` export.
+3. Replace mock data with your own.
+4. Wire handlers (`onClick`, `onChange`) to your state.
+5. Cross-reference [AGENTS.md](https://github.com/tylercopeland/m-next/blob/main/AGENTS.md) (workspace root) — its Selection guide is the authoritative "which component for which need" reference when adapting.

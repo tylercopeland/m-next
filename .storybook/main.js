@@ -62,6 +62,10 @@ const M_NEXT_PACKAGES = [
   'tabs-v2',
   // Brand assets — Method wordmark wrapper, future variants added here
   'brand',
+  // Compositions — canonical multi-component screens (shadcn-style "blocks").
+  // Each story is a real Method screen demonstrating how components compose
+  // together. Use as a starting point for prototypes; not published.
+  'compositions',
 ];
 
 const stories = M_NEXT_PACKAGES.flatMap((pkg) => [
