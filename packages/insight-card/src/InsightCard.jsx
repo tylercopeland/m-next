@@ -44,6 +44,9 @@ const InsightCard = ({
   infoTooltipContent,
   isLoading = false,
   delta = null,
+  className,
+  style,
+  ...rest
 }) => {
   const handleCardClick = () => {
     if (onCardClick) {
@@ -54,7 +57,13 @@ const InsightCard = ({
   const direction = resolveDirection(delta);
 
   return (
-    <s.InsightCardContainer onClick={onCardClick ? handleCardClick : undefined} isClickable={!!onCardClick}>
+    <s.InsightCardContainer
+      className={className}
+      style={style}
+      onClick={onCardClick ? handleCardClick : undefined}
+      isClickable={!!onCardClick}
+      {...rest}
+    >
       <s.InsightCardHeader>
         {iconName && <SvgIcon name={iconName} size={16} />}
         <s.InsightCardTitleContainer>
