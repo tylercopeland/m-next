@@ -20,7 +20,7 @@ export interface AddressLookupOption {
   latitude?: number;
 }
 
-export interface AddressLookupProps {
+export interface AddressLookupProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange' | 'onSelect'> {
   /** Optional id; auto-generated if omitted. */
   id?: string;
   /** Visible label, rendered above the input via `@m-next/caption`. */

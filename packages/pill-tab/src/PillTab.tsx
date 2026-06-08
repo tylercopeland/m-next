@@ -64,6 +64,9 @@ function PillTabInner<T = string>(
     legacyClass: _legacyClass,
     compactStyle: _compactStyle,
     displayAuto: _displayAuto,
+
+    // Forward any remaining standard DOM props to the root element.
+    ...rest
   } = props;
 
   // ============ Auto-generate id if not provided ============
@@ -206,6 +209,7 @@ function PillTabInner<T = string>(
 
   return (
     <PillTabContainer
+      {...rest}
       ref={containerRef}
       id={id}
       className={className}

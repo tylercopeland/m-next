@@ -75,6 +75,8 @@ const propTypes = {
 const ChipsFilter = forwardRef(function ChipsFilter(props, ref) {
   const {
     id: idProp,
+    className,
+    style,
     disabled = false,
     fieldList = [],
     simpleChipsExpression = [],
@@ -120,6 +122,8 @@ const ChipsFilter = forwardRef(function ChipsFilter(props, ref) {
     legacyClass: _legacyClass,
     displayAuto: _displayAuto,
     compactStyle: _compactStyle,
+
+    ...rest
   } = props;
 
   // Auto-generate id if not provided.
@@ -981,8 +985,10 @@ const ChipsFilter = forwardRef(function ChipsFilter(props, ref) {
   return (
     <>
       <Container
+        {...rest}
         ref={rootRef}
         id={id}
+        className={className}
         borderless
         data-view-type={viewType || 'default'}
         role='group'
@@ -994,6 +1000,7 @@ const ChipsFilter = forwardRef(function ChipsFilter(props, ref) {
           flexWrap: 'nowrap',
           padding: 12,
           borderRadius: 8,
+          ...style,
         }}
       >
         <div style={{ display: 'flex', flex: 1, flexWrap: 'wrap', alignItems: 'center', gap: 8, width: '100%' }}>

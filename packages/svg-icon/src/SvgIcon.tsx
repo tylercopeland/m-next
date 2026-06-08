@@ -16,7 +16,8 @@ const warnOnce = (() => {
 
 let autoIdCounter = 0;
 
-export interface SvgIconProps {
+export interface SvgIconProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'id' | 'onClick' | 'tabIndex'> {
   /** Optional id — auto-generated if omitted. */
   id?: string | null;
   testId?: string;
@@ -129,6 +130,9 @@ const SvgIcon = forwardRef<HTMLDivElement, SvgIconProps>(function SvgIcon(props,
     legacyClass: _legacyClass,
     displayAuto: _displayAuto,
     compactStyle: _compactStyle,
+
+    // Standard DOM envelope — forwarded to the root element below.
+    ...rest
   } = props;
 
   // Auto-generate id if not provided.
@@ -295,6 +299,7 @@ const SvgIcon = forwardRef<HTMLDivElement, SvgIconProps>(function SvgIcon(props,
 
   return (
     <div
+      {...rest}
       ref={(node) => {
         // Mirror to iconRef (legacy) and to the new React ref (forwarded).
         if (typeof iconRef === 'function') iconRef(node);

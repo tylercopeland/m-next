@@ -88,7 +88,7 @@ const makeFormatOptionLabel =
     </div>
   );
 
-export interface AddressLookupProps {
+export interface AddressLookupProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange' | 'onSelect'> {
   /** Optional id; auto-generated if omitted. */
   id?: string;
   /** Visible label, rendered via @m-next/caption. */
@@ -148,6 +148,10 @@ const AddressLookup = forwardRef<HTMLDivElement, AddressLookupProps>(function Ad
     gatewayUrl,
     menuPlacement = 'auto',
 
+    // Standard DOM envelope — forwarded to the root element.
+    className,
+    style,
+
     // Soft-shimmed legacy
     caption: legacyCaption,
     validationMessage,
@@ -160,6 +164,8 @@ const AddressLookup = forwardRef<HTMLDivElement, AddressLookupProps>(function Ad
     legacyClass,
     displayAuto: _displayAuto,
     compactStyle: _compactStyle,
+
+    ...rest
   } = props;
 
   // ============ Auto-id ============
@@ -484,11 +490,13 @@ const AddressLookup = forwardRef<HTMLDivElement, AddressLookupProps>(function Ad
 
   return (
     <s.ContainerWrapper
+      {...rest}
       ref={containerRef}
       width={width}
       isValid={isValid}
       disabled={disabled}
-      className={legacyClass}
+      className={[legacyClass, className].filter(Boolean).join(' ') || undefined}
+      style={style}
       data-testid={`${id}-address-lookup`}
       role='combobox'
       aria-expanded={menuOpen}

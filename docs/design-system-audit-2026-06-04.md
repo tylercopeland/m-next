@@ -76,7 +76,7 @@ This document captures the current state, identifies gaps, and proposes a phased
 
 **Envelope-compliance gaps (22 packages — forwardRef present, but no `...rest` spread)**:
 
-~~`dropdown`~~ ✅, ~~`grid`~~ ✅, ~~`input`~~ ✅, ~~`tabs`~~ ✅, ~~`text`~~ ✅ (closed 2026-06-07). Remaining (17): `address-lookup`, `calendar`, `chart`, `chart-drilldown`, `chips-filter`, `color-picker`, `criteria-builder`, `datepicker`, `field-block`, `html-editor`, `image`, `pill-tab`, `radio-button`, `signature`, `svg-icon`, `toggle`, `typeography` (deprecated).
+Closed (12): ~~`dropdown`~~ ✅, ~~`grid`~~ ✅, ~~`input`~~ ✅, ~~`tabs`~~ ✅, ~~`text`~~ ✅ (2026-06-07); ~~`address-lookup`~~ ✅, ~~`chips-filter`~~ ✅, ~~`color-picker`~~ ✅, ~~`field-block`~~ ✅, ~~`pill-tab`~~ ✅, ~~`svg-icon`~~ ✅, ~~`toggle`~~ ✅ (2026-06-08). Remaining (9, "careful" — multi-component/domain): `calendar`, `chart`, `chart-drilldown`, `criteria-builder`, `datepicker`, `html-editor`, `image`, `radio-button`, `signature`. Skipped: `typeography` (deprecated).
 
 These are the components most likely to silently swallow `style`, `className`, `data-*`, and `aria-*` props passed by consumers — same gap that bit `InsightCard` on 2026-06-04.
 
@@ -317,7 +317,7 @@ This gives the conceptual structure intended — `tokens`, `guidelines`, `patter
 Ranked by impact on consistency + scalability + AI-friendliness.
 
 1. ~~**Rewrite `CLAUDE.md`** as a 1-page pointer to `AGENTS.md` + `registry.json`.~~ **✅ Done 2026-06-07** — rewritten as a thin pointer leading with AGENTS.md + registry.json; corrected stale facts (title, 84 packages, real app list, real commands); dropped the m-one app-builder "Adding New Control" recipe.
-2. **Close the 22 envelope gaps** (Phase 2). Highest-leverage technical debt. Causes silent prop-dropping. **🟡 In progress — 5/22 done 2026-06-07** (`tabs`, `input`, `dropdown`, `text`, `grid`). Finding: the "forwardRef present but no `...rest`" heuristic is imprecise — `input` and `text` already spread rest/otherProps; their real gaps were a missing `className` (input) and a `style`-clobbering bug (text). Use the sharper test for the remaining 17: **do `className` AND `style` AND rest all reach the root element?**
+2. **Close the 22 envelope gaps** (Phase 2). Highest-leverage technical debt. Causes silent prop-dropping. **🟡 In progress — 12/22 done.** Wave 1 (2026-06-07): `tabs`, `input`, `dropdown`, `text`, `grid`. Wave 2 (2026-06-08): `chips-filter`, `color-picker`, `field-block`, `pill-tab`, `svg-icon`, `toggle`, `address-lookup`. Finding: the "forwardRef present but no `...rest`" heuristic is imprecise — several packages already spread rest/otherProps; the real gaps were a missing `className` or a `style`-clobbering bug. Use the sharper test for the remaining packages: **do `className` AND `style` AND rest all reach the root element?** Remaining 9 are "careful" (multi-component or heavy domain — `radio-button`, `calendar`, `chart`, `chart-drilldown`, `criteria-builder`, `datepicker`, `html-editor`, `image`, `signature`); `typeography` skipped (deprecated alias).
 3. **Migrate `fontSize` + `breakpoints` to `@m-next/tokens`.** Move from legacy nested structure in `@m-next/styles`.
 4. **Add `iconSize` token + sweep `<SvgIcon size={N}>`.** Tiny scope, big payoff.
 5. **Add `gaps` block to `registry.json`.** Lists envelope-incomplete components, token-drift packages, packages without stories.

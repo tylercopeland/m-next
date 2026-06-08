@@ -19,7 +19,8 @@ export interface TagDefinition {
   [key: string]: any;
 }
 
-export interface FieldBlockProps {
+export interface FieldBlockProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onSelect'> {
   /** Optional — auto-generated if absent. */
   id?: string;
   /** Field definitions that drive the rendered rows. */

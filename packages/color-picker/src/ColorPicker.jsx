@@ -34,6 +34,10 @@ const propTypes = {
   onClose: PropTypes.func,
   /** When true, panel aligns its right edge with the trigger (extends left). Use in narrow right-side panels to avoid going off-screen. */
   alignPanelRight: PropTypes.bool,
+  /** Forwarded to the root container element. */
+  className: PropTypes.string,
+  /** Forwarded to the root container element; merged over `containerStyle`. */
+  style: PropTypes.instanceOf(Object),
 };
 
 registerLicense('Ngo9BigBOggjHTQxAR8/V1NGaF5cXmdCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdgWXdfeHVdQ2ZdWUx+W0Q=');
@@ -67,6 +71,10 @@ const ColorPicker = forwardRef(function ColorPicker(props, ref) {
     onClose,
     alignPanelRight = false,
 
+    // Standard DOM envelope — forwarded to the root element.
+    className,
+    style,
+
     // Soft-shimmed legacy props
     forwardRef: legacyForwardRef,
 
@@ -74,6 +82,8 @@ const ColorPicker = forwardRef(function ColorPicker(props, ref) {
     // them don't error. Never read by the component body.
     displayAuto: _displayAuto,
     hidden: _hidden,
+
+    ...rest
   } = props;
 
   // Auto-generate id if not provided. All internal id-derived markers
@@ -168,7 +178,13 @@ const ColorPicker = forwardRef(function ColorPicker(props, ref) {
   }, [value]);
 
   return (
-    <s.ColorPickerContainer id={id} ref={colorPickerPanel} style={containerStyle}>
+    <s.ColorPickerContainer
+      id={id}
+      ref={colorPickerPanel}
+      className={className}
+      style={{ ...containerStyle, ...style }}
+      {...rest}
+    >
       <s.ColorPickerViewer
         id={`${id}-viewer`}
         tabIndex='0'

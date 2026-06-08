@@ -1,4 +1,4 @@
-import type { Ref, CSSProperties, ReactNode } from 'react';
+import type { HTMLAttributes, Ref, CSSProperties, ReactNode } from 'react';
 
 /** Size variant for the segmented control. */
 export type PillTabSize = 'sm' | 'md';
@@ -16,7 +16,11 @@ export interface PillTabOption<T = string> {
  * SegmentedControl / PillTab props.
  * `options` may also be passed as `items` (legacy alias) and `value` as `selected` (legacy alias).
  */
-export interface PillTabProps<T = string> {
+export interface PillTabProps<T = string>
+  // Standard DOM envelope (className, style, data-*, event handlers, …) is
+  // forwarded to the root element. `onChange` is omitted — this component
+  // defines its own value-based `onChange` below.
+  extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
   /** Optional. Auto-generated when not provided. */
   id?: string;
   /** The selectable options. */

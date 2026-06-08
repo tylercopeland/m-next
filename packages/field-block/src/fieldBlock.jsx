@@ -25,6 +25,7 @@ let autoIdCounter = 0;
 
 const propTypes = {
   id: PropTypes.string,
+  className: PropTypes.string,
   fields: PropTypes.arrayOf(Field),
   collapseEmpty: PropTypes.bool,
   isLoading: PropTypes.bool,
@@ -79,6 +80,7 @@ const FieldBlock = forwardRef(function FieldBlock(props, ref) {
     fields,
     collapseEmpty = false,
     isLoading = false,
+    className,
     style = {},
     data,
     validationErrors = null,
@@ -124,6 +126,8 @@ const FieldBlock = forwardRef(function FieldBlock(props, ref) {
     legacyClass: _legacyClass,
     displayAuto: _displayAuto,
     compactStyle: _compactStyle,
+
+    ...rest
   } = props;
 
   // Auto-generate id if not provided.
@@ -384,7 +388,9 @@ const FieldBlock = forwardRef(function FieldBlock(props, ref) {
   return (
     <ErrorBoundary fallback={errorFallback()}>
       <Container
+        {...rest}
         id={`${id}-field-block`}
+        className={className}
         style={{ ...style }}
         isRound={false}
         borderless

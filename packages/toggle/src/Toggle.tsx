@@ -39,6 +39,7 @@ const Toggle = forwardRef<HTMLInputElement, ToggleProps>(function Toggle(props, 
     width = 'auto',
     color = null,
     label = null,
+    className,
     style = {},
     labelStyle = {},
     bold = false,
@@ -56,6 +57,9 @@ const Toggle = forwardRef<HTMLInputElement, ToggleProps>(function Toggle(props, 
     legacyClass: _legacyClass,
     compactStyle: _compactStyle,
     displayAuto: _displayAuto,
+
+    // Standard DOM envelope — input-typed attrs routed to the inner <input>.
+    ...rest
   } = props;
 
   // Auto-generate id if not provided.
@@ -119,7 +123,7 @@ const Toggle = forwardRef<HTMLInputElement, ToggleProps>(function Toggle(props, 
   return (
     <>
       {isRuntime && (
-        <s.Wrapper id={id} width={width} style={style} alignRight={alignRight} isRuntime={isRuntime}>
+        <s.Wrapper id={id} width={width} className={className} style={style} alignRight={alignRight} isRuntime={isRuntime}>
           {label && (
             <Caption
               id={`${id}-toggle-caption`}
@@ -166,6 +170,7 @@ const Toggle = forwardRef<HTMLInputElement, ToggleProps>(function Toggle(props, 
               color={color ?? undefined}
               role='switch'
               tabIndex={0}
+              {...rest}
             />
             <s.Track
               className='toggle-track'
@@ -192,6 +197,7 @@ const Toggle = forwardRef<HTMLInputElement, ToggleProps>(function Toggle(props, 
       {!isRuntime && (
         <s.Wrapper
           width={width}
+          className={className}
           style={style}
           alignRight={alignRight}
           data-testid={`${id}-Toggle-wrapper`}
@@ -218,6 +224,7 @@ const Toggle = forwardRef<HTMLInputElement, ToggleProps>(function Toggle(props, 
               disabled={disabled}
               aria-checked={isChecked}
               role='switch'
+              {...rest}
             />
             <s.Track className='toggle-track' checked={isChecked} size={size} color={undefined}>
               <s.Circle
