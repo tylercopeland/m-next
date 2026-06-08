@@ -25,7 +25,7 @@ export interface DropdownOptionGroup {
   size?: number;
 }
 
-export interface DropdownProps {
+export interface DropdownProps extends React.HTMLAttributes<HTMLDivElement> {
   id?: string;
   label?: string;
   required?: boolean;

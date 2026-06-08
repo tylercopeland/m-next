@@ -45,6 +45,8 @@ const Text = forwardRef<HTMLElement, TextProps>(function Text(props, ref) {
     overrideFontSize,
     legacyClasses = '',
     iconAlign,
+    className,
+    style,
 
     // Soft-shimmed legacy props
     forwardRef: legacyForwardRef,
@@ -170,10 +172,12 @@ const Text = forwardRef<HTMLElement, TextProps>(function Text(props, ref) {
         textStyles={textStylesTitle}
         tabIndex={tabIndex}
         iconAlign={iconAlign}
+        className={className}
         style={
           {
             ...(legacyClasses ? convertClass(legacyClasses) : null),
             ...inlineStyling,
+            ...style,
           } as React.CSSProperties
         }
         {...otherProps}
@@ -193,7 +197,13 @@ const Text = forwardRef<HTMLElement, TextProps>(function Text(props, ref) {
           textStyles={textStyles}
           tabIndex={tabIndex}
           iconAlign={iconAlign}
-          style={createInlineStyle(inlineStyling, reflexboxSXProp) as React.CSSProperties}
+          className={className}
+          style={
+            {
+              ...createInlineStyle(inlineStyling, reflexboxSXProp),
+              ...style,
+            } as React.CSSProperties
+          }
           {...otherProps}
         >
           {children}
@@ -209,10 +219,12 @@ const Text = forwardRef<HTMLElement, TextProps>(function Text(props, ref) {
           textStyles={textStyles}
           tabIndex={tabIndex}
           iconAlign={iconAlign}
+          className={className}
           style={
             {
               ...(legacyClasses ? convertClass(legacyClasses) : null),
               ...inlineStyling,
+              ...style,
             } as React.CSSProperties
           }
           {...otherProps}

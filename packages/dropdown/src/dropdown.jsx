@@ -86,6 +86,9 @@ const Dropdown = forwardRef(function Dropdown(props, ref) {
     // Standard ARIA pass-through
     'aria-label': ariaLabel,
 
+    // Standard DOM pass-through
+    className,
+
     // Soft-shimmed legacy props
     caption,
     dropdownStyle,
@@ -100,6 +103,8 @@ const Dropdown = forwardRef(function Dropdown(props, ref) {
     legacyClass: _legacyClass,
     displayAuto: _displayAuto,
     background: _background,
+
+    ...rest
   } = props;
 
   // Auto-generate id if not provided.
@@ -603,6 +608,8 @@ const Dropdown = forwardRef(function Dropdown(props, ref) {
 
   return (
     <s.ContainerWrapper
+      className={className}
+      {...rest}
       width={width}
       isValid={isValid}
       hasValidation={hasValidation}

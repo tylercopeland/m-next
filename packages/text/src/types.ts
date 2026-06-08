@@ -49,6 +49,8 @@ export interface TextProps {
   children?: ReactNode;
   /** Native `style` attribute — merged on top of generated inline styles. */
   style?: CSSProperties;
+  /** Native `className` — forwarded to the root rendered element. */
+  className?: string;
   /** Aligns an attached pseudo-element icon. */
   iconAlign?: string;
   /** Reflexbox-style `sx` overrides (still respected on the DIV variant for back-compat). */

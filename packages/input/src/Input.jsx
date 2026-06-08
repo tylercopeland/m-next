@@ -41,6 +41,7 @@ const Input = forwardRef(function Input(props, ref) {
     readOnly: readOnlyProp,
 
     width = '100%',
+    className,
     style,
     inputStyle,
 
@@ -248,7 +249,14 @@ const Input = forwardRef(function Input(props, ref) {
   // ============ Render ============
 
   return (
-    <s.Container id={`${id}-TextInput`} role="none" style={style} width={width} isValid={isValid}>
+    <s.Container
+      id={`${id}-TextInput`}
+      role="none"
+      className={className}
+      style={style}
+      width={width}
+      isValid={isValid}
+    >
       {!hideLabel && label && (
         <Caption
           id={`${id}-input-caption`}

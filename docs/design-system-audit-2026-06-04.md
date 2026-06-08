@@ -76,7 +76,7 @@ This document captures the current state, identifies gaps, and proposes a phased
 
 **Envelope-compliance gaps (22 packages — forwardRef present, but no `...rest` spread)**:
 
-`address-lookup`, `calendar`, `chart`, `chart-drilldown`, `chips-filter`, `color-picker`, `criteria-builder`, `datepicker`, `dropdown`, `field-block`, `grid`, `html-editor`, `image`, `input`, `pill-tab`, `radio-button`, `signature`, `svg-icon`, `tabs`, `text`, `toggle`, `typeography` (deprecated).
+~~`dropdown`~~ ✅, ~~`grid`~~ ✅, ~~`input`~~ ✅, ~~`tabs`~~ ✅, ~~`text`~~ ✅ (closed 2026-06-07). Remaining (17): `address-lookup`, `calendar`, `chart`, `chart-drilldown`, `chips-filter`, `color-picker`, `criteria-builder`, `datepicker`, `field-block`, `html-editor`, `image`, `pill-tab`, `radio-button`, `signature`, `svg-icon`, `toggle`, `typeography` (deprecated).
 
 These are the components most likely to silently swallow `style`, `className`, `data-*`, and `aria-*` props passed by consumers — same gap that bit `InsightCard` on 2026-06-04.
 
@@ -317,7 +317,7 @@ This gives the conceptual structure intended — `tokens`, `guidelines`, `patter
 Ranked by impact on consistency + scalability + AI-friendliness.
 
 1. ~~**Rewrite `CLAUDE.md`** as a 1-page pointer to `AGENTS.md` + `registry.json`.~~ **✅ Done 2026-06-07** — rewritten as a thin pointer leading with AGENTS.md + registry.json; corrected stale facts (title, 84 packages, real app list, real commands); dropped the m-one app-builder "Adding New Control" recipe.
-2. **Close the 22 envelope gaps** (Phase 2). Highest-leverage technical debt. Causes silent prop-dropping.
+2. **Close the 22 envelope gaps** (Phase 2). Highest-leverage technical debt. Causes silent prop-dropping. **🟡 In progress — 5/22 done 2026-06-07** (`tabs`, `input`, `dropdown`, `text`, `grid`). Finding: the "forwardRef present but no `...rest`" heuristic is imprecise — `input` and `text` already spread rest/otherProps; their real gaps were a missing `className` (input) and a `style`-clobbering bug (text). Use the sharper test for the remaining 17: **do `className` AND `style` AND rest all reach the root element?**
 3. **Migrate `fontSize` + `breakpoints` to `@m-next/tokens`.** Move from legacy nested structure in `@m-next/styles`.
 4. **Add `iconSize` token + sweep `<SvgIcon size={N}>`.** Tiny scope, big payoff.
 5. **Add `gaps` block to `registry.json`.** Lists envelope-incomplete components, token-drift packages, packages without stories.

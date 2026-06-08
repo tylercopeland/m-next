@@ -64,6 +64,11 @@ export interface TabsProps {
   headerStyle?: React.CSSProperties;
   containerStyle?: React.CSSProperties;
 
+  /** Class applied to the root container element. */
+  className?: string;
+  /** Inline style applied to the root container element (merged over `containerStyle`). */
+  style?: React.CSSProperties;
+
   // ============ Deprecated — soft-shimmed ============
   /** @deprecated Use the React forwardRef API — pass `ref` directly. */
   forwardRef?: React.Ref<any>;
@@ -79,6 +84,10 @@ export interface TabsProps {
   legacyClass?: string;
   /** @deprecated No longer has any effect. */
   displayAuto?: boolean;
+
+  /** Remaining DOM props (`data-*`, `aria-*`, event handlers) are spread onto the root element. */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
 }
 
 export interface TabHeaderProps {

@@ -37,6 +37,10 @@ let autoIdCounter = 0;
 const propTypes = {
   /** Optional. Auto-generated when not provided. */
   id: PropTypes.string,
+  /** Forwarded to the root container element. */
+  className: PropTypes.string,
+  /** Forwarded to the root container element (merged with internal maxWidth). */
+  style: PropTypes.instanceOf(Object),
   disabled: PropTypes.bool,
   editable: PropTypes.bool,
   isMobile: PropTypes.bool,
@@ -474,6 +478,10 @@ const Grid = forwardRef(function Grid(props, ref) {
     // Soft-shimmed legacy props
     forwardRef: legacyForwardRef,
 
+    // ===== Standard DOM envelope =====
+    className,
+    style,
+
     // Silently ignored legacy ghosts (none of the named legacy-looking props
     // above are ghosts on Grid — see JSDoc. These are catch-alls for callers
     // passing extras we don't recognize.)
@@ -481,6 +489,11 @@ const Grid = forwardRef(function Grid(props, ref) {
     legacyClass: _legacyClass,
     compactStyle: _compactStyle,
     hidden: _hidden,
+
+    // Leftover consumer DOM props (data-*, aria-*, role, title, etc.) are
+    // forwarded to the root <s.Container>. All real Grid config props are
+    // named above, so `rest` only contains pass-through DOM attributes.
+    ...rest
   } = props;
 
   // Auto-generate id if not provided. The Grid threads `id` into dozens of
@@ -1077,8 +1090,8 @@ const Grid = forwardRef(function Grid(props, ref) {
     const clientY =
       parseFloat(window.getComputedStyle(draggedDOM.parentNode).paddingTop) +
       [...draggedDOM.parentNode.children].slice(0, sourceIndex).reduce((total, curr) => {
-        const style = curr.currentStyle || window.getComputedStyle(curr);
-        const marginBottom = parseFloat(style.marginBottom);
+        const curStyle = curr.currentStyle || window.getComputedStyle(curr);
+        const marginBottom = parseFloat(curStyle.marginBottom);
         return total + curr.clientHeight + marginBottom;
       }, 0);
 
@@ -1119,8 +1132,8 @@ const Grid = forwardRef(function Grid(props, ref) {
     const clientY =
       parseFloat(window.getComputedStyle(draggedDOM.parentNode).paddingTop) +
       updatedArray.slice(0, destinationIndex).reduce((total, curr) => {
-        const style = curr.currentStyle || window.getComputedStyle(curr);
-        const marginBottom = parseFloat(style.marginBottom);
+        const curStyle = curr.currentStyle || window.getComputedStyle(curr);
+        const marginBottom = parseFloat(curStyle.marginBottom);
         return total + curr.clientHeight + marginBottom;
       }, 0);
 
@@ -1409,13 +1422,15 @@ const Grid = forwardRef(function Grid(props, ref) {
         />
       )}
       <s.Container
+        {...rest}
         ref={setContainerRef}
         id={id}
+        className={className}
         width={width}
         height={height}
         fillParentHeight={fillParentHeight}
         disabled={disabled}
-        style={{ maxWidth }}
+        style={{ maxWidth, ...style }}
         compact={compact}
       >
         <s.HeaderWrapper fillParentHeight={fillParentHeight}>

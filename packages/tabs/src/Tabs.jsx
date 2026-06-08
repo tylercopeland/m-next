@@ -53,6 +53,11 @@ const Tabs = forwardRef(function Tabs(props, ref) {
     legacyClass: _legacyClass,
     displayAuto: _displayAuto,
     onRenderTabHeaderMobile: _onRenderTabHeaderMobile,
+
+    // Standard DOM props forwarded to the root element.
+    className,
+    style,
+    ...rest
   } = props;
 
   // Auto-generate id if not provided.
@@ -90,7 +95,9 @@ const Tabs = forwardRef(function Tabs(props, ref) {
       width={width}
       fullHeight={fullHeight}
       containerMargin={containerMargin}
-      style={containerStyle}
+      className={className}
+      style={{ ...containerStyle, ...style }}
+      {...rest}
     >
       {tabList.length > 0 && !fullWidthTabs && (
         <TabHeader
