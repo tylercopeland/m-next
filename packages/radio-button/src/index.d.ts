@@ -5,7 +5,8 @@ import { CSSProperties } from 'react';
 
 export type RadioButtonDirection = 'row' | 'column';
 
-export interface RadioButtonProps {
+export interface RadioButtonProps
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value'> {
   /** Optional — auto-generated if absent. */
   id?: string;
   label: string;
@@ -72,7 +73,8 @@ export interface RadioGroupOption {
   hint?: string;
 }
 
-export interface RadioGroupProps {
+export interface RadioGroupProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
   /** Optional — auto-generated if absent. */
   id?: string;
   /** Native radio group name. Form-event payload uses this as `event.target.name`. */
@@ -146,7 +148,8 @@ export interface ButtonRadioGroupOption {
   value: string | number;
 }
 
-export interface ButtonRadioGroupProps {
+export interface ButtonRadioGroupProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
   /** Optional — auto-generated if absent. */
   id?: string;
   options: ButtonRadioGroupOption[];
@@ -196,7 +199,8 @@ export interface IconRadioGroupOption {
   icon?: string;
 }
 
-export interface IconRadioGroupProps {
+export interface IconRadioGroupProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
   /** Optional — auto-generated if absent. */
   id?: string;
   options: IconRadioGroupOption[];

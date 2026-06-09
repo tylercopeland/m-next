@@ -30,6 +30,8 @@ const propTypes = {
   round: PropTypes.bool, // cicular avatar => true
   tabIndex: PropTypes.oneOf(['0', '-1', undefined]), // set to "0" if you want the image to be part of tab order
   onClick: PropTypes.func,
+  className: PropTypes.string,
+  style: PropTypes.instanceOf(Object), // Add additional top level style.
   // any other prop to override or add
 };
 
@@ -71,6 +73,8 @@ const TextAvatar = forwardRef(function TextAvatar(props, ref) {
     onClick = null,
     round = false,
     tabIndex = '0',
+    className,
+    style,
 
     // Soft-shimmed legacy props
     forwardRef: legacyForwardRef,
@@ -82,6 +86,9 @@ const TextAvatar = forwardRef(function TextAvatar(props, ref) {
     displayAuto: _displayAuto,
     compactStyle: _compactStyle,
     hidden: _hidden,
+
+    // Standard DOM envelope — forwarded to the root wrapper element.
+    ...rest
   } = props;
 
   // Auto-generate id if not provided.
@@ -126,6 +133,7 @@ const TextAvatar = forwardRef(function TextAvatar(props, ref) {
 
   return (
     <ImageWrapper
+      {...rest}
       ref={setRef}
       id={id}
       role='img'
@@ -140,6 +148,8 @@ const TextAvatar = forwardRef(function TextAvatar(props, ref) {
       color={color}
       round={round}
       hasClick={hasClick}
+      className={className}
+      style={style}
     >
       {displayInitials}
     </ImageWrapper>

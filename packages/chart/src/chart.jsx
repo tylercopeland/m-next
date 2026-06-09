@@ -31,6 +31,7 @@ let autoIdCounter = 0;
 const propTypes = {
   /** Optional. Auto-generated when not provided. */
   id: PropTypes.string,
+  className: PropTypes.string,
   isLoading: PropTypes.bool,
   style: PropTypes.instanceOf(Object),
   data: PropTypes.instanceOf(Object),
@@ -83,6 +84,7 @@ const circlularSizes = {
 const Chart = forwardRef(function Chart(props, ref) {
   const {
     id: idProp = '',
+    className,
     isLoading = false,
     style = {},
     data = {},
@@ -115,6 +117,8 @@ const Chart = forwardRef(function Chart(props, ref) {
     displayAuto: _displayAuto,
     compactStyle: _compactStyle,
     hidden: _hidden,
+
+    ...rest
   } = props;
 
   // Auto-generate id if not provided.
@@ -545,7 +549,9 @@ const Chart = forwardRef(function Chart(props, ref) {
       <Container
         ref={setRef}
         id={`${id}-chart`}
+        className={className}
         style={{ ...style, padding: 0 }}
+        {...rest}
         css={{
           '.highcharts-point': {
             filter: `opacity(${isSelected && chartType !== 'pie' && chartType !== 'donut' ? 0.25 : 1})`,

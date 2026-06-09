@@ -63,6 +63,10 @@ function TimePicker(props) {
     validationMessage,
     forcedTimeZone,
 
+    // Standard DOM envelope — forwarded through DatePicker to its s.Wrapper root.
+    className,
+    style,
+
     // Soft-shimmed legacy props
     forwardRef: legacyForwardRef,
 
@@ -72,6 +76,7 @@ function TimePicker(props) {
     displayAuto: _displayAuto,
     compactStyle: _compactStyle,
     hidden: _hidden,
+    ...rest
   } = props;
 
   // Auto-generate id if not provided.
@@ -91,6 +96,9 @@ function TimePicker(props) {
 
   return (
     <DatePicker
+      {...rest}
+      className={className}
+      style={style}
       id={`${id}-value`}
       value={value}
       formatType='Time'

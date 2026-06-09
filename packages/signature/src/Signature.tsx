@@ -56,7 +56,7 @@ interface SignatureModel {
   signedOn: string | null;
 }
 
-interface SignatureProps {
+interface SignatureProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Optional. Auto-generated when not provided. */
   id?: string;
   disabled: boolean,
@@ -118,6 +118,10 @@ const Signature = forwardRef<HTMLDivElement, SignatureProps>(function Signature(
     onCancel,
     onUpload,
 
+    // Standard DOM envelope — forwarded to the owned root (s.Wrapper).
+    className,
+    style,
+
     // Soft-shimmed legacy props
     forwardRef: legacyForwardRef,
 
@@ -127,6 +131,8 @@ const Signature = forwardRef<HTMLDivElement, SignatureProps>(function Signature(
     displayAuto: _displayAuto,
     compactStyle: _compactStyle,
     hidden: _hidden,
+
+    ...rest
   } = props;
 
   // Auto-generate id if not provided.
@@ -344,6 +350,9 @@ const Signature = forwardRef<HTMLDivElement, SignatureProps>(function Signature(
           id='signature-widget-wrapper'
           isSigned={signatureModel.isAdded}
           isInvalid={signatureModel.validation.length > 0}
+          className={className}
+          style={style}
+          {...rest}
         >
           <div id='signature-widget-wrapper-inner'>
             <s.Placeholder

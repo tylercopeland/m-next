@@ -39,6 +39,8 @@ const propTypes = {
   includeSessionVariables: PropTypes.bool,
   onClose: PropTypes.func,
   showEmptyFilterIcon: PropTypes.bool,
+  className: PropTypes.string,
+  style: PropTypes.instanceOf(Object),
 };
 
 const CriteriaEditorButtonFooter = styled.div(({ isVisible }) => [
@@ -71,6 +73,9 @@ function CriteriaEditor({
   includeSessionVariables = true,
   onClose,
   showEmptyFilterIcon = true,
+  className,
+  style,
+  ...rest
 }) {
   const [formattedExpression, setFormattedExpression] = useState([]);
 
@@ -412,7 +417,9 @@ function CriteriaEditor({
     <Container
       id={id}
       borderless
-      style={{ gap: 8, padding: 0, flexDirection: 'column', flexWrap: 'wrap', alignItems: 'flex-start' }}
+      className={className}
+      style={{ gap: 8, padding: 0, flexDirection: 'column', flexWrap: 'wrap', alignItems: 'flex-start', ...style }}
+      {...rest}
     >
       {!dataModelId && (
         <InfoWrapper id='criteria-info'>

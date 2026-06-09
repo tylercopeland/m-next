@@ -40,6 +40,8 @@ const propTypes = {
   shiftLeft: PropTypes.number,
   splitValues: PropTypes.bool,
   forcedTimeZone: PropTypes.string,
+  className: PropTypes.string,
+  style: PropTypes.instanceOf(Object),
 };
 
 const PredicateSubGroupWrapper = styled.div(() => [
@@ -100,6 +102,9 @@ function AdvancedEdit({
   shiftLeft = 0,
   splitValues = false,
   forcedTimeZone,
+  className,
+  style,
+  ...rest
 }) {
   const [disableClickOutside, setDisableClickOutside] = useState(false);
 
@@ -292,6 +297,9 @@ function AdvancedEdit({
       relativeToParent={relativeToParent}
       disableClickOutside={disableClickOutside}
       shiftLeft={shiftLeft}
+      className={className}
+      style={style}
+      {...rest}
     >
       <Container borderless width={800} padding={8}>
         <Text id={`${id}-advanced-editor-title`} style={{ marginBottom: 8 }} bold>

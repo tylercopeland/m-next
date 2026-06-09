@@ -96,6 +96,10 @@ function TimeRangePicker(props) {
     hideCaption,
     forcedTimeZone,
 
+    // Standard DOM envelope — forwarded to the Group root.
+    className,
+    style,
+
     // Soft-shimmed legacy props
     forwardRef: legacyForwardRef,
 
@@ -105,6 +109,7 @@ function TimeRangePicker(props) {
     displayAuto: _displayAuto,
     compactStyle: _compactStyle,
     hidden: _hidden,
+    ...rest
   } = props;
 
   // Auto-generate id if not provided.
@@ -123,7 +128,7 @@ function TimeRangePicker(props) {
   }
 
   return (
-    <Group style={wrapperStyle}>
+    <Group {...rest} className={className} style={{ ...wrapperStyle, ...style }}>
       <Row style={rowStyle}>
         <Column>
           <DatePicker

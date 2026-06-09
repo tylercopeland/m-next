@@ -25,6 +25,7 @@ let autoIdCounter = 0;
 const propTypes = {
   /** Optional. Auto-generated when not provided. */
   id: PropTypes.string,
+  className: PropTypes.string,
   isLoading: PropTypes.bool,
   style: PropTypes.instanceOf(Object),
   data: PropTypes.instanceOf(Object),
@@ -107,6 +108,7 @@ const propTypes = {
 const ChartDrilldown = forwardRef(function ChartDrilldown(props, _ref) {
   const {
     id: idProp,
+    className,
     isLoading = false,
     style = {},
     data = {},
@@ -144,6 +146,11 @@ const ChartDrilldown = forwardRef(function ChartDrilldown(props, _ref) {
     // them don't error. These are NOT part of the current API surface.
     displayAuto: _displayAuto,
     hidden: _hidden,
+
+    // DOM envelope — forwarded through ChartExpandable → Chart to the owned
+    // root Container (NOT onto Highcharts). className/style/rest are dropped
+    // by neither hop now that @m-next/chart forwards them.
+    ...rest
   } = props;
 
   // Auto-generate id if not provided. Internal markers (`${id}-drilldown`
@@ -252,7 +259,9 @@ const ChartDrilldown = forwardRef(function ChartDrilldown(props, _ref) {
         <ChartExpandable
           id={id}
           isLoading={isLoading}
+          className={className}
           style={style}
+          {...rest}
           data={data}
           error={error}
           onRefetch={onRefetch}
@@ -281,7 +290,9 @@ const ChartDrilldown = forwardRef(function ChartDrilldown(props, _ref) {
       <ChartExpandable
         id={id}
         isLoading={isLoading}
+        className={className}
         style={style}
+        {...rest}
         data={data}
         error={error}
         onRefetch={onRefetch}

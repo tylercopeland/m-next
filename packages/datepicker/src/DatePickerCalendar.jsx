@@ -52,6 +52,10 @@ function DatePickerCalendar(props) {
     forcedTimeZone,
     autoFocus = false,
 
+    // Standard DOM envelope — forwarded to the Group root.
+    className,
+    style,
+
     // Soft-shimmed legacy props
     forwardRef: legacyForwardRef,
 
@@ -61,6 +65,7 @@ function DatePickerCalendar(props) {
     displayAuto: _displayAuto,
     compactStyle: _compactStyle,
     hidden: _hidden,
+    ...rest
   } = props;
 
   // Auto-generate id if not provided.
@@ -83,7 +88,7 @@ function DatePickerCalendar(props) {
   };
 
   return (
-    <Group>
+    <Group {...rest} className={className} style={style}>
       <DatePicker
         id={`${id}-value`}
         value={value}

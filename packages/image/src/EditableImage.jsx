@@ -135,6 +135,9 @@ const EditableImage = forwardRef(function EditableImage(props, ref) {
     displayAuto: _displayAuto,
     compactStyle: _compactStyle,
     hidden: _hidden,
+
+    // Standard DOM envelope — forwarded to the primary wrapper element.
+    ...rest
   } = props;
 
   // Suppress unused-warning — accepted for API consistency, see JSDoc.
@@ -369,7 +372,7 @@ const EditableImage = forwardRef(function EditableImage(props, ref) {
   return (
     <>
       {!uploading && !showSetter && (
-        <div style={wrapperStyle}>
+        <div {...rest} style={wrapperStyle}>
           <Image
             className={className}
             style={style}

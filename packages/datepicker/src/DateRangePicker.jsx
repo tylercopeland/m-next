@@ -92,6 +92,10 @@ function DateRangePicker(props) {
     anchorEl,
     forcedTimeZone,
 
+    // Standard DOM envelope — forwarded to the Group root.
+    className,
+    style,
+
     // Soft-shimmed legacy props
     forwardRef: legacyForwardRef,
 
@@ -101,6 +105,7 @@ function DateRangePicker(props) {
     displayAuto: _displayAuto,
     compactStyle: _compactStyle,
     hidden: _hidden,
+    ...rest
   } = props;
 
   // Auto-generate id if not provided.
@@ -132,7 +137,7 @@ function DateRangePicker(props) {
   };
 
   return (
-    <Group>
+    <Group {...rest} className={className} style={style}>
       <Row isValid={!endDateValue || endDateValue > startDateValue}>
         <Column>
           <DatePicker

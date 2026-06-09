@@ -109,6 +109,9 @@ const Image = forwardRef(function Image(props, ref) {
     displayAuto: _displayAuto,
     compactStyle: _compactStyle,
     hidden: _hidden,
+
+    // Standard DOM envelope — forwarded to the root wrapper element.
+    ...rest
   } = props;
 
   // Auto-generate id if not provided.
@@ -482,6 +485,7 @@ const Image = forwardRef(function Image(props, ref) {
         <s.ImageContainer {...(fitToContainer && { fitToContainer })}>
           <Caption id={id} align='left' isMobile={isMobile} label={caption} />
           <s.ImageWidgetWrapper
+            {...rest}
             className={className}
             style={style}
             isRound={isRound}
@@ -500,6 +504,7 @@ const Image = forwardRef(function Image(props, ref) {
 
     return (
       <s.ImageWidgetWrapper
+        {...rest}
         className={className}
         style={style}
         isRound={isRound}

@@ -141,6 +141,10 @@ const DatePicker = forwardRef(function DatePicker(props, ref) {
     largeStyle = false,
     inputPadding = null,
 
+    // Standard DOM envelope — forwarded to the s.Wrapper root.
+    className,
+    style,
+
     // Soft-shimmed legacy props
     forwardRef: legacyForwardRef,
 
@@ -150,6 +154,7 @@ const DatePicker = forwardRef(function DatePicker(props, ref) {
     // they're load-bearing real props, see JSDoc above.
     displayAuto: _displayAuto,
     hidden: _hidden,
+    ...rest
   } = props;
 
   // Auto-generate id if not provided. All internal id-derived markers
@@ -778,11 +783,13 @@ const DatePicker = forwardRef(function DatePicker(props, ref) {
       block={block}
       id={id}
       width={width}
-      style={containerStyle}
       isV4Design={isV4Design}
       compactStyle={compactStyle}
       disabled={disabled}
       isValid={isValid}
+      {...rest}
+      className={className}
+      style={{ ...containerStyle, ...style }}
     >
       {caption && !hideCaption && (
         <Caption

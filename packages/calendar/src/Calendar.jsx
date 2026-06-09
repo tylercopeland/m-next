@@ -111,6 +111,8 @@ const RESOURCE_GROUPED_VIEWS = new Set(['DayVertical', 'WeekVertical', 'DayHoriz
  */
 const Calendar = forwardRef(function Calendar(props, ref) {
   const {
+    className,
+    style,
     id: idProp = null,
     userIdentity = null,
     onAddEvent = null,
@@ -177,6 +179,9 @@ const Calendar = forwardRef(function Calendar(props, ref) {
     displayPreferences: _displayPreferences,
     displayAuto: _displayAuto,
     hidden: _hidden,
+
+    // DOM envelope — forwarded to the owned root <div> (NOT ScheduleComponent).
+    ...rest
   } = props;
 
   // Auto-generate id if not provided. The desktop menu button id and the
@@ -1123,7 +1128,7 @@ const Calendar = forwardRef(function Calendar(props, ref) {
   );
 
   return (
-    <div ref={rootRef}>
+    <div {...rest} ref={rootRef} className={className} style={style}>
       {caption && !hideCaption && (
         <Caption
           id={`${id}-caption`}

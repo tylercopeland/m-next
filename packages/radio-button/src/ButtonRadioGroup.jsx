@@ -15,6 +15,7 @@ const ButtonRadioGroup = forwardRef(function ButtonRadioGroup(props, ref) {
     selectedValue,
     widthType = 'auto',
     width = 'auto',
+    className,
     style = null,
     buttonWidth,
     isOneLine,
@@ -38,6 +39,8 @@ const ButtonRadioGroup = forwardRef(function ButtonRadioGroup(props, ref) {
     displayAuto: _displayAuto,
     compactStyle: _compactStyle,
     controlId: _controlId,
+
+    ...rest
   } = props;
 
   // ============ Auto-generate id if not provided ============
@@ -102,6 +105,7 @@ const ButtonRadioGroup = forwardRef(function ButtonRadioGroup(props, ref) {
     <>
       {label && <Caption id={`${id}-RadioGroup`} label={label} narrow />}
       <ButtonRadioGroupWrapper
+        {...rest}
         ref={rootRef}
         id={`${id}-RadioGroup`}
         role='radiogroup'
@@ -109,6 +113,7 @@ const ButtonRadioGroup = forwardRef(function ButtonRadioGroup(props, ref) {
         aria-labelledby={resolvedAriaLabelledBy}
         widthType={widthType}
         width={width}
+        className={className}
         style={style}
         isOneLine={isOneLine}
       >

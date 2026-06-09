@@ -32,6 +32,7 @@ const RadioButton = forwardRef(function RadioButton(props, ref) {
     tabIndex = 0,
     color: colorProp,
     customFontSize = null,
+    className,
     style,
     narrow,
     labelStyle,
@@ -123,6 +124,7 @@ const RadioButton = forwardRef(function RadioButton(props, ref) {
   // styled components keep their V4 branches without exposing the flag to consumers.
   return (
     <s.RadioButtonWrapper
+      className={className}
       customColor={color}
       direction={direction}
       widthType={widthType}

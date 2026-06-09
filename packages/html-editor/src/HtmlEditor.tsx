@@ -34,7 +34,8 @@ export interface AuthContext {
   [key: string]: unknown;
 }
 
-interface HtmlEditorProps {
+interface HtmlEditorProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onBlur' | 'onChange' | 'onFocus'> {
   authContext?: AuthContext;
   caption?: string;
   componentVersion?: string; // Version to control behavior changes (default "0.0.0")
@@ -96,6 +97,10 @@ const HtmlEditor = forwardRef<HTMLDivElement, HtmlEditorProps>(function HtmlEdit
     onFocus,
     onLoad,
 
+    // Standard DOM envelope — forwarded to the owned root wrapper.
+    className,
+    style,
+
     // Soft-shimmed legacy props
     forwardRef: legacyForwardRef,
 
@@ -104,6 +109,8 @@ const HtmlEditor = forwardRef<HTMLDivElement, HtmlEditorProps>(function HtmlEdit
     displayAuto: _displayAuto,
     compactStyle: _compactStyle,
     hidden: _hidden,
+
+    ...rest
   } = props;
 
   // Auto-generate id if not provided.
@@ -303,7 +310,10 @@ const HtmlEditor = forwardRef<HTMLDivElement, HtmlEditorProps>(function HtmlEdit
 
   return (
     <s.EditorWrapper
+      {...rest}
       id={`HTML-editor-${id}`}
+      className={className}
+      style={style}
       width={width}
       disabled={disabled}
       ref={editorRef}

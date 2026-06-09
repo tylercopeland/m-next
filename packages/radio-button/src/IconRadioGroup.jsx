@@ -15,6 +15,7 @@ const IconRadioGroup = forwardRef(function IconRadioGroup(props, ref) {
     selectedValue,
     widthType = 'auto',
     width = 'auto',
+    className,
     style = null,
     disabled,
 
@@ -36,6 +37,8 @@ const IconRadioGroup = forwardRef(function IconRadioGroup(props, ref) {
     displayAuto: _displayAuto,
     compactStyle: _compactStyle,
     controlId: _controlId,
+
+    ...rest
   } = props;
 
   // ============ Auto-generate id if not provided ============
@@ -100,6 +103,7 @@ const IconRadioGroup = forwardRef(function IconRadioGroup(props, ref) {
     <>
       {label && <Caption id={`${id}-RadioGroup`} label={label} narrow />}
       <IconRadioGroupWrapper
+        {...rest}
         ref={rootRef}
         id={`${id}-RadioGroup`}
         role='radiogroup'
@@ -107,6 +111,7 @@ const IconRadioGroup = forwardRef(function IconRadioGroup(props, ref) {
         aria-labelledby={resolvedAriaLabelledBy}
         widthType={widthType}
         width={width}
+        className={className}
         style={style}
       >
         {options?.map((option) => (

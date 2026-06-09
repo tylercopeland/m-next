@@ -60,6 +60,8 @@ const RadioGroup = forwardRef(function RadioGroup(props, ref) {
     displayAuto: _displayAuto,
     compactStyle: _compactStyle,
     controlId: _controlId,
+
+    ...rest
   } = props;
 
   // ============ Auto-generate id if not provided ============
@@ -170,6 +172,7 @@ const RadioGroup = forwardRef(function RadioGroup(props, ref) {
 
   return (
     <s.RadioGroupWrapper
+      {...rest}
       ref={rootRef}
       id={`${id}-RadioGroup`}
       role='radiogroup'
@@ -182,7 +185,7 @@ const RadioGroup = forwardRef(function RadioGroup(props, ref) {
       aria-labelledby={resolvedAriaLabelledBy}
       rightAlign={rightAlign}
       className={className}
-      style={wrapperStyle}
+      style={{ ...wrapperStyle, ...style }}
       narrow={narrow}
       allowWrap={allowWrap}
     >

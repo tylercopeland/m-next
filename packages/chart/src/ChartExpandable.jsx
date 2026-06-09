@@ -24,6 +24,7 @@ let autoIdCounter = 0;
 const propTypes = {
   /** Optional. Auto-generated when not provided. */
   id: PropTypes.string,
+  className: PropTypes.string,
   isLoading: PropTypes.bool,
   style: PropTypes.instanceOf(Object),
   data: PropTypes.instanceOf(Object),
@@ -76,6 +77,7 @@ const EmptyWrapper = styled.div(() => [
 const ChartExpandable = forwardRef(function ChartExpandable(props, ref) {
   const {
     id: idProp = '',
+    className,
     isLoading = false,
     style = {},
     data = {},
@@ -114,6 +116,8 @@ const ChartExpandable = forwardRef(function ChartExpandable(props, ref) {
     displayAuto: _displayAuto,
     compactStyle: _compactStyle,
     hidden: _hidden,
+
+    ...rest
   } = props;
 
   // Auto-generate id if not provided.
@@ -170,8 +174,10 @@ const ChartExpandable = forwardRef(function ChartExpandable(props, ref) {
       <Chart
         ref={setChartRef}
         id={id}
+        className={className}
         isLoading={isLoading}
         style={style}
+        {...rest}
         data={data}
         error={error}
         onRefetch={onRefetch}
