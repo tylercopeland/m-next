@@ -2196,22 +2196,6 @@ const HomeScreen = () => {
           }
           return (
             <Stack gap="md" style={{ flex: 1, minWidth: 0, width: '100%' }}>
-              {/* Status strip — insights are still being computed, so the
-                  cards below render in their loading state rather than
-                  showing stale or zeroed numbers. */}
-              <Box
-                padding="md"
-                style={{
-                  background: theme.background.subtle,
-                  borderRadius: 8,
-                  width: '100%',
-                }}
-              >
-                <Text fontSize="14px" lineHeight="20px" fontColor={theme.content.subtle}>
-                  Method is currently analyzing your QuickBooks data to generate personalized
-                  business insights.
-                </Text>
-              </Box>
               <Inline gap="md" style={{ width: '100%' }}>
                 {HOME_INSIGHTS.map((ins) => (
                   <InsightCard
