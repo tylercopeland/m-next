@@ -2435,26 +2435,60 @@ const ActivitiesListScreen = () => {
 };
 
 // =====================================================================
+// Field definitions + data for the contact detail rail. FormSection is
+// data-driven: `fields` describes the rows, `data` supplies values keyed by
+// field name, and `tagsList` maps tag names to their swatch colours.
+const CONTACT_TAGS = [
+  { name: 'Hot Leads', colour: colors.orange.light },
+  { name: 'Renewal', colour: colors.yellow.light },
+  { name: 'Enterprise', colour: colors.purple.lighter },
+];
+
+const CONTACT_DETAIL_FIELDS = [
+  { name: 'Phone', caption: 'Phone', type: 'Text', isVisible: true },
+  { name: 'AltPhone', caption: 'Alt Phone', type: 'Text', isVisible: true },
+  { name: 'Mobile', caption: 'Mobile', type: 'Text', isVisible: true },
+  { name: 'Email', caption: 'Email', type: 'Email', isVisible: true },
+  { name: 'Website', caption: 'Website', type: 'Text', isVisible: true },
+  { name: 'TagList', caption: 'Tags', type: 'Tags', isVisible: true },
+  { name: 'PortalLink', caption: 'Portal Link', type: 'Text', isVisible: true },
+];
+
+const CONTACT_DETAIL_DATA = {
+  Phone: '',
+  AltPhone: '',
+  Mobile: '',
+  Email: 'copelandmedia@gmail.com',
+  Website: '',
+  TagList: 'Hot Leads',
+  PortalLink: 'https://Mlurl.cc/yGa5jZqml',
+};
+
+const LEAD_DETAIL_FIELDS = [
+  { name: 'LeadStatus', caption: 'Lead Status', type: 'Text', isVisible: true },
+  { name: 'LeadRating', caption: 'Lead Rating', type: 'Text', isVisible: true },
+  { name: 'LeadSource', caption: 'Lead Source', type: 'Text', isVisible: true },
+  { name: 'AssignedTo', caption: 'Assigned To', type: 'Text', isVisible: true },
+  { name: 'NameInQuickBooks', caption: 'Name in QuickBooks', type: 'Text', isVisible: true },
+  { name: 'Billing', caption: 'Billing', type: 'Text', isVisible: true },
+  { name: 'Shipping', caption: 'Shipping', type: 'Text', isVisible: true },
+  { name: 'LastActivity', caption: 'Last Activity', type: 'Text', isVisible: true },
+];
+
+const LEAD_DETAIL_DATA = {
+  LeadStatus: 'Open',
+  LeadRating: 'Warm',
+  LeadSource: '',
+  AssignedTo: 'Tyler Copeland',
+  NameInQuickBooks: 'Tyler Copeland',
+  Billing: '',
+  Shipping: '',
+  LastActivity: '',
+};
+
 // ContactDetailScreen — production contact detail view (Tyler Copeland)
 // =====================================================================
 
-const FieldRow = ({ label, value, isLink, isEmpty }) => (
-  <Stack gap="none">
-    <Text fontSize={`${fontSize.sm}px`} lineHeight="20px" fontWeight={fontWeight.semibold} fontColor={colors.grey.darker}>
-      {label}
-    </Text>
-    {!isEmpty && (
-      <Text
-        fontSize={`${fontSize.sm}px`}
-        lineHeight="20px"
-        fontColor={isLink ? colors.blue.base : colors.grey.darker}
-        mt="2px"
-      >
-        {value}
-      </Text>
-    )}
-  </Stack>
-);
 
 const EditWithDropdown = () => (
   <Inline gap="none" align="center">
@@ -2497,7 +2531,6 @@ const ContactDetailTabs = [
 const ContactDetailScreen = ({ onBack }) => {
   const theme = useTheme();
   const [activeTab, setActiveTab] = useState('activities-open');
-  const [showMore, setShowMore] = useState(false);
 
   return (
     // Two-column record layout: 1/3 detail rail, 2/3 related-records pane.
@@ -2599,85 +2632,38 @@ const ContactDetailScreen = ({ onBack }) => {
 
           <Divider spacing="none" color={colors.grey.lightest} />
 
-          {/* Contact Details section */}
+          {/* Contact Details — real @m-next/field-block FormSection. It is
+              data-driven: `fields` describes the rows, `data` supplies values
+              keyed by field name, `tagsList` maps tag names to colours. */}
           <Stack gap="md">
             <Inline justify="spaceBetween" align="center">
               <SectionHeader title="Contact Details" />
               <EditWithDropdown />
             </Inline>
-            <Inline gap="lg" wrap>
-              <Box style={{ flex: '1 1 200px' }}>
-                <FieldRow label="Phone" isEmpty />
-              </Box>
-              <Box style={{ flex: '1 1 200px' }}>
-                <FieldRow label="Alt Phone" isEmpty />
-              </Box>
-            </Inline>
-            <FieldRow label="Mobile" isEmpty />
-            <FieldRow label="Email" value="copelandmedia@gmail.com" isLink />
-            <FieldRow label="Website" isEmpty />
-            <FieldRow label="Tags" isEmpty />
-
-            <Stack gap="xs">
-              <Inline gap="xs" align="center">
-                <Text fontSize={`${fontSize.sm}px`} lineHeight="20px" fontWeight={fontWeight.semibold} fontColor={colors.grey.darker}>
-                  Portal Link
-                </Text>
-                <SvgIcon name="question" size={14} color={colors.grey.base} />
-              </Inline>
-              <Text fontSize={`${fontSize.sm}px`} lineHeight="20px" fontColor={colors.blue.base} mt="2px">
-                https://Mlurl.cc/yGa5jZqml
-              </Text>
-            </Stack>
+            <FormSection
+              id="contact-details"
+              fields={CONTACT_DETAIL_FIELDS}
+              data={CONTACT_DETAIL_DATA}
+              tagsList={CONTACT_TAGS}
+            />
           </Stack>
 
-          {/* Customer Lead Details section */}
+          {/* Customer Lead Details — `collapseEmpty` provides the Show more /
+              Show less affordance natively, which replaces the hand-rolled
+              showMore state and raw <button> this screen used to carry. */}
           <Stack gap="md">
             <Inline justify="spaceBetween" align="center">
               <SectionHeader title="Customer Lead Details" />
               <EditWithDropdown />
             </Inline>
-            <Inline gap="lg" wrap>
-              <Box style={{ flex: '1 1 200px' }}>
-                <FieldRow label="Lead Status" value="Open" />
-              </Box>
-              <Box style={{ flex: '1 1 200px' }}>
-                <FieldRow label="Lead Rating" value="Warm" />
-              </Box>
-            </Inline>
-            <FieldRow label="Lead Source" isEmpty />
-            <FieldRow label="Assigned To" value="Tyler Copeland" />
-            <FieldRow label="Name in QuickBooks" value="Tyler Copeland" />
-            {showMore && (
-              <>
-                <FieldRow label="Billing" isEmpty />
-                <FieldRow label="Shipping" isEmpty />
-                <FieldRow label="Last Activity" value="—" />
-              </>
-            )}
-            {!showMore && <FieldRow label="Billing" isEmpty />}
+            <FormSection
+              id="customer-lead-details"
+              fields={LEAD_DETAIL_FIELDS}
+              data={LEAD_DETAIL_DATA}
+              tagsList={CONTACT_TAGS}
+              collapseEmpty
+            />
           </Stack>
-
-          <button
-            type="button"
-            onClick={() => setShowMore((v) => !v)}
-            style={{
-              background: 'transparent',
-              border: 'none',
-              cursor: 'pointer',
-              padding: '8px 0',
-              color: colors.blue.base,
-              fontFamily: 'inherit',
-              fontSize: fontSize.sm,
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: spacing.xs,
-              alignSelf: 'flex-start',
-            }}
-          >
-            <SvgIcon name={showMore ? 'chevron-up' : 'chevron-down'} size={12} color={colors.blue.base} />
-            Show {showMore ? 'less' : 'more'}
-          </button>
         </Stack>
         </Container>
       </Box>
