@@ -1,6 +1,17 @@
 import styled from '@emotion/styled';
 import { lightTheme } from '@m-next/styles';
-import { radius } from '@m-next/tokens';
+import { radius, spacing } from '@m-next/tokens';
+
+// `padding` accepts a spacing token ('md', 'xl', ...) OR a raw CSS value.
+// Box resolves tokens the same way; Container previously did not, so
+// padding="xl" emitted the invalid declaration `padding: xl` and silently
+// produced NO padding at all. Tokens now resolve; anything else passes
+// through unchanged, so existing '24px' / 16 / '1rem' callers are untouched.
+const resolvePadding = (val) => {
+  if (val == null || val === '') return null;
+  if (spacing[val] != null) return `${spacing[val]}px`;
+  return val;
+};
 
 // NOTE: `borderRadius` comes from `radius.lg` (8px). The shadow `rgba(0,0,0,0.1)`
 // has no nested-token equivalent (it's a translucent black, not a palette color),
@@ -26,7 +37,7 @@ export const Container = styled.div((props) => {
     {
       display: isVisible ? 'flex' : 'none',
       boxSizing: 'border-box',
-      padding: padding || '16px',
+      padding: resolvePadding(padding) || `${spacing.lg}px`,
       backgroundColor: background ? background.primary : lightTheme.background.primary,
       color: content ? content.color : null,
       // 8px surface corner, from radius.lg. `isRound` defaults to true in

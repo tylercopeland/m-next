@@ -3,6 +3,9 @@ import React, { useState, useContext, useMemo, useEffect, useRef, forwardRef } f
 // Foundation
 import { ThemeProvider, useTheme, useThemeSwitcher } from '@m-next/theme';
 import { Box, Stack, Inline, Divider } from '@m-next/layout';
+import {
+  colors, spacing, radius, fontSize, lineHeight, fontWeight, iconSize, zIndex,
+} from '@m-next/tokens';
 
 // m-next components — imported under Raw* names so we can wrap them
 // with the Identify HOC and then re-export as the natural name.
@@ -55,14 +58,14 @@ import { SvgIcon } from '@m-next/svg-icon';
 const InspectContext = React.createContext(false);
 
 const CATEGORY_COLORS = {
-  foundation: '#7c3aed',
-  action: '#0D71C8',
-  display: '#0e7490',
-  feedback: '#D97706',
-  form: '#137E58',
-  overlay: '#be185d',
-  navigation: '#A10007',
-  local: '#9ca3af',
+  foundation: colors.purple.base,
+  action: colors.blue.base,
+  display: colors.teal.dark,
+  feedback: colors.orange.dark,
+  form: colors.green.dark,
+  overlay: colors.fuchsia.dark,
+  navigation: colors.red.dark,
+  local: colors.grey.light,
 };
 
 const Identify = ({ name, category = 'action', block = false, style, children }) => {
@@ -84,7 +87,7 @@ const Identify = ({ name, category = 'action', block = false, style, children })
         display: displayMode,
         outline: on ? `1.5px dashed ${color}` : 'none',
         outlineOffset: on ? 2 : 0,
-        borderRadius: 2,
+        borderRadius: radius.sm,
         ...style,
       }}
     >
@@ -96,12 +99,12 @@ const Identify = ({ name, category = 'action', block = false, style, children })
             left: 0,
             fontSize: 9,
             background: color,
-            color: 'white',
+            color: colors.white,
             padding: '1px 5px',
             borderRadius: 3,
-            zIndex: 100,
+            zIndex: zIndex.dropdown,
             fontFamily: 'ui-monospace, SFMono-Regular, monospace',
-            fontWeight: 600,
+            fontWeight: fontWeight.semibold,
             textTransform: 'uppercase',
             letterSpacing: 0.3,
             whiteSpace: 'nowrap',
@@ -312,15 +315,15 @@ const InspectLegend = () => {
         position: 'fixed',
         left: pos.x,
         top: pos.y,
-        zIndex: 9999,
-        background: 'white',
-        border: '1px solid #d1d5db',
-        borderRadius: 8,
+        zIndex: zIndex.toast,
+        background: colors.white,
+        border: `1px solid ${colors.grey.light}`,
+        borderRadius: radius.lg,
         boxShadow: '0 4px 12px rgba(0,0,0,0.12)',
         fontFamily: "'Source Sans Pro', system-ui, sans-serif",
         fontSize: 11,
         userSelect: 'none',
-        padding: 8,
+        padding: spacing.sm,
         minWidth: 180,
       }}
     >
@@ -328,10 +331,10 @@ const InspectLegend = () => {
         onMouseDown={handleMouseDown}
         style={{
           cursor: 'grab',
-          background: '#F3F4F6',
-          borderRadius: 4,
+          background: colors.grey.lightest,
+          borderRadius: radius.md,
           padding: '6px 8px',
-          marginBottom: 8,
+          marginBottom: spacing.sm,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -341,9 +344,9 @@ const InspectLegend = () => {
       >
         <span
           style={{
-            fontWeight: 700,
+            fontWeight: fontWeight.bold,
             fontSize: 10,
-            color: '#374151',
+            color: colors.grey.dark,
             textTransform: 'uppercase',
             letterSpacing: 0.5,
           }}
@@ -354,10 +357,10 @@ const InspectLegend = () => {
           <span
             style={{
               fontSize: 10,
-              fontWeight: 600,
-              color: '#6b7280',
-              background: '#E5E7EB',
-              borderRadius: 999,
+              fontWeight: fontWeight.semibold,
+              color: colors.grey.base,
+              background: colors.grey.lighter,
+              borderRadius: radius.full,
               padding: '1px 6px',
             }}
             title="Total m-next instances on screen"
@@ -367,8 +370,8 @@ const InspectLegend = () => {
           <span
             aria-hidden='true'
             style={{
-              color: '#9ca3af',
-              fontSize: 14,
+              color: colors.grey.light,
+              fontSize: fontSize.sm,
               lineHeight: 1,
             }}
           >
@@ -376,7 +379,7 @@ const InspectLegend = () => {
           </span>
         </span>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: spacing.xs }}>
         {entries.map((e) => {
           const count = counts[e.category] || 0;
           return (
@@ -389,19 +392,19 @@ const InspectLegend = () => {
                   width: 14,
                   height: 14,
                   border: `1.5px dashed ${CATEGORY_COLORS[e.category]}`,
-                  borderRadius: 2,
+                  borderRadius: radius.sm,
                   display: 'inline-block',
                   flexShrink: 0,
                 }}
               />
-              <span style={{ color: '#374151', flex: 1 }}>{e.label}</span>
+              <span style={{ color: colors.grey.dark, flex: 1 }}>{e.label}</span>
               <span
                 style={{
                   fontSize: 10,
-                  fontWeight: 600,
-                  color: count > 0 ? CATEGORY_COLORS[e.category] : '#9ca3af',
+                  fontWeight: fontWeight.semibold,
+                  color: count > 0 ? CATEGORY_COLORS[e.category] : colors.grey.light,
                   background: count > 0 ? `${CATEGORY_COLORS[e.category]}14` : 'transparent',
-                  borderRadius: 999,
+                  borderRadius: radius.full,
                   padding: '1px 6px',
                   minWidth: 22,
                   textAlign: 'center',
@@ -460,7 +463,7 @@ const Header = ({ onDelete, onEdit, inspectOn, setInspectOn }) => {
         </Inline>
       </Inline>
 
-      <Container bordered padding="24px">
+      <Container bordered padding="xl">
         <Inline justify="spaceBetween" align="center" wrap gap="md">
           <Inline gap="md" align="center">
             <Box
@@ -484,19 +487,19 @@ const Header = ({ onDelete, onEdit, inspectOn, setInspectOn }) => {
               <Inline gap="sm" align="center">
                 <Text
                   as="H1"
-                  fontSize="24px"
+                  fontSize={`${fontSize.xl}px`}
                   lineHeight="28px"
                   fontWeight={theme.fontWeight.semibold}
                   fontColor={theme.content.emphasize}
-                  mt="0px"
-                  mb="0px"
+                  mt={`${spacing.none}px`}
+                  mb={`${spacing.none}px`}
                 >
                   Acme Corp
                 </Text>
                 <Pill colorScheme="green" variant="subtle">Active</Pill>
                 <Badge colorScheme="blue" variant="subtle">VIP</Badge>
               </Inline>
-              <Text fontSize="14px" lineHeight="20px" fontColor={theme.content.subtle}>
+              <Text fontSize={`${fontSize.sm}px`} lineHeight="20px" fontColor={theme.content.subtle}>
                 alex@acme.com · +1 555 0100 · Customer since 2023
               </Text>
             </Stack>
@@ -547,17 +550,17 @@ const OverviewTab = ({ loading }) => {
         </Box>
       </Inline>
 
-      <Container bordered padding="24px">
+      <Container bordered padding="xl">
         <Stack gap="md">
           <Inline justify="spaceBetween" align="center">
             <Text
               as="H2"
-              fontSize="16px"
+              fontSize={`${fontSize.md}px`}
               lineHeight="20px"
               fontWeight={theme.fontWeight.semibold}
               fontColor={theme.content.primary}
-              mt="0px"
-              mb="0px"
+              mt={`${spacing.none}px`}
+              mb={`${spacing.none}px`}
             >
               Recent activity
             </Text>
@@ -598,11 +601,11 @@ const OverviewTab = ({ loading }) => {
                     {a.who.slice(0, 1)}
                   </Box>
                   <Stack gap="none" style={{ flex: 1 }}>
-                    <Text fontSize="14px" lineHeight="20px">
+                    <Text fontSize={`${fontSize.sm}px`} lineHeight="20px">
                       <strong style={{ fontWeight: theme.fontWeight.semibold }}>{a.who}</strong>
                       {' '}{a.what}
                     </Text>
-                    <Text fontSize="12px" lineHeight="16px" fontColor={theme.content.subtle}>
+                    <Text fontSize={`${fontSize.xs}px`} lineHeight="16px" fontColor={theme.content.subtle}>
                       {a.when}
                     </Text>
                   </Stack>
@@ -711,7 +714,7 @@ const InvoicesTab = ({ onSelectInvoice }) => {
 
   return (
     <Stack gap="lg">
-      <Container bordered padding="16px">
+      <Container bordered padding="lg">
         <Inline gap="md" wrap align="center" justify="spaceBetween">
           <Box style={{ minWidth: 240, flex: 1 }}>
             <SearchInput
@@ -729,7 +732,7 @@ const InvoicesTab = ({ onSelectInvoice }) => {
         </Inline>
       </Container>
 
-      <Container bordered padding="16px">
+      <Container bordered padding="lg">
         {filtered.length === 0 ? (
           <EmptyState
             variant="subtle"
@@ -761,19 +764,19 @@ const InvoicesTab = ({ onSelectInvoice }) => {
                   >
                     <Stack gap="none">
                       <Text
-                        fontSize="14px"
+                        fontSize={`${fontSize.sm}px`}
                         lineHeight="20px"
                         fontWeight={theme.fontWeight.medium}
                       >
                         {inv.id}
                       </Text>
-                      <Text fontSize="12px" lineHeight="16px" fontColor={theme.content.subtle}>
+                      <Text fontSize={`${fontSize.xs}px`} lineHeight="16px" fontColor={theme.content.subtle}>
                         Due {inv.dueDate}
                       </Text>
                     </Stack>
                     <Inline gap="md" align="center">
                       <Text
-                        fontSize="14px"
+                        fontSize={`${fontSize.sm}px`}
                         lineHeight="20px"
                         fontWeight={theme.fontWeight.semibold}
                       >
@@ -824,12 +827,12 @@ const ActivityTab = () => {
   const SectionHeading = ({ children }) => (
     <Text
       as="H2"
-      fontSize="16px"
+      fontSize={`${fontSize.md}px`}
       lineHeight="20px"
       fontWeight={theme.fontWeight.semibold}
       fontColor={theme.content.primary}
-      mt="0px"
-      mb="0px"
+      mt={`${spacing.none}px`}
+      mb={`${spacing.none}px`}
     >
       {children}
     </Text>
@@ -837,14 +840,14 @@ const ActivityTab = () => {
 
   return (
     <Stack gap="lg">
-      <Container bordered padding="24px">
+      <Container bordered padding="xl">
         <Stack gap="md">
           <SectionHeading>Onboarding progress</SectionHeading>
           <Stepper steps={ONBOARDING_STEPS} activeStep={3} showLabels />
         </Stack>
       </Container>
 
-      <Container bordered padding="24px">
+      <Container bordered padding="xl">
         <Stack gap="md">
           <Inline justify="spaceBetween" align="center">
             <SectionHeading>Activity feed</SectionHeading>
@@ -855,7 +858,7 @@ const ActivityTab = () => {
               <Button variant="secondary" size="sm" disabled={refreshing} onClick={refresh}>
                 {refreshing ? (
                   <Inline gap="xs" align="center">
-                    <Spinner size="sm" color="#0D71C8" />
+                    <Spinner size="sm" color={colors.blue.base} />
                     <span>Refreshing…</span>
                   </Inline>
                 ) : (
@@ -880,7 +883,7 @@ const ActivityTab = () => {
                     width={8}
                     height={8}
                     style={{
-                      marginTop: 8,
+                      marginTop: spacing.sm,
                       borderRadius: theme.radius.full,
                       background: theme.informative.secondary,
                       flexShrink: 0,
@@ -888,11 +891,11 @@ const ActivityTab = () => {
                     aria-hidden="true"
                   />
                   <Stack gap="none" style={{ flex: 1 }}>
-                    <Text fontSize="14px" lineHeight="20px">
+                    <Text fontSize={`${fontSize.sm}px`} lineHeight="20px">
                       <strong style={{ fontWeight: theme.fontWeight.semibold }}>{a.who}</strong>
                       {' '}{a.what}
                     </Text>
-                    <Text fontSize="12px" lineHeight="16px" fontColor={theme.content.subtle}>
+                    <Text fontSize={`${fontSize.xs}px`} lineHeight="16px" fontColor={theme.content.subtle}>
                       {a.when}
                     </Text>
                   </Stack>
@@ -933,7 +936,7 @@ const InvoiceDrawerBody = ({ invoice, onClose }) => {
           >
             {STATUS_TO_PILL[invoice?.status || 'open'].label}
           </Pill>
-          <Text fontSize="14px" lineHeight="20px" fontColor={theme.content.subtle}>
+          <Text fontSize={`${fontSize.sm}px`} lineHeight="20px" fontColor={theme.content.subtle}>
             Due {invoice?.dueDate}
           </Text>
         </Inline>
@@ -1329,13 +1332,13 @@ const COMPANIES_DATA = [
 ];
 
 const CUSTOMERS_TAGS = [
-  { colour: '#A9D9BF', name: 'Hot lead' },
-  { colour: '#84F3FF', name: 'Cold lead' },
-  { colour: '#BACAD0', name: 'VIP' },
-  { colour: '#B3E5FF', name: 'Net 30' },
-  { colour: '#FFCDAB', name: 'Overdue' },
-  { colour: '#FFE3A3', name: 'Renewal' },
-  { colour: '#D6C7FF', name: 'Enterprise' },
+  { colour: colors.green.light, name: 'Hot lead' },
+  { colour: colors.teal.light, name: 'Cold lead' },
+  { colour: colors.grey.light, name: 'VIP' },
+  { colour: colors.blue.light, name: 'Net 30' },
+  { colour: colors.orange.light, name: 'Overdue' },
+  { colour: colors.yellow.light, name: 'Renewal' },
+  { colour: colors.purple.lighter, name: 'Enterprise' },
 ];
 
 const CUSTOMERS_DATA = [
@@ -1679,11 +1682,11 @@ const TODO_STATUS_PILL = {
 // =====================================================================
 
 const ACTIVITY_TAGS = [
-  { colour: '#FFCDAB', name: 'Overdue' },
-  { colour: '#A9D9BF', name: 'Follow-up' },
-  { colour: '#B3E5FF', name: 'Urgent' },
-  { colour: '#D6C7FF', name: 'Internal' },
-  { colour: '#FFE3A3', name: 'Awaiting reply' },
+  { colour: colors.orange.light, name: 'Overdue' },
+  { colour: colors.green.light, name: 'Follow-up' },
+  { colour: colors.blue.light, name: 'Urgent' },
+  { colour: colors.purple.lighter, name: 'Internal' },
+  { colour: colors.yellow.light, name: 'Awaiting reply' },
 ];
 
 const ACTIVITIES_COLUMNS = [
@@ -1860,19 +1863,19 @@ const ListIconButton = ({ name, ariaLabel }) => (
     aria-label={ariaLabel}
     style={{
       background: 'transparent',
-      border: '1px solid #BACAD0',
-      borderRadius: 4,
+      border: `1px solid ${colors.grey.light}`,
+      borderRadius: radius.md,
       cursor: 'pointer',
       width: 32,
       height: 32,
       display: 'inline-flex',
       alignItems: 'center',
       justifyContent: 'center',
-      color: '#545F67',
-      padding: 0,
+      color: colors.grey.base,
+      padding: spacing.none,
     }}
   >
-    <SvgIcon name={name} size={14} color="#545F67" />
+    <SvgIcon name={name} size={14} color={colors.grey.base} />
   </button>
 );
 
@@ -2019,10 +2022,10 @@ const TodoRow = ({ todo, checked, onToggle }) => {
   return (
     <Box
       style={{
-        padding: 12,
-        borderRadius: 8,
-        background: completed ? '#E7F5F0' : '#FFFFFF',
-        border: `1px solid ${completed ? '#A9D9BF' : '#E5E5E5'}`,
+        padding: spacing.md,
+        borderRadius: radius.lg,
+        background: completed ? colors.green.lightest : colors.white,
+        border: `1px solid ${completed ? colors.green.light : colors.grey.lighter}`,
         opacity: completed ? 0.75 : 1,
         transition: 'all 0.2s ease-in-out',
       }}
@@ -2030,7 +2033,7 @@ const TodoRow = ({ todo, checked, onToggle }) => {
       <Inline gap="sm" align="flex-start" style={{ width: '100%', minWidth: 0 }}>
         <Box style={{ width: 16, height: 16, flexShrink: 0, marginTop: 2 }}>
           {completed ? (
-            <SvgIcon name="CircleCheck" size={16} color="#007B4A" />
+            <SvgIcon name="CircleCheck" size={16} color={colors.green.base} />
           ) : (
             <Checkbox
               checked={checked}
@@ -2044,10 +2047,10 @@ const TodoRow = ({ todo, checked, onToggle }) => {
         <Stack gap="xs" style={{ flex: 1, minWidth: 0 }}>
           <Inline gap="md" align="flex-start" justify="spaceBetween" style={{ width: '100%' }}>
             <Text
-              fontSize="14px"
+              fontSize={`${fontSize.sm}px`}
               lineHeight="16px"
-              fontWeight={600}
-              fontColor="#0F1B31"
+              fontWeight={fontWeight.semibold}
+              fontColor={colors.grey.darker}
               style={{ flex: 1, minWidth: 0 }}
             >
               {todo.title}
@@ -2058,9 +2061,9 @@ const TodoRow = ({ todo, checked, onToggle }) => {
           </Inline>
           <Inline gap="md" align="center" justify="spaceBetween" style={{ width: '100%' }}>
             <Text
-              fontSize="12px"
+              fontSize={`${fontSize.xs}px`}
               lineHeight="16px"
-              fontColor="#545F67"
+              fontColor={colors.grey.base}
               style={{ flex: 1, minWidth: 0 }}
             >
               {todo.description}
@@ -2069,13 +2072,13 @@ const TodoRow = ({ todo, checked, onToggle }) => {
               <SvgIcon
                 name="calendar-V4"
                 size={8}
-                color={todo.overdue ? '#DA211E' : '#545F67'}
+                color={todo.overdue ? colors.red.base : colors.grey.base}
               />
               <Text
-                fontSize="12px"
+                fontSize={`${fontSize.xs}px`}
                 lineHeight="16px"
-                fontWeight={400}
-                fontColor={todo.overdue ? '#DA211E' : '#545F67'}
+                fontWeight={fontWeight.normal}
+                fontColor={todo.overdue ? colors.red.base : colors.grey.base}
               >
                 {todo.overdue ? 'Overdue:' : 'Due:'} {dueLabelText}
               </Text>
@@ -2095,26 +2098,26 @@ const QuickActionRow = ({ action }) => {
       type="button"
       onClick={() => {}}
       style={{
-        display: 'flex', alignItems: 'center', gap: 12,
+        display: 'flex', alignItems: 'center', gap: spacing.md,
         width: '100%', padding: '8px 12px',
         background: 'transparent', border: 'none', borderRadius: 6,
         cursor: 'pointer', fontFamily: 'inherit', textAlign: 'left',
         color: theme.content.emphasize,
       }}
-      onMouseEnter={(e) => { e.currentTarget.style.background = '#F0F4F7'; }}
+      onMouseEnter={(e) => { e.currentTarget.style.background = colors.grey.lightest; }}
       onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; }}
     >
       <Box
         style={{
-          width: 32, height: 32, borderRadius: 6, background: '#E5F0FA',
+          width: 32, height: 32, borderRadius: 6, background: colors.blue.lighter,
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           flexShrink: 0,
         }}
         aria-hidden="true"
       >
-        <SvgIcon name={action.iconName} size={18} color="#0D71C8" />
+        <SvgIcon name={action.iconName} size={18} color={colors.blue.base} />
       </Box>
-      <Text fontSize="14px" lineHeight="20px" fontWeight={500}>
+      <Text fontSize={`${fontSize.sm}px`} lineHeight="20px" fontWeight={fontWeight.medium}>
         {action.label}
       </Text>
     </button>
@@ -2143,14 +2146,14 @@ const HomeScreen = () => {
           single surface is what gives the page its two-band structure;
           floating the greeting and hero loose on the page background made
           the rhythm read wrong no matter how the gaps were tuned. */}
-      <Container borderless={false} padding="24px">
+      <Container borderless={false} padding="xl">
       <Stack gap="lg" style={{ width: '100%' }}>
       <Inline justify="spaceBetween" align="flex-start" wrap gap="md">
         <Stack gap="xs">
-          <Text fontSize="12px" lineHeight="16px" fontColor={theme.content.subtle}>
+          <Text fontSize={`${fontSize.xs}px`} lineHeight="16px" fontColor={theme.content.subtle}>
             {formatGreetingDate(today)}
           </Text>
-          <Text as="H1" fontSize="24px" lineHeight="28px" fontWeight={700} mt="0px" mb="0px">
+          <Text as="H1" fontSize={`${fontSize.xl}px`} lineHeight="28px" fontWeight={fontWeight.bold} mt={`${spacing.none}px`} mb={`${spacing.none}px`}>
             {getGreeting(today)}, Paul
           </Text>
         </Stack>
@@ -2182,7 +2185,7 @@ const HomeScreen = () => {
         selectedTab={activeSubTab}
         onChange={setActiveSubTab}
         panelBackground="transparent"
-        contentStyle={{ padding: 0, border: 'none', minHeight: 0, marginTop: theme.spacing.xl }}
+        contentStyle={{ padding: spacing.none, border: 'none', minHeight: 0, marginTop: theme.spacing.xl }}
         onRenderTabContent={() => {
           if (activeSubTab === 'learn') {
             return (
@@ -2221,10 +2224,10 @@ const HomeScreen = () => {
       {/* To-Dos + Quick actions — two-column layout. */}
       <Inline gap="lg" align="stretch" wrap>
         <Box style={{ flex: '2 1 560px', minWidth: 320 }}>
-          <Container borderless={false} padding="24px">
+          <Container borderless={false} padding="xl">
             <Stack gap="md">
               <Inline justify="spaceBetween" align="center">
-                <Text as="H2" fontSize="20px" lineHeight="24px" fontWeight={700} mt="0px" mb="0px">
+                <Text as="H2" fontSize={`${fontSize.lg}px`} lineHeight="24px" fontWeight={fontWeight.bold} mt={`${spacing.none}px`} mb={`${spacing.none}px`}>
                   To-Dos
                 </Text>
                 <Button variant="ghost" size="sm" aria-label="To-Dos settings"
@@ -2262,10 +2265,10 @@ const HomeScreen = () => {
         </Box>
 
         <Box style={{ flex: '1 1 280px', minWidth: 240 }}>
-          <Container borderless={false} padding="16px">
+          <Container borderless={false} padding="lg">
             <Stack gap="sm">
               <Inline justify="spaceBetween" align="center">
-                <Text as="H2" fontSize="16px" lineHeight="20px" fontWeight={700} mt="0px" mb="0px">
+                <Text as="H2" fontSize={`${fontSize.md}px`} lineHeight="20px" fontWeight={fontWeight.bold} mt={`${spacing.none}px`} mb={`${spacing.none}px`}>
                   Quick actions
                 </Text>
                 <Button variant="ghost" size="sm" aria-label="Quick actions settings"
@@ -2298,7 +2301,7 @@ const HomeScreen = () => {
         selectedTab={activeTopTab}
         onChange={setActiveTopTab}
         panelBackground="transparent"
-        contentStyle={{ padding: 0, border: 'none', minHeight: 0, marginTop: theme.spacing.xl }}
+        contentStyle={{ padding: spacing.none, border: 'none', minHeight: 0, marginTop: theme.spacing.xl }}
         onRenderTabContent={() => {
           if (activeTopTab === 'apps') {
             return (
@@ -2413,14 +2416,14 @@ const ActivitiesListScreen = () => {
 
 const FieldRow = ({ label, value, isLink, isEmpty }) => (
   <Stack gap="none">
-    <Text fontSize="14px" lineHeight="20px" fontWeight={600} fontColor="#0F1B31">
+    <Text fontSize={`${fontSize.sm}px`} lineHeight="20px" fontWeight={fontWeight.semibold} fontColor={colors.grey.darker}>
       {label}
     </Text>
     {!isEmpty && (
       <Text
-        fontSize="14px"
+        fontSize={`${fontSize.sm}px`}
         lineHeight="20px"
-        fontColor={isLink ? '#0D71C8' : '#0F1B31'}
+        fontColor={isLink ? colors.blue.base : colors.grey.darker}
         mt="2px"
       >
         {value}
@@ -2439,19 +2442,19 @@ const EditWithDropdown = () => (
       aria-label="More edit actions"
       style={{
         background: 'transparent',
-        border: '1px solid #0D71C8',
+        border: `1px solid ${colors.blue.base}`,
         borderLeft: 'none',
         borderTopRightRadius: 16,
         borderBottomRightRadius: 16,
         cursor: 'pointer',
         padding: '6px 10px',
         marginLeft: -1,
-        color: '#0D71C8',
+        color: colors.blue.base,
         display: 'inline-flex',
         alignItems: 'center',
       }}
     >
-      <SvgIcon name="chevron-down" size={12} color="#0D71C8" />
+      <SvgIcon name="chevron-down" size={12} color={colors.blue.base} />
     </button>
   </Inline>
 );
@@ -2494,12 +2497,12 @@ const ContactDetailScreen = ({ onBack }) => {
                 width: 64,
                 height: 64,
                 borderRadius: 32,
-                background: '#A5DFEB',
-                color: '#0F1B31',
+                background: colors.teal.lighter,
+                color: colors.grey.darker,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontWeight: 700,
+                fontWeight: fontWeight.bold,
                 fontSize: 22,
               }}
             >
@@ -2508,22 +2511,22 @@ const ContactDetailScreen = ({ onBack }) => {
             <Stack gap="none">
               <Text
                 as="H1"
-                fontSize="24px"
+                fontSize={`${fontSize.xl}px`}
                 lineHeight="28px"
-                fontWeight={700}
-                fontColor="#0F1B31"
-                mt="0px"
-                mb="0px"
+                fontWeight={fontWeight.bold}
+                fontColor={colors.grey.darker}
+                mt={`${spacing.none}px`}
+                mb={`${spacing.none}px`}
               >
                 Tyler Copeland
               </Text>
-              <Text fontSize="12px" lineHeight="16px" fontColor="#545F67" mt="2px">
+              <Text fontSize={`${fontSize.xs}px`} lineHeight="16px" fontColor={colors.grey.base} mt="2px">
                 Main Contact
               </Text>
             </Stack>
           </Inline>
 
-          <Divider spacing="none" color="#EEF5F7" />
+          <Divider spacing="none" color={colors.grey.lightest} />
 
           {/* Health Score */}
           <Inline gap="md" align="center">
@@ -2532,13 +2535,13 @@ const ContactDetailScreen = ({ onBack }) => {
                 width: 56,
                 height: 56,
                 borderRadius: 28,
-                background: '#FFF3F0',
-                color: '#A10007',
+                background: colors.red.lightest,
+                color: colors.red.dark,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontWeight: 700,
-                fontSize: 20,
+                fontWeight: fontWeight.bold,
+                fontSize: fontSize.lg,
               }}
             >
               10
@@ -2546,38 +2549,38 @@ const ContactDetailScreen = ({ onBack }) => {
             <Stack gap="none">
               <Inline gap="xs" align="center">
                 <Text
-                  fontSize="16px"
+                  fontSize={`${fontSize.md}px`}
                   lineHeight="20px"
-                  fontWeight={600}
-                  fontColor="#0F1B31"
-                  mt="0px"
-                  mb="0px"
+                  fontWeight={fontWeight.semibold}
+                  fontColor={colors.grey.darker}
+                  mt={`${spacing.none}px`}
+                  mb={`${spacing.none}px`}
                 >
                   Health Score
                 </Text>
-                <Text fontSize="12px" lineHeight="16px" fontColor="#545F67">
+                <Text fontSize={`${fontSize.xs}px`} lineHeight="16px" fontColor={colors.grey.base}>
                   (Updated today at 10:40 PM)
                 </Text>
               </Inline>
-              <Text fontSize="12px" lineHeight="16px" fontColor="#545F67" mt="2px">
+              <Text fontSize={`${fontSize.xs}px`} lineHeight="16px" fontColor={colors.grey.base} mt="2px">
                 No change in health score compared to last week.
               </Text>
             </Stack>
           </Inline>
 
-          <Divider spacing="none" color="#EEF5F7" />
+          <Divider spacing="none" color={colors.grey.lightest} />
 
           {/* Contact Details section */}
           <Stack gap="md">
             <Inline justify="spaceBetween" align="center">
               <Text
                 as="H2"
-                fontSize="20px"
+                fontSize={`${fontSize.lg}px`}
                 lineHeight="24px"
-                fontWeight={700}
-                fontColor="#0F1B31"
-                mt="0px"
-                mb="0px"
+                fontWeight={fontWeight.bold}
+                fontColor={colors.grey.darker}
+                mt={`${spacing.none}px`}
+                mb={`${spacing.none}px`}
               >
                 Contact Details
               </Text>
@@ -2598,12 +2601,12 @@ const ContactDetailScreen = ({ onBack }) => {
 
             <Stack gap="xs">
               <Inline gap="xs" align="center">
-                <Text fontSize="14px" lineHeight="20px" fontWeight={600} fontColor="#0F1B31">
+                <Text fontSize={`${fontSize.sm}px`} lineHeight="20px" fontWeight={fontWeight.semibold} fontColor={colors.grey.darker}>
                   Portal Link
                 </Text>
-                <SvgIcon name="question" size={14} color="#545F67" />
+                <SvgIcon name="question" size={14} color={colors.grey.base} />
               </Inline>
-              <Text fontSize="14px" lineHeight="20px" fontColor="#0D71C8" mt="2px">
+              <Text fontSize={`${fontSize.sm}px`} lineHeight="20px" fontColor={colors.blue.base} mt="2px">
                 https://Mlurl.cc/yGa5jZqml
               </Text>
             </Stack>
@@ -2614,12 +2617,12 @@ const ContactDetailScreen = ({ onBack }) => {
             <Inline justify="spaceBetween" align="center">
               <Text
                 as="H2"
-                fontSize="20px"
+                fontSize={`${fontSize.lg}px`}
                 lineHeight="24px"
-                fontWeight={700}
-                fontColor="#0F1B31"
-                mt="0px"
-                mb="0px"
+                fontWeight={fontWeight.bold}
+                fontColor={colors.grey.darker}
+                mt={`${spacing.none}px`}
+                mb={`${spacing.none}px`}
               >
                 Customer Lead Details
               </Text>
@@ -2654,16 +2657,16 @@ const ContactDetailScreen = ({ onBack }) => {
               border: 'none',
               cursor: 'pointer',
               padding: '8px 0',
-              color: '#0D71C8',
+              color: colors.blue.base,
               fontFamily: 'inherit',
-              fontSize: 14,
+              fontSize: fontSize.sm,
               display: 'inline-flex',
               alignItems: 'center',
-              gap: 4,
+              gap: spacing.xs,
               alignSelf: 'flex-start',
             }}
           >
-            <SvgIcon name={showMore ? 'chevron-up' : 'chevron-down'} size={12} color="#0D71C8" />
+            <SvgIcon name={showMore ? 'chevron-up' : 'chevron-down'} size={12} color={colors.blue.base} />
             Show {showMore ? 'less' : 'more'}
           </button>
         </Stack>
@@ -2671,7 +2674,7 @@ const ContactDetailScreen = ({ onBack }) => {
 
       {/* RIGHT — tabs + data table */}
       <Box style={{ flex: '1 1 auto', minWidth: 0 }}>
-        <Container bordered padding="0px">
+        <Container bordered padding="none">
           <Stack gap="none">
             {/* Real @m-next/tabs — Activities Open / Closed / Opportunities / etc.
                 No onRenderTabContent: the action row + table render as siblings
@@ -2692,21 +2695,21 @@ const ContactDetailScreen = ({ onBack }) => {
                     background: 'transparent',
                     border: 'none',
                     cursor: 'pointer',
-                    padding: 0,
-                    color: '#0D71C8',
+                    padding: spacing.none,
+                    color: colors.blue.base,
                     fontFamily: 'inherit',
-                    fontSize: 14,
+                    fontSize: fontSize.sm,
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: 6,
                   }}
                 >
-                  <SvgIcon name="circle-plus" size={16} color="#0D71C8" />
+                  <SvgIcon name="circle-plus" size={16} color={colors.blue.base} />
                   New Activity
                 </button>
               </Inline>
 
-              <Inline gap="sm" align="center" style={{ marginTop: 12 }}>
+              <Inline gap="sm" align="center" style={{ marginTop: spacing.md }}>
                 <ListIconButton name="cog" ariaLabel="Settings" />
                 <Box style={{ flex: 1, maxWidth: 360 }}>
                   <SearchInput value="" onChange={() => {}} placeholder="Search" />
@@ -2715,9 +2718,9 @@ const ContactDetailScreen = ({ onBack }) => {
                   type="button"
                   aria-label="Run search"
                   style={{
-                    background: '#0D71C8',
+                    background: colors.blue.base,
                     border: 'none',
-                    borderRadius: 4,
+                    borderRadius: radius.md,
                     cursor: 'pointer',
                     width: 32,
                     height: 32,
@@ -2726,7 +2729,7 @@ const ContactDetailScreen = ({ onBack }) => {
                     justifyContent: 'center',
                   }}
                 >
-                  <SvgIcon name="search" size={14} color="white" />
+                  <SvgIcon name="search" size={14} color={colors.white} />
                 </button>
               </Inline>
             </Box>
@@ -2734,26 +2737,26 @@ const ContactDetailScreen = ({ onBack }) => {
             {/* Table header */}
             <Box
               padding="md"
-              style={{ background: '#EEF5F7', borderTop: '1px solid #BACAD0' }}
+              style={{ background: colors.grey.lightest, borderTop: `1px solid ${colors.grey.light}` }}
             >
               <Inline gap="md" align="center">
                 <Box style={{ flex: '1 1 110px' }}>
-                  <Text fontSize="12px" lineHeight="16px" fontWeight={600} fontColor="#0D71C8">
+                  <Text fontSize={`${fontSize.xs}px`} lineHeight="16px" fontWeight={fontWeight.semibold} fontColor={colors.blue.base}>
                     Start Date
                   </Text>
                 </Box>
                 <Box style={{ flex: '1 1 140px' }}>
-                  <Text fontSize="12px" lineHeight="16px" fontWeight={600} fontColor="#0D71C8">
+                  <Text fontSize={`${fontSize.xs}px`} lineHeight="16px" fontWeight={fontWeight.semibold} fontColor={colors.blue.base}>
                     Contact
                   </Text>
                 </Box>
                 <Box style={{ flex: '2 1 220px' }}>
-                  <Text fontSize="12px" lineHeight="16px" fontWeight={600} fontColor="#0D71C8">
+                  <Text fontSize={`${fontSize.xs}px`} lineHeight="16px" fontWeight={fontWeight.semibold} fontColor={colors.blue.base}>
                     Type / Status / Assigned To
                   </Text>
                 </Box>
                 <Box style={{ flex: '1 1 120px' }}>
-                  <Text fontSize="12px" lineHeight="16px" fontWeight={600} fontColor="#0D71C8">
+                  <Text fontSize={`${fontSize.xs}px`} lineHeight="16px" fontWeight={fontWeight.semibold} fontColor={colors.blue.base}>
                     Comments
                   </Text>
                 </Box>
@@ -2762,7 +2765,7 @@ const ContactDetailScreen = ({ onBack }) => {
 
             {/* Empty state */}
             <Box padding="md">
-              <Text fontSize="14px" lineHeight="20px" fontColor="#545F67">
+              <Text fontSize={`${fontSize.sm}px`} lineHeight="20px" fontColor={colors.grey.base}>
                 No records to display.
               </Text>
             </Box>
@@ -2883,18 +2886,18 @@ const CustomerDetail = ({ inspectOn, setInspectOn }) => {
                 marginLeft: 'auto',
                 background: 'transparent',
                 border: 'none',
-                color: '#fff',
+                color: colors.white,
                 cursor: 'pointer',
-                padding: 4,
+                padding: spacing.xs,
                 display: 'flex',
                 alignItems: 'center',
               }}
             >
-              <SvgIcon name="navbar" size={20} color="white" />
+              <SvgIcon name="navbar" size={20} color={colors.white} />
             </button>
           </Sidebar.Header>
           <Sidebar.Item
-            icon={<SvgIcon name="dashboard" size={20} color="white" />}
+            icon={<SvgIcon name="dashboard" size={20} color={colors.white} />}
             active={currentScreen === 'home'}
             onClick={() => setCurrentScreen('home')}
           >
@@ -2903,32 +2906,32 @@ const CustomerDetail = ({ inspectOn, setInspectOn }) => {
           <Sidebar.Divider />
           <Sidebar.Body>
             <Sidebar.Item
-              icon={<SvgIcon name="contacts" size={20} color="white" />}
+              icon={<SvgIcon name="contacts" size={20} color={colors.white} />}
               active={currentScreen === 'customers-list' || currentScreen === 'contact-detail'}
               onClick={() => setCurrentScreen('customers-list')}
             >
               Contacts
             </Sidebar.Item>
-            <Sidebar.Item icon={<SvgIcon name="opportunity" size={20} color="white" />}>Opportunities</Sidebar.Item>
+            <Sidebar.Item icon={<SvgIcon name="opportunity" size={20} color={colors.white} />}>Opportunities</Sidebar.Item>
             <Sidebar.Item
-              icon={<SvgIcon name="activities" size={20} color="white" />}
+              icon={<SvgIcon name="activities" size={20} color={colors.white} />}
               active={currentScreen === 'activities-list'}
               onClick={() => setCurrentScreen('activities-list')}
             >
               Activities
             </Sidebar.Item>
-            <Sidebar.Item icon={<SvgIcon name="invoice" size={20} color="white" />}>Invoices</Sidebar.Item>
-            <Sidebar.Item icon={<SvgIcon name="estimate" size={20} color="white" />}>Estimates</Sidebar.Item>
-            <Sidebar.Item icon={<SvgIcon name="receipts" size={20} color="white" />}>Sales Receipts</Sidebar.Item>
-            <Sidebar.Item icon={<SvgIcon name="payments" size={20} color="white" />}>Payments</Sidebar.Item>
-            <Sidebar.Item icon={<SvgIcon name="email" size={20} color="white" />}>Email Marketing</Sidebar.Item>
-            <Sidebar.Item icon={<SvgIcon name="opportunity" size={20} color="white" />}>Donor Pages</Sidebar.Item>
-            <Sidebar.Item icon={<SvgIcon name="calendar" size={20} color="white" />}>Time Tracking</Sidebar.Item>
-            <Sidebar.Item icon={<SvgIcon name="chevron-down" size={20} color="white" />}>More Apps</Sidebar.Item>
+            <Sidebar.Item icon={<SvgIcon name="invoice" size={20} color={colors.white} />}>Invoices</Sidebar.Item>
+            <Sidebar.Item icon={<SvgIcon name="estimate" size={20} color={colors.white} />}>Estimates</Sidebar.Item>
+            <Sidebar.Item icon={<SvgIcon name="receipts" size={20} color={colors.white} />}>Sales Receipts</Sidebar.Item>
+            <Sidebar.Item icon={<SvgIcon name="payments" size={20} color={colors.white} />}>Payments</Sidebar.Item>
+            <Sidebar.Item icon={<SvgIcon name="email" size={20} color={colors.white} />}>Email Marketing</Sidebar.Item>
+            <Sidebar.Item icon={<SvgIcon name="opportunity" size={20} color={colors.white} />}>Donor Pages</Sidebar.Item>
+            <Sidebar.Item icon={<SvgIcon name="calendar" size={20} color={colors.white} />}>Time Tracking</Sidebar.Item>
+            <Sidebar.Item icon={<SvgIcon name="chevron-down" size={20} color={colors.white} />}>More Apps</Sidebar.Item>
           </Sidebar.Body>
           <Sidebar.Divider />
           <Sidebar.Footer>
-            <Sidebar.Item icon={<SvgIcon name="customize" size={20} color="white" />}>App Marketplace</Sidebar.Item>
+            <Sidebar.Item icon={<SvgIcon name="customize" size={20} color={colors.white} />}>App Marketplace</Sidebar.Item>
           </Sidebar.Footer>
         </Sidebar>
 
@@ -2955,52 +2958,52 @@ const CustomerDetail = ({ inspectOn, setInspectOn }) => {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 6,
-                  color: '#022266',
+                  color: colors.method.base,
                   fontFamily: 'inherit',
                   fontSize: 18,
-                  fontWeight: 600,
+                  fontWeight: fontWeight.semibold,
                 }}
               >
                 {pageTitle}
-                <SvgIcon name="chevron-down" size={14} color="#022266" />
+                <SvgIcon name="chevron-down" size={14} color={colors.method.base} />
               </button>
             </AppBar.Start>
             <AppBar.End>
               <button
                 type="button"
                 aria-label="Global add"
-                style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: 8, color: '#545F67' }}
+                style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: spacing.sm, color: colors.grey.base }}
               >
-                <SvgIcon name="circle-plus" size={20} color="#545F67" />
+                <SvgIcon name="circle-plus" size={20} color={colors.grey.base} />
               </button>
               <button
                 type="button"
                 aria-label="Search"
-                style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: 8, color: '#545F67' }}
+                style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: spacing.sm, color: colors.grey.base }}
               >
-                <SvgIcon name="search" size={20} color="#545F67" />
+                <SvgIcon name="search" size={20} color={colors.grey.base} />
               </button>
               <button
                 type="button"
                 aria-label="Help and support"
-                style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: 8, color: '#545F67' }}
+                style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: spacing.sm, color: colors.grey.base }}
               >
-                <SvgIcon name="question" size={20} color="#545F67" />
+                <SvgIcon name="question" size={20} color={colors.grey.base} />
               </button>
-              <span aria-hidden="true" style={{ display: 'inline-block', width: 1, height: 24, background: '#BACAD0', margin: '0 4px' }} />
+              <span aria-hidden="true" style={{ display: 'inline-block', width: 1, height: 24, background: colors.grey.light, margin: '0 4px' }} />
               <button
                 type="button"
                 aria-label="User menu"
                 style={{
-                  background: '#E5F0FA',
-                  color: '#022266',
+                  background: colors.blue.lighter,
+                  color: colors.method.base,
                   width: 36,
                   height: 36,
                   borderRadius: 18,
                   border: 'none',
                   cursor: 'pointer',
-                  fontWeight: 600,
-                  fontSize: 12,
+                  fontWeight: fontWeight.semibold,
+                  fontSize: fontSize.xs,
                 }}
               >
                 TC
@@ -3051,23 +3054,23 @@ const CustomerDetail = ({ inspectOn, setInspectOn }) => {
                   <Stack gap="xs">
                     <Text
                       as="H2"
-                      fontSize="14px"
+                      fontSize={`${fontSize.sm}px`}
                       lineHeight="20px"
                       fontWeight={theme.fontWeight.semibold}
                       fontColor={theme.content.primary}
-                      mt="0px"
-                      mb="0px"
+                      mt={`${spacing.none}px`}
+                      mb={`${spacing.none}px`}
                     >
                       How to audit this screen
                     </Text>
                     <Text
                       as="P"
-                      fontSize="14px"
+                      fontSize={`${fontSize.sm}px`}
                       lineHeight="20px"
                       fontColor={theme.content.subtle}
                       style={{ maxWidth: 720 }}
-                      mt="0px"
-                      mb="0px"
+                      mt={`${spacing.none}px`}
+                      mb={`${spacing.none}px`}
                     >
                       Toggle <strong>Inspect</strong> at the top right. Every m-next component on the
                       page gets a dashed outline + a color-coded label. Anything without a label is
@@ -3098,7 +3101,7 @@ const CustomerDetail = ({ inspectOn, setInspectOn }) => {
         >
           <Box padding="lg">
             <Stack gap="md">
-              <Text fontSize="14px" lineHeight="20px">
+              <Text fontSize={`${fontSize.sm}px`} lineHeight="20px">
                 This will permanently remove the customer, their invoices, and all related activity.
                 This action cannot be undone.
               </Text>
