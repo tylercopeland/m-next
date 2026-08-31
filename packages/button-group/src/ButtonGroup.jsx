@@ -506,7 +506,6 @@ const ButtonGroup = forwardRef(function ButtonGroup(props, ref) {
                 >
                   <SvgIcon
                     caption={`${label} open menu button`}
-                    showCaption={false}
                     name='mi-icon-arrow-down-v4'
                     size={iconSize['2xs']}
                   />
