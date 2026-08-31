@@ -68,7 +68,7 @@ const CATEGORY_COLORS = {
   local: colors.grey.light,
 };
 
-const Identify = ({ name, category = 'action', block = false, style, children }) => {
+const Identify = ({ name, category = 'action', block = false, style, detail = '', children }) => {
   const on = useContext(InspectContext);
   // When inspect is OFF, use display:contents so the wrapper produces no
   // layout box — the wrapped component becomes a direct child of the real
@@ -112,6 +112,7 @@ const Identify = ({ name, category = 'action', block = false, style, children })
           }}
         >
           {name}
+          {detail ? <span style={{ opacity: 0.85 }}>{` · ${detail}`}</span> : null}
         </span>
       )}
       {children}
@@ -119,10 +120,47 @@ const Identify = ({ name, category = 'action', block = false, style, children })
   );
 };
 
+// Reverse token lookups, so inspect can report which token a value came from
+// rather than the raw px. A value that ISN'T on the scale is shown raw with a
+// trailing `!` — that makes off-token typography visible on the page itself,
+// which is the whole point of having an inspect mode in a design-system
+// prototype.
+const FONT_SIZE_BY_PX = Object.fromEntries(
+  Object.entries(fontSize).map(([token, px]) => [`${px}px`, token])
+);
+const FONT_WEIGHT_BY_VALUE = Object.fromEntries(
+  Object.entries(fontWeight).map(([token, val]) => [String(val), token])
+);
+
+const describeText = (props) => {
+  const parts = [];
+  if (props.as) parts.push(String(props.as).toUpperCase());
+
+  if (props.fontSize != null) {
+    const key = String(props.fontSize);
+    parts.push(FONT_SIZE_BY_PX[key] || `${key}!`);
+  }
+
+  if (props.fontWeight != null) {
+    const key = String(props.fontWeight);
+    parts.push(FONT_WEIGHT_BY_VALUE[key] || `${key}!`);
+  }
+
+  if (props.lineHeight != null) parts.push(`lh ${props.lineHeight}`);
+
+  return parts.join(' · ');
+};
+
 // HOC: wraps a component so it auto-identifies in inspect mode.
-const labeled = (Comp, name, category, block = false) => {
+// `describe` optionally derives extra label detail from the component's props.
+const labeled = (Comp, name, category, block = false, describe = null) => {
   const Wrapped = forwardRef((props, ref) => (
-    <Identify name={name} category={category} block={block}>
+    <Identify
+      name={name}
+      category={category}
+      block={block}
+      detail={describe ? describe(props) : ''}
+    >
       <Comp ref={ref} {...props} />
     </Identify>
   ));
@@ -133,7 +171,7 @@ const labeled = (Comp, name, category, block = false) => {
 // Identified versions of each m-next component. JSX below uses the
 // natural name (Button, Pill, etc.) — labels appear when inspect on.
 const Container = labeled(RawContainer, 'Container', 'foundation', true);
-const Text = labeled(RawText, 'Text', 'foundation');
+const Text = labeled(RawText, 'Text', 'foundation', false, describeText);
 const InsightCard = labeled(RawInsightCard, 'InsightCard', 'display', true);
 const Button = labeled(RawButton, 'Button', 'action');
 const Link = labeled(RawLink, 'Link', 'action');
