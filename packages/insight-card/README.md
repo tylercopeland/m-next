@@ -11,7 +11,7 @@ npm install @m-next/insight-card
 ## Usage
 
 ```jsx
-import InsightCard from '@m-next/insight-card';
+import { InsightCard } from '@m-next/insight-card';
 
 // Chart icon component
 const ChartIcon = () => (

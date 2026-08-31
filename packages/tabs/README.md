@@ -5,7 +5,7 @@ Horizontal tab navigation. A controlled tab bar plus a panel slot. Includes over
 ## Quick start
 
 ```jsx
-import Tabs from '@m-next/tabs';
+import { Tabs } from '@m-next/tabs';
 
 const tabList = [
   { id: 'data', caption: 'Data' },

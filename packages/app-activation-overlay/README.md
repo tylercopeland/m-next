@@ -5,7 +5,7 @@ A full-screen modal overlay component for app activation and onboarding flows. F
 ## Usage
 
 ```tsx
-import AppActivationOverlay from '@m-next/app-activation-overlay';
+import { AppActivationOverlay } from '@m-next/app-activation-overlay';
 
 function MyComponent() {
   const [isVisible, setIsVisible] = React.useState(true);

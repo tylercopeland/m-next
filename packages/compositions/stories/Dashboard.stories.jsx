@@ -2,15 +2,15 @@ import React from 'react';
 import { ThemeProvider, useTheme } from '@m-next/theme';
 import { Box, Stack, Inline, Divider } from '@m-next/layout';
 import { Sidebar } from '@m-next/sidebar';
-import AppBar from '@m-next/app-bar';
-import Button from '@m-next/button';
-import Text from '@m-next/text';
-import Container from '@m-next/container';
-import InsightCard from '@m-next/insight-card';
-import Pill from '@m-next/pill';
+import { AppBar } from '@m-next/app-bar';
+import { Button } from '@m-next/button';
+import { Text } from '@m-next/text';
+import { Container } from '@m-next/container';
+import { InsightCard } from '@m-next/insight-card';
+import { Pill } from '@m-next/pill';
 import { Link } from '@m-next/link';
-import MethodLogo from '@m-next/brand';
-import SvgIcon from '@m-next/svg-icon';
+import { MethodLogo } from '@m-next/brand';
+import { SvgIcon } from '@m-next/svg-icon';
 
 export default {
   title: 'm-next/Compositions/Dashboard',

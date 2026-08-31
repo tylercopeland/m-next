@@ -5,7 +5,7 @@ Typography primitive — a customisable `<p>`, `<div>`, or `<h1>` driven by inli
 ## Quick start
 
 ```tsx
-import Text from '@m-next/text';
+import { Text } from '@m-next/text';
 import { colors } from '@m-next/tokens';
 
 <Text>Default paragraph text.</Text>

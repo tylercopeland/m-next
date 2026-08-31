@@ -35,7 +35,7 @@ A single element — `<p>` by default, switchable via `as="DIV"` or `as="H1"`. S
 Text doesn't pull tokens internally — colour and font-size are caller-driven. Pass `@m-next/tokens.colors.*` and any sizing tokens explicitly:
 
 ```tsx
-import Text from '@m-next/text';
+import { Text } from '@m-next/text';
 import { colors } from '@m-next/tokens';
 
 <Text fontColor={colors.grey.darkest} fontSize="14px">

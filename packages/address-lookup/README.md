@@ -5,7 +5,7 @@ Address autocomplete. A search-driven typeahead that asks Mapbox's geocoding API
 ## Quick start
 
 ```jsx
-import AddressLookup from '@m-next/address-lookup';
+import { AddressLookup } from '@m-next/address-lookup';
 
 <AddressLookup
   label="Billing address"

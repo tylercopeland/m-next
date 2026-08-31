@@ -5,7 +5,7 @@ Progressive-disclosure container with a compound-component API. Use for settings
 ## Quick start
 
 ```jsx
-import Accordion from '@m-next/accordion';
+import { Accordion } from '@m-next/accordion';
 
 <Accordion allowMultiple defaultExpanded={['general']}>
   <Accordion.Item id='general' title='General settings'>

@@ -5,7 +5,7 @@ A compact, slot-aware label with optional leading icon / avatar / dot and traili
 ## Quick start
 
 ```jsx
-import Pill from '@m-next/pill';
+import { Pill } from '@m-next/pill';
 
 <Pill>Hello</Pill>                                            // default: subtle blue, md
 <Pill colorScheme="green" leadIcon={{ name: 'dot' }}>Active</Pill>

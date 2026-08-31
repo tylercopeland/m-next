@@ -5,7 +5,7 @@ Page navigator for paged data views. Standard `« ‹ 1 … 4 [5] 6 … 10 › �
 ## Quick start
 
 ```jsx
-import Pagination from '@m-next/pagination';
+import { Pagination } from '@m-next/pagination';
 
 function CustomersTable() {
   const [page, setPage] = useState(1);

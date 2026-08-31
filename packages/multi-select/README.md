@@ -10,7 +10,7 @@ Forked from `@m-one/multi-select` and normalized to the m-next API conventions.
 ## Quick start
 
 ```jsx
-import MultiSelect from '@m-next/multi-select';
+import { MultiSelect } from '@m-next/multi-select';
 
 <MultiSelect placeholder="Add tags..." onChange={(v) => console.log(v)} />
 

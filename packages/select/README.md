@@ -7,7 +7,7 @@ A one-of-N radio-card chooser. Forked from `@m-one/select` and normalized to the
 ## Quick start
 
 ```jsx
-import Select from '@m-next/select';
+import { Select } from '@m-next/select';
 
 const options = [
   { icon: 'address-lookup', title: 'Explore',  description: 'Discover new ways to manage your business' },

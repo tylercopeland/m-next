@@ -7,7 +7,7 @@ Not to be confused with `@m-next/banner` — that's the inline message strip. He
 ## Quick start
 
 ```jsx
-import HeroBanner from '@m-next/hero-banner';
+import { HeroBanner } from '@m-next/hero-banner';
 
 <HeroBanner
   title="Welcome to Method"

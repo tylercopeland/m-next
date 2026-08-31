@@ -11,7 +11,7 @@ Breadcrumbs — an accessible navigation trail showing the user's path through a
 import { Breadcrumbs } from '@m-next/bread-crumbs';
 
 // Existing imports keep working
-import BreadCrumbsHeader from '@m-next/bread-crumbs';
+import { BreadCrumbsHeader } from '@m-next/bread-crumbs';
 
 const crumbs = [
   { id: 'home', label: 'Home', onClick: () => navigate('/') },

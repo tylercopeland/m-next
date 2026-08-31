@@ -5,7 +5,7 @@ Horizontal slide carousel. Thin wrapper over [react-multi-carousel](https://www.
 ## Quick start
 
 ```jsx
-import Carousel from '@m-next/carousel';
+import { Carousel } from '@m-next/carousel';
 
 <Carousel title='Featured apps'>
   <FeatureCard {...a} />

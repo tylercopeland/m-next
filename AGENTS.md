@@ -29,7 +29,7 @@ This file is also read by humans pairing with an agent — it's the shared contr
 
 **Goal when building UI:** compose real m-next components. Don't reach for raw HTML + inline styles when an m-next component exists.
 
-**Machine-readable catalog:** [`registry.json`](./registry.json) at the workspace root lists every component (77 of them) with category, summary, variants, canonical Storybook story, and the "use / don't use" decision. Tools and agents should query it once at session start to orient before generating code.
+**Machine-readable catalog:** [`registry.json`](./registry.json) at the workspace root lists every component (77 of them) with category, summary, variants, canonical Storybook story, the verified `import` line, and the "use / don't use" decision. Tools and agents should query it once at session start to orient before generating code.
 
 ---
 
@@ -52,6 +52,35 @@ When building a screen, mirror the production shape. One canonical `MethodStyle`
 ### Rule 3: API surface only — don't restructure
 
 This applies inside Phase 3 cleanups. When updating an inherited component, change the API surface (rename props, soft-shim legacy aliases, fix a11y, migrate colors) — don't restructure files, drop deps, or rename packages. Smaller diffs = more credible production PRs.
+
+---
+
+### Rule 4: Always use named imports
+
+Every component in this design system is exported **by name** from its package:
+
+```js
+import { Button } from '@m-next/button';
+import { Card } from '@m-next/card';
+import { Box, Stack, Inline } from '@m-next/layout';
+import { MenuList, MenuItem } from '@m-next/menu';
+```
+
+`registry.json` carries the exact, verified import line for all 77 components in each entry's
+`import` field. Copy it rather than guessing — it is generated from the packages' real runtime
+exports, not from their type declarations.
+
+Most packages also still have a default export for backwards compatibility. **Don't use it.** The
+two forms are not interchangeable across the library, and only the named form is documented and
+verified per component.
+
+> **Why this rule exists.** Until 2026-08-31 the library was split — 48 components imported by
+> name, 27 by default — with no way to tell which was which without opening the package. Worse,
+> nine packages shipped an `index.d.ts` declaring a named export that did not exist at runtime
+> (`card`, `pill`, `select`, `dropdown`, `address`, `address-lookup`, `caption`, `popover`, and
+> `radio-button`'s `RadioGroup`). `import { Card } from '@m-next/card'` type-checked cleanly and
+> then threw *"Element type is invalid"* in the browser. Named exports were added to all 28
+> affected packages so the declarations are now true and one rule holds library-wide.
 
 ---
 

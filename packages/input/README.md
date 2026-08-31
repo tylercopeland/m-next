@@ -5,7 +5,7 @@ Text input component. Forked from `@m-one/input` and normalized to the m-next AP
 ## Quick start
 
 ```jsx
-import Input from '@m-next/input';
+import { Input } from '@m-next/input';
 
 <Input label="Email" type="email" placeholder="jane@example.com" />
 <Input label="Search" leftIcon={<SearchIcon />} placeholder="Find invoices…" />

@@ -6,8 +6,8 @@
 
 Before generating or changing UI code, read these in order:
 
-1. **[`AGENTS.md`](./AGENTS.md)** — the canonical agent + human guide. The 3 rules, the component **Selection guide** (which component for which need), forbidden patterns, the standard Phase-3 envelope, composition patterns, and gotchas. **Read this first.**
-2. **[`registry.json`](./registry.json)** — machine-readable catalog of all **77 components** across 9 categories (Foundation, Brand, Action, Display, Feedback, Form, Navigation, Overlay, Domain). Each entry has category, summary, variants, canonical Storybook story, and use / don't-use rules. Query it once at session start to orient.
+1. **[`AGENTS.md`](./AGENTS.md)** — the canonical agent + human guide. The 4 rules (including **always use named imports**), the component **Selection guide** (which component for which need), forbidden patterns, the standard Phase-3 envelope, composition patterns, and gotchas. **Read this first.**
+2. **[`registry.json`](./registry.json)** — machine-readable catalog of all **77 components** across 9 categories (Foundation, Brand, Action, Display, Feedback, Form, Navigation, Overlay, Domain). Each entry has the verified `import` line to copy, plus category, summary, variants, canonical Storybook story, and use / don't-use rules. Query it once at session start to orient.
 
 Everything below is operational reference. If it conflicts with `AGENTS.md`, `AGENTS.md` wins.
 

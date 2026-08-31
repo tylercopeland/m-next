@@ -5,7 +5,7 @@ Entity-reference chip. Pairs an avatar circle with a label and optional lead/tra
 ## Quick start
 
 ```jsx
-import AvatarPill from '@m-next/avatar-pill';
+import { AvatarPill } from '@m-next/avatar-pill';
 
 // Initials avatar derived from the label
 <AvatarPill colorScheme='blue'>Tyler Copeland</AvatarPill>;

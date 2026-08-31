@@ -161,7 +161,7 @@ Each warning fires the first time the prop is encountered, then never again for 
 />
 
 // After
-import SvgIcon from '@m-next/svg-icon';
+import { SvgIcon } from '@m-next/svg-icon';
 
 <Button leftIcon={<SvgIcon name="email" size={16} color="white" />}>
   Send
@@ -209,7 +209,7 @@ Three groups of props were removed deliberately. The component warns when they'r
 <Button tooltip="Save the current invoice" value="Save" />
 
 // After
-import Tooltip from '@m-next/tooltip';
+import { Tooltip } from '@m-next/tooltip';
 
 <Tooltip content="Save the current invoice">
   <Button>Save</Button>

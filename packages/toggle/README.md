@@ -5,7 +5,7 @@ Toggle switch — an accessible boolean control. Forked from `@m-one/toggle` and
 ## Quick start
 
 ```jsx
-import Toggle from '@m-next/toggle';
+import { Toggle } from '@m-next/toggle';
 
 <Toggle label="Enable feature" checked={enabled} onChange={setEnabled} />
 <Toggle label="Show details" checked={visible} onChange={setVisible} isRuntime textOpt="Yes/No" />

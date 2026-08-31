@@ -5,7 +5,7 @@ Method-branded assets wrapped as m-next components. Currently ships one componen
 ## Quick start
 
 ```jsx
-import MethodLogo from '@m-next/brand';
+import { MethodLogo } from '@m-next/brand';
 
 <MethodLogo height={20} />
 ```

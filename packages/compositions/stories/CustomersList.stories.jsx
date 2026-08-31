@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { ThemeProvider, useTheme } from '@m-next/theme';
 import { Box, Stack, Inline } from '@m-next/layout';
 import { Sidebar } from '@m-next/sidebar';
-import AppBar from '@m-next/app-bar';
-import AppActivationBanner from '@m-next/app-activation-banner';
-import Button from '@m-next/button';
-import Tabs from '@m-next/tabs';
-import Grid from '@m-next/grid';
+import { AppBar } from '@m-next/app-bar';
+import { AppActivationBanner } from '@m-next/app-activation-banner';
+import { Button } from '@m-next/button';
+import { Tabs } from '@m-next/tabs';
+import { Grid } from '@m-next/grid';
 import { FieldTypeIds, sortTypes } from '@m-next/types';
 import { EmptyState } from '@m-next/empty-state';
-import MethodLogo from '@m-next/brand';
-import SvgIcon from '@m-next/svg-icon';
+import { MethodLogo } from '@m-next/brand';
+import { SvgIcon } from '@m-next/svg-icon';
 
 export default {
   title: 'm-next/Compositions/CustomersList',

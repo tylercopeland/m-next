@@ -5,7 +5,7 @@ Vertical app navigation shell. Compound-component API — the consumer composes 
 ## Quick start
 
 ```jsx
-import Sidebar from '@m-next/sidebar';
+import { Sidebar } from '@m-next/sidebar';
 
 <Sidebar isOpen={open}>
   <Sidebar.Header>

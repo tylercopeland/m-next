@@ -5,7 +5,7 @@ Title-plus-subtitle stack for grouping form sections, settings panels, or any co
 ## Quick start
 
 ```jsx
-import SectionHeader from '@m-next/section-header';
+import { SectionHeader } from '@m-next/section-header';
 
 <SectionHeader
   title='Billing details'

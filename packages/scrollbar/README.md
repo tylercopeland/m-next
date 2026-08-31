@@ -7,7 +7,7 @@ Replaces MethodUI's legacy `Scrollbar` (which used `react-custom-scroll`). The S
 ## Quick start
 
 ```jsx
-import Scrollbar from '@m-next/scrollbar';
+import { Scrollbar } from '@m-next/scrollbar';
 
 <div style={{ height: 400 }}>
   <Scrollbar offset='56px'>

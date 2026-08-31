@@ -7,7 +7,7 @@ four `@m-next/input`s (city / state / postal code / country).
 ## Quick start
 
 ```jsx
-import Address from '@m-next/address';
+import { Address } from '@m-next/address';
 
 // Read-only
 <Address

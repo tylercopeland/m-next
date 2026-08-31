@@ -5,7 +5,7 @@ Search-flavored text input. A debounced `<input type="search">` with a leading s
 ## Quick start
 
 ```jsx
-import SearchInput from '@m-next/search-input';
+import { SearchInput } from '@m-next/search-input';
 
 <SearchInput placeholder="Search invoices…" onChange={setQuery} />
 <SearchInput label="Search" showClearButton onChange={setQuery} />

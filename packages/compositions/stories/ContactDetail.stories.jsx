@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 import { ThemeProvider, useTheme } from '@m-next/theme';
 import { Box, Stack, Inline, Divider } from '@m-next/layout';
 import { Sidebar } from '@m-next/sidebar';
-import AppBar from '@m-next/app-bar';
-import Button from '@m-next/button';
-import Tabs from '@m-next/tabs';
-import Text from '@m-next/text';
-import Container from '@m-next/container';
+import { AppBar } from '@m-next/app-bar';
+import { Button } from '@m-next/button';
+import { Tabs } from '@m-next/tabs';
+import { Text } from '@m-next/text';
+import { Container } from '@m-next/container';
 import { FormField } from '@m-next/form-field';
-import Input from '@m-next/input';
-import Pill from '@m-next/pill';
+import { Input } from '@m-next/input';
+import { Pill } from '@m-next/pill';
 import { EmptyState } from '@m-next/empty-state';
 import { SearchInput } from '@m-next/search-input';
-import MethodLogo from '@m-next/brand';
-import SvgIcon from '@m-next/svg-icon';
+import { MethodLogo } from '@m-next/brand';
+import { SvgIcon } from '@m-next/svg-icon';
 
 export default {
   title: 'm-next/Compositions/ContactDetail',

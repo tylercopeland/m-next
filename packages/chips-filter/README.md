@@ -8,7 +8,7 @@ compatibility.
 ```jsx
 import { FilterChips } from '@m-next/chips-filter';
 // or, equivalently:
-import ChipsFilter from '@m-next/chips-filter';
+import { ChipsFilter } from '@m-next/chips-filter';
 ```
 
 ## Quick start

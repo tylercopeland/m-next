@@ -23,7 +23,7 @@ import { ActionCard } from '@m-next/content-card';
 The legacy default export also still works:
 
 ```jsx
-import ContentCard from '@m-next/content-card';
+import { ContentCard } from '@m-next/content-card';
 // same component
 ```
 

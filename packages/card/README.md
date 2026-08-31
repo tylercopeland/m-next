@@ -5,7 +5,7 @@ Record-display card. An avatar slot plus up to two columns of formatted field/va
 ## Quick start
 
 ```jsx
-import Card from '@m-next/card';
+import { Card } from '@m-next/card';
 
 <Card
   hasAvatar

@@ -5,7 +5,7 @@ Page-level banner for status messages, system announcements, and inline calls to
 ## Quick start
 
 ```jsx
-import Banner from '@m-next/banner';
+import { Banner } from '@m-next/banner';
 
 <Banner>You're using a draft version of this screen.</Banner>
 

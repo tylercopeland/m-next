@@ -5,7 +5,7 @@ The label / caption companion for form controls (Input, Dropdown, MultiSelect, B
 ## Quick start
 
 ```jsx
-import Caption from '@m-next/caption';
+import { Caption } from '@m-next/caption';
 
 // Plain label
 <Caption label="Email address" />

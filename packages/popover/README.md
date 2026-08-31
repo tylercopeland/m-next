@@ -5,7 +5,7 @@ Floating panel anchored to a trigger element. Used for menus, edit panels, conte
 ## Quick start
 
 ```jsx
-import Popover from '@m-next/popover';
+import { Popover } from '@m-next/popover';
 
 const [anchorEl, setAnchorEl] = useState(null);
 const open = Boolean(anchorEl);

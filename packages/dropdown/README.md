@@ -5,7 +5,7 @@ Dropdown / select component. Forked from `@m-one/dropdown` and normalized to the
 ## Quick start
 
 ```jsx
-import Dropdown from '@m-next/dropdown';
+import { Dropdown } from '@m-next/dropdown';
 
 <Dropdown
   label="Country"

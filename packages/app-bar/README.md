@@ -5,7 +5,7 @@ Horizontal top chrome for an app shell. Compound-component API — the consumer 
 ## Quick start
 
 ```jsx
-import AppBar from '@m-next/app-bar';
+import { AppBar } from '@m-next/app-bar';
 
 <AppBar sticky>
   <AppBar.Start>

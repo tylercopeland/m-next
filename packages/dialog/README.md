@@ -5,7 +5,7 @@ Modal dialog. Wraps `react-modal` with m-next styling, default header/body/foote
 ## Quick start
 
 ```jsx
-import Dialog from '@m-next/dialog';
+import { Dialog } from '@m-next/dialog';
 
 <Dialog
   isOpen={open}

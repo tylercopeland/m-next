@@ -5,7 +5,7 @@ Button component. Forked from `@m-one/button` and normalized to the m-next API c
 ## Quick start
 
 ```jsx
-import Button from '@m-next/button';
+import { Button } from '@m-next/button';
 
 <Button>Save</Button>
 <Button variant="secondary">Cancel</Button>

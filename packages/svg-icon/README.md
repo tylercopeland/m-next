@@ -25,7 +25,7 @@ import { colors } from '@m-next/tokens';
 The default export still works for existing call sites:
 
 ```jsx
-import SvgIcon from '@m-next/svg-icon';
+import { SvgIcon } from '@m-next/svg-icon';
 <SvgIcon name="dashboard" size={24} />
 ```
 

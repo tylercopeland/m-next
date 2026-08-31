@@ -5,7 +5,7 @@ International phone number input with country-code selector. Wraps [`react-phone
 ## Quick start
 
 ```tsx
-import PhoneInput from '@m-next/phone-input';
+import { PhoneInput } from '@m-next/phone-input';
 
 <PhoneInput label="Phone" defaultCountry="ca" />
 <PhoneInput label="Phone" value="+14372207682" />

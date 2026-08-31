@@ -5,7 +5,7 @@ Multi-step progress indicator. Visualizes the user's position in a linear sequen
 ## Quick start
 
 ```jsx
-import Stepper from '@m-next/stepper';
+import { Stepper } from '@m-next/stepper';
 
 // Simple — N evenly-spaced steps, default "Step 1/2/3" labels
 <Stepper steps={4} activeStep={1} showLabels />
