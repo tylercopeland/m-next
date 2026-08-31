@@ -9,6 +9,8 @@ export interface HeroBannerProps extends Omit<React.HTMLAttributes<HTMLDivElemen
   id?: string;
   /** Heading text — rendered as an H2. */
   title?: string;
+  /** Small label rendered above the title — e.g. 'Onboarding Step 1 of 4'. */
+  eyebrow?: string;
   /** Supporting description text. */
   description?: React.ReactNode;
   /** Image source URL. */

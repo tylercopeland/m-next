@@ -39,6 +39,7 @@ const HeroBanner = forwardRef(function HeroBanner(props, ref) {
   const {
     id: idProp,
     title = '',
+    eyebrow = '',
     description = '',
     imageSrc = '',
     primaryButton = null,
@@ -183,6 +184,21 @@ const HeroBanner = forwardRef(function HeroBanner(props, ref) {
 
         <s.HeroBannerInnerWrapper>
           <s.HeroBannerTextWrapper>
+            {eyebrow && (
+              <Text
+                id={`${id}-eyebrow`}
+                data-testid={`${id}-eyebrow`}
+                style={{
+                  fontSize: '14px',
+                  lineHeight: '20px',
+                  marginBottom: '4px',
+                  marginTop: '0px',
+                  color: colors.grey.base,
+                }}
+              >
+                {eyebrow}
+              </Text>
+            )}
             {title && (
               <Text
                 as='H2'
@@ -259,6 +275,8 @@ HeroBanner.displayName = 'HeroBanner';
 HeroBanner.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
+  /** Small label rendered above the title — e.g. 'Onboarding Step 1 of 4'. */
+  eyebrow: PropTypes.string,
   description: PropTypes.node,
   imageSrc: PropTypes.string,
   primaryButton: PropTypes.string,
