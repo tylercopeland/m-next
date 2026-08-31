@@ -2181,6 +2181,7 @@ const HomeScreen = () => {
         ]}
         selectedTab={activeSubTab}
         onChange={setActiveSubTab}
+        panelBackground="transparent"
         contentStyle={{ padding: 0, border: 'none', minHeight: 0, marginTop: theme.spacing.xl }}
         onRenderTabContent={() => {
           if (activeSubTab === 'learn') {
