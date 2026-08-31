@@ -2500,9 +2500,13 @@ const ContactDetailScreen = ({ onBack }) => {
   const [showMore, setShowMore] = useState(false);
 
   return (
+    // Two-column record layout: 1/3 detail rail, 2/3 related-records pane.
+    // `flex-basis: 0` on both is what makes the 1:2 ratio actually hold —
+    // with `auto` the columns size to their content first and the grow
+    // factors only divide the leftover, so the split drifts with content.
     <Inline gap="lg" align="stretch" style={{ width: '100%' }}>
-      {/* LEFT — contact info */}
-      <Box style={{ flex: '0 0 480px', minWidth: 380 }}>
+      {/* LEFT — 1/3: contact detail rail */}
+      <Box style={{ flex: '1 1 0', minWidth: 320 }}>
         <Stack gap="lg">
           <Box style={{ alignSelf: 'flex-start' }}>
             <Button
@@ -2696,8 +2700,8 @@ const ContactDetailScreen = ({ onBack }) => {
         </Stack>
       </Box>
 
-      {/* RIGHT — tabs + data table */}
-      <Box style={{ flex: '1 1 auto', minWidth: 0 }}>
+      {/* RIGHT — 2/3: related records */}
+      <Box style={{ flex: '2 1 0', minWidth: 0 }}>
         <Container bordered padding="none">
           <Stack gap="none">
             {/* Real @m-next/tabs — Activities Open / Closed / Opportunities / etc.
