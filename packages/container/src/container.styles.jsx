@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 import { lightTheme } from '@m-next/styles';
+import { radius } from '@m-next/tokens';
 
-// NOTE: Token migration here is a no-op visually — the shadow `rgba(0,0,0,0.1)`
+// NOTE: `borderRadius` comes from `radius.lg` (8px). The shadow `rgba(0,0,0,0.1)`
 // has no nested-token equivalent (it's a translucent black, not a palette color),
 // and the surface color comes from the active Emotion theme via `theme.background`.
 // Falls back to `lightTheme.background.primary` from @m-next/styles. The audit
@@ -28,7 +29,10 @@ export const Container = styled.div((props) => {
       padding: padding || '16px',
       backgroundColor: background ? background.primary : lightTheme.background.primary,
       color: content ? content.color : null,
-      borderRadius: isRound ? '4px' : null,
+      // 8px surface corner, from radius.lg. `isRound` defaults to true in
+      // Container.jsx, so this is a 4px -> 8px change for already-rounded
+      // containers; the 22 call sites passing isRound={false} stay square.
+      borderRadius: isRound ? radius.lg : null,
       boxShadow: shadow,
       border,
       flexDirection: 'column',
