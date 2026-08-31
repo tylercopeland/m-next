@@ -132,9 +132,11 @@ const FONT_WEIGHT_BY_VALUE = Object.fromEntries(
   Object.entries(fontWeight).map(([token, val]) => [String(val), token])
 );
 
+// Size and weight only — the two things that identify a type style at a
+// glance. The element (H1/H2) is semantics rather than style, and
+// line-height was pure noise on every single label.
 const describeText = (props) => {
   const parts = [];
-  if (props.as) parts.push(String(props.as).toUpperCase());
 
   if (props.fontSize != null) {
     const key = String(props.fontSize);
@@ -145,8 +147,6 @@ const describeText = (props) => {
     const key = String(props.fontWeight);
     parts.push(FONT_WEIGHT_BY_VALUE[key] || `${key}!`);
   }
-
-  if (props.lineHeight != null) parts.push(`lh ${props.lineHeight}`);
 
   return parts.join(' · ');
 };
