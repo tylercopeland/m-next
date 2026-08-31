@@ -8,6 +8,7 @@ import { breakpointNames, colors } from '@m-next/styles';
 import * as s from './HeaderColumn.styles';
 import Column from '../../../ColumnPropType';
 import { getColumnWidth } from '../../../utilities';
+import { iconSize } from '@m-next/tokens';
 
 const propTypes = {
   column: Column,
@@ -158,7 +159,7 @@ function HeaderColumn({
               <SvgIcon
                 id={`data-model-drag-${id}`}
                 name='drag-V4'
-                size={12}
+                size={iconSize.xs}
                 style={{ cursor: 'grab', marginRight: 2 }}
               />
             </div>
@@ -173,9 +174,9 @@ function HeaderColumn({
                   {column.showHeader === false ? '' : (column.caption ?? column.name)}
                 </s.HeaderContentLabel>
               )}
-              {sorting === sortTypes.Ascending && <SvgIcon size={16} name='arrow-up-V4' />}
-              {sorting === sortTypes.Descending && <SvgIcon size={16} name='arrow-down-V4' />}
-              {!sorting && <SvgIcon size={16} name='' />}
+              {sorting === sortTypes.Ascending && <SvgIcon size={iconSize.sm} name='arrow-up-V4' />}
+              {sorting === sortTypes.Descending && <SvgIcon size={iconSize.sm} name='arrow-down-V4' />}
+              {!sorting && <SvgIcon size={iconSize.sm} name='' />}
             </s.HeaderContentInternal>
           </s.HeaderContent>
           {providedInner.placeholder}
@@ -210,8 +211,8 @@ function HeaderColumn({
             {column.showHeader === false ? '' : (column.caption ?? column.name)}
           </s.HeaderContentLabel>
         )}
-        {sorting === sortTypes.Ascending && <SvgIcon size={16} name='arrow-up-V4' />}
-        {sorting === sortTypes.Descending && <SvgIcon size={16} name='arrow-down-V4' />}
+        {sorting === sortTypes.Ascending && <SvgIcon size={iconSize.sm} name='arrow-up-V4' />}
+        {sorting === sortTypes.Descending && <SvgIcon size={iconSize.sm} name='arrow-down-V4' />}
       </s.HeaderContent>
     </s.TH>
   );

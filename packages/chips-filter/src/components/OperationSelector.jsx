@@ -5,7 +5,7 @@ import { Text } from '@m-next/typeography';
 import SvgIcon from '@m-next/svg-icon';
 import { FieldTypeNames, basicOperationId, getOperationListChips, lookupOperationChips } from '@m-next/types';
 import { lightTheme } from '@m-next/styles';
-import { colors } from '@m-next/tokens';
+import { colors, iconSize } from '@m-next/tokens';
 import { useTheme } from '@emotion/react';
 
 // types
@@ -94,7 +94,7 @@ function OperationSelector({ id, value, onOperationChange, fieldType, onToggleOp
         <Text id={`${id}-condition-label`} fontSize='small'>
           {operationLabel}
         </Text>
-        {!isReadOnly && <SvgIcon name={open ? 'chevron-up-V4' : 'chevron-down-V4'} size={16} color={colors.grey.base} />}
+        {!isReadOnly && <SvgIcon name={open ? 'chevron-up-V4' : 'chevron-down-V4'} size={iconSize.sm} color={colors.grey.base} />}
       </div>
 
       {!isReadOnly && (

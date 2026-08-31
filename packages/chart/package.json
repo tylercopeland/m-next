@@ -17,6 +17,7 @@
     "index"
   ],
   "dependencies": {
+    "@m-next/tokens": "1.0.0",
     "@m-next/button": "1.0.0",
     "@m-next/container": "1.0.0",
     "@m-next/loading-skeleton": "1.0.0",

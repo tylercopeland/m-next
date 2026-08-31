@@ -6,6 +6,7 @@ import { ClickOutside } from '@m-next/utilities';
 import SvgIcon from '@m-next/svg-icon';
 import { widgets } from '@m-next/types';
 import * as s from './ButtonGroup.styles';
+import { iconSize } from '@m-next/tokens';
 
 // One-time deprecation warner — fires once per key, mirrors @m-next/button / @m-next/input.
 const warnOnce = (() => {
@@ -507,7 +508,7 @@ const ButtonGroup = forwardRef(function ButtonGroup(props, ref) {
                     caption={`${label} open menu button`}
                     showCaption={false}
                     name='mi-icon-arrow-down-v4'
-                    size={8}
+                    size={iconSize['2xs']}
                   />
                 </s.IconHolder>
               )}

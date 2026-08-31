@@ -6,7 +6,7 @@ import { ErrorBoundary } from '@m-next/utilities';
 import { Field, Tag } from '@m-next/types';
 import LoadingSkeleton from '@m-next/loading-skeleton';
 import SvgIcon from '@m-next/svg-icon';
-import { colors } from '@m-next/tokens';
+import { colors, iconSize } from '@m-next/tokens';
 import FieldBlockLine from './fieldBlockLine';
 import * as s from './fieldBlock.styles';
 
@@ -320,7 +320,7 @@ const FieldBlock = forwardRef(function FieldBlock(props, ref) {
             <SvgIcon
               id={`${id}-edit`}
               testId={`${id}-edit`}
-              size={16}
+              size={iconSize.sm}
               name='edit'
               color={colors.blue.base}
               onClick={handleToggleEditMode}

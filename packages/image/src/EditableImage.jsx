@@ -11,6 +11,7 @@ import { useDropzone } from 'react-dropzone';
 import { motion } from 'framer-motion';
 import * as s from './ImageWidget.styles';
 import Image from './Image';
+import { iconSize } from '@m-next/tokens';
 
 // One-time deprecation warner — fires once per key, mirrors @m-next/input.
 const warnOnce = (() => {
@@ -306,7 +307,7 @@ const EditableImage = forwardRef(function EditableImage(props, ref) {
     if (customSetImageButton) {
       return customSetImageButton(handleUploadImage, uploading);
     }
-    return <SvgIcon size={16} name='circle-plus-V4' border onClick={handleUploadImage} disabled={uploading} />;
+    return <SvgIcon size={iconSize.sm} name='circle-plus-V4' border onClick={handleUploadImage} disabled={uploading} />;
   };
 
   const renderEditMenu = () => (
@@ -364,7 +365,7 @@ const EditableImage = forwardRef(function EditableImage(props, ref) {
           setEditMenuOpen(!editMenuOpen);
         }}
       >
-        <SvgIcon name='add-circle-v4' size={20} color={colors.blue} />
+        <SvgIcon name='add-circle-v4' size={iconSize.md} color={colors.blue} />
       </s.EditButton>
     </motion.div>
   ) : undefined;
@@ -415,7 +416,7 @@ const EditableImage = forwardRef(function EditableImage(props, ref) {
         >
           <s.ImageEditorUploaderFileWrapper>
             <s.FileIconWrapper>
-              <SvgIcon size={24} name='common-file-empty-alternate-v4' color={colors['grey-light']} />
+              <SvgIcon size={iconSize.lg} name='common-file-empty-alternate-v4' color={colors['grey-light']} />
               <s.FileExtention>{fileExtension}</s.FileExtention>
             </s.FileIconWrapper>
             <span style={{ textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>{uploadingFile}</span>
@@ -443,7 +444,7 @@ const EditableImage = forwardRef(function EditableImage(props, ref) {
             <s.ImageEditorUploaderContent>
               <s.ImageEditorUploaderFileWrapper>
                 <s.FileIconWrapper>
-                  <SvgIcon size={24} name='common-file-empty-alternate-v4' color={colors['grey-light']} />
+                  <SvgIcon size={iconSize.lg} name='common-file-empty-alternate-v4' color={colors['grey-light']} />
                   <s.FileExtention>{fileExtension}</s.FileExtention>
                 </s.FileIconWrapper>
                 {uploadingFile}
@@ -455,7 +456,7 @@ const EditableImage = forwardRef(function EditableImage(props, ref) {
           )}
           <s.ImageEditorFooter>
             <SvgIcon
-              size={16}
+              size={iconSize.sm}
               name='edit'
               tooltip='Replace image'
               tooltipId='grid-image-uploader'
@@ -463,7 +464,7 @@ const EditableImage = forwardRef(function EditableImage(props, ref) {
               disabled={uploading}
             />
             <SvgIcon
-              size={16}
+              size={iconSize.sm}
               name='cloud-download-V4'
               tooltip='Download'
               tooltipId='grid-image-uploader'
@@ -471,7 +472,7 @@ const EditableImage = forwardRef(function EditableImage(props, ref) {
               disabled={uploading}
             />
             <SvgIcon
-              size={16}
+              size={iconSize.sm}
               name='delete'
               tooltip='Delete'
               tooltipId='grid-image-uploader'

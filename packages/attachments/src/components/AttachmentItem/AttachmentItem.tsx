@@ -8,6 +8,7 @@ import { formatFileSize, getFileExtension } from '../../utils';
 import { StatusNotifier } from '../StatusNotifier';
 import * as S from './AttachmentItem.styles';
 import { colors } from '@m-next/styles';
+import { iconSize } from '@m-next/tokens';
 
 // One-time deprecation warner — fires once per key, mirrors @m-next/input.
 const warnOnce = (() => {
@@ -176,14 +177,14 @@ export const AttachmentItem = forwardRef<HTMLDivElement, ExtendedAttachmentItemP
                 testId={`${id}-warning-icon`}
                 name='warning-sign'
                 color={colors.red}
-                size={20}
+                size={iconSize.md}
               />
             ) : (
               <>
                 <SvgIcon
                   id={`${id}-file-icon`}
                   testId={`${id}-file-icon`}
-                  size={24}
+                  size={iconSize.lg}
                   color={colors['grey-light']}
                   name='common-file-empty-alternate-v4'
                 />
@@ -215,7 +216,7 @@ export const AttachmentItem = forwardRef<HTMLDivElement, ExtendedAttachmentItemP
               id={`${id}-remove-icon`}
               testId={`${id}-remove-icon`}
               name={'trash-V4'}
-              size={16}
+              size={iconSize.sm}
               onClick={handleRemove}
               isV4Design
               color={colors['grey-dark']}

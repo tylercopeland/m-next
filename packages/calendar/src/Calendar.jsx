@@ -47,6 +47,7 @@ import {
 import viewsDirectives from './CalendarViewDirective';
 import { sendCalendarAnalytics, CalendarAnalyticsActions } from './calendarServices/CalendarAnalytics';
 import CalendarMenu from './calendarMenu/CalendarMenu';
+import { iconSize } from '@m-next/tokens';
 
 // Calendar Menu Page Constants
 const MENU_PAGE = {
@@ -832,7 +833,7 @@ const Calendar = forwardRef(function Calendar(props, ref) {
         ReactDOM.render(
           <SvgIcon
             name='calendarMenu-Open'
-            size={16}
+            size={iconSize.sm}
             style={{ paddingTop: '16px' }}
             color={colors['grey-calendar-v2-menu-icon']}
           />,
@@ -853,7 +854,7 @@ const Calendar = forwardRef(function Calendar(props, ref) {
             // Replace Method icon font with SvgIcon component
             const addIconElement = addButton.querySelector('.e-schedule-add-svg-icon');
             if (addIconElement) {
-              ReactDOM.render(<SvgIcon name='plus-V4' size={16} color={colors.grey} />, addIconElement);
+              ReactDOM.render(<SvgIcon name='plus-V4' size={iconSize.sm} color={colors.grey} />, addIconElement);
             }
           }
         }
@@ -871,7 +872,7 @@ const Calendar = forwardRef(function Calendar(props, ref) {
       // Replace Method icon font with SvgIcon component for refresh icon
       const refreshIconElement = refreshButton.querySelector('.e-schedule-refresh-svg-icon');
       if (refreshIconElement) {
-        ReactDOM.render(<SvgIcon name='refresh' size={16} color={colors.grey} />, refreshIconElement);
+        ReactDOM.render(<SvgIcon name='refresh' size={iconSize.sm} color={colors.grey} />, refreshIconElement);
       }
     } else if (args.requestType === 'dateNavigate' || args.requestType === 'viewNavigate') {
       if (args.requestType === 'viewNavigate') {
@@ -1070,7 +1071,7 @@ const Calendar = forwardRef(function Calendar(props, ref) {
       <c.mobileHeader>
         <c.mobileHeaderCaption>{caption}</c.mobileHeaderCaption>
         <c.mobileHeaderBackIcon onClick={() => setIsMobileMenuOpen(false)} id={`${id}-Caret`}>
-          <SvgIcon name='close-V4' size={16} />
+          <SvgIcon name='close-V4' size={iconSize.sm} />
         </c.mobileHeaderBackIcon>
       </c.mobileHeader>
       {renderMenu()}

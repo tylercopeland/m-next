@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Field, FieldTypeNames, Predicate } from '@m-next/types';
-import { colors } from '@m-next/tokens';
+import { colors, iconSize } from '@m-next/tokens';
 import SvgIcon from '@m-next/svg-icon';
 import { Text } from '@m-next/typeography';
 import OperationSelector from './OperationSelector';
@@ -55,7 +55,7 @@ function BuilderHeader({
       <SvgIcon
         id={`${id}-advanced-edit`}
         name='settings'
-        size={16}
+        size={iconSize.sm}
         position='left'
         color={colors.grey.base}
         onClick={onShowAdvancedEdit}

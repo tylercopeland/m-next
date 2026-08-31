@@ -6,6 +6,7 @@ import { DebouncedInput } from '@m-next/input';
 import SvgIcon from '@m-next/svg-icon';
 
 import * as s from '../fieldBlock.styles';
+import { iconSize } from '@m-next/tokens';
 
 const propTypes = {
   id: PropTypes.string,
@@ -128,7 +129,7 @@ function TextIconField({ id, field, value, displayPreferences, onSelect, selecte
       )}
       {mode === 0 && (
         <s.ReadOnlyIconValue>
-          <SvgIcon size={16} name={iconName} color='#9BAAB0'>
+          <SvgIcon size={iconSize.sm} name={iconName} color='#9BAAB0'>
             {field.type === FieldTypeNames.Website && (
               <svg xmlns='http://www.w3.org/2000/svg' width={16} height={16} viewBox='0 0 16 16' fill='none'>
                 <path

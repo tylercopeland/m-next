@@ -4,6 +4,7 @@ import SvgIcon from '@m-next/svg-icon';
 import { lightTheme } from '@m-next/styles';
 import BannerContent from './bannerContent';
 import * as s from './banner.styles';
+import { iconSize } from '@m-next/tokens';
 
 // One-time deprecation warner — fires once per key, mirrors @m-next/input.
 const warnOnce = (() => {
@@ -181,7 +182,7 @@ const Banner = forwardRef(function Banner(props, ref) {
         >
           <SvgIcon
             name='close-V4'
-            size={16}
+            size={iconSize.sm}
             color={lightTheme.content.subtle}
           />
         </s.BannerCloseButton>

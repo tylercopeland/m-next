@@ -19,6 +19,7 @@
     "index.d.ts"
   ],
   "dependencies": {
+    "@m-next/tokens": "1.0.0",
     "@m-next/button": "1.0.0",
     "@m-next/caption": "1.0.0",
     "@m-next/card": "1.0.0",

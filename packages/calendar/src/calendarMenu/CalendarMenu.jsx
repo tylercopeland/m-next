@@ -7,6 +7,7 @@ import SvgIcon from '@m-next/svg-icon';
 import CalendarResources from './CalendarResources';
 import CalendarSettings from './CalendarSettings';
 import '../calendar.css';
+import { iconSize } from '@m-next/tokens';
 
 // Menu Page Constants
 const MENU_PAGE = {
@@ -202,7 +203,7 @@ function CalendarMenu(props) {
       name='calendarMenu-Close'
       title='Close Menu'
       label='Close Menu'
-      size={16}
+      size={iconSize.sm}
       color={colors.grey}
       onClick={() => closeDesktopMenu()}
       backgroundHoverColor={colors['grey-lighter']}

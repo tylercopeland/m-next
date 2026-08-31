@@ -8,6 +8,7 @@ import ReadMode from './ReadMode';
 import EditMode from './EditMode';
 import { Column } from '../../../../ColumnPropType';
 import { RowHeightContext } from '../Body';
+import { iconSize } from '@m-next/tokens';
 
 const propTypes = {
   cellData: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string, PropTypes.instanceOf(Object)]),
@@ -468,7 +469,7 @@ function Cell({
 
       {!isBlankRow && error && (
         <s.Error id={`${id}-ERROR`}>
-          <SvgIcon id={`${id}-ERROR-ICON`} color='#DA211E' name='info-sign' size={16} />
+          <SvgIcon id={`${id}-ERROR-ICON`} color='#DA211E' name='info-sign' size={iconSize.sm} />
           {`   ${errorMessage}`}
         </s.Error>
       )}

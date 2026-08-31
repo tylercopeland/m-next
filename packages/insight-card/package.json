@@ -40,6 +40,7 @@
     "prop-types": ">=15.8.1"
   },
   "dependencies": {
+    "@m-next/tokens": "1.0.0",
     "react-loading-skeleton": "^3.3.1",
     "react-tooltip": "^5.26.3",
     "@m-next/svg-icon": "1.0.0"

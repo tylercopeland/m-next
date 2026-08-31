@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef, forwardRef } from 'react';
 
 import SvgIcon from '@m-next/svg-icon';
-import { colors } from '@m-next/tokens';
+import { colors, iconSize } from '@m-next/tokens';
 import { useDebounce } from '@m-next/utilities/src/hooks';
 // components
 import * as s from './SearchInput.styles';
@@ -94,11 +94,11 @@ const SearchInput = forwardRef(function SearchInput(props, ref) {
       'search-input-prefixIcon',
       '@m-next/search-input: `prefixIcon` (string icon name) is deprecated. Use `leftIcon` ReactNode.',
     );
-    leftIcon = <SvgIcon name={legacyPrefixIcon} size={16} color={colors.grey.base} />;
+    leftIcon = <SvgIcon name={legacyPrefixIcon} size={iconSize.sm} color={colors.grey.base} />;
   }
   // Default leading icon: a search glyph. Consumers can pass `leftIcon={null}` to suppress.
   if (leftIcon === undefined) {
-    leftIcon = <SvgIcon name='search' size={16} color={colors.grey.base} />;
+    leftIcon = <SvgIcon name='search' size={iconSize.sm} color={colors.grey.base} />;
   }
 
   let resolvedAriaDescribedby = ariaDescribedby;

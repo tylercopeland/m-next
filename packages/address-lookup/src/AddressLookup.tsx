@@ -17,7 +17,7 @@ import {
 import SvgIcon from '@m-next/svg-icon';
 import Caption from '@m-next/caption';
 import { MapboxApi, GeocodingFeature } from '@m-next/map';
-import { colors } from '@m-next/tokens';
+import { colors, iconSize } from '@m-next/tokens';
 import * as s from './addressLookup.styles';
 
 // One-time deprecation warner — fires once per key, mirrors @m-next/input / @m-next/button.
@@ -68,7 +68,7 @@ const Control = ({ isDisabled, ...props }: ControlProps<OptionType, boolean, Gro
         height: 34,
       }}
     >
-      <SvgIcon name='address-lookup' size={16} color={colors.grey.base} disabled={isDisabled} data-testid='svg-icon' />
+      <SvgIcon name='address-lookup' size={iconSize.sm} color={colors.grey.base} disabled={isDisabled} data-testid='svg-icon' />
     </div>
   </div>
 );

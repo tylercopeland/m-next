@@ -5,6 +5,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import { Tooltip } from 'react-tooltip';
 import SvgIcon from '@m-next/svg-icon';
 import * as s from './InsightCard.styles';
+import { iconSize } from '@m-next/tokens';
 
 // Resolve delta direction. If caller provided `direction`, honor it. Otherwise
 // inspect numeric `value` sign — works for `12`, `-3`, `'12'`, `'-3.5%'`, etc.
@@ -65,7 +66,7 @@ const InsightCard = ({
       {...rest}
     >
       <s.InsightCardHeader>
-        {iconName && <SvgIcon name={iconName} size={16} />}
+        {iconName && <SvgIcon name={iconName} size={iconSize.sm} />}
         <s.InsightCardTitleContainer>
           <s.InsightCardTitle>{title}</s.InsightCardTitle>
           {showInfoIcon && (
@@ -74,7 +75,7 @@ const InsightCard = ({
                 data-tooltip-id={infoTooltipContent ? `insight-card-tooltip-${title}` : undefined}
                 data-tooltip-content={infoTooltipContent}
               >
-                <SvgIcon name='Info-Exclamation' size={12} />
+                <SvgIcon name='Info-Exclamation' size={iconSize.xs} />
               </s.InsightCardInfo>
               {infoTooltipContent && (
                 <Tooltip

@@ -8,6 +8,7 @@ import * as s from './Row.styles';
 import { STATUSES } from '../../../../utilities';
 import Cell from '../Cell';
 import { Column } from '../../../../ColumnPropType';
+import { iconSize } from '@m-next/tokens';
 
 // One-time deprecation warner — fires once per key, mirrors @m-next/input.
 const warnOnce = (() => {
@@ -436,7 +437,7 @@ const Row = forwardRef(function Row(props, ref) {
             inline
             relativeToParent
             icon='navigation-show-more'
-            size={16}
+            size={iconSize.sm}
             horizontalAlign='left'
             width={180}
             style={{ alignItems: 'flex-start' }}
@@ -479,7 +480,7 @@ const Row = forwardRef(function Row(props, ref) {
               title='Delete'
               type='button'
             >
-              <SvgIcon name='trash-V4' size={16} />
+              <SvgIcon name='trash-V4' size={iconSize.sm} />
             </s.Button>
           </s.ItemContainer>
         </s.ActionCell>

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, forwardRef } from 'react';
 import SvgIcon from '@m-next/svg-icon';
 import Caption from '@m-next/caption';
 import { ValidationMessage, Validation } from '@m-next/validation';
-import { colors } from '@m-next/tokens';
+import { colors, iconSize } from '@m-next/tokens';
 import * as s from './Input.styles';
 
 // One-time deprecation warner — fires once per key, mirrors @m-next/button.
@@ -126,7 +126,7 @@ const Input = forwardRef(function Input(props, ref) {
       'input-prefixIcon',
       '@m-next/input: `prefixIcon` (string icon name) is deprecated. Use `leftIcon` ReactNode.',
     );
-    leftIcon = <SvgIcon name={prefixIcon} size={16} color={colors.grey.base} />;
+    leftIcon = <SvgIcon name={prefixIcon} size={iconSize.sm} color={colors.grey.base} />;
   }
 
   let rightContent = rightContentProp;

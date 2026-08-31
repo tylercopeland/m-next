@@ -5,6 +5,7 @@ import { colors } from '@m-next/styles';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import * as s from './Filter.styles';
 import PortalTooltip from './PortalTooltip';
+import { iconSize } from '@m-next/tokens';
 
 // One-time deprecation warner — fires once per key, mirrors @m-next/input.
 const warnOnce = (() => {
@@ -493,7 +494,7 @@ const Filter = forwardRef(function Filter(props, ref) {
                                     >
                                       <s.MenuItemContent>
                                         {editMode && !isDragDisabled && (
-                                          <s.DragHandleIcon name='drag' size={12} isDragging={snapshot.isDragging} />
+                                          <s.DragHandleIcon name='drag' size={iconSize.xs} isDragging={snapshot.isDragging} />
                                         )}
                                         <s.MenuItemText editMode={editMode} disabled={isHidden}>
                                           {opt.name}

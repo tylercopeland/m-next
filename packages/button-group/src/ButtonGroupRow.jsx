@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import SvgIcon from '@m-next/svg-icon';
-import { colors } from '@m-next/tokens';
+import { colors, iconSize } from '@m-next/tokens';
 import * as s from './ButtonGroupRow.styles';
 
 // One-time deprecation warner.
@@ -131,7 +131,7 @@ const ButtonGroupRow = forwardRef(function ButtonGroupRow(props, ref) {
           {item.icon && (
             <SvgIcon
               name={item.icon}
-              size={16}
+              size={iconSize.sm}
               color={selectedItem === item.value ? colors.blue.base : colors.grey.base}
               hoverColor={colors.blue.base}
             />

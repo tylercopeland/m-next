@@ -7,6 +7,7 @@ import { colors } from '@m-next/styles';
 import Button from '@m-next/button';
 import ButtonGroup from '@m-next/button-group';
 import * as s from './Calendar.styles';
+import { iconSize } from '@m-next/tokens';
 
 // One-time deprecation warner — fires once per key, mirrors @m-next/input.
 const warnOnce = (() => {
@@ -176,7 +177,7 @@ function CalendarModalHeader({ event, isMobile, onClose, showTitle }) {
         )}
         <SvgIcon
           id='dialog-close-icon'
-          size={12}
+          size={iconSize.xs}
           name='close-V4'
           color={colors.black}
           style={{ marginTop: '6px' }}
@@ -189,7 +190,7 @@ function CalendarModalHeader({ event, isMobile, onClose, showTitle }) {
       <s.quickInfoHeaderContent className='quick-info-header-content'>
         <SvgIcon
           id='dialog-close-icon'
-          size={12}
+          size={iconSize.xs}
           name='close-V4'
           color={colors.black}
           style={{ marginTop: '6px' }}

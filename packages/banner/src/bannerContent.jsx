@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import SvgIcon from '@m-next/svg-icon';
 import { lightTheme } from '@m-next/styles';
 import * as s from './banner.styles';
+import { iconSize } from '@m-next/tokens';
 
 const propTypes = {
   id: PropTypes.string,
@@ -30,7 +31,7 @@ function BannerContent({
           <SvgIcon
             id={`banner-content-icon-${id}`}
             name={icon}
-            size={16}
+            size={iconSize.sm}
             color={(() => {
               switch (status) {
                 case 'error':

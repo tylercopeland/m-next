@@ -6,6 +6,7 @@ import SvgIcon from '@m-next/svg-icon';
 import { colors } from '@m-next/styles';
 import * as s from './ColorPicker.styles';
 import './ColorPicker.css';
+import { iconSize } from '@m-next/tokens';
 
 // One-time deprecation warner — fires once per key, mirrors @m-next/input.
 const warnOnce = (() => {
@@ -269,7 +270,7 @@ const ColorPicker = forwardRef(function ColorPicker(props, ref) {
               <SvgIcon
                 isV4Design={false}
                 name='undo'
-                size={16}
+                size={iconSize.sm}
                 color={colors['blue']}
                 iconStyles={{ position: 'relative', zIndex: 2 }}
               />

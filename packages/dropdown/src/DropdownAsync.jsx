@@ -9,6 +9,7 @@ import SvgIcon from '@m-next/svg-icon';
 import Button from '@m-next/button';
 import { ValidationMessage } from '@m-next/validation';
 import * as s from './dropdown.styles';
+import { iconSize } from '@m-next/tokens';
 
 // types
 const propTypes = {
@@ -375,7 +376,7 @@ function DropdownAsync({
     if (dropdownStyle === 'icon') {
       return (
         <s.IconOption>
-          {option.icon && <SvgIcon id={`${id}-option-icon-${option.value}`} name={option.icon} size={12} />}
+          {option.icon && <SvgIcon id={`${id}-option-icon-${option.value}`} name={option.icon} size={iconSize.xs} />}
           {getOptionLabelHeader(option, meta)}
         </s.IconOption>
       );
@@ -399,7 +400,7 @@ function DropdownAsync({
       if (meta.context === 'value' || !option.lines || option.lines.length === 0) {
         return (
           <s.IconOption>
-            {option.icon && <SvgIcon id={`${id}-option-icon-${option.value}`} name={option.icon} size={12} />}
+            {option.icon && <SvgIcon id={`${id}-option-icon-${option.value}`} name={option.icon} size={iconSize.xs} />}
             {getOptionLabelHeader(option, meta)}
           </s.IconOption>
         );
@@ -407,7 +408,7 @@ function DropdownAsync({
       return (
         <s.MultiOptionIcon>
           <s.MultiOptionHeader>
-            <SvgIcon id={`${id}-option-icon-${option.value}`} name={option.icon} size={12} />
+            <SvgIcon id={`${id}-option-icon-${option.value}`} name={option.icon} size={iconSize.xs} />
             {getOptionLabelHeader(option, meta)}
           </s.MultiOptionHeader>
           <s.MultiOptionIconLines>

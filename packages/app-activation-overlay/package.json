@@ -22,6 +22,7 @@
     "index.d.ts"
   ],
   "dependencies": {
+    "@m-next/tokens": "1.0.0",
     "@m-next/styles": "1.0.0",
     "@m-next/button": "1.0.0",
     "@m-next/svg-icon": "1.0.0"

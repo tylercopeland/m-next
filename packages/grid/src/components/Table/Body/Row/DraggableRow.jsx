@@ -10,6 +10,7 @@ import * as s from './Row.styles';
 import { STATUSES } from '../../../../utilities';
 import Cell from '../Cell';
 import { Column } from '../../../../ColumnPropType';
+import { iconSize } from '@m-next/tokens';
 
 const propTypes = {
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
@@ -331,7 +332,7 @@ function DraggableRow({
               <SvgIcon
                 id={`data-model-drag-${id}`}
                 name='drag-V4'
-                size={16}
+                size={iconSize.sm}
                 color={lightTheme.content.primary}
                 style={{ cursor: 'grab', display: isDragVisible ? 'block' : 'none' }}
               />
@@ -352,7 +353,7 @@ function DraggableRow({
                     <SvgIcon
                       id={`data-model-drag-${id}`}
                       name='drag-V4'
-                      size={16}
+                      size={iconSize.sm}
                       color={lightTheme.content.primary}
                       style={{ cursor: 'grab' }}
                     />
@@ -444,7 +445,7 @@ function DraggableRow({
                 inline
                 relativeToParent
                 icon='navigation-show-more'
-                size={16}
+                size={iconSize.sm}
                 horizontalAlign='left'
                 width={180}
                 style={{ alignItems: 'flex-start' }}
@@ -487,7 +488,7 @@ function DraggableRow({
                   title='Delete'
                   type='button'
                 >
-                  <SvgIcon name='trash-V4' size={16} />
+                  <SvgIcon name='trash-V4' size={iconSize.sm} />
                 </s.Button>
               </s.ItemContainer>
             </s.ActionCell>

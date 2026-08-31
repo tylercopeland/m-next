@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import xss from 'xss';
 import SvgIcon from '@m-next/svg-icon';
 import * as s from './Search.styles';
+import { iconSize } from '@m-next/tokens';
 
 // One-time deprecation warner — fires once per key, mirrors @m-next/input.
 const warnOnce = (() => {
@@ -162,7 +163,7 @@ const Search = forwardRef(function Search(props, ref) {
       )}
 
       <s.SearchIconWrapper onClick={handleSubmit} id='Simple-Search-Icon'>
-        <SvgIcon name='mi-icon-search' size={16} />
+        <SvgIcon name='mi-icon-search' size={iconSize.sm} />
       </s.SearchIconWrapper>
     </s.SearchContainer>
   );

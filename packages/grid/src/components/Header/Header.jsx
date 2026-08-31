@@ -8,6 +8,7 @@ import * as s from './Header.styles';
 import HeaderColumn from './HeaderColumn';
 import { STATUSES } from '../../utilities';
 import Column from '../../ColumnPropType';
+import { iconSize } from '@m-next/tokens';
 
 const propTypes = {
   invertSelection: PropTypes.bool,
@@ -276,7 +277,7 @@ function Header({
       <s.TR id={`${id}-HEADER-ROW`}>
         {draggableRows && (
           <s.TH>
-            <SvgIcon name='' size={16} />
+            <SvgIcon name='' size={iconSize.sm} />
           </s.TH>
         )}
         {selectable && (

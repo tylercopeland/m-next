@@ -3,6 +3,7 @@ import SvgIcon, { type SvgIconName } from '@m-next/svg-icon';
 import Button from '@m-next/button';
 import CheckWithBackground from './CheckWithBackground';
 import * as s from './appActivationOverlay.styles';
+import { iconSize } from '@m-next/tokens';
 
 // One-time deprecation warner — fires once per key, mirrors @m-next/input.
 const warnOnce = (() => {
@@ -196,7 +197,7 @@ const AppActivationOverlay = forwardRef<HTMLDivElement, AppActivationOverlayProp
               {/* Icon */}
               {iconName && (
                 <s.IconWrapper data-testid='icon-wrapper'>
-                  <SvgIcon name={iconName} size={24} color='#0D71C8' />
+                  <SvgIcon name={iconName} size={iconSize.lg} color='#0D71C8' />
                 </s.IconWrapper>
               )}
 
@@ -268,7 +269,7 @@ const AppActivationOverlay = forwardRef<HTMLDivElement, AppActivationOverlayProp
           {/* Close Button */}
           {dismissible && onClose && (
             <s.CloseButton data-testid='close-button' onClick={onClose} aria-label='Close overlay'>
-              <SvgIcon name='x-icon' size={12} color='grey' />
+              <SvgIcon name='x-icon' size={iconSize.xs} color='grey' />
             </s.CloseButton>
           )}
         </s.BannerCard>

@@ -23,6 +23,7 @@
     "calendar.d.ts"
   ],
   "dependencies": {
+    "@m-next/tokens": "1.0.0",
     "@m-next/button": "1.0.0",
     "@m-next/button-group": "1.0.0",
     "@m-next/caption": "1.0.0",

@@ -9,6 +9,7 @@ import { colors, convertClass } from '@m-next/styles';
 import { useDebounce } from '@m-next/utilities/src/hooks';
 import * as s from './Input.styles';
 import OutroAnimation from './outroAnimation';
+import { iconSize } from '@m-next/tokens';
 // components
 /* --------------------------------------------------*/
 
@@ -328,7 +329,7 @@ function DebouncedInput({
       >
         {prefixIcon ? (
           <div className='mi-textinput-prefix'>
-            {prefixIcon && <SvgIcon name={prefixIcon} size={16} color={colors['grey']} />}
+            {prefixIcon && <SvgIcon name={prefixIcon} size={iconSize.sm} color={colors['grey']} />}
           </div>
         ) : null}
         <input

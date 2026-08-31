@@ -4,6 +4,7 @@ import { interactions } from '@m-next/utilities';
 import SvgIcon from '@m-next/svg-icon';
 import AvatarImage from '@m-next/image/src/AvatarImage';
 import * as s from './pill.styles';
+import { iconSize } from '@m-next/tokens';
 
 // One-time deprecation warner — fires once per key, mirrors @m-next/button / @m-next/input.
 const warnOnce = (() => {
@@ -306,7 +307,7 @@ const Pill = forwardRef(function Pill(props, ref) {
         <SvgIcon
           id={`pill-remove-${id}`}
           name="close-V4"
-          size={8}
+          size={iconSize['2xs']}
           onClick={disabled ? null : handleDelete}
           style={{ marginLeft: 8 }}
         />

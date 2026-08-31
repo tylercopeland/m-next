@@ -6,6 +6,7 @@ import styled from '@emotion/styled';
 import SvgIcon from '@m-next/svg-icon';
 import { useResizeDetector } from 'react-resize-detector';
 import Chart from './chart';
+import { iconSize } from '@m-next/tokens';
 
 // types
 const propTypes = {
@@ -108,7 +109,7 @@ function ChartDialog({
     <div ref={containerRef} style={{ height: '100%' }}>
       <DialogHeaderWrapper id={id ? `${id}-header` : null} tabIndex='-1'>
         <DialogHeaderDismissButton id={id ? `${id}-dismiss` : null} onClick={onClose}>
-          {showClose && <SvgIcon name='close-V4' size={12} color={lightTheme.content.emphasize} />}
+          {showClose && <SvgIcon name='close-V4' size={iconSize.xs} color={lightTheme.content.emphasize} />}
         </DialogHeaderDismissButton>
       </DialogHeaderWrapper>
       <Container

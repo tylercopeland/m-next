@@ -3,6 +3,7 @@ import SvgIcon, { type SvgIconName } from '@m-next/svg-icon';
 import Button from '@m-next/button';
 import CheckWithBackground from '../components/CheckWithBackground';
 import * as s from './appActivationBanner.styles';
+import { iconSize } from '@m-next/tokens';
 
 // One-time deprecation warner — fires once per key, mirrors @m-next/input.
 const warnOnce = (() => {
@@ -165,7 +166,7 @@ const AppActivationBanner = forwardRef<HTMLDivElement, AppActivationBannerProps>
           {/* Icon */}
           {iconName && (
             <s.IconWrapper data-testid='icon-wrapper'>
-              <SvgIcon name={iconName} size={20} color='#0D71C8' />
+              <SvgIcon name={iconName} size={iconSize.md} color='#0D71C8' />
             </s.IconWrapper>
           )}
 
@@ -225,7 +226,7 @@ const AppActivationBanner = forwardRef<HTMLDivElement, AppActivationBannerProps>
         {/* Close Button */}
         {dismissible && onClose && (
           <s.CloseButton data-testid='close-button' onClick={onClose} aria-label='Close banner'>
-            <SvgIcon name='close-V4' size={12} color='grey' />
+            <SvgIcon name='close-V4' size={iconSize.xs} color='grey' />
           </s.CloseButton>
         )}
       </s.BannerWrapper>

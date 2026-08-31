@@ -19,6 +19,7 @@
     "image.d.ts"
   ],
   "dependencies": {
+    "@m-next/tokens": "1.0.0",
     "@m-next/caption": "1.0.0",
     "@m-next/dialog": "1.0.0",
     "@m-next/loading-skeleton": "1.0.0",

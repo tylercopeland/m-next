@@ -6,7 +6,7 @@ import { InfiniteScrollContainer } from '@m-next/container';
 import { Field, Predicate, EmptyPredicate, complexValueTypes } from '@m-next/types';
 import SearchInput from '@m-next/search-input';
 import SvgIcon from '@m-next/svg-icon';
-import { colors } from '@m-next/tokens';
+import { colors, iconSize } from '@m-next/tokens';
 import ListItem from './ListItem';
 
 const propTypes = {
@@ -114,7 +114,7 @@ function FieldListSelector({ id = '', isMobile = false, fieldList, value, onChan
         <SvgIcon
           id={`${id}-advanced-edit`}
           name='settings'
-          size={16}
+          size={iconSize.sm}
           position='left'
           color={colors.grey.base}
           onClick={onShowAdvancedEdit}

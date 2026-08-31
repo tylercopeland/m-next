@@ -16,6 +16,7 @@ import { ValidationMessage } from '@m-next/validation';
 import * as s from './DatePicker.styles';
 import setFormat, { setPlaceholderFormat } from './util';
 import './DatePicker.css';
+import { iconSize } from '@m-next/tokens';
 
 // One-time deprecation warner — fires once per key, mirrors @m-next/input.
 const warnOnce = (() => {
@@ -745,26 +746,26 @@ const DatePicker = forwardRef(function DatePicker(props, ref) {
       >
         <s.HeaderWrapper>
           <s.ChevronWrapper onClick={decrementFnc} disabled={prevMonthButtonDisabled}>
-            <SvgIcon size={8} name='chevron-left' />
+            <SvgIcon size={iconSize['2xs']} name='chevron-left' />
           </s.ChevronWrapper>
           <s.DateWrapper>
             {formatMode !== 'Year' && (
               <s.SelectorWrapper rPadding='5px' onClick={() => handleMonthYearPicker(!monthPickerOpen, false, date)}>
                 <label>{format(date, 'MMMM')}</label>
                 <s.ChevronWrapper>
-                  <SvgIcon size={8} name='chevron-down' />
+                  <SvgIcon size={iconSize['2xs']} name='chevron-down' />
                 </s.ChevronWrapper>
               </s.SelectorWrapper>
             )}
             <s.SelectorWrapper lPadding='5px' onClick={() => handleMonthYearPicker(false, !yearPickerOpen, date)}>
               <label>{getYear(date)}</label>
               <s.ChevronWrapper rPadding='0'>
-                <SvgIcon size={8} name='chevron-down' />
+                <SvgIcon size={iconSize['2xs']} name='chevron-down' />
               </s.ChevronWrapper>
             </s.SelectorWrapper>
           </s.DateWrapper>
           <s.ChevronWrapper onClick={incrementFnc} disabled={nextMonthButtonDisabled}>
-            <SvgIcon size={8} name='chevron-right' />
+            <SvgIcon size={iconSize['2xs']} name='chevron-right' />
           </s.ChevronWrapper>
         </s.HeaderWrapper>
         <s.DropdownWrapper showTime={formatMode === 'DateTime'} visible={monthPickerOpen}>
@@ -929,7 +930,7 @@ const DatePicker = forwardRef(function DatePicker(props, ref) {
           {!hideIcon && (
             <s.IconWrapper disabled={disabled} isV4Design={isV4Design} onClick={handleIconClick}>
               <s.IconHolder>
-                <SvgIcon size={16} name={isV4Design ? 'calendar-V4' : 'calendar'} color={controlStyle.color} />
+                <SvgIcon size={iconSize.sm} name={isV4Design ? 'calendar-V4' : 'calendar'} color={controlStyle.color} />
               </s.IconHolder>
             </s.IconWrapper>
           )}

@@ -2,6 +2,7 @@ import React, { useEffect, useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import SvgIcon from '@m-next/svg-icon';
 import * as s from './PerPageSelector.styles';
+import { iconSize } from '@m-next/tokens';
 
 function PerPageSelector({ disabled, id, selected, onChange }) {
   const stockOptions = useMemo(() => [5, 10, 25, 50, 100], []);
@@ -49,7 +50,7 @@ function PerPageSelector({ disabled, id, selected, onChange }) {
           pointerEvents: 'none', // This makes clicks pass through to the selector
         }}
       >
-        <SvgIcon name='chevron-down-V4' size={16} />
+        <SvgIcon name='chevron-down-V4' size={iconSize.sm} />
       </div>
     </s.Container>
   );

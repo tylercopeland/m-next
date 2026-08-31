@@ -7,6 +7,7 @@ import { IconMenuList, MenuItem } from '@m-next/menu';
 import { lightTheme } from '@m-next/styles';
 import { interactions } from '@m-next/utilities';
 import * as s from './BreadCrumbsHeader.styles';
+import { iconSize } from '@m-next/tokens';
 
 // One-time deprecation warner — fires once per key, mirrors @m-next/input / @m-next/button.
 const warnOnce = (() => {
@@ -195,7 +196,7 @@ const BreadCrumbsHeader = forwardRef(function BreadCrumbsHeader(props, ref) {
         id={`${id}-icon`}
         name={iconName}
         color={crumbs?.length > 1 ? content.secondary : content.primary}
-        size={16}
+        size={iconSize.sm}
       />
       <s.CrumbsWrapper id={`${id}-crumbs`} as="ol">
         {crumbs?.map((crumb, index) => {
@@ -229,7 +230,7 @@ const BreadCrumbsHeader = forwardRef(function BreadCrumbsHeader(props, ref) {
           relativeToParent
           icon="navigation-show-more"
           color={content.primary}
-          size={16}
+          size={iconSize.sm}
           iconRotation="transform: rotate(90deg)"
           onKeyUp={handleKeyPress}
           horizontalAlign="right"

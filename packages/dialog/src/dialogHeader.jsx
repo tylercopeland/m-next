@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import SvgIcon from '@m-next/svg-icon';
-import { colors } from '@m-next/tokens';
+import { colors, iconSize } from '@m-next/tokens';
 import * as s from './dialog.styles';
 
 const propTypes = {
@@ -39,7 +39,7 @@ function DialogHeader(props) {
           aria-label='Close dialog'
           onClick={handleDismissClick}
         >
-          <SvgIcon name='close-V4' size={12} color={colors.grey.darkest} />
+          <SvgIcon name='close-V4' size={iconSize.xs} color={colors.grey.darkest} />
         </s.DialogHeaderDismissButton>
       )}
     </s.DialogHeaderWrapper>

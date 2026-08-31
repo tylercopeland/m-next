@@ -4,7 +4,7 @@ import SvgIcon from '@m-next/svg-icon';
 import { ClickOutside } from '@m-next/utilities';
 import { useResizeDetector } from 'react-resize-detector';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
-import { colors } from '@m-next/tokens';
+import { colors, iconSize } from '@m-next/tokens';
 import * as s from './Tabs.styles';
 
 const queryAttr = 'data-rbd-drag-handle-draggable-id';
@@ -481,7 +481,7 @@ function TabHeader(props) {
                     <s.MenuHeader id={`tab-${id}-more`} onClick={handleToggleList}>
                       <s.MoreLabel>More</s.MoreLabel>
                       <s.IconHolder id={`tab-${id}-more-caret`}>
-                        <SvgIcon name='caret-down' size={8} />
+                        <SvgIcon name='caret-down' size={iconSize['2xs']} />
                       </s.IconHolder>
                     </s.MenuHeader>
                   </s.Menu>

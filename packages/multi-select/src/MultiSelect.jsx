@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect, forwardRef } from 'react';
 import Pill from '@m-next/pill';
 import SvgIcon from '@m-next/svg-icon';
-import { colors } from '@m-next/tokens';
+import { colors, iconSize } from '@m-next/tokens';
 import validator from 'validator';
 import * as s from './MultiSelect.styles';
 
@@ -490,7 +490,7 @@ const MultiSelect = forwardRef(function MultiSelect(props, ref) {
               className={`${classPrefix}-dropdown-icon`}
               name={dropdownOpen ? 'chevron-up' : 'chevron-down'}
               color={colors.grey.base}
-              size={8}
+              size={iconSize['2xs']}
             />
           </s.DropdownCaret>
         )}

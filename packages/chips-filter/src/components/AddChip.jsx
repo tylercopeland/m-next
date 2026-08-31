@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Pill from '@m-next/pill';
 import SvgIcon from '@m-next/svg-icon';
+import { iconSize } from '@m-next/tokens';
 
 const propTypes = {
   id: PropTypes.string,
@@ -35,7 +36,7 @@ function AddChip({ id, onClick, showLabel = true, forwardRef, isVisible }) {
       id={id}
       name='plus'
       isRound
-      size={12}
+      size={iconSize.xs}
       border
       style={{ width: 22, visibility: isVisible ? 'visible' : 'hidden' }}
       onClick={onClick}

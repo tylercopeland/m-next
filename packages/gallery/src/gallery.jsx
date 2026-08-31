@@ -3,6 +3,7 @@ import { TIFFViewer } from 'react-tiff';
 import PropTypes from 'prop-types';
 import SvgIcon from '@m-next/svg-icon';
 import * as s from './gallery.styles';
+import { iconSize } from '@m-next/tokens';
 
 // One-time deprecation warner — fires once per key, mirrors @m-next/input.
 const warnOnce = (() => {
@@ -111,7 +112,7 @@ const Gallery = forwardRef(function Gallery(props, ref) {
           {generateOpacities(loadingItemCount).map((opacity, index) => (
             <s.Thumbnail key={opacity} opacity={opacity} id={`${id}-${index}-ITEM-IMAGE-EMPTY`}>
               <s.EmptyImage>
-                <SvgIcon size={32} name='picture' />
+                <SvgIcon size={iconSize.xl} name='picture' />
               </s.EmptyImage>
               <figcaption>Loading...</figcaption>
             </s.Thumbnail>
@@ -142,7 +143,7 @@ const Gallery = forwardRef(function Gallery(props, ref) {
                 ))}
               {!item.imageURL && (
                 <s.EmptyImage title={item.tooltip} id={`${id}-ITEM-IMAGE-EMPTY`}>
-                  <SvgIcon size={32} name='picture' />
+                  <SvgIcon size={iconSize.xl} name='picture' />
                 </s.EmptyImage>
               )}
               {item.caption && (

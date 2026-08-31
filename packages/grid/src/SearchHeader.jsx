@@ -14,6 +14,7 @@ import Sort from './components/Header/Sort';
 import Column from './ColumnPropType';
 import ShowHideColumns from './components/Header/ShowHideColumns/ShowHideColumns';
 import Menu from './components/Header/Menu/Menu';
+import { iconSize } from '@m-next/tokens';
 
 const propTypes = {
   id: PropTypes.string,
@@ -444,7 +445,7 @@ function SearchHeader({
         <SvgIcon
           id={`${id}-advanced-search-icon`}
           name='filter-V4'
-          size={16}
+          size={iconSize.sm}
           onClick={onToggleAdvancedSearchDrawer}
           border
           isV4Design
@@ -635,7 +636,7 @@ function SearchHeader({
             disabled={disabled}
             onClick={onExport}
             name='cloud-download'
-            size={16}
+            size={iconSize.sm}
             border
             backgroundColor={colors.white}
             backgroundHoverColor={colors['grey-lighter']}
