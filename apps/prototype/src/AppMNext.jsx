@@ -128,27 +128,13 @@ const Identify = ({ name, category = 'action', block = false, style, detail = ''
 const FONT_SIZE_BY_PX = Object.fromEntries(
   Object.entries(fontSize).map(([token, px]) => [`${px}px`, token])
 );
-const FONT_WEIGHT_BY_VALUE = Object.fromEntries(
-  Object.entries(fontWeight).map(([token, val]) => [String(val), token])
-);
-
-// Size and weight only — the two things that identify a type style at a
-// glance. The element (H1/H2) is semantics rather than style, and
-// line-height was pure noise on every single label.
+// Size only. Element, weight and line-height all came off the label as
+// noise — the size token is the one thing worth reading at a glance.
+// A size that isn't on the scale is shown raw with a trailing `!`.
 const describeText = (props) => {
-  const parts = [];
-
-  if (props.fontSize != null) {
-    const key = String(props.fontSize);
-    parts.push(FONT_SIZE_BY_PX[key] || `${key}!`);
-  }
-
-  if (props.fontWeight != null) {
-    const key = String(props.fontWeight);
-    parts.push(FONT_WEIGHT_BY_VALUE[key] || `${key}!`);
-  }
-
-  return parts.join(' · ');
+  if (props.fontSize == null) return '';
+  const key = String(props.fontSize);
+  return FONT_SIZE_BY_PX[key] || `${key}!`;
 };
 
 // HOC: wraps a component so it auto-identifies in inspect mode.
