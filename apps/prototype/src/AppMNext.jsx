@@ -460,7 +460,7 @@ const Header = ({ onDelete, onEdit, inspectOn, setInspectOn }) => {
         </Inline>
       </Inline>
 
-      <Container bordered padding="xl">
+      <Container bordered padding="24px">
         <Inline justify="spaceBetween" align="center" wrap gap="md">
           <Inline gap="md" align="center">
             <Box
@@ -547,7 +547,7 @@ const OverviewTab = ({ loading }) => {
         </Box>
       </Inline>
 
-      <Container bordered padding="xl">
+      <Container bordered padding="24px">
         <Stack gap="md">
           <Inline justify="spaceBetween" align="center">
             <Text
@@ -711,7 +711,7 @@ const InvoicesTab = ({ onSelectInvoice }) => {
 
   return (
     <Stack gap="lg">
-      <Container bordered padding="lg">
+      <Container bordered padding="16px">
         <Inline gap="md" wrap align="center" justify="spaceBetween">
           <Box style={{ minWidth: 240, flex: 1 }}>
             <SearchInput
@@ -729,7 +729,7 @@ const InvoicesTab = ({ onSelectInvoice }) => {
         </Inline>
       </Container>
 
-      <Container bordered padding="lg">
+      <Container bordered padding="16px">
         {filtered.length === 0 ? (
           <EmptyState
             variant="subtle"
@@ -837,14 +837,14 @@ const ActivityTab = () => {
 
   return (
     <Stack gap="lg">
-      <Container bordered padding="xl">
+      <Container bordered padding="24px">
         <Stack gap="md">
           <SectionHeading>Onboarding progress</SectionHeading>
           <Stepper steps={ONBOARDING_STEPS} activeStep={3} showLabels />
         </Stack>
       </Container>
 
-      <Container bordered padding="xl">
+      <Container bordered padding="24px">
         <Stack gap="md">
           <Inline justify="spaceBetween" align="center">
             <SectionHeading>Activity feed</SectionHeading>
@@ -2184,7 +2184,7 @@ const HomeScreen = () => {
       {/* Sub-tabs (Insights / Learn) inside the Home tab body — grouped
           in the elevated Container to match the To-Dos + Quick actions
           treatment below. */}
-      <Container borderless={false} padding="xl">
+      <Container borderless={false} padding="24px">
       <Tabs
         width="100%"
         tabList={[
@@ -2239,7 +2239,7 @@ const HomeScreen = () => {
       {/* To-Dos + Quick actions — two-column layout. */}
       <Inline gap="lg" align="stretch" wrap>
         <Box style={{ flex: '2 1 560px', minWidth: 320 }}>
-          <Container borderless={false} padding="xl">
+          <Container borderless={false} padding="24px">
             <Stack gap="md">
               <Inline justify="spaceBetween" align="center">
                 <Text as="H2" fontSize="20px" lineHeight="24px" fontWeight={700} mt="0px" mb="0px">
@@ -2280,7 +2280,7 @@ const HomeScreen = () => {
         </Box>
 
         <Box style={{ flex: '1 1 280px', minWidth: 240 }}>
-          <Container borderless={false} padding="lg">
+          <Container borderless={false} padding="16px">
             <Stack gap="sm">
               <Inline justify="spaceBetween" align="center">
                 <Text as="H2" fontSize="16px" lineHeight="20px" fontWeight={700} mt="0px" mb="0px">
@@ -2688,7 +2688,7 @@ const ContactDetailScreen = ({ onBack }) => {
 
       {/* RIGHT — tabs + data table */}
       <Box style={{ flex: '1 1 auto', minWidth: 0 }}>
-        <Container bordered padding="none">
+        <Container bordered padding="0px">
           <Stack gap="none">
             {/* Real @m-next/tabs — Activities Open / Closed / Opportunities / etc.
                 No onRenderTabContent: the action row + table render as siblings
