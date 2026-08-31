@@ -160,8 +160,12 @@ const HeroBanner = forwardRef(function HeroBanner(props, ref) {
         </s.DismissButton>
       )}
       <s.HeroBannerContentWrapper>
-        <s.HeroBannerImageContainer backgroundColor={backgroundColor}>
-          {imageSrc && (
+        {/* Only render the image column when there's an image. It is a fixed
+            200px, flex-shrink: 0 track, so rendering it empty reserved dead
+            space and pushed the text off the banner's left edge for every
+            text-only hero. */}
+        {imageSrc && (
+          <s.HeroBannerImageContainer backgroundColor={backgroundColor}>
             <s.HeroBannerImageWrapper>
               <Image
                 value={imageSrc}
@@ -174,8 +178,8 @@ const HeroBanner = forwardRef(function HeroBanner(props, ref) {
                 }}
               />
             </s.HeroBannerImageWrapper>
-          )}
-        </s.HeroBannerImageContainer>
+          </s.HeroBannerImageContainer>
+        )}
 
         <s.HeroBannerInnerWrapper>
           <s.HeroBannerTextWrapper>
