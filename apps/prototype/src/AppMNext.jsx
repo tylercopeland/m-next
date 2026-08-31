@@ -2507,6 +2507,7 @@ const ContactDetailScreen = ({ onBack }) => {
     <Inline gap="lg" align="stretch" style={{ width: '100%' }}>
       {/* LEFT — 1/3: contact detail rail */}
       <Box style={{ flex: '1 1 0', minWidth: 320 }}>
+        <Container bordered padding="xl">
         <Stack gap="lg">
           <Box style={{ alignSelf: 'flex-start' }}>
             <Button
@@ -2601,17 +2602,7 @@ const ContactDetailScreen = ({ onBack }) => {
           {/* Contact Details section */}
           <Stack gap="md">
             <Inline justify="spaceBetween" align="center">
-              <Text
-                as="H2"
-                fontSize={`${fontSize.lg}px`}
-                lineHeight="24px"
-                fontWeight={fontWeight.bold}
-                fontColor={colors.grey.darker}
-                mt={`${spacing.none}px`}
-                mb={`${spacing.none}px`}
-              >
-                Contact Details
-              </Text>
+              <SectionHeader title="Contact Details" />
               <EditWithDropdown />
             </Inline>
             <Inline gap="lg" wrap>
@@ -2643,17 +2634,7 @@ const ContactDetailScreen = ({ onBack }) => {
           {/* Customer Lead Details section */}
           <Stack gap="md">
             <Inline justify="spaceBetween" align="center">
-              <Text
-                as="H2"
-                fontSize={`${fontSize.lg}px`}
-                lineHeight="24px"
-                fontWeight={fontWeight.bold}
-                fontColor={colors.grey.darker}
-                mt={`${spacing.none}px`}
-                mb={`${spacing.none}px`}
-              >
-                Customer Lead Details
-              </Text>
+              <SectionHeader title="Customer Lead Details" />
               <EditWithDropdown />
             </Inline>
             <Inline gap="lg" wrap>
@@ -2698,6 +2679,7 @@ const ContactDetailScreen = ({ onBack }) => {
             Show {showMore ? 'less' : 'more'}
           </button>
         </Stack>
+        </Container>
       </Box>
 
       {/* RIGHT — 2/3: related records */}
