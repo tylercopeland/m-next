@@ -40,6 +40,7 @@ import { Sidebar as RawSidebar } from '@m-next/sidebar';
 import { AppBar as RawAppBar } from '@m-next/app-bar';
 import { AppActivationBanner as RawAppActivationBanner } from '@m-next/app-activation-banner';
 import { HeroBanner as RawHeroBanner } from '@m-next/hero-banner';
+import { ButtonGroup as RawButtonGroup } from '@m-next/button-group';
 import { SectionHeader as RawSectionHeader } from '@m-next/section-header';
 import { Pagination as RawPagination } from '@m-next/pagination';
 import { AvatarPill as RawAvatarPill } from '@m-next/avatar-pill';
@@ -184,6 +185,7 @@ const Sidebar = labeled(RawSidebar, 'Sidebar', 'navigation', true);
 const AppBar = labeled(RawAppBar, 'AppBar', 'navigation', true);
 const AppActivationBanner = labeled(RawAppActivationBanner, 'AppActivationBanner', 'feedback', true);
 const HeroBanner = labeled(RawHeroBanner, 'HeroBanner', 'feedback', true);
+const ButtonGroup = labeled(RawButtonGroup, 'ButtonGroup', 'action');
 const SectionHeader = labeled(RawSectionHeader, 'SectionHeader', 'display', true);
 const Pagination = labeled(RawPagination, 'Pagination', 'navigation', true);
 const AvatarPill = labeled(RawAvatarPill, 'AvatarPill', 'display');
@@ -2490,31 +2492,25 @@ const LEAD_DETAIL_DATA = {
 // =====================================================================
 
 
+// Split button: primary Edit action plus a menu of related actions.
+// @m-next/button-group does exactly this via `isDropdown` — see its
+// SplitButton story. This was previously a real <Button> sitting next to a
+// raw <button> with borderLeft:none, a hardcoded 16px right radius and
+// marginLeft:-1 to fake the seam, which is why the two halves didn't meet.
+const EDIT_ACTIONS = [
+  { value: 'edit', label: 'Edit' },
+  { value: 'duplicate', label: 'Duplicate' },
+  { value: 'delete', label: 'Delete' },
+];
+
 const EditWithDropdown = () => (
-  <Inline gap="none" align="center">
-    <Button variant="secondary" size="sm">
-      Edit
-    </Button>
-    <button
-      type="button"
-      aria-label="More edit actions"
-      style={{
-        background: 'transparent',
-        border: `1px solid ${colors.blue.base}`,
-        borderLeft: 'none',
-        borderTopRightRadius: 16,
-        borderBottomRightRadius: 16,
-        cursor: 'pointer',
-        padding: '6px 10px',
-        marginLeft: -1,
-        color: colors.blue.base,
-        display: 'inline-flex',
-        alignItems: 'center',
-      }}
-    >
-      <SvgIcon name="chevron-down" size={12} color={colors.blue.base} />
-    </button>
-  </Inline>
+  <ButtonGroup
+    buttonStyle="ghost"
+    size="small"
+    isDropdown
+    data={EDIT_ACTIONS}
+    onClick={() => {}}
+  />
 );
 
 const ContactDetailTabs = [
