@@ -35,6 +35,7 @@ const Tabs = forwardRef(function Tabs(props, ref) {
     borderless = false,
     dyanmicHeight = false,
     contentStyle,
+    panelBackground = '',
     headerStyle,
     containerStyle,
     legacyPadding = false,
@@ -142,6 +143,7 @@ const Tabs = forwardRef(function Tabs(props, ref) {
           borderless={borderless}
           dyanmicHeight={dyanmicHeight}
           calMenuHeight={calMenuHeight}
+          panelBackground={panelBackground}
           style={contentStyle}
         >
           {renderTabContent()}

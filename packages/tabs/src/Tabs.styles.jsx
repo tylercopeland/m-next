@@ -178,14 +178,19 @@ export const MenuItem = styled.div(({ theme, disabled }) => {
   ];
 });
 
-export const TabPanel = styled.div(({ theme, borderless, dyanmicHeight, calMenuHeight }) => {
+export const TabPanel = styled.div(({ theme, borderless, dyanmicHeight, calMenuHeight, panelBackground }) => {
   let border = `1px solid  ${colors.grey.lighter}`;
   if (borderless) border = null;
   const { background } = theme;
   const defaultColor = background ? background.primary : lightTheme.background.primary;
+  // `panelBackground` lets a caller opt out of the opaque surface. The panel
+  // paints theme white by default, which is right for a standalone tabbed
+  // card but wrong when the panel wraps cards of its own — there it hides the
+  // page background and the nested cards' edges disappear into it.
+  const panelColor = panelBackground || defaultColor;
 
   return {
-    backgroundColor: defaultColor,
+    backgroundColor: panelColor,
     border,
     display: 'flex',
     width: '100%',

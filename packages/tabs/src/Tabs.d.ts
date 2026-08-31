@@ -61,6 +61,13 @@ export interface TabsProps {
 
   /** Style overrides. */
   contentStyle?: React.CSSProperties;
+  /**
+   * Background for the tab content panel. Defaults to the theme surface
+   * (white). Pass 'transparent' when the panel wraps cards of its own —
+   * an opaque panel hides the page background and the nested cards' edges
+   * disappear into it.
+   */
+  panelBackground?: string;
   headerStyle?: React.CSSProperties;
   containerStyle?: React.CSSProperties;
 
