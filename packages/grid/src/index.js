@@ -8,4 +8,5 @@ import Column from './ColumnPropType';
 
 export { ColumnTypes, STATUSES, Row, GridEventNames, Search, Filter, Loader, Column };
 
+export { Grid };
 export default Grid;

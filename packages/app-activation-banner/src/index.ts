@@ -6,4 +6,5 @@ export type {
   AppActivationBannerBulletPoint,
 } from './appActivationBanner';
 
+export { AppActivationBanner };
 export default AppActivationBanner;
