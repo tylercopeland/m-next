@@ -1595,6 +1595,13 @@ const CUSTOMERS_DATA = [
 // Home screen data
 // =====================================================================
 
+// Onboarding hero art. Served from public/ as a real file rather than an
+// inline data URI: @m-next/image explicitly rejects `data:image` values
+// (Image.jsx: `if (!value || value.indexOf('data:image') > -1) return
+// getPlaceholderSvg(...)`) and swaps in its own generic placeholder. Replace
+// with the real asset when it exists.
+const ONBOARDING_IMAGE = '/onboarding-hero.svg';
+
 const HOME_INSIGHTS = [
   {
     id: 'revenue-distribution',
@@ -1613,8 +1620,8 @@ const HOME_INSIGHTS = [
     linkText: 'View estimates',
   },
   {
-    id: 'inactive-customers',
-    title: 'Inactive customers',
+    id: 'low-health-score',
+    title: 'Low health score',
     value: '23',
     iconName: 'contacts',
     linkText: 'View customers',
@@ -1630,47 +1637,26 @@ const HOME_INSIGHTS = [
 
 const HOME_TODOS = [
   {
-    id: 'first-interaction',
-    title: 'Log your first customer interaction',
-    description: 'Record your first customer communication or meeting',
+    id: 'follow-up-lead',
+    title: 'Follow-up with a lead [Example]',
+    description: 'Try using your activities to set follow-up reminders for new leads.',
     status: 'completed',
-    dueLabel: 'Due: July 17 2025 9:00 AM',
+    dueLabel: 'Due: Today at 05:00pm',
   },
   {
-    id: 'first-estimate',
-    title: 'Create your first estimate',
-    description: 'Set up an estimate to track project progress',
+    id: 'meet-customer',
+    title: 'Meet with a customer [Example]',
+    description: 'Use the activities to track scheduled meetings with customers.',
     status: 'not-started',
-    dueLabel: 'Overdue: Today 9:00 AM',
-    overdue: true,
+    dueLabel: 'Due: Tomorrow at 05:00pm',
   },
   {
-    id: 'convert-to-invoice',
-    title: 'Convert your estimate to an invoice',
-    description: 'Turn an accepted estimate into an invoice for payment',
+    id: 'follow-up-email',
+    title: 'Send a follow-up email [Example]',
+    description:
+      "Practice logging a customer interaction — email a customer or lead from Method and watch it appear in the customer's activity log.",
     status: 'in-progress',
-    dueLabel: 'Due: Today 12:00 PM',
-  },
-  {
-    id: 'first-case',
-    title: 'Log your first customer case',
-    description: 'Create a customer support case or issue tracking record',
-    status: 'not-started',
-    dueLabel: 'Due: Tomorrow 9:00 AM',
-  },
-  {
-    id: 'first-email-campaign',
-    title: 'Setup your first email campaign',
-    description: 'Create and send your first marketing email campaign',
-    status: 'not-started',
-    dueLabel: 'Due: July 25 2025 9:00 AM',
-  },
-  {
-    id: 'first-proposal',
-    title: 'Create your first proposal',
-    description: 'Build a detailed proposal for a potential client',
-    status: 'not-started',
-    dueLabel: 'Due: July 28  2025 9:00 AM',
+    dueLabel: 'Due: Dec-13-2025 05:00 PM',
   },
 ];
 
@@ -2152,9 +2138,13 @@ const HomeScreen = () => {
     // gap="xl" (24) matches the Containers' internal padding. With gap="lg"
     // (16) the cards sat closer to each other than their own content sat to
     // their edges, which reads as one blurred band rather than three sections.
-    <Stack gap="xl" style={{ flex: 1, minWidth: 0, width: '100%' }}>
-      {/* Greeting + sync status — lives inside the Home tab so it
-          disappears when the user switches to Apps or Insights. */}
+    <Stack gap="lg" style={{ flex: 1, minWidth: 0, width: '100%' }}>
+      {/* One card holds greeting -> hero -> Insights. Keeping them in a
+          single surface is what gives the page its two-band structure;
+          floating the greeting and hero loose on the page background made
+          the rhythm read wrong no matter how the gaps were tuned. */}
+      <Container borderless={false} padding="24px">
+      <Stack gap="lg" style={{ width: '100%' }}>
       <Inline justify="spaceBetween" align="flex-start" wrap gap="md">
         <Stack gap="xs">
           <Text fontSize="12px" lineHeight="16px" fontColor={theme.content.subtle}>
@@ -2172,19 +2162,17 @@ const HomeScreen = () => {
       {!heroDismissed && (
         <HeroBanner
           backgroundColor="blue"
-          title="We're here to help!"
-          description="Schedule a time with our Success Team to discover how Method can work for you."
-          primaryButton="Schedule onboarding →"
+          imageSrc={ONBOARDING_IMAGE}
+          eyebrow="Onboarding Step 1 of 4"
+          title="Welcome to Method. Let's add your first lead"
+          description="Start by adding a lead so you can see how work flows through Method, from first contact to estimate and invoice."
+          primaryButton="Add a lead"
           onPrimaryButtonClick={() => {}}
           hasClose
           onClose={() => setHeroDismissed(true)}
         />
       )}
 
-      {/* Sub-tabs (Insights / Learn) inside the Home tab body — grouped
-          in the elevated Container to match the To-Dos + Quick actions
-          treatment below. */}
-      <Container borderless={false} padding="24px">
       <Tabs
         width="100%"
         tabList={[
@@ -2208,25 +2196,29 @@ const HomeScreen = () => {
           }
           return (
             <Stack gap="md" style={{ flex: 1, minWidth: 0, width: '100%' }}>
-              <Inline gap="sm" align="baseline">
-                <Text as="H2" fontSize="16px" lineHeight="20px" fontWeight={700} mt="0px" mb="0px">
-                  Your weekly insights
+              {/* Status strip — insights are still being computed, so the
+                  cards below render in their loading state rather than
+                  showing stale or zeroed numbers. */}
+              <Box
+                padding="md"
+                style={{
+                  background: theme.background.subtle,
+                  borderRadius: 8,
+                  width: '100%',
+                }}
+              >
+                <Text fontSize="14px" lineHeight="20px" fontColor={theme.content.subtle}>
+                  Method is currently analyzing your QuickBooks data to generate personalized
+                  business insights.
                 </Text>
-                <Text fontSize="12px" lineHeight="16px" fontColor={theme.content.subtle}>
-                  Last updated October 9, 2025
-                </Text>
-              </Inline>
+              </Box>
               <Inline gap="md" style={{ width: '100%' }}>
                 {HOME_INSIGHTS.map((ins) => (
                   <InsightCard
                     key={ins.id}
                     title={ins.title}
-                    value={ins.value}
                     iconName={ins.iconName}
-                    linkText={ins.linkText}
-                    onCardClick={() => {}}
-                    showInfoIcon={ins.showInfoIcon || false}
-                    infoTooltipContent={ins.infoTooltipContent}
+                    isLoading
                   />
                 ))}
               </Inline>
@@ -2234,6 +2226,7 @@ const HomeScreen = () => {
           );
         }}
       />
+      </Stack>
       </Container>
 
       {/* To-Dos + Quick actions — two-column layout. */}
