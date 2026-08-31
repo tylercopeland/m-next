@@ -460,7 +460,7 @@ const Header = ({ onDelete, onEdit, inspectOn, setInspectOn }) => {
         </Inline>
       </Inline>
 
-      <Container bordered padding="24px">
+      <Container bordered padding="xl">
         <Inline justify="spaceBetween" align="center" wrap gap="md">
           <Inline gap="md" align="center">
             <Box
@@ -484,7 +484,7 @@ const Header = ({ onDelete, onEdit, inspectOn, setInspectOn }) => {
               <Inline gap="sm" align="center">
                 <Text
                   as="H1"
-                  fontSize="22px"
+                  fontSize="24px"
                   lineHeight="28px"
                   fontWeight={theme.fontWeight.semibold}
                   fontColor={theme.content.emphasize}
@@ -547,7 +547,7 @@ const OverviewTab = ({ loading }) => {
         </Box>
       </Inline>
 
-      <Container bordered padding="24px">
+      <Container bordered padding="xl">
         <Stack gap="md">
           <Inline justify="spaceBetween" align="center">
             <Text
@@ -711,7 +711,7 @@ const InvoicesTab = ({ onSelectInvoice }) => {
 
   return (
     <Stack gap="lg">
-      <Container bordered padding="16px">
+      <Container bordered padding="lg">
         <Inline gap="md" wrap align="center" justify="spaceBetween">
           <Box style={{ minWidth: 240, flex: 1 }}>
             <SearchInput
@@ -729,7 +729,7 @@ const InvoicesTab = ({ onSelectInvoice }) => {
         </Inline>
       </Container>
 
-      <Container bordered padding="16px">
+      <Container bordered padding="lg">
         {filtered.length === 0 ? (
           <EmptyState
             variant="subtle"
@@ -837,14 +837,14 @@ const ActivityTab = () => {
 
   return (
     <Stack gap="lg">
-      <Container bordered padding="24px">
+      <Container bordered padding="xl">
         <Stack gap="md">
           <SectionHeading>Onboarding progress</SectionHeading>
           <Stepper steps={ONBOARDING_STEPS} activeStep={3} showLabels />
         </Stack>
       </Container>
 
-      <Container bordered padding="24px">
+      <Container bordered padding="xl">
         <Stack gap="md">
           <Inline justify="spaceBetween" align="center">
             <SectionHeading>Activity feed</SectionHeading>
@@ -2149,12 +2149,15 @@ const HomeScreen = () => {
   const visibleTodos = showAllTodos ? HOME_TODOS : HOME_TODOS.slice(0, 6);
 
   const renderHomeBody = () => (
-    <Stack gap="lg" style={{ flex: 1, minWidth: 0, width: '100%' }}>
+    // gap="xl" (24) matches the Containers' internal padding. With gap="lg"
+    // (16) the cards sat closer to each other than their own content sat to
+    // their edges, which reads as one blurred band rather than three sections.
+    <Stack gap="xl" style={{ flex: 1, minWidth: 0, width: '100%' }}>
       {/* Greeting + sync status — lives inside the Home tab so it
           disappears when the user switches to Apps or Insights. */}
       <Inline justify="spaceBetween" align="flex-start" wrap gap="md">
         <Stack gap="xs">
-          <Text fontSize="13px" lineHeight="16px" fontColor={theme.content.subtle}>
+          <Text fontSize="12px" lineHeight="16px" fontColor={theme.content.subtle}>
             {formatGreetingDate(today)}
           </Text>
           <Text as="H1" fontSize="24px" lineHeight="28px" fontWeight={700} mt="0px" mb="0px">
@@ -2181,7 +2184,7 @@ const HomeScreen = () => {
       {/* Sub-tabs (Insights / Learn) inside the Home tab body — grouped
           in the elevated Container to match the To-Dos + Quick actions
           treatment below. */}
-      <Container borderless={false} padding="24px">
+      <Container borderless={false} padding="xl">
       <Tabs
         width="100%"
         tabList={[
@@ -2209,7 +2212,7 @@ const HomeScreen = () => {
                 <Text as="H2" fontSize="16px" lineHeight="20px" fontWeight={700} mt="0px" mb="0px">
                   Your weekly insights
                 </Text>
-                <Text fontSize="13px" lineHeight="16px" fontColor={theme.content.subtle}>
+                <Text fontSize="12px" lineHeight="16px" fontColor={theme.content.subtle}>
                   Last updated October 9, 2025
                 </Text>
               </Inline>
@@ -2236,10 +2239,10 @@ const HomeScreen = () => {
       {/* To-Dos + Quick actions — two-column layout. */}
       <Inline gap="lg" align="stretch" wrap>
         <Box style={{ flex: '2 1 560px', minWidth: 320 }}>
-          <Container borderless={false} padding="24px">
+          <Container borderless={false} padding="xl">
             <Stack gap="md">
               <Inline justify="spaceBetween" align="center">
-                <Text as="H2" fontSize="18px" lineHeight="24px" fontWeight={700} mt="0px" mb="0px">
+                <Text as="H2" fontSize="20px" lineHeight="24px" fontWeight={700} mt="0px" mb="0px">
                   To-Dos
                 </Text>
                 <Button variant="ghost" size="sm" aria-label="To-Dos settings"
@@ -2277,7 +2280,7 @@ const HomeScreen = () => {
         </Box>
 
         <Box style={{ flex: '1 1 280px', minWidth: 240 }}>
-          <Container borderless={false} padding="16px">
+          <Container borderless={false} padding="lg">
             <Stack gap="sm">
               <Inline justify="spaceBetween" align="center">
                 <Text as="H2" fontSize="16px" lineHeight="20px" fontWeight={700} mt="0px" mb="0px">
@@ -2531,7 +2534,7 @@ const ContactDetailScreen = ({ onBack }) => {
               >
                 Tyler Copeland
               </Text>
-              <Text fontSize="13px" lineHeight="16px" fontColor="#545F67" mt="2px">
+              <Text fontSize="12px" lineHeight="16px" fontColor="#545F67" mt="2px">
                 Main Contact
               </Text>
             </Stack>
@@ -2569,11 +2572,11 @@ const ContactDetailScreen = ({ onBack }) => {
                 >
                   Health Score
                 </Text>
-                <Text fontSize="13px" lineHeight="16px" fontColor="#545F67">
+                <Text fontSize="12px" lineHeight="16px" fontColor="#545F67">
                   (Updated today at 10:40 PM)
                 </Text>
               </Inline>
-              <Text fontSize="13px" lineHeight="16px" fontColor="#545F67" mt="2px">
+              <Text fontSize="12px" lineHeight="16px" fontColor="#545F67" mt="2px">
                 No change in health score compared to last week.
               </Text>
             </Stack>
@@ -2586,7 +2589,7 @@ const ContactDetailScreen = ({ onBack }) => {
             <Inline justify="spaceBetween" align="center">
               <Text
                 as="H2"
-                fontSize="18px"
+                fontSize="20px"
                 lineHeight="24px"
                 fontWeight={700}
                 fontColor="#0F1B31"
@@ -2628,7 +2631,7 @@ const ContactDetailScreen = ({ onBack }) => {
             <Inline justify="spaceBetween" align="center">
               <Text
                 as="H2"
-                fontSize="18px"
+                fontSize="20px"
                 lineHeight="24px"
                 fontWeight={700}
                 fontColor="#0F1B31"
@@ -2685,7 +2688,7 @@ const ContactDetailScreen = ({ onBack }) => {
 
       {/* RIGHT — tabs + data table */}
       <Box style={{ flex: '1 1 auto', minWidth: 0 }}>
-        <Container bordered padding="0px">
+        <Container bordered padding="none">
           <Stack gap="none">
             {/* Real @m-next/tabs — Activities Open / Closed / Opportunities / etc.
                 No onRenderTabContent: the action row + table render as siblings
@@ -2752,22 +2755,22 @@ const ContactDetailScreen = ({ onBack }) => {
             >
               <Inline gap="md" align="center">
                 <Box style={{ flex: '1 1 110px' }}>
-                  <Text fontSize="13px" lineHeight="16px" fontWeight={600} fontColor="#0D71C8">
+                  <Text fontSize="12px" lineHeight="16px" fontWeight={600} fontColor="#0D71C8">
                     Start Date
                   </Text>
                 </Box>
                 <Box style={{ flex: '1 1 140px' }}>
-                  <Text fontSize="13px" lineHeight="16px" fontWeight={600} fontColor="#0D71C8">
+                  <Text fontSize="12px" lineHeight="16px" fontWeight={600} fontColor="#0D71C8">
                     Contact
                   </Text>
                 </Box>
                 <Box style={{ flex: '2 1 220px' }}>
-                  <Text fontSize="13px" lineHeight="16px" fontWeight={600} fontColor="#0D71C8">
+                  <Text fontSize="12px" lineHeight="16px" fontWeight={600} fontColor="#0D71C8">
                     Type / Status / Assigned To
                   </Text>
                 </Box>
                 <Box style={{ flex: '1 1 120px' }}>
-                  <Text fontSize="13px" lineHeight="16px" fontWeight={600} fontColor="#0D71C8">
+                  <Text fontSize="12px" lineHeight="16px" fontWeight={600} fontColor="#0D71C8">
                     Comments
                   </Text>
                 </Box>
