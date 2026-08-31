@@ -2201,8 +2201,12 @@ const HomeScreen = () => {
                   <InsightCard
                     key={ins.id}
                     title={ins.title}
+                    value={ins.value}
                     iconName={ins.iconName}
-                    isLoading
+                    linkText={ins.linkText}
+                    onCardClick={() => {}}
+                    showInfoIcon={ins.showInfoIcon || false}
+                    infoTooltipContent={ins.infoTooltipContent}
                   />
                 ))}
               </Inline>
