@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors } from '@m-next/tokens';
+import { colors, fontWeight } from '@m-next/tokens';
 
 const COLORS = {
   blue: colors.blue.base,
@@ -69,7 +69,7 @@ export const ButtonStyled = styled.button(({ variant = 'primary', size = 'md', f
   gap: 8,
   width: fullWidth ? '100%' : 'auto',
   fontFamily: "'Source Sans Pro', Helvetica, Arial, sans-serif",
-  fontWeight: 600,
+  fontWeight: fontWeight.semibold,
   cursor: 'pointer',
   transition: 'background 120ms ease, border-color 120ms ease, color 120ms ease',
   ...SIZE_STYLES[size],

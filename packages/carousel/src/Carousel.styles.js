@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors } from '@m-next/tokens';
+import { colors, fontWeight } from '@m-next/tokens';
 
 // Surface and title colors. The original MethodUI carousel pulled
 // `colors['grey-dark']` from @m-one/styles for the title; in m-next tokens
@@ -25,7 +25,7 @@ export const CarouselTitle = styled.p({
   fontFamily: "'Source Sans Pro', system-ui, -apple-system, sans-serif",
   fontSize: 14,
   fontStyle: 'normal',
-  fontWeight: 600,
+  fontWeight: fontWeight.semibold,
   lineHeight: '16px',
   marginBottom: 8,
   marginTop: 0,

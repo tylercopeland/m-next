@@ -1,5 +1,5 @@
 import React from 'react';
-import { colors } from '@m-next/tokens';
+import { colors, fontWeight } from '@m-next/tokens';
 
 // Base hues per colorScheme. `subtle` derives a pale tint (~12%) for bg
 // and uses the base hue for text. `outline` uses base hue for border + text.
@@ -70,7 +70,7 @@ const Badge = ({
         display: 'inline-flex',
         alignItems: 'center',
         borderRadius: 9999,
-        fontWeight: 600,
+        fontWeight: fontWeight.semibold,
         fontFamily: "'Source Sans Pro', Helvetica, Arial, sans-serif",
         whiteSpace: 'nowrap',
         verticalAlign: 'middle',

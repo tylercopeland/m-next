@@ -1,5 +1,5 @@
 import React from 'react';
-import { colors } from '@m-next/tokens';
+import { colors, fontWeight } from '@m-next/tokens';
 
 const FONT_FAMILY = "'Source Sans Pro', Helvetica, Arial, sans-serif";
 
@@ -80,7 +80,7 @@ const Alert = ({
           <div
             style={{
               fontSize: 14,
-              fontWeight: 600,
+              fontWeight: fontWeight.semibold,
               color: colors.grey.darkest,
               marginBottom: 4,
               fontFamily: FONT_FAMILY,
@@ -94,7 +94,7 @@ const Alert = ({
         <div
           style={{
             fontSize: 14,
-            fontWeight: 400,
+            fontWeight: fontWeight.normal,
             color: colors.grey.dark,
             lineHeight: 1.5,
             fontFamily: FONT_FAMILY,

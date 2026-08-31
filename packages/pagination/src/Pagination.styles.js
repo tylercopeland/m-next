@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors } from '@m-next/tokens';
+import { colors, fontWeight } from '@m-next/tokens';
 
 // Visual treatment mirrors MethodUI's production pagination: a rounded
 // horizontal pill of buttons with hairline borders, white surface, and
@@ -92,7 +92,7 @@ export const Ellipsis = styled.span({
   borderWidth: '1px 0.5px',
   color: TEXT_PRIMARY,
   fontSize: 14,
-  fontWeight: 500,
+  fontWeight: fontWeight.medium,
   fontFamily: 'inherit',
   userSelect: 'none',
 });

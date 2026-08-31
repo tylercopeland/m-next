@@ -5,7 +5,7 @@ import LoadingSkeleton from '@m-next/loading-skeleton';
 import InputArea from '@m-next/input-area';
 import Input from '@m-next/input';
 import { TextLine } from '@m-next/typeography';
-import { colors } from '@m-next/tokens';
+import { colors, fontWeight } from '@m-next/tokens';
 import styled from '@emotion/styled';
 
 // One-time deprecation warner — fires once per key, mirrors @m-next/input.
@@ -360,7 +360,7 @@ const Address = forwardRef(function Address(props, ref) {
           id={labelId}
           style={{
             color: colors.grey.darkest,
-            fontWeight: 600,
+            fontWeight: fontWeight.semibold,
             marginBottom: 4,
           }}
         >

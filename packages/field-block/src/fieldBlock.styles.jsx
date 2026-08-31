@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { lightTheme } from '@m-next/styles';
-import { colors } from '@m-next/tokens';
+import { colors, fontWeight } from '@m-next/tokens';
 
 export const Line = styled.div(() => [
   {
@@ -49,7 +49,7 @@ export const EmptyWrapper = styled.div(() => [
 
 export const ReadonlyLabel = styled.div(({ theme, padding }) => [
   {
-    fontWeight: 700,
+    fontWeight: fontWeight.bold,
     margin: 0,
     padding: 0,
     color: theme.content ? theme.content.primary : lightTheme.content.primary,
@@ -93,7 +93,7 @@ export const SectionHeader = styled.h2(({ theme }) => [
     margin: 0,
     padding: '4px 0 8px',
     fontSize: 16,
-    fontWeight: 600,
+    fontWeight: fontWeight.semibold,
     lineHeight: 1.4,
     color: theme.content ? theme.content.primary : lightTheme.content.primary,
   },
@@ -104,7 +104,7 @@ export const SectionDescription = styled.div(() => [
     margin: 0,
     padding: '0 0 8px',
     fontSize: 13,
-    fontWeight: 400,
+    fontWeight: fontWeight.normal,
     lineHeight: 1.4,
     color: colors.grey.base,
   },

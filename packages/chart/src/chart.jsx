@@ -10,6 +10,7 @@ import HighchartsReact from 'highcharts-react-official';
 import styled from '@emotion/styled';
 import Typeography from '@m-next/typeography';
 import { EmptyFilterIcon } from '@m-next/svg-icon';
+import { fontWeight } from '@m-next/tokens';
 
 require('highcharts/modules/no-data-to-display')(Highcharts);
 require('highcharts/modules/accessibility')(Highcharts);
@@ -324,7 +325,7 @@ const Chart = forwardRef(function Chart(props, ref) {
         },
         labelStyle: {
           fontSize: '32px',
-          fontWeight: 700,
+          fontWeight: fontWeight.bold,
           textAlign: 'center',
           textTransform: 'uppercase',
           lineHeight: '100px',

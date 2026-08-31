@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors } from '@m-next/tokens';
+import { colors, fontWeight } from '@m-next/tokens';
 
 // Palette is grounded in @m-next/tokens. Fallbacks mirror the literal values
 // so a missing token never crashes the chrome.
@@ -44,7 +44,7 @@ export const ItemHeader = styled.button((props) => ({
   textAlign: 'left',
   fontFamily: 'inherit',
   fontSize: 14,
-  fontWeight: 600,
+  fontWeight: fontWeight.semibold,
   color: props.disabled ? TEXT_SUBTLE : TEXT_PRIMARY,
   cursor: props.disabled ? 'not-allowed' : 'pointer',
   opacity: props.disabled ? 0.6 : 1,

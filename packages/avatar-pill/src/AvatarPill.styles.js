@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors } from '@m-next/tokens';
+import { colors, fontWeight } from '@m-next/tokens';
 
 // Token lookup that survives a missing shade — graceful in case a palette
 // family (e.g. `teal`) is missing a `lighter`/`lightest` tier.
@@ -106,7 +106,7 @@ export const Avatar = styled.span((props) => {
     background: palette.base || '#0D71C8',
     color: colors.white || '#FFFFFF',
     fontSize: Math.max(8, Math.floor(sz.avatarSize * 0.45)),
-    fontWeight: 700,
+    fontWeight: fontWeight.bold,
     lineHeight: 1,
     textTransform: 'uppercase',
     userSelect: 'none',
@@ -168,7 +168,7 @@ export const Label = styled.span((props) => {
     minWidth: 0,
     fontSize: sz.fontSize,
     lineHeight: `${sz.lineHeight}px`,
-    fontWeight: 600,
+    fontWeight: fontWeight.semibold,
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',

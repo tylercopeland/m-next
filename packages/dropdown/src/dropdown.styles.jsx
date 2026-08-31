@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { lightTheme } from '@m-next/styles';
-import { colors } from '@m-next/tokens';
+import { colors, fontWeight } from '@m-next/tokens';
 
 export const ContainerWrapper = styled.div((props) => {
   const { width, isValid, disabled } = props;
@@ -98,7 +98,7 @@ export const MultiOptionHeader = styled.div(() => [
     gap: 8,
     alignContent: 'center',
     alignItems: 'center',
-    fontWeight: 600,
+    fontWeight: fontWeight.semibold,
     flex: 1,
   },
 ]);

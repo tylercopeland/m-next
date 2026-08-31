@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors } from '@m-next/tokens';
+import { colors, fontWeight } from '@m-next/tokens';
 import { lightTheme } from '@m-next/styles';
 
 export const MenuItemWrapper = styled.div((props) => {
@@ -40,7 +40,7 @@ export const MenuHeader = styled.div(() => [
     padding: '0px 8px',
     color: lightTheme.content.subtle,
     fontSize: '75%',
-    fontWeight: 500,
+    fontWeight: fontWeight.medium,
     textTransform: 'uppercase',
   },
 ]);

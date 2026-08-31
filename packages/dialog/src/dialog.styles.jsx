@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { lightTheme } from '@m-next/styles';
-import { colors } from '@m-next/tokens';
+import { colors, fontWeight } from '@m-next/tokens';
 
 export const DialogHeaderWrapper = styled.div(({ theme }) => {
   const { content, background } = theme;
@@ -44,7 +44,7 @@ export const DialogHeaderTitle = styled.h4(({ theme }) => [
     flexGrow: 1,
     fontSize: '18px',
     color: theme.content ? theme.content.emphasize : lightTheme.content.emphasize,
-    fontWeight: 600,
+    fontWeight: fontWeight.semibold,
     lineHeight: '24px',
   },
 ]);

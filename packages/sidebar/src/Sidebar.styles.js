@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors } from '@m-next/tokens';
+import { colors, fontWeight } from '@m-next/tokens';
 
 // Defaults match Method's production app shell (LeftNav). The surface color
 // is the canonical "method" navy (#022266 — colors.blue.darkest in tokens,
@@ -78,7 +78,7 @@ export const GroupHeader = styled.div((props) => ({
   justifyContent: 'space-between',
   padding: '10px 16px',
   fontSize: 11,
-  fontWeight: 600,
+  fontWeight: fontWeight.semibold,
   letterSpacing: 0.5,
   textTransform: 'uppercase',
   color: TEXT_SUBTLE,
@@ -163,7 +163,7 @@ export const ItemLabel = styled.span({
 
 export const ItemBadge = styled.span({
   fontSize: 11,
-  fontWeight: 600,
+  fontWeight: fontWeight.semibold,
   padding: '1px 6px',
   borderRadius: 10,
   background: ACCENT_BLUE,

@@ -5,7 +5,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import { Tooltip } from 'react-tooltip';
 import SvgIcon from '@m-next/svg-icon';
 import * as s from './InsightCard.styles';
-import { iconSize } from '@m-next/tokens';
+import { fontWeight, iconSize } from '@m-next/tokens';
 
 // Resolve delta direction. If caller provided `direction`, honor it. Otherwise
 // inspect numeric `value` sign — works for `12`, `-3`, `'12'`, `'-3.5%'`, etc.
@@ -87,7 +87,7 @@ const InsightCard = ({
                     fontFamily: 'Source Sans Pro',
                     fontSize: '12px',
                     fontStyle: 'normal',
-                    fontWeight: 600,
+                    fontWeight: fontWeight.semibold,
                     lineHeight: '16px',
                     padding: '4px 8px',
                     borderRadius: '2px',

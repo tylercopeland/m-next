@@ -1,6 +1,6 @@
 import React from 'react';
 import { Stack } from '@m-next/layout';
-import { colors } from '@m-next/tokens';
+import { colors, fontWeight } from '@m-next/tokens';
 
 const fontFamily = "'Source Sans Pro', Helvetica, Arial, sans-serif";
 
@@ -39,7 +39,7 @@ const titleStyle = {
   margin: 0,
   fontFamily,
   fontSize: 18,
-  fontWeight: 600,
+  fontWeight: fontWeight.semibold,
   color: colors.grey.darkest,
   lineHeight: 1.3,
 };
@@ -48,7 +48,7 @@ const descriptionStyle = {
   margin: 0,
   fontFamily,
   fontSize: 14,
-  fontWeight: 400,
+  fontWeight: fontWeight.normal,
   color: colors.grey.base,
   lineHeight: 1.5,
   maxWidth: 480,

@@ -7,7 +7,7 @@ import { IconMenuList, MenuItem } from '@m-next/menu';
 import { lightTheme } from '@m-next/styles';
 import { interactions } from '@m-next/utilities';
 import * as s from './BreadCrumbsHeader.styles';
-import { iconSize } from '@m-next/tokens';
+import { fontWeight, iconSize } from '@m-next/tokens';
 
 // One-time deprecation warner — fires once per key, mirrors @m-next/input / @m-next/button.
 const warnOnce = (() => {
@@ -242,7 +242,7 @@ const BreadCrumbsHeader = forwardRef(function BreadCrumbsHeader(props, ref) {
             <MenuItem
               key={item.id}
               id={item.id}
-              style={{ fontWeight: 400 }}
+              style={{ fontWeight: fontWeight.normal }}
               onClick={item.onClick}
               active={active === index}
             >

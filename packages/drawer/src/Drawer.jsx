@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
-import { colors } from '@m-next/tokens';
+import { colors, fontWeight } from '@m-next/tokens';
 
 const KEYFRAMES_ID = 'm-next-drawer-keyframes';
 const KEYFRAMES_CSS = `
@@ -302,7 +302,7 @@ const Drawer = ({
 
   const titleStyle = {
     fontSize: 16,
-    fontWeight: 600,
+    fontWeight: fontWeight.semibold,
     color: colors.grey.darkest,
     margin: 0,
     fontFamily: "'Source Sans Pro', Helvetica, Arial, sans-serif",

@@ -1,5 +1,5 @@
 import React, { Children, cloneElement, isValidElement, useRef } from 'react';
-import { colors } from '@m-next/tokens';
+import { colors, fontWeight } from '@m-next/tokens';
 
 const fontFamily = "'Source Sans Pro', Helvetica, Arial, sans-serif";
 
@@ -26,7 +26,7 @@ const labelStyle = {
   display: 'inline-block',
   fontFamily,
   fontSize: 14,
-  fontWeight: 500,
+  fontWeight: fontWeight.medium,
   color: colors.grey.dark,
   marginBottom: 4,
   lineHeight: 1.4,
@@ -40,7 +40,7 @@ const asteriskStyle = {
 const descriptionStyle = {
   fontFamily,
   fontSize: 13,
-  fontWeight: 400,
+  fontWeight: fontWeight.normal,
   color: colors.grey.base,
   marginBottom: 8,
   lineHeight: 1.4,
@@ -52,7 +52,7 @@ const errorStyle = {
   gap: 4,
   fontFamily,
   fontSize: 13,
-  fontWeight: 400,
+  fontWeight: fontWeight.normal,
   color: colors.red.dark,
   marginTop: 4,
   lineHeight: 1.4,
