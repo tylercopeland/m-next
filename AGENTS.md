@@ -70,6 +70,29 @@ import { MenuList, MenuItem } from '@m-next/menu';
 `import` field. Copy it rather than guessing — it is generated from the packages' real runtime
 exports, not from their type declarations.
 
+Each entry also carries **`props`** (the current API, with types and required-ness) and
+**`deprecatedProps`** (names only). Use `props`; never reach for anything listed in
+`deprecatedProps` — those still exist for backwards compatibility and mostly do nothing.
+`@m-next/button` alone declares 24 props of which 18 are deprecated, which is exactly why
+the two lists are kept apart.
+
+The file is ~6k lines, so query it rather than reading it whole:
+
+```bash
+jq '.components[] | select(.name=="Button")' registry.json
+jq -r '.components[] | select(.category=="Form") | .name' registry.json
+```
+
+Props are marked `propsStatus: "auto-generated"` — extracted from each package's TypeScript
+props type or runtime `propTypes`, not yet human-reviewed. They're a reliable guide to prop
+*names and types*; the `summary` / `use` / `dontUse` fields are the curated, authoritative
+part. Regenerate after changing a component's API:
+
+```bash
+npm run registry:props     # rewrite
+npm run registry:check     # CI-friendly: fails if stale
+```
+
 Most packages also still have a default export for backwards compatibility. **Don't use it.** The
 two forms are not interchangeable across the library, and only the named form is documented and
 verified per component.
