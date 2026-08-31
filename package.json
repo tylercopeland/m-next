@@ -178,7 +178,9 @@
     "graph": "npx nx graph",
     "affected-build": "nx affected -t build --parallel 14",
     "affected-test": "nx affected -t test --parallel 14",
-    "affected-lint": "nx affected -t lint --parallel 14"
+    "affected-lint": "nx affected -t lint --parallel 14",
+    "registry:props": "node scripts/generate-registry-props.mjs",
+    "registry:check": "node scripts/generate-registry-props.mjs --check"
   },
   "browserslist": [
     "defaults",
