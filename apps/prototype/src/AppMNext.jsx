@@ -2296,6 +2296,7 @@ const HomeScreen = () => {
         ]}
         selectedTab={activeTopTab}
         onChange={setActiveTopTab}
+        panelBackground="transparent"
         contentStyle={{ padding: 0, border: 'none', minHeight: 0, marginTop: theme.spacing.xl }}
         onRenderTabContent={() => {
           if (activeTopTab === 'apps') {
