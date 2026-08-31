@@ -5,6 +5,9 @@ export type ZIndexToken = 'base' | 'dropdown' | 'sticky' | 'modal' | 'popover' |
 export type TransitionToken = 'fast' | 'normal' | 'slow';
 export type LineHeightToken = 'tight' | 'normal' | 'relaxed';
 export type FontWeightToken = 'normal' | 'medium' | 'semibold' | 'bold';
+export type FontSizeToken = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
+export type IconSizeToken = '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+export type BreakpointToken = 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 
 export type ColorShade =
   | 'darkest'
@@ -49,6 +52,9 @@ export const zIndex: Record<ZIndexToken, number>;
 export const transition: Record<TransitionToken, string>;
 export const lineHeight: Record<LineHeightToken, number>;
 export const fontWeight: Record<FontWeightToken, number>;
+export const fontSize: Record<FontSizeToken, number>;
+export const iconSize: Record<IconSizeToken, number>;
+export const breakpoints: Record<BreakpointToken, number>;
 export const colors: ColorPalette;
 export const colorFamilies: ColorFamily[];
 export const colorShades: ColorShade[];
@@ -62,6 +68,9 @@ declare const tokens: {
   transition: Record<TransitionToken, string>;
   lineHeight: Record<LineHeightToken, number>;
   fontWeight: Record<FontWeightToken, number>;
+  fontSize: Record<FontSizeToken, number>;
+  iconSize: Record<IconSizeToken, number>;
+  breakpoints: Record<BreakpointToken, number>;
   colors: ColorPalette;
 };
 
