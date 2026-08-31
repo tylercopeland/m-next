@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Method Prototype</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      html, body, #root {
+        font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      /* Match the legacy Method CSS reset Storybook gets via styles.min.css.
+         Without this, browser-default <p> / heading margins inflate any
+         m-next component that renders styled.p or styled.h*, so things look
+         significantly taller in the prototype than in Storybook. */
+      p, h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+      }
+      ul, ol {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
