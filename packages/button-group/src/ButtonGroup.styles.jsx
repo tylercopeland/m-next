@@ -252,7 +252,11 @@ export const Button = styled.div`
       return '6px 16px';
     }
     if (p.size === 'small') {
-      return p.isDropdown ? '0px 16px 0px 16px' : '0px 16px';
+      // Right padding must be 0 when a dropdown chevron is attached, so the
+      // two halves meet. The medium branch below already does this; small
+      // did not, which left 16px here PLUS IconHolder's 16px left padding —
+      // a 32px void between the label and an 8px chevron.
+      return p.isDropdown ? '0px 0px 0px 16px' : '0px 16px';
     }
     if (p.isDropdown) {
       return p.isMobile ? '14px 0px 14px 16px' : '6px 0px 6px 16px';
