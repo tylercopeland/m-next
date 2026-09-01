@@ -120,6 +120,12 @@ const Text = forwardRef<HTMLElement, TextProps>(function Text(props, ref) {
 
   const textStylesTitle: Record<string, string | number | undefined> = {
     color: fontColor,
+    // fontSize + fontWeight were missing here while the body `textStyles`
+    // above carried both, so every H1-H6 silently ignored them and fell back
+    // to the browser's heading defaults (h1 32px/700, h3 18.72px/700). The
+    // props were accepted and dropped.
+    fontSize,
+    fontWeight,
     lineHeight,
     marginTop: mt,
     marginBottom: mb,
@@ -158,8 +164,8 @@ const Text = forwardRef<HTMLElement, TextProps>(function Text(props, ref) {
     // H1-H6 all share TitleText styling. Emotion's polymorphic `as` prop
     // swaps the rendered HTML tag while preserving the styled-component's
     // CSS rules — so an H3 heading carries H3 semantics with H1's m-next
-    // styling. fontSize/fontWeight/etc. are still inline-style-driven via
-    // textStylesTitle, matching the existing H1 behavior.
+    // styling. fontSize/fontWeight/lineHeight are applied via
+    // textStylesTitle.
     const tag = asUpper.toLowerCase() as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     // Preserve the legacy `--title` testid for H1; H2-H6 use the lowercase tag.
     const testidSuffix = tag === 'h1' ? 'title' : tag;
