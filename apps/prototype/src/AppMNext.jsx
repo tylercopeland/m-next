@@ -2179,7 +2179,7 @@ const HomeScreen = () => {
           <Text fontSize={`${fontSize.xs}px`} lineHeight="16px" fontColor={theme.content.subtle}>
             {formatGreetingDate(today)}
           </Text>
-          <Text as="H1" fontSize={`${fontSize.xl}px`} lineHeight="28px" fontWeight={fontWeight.bold} mt={`${spacing.none}px`} mb={`${spacing.none}px`}>
+          <Text as="H1" fontSize={`${fontSize.xl}px`} lineHeight="28px" fontWeight={fontWeight.semibold} mt={`${spacing.none}px`} mb={`${spacing.none}px`}>
             {getGreeting(today)}, Paul
           </Text>
         </Stack>
@@ -2253,7 +2253,7 @@ const HomeScreen = () => {
           <Container borderless={false} padding="xl">
             <Stack gap="md">
               <Inline justify="spaceBetween" align="center">
-                <Text as="H2" fontSize={`${fontSize.lg}px`} lineHeight="24px" fontWeight={fontWeight.bold} mt={`${spacing.none}px`} mb={`${spacing.none}px`}>
+                <Text as="H2" fontSize={`${fontSize.lg}px`} lineHeight="24px" fontWeight={fontWeight.semibold} mt={`${spacing.none}px`} mb={`${spacing.none}px`}>
                   To-Dos
                 </Text>
                 <Button variant="ghost" size="sm" aria-label="To-Dos settings"
@@ -2294,7 +2294,7 @@ const HomeScreen = () => {
           <Container borderless={false} padding="lg">
             <Stack gap="sm">
               <Inline justify="spaceBetween" align="center">
-                <Text as="H2" fontSize={`${fontSize.md}px`} lineHeight="20px" fontWeight={fontWeight.bold} mt={`${spacing.none}px`} mb={`${spacing.none}px`}>
+                <Text as="H2" fontSize={`${fontSize.md}px`} lineHeight="20px" fontWeight={fontWeight.semibold} mt={`${spacing.none}px`} mb={`${spacing.none}px`}>
                   Quick actions
                 </Text>
                 <Button variant="ghost" size="sm" aria-label="Quick actions settings"
@@ -2571,7 +2571,7 @@ const ContactDetailScreen = ({ onBack }) => {
                 as="H1"
                 fontSize={`${fontSize.xl}px`}
                 lineHeight="28px"
-                fontWeight={fontWeight.bold}
+                fontWeight={fontWeight.semibold}
                 fontColor={colors.grey.darker}
                 mt={`${spacing.none}px`}
                 mb={`${spacing.none}px`}
