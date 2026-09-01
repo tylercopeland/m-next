@@ -331,18 +331,110 @@ Ranked by impact on consistency + scalability + AI-friendliness.
 
 ## How to resume this work
 
-**Status as of 2026-08-31: Top-10 #1, #2, #3, #4 and #6 are done.** Remaining: #5, #7, #8, #9, #10.
+**Last worked: 2026-08-31 / 09-01.** Audit Top-10 #1, #2, #3, #4 and #6 are done;
+#5, #7, #8, #9, #10 remain. That roadmap is no longer the main thread — the work
+has moved to driving the design system through a real prototype, which is
+surfacing defects faster than the audit did.
 
-The mechanical, zero-design-risk work is now finished. What's left splits into two kinds:
+---
 
-- **Cheap and mechanical:** #5 (`gaps` block in `registry.json`) and #10 (archive `AI-Best-Practices.md` + `agent_instructions/`). Both are afternoon-sized.
-- **Needs judgment:** #7 (`guidelines/` folder), #8 (promote `TaskList`), #9 (grow `compositions` 3 → 10+). These encode taste and recurring Method patterns, so they want Tyler's input rather than a sweep.
+### Where things stand
 
-Two design questions surfaced by the token pass, neither blocking:
+**`apps/prototype`** (`npx vite` → :3200) is the Method app prototype, now inside
+this repo and version-controlled. Two views: **Foundation** (the m-next Home and
+record screens) and **Invoice** (an unchanged m-one rebuild kept for comparison).
+An **Inspect** toggle labels every component on screen with its name, category and
+— for `Text` — its fontSize token, marking off-scale values with `!`.
 
-1. **Does `iconSize` need a step between 12 and 16?** See #4 — `size={14}` recurs on form-field validation icons and `size={18}` on grid cells. If those are deliberate optical choices, the scale is incomplete; if not, they're drift worth snapping.
-2. **How should `styles/src/device.js` breakpoint drift be reconciled?** See #3 — three inconsistent sets in one file. Fixing it is a behaviour change.
+**`apps/lab`** (:3100) is a minimal 4-file scaffold. It predates the discovery that
+the prototype existed, and the two overlap. Worth deciding whether to keep both.
 
-Also worth noting: the **strategy doc** for Ben/Paul/Alex was last rewritten 2026-05-27 and predates the 100% component sprint, so it understates what has shipped.
+**Compositions** now ship Home, ContactDetail and CustomersList. Home was ported
+from the prototype (2026-09-01).
 
-This document should be updated as work is completed — strike through or mark items complete, add new findings, capture decisions about deferrals.
+---
+
+### Next steps, in order
+
+**1. Finish the contact detail page.** Items 1 and 2 are done (rail as a card with
+real `SectionHeader`s; field rows on `FormSection`, which brought the Tags pill and
+a native Show-more with it). Remaining:
+
+  - **Avatar and Health Score circles** are hand-built `Box`es with literal 64/56px
+    and border-radius. `AvatarPill` is a pill, not a standalone avatar — this is
+    likely a genuine missing component rather than a call-site fix.
+  - **Right pane**: the search row and the empty table should use real
+    `SearchInput` and `EmptyState`.
+  - The reference pairs Phone/Alt Phone and Lead Status/Lead Rating side by side;
+    `FormSection` stacks every field full width. That is a FormSection question,
+    not something to override from a call site.
+
+**2. Fix the `ariaLabel` bug in the prototype.** `TodoRow` passes `ariaLabel` to
+`Checkbox`, which has no such prop — it falls through `...rest` onto the raw
+`<input>`, React warns, and the checkbox ends up unlabelled. The Home composition
+already uses the correct `aria-label`; the prototype still has the broken version.
+
+**3. Sweep Storybook after the `@m-next/text` heading fix.** Headings previously
+accepted `fontSize`/`fontWeight` and discarded them, rendering at browser defaults.
+They now honour their props, so **every heading in the workspace that passed
+typography props has changed size and weight**. This is correct but it is a real
+visual diff — worth a pass through heading-heavy components before showing anyone.
+
+**4. Decide on the leftover token gaps** (all three block a true "no hardcoded
+values" rule in the prototype):
+
+  - **`lineHeight` has no px scale.** The token is unitless (tight/normal/relaxed),
+    so ~39 `lineHeight="20px"` values in the prototype have nothing to migrate to.
+    This is the largest remaining source of literals.
+  - **No spacing step below 4px** — `mt="2px"` recurs.
+  - **Layout constants** — `maxWidth: 1280`, flex bases, avatar sizes. Making these
+    tokens means inventing a sizing scale.
+
+**5. Then the audit leftovers**: #5 (`gaps` block in registry.json) and #10 (archive
+`AI-Best-Practices.md` + `agent_instructions/`) are mechanical. #7 (`guidelines/`),
+#8 (promote `TaskList`), #9 (grow compositions) need judgment.
+
+---
+
+### Design-system defects found by the prototype (2026-08-31)
+
+Every one of these was invisible from reading the code and only appeared when the
+component was actually rendered. This is the argument for the prototype existing.
+
+| Fixed | What was wrong |
+|---|---|
+| `@m-next/hero-banner` | Reserved a fixed 200px image column even with no `imageSrc`, pushing text off the banner's left edge for every text-only hero |
+| `@m-next/button-group` | Passed `showCaption` to `SvgIcon`, which has no such prop — it hit the DOM and React warned on every render with `isDropdown` |
+| `@m-next/button-group` | The `size="small"` branch didn't zero the label's right padding for dropdowns (medium always did), leaving a 32px void beside an 8px chevron |
+| `@m-next/text` | **Headings silently dropped `fontSize` and `fontWeight`.** `textStylesTitle` omitted both while the body `textStyles` carried them, so every H1–H6 rendered at browser defaults |
+| `@m-next/container` | `padding` took only CSS strings while `Box` took tokens, so `padding="xl"` emitted invalid CSS and produced **no padding at all**, silently |
+
+### Open gaps — not yet fixed
+
+- **`SectionHeader` has no action slot.** Its registry `use` text promises
+  "'Contact Details' with an Edit action on the right", but it only takes
+  id/title/subTitle. Either add the slot or correct the text.
+- **`Container.borderless={false}` is a double negative** meaning "has a shadow",
+  and sits next to a separate `bordered` prop.
+- **`Tabs` needs 4 lines of `contentStyle` override** to nest inside a Container.
+  A `variant`/`borderless` prop would remove that from every nested usage.
+- **No quick-action / icon-tile row primitive**, and **no to-do / task row
+  component** — both are recognisable Method patterns (MethodUI has `TodoCard`)
+  that compositions currently hand-build from raw `<button>`s.
+- **`ButtonGroup` and `Button` use different variant vocabularies** —
+  `primary|ghost|plain|calendarMenu` vs `primary|secondary|tertiary|ghost|link`.
+- **`Checkbox` has no `ariaLabel` escape hatch**; labelling a `hideLabel` checkbox
+  requires knowing `aria-label` passes through `...rest`.
+- **`@m-next/image` silently rejects `data:` URIs** and substitutes its own
+  placeholder, with no warning. Cost an iteration twice today.
+
+### Standing notes
+
+- The **strategy doc** for Ben/Paul/Alex predates the 100% component sprint and
+  understates what has shipped.
+- Two open questions from the token pass: does `iconSize` need a step between 12
+  and 16 (`size={14}` and `size={18}` recur), and how should the three
+  inconsistent breakpoint sets in `styles/src/device.js` be reconciled.
+
+This document should be updated as work is completed — strike through or mark
+items complete, add new findings, capture decisions about deferrals.
