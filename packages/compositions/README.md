@@ -14,7 +14,7 @@ Each composition is a real Method screen composed of real m-next components. The
 |---|---|
 | `CustomersList` | List view: AppBar + Sidebar shell, tabs over a real `<Grid>` with view filters, activation banner above the content. |
 | `ContactDetail` | Split view: left rail of fields/labels using `<FormField>` + `<Text>`, right pane with `<Tabs>` over an empty action area. |
-| `Dashboard` | Overview screen: row of `<InsightCard>`s with deltas, recent-activity card, side-by-side metric and chart-shaped placeholders. |
+| `Home` | Landing screen: top-level `<Tabs>` over a greeting, a dismissible onboarding `<HeroBanner>`, nested Insights/Learn tabs holding a row of `<InsightCard>` KPIs, and a two-column To-Dos / Quick actions section in bordered `<Container>`s. |
 
 ## Conventions
 

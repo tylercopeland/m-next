@@ -3907,6 +3907,12 @@
           "doc": "Heading text — rendered as an H2."
         },
         {
+          "name": "eyebrow",
+          "type": "string",
+          "required": false,
+          "doc": "Small label rendered above the title — e.g. 'Onboarding Step 1 of 4'."
+        },
+        {
           "name": "description",
           "type": "React.ReactNode",
           "required": false,
@@ -6692,6 +6698,12 @@
           "doc": "Style overrides."
         },
         {
+          "name": "panelBackground",
+          "type": "string",
+          "required": false,
+          "doc": "Background for the tab content panel. Defaults to the theme surface (white). Pass 'transparent' when the panel wraps cards of its own — an …"
+        },
+        {
           "name": "headerStyle",
           "type": "React.CSSProperties",
           "required": false
@@ -8836,19 +8848,22 @@
       ]
     },
     {
-      "name": "Dashboard",
-      "summary": "Overview screen: row of InsightCard KPIs with deltas, two-column 'recent activity + today' panels using bordered Container.",
-      "story": "m-next/Compositions/Dashboard",
-      "file": "packages/compositions/stories/Dashboard.stories.jsx",
+      "name": "Home",
+      "summary": "Landing screen: top-level Tabs over a greeting, dismissible onboarding HeroBanner, nested Insights/Learn tabs holding a row of InsightCard KPIs, and a two-column To-Dos / Quick actions section in bordered Containers.",
+      "story": "m-next/Compositions/Home",
+      "file": "packages/compositions/stories/Home.stories.jsx",
       "demonstrates": [
         "AppBar",
         "Sidebar",
+        "Tabs",
+        "HeroBanner",
         "InsightCard",
-        "Container",
+        "Checkbox",
         "Pill",
-        "Link",
-        "Text",
-        "Divider"
+        "Container",
+        "Button",
+        "EmptyState",
+        "Text"
       ]
     }
   ],
